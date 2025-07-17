@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.service_discovery_api import ServiceDiscoveryApi
+from watchtowr_api_sdk.api.service_discovery_api import ServiceDiscoveryApi
 
 
 class TestServiceDiscoveryApi(unittest.TestCase):

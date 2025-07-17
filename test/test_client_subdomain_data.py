@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_subdomain_data import ClientSubdomainData
+from watchtowr_api_sdk.models.client_subdomain_data import ClientSubdomainData
 
 class TestClientSubdomainData(unittest.TestCase):
     """ClientSubdomainData unit test stubs"""
@@ -36,7 +36,7 @@ class TestClientSubdomainData(unittest.TestCase):
         model = ClientSubdomainData()
         if include_optional:
             return ClientSubdomainData(
-                data = openapi_client.models.client_subdomain.ClientSubdomain(
+                data = watchtowr_api_sdk.models.client_subdomain.ClientSubdomain(
                     type = 'subdomain', 
                     source = 'module-adversarysight-crtsh-domain-backend', 
                     status = 'verified', 
@@ -46,7 +46,7 @@ class TestClientSubdomainData(unittest.TestCase):
                     id = 123, 
                     name = 'subdomain.watchtowr.com', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 
@@ -59,7 +59,7 @@ class TestClientSubdomainData(unittest.TestCase):
             )
         else:
             return ClientSubdomainData(
-                data = openapi_client.models.client_subdomain.ClientSubdomain(
+                data = watchtowr_api_sdk.models.client_subdomain.ClientSubdomain(
                     type = 'subdomain', 
                     source = 'module-adversarysight-crtsh-domain-backend', 
                     status = 'verified', 
@@ -69,7 +69,7 @@ class TestClientSubdomainData(unittest.TestCase):
                     id = 123, 
                     name = 'subdomain.watchtowr.com', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.create_client_seed_data_request_body import CreateClientSeedDataRequestBody
+from watchtowr_api_sdk.models.create_client_seed_data_request_body import CreateClientSeedDataRequestBody
 
 class TestCreateClientSeedDataRequestBody(unittest.TestCase):
     """CreateClientSeedDataRequestBody unit test stubs"""

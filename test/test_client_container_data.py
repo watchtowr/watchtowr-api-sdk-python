@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_container_data import ClientContainerData
+from watchtowr_api_sdk.models.client_container_data import ClientContainerData
 
 class TestClientContainerData(unittest.TestCase):
     """ClientContainerData unit test stubs"""
@@ -36,7 +36,7 @@ class TestClientContainerData(unittest.TestCase):
         model = ClientContainerData()
         if include_optional:
             return ClientContainerData(
-                data = openapi_client.models.client_container.ClientContainer(
+                data = watchtowr_api_sdk.models.client_container.ClientContainer(
                     type = 'container', 
                     source = 'module-adversarysight-ecr-containers-discovery', 
                     status = 'verified', 
@@ -49,7 +49,7 @@ class TestClientContainerData(unittest.TestCase):
                     platform = 'docker', 
                     url = 'https://hub.docker.com/r/watchtowr/example-container', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 
@@ -58,7 +58,7 @@ class TestClientContainerData(unittest.TestCase):
             )
         else:
             return ClientContainerData(
-                data = openapi_client.models.client_container.ClientContainer(
+                data = watchtowr_api_sdk.models.client_container.ClientContainer(
                     type = 'container', 
                     source = 'module-adversarysight-ecr-containers-discovery', 
                     status = 'verified', 
@@ -71,7 +71,7 @@ class TestClientContainerData(unittest.TestCase):
                     platform = 'docker', 
                     url = 'https://hub.docker.com/r/watchtowr/example-container', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 

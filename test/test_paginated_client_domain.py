@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.paginated_client_domain import PaginatedClientDomain
+from watchtowr_api_sdk.models.paginated_client_domain import PaginatedClientDomain
 
 class TestPaginatedClientDomain(unittest.TestCase):
     """PaginatedClientDomain unit test stubs"""
@@ -37,7 +37,7 @@ class TestPaginatedClientDomain(unittest.TestCase):
         if include_optional:
             return PaginatedClientDomain(
                 data = [
-                    openapi_client.models.client_domain.ClientDomain(
+                    watchtowr_api_sdk.models.client_domain.ClientDomain(
                         type = 'domain', 
                         source = 'watchtowr-cloud-integration-aws-hosts', 
                         status = 'verified', 
@@ -47,7 +47,7 @@ class TestPaginatedClientDomain(unittest.TestCase):
                         id = 123, 
                         name = 'watchtowr.com', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
@@ -58,13 +58,13 @@ class TestPaginatedClientDomain(unittest.TestCase):
                         criticality = 'Medium', 
                         infrastructure = {"CDN":"AWS CloudFront"}, )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return PaginatedClientDomain(
                 data = [
-                    openapi_client.models.client_domain.ClientDomain(
+                    watchtowr_api_sdk.models.client_domain.ClientDomain(
                         type = 'domain', 
                         source = 'watchtowr-cloud-integration-aws-hosts', 
                         status = 'verified', 
@@ -74,7 +74,7 @@ class TestPaginatedClientDomain(unittest.TestCase):
                         id = 123, 
                         name = 'watchtowr.com', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
@@ -85,7 +85,7 @@ class TestPaginatedClientDomain(unittest.TestCase):
                         criticality = 'Medium', 
                         infrastructure = {"CDN":"AWS CloudFront"}, )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

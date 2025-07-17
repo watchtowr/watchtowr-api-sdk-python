@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.create_client_note_dto import CreateClientNoteDto
+from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto
 
 class TestCreateClientNoteDto(unittest.TestCase):
     """CreateClientNoteDto unit test stubs"""

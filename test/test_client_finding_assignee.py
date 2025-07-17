@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_finding_assignee import ClientFindingAssignee
+from watchtowr_api_sdk.models.client_finding_assignee import ClientFindingAssignee
 
 class TestClientFindingAssignee(unittest.TestCase):
     """ClientFindingAssignee unit test stubs"""

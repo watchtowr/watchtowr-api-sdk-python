@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.update_client_custom_property_dto import UpdateClientCustomPropertyDto
+from watchtowr_api_sdk.models.update_client_custom_property_dto import UpdateClientCustomPropertyDto
 
 class TestUpdateClientCustomPropertyDto(unittest.TestCase):
     """UpdateClientCustomPropertyDto unit test stubs"""

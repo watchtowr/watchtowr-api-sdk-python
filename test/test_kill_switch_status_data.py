@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.kill_switch_status_data import KillSwitchStatusData
+from watchtowr_api_sdk.models.kill_switch_status_data import KillSwitchStatusData
 
 class TestKillSwitchStatusData(unittest.TestCase):
     """KillSwitchStatusData unit test stubs"""
@@ -36,13 +36,13 @@ class TestKillSwitchStatusData(unittest.TestCase):
         model = KillSwitchStatusData()
         if include_optional:
             return KillSwitchStatusData(
-                data = openapi_client.models.kill_switch_status_response.KillSwitchStatusResponse(
+                data = watchtowr_api_sdk.models.kill_switch_status_response.KillSwitchStatusResponse(
                     enabled = True, 
                     allow_client_control = True, )
             )
         else:
             return KillSwitchStatusData(
-                data = openapi_client.models.kill_switch_status_response.KillSwitchStatusResponse(
+                data = watchtowr_api_sdk.models.kill_switch_status_response.KillSwitchStatusResponse(
                     enabled = True, 
                     allow_client_control = True, ),
         )

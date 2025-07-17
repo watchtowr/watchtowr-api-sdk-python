@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.hunt_detail_response import HuntDetailResponse
+from watchtowr_api_sdk.models.hunt_detail_response import HuntDetailResponse
 
 class TestHuntDetailResponse(unittest.TestCase):
     """HuntDetailResponse unit test stubs"""
@@ -36,7 +36,7 @@ class TestHuntDetailResponse(unittest.TestCase):
         model = HuntDetailResponse()
         if include_optional:
             return HuntDetailResponse(
-                data = openapi_client.models.hunt_detail.HuntDetail(
+                data = watchtowr_api_sdk.models.hunt_detail.HuntDetail(
                     id = 1, 
                     priority = 'high', 
                     type = 'bespoke', 
@@ -45,6 +45,7 @@ class TestHuntDetailResponse(unittest.TestCase):
                     total_findings = 1, 
                     total_assets = 10, 
                     hunt_request_type = 'Others', 
+                    rapid_exposure_mechanism = 'impactLessPoc', 
                     title = 'Hunt for ITW Exploited Command Injection in Palo Alto Networks GlobalProtect Gateway (CVE-2024-3400)', 
                     description = '"watchTowr performed a PROACTIVE hunt to determine if there are any instances of Palo Alto GlobalProtect Gateway exposed externally.
 
@@ -76,7 +77,7 @@ Palo Alto state that the GlobalProtect gateway and device telemetry must be enab
             )
         else:
             return HuntDetailResponse(
-                data = openapi_client.models.hunt_detail.HuntDetail(
+                data = watchtowr_api_sdk.models.hunt_detail.HuntDetail(
                     id = 1, 
                     priority = 'high', 
                     type = 'bespoke', 
@@ -85,6 +86,7 @@ Palo Alto state that the GlobalProtect gateway and device telemetry must be enab
                     total_findings = 1, 
                     total_assets = 10, 
                     hunt_request_type = 'Others', 
+                    rapid_exposure_mechanism = 'impactLessPoc', 
                     title = 'Hunt for ITW Exploited Command Injection in Palo Alto Networks GlobalProtect Gateway (CVE-2024-3400)', 
                     description = '"watchTowr performed a PROACTIVE hunt to determine if there are any instances of Palo Alto GlobalProtect Gateway exposed externally.
 

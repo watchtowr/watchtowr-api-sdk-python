@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.update_kill_switch_data import UpdateKillSwitchData
+from watchtowr_api_sdk.models.update_kill_switch_data import UpdateKillSwitchData
 
 class TestUpdateKillSwitchData(unittest.TestCase):
     """UpdateKillSwitchData unit test stubs"""
@@ -36,13 +36,13 @@ class TestUpdateKillSwitchData(unittest.TestCase):
         model = UpdateKillSwitchData()
         if include_optional:
             return UpdateKillSwitchData(
-                data = openapi_client.models.update_kill_switch_response.UpdateKillSwitchResponse(
+                data = watchtowr_api_sdk.models.update_kill_switch_response.UpdateKillSwitchResponse(
                     enabled = True, 
                     message = 'Kill switch updated successfully', )
             )
         else:
             return UpdateKillSwitchData(
-                data = openapi_client.models.update_kill_switch_response.UpdateKillSwitchResponse(
+                data = watchtowr_api_sdk.models.update_kill_switch_response.UpdateKillSwitchResponse(
                     enabled = True, 
                     message = 'Kill switch updated successfully', ),
         )

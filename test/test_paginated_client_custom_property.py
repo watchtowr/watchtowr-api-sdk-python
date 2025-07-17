@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.paginated_client_custom_property import PaginatedClientCustomProperty
+from watchtowr_api_sdk.models.paginated_client_custom_property import PaginatedClientCustomProperty
 
 class TestPaginatedClientCustomProperty(unittest.TestCase):
     """PaginatedClientCustomProperty unit test stubs"""
@@ -37,25 +37,25 @@ class TestPaginatedClientCustomProperty(unittest.TestCase):
         if include_optional:
             return PaginatedClientCustomProperty(
                 data = [
-                    openapi_client.models.client_custom_property.ClientCustomProperty(
+                    watchtowr_api_sdk.models.client_custom_property.ClientCustomProperty(
                         id = 1, 
                         key = 'Severity', 
                         value = 'Low', 
                         is_preset = False, )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return PaginatedClientCustomProperty(
                 data = [
-                    openapi_client.models.client_custom_property.ClientCustomProperty(
+                    watchtowr_api_sdk.models.client_custom_property.ClientCustomProperty(
                         id = 1, 
                         key = 'Severity', 
                         value = 'Low', 
                         is_preset = False, )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

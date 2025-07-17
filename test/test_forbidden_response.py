@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.forbidden_response import ForbiddenResponse
+from watchtowr_api_sdk.models.forbidden_response import ForbiddenResponse
 
 class TestForbiddenResponse(unittest.TestCase):
     """ForbiddenResponse unit test stubs"""
@@ -36,12 +36,12 @@ class TestForbiddenResponse(unittest.TestCase):
         model = ForbiddenResponse()
         if include_optional:
             return ForbiddenResponse(
-                message = 'Forbidden',
+                message = 'Insufficient permissions',
                 status_code = 403
             )
         else:
             return ForbiddenResponse(
-                message = 'Forbidden',
+                message = 'Insufficient permissions',
                 status_code = 403,
         )
         """

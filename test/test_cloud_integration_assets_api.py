@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.cloud_integration_assets_api import CloudIntegrationAssetsApi
+from watchtowr_api_sdk.api.cloud_integration_assets_api import CloudIntegrationAssetsApi
 
 
 class TestCloudIntegrationAssetsApi(unittest.TestCase):

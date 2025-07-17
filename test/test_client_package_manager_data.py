@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_package_manager_data import ClientPackageManagerData
+from watchtowr_api_sdk.models.client_package_manager_data import ClientPackageManagerData
 
 class TestClientPackageManagerData(unittest.TestCase):
     """ClientPackageManagerData unit test stubs"""
@@ -36,7 +36,7 @@ class TestClientPackageManagerData(unittest.TestCase):
         model = ClientPackageManagerData()
         if include_optional:
             return ClientPackageManagerData(
-                data = openapi_client.models.client_package_manager.ClientPackageManager(
+                data = watchtowr_api_sdk.models.client_package_manager.ClientPackageManager(
                     type = 'packageManager', 
                     name = 'example-package', 
                     source = 'module-adversarysight-npmjs-project-discovery', 
@@ -48,7 +48,7 @@ class TestClientPackageManagerData(unittest.TestCase):
                     url = 'https://www.npmjs.com/package/example-package', 
                     platform = 'npm', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 
@@ -57,7 +57,7 @@ class TestClientPackageManagerData(unittest.TestCase):
             )
         else:
             return ClientPackageManagerData(
-                data = openapi_client.models.client_package_manager.ClientPackageManager(
+                data = watchtowr_api_sdk.models.client_package_manager.ClientPackageManager(
                     type = 'packageManager', 
                     name = 'example-package', 
                     source = 'module-adversarysight-npmjs-project-discovery', 
@@ -69,7 +69,7 @@ class TestClientPackageManagerData(unittest.TestCase):
                     url = 'https://www.npmjs.com/package/example-package', 
                     platform = 'npm', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 

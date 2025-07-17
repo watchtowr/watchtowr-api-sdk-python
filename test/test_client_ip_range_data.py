@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_ip_range_data import ClientIpRangeData
+from watchtowr_api_sdk.models.client_ip_range_data import ClientIpRangeData
 
 class TestClientIpRangeData(unittest.TestCase):
     """ClientIpRangeData unit test stubs"""
@@ -36,7 +36,7 @@ class TestClientIpRangeData(unittest.TestCase):
         model = ClientIpRangeData()
         if include_optional:
             return ClientIpRangeData(
-                data = openapi_client.models.client_ip_range.ClientIpRange(
+                data = watchtowr_api_sdk.models.client_ip_range.ClientIpRange(
                     type = 'ipRange', 
                     source = 'module-continuousassurance-controller', 
                     status = 'pending', 
@@ -49,7 +49,7 @@ class TestClientIpRangeData(unittest.TestCase):
                     desc = 'IpRange Eg 1', 
                     country = 'SG', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 
@@ -58,7 +58,7 @@ class TestClientIpRangeData(unittest.TestCase):
             )
         else:
             return ClientIpRangeData(
-                data = openapi_client.models.client_ip_range.ClientIpRange(
+                data = watchtowr_api_sdk.models.client_ip_range.ClientIpRange(
                     type = 'ipRange', 
                     source = 'module-continuousassurance-controller', 
                     status = 'pending', 
@@ -71,7 +71,7 @@ class TestClientIpRangeData(unittest.TestCase):
                     desc = 'IpRange Eg 1', 
                     country = 'SG', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 

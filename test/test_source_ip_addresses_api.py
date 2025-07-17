@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.source_ip_addresses_api import SourceIPAddressesApi
+from watchtowr_api_sdk.api.source_ip_addresses_api import SourceIPAddressesApi
 
 
 class TestSourceIPAddressesApi(unittest.TestCase):

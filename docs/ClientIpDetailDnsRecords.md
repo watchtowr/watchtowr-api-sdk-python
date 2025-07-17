@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.client_ip_detail_dns_records import ClientIpDetailDnsRecords
+from watchtowr_api_sdk.models.client_ip_detail_dns_records import ClientIpDetailDnsRecords
 
 # TODO update the JSON string below
 json = "{}"

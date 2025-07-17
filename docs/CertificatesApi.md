@@ -1,4 +1,4 @@
-# openapi_client.CertificatesApi
+# watchtowr_api_sdk.CertificatesApi
 
 All URIs are relative to *https://your-tenant-id.sg.client.watchtowr.io*
 
@@ -20,14 +20,14 @@ Get the details of a specific TLS/SSL certificate.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_service_information_response_data import ClientServiceInformationResponseData
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_service_information_response_data import ClientServiceInformationResponseData
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -37,14 +37,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CertificatesApi(api_client)
+    api_instance = watchtowr_api_sdk.CertificatesApi(api_client)
     id = 3.4 # float | The asset ID of the certificate to retrieve.
 
     try:
@@ -101,14 +101,14 @@ List all discovered TLS/SSL certificate assets, ordered by discovery date.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.paginated_service_information_response import PaginatedServiceInformationResponse
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.paginated_service_information_response import PaginatedServiceInformationResponse
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -118,26 +118,26 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CertificatesApi(api_client)
+    api_instance = watchtowr_api_sdk.CertificatesApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
-    created_from = '2022-02-22 22:00:00' # datetime | Filter certificates created after a given date and time. (optional)
-    created_to = '2022-02-23 22:00:00' # datetime | Filter certificates created before a given date and time. (optional)
-    updated_from = '2022-02-22 22:00:00' # datetime | Filter certificates updated after a given date and time. (optional)
-    updated_to = '2022-02-23 22:00:00' # datetime | Filter certificates updated before a given date and time. (optional)
-    not_after_from = '2022-02-22 22:00:00' # datetime | Filter certificates that do not expire after a given date and time. (optional)
-    not_after_to = '2022-02-23 22:00:00' # datetime | Filter certificates that do not expire before a given date and time. (optional)
+    created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter certificates created after a given date and time. (optional)
+    created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter certificates created before a given date and time. (optional)
+    updated_from = '2013-10-20T19:20:30+01:00' # datetime | Filter certificates updated after a given date and time. (optional)
+    updated_to = '2013-10-20T19:20:30+01:00' # datetime | Filter certificates updated before a given date and time. (optional)
+    not_after_from = '2013-10-20T19:20:30+01:00' # datetime | Filter certificates that do not expire after a given date and time. (optional)
+    not_after_to = '2013-10-20T19:20:30+01:00' # datetime | Filter certificates that do not expire before a given date and time. (optional)
     subject_common_name_search = 'example.com' # str | Search certificates by Subject Common Name. (optional)
     subject_alt_name_search = 'example.com' # str | Search certificates by Subject Alt Name. (optional)
     subject_organisation_search = 'example' # str | Search by subject organization. (optional)
-    subject_countries = ['SG,US'] # List[str] | Filter certificates by a list of comma separated subject countries that they're related to. (optional)
+    subject_countries = ['subject_countries_example'] # List[str] | Filter certificates by a list of comma separated subject countries that they're related to. (optional)
     asset_name_search = 'example.watchTowr.com' # str | Search Certificates by the name of the associated asset. (optional)
     statuses = 'Expired,Expiring Within 30 Days,Valid' # str | Filter certificates by a list of comma separated statuses that they're tagged with. (optional)
     business_unit_ids = '1,2,3' # str | Filter certificates by a list of comma separated business unit IDs they're related to. (optional)

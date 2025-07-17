@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.ip_ranges_api import IPRangesApi
+from watchtowr_api_sdk.api.ip_ranges_api import IPRangesApi
 
 
 class TestIPRangesApi(unittest.TestCase):

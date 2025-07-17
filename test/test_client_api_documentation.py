@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_api_documentation import ClientApiDocumentation
+from watchtowr_api_sdk.models.client_api_documentation import ClientApiDocumentation
 
 class TestClientApiDocumentation(unittest.TestCase):
     """ClientApiDocumentation unit test stubs"""
@@ -36,7 +36,7 @@ class TestClientApiDocumentation(unittest.TestCase):
         model = ClientApiDocumentation()
         if include_optional:
             return ClientApiDocumentation(
-                data = openapi_client.models.client_api_documentation_asset.ClientApiDocumentationAsset(
+                data = watchtowr_api_sdk.models.client_api_documentation_asset.ClientApiDocumentationAsset(
                     id = 1, 
                     type = 'apiDocumentation', 
                     name = 'example_docs/example-swagger-hub', 
@@ -50,7 +50,7 @@ class TestClientApiDocumentation(unittest.TestCase):
             )
         else:
             return ClientApiDocumentation(
-                data = openapi_client.models.client_api_documentation_asset.ClientApiDocumentationAsset(
+                data = watchtowr_api_sdk.models.client_api_documentation_asset.ClientApiDocumentationAsset(
                     id = 1, 
                     type = 'apiDocumentation', 
                     name = 'example_docs/example-swagger-hub', 

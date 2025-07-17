@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_source_ips_addresses import ClientSourceIpsAddresses
+from watchtowr_api_sdk.models.client_source_ips_addresses import ClientSourceIpsAddresses
 
 class TestClientSourceIpsAddresses(unittest.TestCase):
     """ClientSourceIpsAddresses unit test stubs"""
@@ -36,11 +36,11 @@ class TestClientSourceIpsAddresses(unittest.TestCase):
         model = ClientSourceIpsAddresses()
         if include_optional:
             return ClientSourceIpsAddresses(
-                data = [{"name":"123.123.123.123/24","description":"Used for outbound network activities (Singapore)"},{"name":"456.456.456.456/24","description":"Used for outbound network activities (Australia)"},{"name":"789.789.789.789","description":"Used for WAF and whitelisting checks from Singapore (do not whitelist)"},{"name":"wtwr.to","description":"Used for blind XSS payloads and callbacks"}]
+                data = [{"name":"123.123.123.123/24","description":"Used for outbound network activities (Singapore)","region":"SG","whitelist":true},{"name":"456.456.456.456/24","description":"Used for outbound network activities (Australia)","region":"AU","whitelist":true},{"name":"789.789.789.789","description":"Used for WAF and whitelisting checks from Singapore (do not whitelist)","region":"SG","whitelist":false},{"name":"wtwr.to","description":"Used for blind XSS payloads and callbacks","region":"US","whitelist":true}]
             )
         else:
             return ClientSourceIpsAddresses(
-                data = [{"name":"123.123.123.123/24","description":"Used for outbound network activities (Singapore)"},{"name":"456.456.456.456/24","description":"Used for outbound network activities (Australia)"},{"name":"789.789.789.789","description":"Used for WAF and whitelisting checks from Singapore (do not whitelist)"},{"name":"wtwr.to","description":"Used for blind XSS payloads and callbacks"}],
+                data = [{"name":"123.123.123.123/24","description":"Used for outbound network activities (Singapore)","region":"SG","whitelist":true},{"name":"456.456.456.456/24","description":"Used for outbound network activities (Australia)","region":"AU","whitelist":true},{"name":"789.789.789.789","description":"Used for WAF and whitelisting checks from Singapore (do not whitelist)","region":"SG","whitelist":false},{"name":"wtwr.to","description":"Used for blind XSS payloads and callbacks","region":"US","whitelist":true}],
         )
         """
 

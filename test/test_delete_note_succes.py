@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.delete_note_succes import DeleteNoteSucces
+from watchtowr_api_sdk.models.delete_note_succes import DeleteNoteSucces
 
 class TestDeleteNoteSucces(unittest.TestCase):
     """DeleteNoteSucces unit test stubs"""

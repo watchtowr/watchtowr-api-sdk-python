@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.findings_api import FindingsApi
+from watchtowr_api_sdk.api.findings_api import FindingsApi
 
 
 class TestFindingsApi(unittest.TestCase):

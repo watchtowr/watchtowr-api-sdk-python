@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.api_documentation_api import APIDocumentationApi
+from watchtowr_api_sdk.api.api_documentation_api import APIDocumentationApi
 
 
 class TestAPIDocumentationApi(unittest.TestCase):

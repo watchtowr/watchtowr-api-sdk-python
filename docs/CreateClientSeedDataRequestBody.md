@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.create_client_seed_data_request_body import CreateClientSeedDataRequestBody
+from watchtowr_api_sdk.models.create_client_seed_data_request_body import CreateClientSeedDataRequestBody
 
 # TODO update the JSON string below
 json = "{}"

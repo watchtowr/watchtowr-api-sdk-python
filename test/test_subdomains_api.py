@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.subdomains_api import SubdomainsApi
+from watchtowr_api_sdk.api.subdomains_api import SubdomainsApi
 
 
 class TestSubdomainsApi(unittest.TestCase):

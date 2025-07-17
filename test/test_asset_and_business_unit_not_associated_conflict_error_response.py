@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.asset_and_business_unit_not_associated_conflict_error_response import AssetAndBusinessUnitNotAssociatedConflictErrorResponse
+from watchtowr_api_sdk.models.asset_and_business_unit_not_associated_conflict_error_response import AssetAndBusinessUnitNotAssociatedConflictErrorResponse
 
 class TestAssetAndBusinessUnitNotAssociatedConflictErrorResponse(unittest.TestCase):
     """AssetAndBusinessUnitNotAssociatedConflictErrorResponse unit test stubs"""

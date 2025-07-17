@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.client_api_documentation_asset import ClientApiDocumentationAsset
+from watchtowr_api_sdk.models.client_api_documentation_asset import ClientApiDocumentationAsset
 
 # TODO update the JSON string below
 json = "{}"

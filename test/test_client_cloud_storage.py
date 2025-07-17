@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_cloud_storage import ClientCloudStorage
+from watchtowr_api_sdk.models.client_cloud_storage import ClientCloudStorage
 
 class TestClientCloudStorage(unittest.TestCase):
     """ClientCloudStorage unit test stubs"""
@@ -47,7 +47,7 @@ class TestClientCloudStorage(unittest.TestCase):
                 platform = 'awss3',
                 url = 'watchtowr-s3-bucket.s3.amazonaws.com',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],
@@ -67,7 +67,7 @@ class TestClientCloudStorage(unittest.TestCase):
                 platform = 'awss3',
                 url = 'watchtowr-s3-bucket.s3.amazonaws.com',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],

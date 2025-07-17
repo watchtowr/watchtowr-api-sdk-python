@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_port import ClientPort
+from watchtowr_api_sdk.models.client_port import ClientPort
 
 class TestClientPort(unittest.TestCase):
     """ClientPort unit test stubs"""
@@ -49,7 +49,7 @@ class TestClientPort(unittest.TestCase):
                 banner = 'OpenSSH6.6.1p1 Ubuntu 2ubuntu2.13Ubuntu Linux; protocol 2.0',
                 service = 'ssh',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ]
@@ -69,7 +69,7 @@ class TestClientPort(unittest.TestCase):
                 banner = 'OpenSSH6.6.1p1 Ubuntu 2ubuntu2.13Ubuntu Linux; protocol 2.0',
                 service = 'ssh',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.assets_list_response import AssetsListResponse
+from watchtowr_api_sdk.models.assets_list_response import AssetsListResponse
 
 class TestAssetsListResponse(unittest.TestCase):
     """AssetsListResponse unit test stubs"""
@@ -37,13 +37,13 @@ class TestAssetsListResponse(unittest.TestCase):
         if include_optional:
             return AssetsListResponse(
                 data = [{"type":"repository","source":"Initial Data","status":"verified","created_at":"2021-11-22T22:17:12.000Z","id":"1","country":null,"platform":null,"provider":"test provider","url":null,"name":"test name","businessUnits":[],"discovery_reason":"discovery reason test data","owner":"test owner","live":null,"sub_type":null,"super_type":null,"metadata":{}},{"type":"repository","source":"module-github-enumeration-v0.1","status":"verified","created_at":"2021-11-22T22:17:12.000Z","id":"10","country":null,"platform":null,"provider":"github","url":"https://github.com","name":"test-name","businessUnits":[],"discovery_reason":null,"owner":"test-owner","live":null,"sub_type":null,"super_type":null,"metadata":{}},{"type":"subdomain","source":"subdomain.example.com","status":"VerifiedOutOfScope","created_at":"2022-01-20T19:15:56.000Z","id":"4678","country":null,"platform":null,"provider":null,"url":null,"name":"subdomain.example.com","businessUnits":[],"discovery_reason":null,"owner":null,"live":false,"sub_type":null,"super_type":null,"metadata":{}},{"type":"cloudAsset","source":"test-module-controller-1-0","status":"verified","created_at":"2024-06-05T02:31:28.000Z","id":"1","country":null,"platform":null,"provider":null,"url":"123.123.123.123","name":"example-cloudAsset-1","businessUnits":[],"discovery_reason":null,"owner":null,"live":false,"sub_type":"Amazon RDS","super_type":"Databases","metadata":{}}],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return AssetsListResponse(
                 data = [{"type":"repository","source":"Initial Data","status":"verified","created_at":"2021-11-22T22:17:12.000Z","id":"1","country":null,"platform":null,"provider":"test provider","url":null,"name":"test name","businessUnits":[],"discovery_reason":"discovery reason test data","owner":"test owner","live":null,"sub_type":null,"super_type":null,"metadata":{}},{"type":"repository","source":"module-github-enumeration-v0.1","status":"verified","created_at":"2021-11-22T22:17:12.000Z","id":"10","country":null,"platform":null,"provider":"github","url":"https://github.com","name":"test-name","businessUnits":[],"discovery_reason":null,"owner":"test-owner","live":null,"sub_type":null,"super_type":null,"metadata":{}},{"type":"subdomain","source":"subdomain.example.com","status":"VerifiedOutOfScope","created_at":"2022-01-20T19:15:56.000Z","id":"4678","country":null,"platform":null,"provider":null,"url":null,"name":"subdomain.example.com","businessUnits":[],"discovery_reason":null,"owner":null,"live":false,"sub_type":null,"super_type":null,"metadata":{}},{"type":"cloudAsset","source":"test-module-controller-1-0","status":"verified","created_at":"2024-06-05T02:31:28.000Z","id":"1","country":null,"platform":null,"provider":null,"url":"123.123.123.123","name":"example-cloudAsset-1","businessUnits":[],"discovery_reason":null,"owner":null,"live":false,"sub_type":"Amazon RDS","super_type":"Databases","metadata":{}}],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

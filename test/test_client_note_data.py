@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_note_data import ClientNoteData
+from watchtowr_api_sdk.models.client_note_data import ClientNoteData
 
 class TestClientNoteData(unittest.TestCase):
     """ClientNoteData unit test stubs"""
@@ -36,7 +36,7 @@ class TestClientNoteData(unittest.TestCase):
         model = ClientNoteData()
         if include_optional:
             return ClientNoteData(
-                data = openapi_client.models.client_note.ClientNote(
+                data = watchtowr_api_sdk.models.client_note.ClientNote(
                     id = 1, 
                     note = 'Passed to the engineering team. Review on 01/07/2024', 
                     note_type = 'Domain', 
@@ -47,7 +47,7 @@ class TestClientNoteData(unittest.TestCase):
             )
         else:
             return ClientNoteData(
-                data = openapi_client.models.client_note.ClientNote(
+                data = watchtowr_api_sdk.models.client_note.ClientNote(
                     id = 1, 
                     note = 'Passed to the engineering team. Review on 01/07/2024', 
                     note_type = 'Domain', 

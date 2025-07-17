@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.activity_log_api import ActivityLogApi
+from watchtowr_api_sdk.api.activity_log_api import ActivityLogApi
 
 
 class TestActivityLogApi(unittest.TestCase):

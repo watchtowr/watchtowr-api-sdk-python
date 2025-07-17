@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.service_information_asset import ServiceInformationAsset
+from watchtowr_api_sdk.models.service_information_asset import ServiceInformationAsset
 
 class TestServiceInformationAsset(unittest.TestCase):
     """ServiceInformationAsset unit test stubs"""
@@ -40,7 +40,7 @@ class TestServiceInformationAsset(unittest.TestCase):
                 name = '123.123.123.123',
                 type = 'ip',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ]
@@ -51,7 +51,7 @@ class TestServiceInformationAsset(unittest.TestCase):
                 name = '123.123.123.123',
                 type = 'ip',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],

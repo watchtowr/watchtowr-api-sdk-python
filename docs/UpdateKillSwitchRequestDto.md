@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.update_kill_switch_request_dto import UpdateKillSwitchRequestDto
+from watchtowr_api_sdk.models.update_kill_switch_request_dto import UpdateKillSwitchRequestDto
 
 # TODO update the JSON string below
 json = "{}"

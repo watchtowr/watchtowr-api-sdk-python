@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.hunt_detail import HuntDetail
+from watchtowr_api_sdk.models.hunt_detail import HuntDetail
 
 class TestHuntDetail(unittest.TestCase):
     """HuntDetail unit test stubs"""
@@ -44,6 +44,7 @@ class TestHuntDetail(unittest.TestCase):
                 total_findings = 1,
                 total_assets = 10,
                 hunt_request_type = 'Others',
+                rapid_exposure_mechanism = 'impactLessPoc',
                 title = 'Hunt for ITW Exploited Command Injection in Palo Alto Networks GlobalProtect Gateway (CVE-2024-3400)',
                 description = '"watchTowr performed a PROACTIVE hunt to determine if there are any instances of Palo Alto GlobalProtect Gateway exposed externally.
 

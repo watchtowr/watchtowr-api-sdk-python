@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.asset import Asset
+from watchtowr_api_sdk.models.asset import Asset
 
 class TestAsset(unittest.TestCase):
     """Asset unit test stubs"""

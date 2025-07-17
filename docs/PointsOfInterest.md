@@ -16,11 +16,12 @@ Name | Type | Description | Notes
 **asset_type** | **str** | Asset type | 
 **business_units** | [**List[ClientBusinessUnit]**](ClientBusinessUnit.md) | Business unit | 
 **last_seen** | **datetime** | Last seen at | [optional] 
+**is_concerning** | **bool** | Whether the Point of Interest is concerning | 
 
 ## Example
 
 ```python
-from openapi_client.models.points_of_interest import PointsOfInterest
+from watchtowr_api_sdk.models.points_of_interest import PointsOfInterest
 
 # TODO update the JSON string below
 json = "{}"

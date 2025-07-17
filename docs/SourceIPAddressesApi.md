@@ -1,4 +1,4 @@
-# openapi_client.SourceIPAddressesApi
+# watchtowr_api_sdk.SourceIPAddressesApi
 
 All URIs are relative to *https://your-tenant-id.sg.client.watchtowr.io*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_list_source_ip_addresses**
-> ClientSourceIpsAddresses get_list_source_ip_addresses()
+> ClientSourceIpsAddresses get_list_source_ip_addresses(whitelist=whitelist, region=region)
 
 List Testing Infrastructure
 
@@ -19,14 +19,14 @@ List IP addresses and hostnames used by watchTowr for all outbound platform traf
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_source_ips_addresses import ClientSourceIpsAddresses
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_source_ips_addresses import ClientSourceIpsAddresses
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -36,18 +36,20 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SourceIPAddressesApi(api_client)
+    api_instance = watchtowr_api_sdk.SourceIPAddressesApi(api_client)
+    whitelist = True # bool | Filter by whitelist status (true for whitelisted items only) (optional)
+    region = 'region_example' # str | Filter by region (optional)
 
     try:
         # List Testing Infrastructure
-        api_response = api_instance.get_list_source_ip_addresses()
+        api_response = api_instance.get_list_source_ip_addresses(whitelist=whitelist, region=region)
         print("The response of SourceIPAddressesApi->get_list_source_ip_addresses:\n")
         pprint(api_response)
     except Exception as e:
@@ -58,7 +60,11 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **whitelist** | **bool**| Filter by whitelist status (true for whitelisted items only) | [optional] 
+ **region** | **str**| Filter by region | [optional] 
 
 ### Return type
 

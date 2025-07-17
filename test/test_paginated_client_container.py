@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.paginated_client_container import PaginatedClientContainer
+from watchtowr_api_sdk.models.paginated_client_container import PaginatedClientContainer
 
 class TestPaginatedClientContainer(unittest.TestCase):
     """PaginatedClientContainer unit test stubs"""
@@ -37,7 +37,7 @@ class TestPaginatedClientContainer(unittest.TestCase):
         if include_optional:
             return PaginatedClientContainer(
                 data = [
-                    openapi_client.models.client_container.ClientContainer(
+                    watchtowr_api_sdk.models.client_container.ClientContainer(
                         type = 'container', 
                         source = 'module-adversarysight-ecr-containers-discovery', 
                         status = 'verified', 
@@ -50,20 +50,20 @@ class TestPaginatedClientContainer(unittest.TestCase):
                         platform = 'docker', 
                         url = 'https://hub.docker.com/r/watchtowr/example-container', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
                         custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"container","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":10,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"container","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return PaginatedClientContainer(
                 data = [
-                    openapi_client.models.client_container.ClientContainer(
+                    watchtowr_api_sdk.models.client_container.ClientContainer(
                         type = 'container', 
                         source = 'module-adversarysight-ecr-containers-discovery', 
                         status = 'verified', 
@@ -76,14 +76,14 @@ class TestPaginatedClientContainer(unittest.TestCase):
                         platform = 'docker', 
                         url = 'https://hub.docker.com/r/watchtowr/example-container', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
                         custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"container","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":10,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"container","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

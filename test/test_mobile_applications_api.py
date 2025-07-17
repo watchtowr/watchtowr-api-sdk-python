@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.mobile_applications_api import MobileApplicationsApi
+from watchtowr_api_sdk.api.mobile_applications_api import MobileApplicationsApi
 
 
 class TestMobileApplicationsApi(unittest.TestCase):

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.update_client_cloud_asset_status_dto import UpdateClientCloudAssetStatusDto
+from watchtowr_api_sdk.models.update_client_cloud_asset_status_dto import UpdateClientCloudAssetStatusDto
 
 class TestUpdateClientCloudAssetStatusDto(unittest.TestCase):
     """UpdateClientCloudAssetStatusDto unit test stubs"""

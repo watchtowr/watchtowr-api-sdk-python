@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.unprocessable_content import UnprocessableContent
+from watchtowr_api_sdk.models.unprocessable_content import UnprocessableContent
 
 class TestUnprocessableContent(unittest.TestCase):
     """UnprocessableContent unit test stubs"""

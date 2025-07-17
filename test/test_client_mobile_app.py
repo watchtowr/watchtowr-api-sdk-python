@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_mobile_app import ClientMobileApp
+from watchtowr_api_sdk.models.client_mobile_app import ClientMobileApp
 
 class TestClientMobileApp(unittest.TestCase):
     """ClientMobileApp unit test stubs"""
@@ -50,7 +50,7 @@ class TestClientMobileApp(unittest.TestCase):
                 url = 'https://play.google.com/store/apps/details?id=com.watchtowr.android-app',
                 s3path = 'https://s3.amazonaws.com/path-to-file.apk',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],
@@ -73,7 +73,7 @@ class TestClientMobileApp(unittest.TestCase):
                 url = 'https://play.google.com/store/apps/details?id=com.watchtowr.android-app',
                 s3path = 'https://s3.amazonaws.com/path-to-file.apk',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],

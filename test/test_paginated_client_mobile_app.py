@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.paginated_client_mobile_app import PaginatedClientMobileApp
+from watchtowr_api_sdk.models.paginated_client_mobile_app import PaginatedClientMobileApp
 
 class TestPaginatedClientMobileApp(unittest.TestCase):
     """PaginatedClientMobileApp unit test stubs"""
@@ -37,7 +37,7 @@ class TestPaginatedClientMobileApp(unittest.TestCase):
         if include_optional:
             return PaginatedClientMobileApp(
                 data = [
-                    openapi_client.models.client_mobile_app.ClientMobileApp(
+                    watchtowr_api_sdk.models.client_mobile_app.ClientMobileApp(
                         type = 'mobileApp', 
                         source = 'module-adversarysight-playstore-mobileapp-discovery', 
                         status = 'verified', 
@@ -52,20 +52,20 @@ class TestPaginatedClientMobileApp(unittest.TestCase):
                         url = 'https://play.google.com/store/apps/details?id=com.watchtowr.android-app', 
                         s3path = 'https://s3.amazonaws.com/path-to-file.apk', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
                         custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"mobileApp","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"mobileApp","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return PaginatedClientMobileApp(
                 data = [
-                    openapi_client.models.client_mobile_app.ClientMobileApp(
+                    watchtowr_api_sdk.models.client_mobile_app.ClientMobileApp(
                         type = 'mobileApp', 
                         source = 'module-adversarysight-playstore-mobileapp-discovery', 
                         status = 'verified', 
@@ -80,14 +80,14 @@ class TestPaginatedClientMobileApp(unittest.TestCase):
                         url = 'https://play.google.com/store/apps/details?id=com.watchtowr.android-app', 
                         s3path = 'https://s3.amazonaws.com/path-to-file.apk', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
                         custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"mobileApp","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"mobileApp","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

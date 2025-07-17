@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.paginated_hunts import PaginatedHunts
+from watchtowr_api_sdk.models.paginated_hunts import PaginatedHunts
 
 class TestPaginatedHunts(unittest.TestCase):
     """PaginatedHunts unit test stubs"""
@@ -37,7 +37,7 @@ class TestPaginatedHunts(unittest.TestCase):
         if include_optional:
             return PaginatedHunts(
                 data = [
-                    openapi_client.models.hunt.Hunt(
+                    watchtowr_api_sdk.models.hunt.Hunt(
                         id = 1, 
                         priority = 'high', 
                         type = 'bespoke', 
@@ -46,16 +46,17 @@ class TestPaginatedHunts(unittest.TestCase):
                         total_findings = 1, 
                         total_assets = 10, 
                         hunt_request_type = 'Others', 
+                        rapid_exposure_mechanism = 'impactLessPoc', 
                         title = '...', 
                         status = 'completed', )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return PaginatedHunts(
                 data = [
-                    openapi_client.models.hunt.Hunt(
+                    watchtowr_api_sdk.models.hunt.Hunt(
                         id = 1, 
                         priority = 'high', 
                         type = 'bespoke', 
@@ -64,10 +65,11 @@ class TestPaginatedHunts(unittest.TestCase):
                         total_findings = 1, 
                         total_assets = 10, 
                         hunt_request_type = 'Others', 
+                        rapid_exposure_mechanism = 'impactLessPoc', 
                         title = '...', 
                         status = 'completed', )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

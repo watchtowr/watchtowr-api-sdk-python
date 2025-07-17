@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_dns_record_list_data import ClientDnsRecordListData
+from watchtowr_api_sdk.models.client_dns_record_list_data import ClientDnsRecordListData
 
 class TestClientDnsRecordListData(unittest.TestCase):
     """ClientDnsRecordListData unit test stubs"""
@@ -37,13 +37,13 @@ class TestClientDnsRecordListData(unittest.TestCase):
         if include_optional:
             return ClientDnsRecordListData(
                 data = [{"id":1690,"name":"example.com","type":"A","ttl":922,"value":"123.123.123.123","discovered_on":"2024-08-19T08:58:26.000Z"},{"id":1685,"name":"example.com","type":"AAAA","ttl":2687,"value":"0000:0000:0000:0000:0000:ffff:7b7b:7b7b","discovered_on":"2024-08-19T08:58:26.000Z"},{"id":1684,"name":"example.com","type":"NS","ttl":17366,"value":"ns-1342.example.org","discovered_on":"2024-08-19T08:58:26.000Z"}],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return ClientDnsRecordListData(
                 data = [{"id":1690,"name":"example.com","type":"A","ttl":922,"value":"123.123.123.123","discovered_on":"2024-08-19T08:58:26.000Z"},{"id":1685,"name":"example.com","type":"AAAA","ttl":2687,"value":"0000:0000:0000:0000:0000:ffff:7b7b:7b7b","discovered_on":"2024-08-19T08:58:26.000Z"},{"id":1684,"name":"example.com","type":"NS","ttl":17366,"value":"ns-1342.example.org","discovered_on":"2024-08-19T08:58:26.000Z"}],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

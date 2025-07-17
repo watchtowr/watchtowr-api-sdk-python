@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.paginated_client_saas_platform import PaginatedClientSaasPlatform
+from watchtowr_api_sdk.models.paginated_client_saas_platform import PaginatedClientSaasPlatform
 
 class TestPaginatedClientSaasPlatform(unittest.TestCase):
     """PaginatedClientSaasPlatform unit test stubs"""
@@ -37,7 +37,7 @@ class TestPaginatedClientSaasPlatform(unittest.TestCase):
         if include_optional:
             return PaginatedClientSaasPlatform(
                 data = [
-                    openapi_client.models.client_saas_platform.ClientSaasPlatform(
+                    watchtowr_api_sdk.models.client_saas_platform.ClientSaasPlatform(
                         type = 'saasPlatform', 
                         source = 'module-adversarysight-slack-saas-discovery', 
                         status = 'verified', 
@@ -48,20 +48,20 @@ class TestPaginatedClientSaasPlatform(unittest.TestCase):
                         url = 'https://example.slack.com', 
                         provider = 'Slack', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
                         custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"saasPlatform","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"saasPlatform","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return PaginatedClientSaasPlatform(
                 data = [
-                    openapi_client.models.client_saas_platform.ClientSaasPlatform(
+                    watchtowr_api_sdk.models.client_saas_platform.ClientSaasPlatform(
                         type = 'saasPlatform', 
                         source = 'module-adversarysight-slack-saas-discovery', 
                         status = 'verified', 
@@ -72,14 +72,14 @@ class TestPaginatedClientSaasPlatform(unittest.TestCase):
                         url = 'https://example.slack.com', 
                         provider = 'Slack', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
                         custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"saasPlatform","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"saasPlatform","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

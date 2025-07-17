@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_package_manager import ClientPackageManager
+from watchtowr_api_sdk.models.client_package_manager import ClientPackageManager
 
 class TestClientPackageManager(unittest.TestCase):
     """ClientPackageManager unit test stubs"""
@@ -47,7 +47,7 @@ class TestClientPackageManager(unittest.TestCase):
                 url = 'https://www.npmjs.com/package/example-package',
                 platform = 'npm',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],
@@ -67,7 +67,7 @@ class TestClientPackageManager(unittest.TestCase):
                 url = 'https://www.npmjs.com/package/example-package',
                 platform = 'npm',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],

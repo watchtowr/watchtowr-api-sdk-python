@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.hostname_business_unit_ids_dto import HostnameBusinessUnitIDsDTO
+from watchtowr_api_sdk.models.hostname_business_unit_ids_dto import HostnameBusinessUnitIDsDTO
 
 class TestHostnameBusinessUnitIDsDTO(unittest.TestCase):
     """HostnameBusinessUnitIDsDTO unit test stubs"""

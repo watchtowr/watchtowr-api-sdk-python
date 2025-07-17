@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.paginated_client_cloud_storage import PaginatedClientCloudStorage
+from watchtowr_api_sdk.models.paginated_client_cloud_storage import PaginatedClientCloudStorage
 
 class TestPaginatedClientCloudStorage(unittest.TestCase):
     """PaginatedClientCloudStorage unit test stubs"""
@@ -37,7 +37,7 @@ class TestPaginatedClientCloudStorage(unittest.TestCase):
         if include_optional:
             return PaginatedClientCloudStorage(
                 data = [
-                    openapi_client.models.client_cloud_storage.ClientCloudStorage(
+                    watchtowr_api_sdk.models.client_cloud_storage.ClientCloudStorage(
                         type = 'cloudStorage', 
                         source = 'module-adversarysight-cloud-integration-aws-s3-buckets', 
                         status = 'verified', 
@@ -49,20 +49,20 @@ class TestPaginatedClientCloudStorage(unittest.TestCase):
                         platform = 'awss3', 
                         url = 'watchtowr-s3-bucket.s3.amazonaws.com', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
                         custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"cloudStorage","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"cloudStorage","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return PaginatedClientCloudStorage(
                 data = [
-                    openapi_client.models.client_cloud_storage.ClientCloudStorage(
+                    watchtowr_api_sdk.models.client_cloud_storage.ClientCloudStorage(
                         type = 'cloudStorage', 
                         source = 'module-adversarysight-cloud-integration-aws-s3-buckets', 
                         status = 'verified', 
@@ -74,14 +74,14 @@ class TestPaginatedClientCloudStorage(unittest.TestCase):
                         platform = 'awss3', 
                         url = 'watchtowr-s3-bucket.s3.amazonaws.com', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
                         custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"cloudStorage","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"cloudStorage","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

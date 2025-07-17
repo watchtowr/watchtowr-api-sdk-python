@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **str** |  | 
-**status_code** | **float** |  | 
+**message** | **str** | Error message | 
+**status_code** | **float** | HTTP status code | 
 
 ## Example
 
 ```python
-from openapi_client.models.forbidden_response import ForbiddenResponse
+from watchtowr_api_sdk.models.forbidden_response import ForbiddenResponse
 
 # TODO update the JSON string below
 json = "{}"

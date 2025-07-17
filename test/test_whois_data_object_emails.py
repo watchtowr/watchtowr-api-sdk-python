@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.whois_data_object_emails import WhoisDataObjectEmails
+from watchtowr_api_sdk.models.whois_data_object_emails import WhoisDataObjectEmails
 
 class TestWhoisDataObjectEmails(unittest.TestCase):
     """WhoisDataObjectEmails unit test stubs"""

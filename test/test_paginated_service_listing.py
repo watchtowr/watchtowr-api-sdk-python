@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.paginated_service_listing import PaginatedServiceListing
+from watchtowr_api_sdk.models.paginated_service_listing import PaginatedServiceListing
 
 class TestPaginatedServiceListing(unittest.TestCase):
     """PaginatedServiceListing unit test stubs"""
@@ -37,15 +37,11 @@ class TestPaginatedServiceListing(unittest.TestCase):
         if include_optional:
             return PaginatedServiceListing(
                 data = [
-                    openapi_client.models.service_listing.ServiceListing(
+                    watchtowr_api_sdk.models.service_listing.ServiceListing(
                         id = 1, 
                         port_id = 1, 
                         ip = '123.123.123.123', 
-                        domain = 'example.com', 
-                        subdomain = 'sub.example.com', 
-                        asset_type = 'IP', 
-                        asset_id = 1, 
-                        asset_name = '1', 
+                        hostname = 'sub.example.com', 
                         port = 80, 
                         type = 'TCP', 
                         country = 'US', 
@@ -54,38 +50,35 @@ class TestPaginatedServiceListing(unittest.TestCase):
                         source = 'DNS Refresh', 
                         last_seen = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         technologies = [
-                            openapi_client.models.technology.Technology(
+                            watchtowr_api_sdk.models.technology.Technology(
                                 id = 1, 
                                 name = 'APACHE', 
                                 version = '0.1', 
                                 display_name = 'APACHE', )
                             ], 
                         service_types = [
-                            openapi_client.models.service_type.ServiceType(
+                            watchtowr_api_sdk.models.service_type.ServiceType(
                                 id = 1, 
                                 name = 'APACHE', )
                             ], 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
-                            ], )
+                            ], 
+                        is_concerning = True, )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return PaginatedServiceListing(
                 data = [
-                    openapi_client.models.service_listing.ServiceListing(
+                    watchtowr_api_sdk.models.service_listing.ServiceListing(
                         id = 1, 
                         port_id = 1, 
                         ip = '123.123.123.123', 
-                        domain = 'example.com', 
-                        subdomain = 'sub.example.com', 
-                        asset_type = 'IP', 
-                        asset_id = 1, 
-                        asset_name = '1', 
+                        hostname = 'sub.example.com', 
                         port = 80, 
                         type = 'TCP', 
                         country = 'US', 
@@ -94,24 +87,25 @@ class TestPaginatedServiceListing(unittest.TestCase):
                         source = 'DNS Refresh', 
                         last_seen = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         technologies = [
-                            openapi_client.models.technology.Technology(
+                            watchtowr_api_sdk.models.technology.Technology(
                                 id = 1, 
                                 name = 'APACHE', 
                                 version = '0.1', 
                                 display_name = 'APACHE', )
                             ], 
                         service_types = [
-                            openapi_client.models.service_type.ServiceType(
+                            watchtowr_api_sdk.models.service_type.ServiceType(
                                 id = 1, 
                                 name = 'APACHE', )
                             ], 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
-                            ], )
+                            ], 
+                        is_concerning = True, )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

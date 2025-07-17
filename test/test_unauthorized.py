@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.unauthorized import Unauthorized
+from watchtowr_api_sdk.models.unauthorized import Unauthorized
 
 class TestUnauthorized(unittest.TestCase):
     """Unauthorized unit test stubs"""
@@ -36,13 +36,13 @@ class TestUnauthorized(unittest.TestCase):
         model = Unauthorized()
         if include_optional:
             return Unauthorized(
-                status_code = 401,
                 message = 'Unauthorized',
-                error = 'UNAUTHORIZED_REQUEST'
+                status_code = 401
             )
         else:
             return Unauthorized(
-                error = 'UNAUTHORIZED_REQUEST',
+                message = 'Unauthorized',
+                status_code = 401,
         )
         """
 

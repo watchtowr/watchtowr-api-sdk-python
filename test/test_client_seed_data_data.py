@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_seed_data_data import ClientSeedDataData
+from watchtowr_api_sdk.models.client_seed_data_data import ClientSeedDataData
 
 class TestClientSeedDataData(unittest.TestCase):
     """ClientSeedDataData unit test stubs"""
@@ -37,7 +37,7 @@ class TestClientSeedDataData(unittest.TestCase):
         if include_optional:
             return ClientSeedDataData(
                 data = [
-                    openapi_client.models.client_seed_data.ClientSeedData(
+                    watchtowr_api_sdk.models.client_seed_data.ClientSeedData(
                         title = 'Main Website', 
                         type = 'subdomain', 
                         value = 'www.watchTowr.com', )
@@ -46,7 +46,7 @@ class TestClientSeedDataData(unittest.TestCase):
         else:
             return ClientSeedDataData(
                 data = [
-                    openapi_client.models.client_seed_data.ClientSeedData(
+                    watchtowr_api_sdk.models.client_seed_data.ClientSeedData(
                         title = 'Main Website', 
                         type = 'subdomain', 
                         value = 'www.watchTowr.com', )

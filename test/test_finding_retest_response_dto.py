@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.finding_retest_response_dto import FindingRetestResponseDto
+from watchtowr_api_sdk.models.finding_retest_response_dto import FindingRetestResponseDto
 
 class TestFindingRetestResponseDto(unittest.TestCase):
     """FindingRetestResponseDto unit test stubs"""

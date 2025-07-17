@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.client_subdomain import ClientSubdomain
+from watchtowr_api_sdk.models.client_subdomain import ClientSubdomain
 
 # TODO update the JSON string below
 json = "{}"

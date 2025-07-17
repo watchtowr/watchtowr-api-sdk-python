@@ -21,7 +21,7 @@ from setuptools import setup, find_packages  # noqa: H301
 #
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
-NAME = "openapi-client"
+NAME = "watchtowr-api-sdk-python"
 VERSION = "1.0.0"
 PYTHON_REQUIRES = ">= 3.9"
 REQUIRES = [
@@ -37,7 +37,7 @@ setup(
     description="Complete watchTowr Platform API Documentation",
     author="watchTowr Support",
     author_email="support@watchTowr.io",
-    url="",
+    url="https://github.com/watchtowr/watchtowr-api-sdk-python",
     keywords=["OpenAPI", "OpenAPI-Generator", "Complete watchTowr Platform API Documentation"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
@@ -46,5 +46,5 @@ setup(
     long_description="""\
     The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Continuous Assurance API       * Adversary Sight API       * Intelligence API       * Platform API 
     """,  # noqa: E501
-    package_data={"openapi_client": ["py.typed"]},
+    package_data={"watchtowr_api_sdk": ["py.typed"]},
 )

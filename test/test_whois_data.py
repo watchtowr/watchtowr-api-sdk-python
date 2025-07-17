@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.whois_data import WhoisData
+from watchtowr_api_sdk.models.whois_data import WhoisData
 
 class TestWhoisData(unittest.TestCase):
     """WhoisData unit test stubs"""
@@ -37,7 +37,7 @@ class TestWhoisData(unittest.TestCase):
         if include_optional:
             return WhoisData(
                 id = 1,
-                data = openapi_client.models.whois_data_object.WhoisDataObject(
+                data = watchtowr_api_sdk.models.whois_data_object.WhoisDataObject(
                     org = 'ACME Corp', 
                     city = 'Singapore', 
                     name = 'John Doe', 
@@ -67,7 +67,7 @@ Registrar Registration Expiration Date: 2027-06-17T04:00:00Z
         else:
             return WhoisData(
                 id = 1,
-                data = openapi_client.models.whois_data_object.WhoisDataObject(
+                data = watchtowr_api_sdk.models.whois_data_object.WhoisDataObject(
                     org = 'ACME Corp', 
                     city = 'Singapore', 
                     name = 'John Doe', 

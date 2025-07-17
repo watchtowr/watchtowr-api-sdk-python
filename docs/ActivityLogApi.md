@@ -1,4 +1,4 @@
-# openapi_client.ActivityLogApi
+# watchtowr_api_sdk.ActivityLogApi
 
 All URIs are relative to *https://your-tenant-id.sg.client.watchtowr.io*
 
@@ -19,14 +19,14 @@ List all activity log entries, ordered by creation date.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.paginated_client_activity_log import PaginatedClientActivityLog
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -36,21 +36,21 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.ActivityLogApi(api_client)
+    api_instance = watchtowr_api_sdk.ActivityLogApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
-    created_from = '2022-02-22 22:00:00' # datetime | Filter logs created after a given date and time. (optional)
-    created_to = '2022-02-23 22:00:00' # datetime | Filter logs created before a given date and time. (optional)
-    types = ['UserInvite,UserRoleType,UserLock,ResetUser2FA,SetupSSO,UpdateUserSessionTimeout,SuccessfulLogin,PasswordResetTriggered,UserDelete,UserCreated,UserBusinessUnit,IntegrationSetUp,IntegrationUpdated,IntegrationDeleted,KillSwitch,FindingSetting,TestingInfrastructureUpdate,UpdatePriorityPort,PlatformIpWhitelist,AutomaticRetestsUpdated,ReportGenerated,ReportGenerationRequest,ReportDownloaded,AutomaticOutOfScope,PrismaCloudApigeeAccountRemoved,PrismaCloudAccountNameUpdate,ServiceAccountCreated,ServiceAccountUpdated,ServiceAccountDeleted,ServiceAccountEnabled,ServiceAccountDisabled,ServiceAccountTokenRegenerated'] # List[str] | Filter logs by a comma separated list of types. (optional)
+    created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter logs created after a given date and time. (optional)
+    created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter logs created before a given date and time. (optional)
+    types = 'UserInvite,UserRoleType,UserLock,ResetUser2FA,SetupSSO,UpdateUserSessionTimeout,SuccessfulLogin,PasswordResetTriggered,UserDelete,UserCreated,UserBusinessUnit,IntegrationSetUp,IntegrationUpdated,IntegrationDeleted,KillSwitch,FindingSetting,TestingInfrastructureUpdate,UpdatePriorityPort,PlatformIpWhitelist,AutomaticRetestsUpdated,ReportGenerated,ReportGenerationRequest,ReportDownloaded,AutomaticOutOfScope,PrismaCloudApigeeAccountRemoved,PrismaCloudAccountNameUpdate,ServiceAccountCreated,ServiceAccountUpdated,ServiceAccountDeleted,ServiceAccountEnabled,ServiceAccountDisabled,ServiceAccountTokenRegenerated' # str | Filter logs by a comma separated list of types. (optional)
     search = 'requested%20to%20generate%20technical%20report' # str | Search logs across various fields such as user, or description. (optional)
-    user_ids = ['1,2,3'] # List[str] | Filter logs by a comma separated list of user IDs. (optional)
+    user_ids = '1,2,3' # str | Filter logs by a comma separated list of user IDs. (optional)
 
     try:
         # List Activity Logs
@@ -72,9 +72,9 @@ Name | Type | Description  | Notes
  **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
  **created_from** | **datetime**| Filter logs created after a given date and time. | [optional] 
  **created_to** | **datetime**| Filter logs created before a given date and time. | [optional] 
- **types** | [**List[str]**](str.md)| Filter logs by a comma separated list of types. | [optional] 
+ **types** | **str**| Filter logs by a comma separated list of types. | [optional] 
  **search** | **str**| Search logs across various fields such as user, or description. | [optional] 
- **user_ids** | [**List[str]**](str.md)| Filter logs by a comma separated list of user IDs. | [optional] 
+ **user_ids** | **str**| Filter logs by a comma separated list of user IDs. | [optional] 
 
 ### Return type
 

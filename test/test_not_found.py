@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.not_found import NotFound
+from watchtowr_api_sdk.models.not_found import NotFound
 
 class TestNotFound(unittest.TestCase):
     """NotFound unit test stubs"""

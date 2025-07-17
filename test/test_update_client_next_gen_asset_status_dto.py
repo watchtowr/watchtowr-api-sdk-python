@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.update_client_next_gen_asset_status_dto import UpdateClientNextGenAssetStatusDto
+from watchtowr_api_sdk.models.update_client_next_gen_asset_status_dto import UpdateClientNextGenAssetStatusDto
 
 class TestUpdateClientNextGenAssetStatusDto(unittest.TestCase):
     """UpdateClientNextGenAssetStatusDto unit test stubs"""

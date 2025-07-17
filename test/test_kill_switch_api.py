@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.kill_switch_api import KillSwitchApi
+from watchtowr_api_sdk.api.kill_switch_api import KillSwitchApi
 
 
 class TestKillSwitchApi(unittest.TestCase):

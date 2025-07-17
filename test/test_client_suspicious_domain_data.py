@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_suspicious_domain_data import ClientSuspiciousDomainData
+from watchtowr_api_sdk.models.client_suspicious_domain_data import ClientSuspiciousDomainData
 
 class TestClientSuspiciousDomainData(unittest.TestCase):
     """ClientSuspiciousDomainData unit test stubs"""
@@ -36,15 +36,15 @@ class TestClientSuspiciousDomainData(unittest.TestCase):
         model = ClientSuspiciousDomainData()
         if include_optional:
             return ClientSuspiciousDomainData(
-                data = openapi_client.models.suspicious_domain.SuspiciousDomain(
+                data = watchtowr_api_sdk.models.suspicious_domain.SuspiciousDomain(
                     id = 1, 
                     name = 'example.com', 
                     discovery_reason = 'Example reason', 
                     status = 'legitimate', 
                     whois_data = [
-                        openapi_client.models.whois_data.WhoisData(
+                        watchtowr_api_sdk.models.whois_data.WhoisData(
                             id = 1, 
-                            data = openapi_client.models.whois_data_object.WhoisDataObject(
+                            data = watchtowr_api_sdk.models.whois_data_object.WhoisDataObject(
                                 org = 'ACME Corp', 
                                 city = 'Singapore', 
                                 name = 'John Doe', 
@@ -75,15 +75,15 @@ Registrar Registration Expiration Date: 2027-06-17T04:00:00Z
             )
         else:
             return ClientSuspiciousDomainData(
-                data = openapi_client.models.suspicious_domain.SuspiciousDomain(
+                data = watchtowr_api_sdk.models.suspicious_domain.SuspiciousDomain(
                     id = 1, 
                     name = 'example.com', 
                     discovery_reason = 'Example reason', 
                     status = 'legitimate', 
                     whois_data = [
-                        openapi_client.models.whois_data.WhoisData(
+                        watchtowr_api_sdk.models.whois_data.WhoisData(
                             id = 1, 
-                            data = openapi_client.models.whois_data_object.WhoisDataObject(
+                            data = watchtowr_api_sdk.models.whois_data_object.WhoisDataObject(
                                 org = 'ACME Corp', 
                                 city = 'Singapore', 
                                 name = 'John Doe', 

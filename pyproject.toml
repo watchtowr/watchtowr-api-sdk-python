@@ -1,5 +1,5 @@
 [project]
-name = "openapi_client"
+name = "watchtowr_api_sdk"
 version = "1.0.0"
 description = "Complete watchTowr Platform API Documentation"
 authors = [
@@ -8,7 +8,7 @@ authors = [
 license = "NoLicense"
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Complete watchTowr Platform API Documentation"]
-requires-python = "^3.9"
+requires-python = ">=3.9"
 
 dependencies = [
   "urllib3 (>=2.1.0,<3.0.0)",
@@ -41,7 +41,7 @@ extension-pkg-whitelist = "pydantic"
 
 [tool.mypy]
 files = [
-  "openapi_client",
+  "watchtowr_api_sdk",
   #"test",  # auto-generated tests
   "tests", # hand-written tests
 ]
@@ -79,7 +79,7 @@ disallow_any_generics = true
 
 [[tool.mypy.overrides]]
 module = [
-  "openapi_client.configuration",
+  "watchtowr_api_sdk.configuration",
 ]
 warn_unused_ignores = true
 strict_equality = true

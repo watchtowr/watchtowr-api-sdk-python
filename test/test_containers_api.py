@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.containers_api import ContainersApi
+from watchtowr_api_sdk.api.containers_api import ContainersApi
 
 
 class TestContainersApi(unittest.TestCase):

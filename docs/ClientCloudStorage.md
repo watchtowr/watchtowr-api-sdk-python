@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.client_cloud_storage import ClientCloudStorage
+from watchtowr_api_sdk.models.client_cloud_storage import ClientCloudStorage
 
 # TODO update the JSON string below
 json = "{}"

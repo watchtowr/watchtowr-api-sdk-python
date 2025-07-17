@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_custom_property import ClientCustomProperty
+from watchtowr_api_sdk.models.client_custom_property import ClientCustomProperty
 
 class TestClientCustomProperty(unittest.TestCase):
     """ClientCustomProperty unit test stubs"""

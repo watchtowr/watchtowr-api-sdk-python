@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **total_findings** | **float** | Total findings | 
 **total_assets** | **float** | Total assets | 
 **hunt_request_type** | **str** | Hunt request type | 
+**rapid_exposure_mechanism** | **str** | Rapid exposure mechanism | [optional] 
 **title** | **str** | Title | 
 **description** | **str** |  | 
 **hypothesis** | **str** | Hypothesis | 
@@ -25,7 +26,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.hunt_detail import HuntDetail
+from watchtowr_api_sdk.models.hunt_detail import HuntDetail
 
 # TODO update the JSON string below
 json = "{}"

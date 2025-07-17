@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.pagination import Pagination
+from watchtowr_api_sdk.models.pagination import Pagination
 
 class TestPagination(unittest.TestCase):
     """Pagination unit test stubs"""
@@ -41,7 +41,7 @@ class TestPagination(unittest.TestCase):
                 per_page = 1.337,
                 current_page = 1.337,
                 total_pages = 1.337,
-                links = openapi_client.models.link.Link(
+                links = watchtowr_api_sdk.models.link.Link(
                     previous = '', 
                     next = '', )
             )
@@ -52,7 +52,7 @@ class TestPagination(unittest.TestCase):
                 per_page = 1.337,
                 current_page = 1.337,
                 total_pages = 1.337,
-                links = openapi_client.models.link.Link(
+                links = watchtowr_api_sdk.models.link.Link(
                     previous = '', 
                     next = '', ),
         )

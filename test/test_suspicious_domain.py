@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.suspicious_domain import SuspiciousDomain
+from watchtowr_api_sdk.models.suspicious_domain import SuspiciousDomain
 
 class TestSuspiciousDomain(unittest.TestCase):
     """SuspiciousDomain unit test stubs"""
@@ -41,9 +41,9 @@ class TestSuspiciousDomain(unittest.TestCase):
                 discovery_reason = 'Example reason',
                 status = 'legitimate',
                 whois_data = [
-                    openapi_client.models.whois_data.WhoisData(
+                    watchtowr_api_sdk.models.whois_data.WhoisData(
                         id = 1, 
-                        data = openapi_client.models.whois_data_object.WhoisDataObject(
+                        data = watchtowr_api_sdk.models.whois_data_object.WhoisDataObject(
                             org = 'ACME Corp', 
                             city = 'Singapore', 
                             name = 'John Doe', 
@@ -79,9 +79,9 @@ Registrar Registration Expiration Date: 2027-06-17T04:00:00Z
                 discovery_reason = 'Example reason',
                 status = 'legitimate',
                 whois_data = [
-                    openapi_client.models.whois_data.WhoisData(
+                    watchtowr_api_sdk.models.whois_data.WhoisData(
                         id = 1, 
-                        data = openapi_client.models.whois_data_object.WhoisDataObject(
+                        data = watchtowr_api_sdk.models.whois_data_object.WhoisDataObject(
                             org = 'ACME Corp', 
                             city = 'Singapore', 
                             name = 'John Doe', 

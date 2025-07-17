@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_ip_detail_dns_records import ClientIpDetailDnsRecords
+from watchtowr_api_sdk.models.client_ip_detail_dns_records import ClientIpDetailDnsRecords
 
 class TestClientIpDetailDnsRecords(unittest.TestCase):
     """ClientIpDetailDnsRecords unit test stubs"""

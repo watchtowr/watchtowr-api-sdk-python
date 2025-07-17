@@ -8,11 +8,7 @@ Name | Type | Description | Notes
 **id** | **float** | ID | 
 **port_id** | **float** | Port ID | 
 **ip** | **str** | IP Address | 
-**domain** | **str** | IP Address | 
-**subdomain** | **str** | IP Address | 
-**asset_type** | **str** | Type of asset associated with this service | 
-**asset_id** | **float** | Id of asset associated with this service | 
-**asset_name** | **str** | Name of asset associated with this service | 
+**hostname** | **str** | Hostname | 
 **port** | **float** | Port number | [optional] 
 **type** | **str** | Port Protocol | [optional] 
 **country** | **str** | Country code | [optional] 
@@ -23,11 +19,12 @@ Name | Type | Description | Notes
 **technologies** | [**List[Technology]**](Technology.md) | Technology list | 
 **service_types** | [**List[ServiceType]**](ServiceType.md) | Service types | 
 **business_units** | [**List[ClientBusinessUnit]**](ClientBusinessUnit.md) | Business Units | 
+**is_concerning** | **bool** | Whether the discovered network service is concerning | 
 
 ## Example
 
 ```python
-from openapi_client.models.service_listing import ServiceListing
+from watchtowr_api_sdk.models.service_listing import ServiceListing
 
 # TODO update the JSON string below
 json = "{}"

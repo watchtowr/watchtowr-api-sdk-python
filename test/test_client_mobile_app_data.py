@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_mobile_app_data import ClientMobileAppData
+from watchtowr_api_sdk.models.client_mobile_app_data import ClientMobileAppData
 
 class TestClientMobileAppData(unittest.TestCase):
     """ClientMobileAppData unit test stubs"""
@@ -36,7 +36,7 @@ class TestClientMobileAppData(unittest.TestCase):
         model = ClientMobileAppData()
         if include_optional:
             return ClientMobileAppData(
-                data = openapi_client.models.client_mobile_app.ClientMobileApp(
+                data = watchtowr_api_sdk.models.client_mobile_app.ClientMobileApp(
                     type = 'mobileApp', 
                     source = 'module-adversarysight-playstore-mobileapp-discovery', 
                     status = 'verified', 
@@ -51,7 +51,7 @@ class TestClientMobileAppData(unittest.TestCase):
                     url = 'https://play.google.com/store/apps/details?id=com.watchtowr.android-app', 
                     s3path = 'https://s3.amazonaws.com/path-to-file.apk', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 
@@ -60,7 +60,7 @@ class TestClientMobileAppData(unittest.TestCase):
             )
         else:
             return ClientMobileAppData(
-                data = openapi_client.models.client_mobile_app.ClientMobileApp(
+                data = watchtowr_api_sdk.models.client_mobile_app.ClientMobileApp(
                     type = 'mobileApp', 
                     source = 'module-adversarysight-playstore-mobileapp-discovery', 
                     status = 'verified', 
@@ -75,7 +75,7 @@ class TestClientMobileAppData(unittest.TestCase):
                     url = 'https://play.google.com/store/apps/details?id=com.watchtowr.android-app', 
                     s3path = 'https://s3.amazonaws.com/path-to-file.apk', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 

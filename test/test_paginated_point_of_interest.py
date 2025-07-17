@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.paginated_point_of_interest import PaginatedPointOfInterest
+from watchtowr_api_sdk.models.paginated_point_of_interest import PaginatedPointOfInterest
 
 class TestPaginatedPointOfInterest(unittest.TestCase):
     """PaginatedPointOfInterest unit test stubs"""
@@ -37,7 +37,7 @@ class TestPaginatedPointOfInterest(unittest.TestCase):
         if include_optional:
             return PaginatedPointOfInterest(
                 data = [
-                    openapi_client.models.points_of_interest.PointsOfInterest(
+                    watchtowr_api_sdk.models.points_of_interest.PointsOfInterest(
                         id = 1, 
                         name = 'phpMyAdmin', 
                         type = 'admin-panel', 
@@ -48,19 +48,20 @@ class TestPaginatedPointOfInterest(unittest.TestCase):
                         asset_name = '123.123.123.123', 
                         asset_type = 'ip', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
-                        last_seen = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
+                        last_seen = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        is_concerning = True, )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return PaginatedPointOfInterest(
                 data = [
-                    openapi_client.models.points_of_interest.PointsOfInterest(
+                    watchtowr_api_sdk.models.points_of_interest.PointsOfInterest(
                         id = 1, 
                         name = 'phpMyAdmin', 
                         type = 'admin-panel', 
@@ -71,13 +72,14 @@ class TestPaginatedPointOfInterest(unittest.TestCase):
                         asset_name = '123.123.123.123', 
                         asset_type = 'ip', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
-                        last_seen = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
+                        last_seen = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        is_concerning = True, )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

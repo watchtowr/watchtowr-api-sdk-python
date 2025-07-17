@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.suspicious_domains_api import SuspiciousDomainsApi
+from watchtowr_api_sdk.api.suspicious_domains_api import SuspiciousDomainsApi
 
 
 class TestSuspiciousDomainsApi(unittest.TestCase):

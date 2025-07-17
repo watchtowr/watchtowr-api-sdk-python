@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.business_unit_api import BusinessUnitApi
+from watchtowr_api_sdk.api.business_unit_api import BusinessUnitApi
 
 
 class TestBusinessUnitApi(unittest.TestCase):

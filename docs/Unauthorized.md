@@ -5,14 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status_code** | **float** |  | [optional] 
-**message** | **str** |  | [optional] 
-**error** | **str** |  | 
+**message** | **str** | Error message | 
+**status_code** | **float** | HTTP status code | 
 
 ## Example
 
 ```python
-from openapi_client.models.unauthorized import Unauthorized
+from watchtowr_api_sdk.models.unauthorized import Unauthorized
 
 # TODO update the JSON string below
 json = "{}"

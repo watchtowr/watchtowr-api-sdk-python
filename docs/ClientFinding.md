@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.client_finding import ClientFinding
+from watchtowr_api_sdk.models.client_finding import ClientFinding
 
 # TODO update the JSON string below
 json = "{}"

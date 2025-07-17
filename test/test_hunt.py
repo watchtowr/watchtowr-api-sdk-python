@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.hunt import Hunt
+from watchtowr_api_sdk.models.hunt import Hunt
 
 class TestHunt(unittest.TestCase):
     """Hunt unit test stubs"""
@@ -44,6 +44,7 @@ class TestHunt(unittest.TestCase):
                 total_findings = 1,
                 total_assets = 10,
                 hunt_request_type = 'Others',
+                rapid_exposure_mechanism = 'impactLessPoc',
                 title = '...',
                 status = 'completed'
             )
