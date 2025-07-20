@@ -1,4 +1,4 @@
-# openapi_client.KillSwitchApi
+# watchtowr_api_sdk.KillSwitchApi
 
 All URIs are relative to *https://your-tenant-id.sg.client.watchtowr.io*
 
@@ -20,14 +20,14 @@ Get the current status of the kill switch and whether client control is allowed.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.kill_switch_status_data import KillSwitchStatusData
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.kill_switch_status_data import KillSwitchStatusData
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -37,14 +37,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.KillSwitchApi(api_client)
+    api_instance = watchtowr_api_sdk.KillSwitchApi(api_client)
 
     try:
         # Get Kill Switch Status
@@ -96,15 +96,15 @@ Enable or disable the kill switch. Administrator or User role required.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.update_kill_switch_data import UpdateKillSwitchData
-from openapi_client.models.update_kill_switch_request_dto import UpdateKillSwitchRequestDto
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.update_kill_switch_data import UpdateKillSwitchData
+from watchtowr_api_sdk.models.update_kill_switch_request_dto import UpdateKillSwitchRequestDto
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -114,15 +114,15 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.KillSwitchApi(api_client)
-    update_kill_switch_request_dto = openapi_client.UpdateKillSwitchRequestDto() # UpdateKillSwitchRequestDto | 
+    api_instance = watchtowr_api_sdk.KillSwitchApi(api_client)
+    update_kill_switch_request_dto = watchtowr_api_sdk.UpdateKillSwitchRequestDto() # UpdateKillSwitchRequestDto | 
 
     try:
         # Update Kill Switch

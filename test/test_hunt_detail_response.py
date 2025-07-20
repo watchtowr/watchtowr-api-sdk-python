@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.hunt_detail_response import HuntDetailResponse
+from watchtowr_api_sdk.models.hunt_detail_response import HuntDetailResponse
 
 class TestHuntDetailResponse(unittest.TestCase):
     """HuntDetailResponse unit test stubs"""
@@ -36,7 +36,7 @@ class TestHuntDetailResponse(unittest.TestCase):
         model = HuntDetailResponse()
         if include_optional:
             return HuntDetailResponse(
-                data = openapi_client.models.hunt_detail.HuntDetail(
+                data = watchtowr_api_sdk.models.hunt_detail.HuntDetail(
                     id = 1, 
                     priority = 'high', 
                     type = 'bespoke', 
@@ -77,7 +77,7 @@ Palo Alto state that the GlobalProtect gateway and device telemetry must be enab
             )
         else:
             return HuntDetailResponse(
-                data = openapi_client.models.hunt_detail.HuntDetail(
+                data = watchtowr_api_sdk.models.hunt_detail.HuntDetail(
                     id = 1, 
                     priority = 'high', 
                     type = 'bespoke', 

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_dns_record import ClientDnsRecord
+from watchtowr_api_sdk.models.client_dns_record import ClientDnsRecord
 
 class TestClientDnsRecord(unittest.TestCase):
     """ClientDnsRecord unit test stubs"""
@@ -36,21 +36,29 @@ class TestClientDnsRecord(unittest.TestCase):
         model = ClientDnsRecord()
         if include_optional:
             return ClientDnsRecord(
-                id = 1,
-                name = 'watchtowr.com',
+                id = 789,
+                asset = watchtowr_api_sdk.models.client_dns_record_asset.ClientDnsRecordAsset(
+                    id = 456, 
+                    name = 'example.com', 
+                    type = 'domain', ),
+                record_name = 'example.com',
                 type = 'A',
-                ttl = 60,
-                value = '123.123.123.123',
-                discovered_on = 2022-02-13T02:10:00.000000Z
+                ttl = 300,
+                value = '192.168.1.1',
+                created_at = '2023-01-01T12:00Z'
             )
         else:
             return ClientDnsRecord(
-                id = 1,
-                name = 'watchtowr.com',
+                id = 789,
+                asset = watchtowr_api_sdk.models.client_dns_record_asset.ClientDnsRecordAsset(
+                    id = 456, 
+                    name = 'example.com', 
+                    type = 'domain', ),
+                record_name = 'example.com',
                 type = 'A',
-                ttl = 60,
-                value = '123.123.123.123',
-                discovered_on = 2022-02-13T02:10:00.000000Z,
+                ttl = 300,
+                value = '192.168.1.1',
+                created_at = '2023-01-01T12:00Z',
         )
         """
 

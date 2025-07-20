@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.security_posture_dashboard_dto import SecurityPostureDashboardDto
+from watchtowr_api_sdk.models.security_posture_dashboard_dto import SecurityPostureDashboardDto
 
 class TestSecurityPostureDashboardDto(unittest.TestCase):
     """SecurityPostureDashboardDto unit test stubs"""
@@ -36,14 +36,14 @@ class TestSecurityPostureDashboardDto(unittest.TestCase):
         model = SecurityPostureDashboardDto()
         if include_optional:
             return SecurityPostureDashboardDto(
-                required_actions = openapi_client.models.required_actions_dto.RequiredActionsDto(
+                required_actions = watchtowr_api_sdk.models.required_actions_dto.RequiredActionsDto(
                     actively_exploited_findings = 5, 
                     unresolved_rapid_reaction_hunts = 3, ),
-                hunt_overview = openapi_client.models.hunt_overview_dto.HuntOverviewDto(
+                hunt_overview = watchtowr_api_sdk.models.hunt_overview_dto.HuntOverviewDto(
                     total_hunts_executed = 25, 
                     total_unresolved_hunts = 3, 
                     latest_executed_hunts = [
-                        openapi_client.models.latest_executed_hunt_dto.LatestExecutedHuntDto(
+                        watchtowr_api_sdk.models.latest_executed_hunt_dto.LatestExecutedHuntDto(
                             id = '1', 
                             title = 'CVE-2024-1234 Apache RCE', 
                             status = 'completed', 
@@ -54,17 +54,17 @@ class TestSecurityPostureDashboardDto(unittest.TestCase):
                             resolved_status = False, 
                             acknowledgement = null, 
                             threat_actors = [
-                                openapi_client.models.threat_actor_dto.ThreatActorDto(
+                                watchtowr_api_sdk.models.threat_actor_dto.ThreatActorDto(
                                     attacker_name = 'APT29', 
                                     country = 'ru', )
                                 ], )
                         ], ),
-                attack_surface_resiliency = openapi_client.models.attack_surface_resiliency_dto.AttackSurfaceResiliencyDto(
+                attack_surface_resiliency = watchtowr_api_sdk.models.attack_surface_resiliency_dto.AttackSurfaceResiliencyDto(
                     concerning_services = 8, 
                     concerning_points_of_interest = 12, 
                     valid_credentials = 4, 
                     open_findings = 45, ),
-                organization_summary = openapi_client.models.organization_summary_dto.OrganizationSummaryDto(
+                organization_summary = watchtowr_api_sdk.models.organization_summary_dto.OrganizationSummaryDto(
                     attack_surface = null, 
                     open_findings = null, 
                     mttr_metrics = null, 
@@ -72,14 +72,14 @@ class TestSecurityPostureDashboardDto(unittest.TestCase):
             )
         else:
             return SecurityPostureDashboardDto(
-                required_actions = openapi_client.models.required_actions_dto.RequiredActionsDto(
+                required_actions = watchtowr_api_sdk.models.required_actions_dto.RequiredActionsDto(
                     actively_exploited_findings = 5, 
                     unresolved_rapid_reaction_hunts = 3, ),
-                hunt_overview = openapi_client.models.hunt_overview_dto.HuntOverviewDto(
+                hunt_overview = watchtowr_api_sdk.models.hunt_overview_dto.HuntOverviewDto(
                     total_hunts_executed = 25, 
                     total_unresolved_hunts = 3, 
                     latest_executed_hunts = [
-                        openapi_client.models.latest_executed_hunt_dto.LatestExecutedHuntDto(
+                        watchtowr_api_sdk.models.latest_executed_hunt_dto.LatestExecutedHuntDto(
                             id = '1', 
                             title = 'CVE-2024-1234 Apache RCE', 
                             status = 'completed', 
@@ -90,17 +90,17 @@ class TestSecurityPostureDashboardDto(unittest.TestCase):
                             resolved_status = False, 
                             acknowledgement = null, 
                             threat_actors = [
-                                openapi_client.models.threat_actor_dto.ThreatActorDto(
+                                watchtowr_api_sdk.models.threat_actor_dto.ThreatActorDto(
                                     attacker_name = 'APT29', 
                                     country = 'ru', )
                                 ], )
                         ], ),
-                attack_surface_resiliency = openapi_client.models.attack_surface_resiliency_dto.AttackSurfaceResiliencyDto(
+                attack_surface_resiliency = watchtowr_api_sdk.models.attack_surface_resiliency_dto.AttackSurfaceResiliencyDto(
                     concerning_services = 8, 
                     concerning_points_of_interest = 12, 
                     valid_credentials = 4, 
                     open_findings = 45, ),
-                organization_summary = openapi_client.models.organization_summary_dto.OrganizationSummaryDto(
+                organization_summary = watchtowr_api_sdk.models.organization_summary_dto.OrganizationSummaryDto(
                     attack_surface = null, 
                     open_findings = null, 
                     mttr_metrics = null, 

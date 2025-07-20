@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.open_findings_dto import OpenFindingsDto
+from watchtowr_api_sdk.models.open_findings_dto import OpenFindingsDto
 
 class TestOpenFindingsDto(unittest.TestCase):
     """OpenFindingsDto unit test stubs"""

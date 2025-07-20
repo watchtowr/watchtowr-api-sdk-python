@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.paginated_suspicious_domain import PaginatedSuspiciousDomain
+from watchtowr_api_sdk.models.paginated_suspicious_domain import PaginatedSuspiciousDomain
 
 class TestPaginatedSuspiciousDomain(unittest.TestCase):
     """PaginatedSuspiciousDomain unit test stubs"""
@@ -37,15 +37,15 @@ class TestPaginatedSuspiciousDomain(unittest.TestCase):
         if include_optional:
             return PaginatedSuspiciousDomain(
                 data = [
-                    openapi_client.models.suspicious_domain.SuspiciousDomain(
+                    watchtowr_api_sdk.models.suspicious_domain.SuspiciousDomain(
                         id = 1, 
                         name = 'example.com', 
                         discovery_reason = 'Example reason', 
                         status = 'legitimate', 
                         whois_data = [
-                            openapi_client.models.whois_data.WhoisData(
+                            watchtowr_api_sdk.models.whois_data.WhoisData(
                                 id = 1, 
-                                data = openapi_client.models.whois_data_object.WhoisDataObject(
+                                data = watchtowr_api_sdk.models.whois_data_object.WhoisDataObject(
                                     org = 'ACME Corp', 
                                     city = 'Singapore', 
                                     name = 'John Doe', 
@@ -74,21 +74,21 @@ Registrar Registration Expiration Date: 2027-06-17T04:00:00Z
                             ], 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return PaginatedSuspiciousDomain(
                 data = [
-                    openapi_client.models.suspicious_domain.SuspiciousDomain(
+                    watchtowr_api_sdk.models.suspicious_domain.SuspiciousDomain(
                         id = 1, 
                         name = 'example.com', 
                         discovery_reason = 'Example reason', 
                         status = 'legitimate', 
                         whois_data = [
-                            openapi_client.models.whois_data.WhoisData(
+                            watchtowr_api_sdk.models.whois_data.WhoisData(
                                 id = 1, 
-                                data = openapi_client.models.whois_data_object.WhoisDataObject(
+                                data = watchtowr_api_sdk.models.whois_data_object.WhoisDataObject(
                                     org = 'ACME Corp', 
                                     city = 'Singapore', 
                                     name = 'John Doe', 
@@ -117,7 +117,7 @@ Registrar Registration Expiration Date: 2027-06-17T04:00:00Z
                             ], 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

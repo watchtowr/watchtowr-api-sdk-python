@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.client_ip_range_data import ClientIpRangeData
+from watchtowr_api_sdk.models.client_ip_range_data import ClientIpRangeData
 
 # TODO update the JSON string below
 json = "{}"

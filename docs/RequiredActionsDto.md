@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.required_actions_dto import RequiredActionsDto
+from watchtowr_api_sdk.models.required_actions_dto import RequiredActionsDto
 
 # TODO update the JSON string below
 json = "{}"

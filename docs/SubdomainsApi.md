@@ -1,4 +1,4 @@
-# openapi_client.SubdomainsApi
+# watchtowr_api_sdk.SubdomainsApi
 
 All URIs are relative to *https://your-tenant-id.sg.client.watchtowr.io*
 
@@ -32,15 +32,15 @@ Assign a specific subdomain asset to a list of business units.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_subdomain_data import ClientSubdomainData
-from openapi_client.models.hostname_business_unit_ids_dto import HostnameBusinessUnitIDsDTO
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_subdomain_data import ClientSubdomainData
+from watchtowr_api_sdk.models.hostname_business_unit_ids_dto import HostnameBusinessUnitIDsDTO
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -50,16 +50,16 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SubdomainsApi(api_client)
+    api_instance = watchtowr_api_sdk.SubdomainsApi(api_client)
     id = 3.4 # float | The asset ID of the subdomain to assign.
-    hostname_business_unit_ids_dto = openapi_client.HostnameBusinessUnitIDsDTO() # HostnameBusinessUnitIDsDTO | 
+    hostname_business_unit_ids_dto = watchtowr_api_sdk.HostnameBusinessUnitIDsDTO() # HostnameBusinessUnitIDsDTO | 
 
     try:
         # Assign Subdomain to Business Units
@@ -117,15 +117,15 @@ Create a custom property for a specific subdomain asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_custom_property import ClientCustomProperty
-from openapi_client.models.create_client_custom_property_dto import CreateClientCustomPropertyDto
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_custom_property import ClientCustomProperty
+from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -135,16 +135,16 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SubdomainsApi(api_client)
+    api_instance = watchtowr_api_sdk.SubdomainsApi(api_client)
     id = 3.4 # float | The asset ID of the subdomain to create a new custom property for.
-    create_client_custom_property_dto = openapi_client.CreateClientCustomPropertyDto() # CreateClientCustomPropertyDto | 
+    create_client_custom_property_dto = watchtowr_api_sdk.CreateClientCustomPropertyDto() # CreateClientCustomPropertyDto | 
 
     try:
         # Create Subdomain Custom Property
@@ -201,15 +201,15 @@ Create a note for a specific subdomain asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_note_data import ClientNoteData
-from openapi_client.models.create_client_note_dto import CreateClientNoteDto
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_note_data import ClientNoteData
+from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -219,16 +219,16 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SubdomainsApi(api_client)
+    api_instance = watchtowr_api_sdk.SubdomainsApi(api_client)
     id = 3.4 # float | The asset ID of the subdomain to create a note for.
-    create_client_note_dto = openapi_client.CreateClientNoteDto() # CreateClientNoteDto | 
+    create_client_note_dto = watchtowr_api_sdk.CreateClientNoteDto() # CreateClientNoteDto | 
 
     try:
         # Create Subdomain Note
@@ -284,14 +284,14 @@ Delete a custom property for a specific subdomain asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -301,14 +301,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SubdomainsApi(api_client)
+    api_instance = watchtowr_api_sdk.SubdomainsApi(api_client)
     id = 3.4 # float | The asset ID of a subdomain with a custom property to delete.
     custom_property_id = 3.4 # float | The ID of the custom property to delete.
 
@@ -367,14 +367,14 @@ Delete a note for a specific subdomain asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.delete_note_succes import DeleteNoteSucces
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.delete_note_succes import DeleteNoteSucces
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -384,14 +384,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SubdomainsApi(api_client)
+    api_instance = watchtowr_api_sdk.SubdomainsApi(api_client)
     id = 3.4 # float | The asset ID of a subdomain with a note to delete.
     note_id = 3.4 # float | The ID of the note to delete.
 
@@ -449,14 +449,14 @@ Get the details of a specific subdomain asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_subdomain_data import ClientSubdomainData
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_subdomain_data import ClientSubdomainData
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -466,14 +466,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SubdomainsApi(api_client)
+    api_instance = watchtowr_api_sdk.SubdomainsApi(api_client)
     id = 3.4 # float | The asset ID of the subdomain to retrieve.
 
     try:
@@ -530,14 +530,14 @@ List DNS records of a specific subdomain asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_dns_record_list_data import ClientDnsRecordListData
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_dns_record_list_data import ClientDnsRecordListData
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -547,14 +547,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SubdomainsApi(api_client)
+    api_instance = watchtowr_api_sdk.SubdomainsApi(api_client)
     id = 3.4 # float | The asset ID of the subdomain to list DNS records of.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
@@ -614,14 +614,14 @@ List the custom properties of a specific subdomain asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.paginated_client_custom_property import PaginatedClientCustomProperty
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.paginated_client_custom_property import PaginatedClientCustomProperty
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -631,14 +631,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SubdomainsApi(api_client)
+    api_instance = watchtowr_api_sdk.SubdomainsApi(api_client)
     id = 3.4 # float | The asset ID of the subdomain to list custom properties of.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
@@ -699,14 +699,14 @@ List all discovered subdomain assets, ordered by date identified.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.paginated_client_subdomain import PaginatedClientSubdomain
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.paginated_client_subdomain import PaginatedClientSubdomain
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -716,14 +716,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SubdomainsApi(api_client)
+    api_instance = watchtowr_api_sdk.SubdomainsApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
     asset_name = 'blog.watchtowr.com' # str | Search subdomain assets by name. (optional)
@@ -796,14 +796,14 @@ List the notes of a specific subdomain asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_note_list_data import ClientNoteListData
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_note_list_data import ClientNoteListData
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -813,14 +813,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SubdomainsApi(api_client)
+    api_instance = watchtowr_api_sdk.SubdomainsApi(api_client)
     id = 3.4 # float | The asset ID of the subdomain to list notes of.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
@@ -880,14 +880,14 @@ Unassign a specific subdomain asset from a list of business units.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_subdomain_data import ClientSubdomainData
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_subdomain_data import ClientSubdomainData
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -897,14 +897,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SubdomainsApi(api_client)
+    api_instance = watchtowr_api_sdk.SubdomainsApi(api_client)
     id = 3.4 # float | The asset ID of the subdomain to unassign.
     business_unit_ids = ['business_unit_ids_example'] # List[str] | List of comma-seperated business unit IDs to unassign from the asset.
     cascade_subdomain = 'cascade_subdomain_example' # str | Cascade business units to domain's subdomains
@@ -968,15 +968,15 @@ Update the status of a specific subdomain asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_subdomain_data import ClientSubdomainData
-from openapi_client.models.update_client_legacy_asset_status_dto import UpdateClientLegacyAssetStatusDto
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_subdomain_data import ClientSubdomainData
+from watchtowr_api_sdk.models.update_client_legacy_asset_status_dto import UpdateClientLegacyAssetStatusDto
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -986,16 +986,16 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SubdomainsApi(api_client)
+    api_instance = watchtowr_api_sdk.SubdomainsApi(api_client)
     id = 3.4 # float | The asset ID of the subdomain to update the status of.
-    update_client_legacy_asset_status_dto = openapi_client.UpdateClientLegacyAssetStatusDto() # UpdateClientLegacyAssetStatusDto | 
+    update_client_legacy_asset_status_dto = watchtowr_api_sdk.UpdateClientLegacyAssetStatusDto() # UpdateClientLegacyAssetStatusDto | 
 
     try:
         # Update Subdomain Status
@@ -1051,15 +1051,15 @@ Update a custom property for a specific subdomain asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_custom_property import ClientCustomProperty
-from openapi_client.models.update_client_custom_property_dto import UpdateClientCustomPropertyDto
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_custom_property import ClientCustomProperty
+from watchtowr_api_sdk.models.update_client_custom_property_dto import UpdateClientCustomPropertyDto
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -1069,17 +1069,17 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SubdomainsApi(api_client)
+    api_instance = watchtowr_api_sdk.SubdomainsApi(api_client)
     id = 3.4 # float | The asset ID of a subdomain with a custom property to update.
     custom_property_id = 3.4 # float | The ID of the custom property to update.
-    update_client_custom_property_dto = openapi_client.UpdateClientCustomPropertyDto() # UpdateClientCustomPropertyDto | 
+    update_client_custom_property_dto = watchtowr_api_sdk.UpdateClientCustomPropertyDto() # UpdateClientCustomPropertyDto | 
 
     try:
         # Update Subdomain Custom Property
@@ -1137,15 +1137,15 @@ Update a note for a specific subdomain asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_note_data import ClientNoteData
-from openapi_client.models.create_client_note_dto import CreateClientNoteDto
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_note_data import ClientNoteData
+from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -1155,17 +1155,17 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SubdomainsApi(api_client)
+    api_instance = watchtowr_api_sdk.SubdomainsApi(api_client)
     id = 3.4 # float | The asset ID of a subdomain with a note to update.
     note_id = 3.4 # float | The ID of the note to update.
-    create_client_note_dto = openapi_client.CreateClientNoteDto() # CreateClientNoteDto | 
+    create_client_note_dto = watchtowr_api_sdk.CreateClientNoteDto() # CreateClientNoteDto | 
 
     try:
         # Update Subdomain Note

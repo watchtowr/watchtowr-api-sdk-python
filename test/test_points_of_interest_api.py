@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.points_of_interest_api import PointsOfInterestApi
+from watchtowr_api_sdk.api.points_of_interest_api import PointsOfInterestApi
 
 
 class TestPointsOfInterestApi(unittest.TestCase):

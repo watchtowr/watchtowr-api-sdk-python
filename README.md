@@ -1,4 +1,4 @@
-# openapi-client
+# watchtowr-api-sdk-python
 The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:
       * Continuous Assurance API
       * Adversary Sight API
@@ -30,7 +30,7 @@ pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git
 
 Then import the package:
 ```python
-import openapi_client
+import watchtowr_api_sdk
 ```
 
 ### Setuptools
@@ -44,7 +44,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import openapi_client
+import watchtowr_api_sdk
 ```
 
 ### Tests
@@ -57,13 +57,13 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 ```python
 
-import openapi_client
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -73,17 +73,17 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIDocumentationApi(api_client)
+    api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
     id = 3.4 # float | The asset ID of the API Documentation asset to create a new note for.
-    create_client_note_dto = openapi_client.CreateClientNoteDto() # CreateClientNoteDto | 
+    create_client_note_dto = watchtowr_api_sdk.CreateClientNoteDto() # CreateClientNoteDto | 
 
     try:
         # Create Note
@@ -159,6 +159,7 @@ Class | Method | HTTP request | Description
 *ContainersApi* | [**update_asset_container_status**](docs/ContainersApi.md#update_asset_container_status) | **PUT** /api/client/assets/container/update-status/{id} | Update Status
 *ContainersApi* | [**update_custom_property_container**](docs/ContainersApi.md#update_custom_property_container) | **PUT** /api/client/assets/container/show/{id}/custom-property/{customPropertyId} | Update Custom Property
 *ContainersApi* | [**update_note_container**](docs/ContainersApi.md#update_note_container) | **PUT** /api/client/assets/container/show/{id}/note/{noteId} | Update Note
+*DNSRecordAnalysisApi* | [**get_list_dns_records**](docs/DNSRecordAnalysisApi.md#get_list_dns_records) | **GET** /api/client/dns-records/list | List DNS Records
 *DomainsApi* | [**assign_domain_to_business_units**](docs/DomainsApi.md#assign_domain_to_business_units) | **POST** /api/client/assets/domain/show/{id}/business-units | Assign Domain to Business Units
 *DomainsApi* | [**create_asset_domain_note**](docs/DomainsApi.md#create_asset_domain_note) | **POST** /api/client/assets/domain/show/{id}/note | Create Note
 *DomainsApi* | [**create_custom_property_domain**](docs/DomainsApi.md#create_custom_property_domain) | **POST** /api/client/assets/domain/show/{id}/custom-property | Create Custom Property
@@ -173,6 +174,7 @@ Class | Method | HTTP request | Description
 *DomainsApi* | [**update_asset_domain_note**](docs/DomainsApi.md#update_asset_domain_note) | **PUT** /api/client/assets/domain/show/{id}/note/{noteId} | Update Note
 *DomainsApi* | [**update_asset_domain_status**](docs/DomainsApi.md#update_asset_domain_status) | **PUT** /api/client/assets/domain/update-status/{id} | Update Status
 *DomainsApi* | [**update_custom_property_domain**](docs/DomainsApi.md#update_custom_property_domain) | **PUT** /api/client/assets/domain/show/{id}/custom-property/{customPropertyId} | Update Custom Property
+*FindingRetestHistoryApi* | [**get_list_finding_retest_history**](docs/FindingRetestHistoryApi.md#get_list_finding_retest_history) | **GET** /api/client/finding-retest-history/list | List Finding Retest History
 *FindingsApi* | [**create_custom_property_finding**](docs/FindingsApi.md#create_custom_property_finding) | **POST** /api/client/findings/show/{id}/custom-property | Create Custom Property
 *FindingsApi* | [**create_finding_note**](docs/FindingsApi.md#create_finding_note) | **POST** /api/client/findings/show/{id}/note | Create Finding Note
 *FindingsApi* | [**delete_custom_property_finding**](docs/FindingsApi.md#delete_custom_property_finding) | **DELETE** /api/client/findings/show/{id}/custom-property/{customPropertyId} | Delete Custom Property
@@ -248,6 +250,7 @@ Class | Method | HTTP request | Description
 *PackageManagersApi* | [**update_asset_package_manager_note**](docs/PackageManagersApi.md#update_asset_package_manager_note) | **PUT** /api/client/assets/packageManager/show/{id}/note/{noteId} | Update Note
 *PackageManagersApi* | [**update_asset_package_manager_status**](docs/PackageManagersApi.md#update_asset_package_manager_status) | **PUT** /api/client/assets/packageManager/update-status/{id} | Update Status
 *PackageManagersApi* | [**update_custom_property_package_manager**](docs/PackageManagersApi.md#update_custom_property_package_manager) | **PUT** /api/client/assets/packageManager/show/{id}/custom-property/{customPropertyId} | Update Custom Property
+*PendingDomainsApi* | [**get_list_pending_domains**](docs/PendingDomainsApi.md#get_list_pending_domains) | **GET** /api/client/pending-domains/list | List Pending Domains
 *PointsOfInterestApi* | [**get_list_points_of_interest**](docs/PointsOfInterestApi.md#get_list_points_of_interest) | **GET** /api/client/points-of-interest/list | List Points of Interest
 *PortsApi* | [**get_asset_port_details**](docs/PortsApi.md#get_asset_port_details) | **GET** /api/client/assets/ip/port/show/{id} | Get Port
 *PortsApi* | [**get_list_asset_ports**](docs/PortsApi.md#get_list_asset_ports) | **GET** /api/client/assets/ip/port/list | List Ports
@@ -311,6 +314,7 @@ Class | Method | HTTP request | Description
  - [ClientActivityLog](docs/ClientActivityLog.md)
  - [ClientApiDocumentation](docs/ClientApiDocumentation.md)
  - [ClientApiDocumentationAsset](docs/ClientApiDocumentationAsset.md)
+ - [ClientAssetDnsRecord](docs/ClientAssetDnsRecord.md)
  - [ClientBusinessUnit](docs/ClientBusinessUnit.md)
  - [ClientBusinessUnitData](docs/ClientBusinessUnitData.md)
  - [ClientBusinessUnitDetail](docs/ClientBusinessUnitDetail.md)
@@ -322,6 +326,7 @@ Class | Method | HTTP request | Description
  - [ClientContainerData](docs/ClientContainerData.md)
  - [ClientCustomProperty](docs/ClientCustomProperty.md)
  - [ClientDnsRecord](docs/ClientDnsRecord.md)
+ - [ClientDnsRecordAsset](docs/ClientDnsRecordAsset.md)
  - [ClientDnsRecordListData](docs/ClientDnsRecordListData.md)
  - [ClientDomain](docs/ClientDomain.md)
  - [ClientDomainData](docs/ClientDomainData.md)
@@ -329,6 +334,10 @@ Class | Method | HTTP request | Description
  - [ClientFindingAssignee](docs/ClientFindingAssignee.md)
  - [ClientFindingData](docs/ClientFindingData.md)
  - [ClientFindingImpactTag](docs/ClientFindingImpactTag.md)
+ - [ClientFindingRetestHistory](docs/ClientFindingRetestHistory.md)
+ - [ClientFindingRetestHistoryAsset](docs/ClientFindingRetestHistoryAsset.md)
+ - [ClientFindingRetestHistoryFinding](docs/ClientFindingRetestHistoryFinding.md)
+ - [ClientFindingRetestHistoryTriggeredBy](docs/ClientFindingRetestHistoryTriggeredBy.md)
  - [ClientIp](docs/ClientIp.md)
  - [ClientIpData](docs/ClientIpData.md)
  - [ClientIpDetailDnsRecords](docs/ClientIpDetailDnsRecords.md)
@@ -347,6 +356,8 @@ Class | Method | HTTP request | Description
  - [ClientNoteListData](docs/ClientNoteListData.md)
  - [ClientPackageManager](docs/ClientPackageManager.md)
  - [ClientPackageManagerData](docs/ClientPackageManagerData.md)
+ - [ClientPendingDomain](docs/ClientPendingDomain.md)
+ - [ClientPendingDomainWhoisData](docs/ClientPendingDomainWhoisData.md)
  - [ClientPort](docs/ClientPort.md)
  - [ClientPortData](docs/ClientPortData.md)
  - [ClientRepository](docs/ClientRepository.md)
@@ -393,12 +404,15 @@ Class | Method | HTTP request | Description
  - [PaginatedClientCloudStorage](docs/PaginatedClientCloudStorage.md)
  - [PaginatedClientContainer](docs/PaginatedClientContainer.md)
  - [PaginatedClientCustomProperty](docs/PaginatedClientCustomProperty.md)
+ - [PaginatedClientDnsRecord](docs/PaginatedClientDnsRecord.md)
  - [PaginatedClientDomain](docs/PaginatedClientDomain.md)
+ - [PaginatedClientFindingRetestHistory](docs/PaginatedClientFindingRetestHistory.md)
  - [PaginatedClientFindings](docs/PaginatedClientFindings.md)
  - [PaginatedClientIp](docs/PaginatedClientIp.md)
  - [PaginatedClientIpRange](docs/PaginatedClientIpRange.md)
  - [PaginatedClientMobileApp](docs/PaginatedClientMobileApp.md)
  - [PaginatedClientPackageManager](docs/PaginatedClientPackageManager.md)
+ - [PaginatedClientPendingDomain](docs/PaginatedClientPendingDomain.md)
  - [PaginatedClientPort](docs/PaginatedClientPort.md)
  - [PaginatedClientRepository](docs/PaginatedClientRepository.md)
  - [PaginatedClientSaasPlatform](docs/PaginatedClientSaasPlatform.md)

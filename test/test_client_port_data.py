@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_port_data import ClientPortData
+from watchtowr_api_sdk.models.client_port_data import ClientPortData
 
 class TestClientPortData(unittest.TestCase):
     """ClientPortData unit test stubs"""
@@ -36,7 +36,7 @@ class TestClientPortData(unittest.TestCase):
         model = ClientPortData()
         if include_optional:
             return ClientPortData(
-                data = openapi_client.models.client_port.ClientPort(
+                data = watchtowr_api_sdk.models.client_port.ClientPort(
                     type = 'TCP', 
                     status = 'verified', 
                     created_at = 2022-02-13T02:10:00.000000Z, 
@@ -50,14 +50,14 @@ class TestClientPortData(unittest.TestCase):
                     banner = 'OpenSSH6.6.1p1 Ubuntu 2ubuntu2.13Ubuntu Linux; protocol 2.0', 
                     service = 'ssh', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], )
             )
         else:
             return ClientPortData(
-                data = openapi_client.models.client_port.ClientPort(
+                data = watchtowr_api_sdk.models.client_port.ClientPort(
                     type = 'TCP', 
                     status = 'verified', 
                     created_at = 2022-02-13T02:10:00.000000Z, 
@@ -71,7 +71,7 @@ class TestClientPortData(unittest.TestCase):
                     banner = 'OpenSSH6.6.1p1 Ubuntu 2ubuntu2.13Ubuntu Linux; protocol 2.0', 
                     service = 'ssh', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], ),

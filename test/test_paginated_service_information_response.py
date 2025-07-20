@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.paginated_service_information_response import PaginatedServiceInformationResponse
+from watchtowr_api_sdk.models.paginated_service_information_response import PaginatedServiceInformationResponse
 
 class TestPaginatedServiceInformationResponse(unittest.TestCase):
     """PaginatedServiceInformationResponse unit test stubs"""
@@ -37,10 +37,10 @@ class TestPaginatedServiceInformationResponse(unittest.TestCase):
         if include_optional:
             return PaginatedServiceInformationResponse(
                 data = [
-                    openapi_client.models.service_information_response.ServiceInformationResponse(
+                    watchtowr_api_sdk.models.service_information_response.ServiceInformationResponse(
                         id = 1, 
                         response = 'example', 
-                        certificate = openapi_client.models.service_information_certificate.ServiceInformationCertificate(
+                        certificate = watchtowr_api_sdk.models.service_information_certificate.ServiceInformationCertificate(
                             id = 1, 
                             subject_common_name = 'example.com', 
                             subject_organisation = 'example', 
@@ -54,26 +54,26 @@ class TestPaginatedServiceInformationResponse(unittest.TestCase):
                             public_key_info_size = 'example', 
                             status = 'Expired', 
                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
-                        asset = openapi_client.models.service_information_asset.ServiceInformationAsset(
+                        asset = watchtowr_api_sdk.models.service_information_asset.ServiceInformationAsset(
                             id = 1, 
                             name = '123.123.123.123', 
                             type = 'ip', 
                             business_units = [
-                                openapi_client.models.client_business_unit.ClientBusinessUnit(
+                                watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                     id = 1, 
                                     name = 'Singapore Business Unit', )
                                 ], ), )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return PaginatedServiceInformationResponse(
                 data = [
-                    openapi_client.models.service_information_response.ServiceInformationResponse(
+                    watchtowr_api_sdk.models.service_information_response.ServiceInformationResponse(
                         id = 1, 
                         response = 'example', 
-                        certificate = openapi_client.models.service_information_certificate.ServiceInformationCertificate(
+                        certificate = watchtowr_api_sdk.models.service_information_certificate.ServiceInformationCertificate(
                             id = 1, 
                             subject_common_name = 'example.com', 
                             subject_organisation = 'example', 
@@ -87,17 +87,17 @@ class TestPaginatedServiceInformationResponse(unittest.TestCase):
                             public_key_info_size = 'example', 
                             status = 'Expired', 
                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
-                        asset = openapi_client.models.service_information_asset.ServiceInformationAsset(
+                        asset = watchtowr_api_sdk.models.service_information_asset.ServiceInformationAsset(
                             id = 1, 
                             name = '123.123.123.123', 
                             type = 'ip', 
                             business_units = [
-                                openapi_client.models.client_business_unit.ClientBusinessUnit(
+                                watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                     id = 1, 
                                     name = 'Singapore Business Unit', )
                                 ], ), )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

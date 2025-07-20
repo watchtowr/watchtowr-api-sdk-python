@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.required_actions_dto import RequiredActionsDto
+from watchtowr_api_sdk.models.required_actions_dto import RequiredActionsDto
 
 class TestRequiredActionsDto(unittest.TestCase):
     """RequiredActionsDto unit test stubs"""

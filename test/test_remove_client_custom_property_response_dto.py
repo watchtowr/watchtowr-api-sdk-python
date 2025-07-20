@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto
+from watchtowr_api_sdk.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto
 
 class TestRemoveClientCustomPropertyResponseDto(unittest.TestCase):
     """RemoveClientCustomPropertyResponseDto unit test stubs"""

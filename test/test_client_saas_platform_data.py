@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_saas_platform_data import ClientSaasPlatformData
+from watchtowr_api_sdk.models.client_saas_platform_data import ClientSaasPlatformData
 
 class TestClientSaasPlatformData(unittest.TestCase):
     """ClientSaasPlatformData unit test stubs"""
@@ -36,7 +36,7 @@ class TestClientSaasPlatformData(unittest.TestCase):
         model = ClientSaasPlatformData()
         if include_optional:
             return ClientSaasPlatformData(
-                data = openapi_client.models.client_saas_platform.ClientSaasPlatform(
+                data = watchtowr_api_sdk.models.client_saas_platform.ClientSaasPlatform(
                     type = 'saasPlatform', 
                     source = 'module-adversarysight-slack-saas-discovery', 
                     status = 'verified', 
@@ -47,7 +47,7 @@ class TestClientSaasPlatformData(unittest.TestCase):
                     url = 'https://example.slack.com', 
                     provider = 'Slack', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 
@@ -56,7 +56,7 @@ class TestClientSaasPlatformData(unittest.TestCase):
             )
         else:
             return ClientSaasPlatformData(
-                data = openapi_client.models.client_saas_platform.ClientSaasPlatform(
+                data = watchtowr_api_sdk.models.client_saas_platform.ClientSaasPlatform(
                     type = 'saasPlatform', 
                     source = 'module-adversarysight-slack-saas-discovery', 
                     status = 'verified', 
@@ -67,7 +67,7 @@ class TestClientSaasPlatformData(unittest.TestCase):
                     url = 'https://example.slack.com', 
                     provider = 'Slack', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 

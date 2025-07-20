@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.kill_switch_forbidden_error import KillSwitchForbiddenError
+from watchtowr_api_sdk.models.kill_switch_forbidden_error import KillSwitchForbiddenError
 
 class TestKillSwitchForbiddenError(unittest.TestCase):
     """KillSwitchForbiddenError unit test stubs"""

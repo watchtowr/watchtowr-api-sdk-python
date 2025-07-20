@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.update_client_finding_status_request_body import UpdateClientFindingStatusRequestBody
+from watchtowr_api_sdk.models.update_client_finding_status_request_body import UpdateClientFindingStatusRequestBody
 
 class TestUpdateClientFindingStatusRequestBody(unittest.TestCase):
     """UpdateClientFindingStatusRequestBody unit test stubs"""

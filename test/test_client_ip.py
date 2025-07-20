@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_ip import ClientIp
+from watchtowr_api_sdk.models.client_ip import ClientIp
 
 class TestClientIp(unittest.TestCase):
     """ClientIp unit test stubs"""
@@ -45,19 +45,19 @@ class TestClientIp(unittest.TestCase):
                 id = 123,
                 name = '123.123.123.123',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],
                 country = 'SG',
                 live = True,
-                dns_records = openapi_client.models.client_ip_detail_dns_records.ClientIpDetailDnsRecords(
+                dns_records = watchtowr_api_sdk.models.client_ip_detail_dns_records.ClientIpDetailDnsRecords(
                     dns_records_owned = [{"id":1351,"name":"123.123.123.123.in-addr.arpa","type":"PTR","ttl":300,"value":"123.123.123.123.in-addr.arpa","discovered_on":"2024-06-11T08:33:59.000Z"}], 
                     dns_records_pointing_at = [{"id":1289,"name":"example-dnsRecord-1289.com","type":"A","ttl":3600,"value":"example-dnsRecord-1289.com","discovered_on":"2024-06-11T06:09:09.000Z","asset":{"id":102,"name":"example-domain-102.com"}}], ),
                 metadata = {"tags":[{"key":"Name","value":"MyEC2Instance"},{"key":"Environment","value":"Production"}],"amiId":"ami-0abcdef1234567890","state":{"code":16,"name":"running"},"vpcId":"vpc-1a2b3c4d","keyName":"my-key-pair","subnetId":"subnet-6e7f829e","cpuOptions":{"coreCount":1,"threadsPerCore":1},"hypervisor":"xen","instanceId":"i-1234567890abcdef0","launchTime":"2024-07-10T10:20:30Z","instanceType":"t2.micro","rootDeviceName":"/dev/sda1","rootDeviceType":"ebs","securityGroups":[{"groupId":"sg-1a2b3c4d","groupName":"default"}],"publicIpAddress":"123.123.123.123","availabilityZone":"us-west-2a","privateIpAddress":"456.456.456.456","networkInterfaces":[{"vpcId":"vpc-1a2b3c4d","groups":[{"groupId":"sg-1a2b3c4d","groupName":"default"}],"ownerId":"123456789012","subnetId":"subnet-6e7f829e","attachment":{"status":"attached","attachTime":"2024-07-10T10:20:30Z","deviceIndex":0,"attachmentId":"eni-attach-1a2b3c4d","deleteOnTermination":true},"macAddress":"02:7f:42:3b:c4:57","description":"Primary network interface","privateIpAddress":"456.456.456.456","networkInterfaceId":"eni-1a2b3c4d"}],"iamInstanceProfile":{"id":"AIPAI1234567890abcdef","arn":"arn:aws:iam::123456789012:instance-profile/my-iam-role"},"virtualizationType":"hvm","blockDeviceMappings":[{"ebs":{"status":"attached","volumeId":"vol-049df61146c4d7901","attachTime":"2024-07-10T10:21:00Z","deleteOnTermination":true},"deviceName":"/dev/sda1"}]},
                 custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"ip","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"ip","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}],
                 criticality = 'Medium',
-                infrastructure = openapi_client.models.infrastructure.Infrastructure(
+                infrastructure = watchtowr_api_sdk.models.infrastructure.Infrastructure(
                     cdn = 'AWS CloudFront', 
                     cloud = 'Amazon Web Services (AWS)', 
                     waf = 'OWASP ModSecurity', )
@@ -73,13 +73,13 @@ class TestClientIp(unittest.TestCase):
                 id = 123,
                 name = '123.123.123.123',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],
                 country = 'SG',
                 live = True,
-                dns_records = openapi_client.models.client_ip_detail_dns_records.ClientIpDetailDnsRecords(
+                dns_records = watchtowr_api_sdk.models.client_ip_detail_dns_records.ClientIpDetailDnsRecords(
                     dns_records_owned = [{"id":1351,"name":"123.123.123.123.in-addr.arpa","type":"PTR","ttl":300,"value":"123.123.123.123.in-addr.arpa","discovered_on":"2024-06-11T08:33:59.000Z"}], 
                     dns_records_pointing_at = [{"id":1289,"name":"example-dnsRecord-1289.com","type":"A","ttl":3600,"value":"example-dnsRecord-1289.com","discovered_on":"2024-06-11T06:09:09.000Z","asset":{"id":102,"name":"example-domain-102.com"}}], ),
                 metadata = {"tags":[{"key":"Name","value":"MyEC2Instance"},{"key":"Environment","value":"Production"}],"amiId":"ami-0abcdef1234567890","state":{"code":16,"name":"running"},"vpcId":"vpc-1a2b3c4d","keyName":"my-key-pair","subnetId":"subnet-6e7f829e","cpuOptions":{"coreCount":1,"threadsPerCore":1},"hypervisor":"xen","instanceId":"i-1234567890abcdef0","launchTime":"2024-07-10T10:20:30Z","instanceType":"t2.micro","rootDeviceName":"/dev/sda1","rootDeviceType":"ebs","securityGroups":[{"groupId":"sg-1a2b3c4d","groupName":"default"}],"publicIpAddress":"123.123.123.123","availabilityZone":"us-west-2a","privateIpAddress":"456.456.456.456","networkInterfaces":[{"vpcId":"vpc-1a2b3c4d","groups":[{"groupId":"sg-1a2b3c4d","groupName":"default"}],"ownerId":"123456789012","subnetId":"subnet-6e7f829e","attachment":{"status":"attached","attachTime":"2024-07-10T10:20:30Z","deviceIndex":0,"attachmentId":"eni-attach-1a2b3c4d","deleteOnTermination":true},"macAddress":"02:7f:42:3b:c4:57","description":"Primary network interface","privateIpAddress":"456.456.456.456","networkInterfaceId":"eni-1a2b3c4d"}],"iamInstanceProfile":{"id":"AIPAI1234567890abcdef","arn":"arn:aws:iam::123456789012:instance-profile/my-iam-role"},"virtualizationType":"hvm","blockDeviceMappings":[{"ebs":{"status":"attached","volumeId":"vol-049df61146c4d7901","attachTime":"2024-07-10T10:21:00Z","deleteOnTermination":true},"deviceName":"/dev/sda1"}]},

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_cloud_storage_data import ClientCloudStorageData
+from watchtowr_api_sdk.models.client_cloud_storage_data import ClientCloudStorageData
 
 class TestClientCloudStorageData(unittest.TestCase):
     """ClientCloudStorageData unit test stubs"""
@@ -36,7 +36,7 @@ class TestClientCloudStorageData(unittest.TestCase):
         model = ClientCloudStorageData()
         if include_optional:
             return ClientCloudStorageData(
-                data = openapi_client.models.client_cloud_storage.ClientCloudStorage(
+                data = watchtowr_api_sdk.models.client_cloud_storage.ClientCloudStorage(
                     type = 'cloudStorage', 
                     source = 'module-adversarysight-cloud-integration-aws-s3-buckets', 
                     status = 'verified', 
@@ -48,7 +48,7 @@ class TestClientCloudStorageData(unittest.TestCase):
                     platform = 'awss3', 
                     url = 'watchtowr-s3-bucket.s3.amazonaws.com', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 
@@ -57,7 +57,7 @@ class TestClientCloudStorageData(unittest.TestCase):
             )
         else:
             return ClientCloudStorageData(
-                data = openapi_client.models.client_cloud_storage.ClientCloudStorage(
+                data = watchtowr_api_sdk.models.client_cloud_storage.ClientCloudStorage(
                     type = 'cloudStorage', 
                     source = 'module-adversarysight-cloud-integration-aws-s3-buckets', 
                     status = 'verified', 
@@ -69,7 +69,7 @@ class TestClientCloudStorageData(unittest.TestCase):
                     platform = 'awss3', 
                     url = 'watchtowr-s3-bucket.s3.amazonaws.com', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 

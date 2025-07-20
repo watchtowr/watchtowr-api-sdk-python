@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.paginated_suspicious_domain import PaginatedSuspiciousDomain
+from watchtowr_api_sdk.models.paginated_suspicious_domain import PaginatedSuspiciousDomain
 
 # TODO update the JSON string below
 json = "{}"

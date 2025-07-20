@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_service_information_response_data import ClientServiceInformationResponseData
+from watchtowr_api_sdk.models.client_service_information_response_data import ClientServiceInformationResponseData
 
 class TestClientServiceInformationResponseData(unittest.TestCase):
     """ClientServiceInformationResponseData unit test stubs"""
@@ -36,10 +36,10 @@ class TestClientServiceInformationResponseData(unittest.TestCase):
         model = ClientServiceInformationResponseData()
         if include_optional:
             return ClientServiceInformationResponseData(
-                data = openapi_client.models.service_information_response.ServiceInformationResponse(
+                data = watchtowr_api_sdk.models.service_information_response.ServiceInformationResponse(
                     id = 1, 
                     response = 'example', 
-                    certificate = openapi_client.models.service_information_certificate.ServiceInformationCertificate(
+                    certificate = watchtowr_api_sdk.models.service_information_certificate.ServiceInformationCertificate(
                         id = 1, 
                         subject_common_name = 'example.com', 
                         subject_organisation = 'example', 
@@ -53,22 +53,22 @@ class TestClientServiceInformationResponseData(unittest.TestCase):
                         public_key_info_size = 'example', 
                         status = 'Expired', 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
-                    asset = openapi_client.models.service_information_asset.ServiceInformationAsset(
+                    asset = watchtowr_api_sdk.models.service_information_asset.ServiceInformationAsset(
                         id = 1, 
                         name = '123.123.123.123', 
                         type = 'ip', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], ), )
             )
         else:
             return ClientServiceInformationResponseData(
-                data = openapi_client.models.service_information_response.ServiceInformationResponse(
+                data = watchtowr_api_sdk.models.service_information_response.ServiceInformationResponse(
                     id = 1, 
                     response = 'example', 
-                    certificate = openapi_client.models.service_information_certificate.ServiceInformationCertificate(
+                    certificate = watchtowr_api_sdk.models.service_information_certificate.ServiceInformationCertificate(
                         id = 1, 
                         subject_common_name = 'example.com', 
                         subject_organisation = 'example', 
@@ -82,12 +82,12 @@ class TestClientServiceInformationResponseData(unittest.TestCase):
                         public_key_info_size = 'example', 
                         status = 'Expired', 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
-                    asset = openapi_client.models.service_information_asset.ServiceInformationAsset(
+                    asset = watchtowr_api_sdk.models.service_information_asset.ServiceInformationAsset(
                         id = 1, 
                         name = '123.123.123.123', 
                         type = 'ip', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], ), ),

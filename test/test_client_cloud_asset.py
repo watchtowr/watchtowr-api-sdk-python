@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_cloud_asset import ClientCloudAsset
+from watchtowr_api_sdk.models.client_cloud_asset import ClientCloudAsset
 
 class TestClientCloudAsset(unittest.TestCase):
     """ClientCloudAsset unit test stubs"""

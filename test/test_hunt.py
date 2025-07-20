@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.hunt import Hunt
+from watchtowr_api_sdk.models.hunt import Hunt
 
 class TestHunt(unittest.TestCase):
     """Hunt unit test stubs"""

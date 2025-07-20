@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.assets_list_response import AssetsListResponse
+from watchtowr_api_sdk.models.assets_list_response import AssetsListResponse
 
 # TODO update the JSON string below
 json = "{}"

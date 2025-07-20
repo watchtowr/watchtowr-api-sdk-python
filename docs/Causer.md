@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.causer import Causer
+from watchtowr_api_sdk.models.causer import Causer
 
 # TODO update the JSON string below
 json = "{}"

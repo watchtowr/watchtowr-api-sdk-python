@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_source_ips_addresses import ClientSourceIpsAddresses
+from watchtowr_api_sdk.models.client_source_ips_addresses import ClientSourceIpsAddresses
 
 class TestClientSourceIpsAddresses(unittest.TestCase):
     """ClientSourceIpsAddresses unit test stubs"""

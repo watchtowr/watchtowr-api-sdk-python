@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.add_asset_api import AddAssetApi
+from watchtowr_api_sdk.api.add_asset_api import AddAssetApi
 
 
 class TestAddAssetApi(unittest.TestCase):

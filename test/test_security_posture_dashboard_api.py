@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.security_posture_dashboard_api import SecurityPostureDashboardApi
+from watchtowr_api_sdk.api.security_posture_dashboard_api import SecurityPostureDashboardApi
 
 
 class TestSecurityPostureDashboardApi(unittest.TestCase):

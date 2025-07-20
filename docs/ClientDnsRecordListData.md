@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**List[ClientDnsRecord]**](ClientDnsRecord.md) |  | 
+**data** | [**List[ClientAssetDnsRecord]**](ClientAssetDnsRecord.md) |  | 
 **meta** | [**Meta**](Meta.md) |  | 
 
 ## Example
 
 ```python
-from openapi_client.models.client_dns_record_list_data import ClientDnsRecordListData
+from watchtowr_api_sdk.models.client_dns_record_list_data import ClientDnsRecordListData
 
 # TODO update the JSON string below
 json = "{}"

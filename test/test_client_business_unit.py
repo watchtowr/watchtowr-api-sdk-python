@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_business_unit import ClientBusinessUnit
+from watchtowr_api_sdk.models.client_business_unit import ClientBusinessUnit
 
 class TestClientBusinessUnit(unittest.TestCase):
     """ClientBusinessUnit unit test stubs"""

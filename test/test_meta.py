@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.meta import Meta
+from watchtowr_api_sdk.models.meta import Meta
 
 class TestMeta(unittest.TestCase):
     """Meta unit test stubs"""
@@ -36,25 +36,25 @@ class TestMeta(unittest.TestCase):
         model = Meta()
         if include_optional:
             return Meta(
-                pagination = openapi_client.models.pagination.Pagination(
+                pagination = watchtowr_api_sdk.models.pagination.Pagination(
                     total = 1.337, 
                     count = 1.337, 
                     per_page = 1.337, 
                     current_page = 1.337, 
                     total_pages = 1.337, 
-                    links = openapi_client.models.link.Link(
+                    links = watchtowr_api_sdk.models.link.Link(
                         previous = '', 
                         next = '', ), )
             )
         else:
             return Meta(
-                pagination = openapi_client.models.pagination.Pagination(
+                pagination = watchtowr_api_sdk.models.pagination.Pagination(
                     total = 1.337, 
                     count = 1.337, 
                     per_page = 1.337, 
                     current_page = 1.337, 
                     total_pages = 1.337, 
-                    links = openapi_client.models.link.Link(
+                    links = watchtowr_api_sdk.models.link.Link(
                         previous = '', 
                         next = '', ), ),
         )

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.package_managers_api import PackageManagersApi
+from watchtowr_api_sdk.api.package_managers_api import PackageManagersApi
 
 
 class TestPackageManagersApi(unittest.TestCase):

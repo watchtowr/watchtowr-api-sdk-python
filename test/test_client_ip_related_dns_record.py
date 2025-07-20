@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_ip_related_dns_record import ClientIpRelatedDnsRecord
+from watchtowr_api_sdk.models.client_ip_related_dns_record import ClientIpRelatedDnsRecord
 
 class TestClientIpRelatedDnsRecord(unittest.TestCase):
     """ClientIpRelatedDnsRecord unit test stubs"""
@@ -42,7 +42,7 @@ class TestClientIpRelatedDnsRecord(unittest.TestCase):
                 ttl = 60,
                 value = '123.123.123.123',
                 discovered_on = 2022-02-13T02:10:00.000000Z,
-                asset = openapi_client.models.client_ip_related_dns_record_asset.ClientIpRelatedDnsRecordAsset(
+                asset = watchtowr_api_sdk.models.client_ip_related_dns_record_asset.ClientIpRelatedDnsRecordAsset(
                     id = 1, 
                     name = 'watchtowr.com', )
             )
@@ -54,7 +54,7 @@ class TestClientIpRelatedDnsRecord(unittest.TestCase):
                 ttl = 60,
                 value = '123.123.123.123',
                 discovered_on = 2022-02-13T02:10:00.000000Z,
-                asset = openapi_client.models.client_ip_related_dns_record_asset.ClientIpRelatedDnsRecordAsset(
+                asset = watchtowr_api_sdk.models.client_ip_related_dns_record_asset.ClientIpRelatedDnsRecordAsset(
                     id = 1, 
                     name = 'watchtowr.com', ),
         )

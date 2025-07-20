@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.latest_executed_hunt_dto import LatestExecutedHuntDto
+from watchtowr_api_sdk.models.latest_executed_hunt_dto import LatestExecutedHuntDto
 
 # TODO update the JSON string below
 json = "{}"

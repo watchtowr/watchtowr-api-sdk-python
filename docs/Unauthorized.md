@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.unauthorized import Unauthorized
+from watchtowr_api_sdk.models.unauthorized import Unauthorized
 
 # TODO update the JSON string below
 json = "{}"

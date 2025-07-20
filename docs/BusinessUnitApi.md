@@ -1,4 +1,4 @@
-# openapi_client.BusinessUnitApi
+# watchtowr_api_sdk.BusinessUnitApi
 
 All URIs are relative to *https://your-tenant-id.sg.client.watchtowr.io*
 
@@ -20,14 +20,14 @@ Get the details of a specific business unit.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_business_unit_data import ClientBusinessUnitData
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_business_unit_data import ClientBusinessUnitData
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -37,14 +37,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.BusinessUnitApi(api_client)
+    api_instance = watchtowr_api_sdk.BusinessUnitApi(api_client)
     id = 3.4 # float | 
 
     try:
@@ -101,14 +101,14 @@ List all business units available to the current user.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.paginated_business_unit import PaginatedBusinessUnit
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.paginated_business_unit import PaginatedBusinessUnit
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -118,14 +118,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.BusinessUnitApi(api_client)
+    api_instance = watchtowr_api_sdk.BusinessUnitApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
     created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter business units created after a given date and time. (optional)

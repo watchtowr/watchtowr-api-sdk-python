@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_ip_range import ClientIpRange
+from watchtowr_api_sdk.models.client_ip_range import ClientIpRange
 
 class TestClientIpRange(unittest.TestCase):
     """ClientIpRange unit test stubs"""
@@ -48,7 +48,7 @@ class TestClientIpRange(unittest.TestCase):
                 desc = 'IpRange Eg 1',
                 country = 'SG',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],
@@ -69,7 +69,7 @@ class TestClientIpRange(unittest.TestCase):
                 desc = 'IpRange Eg 1',
                 country = 'SG',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],

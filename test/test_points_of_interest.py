@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.points_of_interest import PointsOfInterest
+from watchtowr_api_sdk.models.points_of_interest import PointsOfInterest
 
 class TestPointsOfInterest(unittest.TestCase):
     """PointsOfInterest unit test stubs"""
@@ -46,7 +46,7 @@ class TestPointsOfInterest(unittest.TestCase):
                 asset_name = '123.123.123.123',
                 asset_type = 'ip',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],
@@ -64,7 +64,7 @@ class TestPointsOfInterest(unittest.TestCase):
                 asset_name = '123.123.123.123',
                 asset_type = 'ip',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],

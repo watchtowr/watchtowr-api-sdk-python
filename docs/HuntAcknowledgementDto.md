@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.hunt_acknowledgement_dto import HuntAcknowledgementDto
+from watchtowr_api_sdk.models.hunt_acknowledgement_dto import HuntAcknowledgementDto
 
 # TODO update the JSON string below
 json = "{}"

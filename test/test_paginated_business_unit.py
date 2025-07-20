@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.paginated_business_unit import PaginatedBusinessUnit
+from watchtowr_api_sdk.models.paginated_business_unit import PaginatedBusinessUnit
 
 class TestPaginatedBusinessUnit(unittest.TestCase):
     """PaginatedBusinessUnit unit test stubs"""
@@ -37,25 +37,25 @@ class TestPaginatedBusinessUnit(unittest.TestCase):
         if include_optional:
             return PaginatedBusinessUnit(
                 data = [
-                    openapi_client.models.client_business_unit_detail.ClientBusinessUnitDetail(
+                    watchtowr_api_sdk.models.client_business_unit_detail.ClientBusinessUnitDetail(
                         id = 1, 
                         name = 'Singapore Business Unit', 
                         description = 'Singapore based assets', 
                         created_at = 2022-02-13T02:10:00.000000Z, )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return PaginatedBusinessUnit(
                 data = [
-                    openapi_client.models.client_business_unit_detail.ClientBusinessUnitDetail(
+                    watchtowr_api_sdk.models.client_business_unit_detail.ClientBusinessUnitDetail(
                         id = 1, 
                         name = 'Singapore Business Unit', 
                         description = 'Singapore based assets', 
                         created_at = 2022-02-13T02:10:00.000000Z, )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

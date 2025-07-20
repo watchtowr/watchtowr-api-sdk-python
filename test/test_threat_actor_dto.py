@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.threat_actor_dto import ThreatActorDto
+from watchtowr_api_sdk.models.threat_actor_dto import ThreatActorDto
 
 class TestThreatActorDto(unittest.TestCase):
     """ThreatActorDto unit test stubs"""

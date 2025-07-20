@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.hunt_detail import HuntDetail
+from watchtowr_api_sdk.models.hunt_detail import HuntDetail
 
 # TODO update the JSON string below
 json = "{}"

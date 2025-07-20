@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.client_seed_data import ClientSeedData
+from watchtowr_api_sdk.models.client_seed_data import ClientSeedData
 
 # TODO update the JSON string below
 json = "{}"

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_seed_data import ClientSeedData
+from watchtowr_api_sdk.models.client_seed_data import ClientSeedData
 
 class TestClientSeedData(unittest.TestCase):
     """ClientSeedData unit test stubs"""

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.service_information_certificate import ServiceInformationCertificate
+from watchtowr_api_sdk.models.service_information_certificate import ServiceInformationCertificate
 
 class TestServiceInformationCertificate(unittest.TestCase):
     """ServiceInformationCertificate unit test stubs"""

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.unprocessable_content import UnprocessableContent
+from watchtowr_api_sdk.models.unprocessable_content import UnprocessableContent
 
 # TODO update the JSON string below
 json = "{}"

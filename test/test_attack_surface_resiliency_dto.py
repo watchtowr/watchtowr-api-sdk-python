@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.attack_surface_resiliency_dto import AttackSurfaceResiliencyDto
+from watchtowr_api_sdk.models.attack_surface_resiliency_dto import AttackSurfaceResiliencyDto
 
 class TestAttackSurfaceResiliencyDto(unittest.TestCase):
     """AttackSurfaceResiliencyDto unit test stubs"""

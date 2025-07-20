@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.ports_api import PortsApi
+from watchtowr_api_sdk.api.ports_api import PortsApi
 
 
 class TestPortsApi(unittest.TestCase):

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.security_posture_dashboard_response import SecurityPostureDashboardResponse
+from watchtowr_api_sdk.models.security_posture_dashboard_response import SecurityPostureDashboardResponse
 
 class TestSecurityPostureDashboardResponse(unittest.TestCase):
     """SecurityPostureDashboardResponse unit test stubs"""
@@ -36,7 +36,7 @@ class TestSecurityPostureDashboardResponse(unittest.TestCase):
         model = SecurityPostureDashboardResponse()
         if include_optional:
             return SecurityPostureDashboardResponse(
-                data = openapi_client.models.security_posture_dashboard_dto.SecurityPostureDashboardDto(
+                data = watchtowr_api_sdk.models.security_posture_dashboard_dto.SecurityPostureDashboardDto(
                     required_actions = null, 
                     hunt_overview = null, 
                     attack_surface_resiliency = null, 
@@ -44,7 +44,7 @@ class TestSecurityPostureDashboardResponse(unittest.TestCase):
             )
         else:
             return SecurityPostureDashboardResponse(
-                data = openapi_client.models.security_posture_dashboard_dto.SecurityPostureDashboardDto(
+                data = watchtowr_api_sdk.models.security_posture_dashboard_dto.SecurityPostureDashboardDto(
                     required_actions = null, 
                     hunt_overview = null, 
                     attack_surface_resiliency = null, 

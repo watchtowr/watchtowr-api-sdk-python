@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_ip_dns_record_owned_data import ClientIpDnsRecordOwnedData
+from watchtowr_api_sdk.models.client_ip_dns_record_owned_data import ClientIpDnsRecordOwnedData
 
 class TestClientIpDnsRecordOwnedData(unittest.TestCase):
     """ClientIpDnsRecordOwnedData unit test stubs"""
@@ -37,7 +37,7 @@ class TestClientIpDnsRecordOwnedData(unittest.TestCase):
         if include_optional:
             return ClientIpDnsRecordOwnedData(
                 data = [
-                    openapi_client.models.client_dns_record.ClientDnsRecord(
+                    watchtowr_api_sdk.models.client_asset_dns_record.ClientAssetDnsRecord(
                         id = 1, 
                         name = 'watchtowr.com', 
                         type = 'A', 
@@ -49,7 +49,7 @@ class TestClientIpDnsRecordOwnedData(unittest.TestCase):
         else:
             return ClientIpDnsRecordOwnedData(
                 data = [
-                    openapi_client.models.client_dns_record.ClientDnsRecord(
+                    watchtowr_api_sdk.models.client_asset_dns_record.ClientAssetDnsRecord(
                         id = 1, 
                         name = 'watchtowr.com', 
                         type = 'A', 

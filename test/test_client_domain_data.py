@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_domain_data import ClientDomainData
+from watchtowr_api_sdk.models.client_domain_data import ClientDomainData
 
 class TestClientDomainData(unittest.TestCase):
     """ClientDomainData unit test stubs"""
@@ -36,7 +36,7 @@ class TestClientDomainData(unittest.TestCase):
         model = ClientDomainData()
         if include_optional:
             return ClientDomainData(
-                data = openapi_client.models.client_domain.ClientDomain(
+                data = watchtowr_api_sdk.models.client_domain.ClientDomain(
                     type = 'domain', 
                     source = 'watchtowr-cloud-integration-aws-hosts', 
                     status = 'verified', 
@@ -46,7 +46,7 @@ class TestClientDomainData(unittest.TestCase):
                     id = 123, 
                     name = 'watchtowr.com', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 
@@ -59,7 +59,7 @@ class TestClientDomainData(unittest.TestCase):
             )
         else:
             return ClientDomainData(
-                data = openapi_client.models.client_domain.ClientDomain(
+                data = watchtowr_api_sdk.models.client_domain.ClientDomain(
                     type = 'domain', 
                     source = 'watchtowr-cloud-integration-aws-hosts', 
                     status = 'verified', 
@@ -69,7 +69,7 @@ class TestClientDomainData(unittest.TestCase):
                     id = 123, 
                     name = 'watchtowr.com', 
                     business_units = [
-                        openapi_client.models.client_business_unit.ClientBusinessUnit(
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.findings_summary_dto import FindingsSummaryDto
+from watchtowr_api_sdk.models.findings_summary_dto import FindingsSummaryDto
 
 class TestFindingsSummaryDto(unittest.TestCase):
     """FindingsSummaryDto unit test stubs"""

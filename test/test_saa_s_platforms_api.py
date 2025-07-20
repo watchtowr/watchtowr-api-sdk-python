@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.saa_s_platforms_api import SaaSPlatformsApi
+from watchtowr_api_sdk.api.saa_s_platforms_api import SaaSPlatformsApi
 
 
 class TestSaaSPlatformsApi(unittest.TestCase):

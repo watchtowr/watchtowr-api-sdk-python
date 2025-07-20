@@ -1,4 +1,4 @@
-# openapi_client.APIDocumentationApi
+# watchtowr_api_sdk.APIDocumentationApi
 
 All URIs are relative to *https://your-tenant-id.sg.client.watchtowr.io*
 
@@ -31,15 +31,15 @@ Create a Note for a specific API Documentation asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_note_data import ClientNoteData
-from openapi_client.models.create_client_note_dto import CreateClientNoteDto
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_note_data import ClientNoteData
+from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -49,16 +49,16 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIDocumentationApi(api_client)
+    api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
     id = 3.4 # float | The asset ID of the API Documentation asset to create a new note for.
-    create_client_note_dto = openapi_client.CreateClientNoteDto() # CreateClientNoteDto | 
+    create_client_note_dto = watchtowr_api_sdk.CreateClientNoteDto() # CreateClientNoteDto | 
 
     try:
         # Create Note
@@ -115,15 +115,15 @@ Assign a specific API Documentation asset to a list of Business Units
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.asset_business_unit_ids_dto import AssetBusinessUnitIdsDTO
-from openapi_client.models.client_api_documentation import ClientApiDocumentation
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.asset_business_unit_ids_dto import AssetBusinessUnitIdsDTO
+from watchtowr_api_sdk.models.client_api_documentation import ClientApiDocumentation
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -133,16 +133,16 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIDocumentationApi(api_client)
+    api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
     id = 3.4 # float | The API Documentation asset's ID.
-    asset_business_unit_ids_dto = openapi_client.AssetBusinessUnitIdsDTO() # AssetBusinessUnitIdsDTO | 
+    asset_business_unit_ids_dto = watchtowr_api_sdk.AssetBusinessUnitIdsDTO() # AssetBusinessUnitIdsDTO | 
 
     try:
         # Assign API Documentation to Business Units
@@ -200,15 +200,15 @@ Create Custom Property for a specific API Documentation asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_custom_property import ClientCustomProperty
-from openapi_client.models.create_client_custom_property_dto import CreateClientCustomPropertyDto
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_custom_property import ClientCustomProperty
+from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -218,16 +218,16 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIDocumentationApi(api_client)
+    api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
     id = 3.4 # float | The asset ID of the API Documentation asset to create a new custom property for.
-    create_client_custom_property_dto = openapi_client.CreateClientCustomPropertyDto() # CreateClientCustomPropertyDto | 
+    create_client_custom_property_dto = watchtowr_api_sdk.CreateClientCustomPropertyDto() # CreateClientCustomPropertyDto | 
 
     try:
         # Create Custom Property
@@ -284,14 +284,14 @@ Delete a Note of a specific API Documentation asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.delete_note_succes import DeleteNoteSucces
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.delete_note_succes import DeleteNoteSucces
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -301,14 +301,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIDocumentationApi(api_client)
+    api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
     id = 3.4 # float | The asset ID of an API Documentation asset with a note to delete.
     note_id = 3.4 # float | The ID of the note to delete.
 
@@ -367,14 +367,14 @@ Delete Custom Property specific API Documentation asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -384,14 +384,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIDocumentationApi(api_client)
+    api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
     id = 3.4 # float | The asset ID of an API Documentation asset with a custom property to delete. 
     custom_property_id = 3.4 # float | The ID of the custom property to delete.
 
@@ -450,14 +450,14 @@ Get the details of a specific API documentation asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_api_documentation import ClientApiDocumentation
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_api_documentation import ClientApiDocumentation
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -467,14 +467,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIDocumentationApi(api_client)
+    api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
     id = 3.4 # float | The asset ID of the API documentation asset to retrieve.
 
     try:
@@ -531,14 +531,14 @@ List all notes for a specific API documentation asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_note_list_data import ClientNoteListData
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_note_list_data import ClientNoteListData
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -548,14 +548,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIDocumentationApi(api_client)
+    api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
     id = 3.4 # float | The asset ID of the API documentation asset to list notes for.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
@@ -616,14 +616,14 @@ List the Custom Properties of a specific API Documentation asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.paginated_client_custom_property import PaginatedClientCustomProperty
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.paginated_client_custom_property import PaginatedClientCustomProperty
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -633,14 +633,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIDocumentationApi(api_client)
+    api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
     id = 3.4 # float | The asset ID of the API Documentation asset to list custom properties of.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
@@ -701,14 +701,14 @@ List all discovered API documentation assets, ordered by date identified.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.paginated_api_documentation import PaginatedApiDocumentation
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.paginated_api_documentation import PaginatedApiDocumentation
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -718,14 +718,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIDocumentationApi(api_client)
+    api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
     asset_name = 'watchtowr_docs/watchtowr-swagger-hub' # str | Search API documentation by asset name. (optional)
@@ -798,14 +798,14 @@ Unassign a specific API Documentation asset from a list of Business Units
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_api_documentation import ClientApiDocumentation
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_api_documentation import ClientApiDocumentation
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -815,14 +815,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIDocumentationApi(api_client)
+    api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
     id = 3.4 # float | The API Documentation asset's ID.
     business_unit_ids = ['business_unit_ids_example'] # List[str] | List of comma-seperated business unit IDs to unassign from the asset.
 
@@ -882,15 +882,15 @@ Update a Note of a specific API Documentation asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_note_data import ClientNoteData
-from openapi_client.models.create_client_note_dto import CreateClientNoteDto
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_note_data import ClientNoteData
+from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -900,17 +900,17 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIDocumentationApi(api_client)
+    api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
     id = 3.4 # float | The asset ID of an API Documentation asset with a note to update.
     note_id = 3.4 # float | The ID of the note to update.
-    create_client_note_dto = openapi_client.CreateClientNoteDto() # CreateClientNoteDto | 
+    create_client_note_dto = watchtowr_api_sdk.CreateClientNoteDto() # CreateClientNoteDto | 
 
     try:
         # Update Note
@@ -968,15 +968,15 @@ Update the status of a specific API documentation asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_api_documentation import ClientApiDocumentation
-from openapi_client.models.update_api_documentation_status_dto import UpdateApiDocumentationStatusDto
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_api_documentation import ClientApiDocumentation
+from watchtowr_api_sdk.models.update_api_documentation_status_dto import UpdateApiDocumentationStatusDto
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -986,16 +986,16 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIDocumentationApi(api_client)
+    api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
     id = 3.4 # float | The asset ID of the API documentation asset to update.
-    update_api_documentation_status_dto = openapi_client.UpdateApiDocumentationStatusDto() # UpdateApiDocumentationStatusDto | 
+    update_api_documentation_status_dto = watchtowr_api_sdk.UpdateApiDocumentationStatusDto() # UpdateApiDocumentationStatusDto | 
 
     try:
         # Update API Documentation Status
@@ -1051,15 +1051,15 @@ Update a Custom Property for a specific API Documentation asset.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_custom_property import ClientCustomProperty
-from openapi_client.models.update_client_custom_property_dto import UpdateClientCustomPropertyDto
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_custom_property import ClientCustomProperty
+from watchtowr_api_sdk.models.update_client_custom_property_dto import UpdateClientCustomPropertyDto
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -1069,17 +1069,17 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIDocumentationApi(api_client)
+    api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
     id = 3.4 # float | The asset ID of an API Documentation asset with a custom property to update.
     custom_property_id = 3.4 # float | The ID of the custom property to update.
-    update_client_custom_property_dto = openapi_client.UpdateClientCustomPropertyDto() # UpdateClientCustomPropertyDto | 
+    update_client_custom_property_dto = watchtowr_api_sdk.UpdateClientCustomPropertyDto() # UpdateClientCustomPropertyDto | 
 
     try:
         # Update Custom Property

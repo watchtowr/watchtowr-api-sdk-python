@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.hunt_detail_response import HuntDetailResponse
+from watchtowr_api_sdk.models.hunt_detail_response import HuntDetailResponse
 
 # TODO update the JSON string below
 json = "{}"

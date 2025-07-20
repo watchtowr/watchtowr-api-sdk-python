@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.create_client_note_dto import CreateClientNoteDto
+from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto
 
 # TODO update the JSON string below
 json = "{}"

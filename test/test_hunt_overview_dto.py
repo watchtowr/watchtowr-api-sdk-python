@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.hunt_overview_dto import HuntOverviewDto
+from watchtowr_api_sdk.models.hunt_overview_dto import HuntOverviewDto
 
 class TestHuntOverviewDto(unittest.TestCase):
     """HuntOverviewDto unit test stubs"""
@@ -39,7 +39,7 @@ class TestHuntOverviewDto(unittest.TestCase):
                 total_hunts_executed = 25,
                 total_unresolved_hunts = 3,
                 latest_executed_hunts = [
-                    openapi_client.models.latest_executed_hunt_dto.LatestExecutedHuntDto(
+                    watchtowr_api_sdk.models.latest_executed_hunt_dto.LatestExecutedHuntDto(
                         id = '1', 
                         title = 'CVE-2024-1234 Apache RCE', 
                         status = 'completed', 
@@ -50,7 +50,7 @@ class TestHuntOverviewDto(unittest.TestCase):
                         resolved_status = False, 
                         acknowledgement = null, 
                         threat_actors = [
-                            openapi_client.models.threat_actor_dto.ThreatActorDto(
+                            watchtowr_api_sdk.models.threat_actor_dto.ThreatActorDto(
                                 attacker_name = 'APT29', 
                                 country = 'ru', )
                             ], )
@@ -61,7 +61,7 @@ class TestHuntOverviewDto(unittest.TestCase):
                 total_hunts_executed = 25,
                 total_unresolved_hunts = 3,
                 latest_executed_hunts = [
-                    openapi_client.models.latest_executed_hunt_dto.LatestExecutedHuntDto(
+                    watchtowr_api_sdk.models.latest_executed_hunt_dto.LatestExecutedHuntDto(
                         id = '1', 
                         title = 'CVE-2024-1234 Apache RCE', 
                         status = 'completed', 
@@ -72,7 +72,7 @@ class TestHuntOverviewDto(unittest.TestCase):
                         resolved_status = False, 
                         acknowledgement = null, 
                         threat_actors = [
-                            openapi_client.models.threat_actor_dto.ThreatActorDto(
+                            watchtowr_api_sdk.models.threat_actor_dto.ThreatActorDto(
                                 attacker_name = 'APT29', 
                                 country = 'ru', )
                             ], )

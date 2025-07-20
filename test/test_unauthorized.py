@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.unauthorized import Unauthorized
+from watchtowr_api_sdk.models.unauthorized import Unauthorized
 
 class TestUnauthorized(unittest.TestCase):
     """Unauthorized unit test stubs"""

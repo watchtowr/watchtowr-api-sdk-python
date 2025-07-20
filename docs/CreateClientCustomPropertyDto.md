@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.create_client_custom_property_dto import CreateClientCustomPropertyDto
+from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto
 
 # TODO update the JSON string below
 json = "{}"

@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.client_package_manager import ClientPackageManager
+from watchtowr_api_sdk.models.client_package_manager import ClientPackageManager
 
 # TODO update the JSON string below
 json = "{}"

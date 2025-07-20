@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.certificates_api import CertificatesApi
+from watchtowr_api_sdk.api.certificates_api import CertificatesApi
 
 
 class TestCertificatesApi(unittest.TestCase):

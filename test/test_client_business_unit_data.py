@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_business_unit_data import ClientBusinessUnitData
+from watchtowr_api_sdk.models.client_business_unit_data import ClientBusinessUnitData
 
 class TestClientBusinessUnitData(unittest.TestCase):
     """ClientBusinessUnitData unit test stubs"""
@@ -36,7 +36,7 @@ class TestClientBusinessUnitData(unittest.TestCase):
         model = ClientBusinessUnitData()
         if include_optional:
             return ClientBusinessUnitData(
-                data = openapi_client.models.client_business_unit_detail.ClientBusinessUnitDetail(
+                data = watchtowr_api_sdk.models.client_business_unit_detail.ClientBusinessUnitDetail(
                     id = 1, 
                     name = 'Singapore Business Unit', 
                     description = 'Singapore based assets', 
@@ -44,7 +44,7 @@ class TestClientBusinessUnitData(unittest.TestCase):
             )
         else:
             return ClientBusinessUnitData(
-                data = openapi_client.models.client_business_unit_detail.ClientBusinessUnitDetail(
+                data = watchtowr_api_sdk.models.client_business_unit_detail.ClientBusinessUnitDetail(
                     id = 1, 
                     name = 'Singapore Business Unit', 
                     description = 'Singapore based assets', 

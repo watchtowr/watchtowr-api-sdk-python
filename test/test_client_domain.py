@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_domain import ClientDomain
+from watchtowr_api_sdk.models.client_domain import ClientDomain
 
 class TestClientDomain(unittest.TestCase):
     """ClientDomain unit test stubs"""
@@ -45,7 +45,7 @@ class TestClientDomain(unittest.TestCase):
                 id = 123,
                 name = 'watchtowr.com',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],
@@ -54,7 +54,7 @@ class TestClientDomain(unittest.TestCase):
                 metadata = {"region":"us-west-1","service":"AWS"},
                 custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"domain","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":10,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"domain","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}],
                 criticality = 'Medium',
-                infrastructure = openapi_client.models.infrastructure.Infrastructure(
+                infrastructure = watchtowr_api_sdk.models.infrastructure.Infrastructure(
                     cdn = 'AWS CloudFront', 
                     cloud = 'Amazon Web Services (AWS)', 
                     waf = 'OWASP ModSecurity', )
@@ -70,7 +70,7 @@ class TestClientDomain(unittest.TestCase):
                 id = 123,
                 name = 'watchtowr.com',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],

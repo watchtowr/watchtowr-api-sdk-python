@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.update_kill_switch_response import UpdateKillSwitchResponse
+from watchtowr_api_sdk.models.update_kill_switch_response import UpdateKillSwitchResponse
 
 class TestUpdateKillSwitchResponse(unittest.TestCase):
     """UpdateKillSwitchResponse unit test stubs"""

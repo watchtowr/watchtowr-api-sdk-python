@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_api_documentation_asset import ClientApiDocumentationAsset
+from watchtowr_api_sdk.models.client_api_documentation_asset import ClientApiDocumentationAsset
 
 class TestClientApiDocumentationAsset(unittest.TestCase):
     """ClientApiDocumentationAsset unit test stubs"""

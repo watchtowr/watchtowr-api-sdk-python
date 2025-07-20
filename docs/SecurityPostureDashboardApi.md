@@ -1,4 +1,4 @@
-# openapi_client.SecurityPostureDashboardApi
+# watchtowr_api_sdk.SecurityPostureDashboardApi
 
 All URIs are relative to *https://your-tenant-id.sg.client.watchtowr.io*
 
@@ -19,14 +19,14 @@ Retrieve consolidated security posture dashboard statistics
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.security_posture_dashboard_response import SecurityPostureDashboardResponse
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.security_posture_dashboard_response import SecurityPostureDashboardResponse
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -36,14 +36,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SecurityPostureDashboardApi(api_client)
+    api_instance = watchtowr_api_sdk.SecurityPostureDashboardApi(api_client)
 
     try:
         # Get Security Posture Dashboard

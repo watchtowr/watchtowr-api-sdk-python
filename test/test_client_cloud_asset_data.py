@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_cloud_asset_data import ClientCloudAssetData
+from watchtowr_api_sdk.models.client_cloud_asset_data import ClientCloudAssetData
 
 class TestClientCloudAssetData(unittest.TestCase):
     """ClientCloudAssetData unit test stubs"""
@@ -36,7 +36,7 @@ class TestClientCloudAssetData(unittest.TestCase):
         model = ClientCloudAssetData()
         if include_optional:
             return ClientCloudAssetData(
-                data = openapi_client.models.client_cloud_asset.ClientCloudAsset(
+                data = watchtowr_api_sdk.models.client_cloud_asset.ClientCloudAsset(
                     type = 'cloudAsset', 
                     name = 'example-aws-cloud-asset-rds-database', 
                     source = 'test-module-controller-1-0', 
@@ -54,7 +54,7 @@ class TestClientCloudAssetData(unittest.TestCase):
             )
         else:
             return ClientCloudAssetData(
-                data = openapi_client.models.client_cloud_asset.ClientCloudAsset(
+                data = watchtowr_api_sdk.models.client_cloud_asset.ClientCloudAsset(
                     type = 'cloudAsset', 
                     name = 'example-aws-cloud-asset-rds-database', 
                     source = 'test-module-controller-1-0', 

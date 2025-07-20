@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.service_listing import ServiceListing
+from watchtowr_api_sdk.models.service_listing import ServiceListing
 
 class TestServiceListing(unittest.TestCase):
     """ServiceListing unit test stubs"""
@@ -48,19 +48,19 @@ class TestServiceListing(unittest.TestCase):
                 source = 'DNS Refresh',
                 last_seen = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 technologies = [
-                    openapi_client.models.technology.Technology(
+                    watchtowr_api_sdk.models.technology.Technology(
                         id = 1, 
                         name = 'APACHE', 
                         version = '0.1', 
                         display_name = 'APACHE', )
                     ],
                 service_types = [
-                    openapi_client.models.service_type.ServiceType(
+                    watchtowr_api_sdk.models.service_type.ServiceType(
                         id = 1, 
                         name = 'APACHE', )
                     ],
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],
@@ -74,19 +74,19 @@ class TestServiceListing(unittest.TestCase):
                 hostname = 'sub.example.com',
                 last_seen = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 technologies = [
-                    openapi_client.models.technology.Technology(
+                    watchtowr_api_sdk.models.technology.Technology(
                         id = 1, 
                         name = 'APACHE', 
                         version = '0.1', 
                         display_name = 'APACHE', )
                     ],
                 service_types = [
-                    openapi_client.models.service_type.ServiceType(
+                    watchtowr_api_sdk.models.service_type.ServiceType(
                         id = 1, 
                         name = 'APACHE', )
                     ],
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],

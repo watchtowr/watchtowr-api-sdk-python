@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.finding_list_response import FindingListResponse
+from watchtowr_api_sdk.models.finding_list_response import FindingListResponse
 
 # TODO update the JSON string below
 json = "{}"

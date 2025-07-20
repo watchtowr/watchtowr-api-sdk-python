@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_ip_dns_record_pointing_at_data import ClientIpDnsRecordPointingAtData
+from watchtowr_api_sdk.models.client_ip_dns_record_pointing_at_data import ClientIpDnsRecordPointingAtData
 
 class TestClientIpDnsRecordPointingAtData(unittest.TestCase):
     """ClientIpDnsRecordPointingAtData unit test stubs"""
@@ -37,35 +37,35 @@ class TestClientIpDnsRecordPointingAtData(unittest.TestCase):
         if include_optional:
             return ClientIpDnsRecordPointingAtData(
                 data = [
-                    openapi_client.models.client_ip_related_dns_record.ClientIpRelatedDnsRecord(
+                    watchtowr_api_sdk.models.client_ip_related_dns_record.ClientIpRelatedDnsRecord(
                         id = 1, 
                         name = 'watchtowr.com', 
                         type = 'A', 
                         ttl = 60, 
                         value = '123.123.123.123', 
                         discovered_on = 2022-02-13T02:10:00.000000Z, 
-                        asset = openapi_client.models.client_ip_related_dns_record_asset.ClientIpRelatedDnsRecordAsset(
+                        asset = watchtowr_api_sdk.models.client_ip_related_dns_record_asset.ClientIpRelatedDnsRecordAsset(
                             id = 1, 
                             name = 'watchtowr.com', ), )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return ClientIpDnsRecordPointingAtData(
                 data = [
-                    openapi_client.models.client_ip_related_dns_record.ClientIpRelatedDnsRecord(
+                    watchtowr_api_sdk.models.client_ip_related_dns_record.ClientIpRelatedDnsRecord(
                         id = 1, 
                         name = 'watchtowr.com', 
                         type = 'A', 
                         ttl = 60, 
                         value = '123.123.123.123', 
                         discovered_on = 2022-02-13T02:10:00.000000Z, 
-                        asset = openapi_client.models.client_ip_related_dns_record_asset.ClientIpRelatedDnsRecordAsset(
+                        asset = watchtowr_api_sdk.models.client_ip_related_dns_record_asset.ClientIpRelatedDnsRecordAsset(
                             id = 1, 
                             name = 'watchtowr.com', ), )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

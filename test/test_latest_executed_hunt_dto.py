@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.latest_executed_hunt_dto import LatestExecutedHuntDto
+from watchtowr_api_sdk.models.latest_executed_hunt_dto import LatestExecutedHuntDto
 
 class TestLatestExecutedHuntDto(unittest.TestCase):
     """LatestExecutedHuntDto unit test stubs"""
@@ -44,11 +44,11 @@ class TestLatestExecutedHuntDto(unittest.TestCase):
                 need_investigation = False,
                 request_type = 'SoftwareVulnerability',
                 resolved_status = False,
-                acknowledgement = openapi_client.models.hunt_acknowledgement_dto.HuntAcknowledgementDto(
+                acknowledgement = watchtowr_api_sdk.models.hunt_acknowledgement_dto.HuntAcknowledgementDto(
                     is_acknowledged = True, 
                     number_of_seen = 3, ),
                 threat_actors = [
-                    openapi_client.models.threat_actor_dto.ThreatActorDto(
+                    watchtowr_api_sdk.models.threat_actor_dto.ThreatActorDto(
                         attacker_name = 'APT29', 
                         country = 'ru', )
                     ]
@@ -63,11 +63,11 @@ class TestLatestExecutedHuntDto(unittest.TestCase):
                 need_investigation = False,
                 request_type = 'SoftwareVulnerability',
                 resolved_status = False,
-                acknowledgement = openapi_client.models.hunt_acknowledgement_dto.HuntAcknowledgementDto(
+                acknowledgement = watchtowr_api_sdk.models.hunt_acknowledgement_dto.HuntAcknowledgementDto(
                     is_acknowledged = True, 
                     number_of_seen = 3, ),
                 threat_actors = [
-                    openapi_client.models.threat_actor_dto.ThreatActorDto(
+                    watchtowr_api_sdk.models.threat_actor_dto.ThreatActorDto(
                         attacker_name = 'APT29', 
                         country = 'ru', )
                     ],

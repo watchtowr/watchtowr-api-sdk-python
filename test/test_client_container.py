@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_container import ClientContainer
+from watchtowr_api_sdk.models.client_container import ClientContainer
 
 class TestClientContainer(unittest.TestCase):
     """ClientContainer unit test stubs"""
@@ -48,7 +48,7 @@ class TestClientContainer(unittest.TestCase):
                 platform = 'docker',
                 url = 'https://hub.docker.com/r/watchtowr/example-container',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],
@@ -69,7 +69,7 @@ class TestClientContainer(unittest.TestCase):
                 platform = 'docker',
                 url = 'https://hub.docker.com/r/watchtowr/example-container',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],

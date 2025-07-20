@@ -5,17 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** |  | 
-**name** | **str** |  | 
-**type** | **str** |  | 
-**ttl** | **float** | Time To Live | 
-**value** | **str** |  | 
-**discovered_on** | [**DatetimeDate**](datetime.date.md) |  | 
+**id** | **float** | DNS Record ID | 
+**asset** | [**ClientDnsRecordAsset**](ClientDnsRecordAsset.md) | Asset information | 
+**record_name** | **str** | Identifies the resource this record resolves to. | 
+**type** | **str** | The DNS record type defines the purpose or function of the record, such as domain name resolution, email routing, and more. | 
+**ttl** | **float** | Time to live (TTL) controls how long each record is cached by resolvers. | 
+**value** | **str** | The value of a DNS record, depending on the record type. For example, the IP address of the origin server that hosts the web content served by an A or AAAA record. | 
+**created_at** | **datetime** | Creation date | 
 
 ## Example
 
 ```python
-from openapi_client.models.client_dns_record import ClientDnsRecord
+from watchtowr_api_sdk.models.client_dns_record import ClientDnsRecord
 
 # TODO update the JSON string below
 json = "{}"

@@ -1,4 +1,4 @@
-# openapi_client.AddAssetApi
+# watchtowr_api_sdk.AddAssetApi
 
 All URIs are relative to *https://your-tenant-id.sg.client.watchtowr.io*
 
@@ -19,15 +19,15 @@ Submit one or more seed data assets to your attack surface for review.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.client_seed_data_data import ClientSeedDataData
-from openapi_client.models.create_client_seed_data_request_body import CreateClientSeedDataRequestBody
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_seed_data_data import ClientSeedDataData
+from watchtowr_api_sdk.models.create_client_seed_data_request_body import CreateClientSeedDataRequestBody
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -37,15 +37,15 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.AddAssetApi(api_client)
-    create_client_seed_data_request_body = openapi_client.CreateClientSeedDataRequestBody() # CreateClientSeedDataRequestBody | 
+    api_instance = watchtowr_api_sdk.AddAssetApi(api_client)
+    create_client_seed_data_request_body = watchtowr_api_sdk.CreateClientSeedDataRequestBody() # CreateClientSeedDataRequestBody | 
 
     try:
         # Submit Seed Data

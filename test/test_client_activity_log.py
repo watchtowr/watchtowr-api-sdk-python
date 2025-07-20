@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_activity_log import ClientActivityLog
+from watchtowr_api_sdk.models.client_activity_log import ClientActivityLog
 
 class TestClientActivityLog(unittest.TestCase):
     """ClientActivityLog unit test stubs"""
@@ -41,7 +41,7 @@ class TestClientActivityLog(unittest.TestCase):
                 type = Successful Login,
                 properties = {"attributes": {"ip": "123.123.123.123"}},
                 created_at = 2022-02-22 22:00:00,
-                caused_by = openapi_client.models.causer.Causer(
+                caused_by = watchtowr_api_sdk.models.causer.Causer(
                     id = 1, 
                     name = Example, )
             )
@@ -50,7 +50,7 @@ class TestClientActivityLog(unittest.TestCase):
                 id = 1,
                 description = Successful login from 123.123.123.123,
                 type = Successful Login,
-                caused_by = openapi_client.models.causer.Causer(
+                caused_by = watchtowr_api_sdk.models.causer.Causer(
                     id = 1, 
                     name = Example, ),
         )

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.cloud_storage_api import CloudStorageApi
+from watchtowr_api_sdk.api.cloud_storage_api import CloudStorageApi
 
 
 class TestCloudStorageApi(unittest.TestCase):

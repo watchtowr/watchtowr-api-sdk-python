@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_saas_platform import ClientSaasPlatform
+from watchtowr_api_sdk.models.client_saas_platform import ClientSaasPlatform
 
 class TestClientSaasPlatform(unittest.TestCase):
     """ClientSaasPlatform unit test stubs"""
@@ -46,7 +46,7 @@ class TestClientSaasPlatform(unittest.TestCase):
                 url = 'https://example.slack.com',
                 provider = 'Slack',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],
@@ -65,7 +65,7 @@ class TestClientSaasPlatform(unittest.TestCase):
                 url = 'https://example.slack.com',
                 provider = 'Slack',
                 business_units = [
-                    openapi_client.models.client_business_unit.ClientBusinessUnit(
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],

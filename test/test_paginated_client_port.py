@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.paginated_client_port import PaginatedClientPort
+from watchtowr_api_sdk.models.paginated_client_port import PaginatedClientPort
 
 class TestPaginatedClientPort(unittest.TestCase):
     """PaginatedClientPort unit test stubs"""
@@ -37,7 +37,7 @@ class TestPaginatedClientPort(unittest.TestCase):
         if include_optional:
             return PaginatedClientPort(
                 data = [
-                    openapi_client.models.client_port.ClientPort(
+                    watchtowr_api_sdk.models.client_port.ClientPort(
                         type = 'TCP', 
                         status = 'verified', 
                         created_at = 2022-02-13T02:10:00.000000Z, 
@@ -51,18 +51,18 @@ class TestPaginatedClientPort(unittest.TestCase):
                         banner = 'OpenSSH6.6.1p1 Ubuntu 2ubuntu2.13Ubuntu Linux; protocol 2.0', 
                         service = 'ssh', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return PaginatedClientPort(
                 data = [
-                    openapi_client.models.client_port.ClientPort(
+                    watchtowr_api_sdk.models.client_port.ClientPort(
                         type = 'TCP', 
                         status = 'verified', 
                         created_at = 2022-02-13T02:10:00.000000Z, 
@@ -76,12 +76,12 @@ class TestPaginatedClientPort(unittest.TestCase):
                         banner = 'OpenSSH6.6.1p1 Ubuntu 2ubuntu2.13Ubuntu Linux; protocol 2.0', 
                         service = 'ssh', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

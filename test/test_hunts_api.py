@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.hunts_api import HuntsApi
+from watchtowr_api_sdk.api.hunts_api import HuntsApi
 
 
 class TestHuntsApi(unittest.TestCase):

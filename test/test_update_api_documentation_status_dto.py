@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.update_api_documentation_status_dto import UpdateApiDocumentationStatusDto
+from watchtowr_api_sdk.models.update_api_documentation_status_dto import UpdateApiDocumentationStatusDto
 
 class TestUpdateApiDocumentationStatusDto(unittest.TestCase):
     """UpdateApiDocumentationStatusDto unit test stubs"""

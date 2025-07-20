@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.retest import Retest
+from watchtowr_api_sdk.models.retest import Retest
 
 class TestRetest(unittest.TestCase):
     """Retest unit test stubs"""
@@ -37,7 +37,7 @@ class TestRetest(unittest.TestCase):
         if include_optional:
             return Retest(
                 retest_remaining = 1,
-                current_retest = openapi_client.models.finding_retest_response_dto.FindingRetestResponseDto(
+                current_retest = watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
                     requested_by = 'Requested by user', 
                     requested_at = '2024-01-29T08:05:09Z', 
                     retest_status = 'success', 
@@ -47,7 +47,7 @@ class TestRetest(unittest.TestCase):
             )
         else:
             return Retest(
-                current_retest = openapi_client.models.finding_retest_response_dto.FindingRetestResponseDto(
+                current_retest = watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
                     requested_by = 'Requested by user', 
                     requested_at = '2024-01-29T08:05:09Z', 
                     retest_status = 'success', 

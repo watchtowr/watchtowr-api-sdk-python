@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_finding_impact_tag import ClientFindingImpactTag
+from watchtowr_api_sdk.models.client_finding_impact_tag import ClientFindingImpactTag
 
 class TestClientFindingImpactTag(unittest.TestCase):
     """ClientFindingImpactTag unit test stubs"""

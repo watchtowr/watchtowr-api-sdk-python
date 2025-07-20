@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.paginated_client_subdomain import PaginatedClientSubdomain
+from watchtowr_api_sdk.models.paginated_client_subdomain import PaginatedClientSubdomain
 
 class TestPaginatedClientSubdomain(unittest.TestCase):
     """PaginatedClientSubdomain unit test stubs"""
@@ -37,7 +37,7 @@ class TestPaginatedClientSubdomain(unittest.TestCase):
         if include_optional:
             return PaginatedClientSubdomain(
                 data = [
-                    openapi_client.models.client_subdomain.ClientSubdomain(
+                    watchtowr_api_sdk.models.client_subdomain.ClientSubdomain(
                         type = 'subdomain', 
                         source = 'module-adversarysight-crtsh-domain-backend', 
                         status = 'verified', 
@@ -47,7 +47,7 @@ class TestPaginatedClientSubdomain(unittest.TestCase):
                         id = 123, 
                         name = 'subdomain.watchtowr.com', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
@@ -58,13 +58,13 @@ class TestPaginatedClientSubdomain(unittest.TestCase):
                         criticality = 'Medium', 
                         infrastructure = {"CDN":"AWS CloudFront"}, )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return PaginatedClientSubdomain(
                 data = [
-                    openapi_client.models.client_subdomain.ClientSubdomain(
+                    watchtowr_api_sdk.models.client_subdomain.ClientSubdomain(
                         type = 'subdomain', 
                         source = 'module-adversarysight-crtsh-domain-backend', 
                         status = 'verified', 
@@ -74,7 +74,7 @@ class TestPaginatedClientSubdomain(unittest.TestCase):
                         id = 123, 
                         name = 'subdomain.watchtowr.com', 
                         business_units = [
-                            openapi_client.models.client_business_unit.ClientBusinessUnit(
+                            watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
@@ -85,7 +85,7 @@ class TestPaginatedClientSubdomain(unittest.TestCase):
                         criticality = 'Medium', 
                         infrastructure = {"CDN":"AWS CloudFront"}, )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

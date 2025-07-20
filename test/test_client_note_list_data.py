@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.client_note_list_data import ClientNoteListData
+from watchtowr_api_sdk.models.client_note_list_data import ClientNoteListData
 
 class TestClientNoteListData(unittest.TestCase):
     """ClientNoteListData unit test stubs"""
@@ -37,7 +37,7 @@ class TestClientNoteListData(unittest.TestCase):
         if include_optional:
             return ClientNoteListData(
                 data = [
-                    openapi_client.models.client_note.ClientNote(
+                    watchtowr_api_sdk.models.client_note.ClientNote(
                         id = 1, 
                         note = 'Passed to the engineering team. Review on 01/07/2024', 
                         note_type = 'Domain', 
@@ -46,13 +46,13 @@ class TestClientNoteListData(unittest.TestCase):
                         author = {"id":1,"name":"Steve"}, 
                         last_modified = 2022-02-13T02:10:00.000000Z, )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return ClientNoteListData(
                 data = [
-                    openapi_client.models.client_note.ClientNote(
+                    watchtowr_api_sdk.models.client_note.ClientNote(
                         id = 1, 
                         note = 'Passed to the engineering team. Review on 01/07/2024', 
                         note_type = 'Domain', 
@@ -61,7 +61,7 @@ class TestClientNoteListData(unittest.TestCase):
                         author = {"id":1,"name":"Steve"}, 
                         last_modified = 2022-02-13T02:10:00.000000Z, )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

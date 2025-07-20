@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.hunt_acknowledgement_dto import HuntAcknowledgementDto
+from watchtowr_api_sdk.models.hunt_acknowledgement_dto import HuntAcknowledgementDto
 
 class TestHuntAcknowledgementDto(unittest.TestCase):
     """HuntAcknowledgementDto unit test stubs"""

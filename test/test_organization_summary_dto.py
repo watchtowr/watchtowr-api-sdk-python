@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.organization_summary_dto import OrganizationSummaryDto
+from watchtowr_api_sdk.models.organization_summary_dto import OrganizationSummaryDto
 
 class TestOrganizationSummaryDto(unittest.TestCase):
     """OrganizationSummaryDto unit test stubs"""
@@ -36,44 +36,44 @@ class TestOrganizationSummaryDto(unittest.TestCase):
         model = OrganizationSummaryDto()
         if include_optional:
             return OrganizationSummaryDto(
-                attack_surface = openapi_client.models.attack_surface_dto.AttackSurfaceDto(
+                attack_surface = watchtowr_api_sdk.models.attack_surface_dto.AttackSurfaceDto(
                     total_verified_assets = 1250, 
                     total_points_of_interest = 67, 
                     total_network_services = 234, 
                     total_certificates = 45, ),
-                open_findings = openapi_client.models.open_findings_dto.OpenFindingsDto(
+                open_findings = watchtowr_api_sdk.models.open_findings_dto.OpenFindingsDto(
                     critical = 5, 
                     high = 12, 
                     medium = 18, 
                     low = 8, 
                     info = 2, 
                     total = 45, ),
-                mttr_metrics = openapi_client.models.mttr_metrics_dto.MttrMetricsDto(
+                mttr_metrics = watchtowr_api_sdk.models.mttr_metrics_dto.MttrMetricsDto(
                     mttr = 48, 
                     mttrae = 72, ),
-                findings_summary = openapi_client.models.findings_summary_dto.FindingsSummaryDto(
+                findings_summary = watchtowr_api_sdk.models.findings_summary_dto.FindingsSummaryDto(
                     total_resolved_findings = 156, 
                     old_critical_high_findings = 3, 
                     unacknowledged_critical_high_findings = 7, )
             )
         else:
             return OrganizationSummaryDto(
-                attack_surface = openapi_client.models.attack_surface_dto.AttackSurfaceDto(
+                attack_surface = watchtowr_api_sdk.models.attack_surface_dto.AttackSurfaceDto(
                     total_verified_assets = 1250, 
                     total_points_of_interest = 67, 
                     total_network_services = 234, 
                     total_certificates = 45, ),
-                open_findings = openapi_client.models.open_findings_dto.OpenFindingsDto(
+                open_findings = watchtowr_api_sdk.models.open_findings_dto.OpenFindingsDto(
                     critical = 5, 
                     high = 12, 
                     medium = 18, 
                     low = 8, 
                     info = 2, 
                     total = 45, ),
-                mttr_metrics = openapi_client.models.mttr_metrics_dto.MttrMetricsDto(
+                mttr_metrics = watchtowr_api_sdk.models.mttr_metrics_dto.MttrMetricsDto(
                     mttr = 48, 
                     mttrae = 72, ),
-                findings_summary = openapi_client.models.findings_summary_dto.FindingsSummaryDto(
+                findings_summary = watchtowr_api_sdk.models.findings_summary_dto.FindingsSummaryDto(
                     total_resolved_findings = 156, 
                     old_critical_high_findings = 3, 
                     unacknowledged_critical_high_findings = 7, ),

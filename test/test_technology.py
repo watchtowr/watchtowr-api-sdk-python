@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.technology import Technology
+from watchtowr_api_sdk.models.technology import Technology
 
 class TestTechnology(unittest.TestCase):
     """Technology unit test stubs"""

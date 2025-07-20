@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.mttr_metrics_dto import MttrMetricsDto
+from watchtowr_api_sdk.models.mttr_metrics_dto import MttrMetricsDto
 
 class TestMttrMetricsDto(unittest.TestCase):
     """MttrMetricsDto unit test stubs"""

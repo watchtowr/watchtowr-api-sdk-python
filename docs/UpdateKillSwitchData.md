@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.update_kill_switch_data import UpdateKillSwitchData
+from watchtowr_api_sdk.models.update_kill_switch_data import UpdateKillSwitchData
 
 # TODO update the JSON string below
 json = "{}"

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.repositories_api import RepositoriesApi
+from watchtowr_api_sdk.api.repositories_api import RepositoriesApi
 
 
 class TestRepositoriesApi(unittest.TestCase):

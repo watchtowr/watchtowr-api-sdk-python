@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.asset_and_business_unit_already_associated_conflict_error_response import AssetAndBusinessUnitAlreadyAssociatedConflictErrorResponse
+from watchtowr_api_sdk.models.asset_and_business_unit_already_associated_conflict_error_response import AssetAndBusinessUnitAlreadyAssociatedConflictErrorResponse
 
 # TODO update the JSON string below
 json = "{}"

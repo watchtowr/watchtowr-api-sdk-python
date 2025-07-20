@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.paginated_client_cloud_asset import PaginatedClientCloudAsset
+from watchtowr_api_sdk.models.paginated_client_cloud_asset import PaginatedClientCloudAsset
 
 class TestPaginatedClientCloudAsset(unittest.TestCase):
     """PaginatedClientCloudAsset unit test stubs"""
@@ -37,7 +37,7 @@ class TestPaginatedClientCloudAsset(unittest.TestCase):
         if include_optional:
             return PaginatedClientCloudAsset(
                 data = [
-                    openapi_client.models.client_cloud_asset.ClientCloudAsset(
+                    watchtowr_api_sdk.models.client_cloud_asset.ClientCloudAsset(
                         type = 'cloudAsset', 
                         name = 'example-aws-cloud-asset-rds-database', 
                         source = 'test-module-controller-1-0', 
@@ -53,13 +53,13 @@ class TestPaginatedClientCloudAsset(unittest.TestCase):
                         custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"cloudAsset","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"cloudAsset","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return PaginatedClientCloudAsset(
                 data = [
-                    openapi_client.models.client_cloud_asset.ClientCloudAsset(
+                    watchtowr_api_sdk.models.client_cloud_asset.ClientCloudAsset(
                         type = 'cloudAsset', 
                         name = 'example-aws-cloud-asset-rds-database', 
                         source = 'test-module-controller-1-0', 
@@ -75,7 +75,7 @@ class TestPaginatedClientCloudAsset(unittest.TestCase):
                         custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"cloudAsset","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"cloudAsset","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

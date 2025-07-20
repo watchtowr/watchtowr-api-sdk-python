@@ -1,4 +1,4 @@
-# openapi_client.HuntsApi
+# watchtowr_api_sdk.HuntsApi
 
 All URIs are relative to *https://your-tenant-id.sg.client.watchtowr.io*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **get_client_hunts**
-> PaginatedHunts get_client_hunts(page=page, page_size=page_size, statuses=statuses, hunt_search=hunt_search, types=types, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, priorities=priorities, general=general)
+> PaginatedHunts get_client_hunts(page=page, page_size=page_size, statuses=statuses, hunt_search=hunt_search, types=types, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, priorities=priorities, general=general, only_resolved=only_resolved, is_unacknowledged=is_unacknowledged)
 
 List Hunts
 
@@ -22,14 +22,14 @@ List all available hunt assets, ordered by creation date.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.paginated_hunts import PaginatedHunts
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.paginated_hunts import PaginatedHunts
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -39,14 +39,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HuntsApi(api_client)
+    api_instance = watchtowr_api_sdk.HuntsApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
     statuses = 'statuses_example' # str | Filter hunts by hunt status. (optional)
@@ -58,10 +58,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     updated_to = '2013-10-20T19:20:30+01:00' # datetime | Filter hunts updated before a given date and time. (optional)
     priorities = 'priorities_example' # str | Filter hunts by hunt priority. (optional)
     general = 'general_example' # str | General (optional)
+    only_resolved = true # bool | Filter to only show resolved hunts. (optional)
+    is_unacknowledged = true # bool | Filter to only show hunts that are not acknowledged. (optional)
 
     try:
         # List Hunts
-        api_response = api_instance.get_client_hunts(page=page, page_size=page_size, statuses=statuses, hunt_search=hunt_search, types=types, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, priorities=priorities, general=general)
+        api_response = api_instance.get_client_hunts(page=page, page_size=page_size, statuses=statuses, hunt_search=hunt_search, types=types, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, priorities=priorities, general=general, only_resolved=only_resolved, is_unacknowledged=is_unacknowledged)
         print("The response of HuntsApi->get_client_hunts:\n")
         pprint(api_response)
     except Exception as e:
@@ -86,6 +88,8 @@ Name | Type | Description  | Notes
  **updated_to** | **datetime**| Filter hunts updated before a given date and time. | [optional] 
  **priorities** | **str**| Filter hunts by hunt priority. | [optional] 
  **general** | **str**| General | [optional] 
+ **only_resolved** | **bool**| Filter to only show resolved hunts. | [optional] 
+ **is_unacknowledged** | **bool**| Filter to only show hunts that are not acknowledged. | [optional] 
 
 ### Return type
 
@@ -121,14 +125,14 @@ Get a list of Assets for a specific Hunt.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.assets_list_response import AssetsListResponse
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.assets_list_response import AssetsListResponse
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -138,14 +142,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HuntsApi(api_client)
+    api_instance = watchtowr_api_sdk.HuntsApi(api_client)
     id = 3.4 # float | Hunt ID of the hunt to retrieve assets from.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
@@ -204,14 +208,14 @@ List all findings for a specific hunt.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.finding_list_response import FindingListResponse
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.finding_list_response import FindingListResponse
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -221,14 +225,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HuntsApi(api_client)
+    api_instance = watchtowr_api_sdk.HuntsApi(api_client)
     id = 3.4 # float | The ID of the hunt to retrieve findings from.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
@@ -287,14 +291,14 @@ Get the details of a specific hunt.
 * Bearer (API_TOKEN) Authentication (bearer):
 
 ```python
-import openapi_client
-from openapi_client.models.hunt_detail_response import HuntDetailResponse
-from openapi_client.rest import ApiException
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.hunt_detail_response import HuntDetailResponse
+from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     host = "https://your-tenant-id.sg.client.watchtowr.io"
 )
 
@@ -304,14 +308,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization (API_TOKEN): bearer
-configuration = openapi_client.Configuration(
+configuration = watchtowr_api_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HuntsApi(api_client)
+    api_instance = watchtowr_api_sdk.HuntsApi(api_client)
     id = 3.4 # float | The ID of the hunt to retrieve.
 
     try:

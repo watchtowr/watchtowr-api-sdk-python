@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.client_ip_dns_record_response import ClientIpDnsRecordResponse
+from watchtowr_api_sdk.models.client_ip_dns_record_response import ClientIpDnsRecordResponse
 
 # TODO update the JSON string below
 json = "{}"

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.finding_list_response import FindingListResponse
+from watchtowr_api_sdk.models.finding_list_response import FindingListResponse
 
 class TestFindingListResponse(unittest.TestCase):
     """FindingListResponse unit test stubs"""
@@ -37,7 +37,7 @@ class TestFindingListResponse(unittest.TestCase):
         if include_optional:
             return FindingListResponse(
                 data = [
-                    openapi_client.models.client_finding.ClientFinding(
+                    watchtowr_api_sdk.models.client_finding.ClientFinding(
                         id = 1, 
                         title = 'Valid Credentials Discovered In Business System', 
                         description = 'Through watchTowr's Credential Stuffing capabilities, a valid set of credentials have been identified to work to authenticate to a legitimately exposed business system. 
@@ -50,7 +50,7 @@ These credentials have been confirmed as valid against the identified system, an
 * Gain VPN access for further internal exploitation and deployment of payloads such as ransomware', 
                         finding_impact = 'Prioritised Findings', 
                         tags = [
-                            openapi_client.models.client_finding_impact_tag.ClientFindingImpactTag(
+                            watchtowr_api_sdk.models.client_finding_impact_tag.ClientFindingImpactTag(
                                 id = 1, 
                                 name = 'CISA-KEV', )
                             ], 
@@ -72,12 +72,12 @@ As a long-term measure to ensure that the security impact of breach credentials 
                         cvssv3_metrics = 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N/E:F/RL:W/RC:C', 
                         status = 'confirmed', 
                         created_at = 2022-02-13T02:10:00.000000Z, 
-                        affected = openapi_client.models.affected.affected(), 
+                        affected = watchtowr_api_sdk.models.affected.affected(), 
                         cve_id = 'CVE-2023-38180', 
                         epss_score = 0.97521, 
-                        retest = openapi_client.models.retest.Retest(
+                        retest = watchtowr_api_sdk.models.retest.Retest(
                             retest_remaining = 1, 
-                            current_retest = openapi_client.models.finding_retest_response_dto.FindingRetestResponseDto(
+                            current_retest = watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
                                 requested_by = 'Requested by user', 
                                 requested_at = '2024-01-29T08:05:09Z', 
                                 retest_status = 'success', 
@@ -85,7 +85,7 @@ As a long-term measure to ensure that the security impact of breach credentials 
                                 completed_at = '2024-01-29T08:05:09Z', 
                                 evidence = 'Evidence for retest', ), ), 
                         finding_retests = [
-                            openapi_client.models.finding_retest_response_dto.FindingRetestResponseDto(
+                            watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
                                 requested_by = 'Requested by user', 
                                 requested_at = '2024-01-29T08:05:09Z', 
                                 retest_status = 'success', 
@@ -93,7 +93,7 @@ As a long-term measure to ensure that the security impact of breach credentials 
                                 completed_at = '2024-01-29T08:05:09Z', 
                                 evidence = 'Evidence for retest', )
                             ], 
-                        assigned_user = openapi_client.models.client_finding_assignee.ClientFindingAssignee(
+                        assigned_user = watchtowr_api_sdk.models.client_finding_assignee.ClientFindingAssignee(
                             name = 'John Smith', ), 
                         last_seen = 2022-02-13T02:10:00.000000Z, 
                         last_status_updated_at = 2022-02-13T02:10:00.000000Z, 
@@ -102,13 +102,13 @@ As a long-term measure to ensure that the security impact of breach credentials 
                         custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"finding","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"finding","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
                         detection_rules = [{"type":"sigma","id":155,"tags":["attack.initial-access","attack.t1190","cve.2021-44228","detection.emerging-threats"],"title":"Potential CVE-2021-44228 Exploitation Attempt - VMware Horizon","url":"https://github.com/SigmaHQ/sigma/blob/master/rules-emerging-threats/2021/Exploits/CVE-2021-44228/proc_creation_win_exploit_cve_2021_44228_vmware_horizon_log4j.yml"}], )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
             )
         else:
             return FindingListResponse(
                 data = [
-                    openapi_client.models.client_finding.ClientFinding(
+                    watchtowr_api_sdk.models.client_finding.ClientFinding(
                         id = 1, 
                         title = 'Valid Credentials Discovered In Business System', 
                         description = 'Through watchTowr's Credential Stuffing capabilities, a valid set of credentials have been identified to work to authenticate to a legitimately exposed business system. 
@@ -121,7 +121,7 @@ These credentials have been confirmed as valid against the identified system, an
 * Gain VPN access for further internal exploitation and deployment of payloads such as ransomware', 
                         finding_impact = 'Prioritised Findings', 
                         tags = [
-                            openapi_client.models.client_finding_impact_tag.ClientFindingImpactTag(
+                            watchtowr_api_sdk.models.client_finding_impact_tag.ClientFindingImpactTag(
                                 id = 1, 
                                 name = 'CISA-KEV', )
                             ], 
@@ -143,12 +143,12 @@ As a long-term measure to ensure that the security impact of breach credentials 
                         cvssv3_metrics = 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N/E:F/RL:W/RC:C', 
                         status = 'confirmed', 
                         created_at = 2022-02-13T02:10:00.000000Z, 
-                        affected = openapi_client.models.affected.affected(), 
+                        affected = watchtowr_api_sdk.models.affected.affected(), 
                         cve_id = 'CVE-2023-38180', 
                         epss_score = 0.97521, 
-                        retest = openapi_client.models.retest.Retest(
+                        retest = watchtowr_api_sdk.models.retest.Retest(
                             retest_remaining = 1, 
-                            current_retest = openapi_client.models.finding_retest_response_dto.FindingRetestResponseDto(
+                            current_retest = watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
                                 requested_by = 'Requested by user', 
                                 requested_at = '2024-01-29T08:05:09Z', 
                                 retest_status = 'success', 
@@ -156,7 +156,7 @@ As a long-term measure to ensure that the security impact of breach credentials 
                                 completed_at = '2024-01-29T08:05:09Z', 
                                 evidence = 'Evidence for retest', ), ), 
                         finding_retests = [
-                            openapi_client.models.finding_retest_response_dto.FindingRetestResponseDto(
+                            watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
                                 requested_by = 'Requested by user', 
                                 requested_at = '2024-01-29T08:05:09Z', 
                                 retest_status = 'success', 
@@ -164,7 +164,7 @@ As a long-term measure to ensure that the security impact of breach credentials 
                                 completed_at = '2024-01-29T08:05:09Z', 
                                 evidence = 'Evidence for retest', )
                             ], 
-                        assigned_user = openapi_client.models.client_finding_assignee.ClientFindingAssignee(
+                        assigned_user = watchtowr_api_sdk.models.client_finding_assignee.ClientFindingAssignee(
                             name = 'John Smith', ), 
                         last_seen = 2022-02-13T02:10:00.000000Z, 
                         last_status_updated_at = 2022-02-13T02:10:00.000000Z, 
@@ -173,7 +173,7 @@ As a long-term measure to ensure that the security impact of breach credentials 
                         custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"finding","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"finding","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
                         detection_rules = [{"type":"sigma","id":155,"tags":["attack.initial-access","attack.t1190","cve.2021-44228","detection.emerging-threats"],"title":"Potential CVE-2021-44228 Exploitation Attempt - VMware Horizon","url":"https://github.com/SigmaHQ/sigma/blob/master/rules-emerging-threats/2021/Exploits/CVE-2021-44228/proc_creation_win_exploit_cve_2021_44228_vmware_horizon_log4j.yml"}], )
                     ],
-                meta = openapi_client.models.meta.Meta(
+                meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),
         )
         """

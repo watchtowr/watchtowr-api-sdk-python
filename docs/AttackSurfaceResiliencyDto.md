@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.attack_surface_resiliency_dto import AttackSurfaceResiliencyDto
+from watchtowr_api_sdk.models.attack_surface_resiliency_dto import AttackSurfaceResiliencyDto
 
 # TODO update the JSON string below
 json = "{}"

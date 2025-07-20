@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.causer import Causer
+from watchtowr_api_sdk.models.causer import Causer
 
 class TestCauser(unittest.TestCase):
     """Causer unit test stubs"""

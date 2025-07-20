@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.security_posture_dashboard_response import SecurityPostureDashboardResponse
+from watchtowr_api_sdk.models.security_posture_dashboard_response import SecurityPostureDashboardResponse
 
 # TODO update the JSON string below
 json = "{}"
