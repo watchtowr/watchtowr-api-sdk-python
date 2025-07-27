@@ -48,8 +48,8 @@ class PendingDomainsApi:
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         name: Annotated[Optional[StrictStr], Field(description="Filter by domain name")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter by source that discovered the domain")] = None,
-        start_date: Annotated[Optional[datetime], Field(description="Filter by start date (ISO format)")] = None,
-        end_date: Annotated[Optional[datetime], Field(description="Filter by end date (ISO format)")] = None,
+        start_date: Annotated[Optional[datetime], Field(description="Filter by start date")] = None,
+        end_date: Annotated[Optional[datetime], Field(description="Filter by end date")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort by field")] = None,
         sort_order: Annotated[Optional[StrictStr], Field(description="Sort order")] = None,
         _request_timeout: Union[
@@ -77,9 +77,9 @@ class PendingDomainsApi:
         :type name: str
         :param source: Filter by source that discovered the domain
         :type source: str
-        :param start_date: Filter by start date (ISO format)
+        :param start_date: Filter by start date
         :type start_date: datetime
-        :param end_date: Filter by end date (ISO format)
+        :param end_date: Filter by end date
         :type end_date: datetime
         :param sort_by: Sort by field
         :type sort_by: str
@@ -144,8 +144,8 @@ class PendingDomainsApi:
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         name: Annotated[Optional[StrictStr], Field(description="Filter by domain name")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter by source that discovered the domain")] = None,
-        start_date: Annotated[Optional[datetime], Field(description="Filter by start date (ISO format)")] = None,
-        end_date: Annotated[Optional[datetime], Field(description="Filter by end date (ISO format)")] = None,
+        start_date: Annotated[Optional[datetime], Field(description="Filter by start date")] = None,
+        end_date: Annotated[Optional[datetime], Field(description="Filter by end date")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort by field")] = None,
         sort_order: Annotated[Optional[StrictStr], Field(description="Sort order")] = None,
         _request_timeout: Union[
@@ -173,9 +173,9 @@ class PendingDomainsApi:
         :type name: str
         :param source: Filter by source that discovered the domain
         :type source: str
-        :param start_date: Filter by start date (ISO format)
+        :param start_date: Filter by start date
         :type start_date: datetime
-        :param end_date: Filter by end date (ISO format)
+        :param end_date: Filter by end date
         :type end_date: datetime
         :param sort_by: Sort by field
         :type sort_by: str
@@ -240,8 +240,8 @@ class PendingDomainsApi:
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         name: Annotated[Optional[StrictStr], Field(description="Filter by domain name")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter by source that discovered the domain")] = None,
-        start_date: Annotated[Optional[datetime], Field(description="Filter by start date (ISO format)")] = None,
-        end_date: Annotated[Optional[datetime], Field(description="Filter by end date (ISO format)")] = None,
+        start_date: Annotated[Optional[datetime], Field(description="Filter by start date")] = None,
+        end_date: Annotated[Optional[datetime], Field(description="Filter by end date")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort by field")] = None,
         sort_order: Annotated[Optional[StrictStr], Field(description="Sort order")] = None,
         _request_timeout: Union[
@@ -269,9 +269,9 @@ class PendingDomainsApi:
         :type name: str
         :param source: Filter by source that discovered the domain
         :type source: str
-        :param start_date: Filter by start date (ISO format)
+        :param start_date: Filter by start date
         :type start_date: datetime
-        :param end_date: Filter by end date (ISO format)
+        :param end_date: Filter by end date
         :type end_date: datetime
         :param sort_by: Sort by field
         :type sort_by: str

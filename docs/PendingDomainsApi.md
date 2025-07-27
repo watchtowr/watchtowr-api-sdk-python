@@ -48,8 +48,8 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100. (optional)
     name = 'example.com' # str | Filter by domain name (optional)
     source = 'example-source' # str | Filter by source that discovered the domain (optional)
-    start_date = '2023-01-01T00:00Z' # datetime | Filter by start date (ISO format) (optional)
-    end_date = '2023-12-31T23:59:59.999Z' # datetime | Filter by end date (ISO format) (optional)
+    start_date = '2013-10-20T19:20:30+01:00' # datetime | Filter by start date (optional)
+    end_date = '2013-10-20T19:20:30+01:00' # datetime | Filter by end date (optional)
     sort_by = created_at # str | Sort by field (optional) (default to created_at)
     sort_order = DESC # str | Sort order (optional) (default to DESC)
 
@@ -73,8 +73,8 @@ Name | Type | Description  | Notes
  **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100. | [optional] 
  **name** | **str**| Filter by domain name | [optional] 
  **source** | **str**| Filter by source that discovered the domain | [optional] 
- **start_date** | **datetime**| Filter by start date (ISO format) | [optional] 
- **end_date** | **datetime**| Filter by end date (ISO format) | [optional] 
+ **start_date** | **datetime**| Filter by start date | [optional] 
+ **end_date** | **datetime**| Filter by end date | [optional] 
  **sort_by** | **str**| Sort by field | [optional] [default to created_at]
  **sort_order** | **str**| Sort order | [optional] [default to DESC]
 

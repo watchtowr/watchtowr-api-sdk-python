@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **get_client_hunts**
-> PaginatedHunts get_client_hunts(page=page, page_size=page_size, statuses=statuses, hunt_search=hunt_search, types=types, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, priorities=priorities, general=general, only_resolved=only_resolved, is_unacknowledged=is_unacknowledged)
+> PaginatedHunts get_client_hunts(page=page, page_size=page_size, statuses=statuses, hunt_search=hunt_search, types=types, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, priorities=priorities, resource_filter=resource_filter, only_resolved=only_resolved, is_unacknowledged=is_unacknowledged)
 
 List Hunts
 
@@ -57,13 +57,13 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     updated_from = '2013-10-20T19:20:30+01:00' # datetime | Filter hunts updated after a given date and time. (optional)
     updated_to = '2013-10-20T19:20:30+01:00' # datetime | Filter hunts updated before a given date and time. (optional)
     priorities = 'priorities_example' # str | Filter hunts by hunt priority. (optional)
-    general = 'general_example' # str | General (optional)
+    resource_filter = 'resource_filter_example' # str | General (optional)
     only_resolved = true # bool | Filter to only show resolved hunts. (optional)
     is_unacknowledged = true # bool | Filter to only show hunts that are not acknowledged. (optional)
 
     try:
         # List Hunts
-        api_response = api_instance.get_client_hunts(page=page, page_size=page_size, statuses=statuses, hunt_search=hunt_search, types=types, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, priorities=priorities, general=general, only_resolved=only_resolved, is_unacknowledged=is_unacknowledged)
+        api_response = api_instance.get_client_hunts(page=page, page_size=page_size, statuses=statuses, hunt_search=hunt_search, types=types, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, priorities=priorities, resource_filter=resource_filter, only_resolved=only_resolved, is_unacknowledged=is_unacknowledged)
         print("The response of HuntsApi->get_client_hunts:\n")
         pprint(api_response)
     except Exception as e:
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
  **updated_from** | **datetime**| Filter hunts updated after a given date and time. | [optional] 
  **updated_to** | **datetime**| Filter hunts updated before a given date and time. | [optional] 
  **priorities** | **str**| Filter hunts by hunt priority. | [optional] 
- **general** | **str**| General | [optional] 
+ **resource_filter** | **str**| General | [optional] 
  **only_resolved** | **bool**| Filter to only show resolved hunts. | [optional] 
  **is_unacknowledged** | **bool**| Filter to only show hunts that are not acknowledged. | [optional] 
 

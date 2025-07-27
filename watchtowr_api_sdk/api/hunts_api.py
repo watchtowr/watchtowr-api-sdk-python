@@ -57,7 +57,7 @@ class HuntsApi:
         updated_from: Annotated[Optional[datetime], Field(description="Filter hunts updated after a given date and time.")] = None,
         updated_to: Annotated[Optional[datetime], Field(description="Filter hunts updated before a given date and time.")] = None,
         priorities: Annotated[Optional[StrictStr], Field(description="Filter hunts by hunt priority.")] = None,
-        general: Annotated[Optional[StrictStr], Field(description="General")] = None,
+        resource_filter: Annotated[Optional[StrictStr], Field(description="General")] = None,
         only_resolved: Annotated[Optional[StrictBool], Field(description="Filter to only show resolved hunts.")] = None,
         is_unacknowledged: Annotated[Optional[StrictBool], Field(description="Filter to only show hunts that are not acknowledged.")] = None,
         _request_timeout: Union[
@@ -97,8 +97,8 @@ class HuntsApi:
         :type updated_to: datetime
         :param priorities: Filter hunts by hunt priority.
         :type priorities: str
-        :param general: General
-        :type general: str
+        :param resource_filter: General
+        :type resource_filter: str
         :param only_resolved: Filter to only show resolved hunts.
         :type only_resolved: bool
         :param is_unacknowledged: Filter to only show hunts that are not acknowledged.
@@ -136,7 +136,7 @@ class HuntsApi:
             updated_from=updated_from,
             updated_to=updated_to,
             priorities=priorities,
-            general=general,
+            resource_filter=resource_filter,
             only_resolved=only_resolved,
             is_unacknowledged=is_unacknowledged,
             _request_auth=_request_auth,
@@ -173,7 +173,7 @@ class HuntsApi:
         updated_from: Annotated[Optional[datetime], Field(description="Filter hunts updated after a given date and time.")] = None,
         updated_to: Annotated[Optional[datetime], Field(description="Filter hunts updated before a given date and time.")] = None,
         priorities: Annotated[Optional[StrictStr], Field(description="Filter hunts by hunt priority.")] = None,
-        general: Annotated[Optional[StrictStr], Field(description="General")] = None,
+        resource_filter: Annotated[Optional[StrictStr], Field(description="General")] = None,
         only_resolved: Annotated[Optional[StrictBool], Field(description="Filter to only show resolved hunts.")] = None,
         is_unacknowledged: Annotated[Optional[StrictBool], Field(description="Filter to only show hunts that are not acknowledged.")] = None,
         _request_timeout: Union[
@@ -213,8 +213,8 @@ class HuntsApi:
         :type updated_to: datetime
         :param priorities: Filter hunts by hunt priority.
         :type priorities: str
-        :param general: General
-        :type general: str
+        :param resource_filter: General
+        :type resource_filter: str
         :param only_resolved: Filter to only show resolved hunts.
         :type only_resolved: bool
         :param is_unacknowledged: Filter to only show hunts that are not acknowledged.
@@ -252,7 +252,7 @@ class HuntsApi:
             updated_from=updated_from,
             updated_to=updated_to,
             priorities=priorities,
-            general=general,
+            resource_filter=resource_filter,
             only_resolved=only_resolved,
             is_unacknowledged=is_unacknowledged,
             _request_auth=_request_auth,
@@ -289,7 +289,7 @@ class HuntsApi:
         updated_from: Annotated[Optional[datetime], Field(description="Filter hunts updated after a given date and time.")] = None,
         updated_to: Annotated[Optional[datetime], Field(description="Filter hunts updated before a given date and time.")] = None,
         priorities: Annotated[Optional[StrictStr], Field(description="Filter hunts by hunt priority.")] = None,
-        general: Annotated[Optional[StrictStr], Field(description="General")] = None,
+        resource_filter: Annotated[Optional[StrictStr], Field(description="General")] = None,
         only_resolved: Annotated[Optional[StrictBool], Field(description="Filter to only show resolved hunts.")] = None,
         is_unacknowledged: Annotated[Optional[StrictBool], Field(description="Filter to only show hunts that are not acknowledged.")] = None,
         _request_timeout: Union[
@@ -329,8 +329,8 @@ class HuntsApi:
         :type updated_to: datetime
         :param priorities: Filter hunts by hunt priority.
         :type priorities: str
-        :param general: General
-        :type general: str
+        :param resource_filter: General
+        :type resource_filter: str
         :param only_resolved: Filter to only show resolved hunts.
         :type only_resolved: bool
         :param is_unacknowledged: Filter to only show hunts that are not acknowledged.
@@ -368,7 +368,7 @@ class HuntsApi:
             updated_from=updated_from,
             updated_to=updated_to,
             priorities=priorities,
-            general=general,
+            resource_filter=resource_filter,
             only_resolved=only_resolved,
             is_unacknowledged=is_unacknowledged,
             _request_auth=_request_auth,
@@ -400,7 +400,7 @@ class HuntsApi:
         updated_from,
         updated_to,
         priorities,
-        general,
+        resource_filter,
         only_resolved,
         is_unacknowledged,
         _request_auth,
@@ -501,9 +501,9 @@ class HuntsApi:
             
             _query_params.append(('priorities', priorities))
             
-        if general is not None:
+        if resource_filter is not None:
             
-            _query_params.append(('general', general))
+            _query_params.append(('resourceFilter', resource_filter))
             
         if only_resolved is not None:
             

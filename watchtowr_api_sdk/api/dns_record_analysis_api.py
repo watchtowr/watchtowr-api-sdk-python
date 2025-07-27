@@ -53,8 +53,8 @@ class DNSRecordAnalysisApi:
         record_name: Annotated[Optional[StrictStr], Field(description="Filter by record name")] = None,
         record_value: Annotated[Optional[StrictStr], Field(description="Filter by record value")] = None,
         record_types: Annotated[Optional[StrictStr], Field(description="Filter by record types (comma separated)")] = None,
-        start_date: Annotated[Optional[datetime], Field(description="Filter by start date (ISO format)")] = None,
-        end_date: Annotated[Optional[datetime], Field(description="Filter by end date (ISO format)")] = None,
+        start_date: Annotated[Optional[datetime], Field(description="Filter by start date")] = None,
+        end_date: Annotated[Optional[datetime], Field(description="Filter by end date")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -90,9 +90,9 @@ class DNSRecordAnalysisApi:
         :type record_value: str
         :param record_types: Filter by record types (comma separated)
         :type record_types: str
-        :param start_date: Filter by start date (ISO format)
+        :param start_date: Filter by start date
         :type start_date: datetime
-        :param end_date: Filter by end date (ISO format)
+        :param end_date: Filter by end date
         :type end_date: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -161,8 +161,8 @@ class DNSRecordAnalysisApi:
         record_name: Annotated[Optional[StrictStr], Field(description="Filter by record name")] = None,
         record_value: Annotated[Optional[StrictStr], Field(description="Filter by record value")] = None,
         record_types: Annotated[Optional[StrictStr], Field(description="Filter by record types (comma separated)")] = None,
-        start_date: Annotated[Optional[datetime], Field(description="Filter by start date (ISO format)")] = None,
-        end_date: Annotated[Optional[datetime], Field(description="Filter by end date (ISO format)")] = None,
+        start_date: Annotated[Optional[datetime], Field(description="Filter by start date")] = None,
+        end_date: Annotated[Optional[datetime], Field(description="Filter by end date")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -198,9 +198,9 @@ class DNSRecordAnalysisApi:
         :type record_value: str
         :param record_types: Filter by record types (comma separated)
         :type record_types: str
-        :param start_date: Filter by start date (ISO format)
+        :param start_date: Filter by start date
         :type start_date: datetime
-        :param end_date: Filter by end date (ISO format)
+        :param end_date: Filter by end date
         :type end_date: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -269,8 +269,8 @@ class DNSRecordAnalysisApi:
         record_name: Annotated[Optional[StrictStr], Field(description="Filter by record name")] = None,
         record_value: Annotated[Optional[StrictStr], Field(description="Filter by record value")] = None,
         record_types: Annotated[Optional[StrictStr], Field(description="Filter by record types (comma separated)")] = None,
-        start_date: Annotated[Optional[datetime], Field(description="Filter by start date (ISO format)")] = None,
-        end_date: Annotated[Optional[datetime], Field(description="Filter by end date (ISO format)")] = None,
+        start_date: Annotated[Optional[datetime], Field(description="Filter by start date")] = None,
+        end_date: Annotated[Optional[datetime], Field(description="Filter by end date")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -306,9 +306,9 @@ class DNSRecordAnalysisApi:
         :type record_value: str
         :param record_types: Filter by record types (comma separated)
         :type record_types: str
-        :param start_date: Filter by start date (ISO format)
+        :param start_date: Filter by start date
         :type start_date: datetime
-        :param end_date: Filter by end date (ISO format)
+        :param end_date: Filter by end date
         :type end_date: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

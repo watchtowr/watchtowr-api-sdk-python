@@ -68,8 +68,8 @@ class Hunt(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['impactLessPoc', 'versionMetadata', 'technologyMetadata', 'N/A']):
-            raise ValueError("must be one of enum values ('impactLessPoc', 'versionMetadata', 'technologyMetadata', 'N/A')")
+        if value not in set(['impactLessPoc', 'versionMetadata', 'technologyMetadata', 'indicatorOfCompromise', 'N/A']):
+            raise ValueError("must be one of enum values ('impactLessPoc', 'versionMetadata', 'technologyMetadata', 'indicatorOfCompromise', 'N/A')")
         return value
 
     @field_validator('status')
