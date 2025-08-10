@@ -1,6 +1,6 @@
 # watchtowr-api-sdk-python
 The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:
-      * Continuous Assurance API
+      * Automated Red Teaming API
       * Adversary Sight API
       * Intelligence API
       * Platform API
