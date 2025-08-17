@@ -2699,6 +2699,7 @@ class DomainsApi:
         asset_name: Annotated[Optional[StrictStr], Field(description="Search domain assets by name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack       * parked ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
+        integration_connections: Annotated[Optional[StrictStr], Field(description="Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).      Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter assets created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
@@ -2731,6 +2732,8 @@ class DomainsApi:
         :type statuses: List[str]
         :param source: Filter assets by the source that discovered the asset.
         :type source: str
+        :param integration_connections: Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).      Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)
+        :type integration_connections: str
         :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
         :type business_unit_ids: str
         :param created_from: Filter assets created after a given date and time.
@@ -2769,6 +2772,7 @@ class DomainsApi:
             asset_name=asset_name,
             statuses=statuses,
             source=source,
+            integration_connections=integration_connections,
             business_unit_ids=business_unit_ids,
             created_from=created_from,
             created_to=created_to,
@@ -2803,6 +2807,7 @@ class DomainsApi:
         asset_name: Annotated[Optional[StrictStr], Field(description="Search domain assets by name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack       * parked ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
+        integration_connections: Annotated[Optional[StrictStr], Field(description="Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).      Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter assets created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
@@ -2835,6 +2840,8 @@ class DomainsApi:
         :type statuses: List[str]
         :param source: Filter assets by the source that discovered the asset.
         :type source: str
+        :param integration_connections: Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).      Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)
+        :type integration_connections: str
         :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
         :type business_unit_ids: str
         :param created_from: Filter assets created after a given date and time.
@@ -2873,6 +2880,7 @@ class DomainsApi:
             asset_name=asset_name,
             statuses=statuses,
             source=source,
+            integration_connections=integration_connections,
             business_unit_ids=business_unit_ids,
             created_from=created_from,
             created_to=created_to,
@@ -2907,6 +2915,7 @@ class DomainsApi:
         asset_name: Annotated[Optional[StrictStr], Field(description="Search domain assets by name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack       * parked ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
+        integration_connections: Annotated[Optional[StrictStr], Field(description="Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).      Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter assets created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
@@ -2939,6 +2948,8 @@ class DomainsApi:
         :type statuses: List[str]
         :param source: Filter assets by the source that discovered the asset.
         :type source: str
+        :param integration_connections: Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).      Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)
+        :type integration_connections: str
         :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
         :type business_unit_ids: str
         :param created_from: Filter assets created after a given date and time.
@@ -2977,6 +2988,7 @@ class DomainsApi:
             asset_name=asset_name,
             statuses=statuses,
             source=source,
+            integration_connections=integration_connections,
             business_unit_ids=business_unit_ids,
             created_from=created_from,
             created_to=created_to,
@@ -3006,6 +3018,7 @@ class DomainsApi:
         asset_name,
         statuses,
         source,
+        integration_connections,
         business_unit_ids,
         created_from,
         created_to,
@@ -3053,6 +3066,10 @@ class DomainsApi:
         if source is not None:
             
             _query_params.append(('source', source))
+            
+        if integration_connections is not None:
+            
+            _query_params.append(('integrationConnections', integration_connections))
             
         if business_unit_ids is not None:
             

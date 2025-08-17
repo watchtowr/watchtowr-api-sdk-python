@@ -687,7 +687,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_list_asset_repositories**
-> PaginatedClientRepository get_list_asset_repositories(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to)
+> PaginatedClientRepository get_list_asset_repositories(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to)
 
 List Repositories
 
@@ -728,6 +728,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     asset_name = 'watchTowr/repository' # str | Search repositories by asset name. (optional)
     statuses = ['statuses_example'] # List[str] | Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope  (optional)
     source = 'module-adversarysight-github-domain-based-repository-discovery' # str | Filter assets by the source that discovered the asset. (optional)
+    integration_connections = '123:aws,456:azure,789:googlecloud' # str | Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).      Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud) (optional)
     business_unit_ids = '1,2,3' # str | Filter assets by a list of comma separated business unit IDs that the asset is related to. (optional)
     created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter assets created after a given date and time. (optional)
     created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter assets created before a given date and time. (optional)
@@ -736,7 +737,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
     try:
         # List Repositories
-        api_response = api_instance.get_list_asset_repositories(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to)
+        api_response = api_instance.get_list_asset_repositories(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to)
         print("The response of RepositoriesApi->get_list_asset_repositories:\n")
         pprint(api_response)
     except Exception as e:
@@ -755,6 +756,7 @@ Name | Type | Description  | Notes
  **asset_name** | **str**| Search repositories by asset name. | [optional] 
  **statuses** | [**List[str]**](str.md)| Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope  | [optional] 
  **source** | **str**| Filter assets by the source that discovered the asset. | [optional] 
+ **integration_connections** | **str**| Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).      Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud) | [optional] 
  **business_unit_ids** | **str**| Filter assets by a list of comma separated business unit IDs that the asset is related to. | [optional] 
  **created_from** | **datetime**| Filter assets created after a given date and time. | [optional] 
  **created_to** | **datetime**| Filter assets created before a given date and time. | [optional] 
