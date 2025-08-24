@@ -5,7 +5,6 @@ description = "Complete watchTowr Platform API Documentation"
 authors = [
   {name = "watchTowr Support",email = "support@watchTowr.io"},
 ]
-license = "NoLicense"
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Complete watchTowr Platform API Documentation"]
 requires-python = ">=3.9"
@@ -14,7 +13,8 @@ dependencies = [
   "urllib3 (>=2.1.0,<3.0.0)",
   "python-dateutil (>=2.8.2)",
   "pydantic (>=2)",
-  "typing-extensions (>=4.7.1)"
+  "typing-extensions (>=4.7.1)",
+  "lazy-imports (>=1,<2)"
 ]
 
 [project.urls]
