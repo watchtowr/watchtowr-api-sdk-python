@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | Descriptive title for the new asset | 
-**type** | **str** | Asset Type for the new asset. Valid asset types are: [] | 
+**type** | **str** | Asset Type for the new asset. Valid asset types are: [domain, subdomain, ip, ipRange, repository, cloudStorage, container, mobileApp, saasPlatform, cloudAsset, apiDocumentation, packageManager] | 
 **value** | **str** | Value for the asset to be added. | 
 
 ## Example

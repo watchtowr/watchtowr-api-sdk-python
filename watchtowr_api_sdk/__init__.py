@@ -47,6 +47,7 @@ __all__ = [
     "SourceIPAddressesApi",
     "SubdomainsApi",
     "SuspiciousDomainsApi",
+    "UserManagementApi",
     "ApiResponse",
     "ApiClient",
     "Configuration",
@@ -124,10 +125,13 @@ __all__ = [
     "ClientSubdomain",
     "ClientSubdomainData",
     "ClientSuspiciousDomainData",
+    "ClientUser",
+    "ClientUserDetail",
     "CreateClientCustomPropertyDto",
     "CreateClientNoteDto",
     "CreateClientSeedDataRequestBody",
     "DeleteNoteSucces",
+    "FilterByBusinessUnitInput",
     "FindingListResponse",
     "FindingRetestResponseDto",
     "FindingsSummaryDto",
@@ -175,6 +179,7 @@ __all__ = [
     "PaginatedServiceInformationResponse",
     "PaginatedServiceListing",
     "PaginatedSuspiciousDomain",
+    "PaginatedUsers",
     "Pagination",
     "PointsOfInterest",
     "RemoveClientCustomPropertyResponseDto",
@@ -201,6 +206,7 @@ __all__ = [
     "UpdateKillSwitchData",
     "UpdateKillSwitchRequestDto",
     "UpdateKillSwitchResponse",
+    "UserDetailData",
     "WhoisData",
     "WhoisDataObject",
     "WhoisDataObjectEmails",
@@ -237,6 +243,7 @@ from watchtowr_api_sdk.api.service_discovery_api import ServiceDiscoveryApi as S
 from watchtowr_api_sdk.api.source_ip_addresses_api import SourceIPAddressesApi as SourceIPAddressesApi
 from watchtowr_api_sdk.api.subdomains_api import SubdomainsApi as SubdomainsApi
 from watchtowr_api_sdk.api.suspicious_domains_api import SuspiciousDomainsApi as SuspiciousDomainsApi
+from watchtowr_api_sdk.api.user_management_api import UserManagementApi as UserManagementApi
 
 # import ApiClient
 from watchtowr_api_sdk.api_response import ApiResponse as ApiResponse
@@ -318,10 +325,13 @@ from watchtowr_api_sdk.models.client_source_ips_addresses import ClientSourceIps
 from watchtowr_api_sdk.models.client_subdomain import ClientSubdomain as ClientSubdomain
 from watchtowr_api_sdk.models.client_subdomain_data import ClientSubdomainData as ClientSubdomainData
 from watchtowr_api_sdk.models.client_suspicious_domain_data import ClientSuspiciousDomainData as ClientSuspiciousDomainData
+from watchtowr_api_sdk.models.client_user import ClientUser as ClientUser
+from watchtowr_api_sdk.models.client_user_detail import ClientUserDetail as ClientUserDetail
 from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto as CreateClientCustomPropertyDto
 from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto as CreateClientNoteDto
 from watchtowr_api_sdk.models.create_client_seed_data_request_body import CreateClientSeedDataRequestBody as CreateClientSeedDataRequestBody
 from watchtowr_api_sdk.models.delete_note_succes import DeleteNoteSucces as DeleteNoteSucces
+from watchtowr_api_sdk.models.filter_by_business_unit_input import FilterByBusinessUnitInput as FilterByBusinessUnitInput
 from watchtowr_api_sdk.models.finding_list_response import FindingListResponse as FindingListResponse
 from watchtowr_api_sdk.models.finding_retest_response_dto import FindingRetestResponseDto as FindingRetestResponseDto
 from watchtowr_api_sdk.models.findings_summary_dto import FindingsSummaryDto as FindingsSummaryDto
@@ -369,6 +379,7 @@ from watchtowr_api_sdk.models.paginated_point_of_interest import PaginatedPointO
 from watchtowr_api_sdk.models.paginated_service_information_response import PaginatedServiceInformationResponse as PaginatedServiceInformationResponse
 from watchtowr_api_sdk.models.paginated_service_listing import PaginatedServiceListing as PaginatedServiceListing
 from watchtowr_api_sdk.models.paginated_suspicious_domain import PaginatedSuspiciousDomain as PaginatedSuspiciousDomain
+from watchtowr_api_sdk.models.paginated_users import PaginatedUsers as PaginatedUsers
 from watchtowr_api_sdk.models.pagination import Pagination as Pagination
 from watchtowr_api_sdk.models.points_of_interest import PointsOfInterest as PointsOfInterest
 from watchtowr_api_sdk.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto as RemoveClientCustomPropertyResponseDto
@@ -395,6 +406,7 @@ from watchtowr_api_sdk.models.update_client_next_gen_asset_status_dto import Upd
 from watchtowr_api_sdk.models.update_kill_switch_data import UpdateKillSwitchData as UpdateKillSwitchData
 from watchtowr_api_sdk.models.update_kill_switch_request_dto import UpdateKillSwitchRequestDto as UpdateKillSwitchRequestDto
 from watchtowr_api_sdk.models.update_kill_switch_response import UpdateKillSwitchResponse as UpdateKillSwitchResponse
+from watchtowr_api_sdk.models.user_detail_data import UserDetailData as UserDetailData
 from watchtowr_api_sdk.models.whois_data import WhoisData as WhoisData
 from watchtowr_api_sdk.models.whois_data_object import WhoisDataObject as WhoisDataObject
 from watchtowr_api_sdk.models.whois_data_object_emails import WhoisDataObjectEmails as WhoisDataObjectEmails

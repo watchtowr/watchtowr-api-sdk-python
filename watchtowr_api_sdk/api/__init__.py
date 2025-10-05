@@ -29,4 +29,5 @@ from watchtowr_api_sdk.api.service_discovery_api import ServiceDiscoveryApi
 from watchtowr_api_sdk.api.source_ip_addresses_api import SourceIPAddressesApi
 from watchtowr_api_sdk.api.subdomains_api import SubdomainsApi
 from watchtowr_api_sdk.api.suspicious_domains_api import SuspiciousDomainsApi
+from watchtowr_api_sdk.api.user_management_api import UserManagementApi
 

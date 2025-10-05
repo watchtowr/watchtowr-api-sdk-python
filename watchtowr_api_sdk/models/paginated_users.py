@@ -18,19 +18,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List
+from watchtowr_api_sdk.models.client_user import ClientUser
+from watchtowr_api_sdk.models.meta import Meta
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ClientSeedData(BaseModel):
+class PaginatedUsers(BaseModel):
     """
-    ClientSeedData
+    PaginatedUsers
     """ # noqa: E501
-    title: StrictStr = Field(description="Descriptive title for the new asset")
-    type: StrictStr = Field(description="Asset Type for the new asset. Valid asset types are: [domain, subdomain, ip, ipRange, repository, cloudStorage, container, mobileApp, saasPlatform, cloudAsset, apiDocumentation, packageManager]")
-    value: StrictStr = Field(description="Value for the asset to be added.")
-    __properties: ClassVar[List[str]] = ["title", "type", "value"]
+    data: List[ClientUser] = Field(description="List of users")
+    meta: Meta
+    __properties: ClassVar[List[str]] = ["data", "meta"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +51,7 @@ class ClientSeedData(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ClientSeedData from a JSON string"""
+        """Create an instance of PaginatedUsers from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,11 +72,21 @@ class ClientSeedData(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
+        _items = []
+        if self.data:
+            for _item_data in self.data:
+                if _item_data:
+                    _items.append(_item_data.to_dict())
+            _dict['data'] = _items
+        # override the default output from pydantic by calling `to_dict()` of meta
+        if self.meta:
+            _dict['meta'] = self.meta.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ClientSeedData from a dict"""
+        """Create an instance of PaginatedUsers from a dict"""
         if obj is None:
             return None
 
@@ -85,12 +96,11 @@ class ClientSeedData(BaseModel):
         # raise errors for additional fields in the input
         for _key in obj.keys():
             if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in ClientSeedData) in the input: " + _key)
+                raise ValueError("Error due to additional fields (not defined in PaginatedUsers) in the input: " + _key)
 
         _obj = cls.model_validate({
-            "title": obj.get("title"),
-            "type": obj.get("type"),
-            "value": obj.get("value")
+            "data": [ClientUser.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None,
+            "meta": Meta.from_dict(obj["meta"]) if obj.get("meta") is not None else None
         })
         return _obj
 

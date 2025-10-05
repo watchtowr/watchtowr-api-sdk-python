@@ -299,6 +299,8 @@ Class | Method | HTTP request | Description
 *SubdomainsApi* | [**update_note_subdomain**](docs/SubdomainsApi.md#update_note_subdomain) | **PUT** /api/client/assets/subdomain/show/{id}/note/{noteId} | Update Subdomain Note
 *SuspiciousDomainsApi* | [**get_list_suspicious_domain**](docs/SuspiciousDomainsApi.md#get_list_suspicious_domain) | **GET** /api/client/suspicious-domain/list | List Suspicious Domains
 *SuspiciousDomainsApi* | [**get_suspicious_domain_details**](docs/SuspiciousDomainsApi.md#get_suspicious_domain_details) | **GET** /api/client/suspicious-domain/show/{id} | Get Suspicious Domain Details
+*UserManagementApi* | [**get_user_details**](docs/UserManagementApi.md#get_user_details) | **GET** /api/client/users/show/{id} | Get User Details
+*UserManagementApi* | [**list_users**](docs/UserManagementApi.md#list_users) | **GET** /api/client/users/list | List Users
 
 
 ## Documentation For Models
@@ -371,10 +373,13 @@ Class | Method | HTTP request | Description
  - [ClientSubdomain](docs/ClientSubdomain.md)
  - [ClientSubdomainData](docs/ClientSubdomainData.md)
  - [ClientSuspiciousDomainData](docs/ClientSuspiciousDomainData.md)
+ - [ClientUser](docs/ClientUser.md)
+ - [ClientUserDetail](docs/ClientUserDetail.md)
  - [CreateClientCustomPropertyDto](docs/CreateClientCustomPropertyDto.md)
  - [CreateClientNoteDto](docs/CreateClientNoteDto.md)
  - [CreateClientSeedDataRequestBody](docs/CreateClientSeedDataRequestBody.md)
  - [DeleteNoteSucces](docs/DeleteNoteSucces.md)
+ - [FilterByBusinessUnitInput](docs/FilterByBusinessUnitInput.md)
  - [FindingListResponse](docs/FindingListResponse.md)
  - [FindingRetestResponseDto](docs/FindingRetestResponseDto.md)
  - [FindingsSummaryDto](docs/FindingsSummaryDto.md)
@@ -422,6 +427,7 @@ Class | Method | HTTP request | Description
  - [PaginatedServiceInformationResponse](docs/PaginatedServiceInformationResponse.md)
  - [PaginatedServiceListing](docs/PaginatedServiceListing.md)
  - [PaginatedSuspiciousDomain](docs/PaginatedSuspiciousDomain.md)
+ - [PaginatedUsers](docs/PaginatedUsers.md)
  - [Pagination](docs/Pagination.md)
  - [PointsOfInterest](docs/PointsOfInterest.md)
  - [RemoveClientCustomPropertyResponseDto](docs/RemoveClientCustomPropertyResponseDto.md)
@@ -448,6 +454,7 @@ Class | Method | HTTP request | Description
  - [UpdateKillSwitchData](docs/UpdateKillSwitchData.md)
  - [UpdateKillSwitchRequestDto](docs/UpdateKillSwitchRequestDto.md)
  - [UpdateKillSwitchResponse](docs/UpdateKillSwitchResponse.md)
+ - [UserDetailData](docs/UserDetailData.md)
  - [WhoisData](docs/WhoisData.md)
  - [WhoisDataObject](docs/WhoisDataObject.md)
  - [WhoisDataObjectEmails](docs/WhoisDataObjectEmails.md)

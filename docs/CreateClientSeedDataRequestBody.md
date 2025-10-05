@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | [**List[ClientSeedData]**](ClientSeedData.md) | JSON array listing seed data assets to submit for review. | 
-**business_units** | **List[object]** | List of business units to allocate new assets to. -1 indicates UNASSIGNED business unit | [optional] 
+**business_units** | [**List[FilterByBusinessUnitInput]**](FilterByBusinessUnitInput.md) | List of business units to allocate new assets to. -1 indicates UNASSIGNED business unit | [optional] 
 
 ## Example
 

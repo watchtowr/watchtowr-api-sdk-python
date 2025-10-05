@@ -27,8 +27,8 @@ class NotFound(BaseModel):
     """
     NotFound
     """ # noqa: E501
-    message: StrictStr
-    status_code: StrictFloat = Field(alias="statusCode")
+    message: StrictStr = Field(description="Error message")
+    status_code: StrictFloat = Field(description="HTTP status code", alias="statusCode")
     __properties: ClassVar[List[str]] = ["message", "statusCode"]
 
     model_config = ConfigDict(

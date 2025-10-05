@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_seed_data import ClientSeedData
+from watchtowr_api_sdk.models.filter_by_business_unit_input import FilterByBusinessUnitInput
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +30,7 @@ class CreateClientSeedDataRequestBody(BaseModel):
     CreateClientSeedDataRequestBody
     """ # noqa: E501
     data: List[ClientSeedData] = Field(description="JSON array listing seed data assets to submit for review.")
-    business_units: Optional[List[Dict[str, Any]]] = Field(default=None, description="List of business units to allocate new assets to. -1 indicates UNASSIGNED business unit", alias="businessUnits")
+    business_units: Optional[List[FilterByBusinessUnitInput]] = Field(default=None, description="List of business units to allocate new assets to. -1 indicates UNASSIGNED business unit", alias="businessUnits")
     __properties: ClassVar[List[str]] = ["data", "businessUnits"]
 
     model_config = ConfigDict(
@@ -78,6 +79,13 @@ class CreateClientSeedDataRequestBody(BaseModel):
                 if _item_data:
                     _items.append(_item_data.to_dict())
             _dict['data'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in business_units (list)
+        _items = []
+        if self.business_units:
+            for _item_business_units in self.business_units:
+                if _item_business_units:
+                    _items.append(_item_business_units.to_dict())
+            _dict['businessUnits'] = _items
         return _dict
 
     @classmethod
@@ -96,7 +104,7 @@ class CreateClientSeedDataRequestBody(BaseModel):
 
         _obj = cls.model_validate({
             "data": [ClientSeedData.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None,
-            "businessUnits": obj.get("businessUnits")
+            "businessUnits": [FilterByBusinessUnitInput.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None
         })
         return _obj
 

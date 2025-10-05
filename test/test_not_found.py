@@ -36,12 +36,12 @@ class TestNotFound(unittest.TestCase):
         model = NotFound()
         if include_optional:
             return NotFound(
-                message = 'Not Found',
+                message = 'User not found',
                 status_code = 404
             )
         else:
             return NotFound(
-                message = 'Not Found',
+                message = 'User not found',
                 status_code = 404,
         )
         """

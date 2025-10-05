@@ -18,19 +18,26 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ClientSeedData(BaseModel):
+class ClientUserDetail(BaseModel):
     """
-    ClientSeedData
+    ClientUserDetail
     """ # noqa: E501
-    title: StrictStr = Field(description="Descriptive title for the new asset")
-    type: StrictStr = Field(description="Asset Type for the new asset. Valid asset types are: [domain, subdomain, ip, ipRange, repository, cloudStorage, container, mobileApp, saasPlatform, cloudAsset, apiDocumentation, packageManager]")
-    value: StrictStr = Field(description="Value for the asset to be added.")
-    __properties: ClassVar[List[str]] = ["title", "type", "value"]
+    id: StrictFloat = Field(description="User ID")
+    name: StrictStr = Field(description="User name")
+    email: StrictStr = Field(description="User email (masked)")
+    title: StrictStr = Field(description="User title")
+    mobile_phone_number: StrictStr = Field(description="Mobile phone number (masked)")
+    office_phone_number: StrictStr = Field(description="Office phone number (masked)")
+    created_at: datetime = Field(description="Created at timestamp")
+    locked: StrictBool = Field(description="Whether user is locked")
+    role: Dict[str, Any] = Field(description="User role information")
+    __properties: ClassVar[List[str]] = ["id", "name", "email", "title", "mobile_phone_number", "office_phone_number", "created_at", "locked", "role"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +57,7 @@ class ClientSeedData(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ClientSeedData from a JSON string"""
+        """Create an instance of ClientUserDetail from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,7 +82,7 @@ class ClientSeedData(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ClientSeedData from a dict"""
+        """Create an instance of ClientUserDetail from a dict"""
         if obj is None:
             return None
 
@@ -85,12 +92,18 @@ class ClientSeedData(BaseModel):
         # raise errors for additional fields in the input
         for _key in obj.keys():
             if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in ClientSeedData) in the input: " + _key)
+                raise ValueError("Error due to additional fields (not defined in ClientUserDetail) in the input: " + _key)
 
         _obj = cls.model_validate({
+            "id": obj.get("id"),
+            "name": obj.get("name"),
+            "email": obj.get("email"),
             "title": obj.get("title"),
-            "type": obj.get("type"),
-            "value": obj.get("value")
+            "mobile_phone_number": obj.get("mobile_phone_number"),
+            "office_phone_number": obj.get("office_phone_number"),
+            "created_at": obj.get("created_at"),
+            "locked": obj.get("locked"),
+            "role": obj.get("role")
         })
         return _obj
 

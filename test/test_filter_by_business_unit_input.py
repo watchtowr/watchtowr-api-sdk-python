@@ -15,10 +15,10 @@
 
 import unittest
 
-from watchtowr_api_sdk.models.forbidden_response import ForbiddenResponse
+from watchtowr_api_sdk.models.filter_by_business_unit_input import FilterByBusinessUnitInput
 
-class TestForbiddenResponse(unittest.TestCase):
-    """ForbiddenResponse unit test stubs"""
+class TestFilterByBusinessUnitInput(unittest.TestCase):
+    """FilterByBusinessUnitInput unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,28 +26,28 @@ class TestForbiddenResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ForbiddenResponse:
-        """Test ForbiddenResponse
+    def make_instance(self, include_optional) -> FilterByBusinessUnitInput:
+        """Test FilterByBusinessUnitInput
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ForbiddenResponse`
+        # uncomment below to create an instance of `FilterByBusinessUnitInput`
         """
-        model = ForbiddenResponse()
+        model = FilterByBusinessUnitInput()
         if include_optional:
-            return ForbiddenResponse(
-                message = 'Administrator role required to access user management',
-                status_code = 403
+            return FilterByBusinessUnitInput(
+                id = 1,
+                type = 'BUSINESS_UNIT',
+                name = 'Marketing'
             )
         else:
-            return ForbiddenResponse(
-                message = 'Administrator role required to access user management',
-                status_code = 403,
+            return FilterByBusinessUnitInput(
+                type = 'BUSINESS_UNIT',
         )
         """
 
-    def testForbiddenResponse(self):
-        """Test ForbiddenResponse"""
+    def testFilterByBusinessUnitInput(self):
+        """Test FilterByBusinessUnitInput"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
