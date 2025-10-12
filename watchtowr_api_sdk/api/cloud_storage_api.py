@@ -2409,6 +2409,8 @@ class CloudStorageApi:
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter assets updated after a given date and time.")] = None,
         updated_to: Annotated[Optional[datetime], Field(description="Filter assets updated before a given date and time.")] = None,
+        custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
+        custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2448,6 +2450,10 @@ class CloudStorageApi:
         :type updated_from: datetime
         :param updated_to: Filter assets updated before a given date and time.
         :type updated_to: datetime
+        :param custom_property_key: Filter assets by custom property key.
+        :type custom_property_key: str
+        :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
+        :type custom_property_value: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2482,6 +2488,8 @@ class CloudStorageApi:
             created_to=created_to,
             updated_from=updated_from,
             updated_to=updated_to,
+            custom_property_key=custom_property_key,
+            custom_property_value=custom_property_value,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2517,6 +2525,8 @@ class CloudStorageApi:
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter assets updated after a given date and time.")] = None,
         updated_to: Annotated[Optional[datetime], Field(description="Filter assets updated before a given date and time.")] = None,
+        custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
+        custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2556,6 +2566,10 @@ class CloudStorageApi:
         :type updated_from: datetime
         :param updated_to: Filter assets updated before a given date and time.
         :type updated_to: datetime
+        :param custom_property_key: Filter assets by custom property key.
+        :type custom_property_key: str
+        :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
+        :type custom_property_value: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2590,6 +2604,8 @@ class CloudStorageApi:
             created_to=created_to,
             updated_from=updated_from,
             updated_to=updated_to,
+            custom_property_key=custom_property_key,
+            custom_property_value=custom_property_value,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2625,6 +2641,8 @@ class CloudStorageApi:
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter assets updated after a given date and time.")] = None,
         updated_to: Annotated[Optional[datetime], Field(description="Filter assets updated before a given date and time.")] = None,
+        custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
+        custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2664,6 +2682,10 @@ class CloudStorageApi:
         :type updated_from: datetime
         :param updated_to: Filter assets updated before a given date and time.
         :type updated_to: datetime
+        :param custom_property_key: Filter assets by custom property key.
+        :type custom_property_key: str
+        :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
+        :type custom_property_value: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2698,6 +2720,8 @@ class CloudStorageApi:
             created_to=created_to,
             updated_from=updated_from,
             updated_to=updated_to,
+            custom_property_key=custom_property_key,
+            custom_property_value=custom_property_value,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2728,6 +2752,8 @@ class CloudStorageApi:
         created_to,
         updated_from,
         updated_to,
+        custom_property_key,
+        custom_property_value,
         _request_auth,
         _content_type,
         _headers,
@@ -2830,6 +2856,14 @@ class CloudStorageApi:
                 )
             else:
                 _query_params.append(('updated_to', updated_to))
+            
+        if custom_property_key is not None:
+            
+            _query_params.append(('customPropertyKey', custom_property_key))
+            
+        if custom_property_value is not None:
+            
+            _query_params.append(('customPropertyValue', custom_property_value))
             
         # process the header parameters
         # process the form parameters

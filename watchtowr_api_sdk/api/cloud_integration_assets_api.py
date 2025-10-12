@@ -2412,6 +2412,8 @@ class CloudIntegrationAssetsApi:
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter assets updated after a given date and time.")] = None,
         updated_to: Annotated[Optional[datetime], Field(description="Filter assets updated before a given date and time.")] = None,
+        custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
+        custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         provider: Annotated[Optional[StrictStr], Field(description="Filter assets by cloud asset provider.")] = None,
         super_type: Annotated[Optional[StrictStr], Field(description="Filter assets by the cloud asset type.")] = None,
         sub_type: Annotated[Optional[StrictStr], Field(description="Filter assets by the cloud asset sub-type.")] = None,
@@ -2454,6 +2456,10 @@ class CloudIntegrationAssetsApi:
         :type updated_from: datetime
         :param updated_to: Filter assets updated before a given date and time.
         :type updated_to: datetime
+        :param custom_property_key: Filter assets by custom property key.
+        :type custom_property_key: str
+        :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
+        :type custom_property_value: str
         :param provider: Filter assets by cloud asset provider.
         :type provider: str
         :param super_type: Filter assets by the cloud asset type.
@@ -2494,6 +2500,8 @@ class CloudIntegrationAssetsApi:
             created_to=created_to,
             updated_from=updated_from,
             updated_to=updated_to,
+            custom_property_key=custom_property_key,
+            custom_property_value=custom_property_value,
             provider=provider,
             super_type=super_type,
             sub_type=sub_type,
@@ -2532,6 +2540,8 @@ class CloudIntegrationAssetsApi:
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter assets updated after a given date and time.")] = None,
         updated_to: Annotated[Optional[datetime], Field(description="Filter assets updated before a given date and time.")] = None,
+        custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
+        custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         provider: Annotated[Optional[StrictStr], Field(description="Filter assets by cloud asset provider.")] = None,
         super_type: Annotated[Optional[StrictStr], Field(description="Filter assets by the cloud asset type.")] = None,
         sub_type: Annotated[Optional[StrictStr], Field(description="Filter assets by the cloud asset sub-type.")] = None,
@@ -2574,6 +2584,10 @@ class CloudIntegrationAssetsApi:
         :type updated_from: datetime
         :param updated_to: Filter assets updated before a given date and time.
         :type updated_to: datetime
+        :param custom_property_key: Filter assets by custom property key.
+        :type custom_property_key: str
+        :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
+        :type custom_property_value: str
         :param provider: Filter assets by cloud asset provider.
         :type provider: str
         :param super_type: Filter assets by the cloud asset type.
@@ -2614,6 +2628,8 @@ class CloudIntegrationAssetsApi:
             created_to=created_to,
             updated_from=updated_from,
             updated_to=updated_to,
+            custom_property_key=custom_property_key,
+            custom_property_value=custom_property_value,
             provider=provider,
             super_type=super_type,
             sub_type=sub_type,
@@ -2652,6 +2668,8 @@ class CloudIntegrationAssetsApi:
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter assets updated after a given date and time.")] = None,
         updated_to: Annotated[Optional[datetime], Field(description="Filter assets updated before a given date and time.")] = None,
+        custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
+        custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         provider: Annotated[Optional[StrictStr], Field(description="Filter assets by cloud asset provider.")] = None,
         super_type: Annotated[Optional[StrictStr], Field(description="Filter assets by the cloud asset type.")] = None,
         sub_type: Annotated[Optional[StrictStr], Field(description="Filter assets by the cloud asset sub-type.")] = None,
@@ -2694,6 +2712,10 @@ class CloudIntegrationAssetsApi:
         :type updated_from: datetime
         :param updated_to: Filter assets updated before a given date and time.
         :type updated_to: datetime
+        :param custom_property_key: Filter assets by custom property key.
+        :type custom_property_key: str
+        :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
+        :type custom_property_value: str
         :param provider: Filter assets by cloud asset provider.
         :type provider: str
         :param super_type: Filter assets by the cloud asset type.
@@ -2734,6 +2756,8 @@ class CloudIntegrationAssetsApi:
             created_to=created_to,
             updated_from=updated_from,
             updated_to=updated_to,
+            custom_property_key=custom_property_key,
+            custom_property_value=custom_property_value,
             provider=provider,
             super_type=super_type,
             sub_type=sub_type,
@@ -2767,6 +2791,8 @@ class CloudIntegrationAssetsApi:
         created_to,
         updated_from,
         updated_to,
+        custom_property_key,
+        custom_property_value,
         provider,
         super_type,
         sub_type,
@@ -2872,6 +2898,14 @@ class CloudIntegrationAssetsApi:
                 )
             else:
                 _query_params.append(('updated_to', updated_to))
+            
+        if custom_property_key is not None:
+            
+            _query_params.append(('customPropertyKey', custom_property_key))
+            
+        if custom_property_value is not None:
+            
+            _query_params.append(('customPropertyValue', custom_property_value))
             
         if provider is not None:
             

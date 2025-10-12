@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_list_asset_ports**
-> PaginatedClientPort get_list_asset_ports(page=page, page_size=page_size, include_closed_port=include_closed_port, include_no_service=include_no_service, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, asset_name=asset_name, business_unit_ids=business_unit_ids)
+> PaginatedClientPort get_list_asset_ports(page=page, page_size=page_size, include_closed_port=include_closed_port, include_no_service=include_no_service, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, asset_name=asset_name, business_unit_ids=business_unit_ids, custom_property_key=custom_property_key, custom_property_value=custom_property_value)
 
 List Ports
 
@@ -136,10 +136,12 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     updated_to = '2013-10-20T19:20:30+01:00' # datetime | Filter ports updated before a given date and time. (optional)
     asset_name = '80' # str | Search ports by port number. (optional)
     business_unit_ids = '1,2,3' # str | Filter assets by a list of comma separated business unit IDs that the asset is related to. (optional)
+    custom_property_key = 'environment' # str | Filter assets by custom property key. (optional)
+    custom_property_value = 'production' # str | Filter assets by custom property value. Must be used together with customPropertyKey. (optional)
 
     try:
         # List Ports
-        api_response = api_instance.get_list_asset_ports(page=page, page_size=page_size, include_closed_port=include_closed_port, include_no_service=include_no_service, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, asset_name=asset_name, business_unit_ids=business_unit_ids)
+        api_response = api_instance.get_list_asset_ports(page=page, page_size=page_size, include_closed_port=include_closed_port, include_no_service=include_no_service, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, asset_name=asset_name, business_unit_ids=business_unit_ids, custom_property_key=custom_property_key, custom_property_value=custom_property_value)
         print("The response of PortsApi->get_list_asset_ports:\n")
         pprint(api_response)
     except Exception as e:
@@ -163,6 +165,8 @@ Name | Type | Description  | Notes
  **updated_to** | **datetime**| Filter ports updated before a given date and time. | [optional] 
  **asset_name** | **str**| Search ports by port number. | [optional] 
  **business_unit_ids** | **str**| Filter assets by a list of comma separated business unit IDs that the asset is related to. | [optional] 
+ **custom_property_key** | **str**| Filter assets by custom property key. | [optional] 
+ **custom_property_value** | **str**| Filter assets by custom property value. Must be used together with customPropertyKey. | [optional] 
 
 ### Return type
 

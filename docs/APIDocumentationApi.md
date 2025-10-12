@@ -690,7 +690,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_list_asset_api_documentation**
-> PaginatedApiDocumentation get_list_asset_api_documentation(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to)
+> PaginatedApiDocumentation get_list_asset_api_documentation(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, custom_property_key=custom_property_key, custom_property_value=custom_property_value)
 
 List API Documentation
 
@@ -737,10 +737,12 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter assets created before a given date and time. (optional)
     updated_from = '2013-10-20T19:20:30+01:00' # datetime | Filter assets updated after a given date and time. (optional)
     updated_to = '2013-10-20T19:20:30+01:00' # datetime | Filter assets updated before a given date and time. (optional)
+    custom_property_key = 'environment' # str | Filter assets by custom property key. (optional)
+    custom_property_value = 'production' # str | Filter assets by custom property value. Must be used together with customPropertyKey. (optional)
 
     try:
         # List API Documentation
-        api_response = api_instance.get_list_asset_api_documentation(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to)
+        api_response = api_instance.get_list_asset_api_documentation(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, custom_property_key=custom_property_key, custom_property_value=custom_property_value)
         print("The response of APIDocumentationApi->get_list_asset_api_documentation:\n")
         pprint(api_response)
     except Exception as e:
@@ -765,6 +767,8 @@ Name | Type | Description  | Notes
  **created_to** | **datetime**| Filter assets created before a given date and time. | [optional] 
  **updated_from** | **datetime**| Filter assets updated after a given date and time. | [optional] 
  **updated_to** | **datetime**| Filter assets updated before a given date and time. | [optional] 
+ **custom_property_key** | **str**| Filter assets by custom property key. | [optional] 
+ **custom_property_value** | **str**| Filter assets by custom property value. Must be used together with customPropertyKey. | [optional] 
 
 ### Return type
 

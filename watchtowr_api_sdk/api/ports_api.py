@@ -325,6 +325,8 @@ class PortsApi:
         updated_to: Annotated[Optional[datetime], Field(description="Filter ports updated before a given date and time.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search ports by port number.")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
+        custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
+        custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -362,6 +364,10 @@ class PortsApi:
         :type asset_name: str
         :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
         :type business_unit_ids: str
+        :param custom_property_key: Filter assets by custom property key.
+        :type custom_property_key: str
+        :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
+        :type custom_property_value: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -395,6 +401,8 @@ class PortsApi:
             updated_to=updated_to,
             asset_name=asset_name,
             business_unit_ids=business_unit_ids,
+            custom_property_key=custom_property_key,
+            custom_property_value=custom_property_value,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -429,6 +437,8 @@ class PortsApi:
         updated_to: Annotated[Optional[datetime], Field(description="Filter ports updated before a given date and time.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search ports by port number.")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
+        custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
+        custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -466,6 +476,10 @@ class PortsApi:
         :type asset_name: str
         :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
         :type business_unit_ids: str
+        :param custom_property_key: Filter assets by custom property key.
+        :type custom_property_key: str
+        :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
+        :type custom_property_value: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -499,6 +513,8 @@ class PortsApi:
             updated_to=updated_to,
             asset_name=asset_name,
             business_unit_ids=business_unit_ids,
+            custom_property_key=custom_property_key,
+            custom_property_value=custom_property_value,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -533,6 +549,8 @@ class PortsApi:
         updated_to: Annotated[Optional[datetime], Field(description="Filter ports updated before a given date and time.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search ports by port number.")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
+        custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
+        custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -570,6 +588,10 @@ class PortsApi:
         :type asset_name: str
         :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
         :type business_unit_ids: str
+        :param custom_property_key: Filter assets by custom property key.
+        :type custom_property_key: str
+        :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
+        :type custom_property_value: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -603,6 +625,8 @@ class PortsApi:
             updated_to=updated_to,
             asset_name=asset_name,
             business_unit_ids=business_unit_ids,
+            custom_property_key=custom_property_key,
+            custom_property_value=custom_property_value,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -632,6 +656,8 @@ class PortsApi:
         updated_to,
         asset_name,
         business_unit_ids,
+        custom_property_key,
+        custom_property_value,
         _request_auth,
         _content_type,
         _headers,
@@ -729,6 +755,14 @@ class PortsApi:
         if business_unit_ids is not None:
             
             _query_params.append(('businessUnitIds', business_unit_ids))
+            
+        if custom_property_key is not None:
+            
+            _query_params.append(('customPropertyKey', custom_property_key))
+            
+        if custom_property_value is not None:
+            
+            _query_params.append(('customPropertyValue', custom_property_value))
             
         # process the header parameters
         # process the form parameters
