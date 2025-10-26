@@ -76,6 +76,13 @@ class TestIPAddressesApi(unittest.TestCase):
         """
         pass
 
+    def test_get_asset_ip_engine_settings(self) -> None:
+        """Test case for get_asset_ip_engine_settings
+
+        Get IP Engine Settings
+        """
+        pass
+
     def test_get_asset_ip_notes(self) -> None:
         """Test case for get_asset_ip_notes
 
@@ -115,6 +122,13 @@ class TestIPAddressesApi(unittest.TestCase):
         """Test case for unassign_ip_from_business_units
 
         Unassign IP from Business Units
+        """
+        pass
+
+    def test_update_asset_ip_engine_settings(self) -> None:
+        """Test case for update_asset_ip_engine_settings
+
+        Update IP Engine Settings
         """
         pass
 

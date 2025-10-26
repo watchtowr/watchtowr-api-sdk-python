@@ -866,7 +866,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **start_specific_finding_retest**
-> ClientFinding start_specific_finding_retest(finding_id)
+> ClientFinding start_specific_finding_retest(finding_id, include_dns_connected=include_dns_connected)
 
 Retest Finding
 
@@ -903,10 +903,11 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.FindingsApi(api_client)
     finding_id = 3.4 # float | The ID of the finding to retest.
+    include_dns_connected = true # bool | Include DNS-connected findings with the same vulnerability type in the retest. When enabled, the system will identify all findings with the same KB entry on assets connected via DNS A records (up to 10 findings total) and retest them together. (optional)
 
     try:
         # Retest Finding
-        api_response = api_instance.start_specific_finding_retest(finding_id)
+        api_response = api_instance.start_specific_finding_retest(finding_id, include_dns_connected=include_dns_connected)
         print("The response of FindingsApi->start_specific_finding_retest:\n")
         pprint(api_response)
     except Exception as e:
@@ -921,6 +922,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **finding_id** | **float**| The ID of the finding to retest. | 
+ **include_dns_connected** | **bool**| Include DNS-connected findings with the same vulnerability type in the retest. When enabled, the system will identify all findings with the same KB entry on assets connected via DNS A records (up to 10 findings total) and retest them together. | [optional] 
 
 ### Return type
 

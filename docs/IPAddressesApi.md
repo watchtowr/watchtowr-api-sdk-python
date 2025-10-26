@@ -11,12 +11,14 @@ Method | HTTP request | Description
 [**delete_custom_property_ip**](IPAddressesApi.md#delete_custom_property_ip) | **DELETE** /api/client/assets/ip/show/{id}/custom-property/{customPropertyId} | Delete Custom Property
 [**get_asset_ip_details**](IPAddressesApi.md#get_asset_ip_details) | **GET** /api/client/assets/ip/show/{id} | Get IP Address Details
 [**get_asset_ip_dns_records**](IPAddressesApi.md#get_asset_ip_dns_records) | **GET** /api/client/assets/ip/show/{id}/dns-records | List DNS Records
+[**get_asset_ip_engine_settings**](IPAddressesApi.md#get_asset_ip_engine_settings) | **GET** /api/client/assets/ip/show/{id}/engine-settings | Get IP Engine Settings
 [**get_asset_ip_notes**](IPAddressesApi.md#get_asset_ip_notes) | **GET** /api/client/assets/ip/show/{id}/notes | List Notes
 [**get_asset_ip_port_details**](IPAddressesApi.md#get_asset_ip_port_details) | **GET** /api/client/assets/ip/show/{ipId}/port/show/{portId} | Get Port
 [**get_asset_ip_ports**](IPAddressesApi.md#get_asset_ip_ports) | **GET** /api/client/assets/ip/show/{id}/port/list | List Ports
 [**get_custom_properties_ip**](IPAddressesApi.md#get_custom_properties_ip) | **GET** /api/client/assets/ip/show/{id}/custom-properties | List Custom Properties
 [**get_list_asset_ips**](IPAddressesApi.md#get_list_asset_ips) | **GET** /api/client/assets/ip/list | List IP Addresses
 [**unassign_ip_from_business_units**](IPAddressesApi.md#unassign_ip_from_business_units) | **DELETE** /api/client/assets/ip/show/{id}/business-units | Unassign IP from Business Units
+[**update_asset_ip_engine_settings**](IPAddressesApi.md#update_asset_ip_engine_settings) | **PUT** /api/client/assets/ip/show/{id}/engine-settings | Update IP Engine Settings
 [**update_asset_ip_note**](IPAddressesApi.md#update_asset_ip_note) | **PUT** /api/client/assets/ip/show/{id}/note/{noteId} | Update Note
 [**update_asset_ip_status**](IPAddressesApi.md#update_asset_ip_status) | **PUT** /api/client/assets/ip/update-status/{id} | Update Status
 [**update_custom_property_ip**](IPAddressesApi.md#update_custom_property_ip) | **PUT** /api/client/assets/ip/show/{id}/custom-property/{customPropertyId} | Update Custom Property
@@ -604,6 +606,87 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_asset_ip_engine_settings**
+> ClientEngineSettingsData get_asset_ip_engine_settings(id)
+
+Get IP Engine Settings
+
+Get the engine settings for a specific IP asset.
+
+### Example
+
+* Bearer (API_TOKEN) Authentication (bearer):
+
+```python
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_engine_settings_data import ClientEngineSettingsData
+from watchtowr_api_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = watchtowr_api_sdk.Configuration(
+    host = "https://your-tenant-id.sg.client.watchtowr.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API_TOKEN): bearer
+configuration = watchtowr_api_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = watchtowr_api_sdk.IPAddressesApi(api_client)
+    id = 3.4 # float | The asset ID of the IP to retrieve engine settings for.
+
+    try:
+        # Get IP Engine Settings
+        api_response = api_instance.get_asset_ip_engine_settings(id)
+        print("The response of IPAddressesApi->get_asset_ip_engine_settings:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IPAddressesApi->get_asset_ip_engine_settings: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **float**| The asset ID of the IP to retrieve engine settings for. | 
+
+### Return type
+
+[**ClientEngineSettingsData**](ClientEngineSettingsData.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_asset_ip_notes**
 > ClientNoteListData get_asset_ip_notes(id, page=page, page_size=page_size)
 
@@ -994,7 +1077,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     asset_name = '123.123.123.123' # str | Search IP address by name (full or partial). (optional)
     statuses = ['statuses_example'] # List[str] | Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack       * CDN       * hanging cloud ip       * Third Party       * VerifiedHoneypot  (optional)
     source = 'DNS Refresh' # str | Filter assets by the source that discovered the asset. (optional)
-    integration_connections = '123:aws,456:azure,789:googlecloud' # str | Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).      Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, armiscentrix, qualysvmdr  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud) (optional)
+    integration_connections = '123:aws,456:azure,789:googlecloud' # str | Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, armiscentrix, qualysvmdr  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud) (optional)
     business_unit_ids = '1,2,3' # str | Filter assets by a list of comma separated business unit IDs that the asset is related to. (optional)
     created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter assets created after a given date and time. (optional)
     created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter assets created before a given date and time. (optional)
@@ -1025,7 +1108,7 @@ Name | Type | Description  | Notes
  **asset_name** | **str**| Search IP address by name (full or partial). | [optional] 
  **statuses** | [**List[str]**](str.md)| Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack       * CDN       * hanging cloud ip       * Third Party       * VerifiedHoneypot  | [optional] 
  **source** | **str**| Filter assets by the source that discovered the asset. | [optional] 
- **integration_connections** | **str**| Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).      Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, armiscentrix, qualysvmdr  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud) | [optional] 
+ **integration_connections** | **str**| Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, armiscentrix, qualysvmdr  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud) | [optional] 
  **business_unit_ids** | **str**| Filter assets by a list of comma separated business unit IDs that the asset is related to. | [optional] 
  **created_from** | **datetime**| Filter assets created after a given date and time. | [optional] 
  **created_to** | **datetime**| Filter assets created before a given date and time. | [optional] 
@@ -1138,6 +1221,90 @@ Name | Type | Description  | Notes
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
 **409** | Conflict |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_asset_ip_engine_settings**
+> ClientEngineSettingsData update_asset_ip_engine_settings(id, update_client_engine_settings_dto)
+
+Update IP Engine Settings
+
+Update the engine settings for a specific IP asset.
+
+### Example
+
+* Bearer (API_TOKEN) Authentication (bearer):
+
+```python
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_engine_settings_data import ClientEngineSettingsData
+from watchtowr_api_sdk.models.update_client_engine_settings_dto import UpdateClientEngineSettingsDto
+from watchtowr_api_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = watchtowr_api_sdk.Configuration(
+    host = "https://your-tenant-id.sg.client.watchtowr.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API_TOKEN): bearer
+configuration = watchtowr_api_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = watchtowr_api_sdk.IPAddressesApi(api_client)
+    id = 3.4 # float | The asset ID of the IP to update engine settings for.
+    update_client_engine_settings_dto = watchtowr_api_sdk.UpdateClientEngineSettingsDto() # UpdateClientEngineSettingsDto | 
+
+    try:
+        # Update IP Engine Settings
+        api_response = api_instance.update_asset_ip_engine_settings(id, update_client_engine_settings_dto)
+        print("The response of IPAddressesApi->update_asset_ip_engine_settings:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IPAddressesApi->update_asset_ip_engine_settings: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **float**| The asset ID of the IP to update engine settings for. | 
+ **update_client_engine_settings_dto** | [**UpdateClientEngineSettingsDto**](UpdateClientEngineSettingsDto.md)|  | 
+
+### Return type
+
+[**ClientEngineSettingsData**](ClientEngineSettingsData.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

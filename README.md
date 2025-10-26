@@ -167,10 +167,12 @@ Class | Method | HTTP request | Description
 *DomainsApi* | [**delete_custom_property_domain**](docs/DomainsApi.md#delete_custom_property_domain) | **DELETE** /api/client/assets/domain/show/{id}/custom-property/{customPropertyId} | Delete Custom Property
 *DomainsApi* | [**get_asset_domain_details**](docs/DomainsApi.md#get_asset_domain_details) | **GET** /api/client/assets/domain/show/{id} | Get Domain Details
 *DomainsApi* | [**get_asset_domain_dns_records**](docs/DomainsApi.md#get_asset_domain_dns_records) | **GET** /api/client/assets/domain/show/{id}/dns-records | List DNS Records
+*DomainsApi* | [**get_asset_domain_engine_settings**](docs/DomainsApi.md#get_asset_domain_engine_settings) | **GET** /api/client/assets/domain/show/{id}/engine-settings | Get Domain Engine Settings
 *DomainsApi* | [**get_asset_domain_notes**](docs/DomainsApi.md#get_asset_domain_notes) | **GET** /api/client/assets/domain/show/{id}/notes | List Notes
 *DomainsApi* | [**get_custom_properties_domain**](docs/DomainsApi.md#get_custom_properties_domain) | **GET** /api/client/assets/domain/show/{id}/custom-properties | List Custom Properties
 *DomainsApi* | [**get_list_asset_domains**](docs/DomainsApi.md#get_list_asset_domains) | **GET** /api/client/assets/domain/list | List Domains
 *DomainsApi* | [**unassign_domain_from_business_units**](docs/DomainsApi.md#unassign_domain_from_business_units) | **DELETE** /api/client/assets/domain/show/{id}/business-units | Unassign Domain from Business Units
+*DomainsApi* | [**update_asset_domain_engine_settings**](docs/DomainsApi.md#update_asset_domain_engine_settings) | **PUT** /api/client/assets/domain/show/{id}/engine-settings | Update Domain Engine Settings
 *DomainsApi* | [**update_asset_domain_note**](docs/DomainsApi.md#update_asset_domain_note) | **PUT** /api/client/assets/domain/show/{id}/note/{noteId} | Update Note
 *DomainsApi* | [**update_asset_domain_status**](docs/DomainsApi.md#update_asset_domain_status) | **PUT** /api/client/assets/domain/update-status/{id} | Update Status
 *DomainsApi* | [**update_custom_property_domain**](docs/DomainsApi.md#update_custom_property_domain) | **PUT** /api/client/assets/domain/show/{id}/custom-property/{customPropertyId} | Update Custom Property
@@ -200,12 +202,14 @@ Class | Method | HTTP request | Description
 *IPAddressesApi* | [**delete_custom_property_ip**](docs/IPAddressesApi.md#delete_custom_property_ip) | **DELETE** /api/client/assets/ip/show/{id}/custom-property/{customPropertyId} | Delete Custom Property
 *IPAddressesApi* | [**get_asset_ip_details**](docs/IPAddressesApi.md#get_asset_ip_details) | **GET** /api/client/assets/ip/show/{id} | Get IP Address Details
 *IPAddressesApi* | [**get_asset_ip_dns_records**](docs/IPAddressesApi.md#get_asset_ip_dns_records) | **GET** /api/client/assets/ip/show/{id}/dns-records | List DNS Records
+*IPAddressesApi* | [**get_asset_ip_engine_settings**](docs/IPAddressesApi.md#get_asset_ip_engine_settings) | **GET** /api/client/assets/ip/show/{id}/engine-settings | Get IP Engine Settings
 *IPAddressesApi* | [**get_asset_ip_notes**](docs/IPAddressesApi.md#get_asset_ip_notes) | **GET** /api/client/assets/ip/show/{id}/notes | List Notes
 *IPAddressesApi* | [**get_asset_ip_port_details**](docs/IPAddressesApi.md#get_asset_ip_port_details) | **GET** /api/client/assets/ip/show/{ipId}/port/show/{portId} | Get Port
 *IPAddressesApi* | [**get_asset_ip_ports**](docs/IPAddressesApi.md#get_asset_ip_ports) | **GET** /api/client/assets/ip/show/{id}/port/list | List Ports
 *IPAddressesApi* | [**get_custom_properties_ip**](docs/IPAddressesApi.md#get_custom_properties_ip) | **GET** /api/client/assets/ip/show/{id}/custom-properties | List Custom Properties
 *IPAddressesApi* | [**get_list_asset_ips**](docs/IPAddressesApi.md#get_list_asset_ips) | **GET** /api/client/assets/ip/list | List IP Addresses
 *IPAddressesApi* | [**unassign_ip_from_business_units**](docs/IPAddressesApi.md#unassign_ip_from_business_units) | **DELETE** /api/client/assets/ip/show/{id}/business-units | Unassign IP from Business Units
+*IPAddressesApi* | [**update_asset_ip_engine_settings**](docs/IPAddressesApi.md#update_asset_ip_engine_settings) | **PUT** /api/client/assets/ip/show/{id}/engine-settings | Update IP Engine Settings
 *IPAddressesApi* | [**update_asset_ip_note**](docs/IPAddressesApi.md#update_asset_ip_note) | **PUT** /api/client/assets/ip/show/{id}/note/{noteId} | Update Note
 *IPAddressesApi* | [**update_asset_ip_status**](docs/IPAddressesApi.md#update_asset_ip_status) | **PUT** /api/client/assets/ip/update-status/{id} | Update Status
 *IPAddressesApi* | [**update_custom_property_ip**](docs/IPAddressesApi.md#update_custom_property_ip) | **PUT** /api/client/assets/ip/show/{id}/custom-property/{customPropertyId} | Update Custom Property
@@ -251,6 +255,18 @@ Class | Method | HTTP request | Description
 *PackageManagersApi* | [**update_asset_package_manager_status**](docs/PackageManagersApi.md#update_asset_package_manager_status) | **PUT** /api/client/assets/packageManager/update-status/{id} | Update Status
 *PackageManagersApi* | [**update_custom_property_package_manager**](docs/PackageManagersApi.md#update_custom_property_package_manager) | **PUT** /api/client/assets/packageManager/show/{id}/custom-property/{customPropertyId} | Update Custom Property
 *PendingDomainsApi* | [**get_list_pending_domains**](docs/PendingDomainsApi.md#get_list_pending_domains) | **GET** /api/client/pending-domains/list | List Pending Domains
+*PlatformWhitelistingApi* | [**create_platform_api_whitelist_ip**](docs/PlatformWhitelistingApi.md#create_platform_api_whitelist_ip) | **POST** /api/client/platform/whitelisting/api | Add API Whitelisted IP
+*PlatformWhitelistingApi* | [**create_platform_dashboard_whitelist_ip**](docs/PlatformWhitelistingApi.md#create_platform_dashboard_whitelist_ip) | **POST** /api/client/platform/whitelisting/dashboard | Add Dashboard Whitelisted IP
+*PlatformWhitelistingApi* | [**delete_platform_api_whitelist_ip**](docs/PlatformWhitelistingApi.md#delete_platform_api_whitelist_ip) | **DELETE** /api/client/platform/whitelisting/api/{id} | Remove API Whitelisted IP
+*PlatformWhitelistingApi* | [**delete_platform_dashboard_whitelist_ip**](docs/PlatformWhitelistingApi.md#delete_platform_dashboard_whitelist_ip) | **DELETE** /api/client/platform/whitelisting/dashboard/{id} | Remove Dashboard Whitelisted IP
+*PlatformWhitelistingApi* | [**get_platform_api_whitelist_ips**](docs/PlatformWhitelistingApi.md#get_platform_api_whitelist_ips) | **GET** /api/client/platform/whitelisting/api | List API Whitelisted IPs
+*PlatformWhitelistingApi* | [**get_platform_api_whitelist_status**](docs/PlatformWhitelistingApi.md#get_platform_api_whitelist_status) | **GET** /api/client/platform/whitelisting/api/status | Get API Whitelisting Status
+*PlatformWhitelistingApi* | [**get_platform_dashboard_whitelist_ips**](docs/PlatformWhitelistingApi.md#get_platform_dashboard_whitelist_ips) | **GET** /api/client/platform/whitelisting/dashboard | List Dashboard Whitelisted IPs
+*PlatformWhitelistingApi* | [**get_platform_dashboard_whitelist_status**](docs/PlatformWhitelistingApi.md#get_platform_dashboard_whitelist_status) | **GET** /api/client/platform/whitelisting/dashboard/status | Get Dashboard Whitelisting Status
+*PlatformWhitelistingApi* | [**update_platform_api_whitelist_ip**](docs/PlatformWhitelistingApi.md#update_platform_api_whitelist_ip) | **PUT** /api/client/platform/whitelisting/api/{id} | Update API Whitelisted IP
+*PlatformWhitelistingApi* | [**update_platform_api_whitelist_status**](docs/PlatformWhitelistingApi.md#update_platform_api_whitelist_status) | **PUT** /api/client/platform/whitelisting/api/status | Update API Whitelisting Status
+*PlatformWhitelistingApi* | [**update_platform_dashboard_whitelist_ip**](docs/PlatformWhitelistingApi.md#update_platform_dashboard_whitelist_ip) | **PUT** /api/client/platform/whitelisting/dashboard/{id} | Update Dashboard Whitelisted IP
+*PlatformWhitelistingApi* | [**update_platform_dashboard_whitelist_status**](docs/PlatformWhitelistingApi.md#update_platform_dashboard_whitelist_status) | **PUT** /api/client/platform/whitelisting/dashboard/status | Update Dashboard Whitelisting Status
 *PointsOfInterestApi* | [**get_list_points_of_interest**](docs/PointsOfInterestApi.md#get_list_points_of_interest) | **GET** /api/client/points-of-interest/list | List Points of Interest
 *PortsApi* | [**get_asset_port_details**](docs/PortsApi.md#get_asset_port_details) | **GET** /api/client/assets/ip/port/show/{id} | Get Port
 *PortsApi* | [**get_list_asset_ports**](docs/PortsApi.md#get_list_asset_ports) | **GET** /api/client/assets/ip/port/list | List Ports
@@ -290,10 +306,12 @@ Class | Method | HTTP request | Description
 *SubdomainsApi* | [**delete_note_subdomain**](docs/SubdomainsApi.md#delete_note_subdomain) | **DELETE** /api/client/assets/subdomain/show/{id}/note/{noteId} | Delete Subdomain Note
 *SubdomainsApi* | [**get_asset_subdomain_details**](docs/SubdomainsApi.md#get_asset_subdomain_details) | **GET** /api/client/assets/subdomain/show/{id} | Get Subdomain Details
 *SubdomainsApi* | [**get_asset_subdomain_dns_records**](docs/SubdomainsApi.md#get_asset_subdomain_dns_records) | **GET** /api/client/assets/subdomain/show/{id}/dns-records | List Subdomain DNS Records
+*SubdomainsApi* | [**get_asset_subdomain_engine_settings**](docs/SubdomainsApi.md#get_asset_subdomain_engine_settings) | **GET** /api/client/assets/subdomain/show/{id}/engine-settings | Get Subdomain Engine Settings
 *SubdomainsApi* | [**get_custom_properties_subdomain**](docs/SubdomainsApi.md#get_custom_properties_subdomain) | **GET** /api/client/assets/subdomain/show/{id}/custom-properties | List Subdomain Custom Properties
 *SubdomainsApi* | [**get_list_asset_subdomains**](docs/SubdomainsApi.md#get_list_asset_subdomains) | **GET** /api/client/assets/subdomain/list | List Subdomains
 *SubdomainsApi* | [**get_notes_subdomain**](docs/SubdomainsApi.md#get_notes_subdomain) | **GET** /api/client/assets/subdomain/show/{id}/notes | List Subdomain Notes
 *SubdomainsApi* | [**unassign_subomain_from_business_units**](docs/SubdomainsApi.md#unassign_subomain_from_business_units) | **DELETE** /api/client/assets/subdomain/show/{id}/business-units | Unassign Subdomain from Business Units
+*SubdomainsApi* | [**update_asset_subdomain_engine_settings**](docs/SubdomainsApi.md#update_asset_subdomain_engine_settings) | **PUT** /api/client/assets/subdomain/show/{id}/engine-settings | Update Subdomain Engine Settings
 *SubdomainsApi* | [**update_asset_subdomain_status**](docs/SubdomainsApi.md#update_asset_subdomain_status) | **PUT** /api/client/assets/subdomain/update-status/{id} | Update Subdomain Status
 *SubdomainsApi* | [**update_custom_property_subdomain**](docs/SubdomainsApi.md#update_custom_property_subdomain) | **PUT** /api/client/assets/subdomain/show/{id}/custom-property/{customPropertyId} | Update Subdomain Custom Property
 *SubdomainsApi* | [**update_note_subdomain**](docs/SubdomainsApi.md#update_note_subdomain) | **PUT** /api/client/assets/subdomain/show/{id}/note/{noteId} | Update Subdomain Note
@@ -312,6 +330,7 @@ Class | Method | HTTP request | Description
  - [AssetsListResponse](docs/AssetsListResponse.md)
  - [AttackSurfaceDto](docs/AttackSurfaceDto.md)
  - [AttackSurfaceResiliencyDto](docs/AttackSurfaceResiliencyDto.md)
+ - [BadRequestResponse](docs/BadRequestResponse.md)
  - [Causer](docs/Causer.md)
  - [ClientActivityLog](docs/ClientActivityLog.md)
  - [ClientApiDocumentation](docs/ClientApiDocumentation.md)
@@ -332,6 +351,9 @@ Class | Method | HTTP request | Description
  - [ClientDnsRecordListData](docs/ClientDnsRecordListData.md)
  - [ClientDomain](docs/ClientDomain.md)
  - [ClientDomainData](docs/ClientDomainData.md)
+ - [ClientEngineSettings](docs/ClientEngineSettings.md)
+ - [ClientEngineSettingsData](docs/ClientEngineSettingsData.md)
+ - [ClientEngineSettingsDetails](docs/ClientEngineSettingsDetails.md)
  - [ClientFinding](docs/ClientFinding.md)
  - [ClientFindingAssignee](docs/ClientFindingAssignee.md)
  - [ClientFindingData](docs/ClientFindingData.md)
@@ -378,7 +400,9 @@ Class | Method | HTTP request | Description
  - [CreateClientCustomPropertyDto](docs/CreateClientCustomPropertyDto.md)
  - [CreateClientNoteDto](docs/CreateClientNoteDto.md)
  - [CreateClientSeedDataRequestBody](docs/CreateClientSeedDataRequestBody.md)
+ - [CreateOrganisationWhitelistIpDto](docs/CreateOrganisationWhitelistIpDto.md)
  - [DeleteNoteSucces](docs/DeleteNoteSucces.md)
+ - [DeleteWhitelistIpData](docs/DeleteWhitelistIpData.md)
  - [FilterByBusinessUnitInput](docs/FilterByBusinessUnitInput.md)
  - [FindingListResponse](docs/FindingListResponse.md)
  - [FindingRetestResponseDto](docs/FindingRetestResponseDto.md)
@@ -400,6 +424,7 @@ Class | Method | HTTP request | Description
  - [Meta](docs/Meta.md)
  - [MttrMetricsDto](docs/MttrMetricsDto.md)
  - [NotFound](docs/NotFound.md)
+ - [NotFoundResponse](docs/NotFoundResponse.md)
  - [OpenFindingsDto](docs/OpenFindingsDto.md)
  - [OrganizationSummaryDto](docs/OrganizationSummaryDto.md)
  - [PaginatedApiDocumentation](docs/PaginatedApiDocumentation.md)
@@ -444,17 +469,25 @@ Class | Method | HTTP request | Description
  - [Technology](docs/Technology.md)
  - [ThreatActorDto](docs/ThreatActorDto.md)
  - [Unauthorized](docs/Unauthorized.md)
+ - [UnauthorizedResponse](docs/UnauthorizedResponse.md)
  - [UnprocessableContent](docs/UnprocessableContent.md)
  - [UpdateApiDocumentationStatusDto](docs/UpdateApiDocumentationStatusDto.md)
  - [UpdateClientCloudAssetStatusDto](docs/UpdateClientCloudAssetStatusDto.md)
  - [UpdateClientCustomPropertyDto](docs/UpdateClientCustomPropertyDto.md)
+ - [UpdateClientEngineSettingsDto](docs/UpdateClientEngineSettingsDto.md)
  - [UpdateClientFindingStatusRequestBody](docs/UpdateClientFindingStatusRequestBody.md)
  - [UpdateClientLegacyAssetStatusDto](docs/UpdateClientLegacyAssetStatusDto.md)
  - [UpdateClientNextGenAssetStatusDto](docs/UpdateClientNextGenAssetStatusDto.md)
  - [UpdateKillSwitchData](docs/UpdateKillSwitchData.md)
  - [UpdateKillSwitchRequestDto](docs/UpdateKillSwitchRequestDto.md)
  - [UpdateKillSwitchResponse](docs/UpdateKillSwitchResponse.md)
+ - [UpdateOrganisationWhitelistIpDto](docs/UpdateOrganisationWhitelistIpDto.md)
  - [UserDetailData](docs/UserDetailData.md)
+ - [WhitelistIpData](docs/WhitelistIpData.md)
+ - [WhitelistIpDataSingle](docs/WhitelistIpDataSingle.md)
+ - [WhitelistIpListData](docs/WhitelistIpListData.md)
+ - [WhitelistStatusData](docs/WhitelistStatusData.md)
+ - [WhitelistStatusDto](docs/WhitelistStatusDto.md)
  - [WhoisData](docs/WhoisData.md)
  - [WhoisDataObject](docs/WhoisDataObject.md)
  - [WhoisDataObjectEmails](docs/WhoisDataObjectEmails.md)

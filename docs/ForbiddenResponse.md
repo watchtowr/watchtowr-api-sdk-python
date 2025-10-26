@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message** | **str** | Error message | 
-**status_code** | **float** | HTTP status code | 
 
 ## Example
 

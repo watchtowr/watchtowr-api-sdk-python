@@ -36,13 +36,11 @@ class TestForbiddenResponse(unittest.TestCase):
         model = ForbiddenResponse()
         if include_optional:
             return ForbiddenResponse(
-                message = 'Administrator role required to access user management',
-                status_code = 403
+                message = 'Only admin users can access platform whitelisting configuration'
             )
         else:
             return ForbiddenResponse(
-                message = 'Administrator role required to access user management',
-                status_code = 403,
+                message = 'Only admin users can access platform whitelisting configuration',
         )
         """
 

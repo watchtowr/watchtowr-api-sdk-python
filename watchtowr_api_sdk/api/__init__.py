@@ -20,6 +20,7 @@ from watchtowr_api_sdk.api.kill_switch_api import KillSwitchApi
 from watchtowr_api_sdk.api.mobile_applications_api import MobileApplicationsApi
 from watchtowr_api_sdk.api.package_managers_api import PackageManagersApi
 from watchtowr_api_sdk.api.pending_domains_api import PendingDomainsApi
+from watchtowr_api_sdk.api.platform_whitelisting_api import PlatformWhitelistingApi
 from watchtowr_api_sdk.api.points_of_interest_api import PointsOfInterestApi
 from watchtowr_api_sdk.api.ports_api import PortsApi
 from watchtowr_api_sdk.api.repositories_api import RepositoriesApi

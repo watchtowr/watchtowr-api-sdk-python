@@ -11,10 +11,12 @@ Method | HTTP request | Description
 [**delete_note_subdomain**](SubdomainsApi.md#delete_note_subdomain) | **DELETE** /api/client/assets/subdomain/show/{id}/note/{noteId} | Delete Subdomain Note
 [**get_asset_subdomain_details**](SubdomainsApi.md#get_asset_subdomain_details) | **GET** /api/client/assets/subdomain/show/{id} | Get Subdomain Details
 [**get_asset_subdomain_dns_records**](SubdomainsApi.md#get_asset_subdomain_dns_records) | **GET** /api/client/assets/subdomain/show/{id}/dns-records | List Subdomain DNS Records
+[**get_asset_subdomain_engine_settings**](SubdomainsApi.md#get_asset_subdomain_engine_settings) | **GET** /api/client/assets/subdomain/show/{id}/engine-settings | Get Subdomain Engine Settings
 [**get_custom_properties_subdomain**](SubdomainsApi.md#get_custom_properties_subdomain) | **GET** /api/client/assets/subdomain/show/{id}/custom-properties | List Subdomain Custom Properties
 [**get_list_asset_subdomains**](SubdomainsApi.md#get_list_asset_subdomains) | **GET** /api/client/assets/subdomain/list | List Subdomains
 [**get_notes_subdomain**](SubdomainsApi.md#get_notes_subdomain) | **GET** /api/client/assets/subdomain/show/{id}/notes | List Subdomain Notes
 [**unassign_subomain_from_business_units**](SubdomainsApi.md#unassign_subomain_from_business_units) | **DELETE** /api/client/assets/subdomain/show/{id}/business-units | Unassign Subdomain from Business Units
+[**update_asset_subdomain_engine_settings**](SubdomainsApi.md#update_asset_subdomain_engine_settings) | **PUT** /api/client/assets/subdomain/show/{id}/engine-settings | Update Subdomain Engine Settings
 [**update_asset_subdomain_status**](SubdomainsApi.md#update_asset_subdomain_status) | **PUT** /api/client/assets/subdomain/update-status/{id} | Update Subdomain Status
 [**update_custom_property_subdomain**](SubdomainsApi.md#update_custom_property_subdomain) | **PUT** /api/client/assets/subdomain/show/{id}/custom-property/{customPropertyId} | Update Subdomain Custom Property
 [**update_note_subdomain**](SubdomainsApi.md#update_note_subdomain) | **PUT** /api/client/assets/subdomain/show/{id}/note/{noteId} | Update Subdomain Note
@@ -602,6 +604,87 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_asset_subdomain_engine_settings**
+> ClientEngineSettingsData get_asset_subdomain_engine_settings(id)
+
+Get Subdomain Engine Settings
+
+Get the engine settings for a specific subdomain asset.
+
+### Example
+
+* Bearer (API_TOKEN) Authentication (bearer):
+
+```python
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_engine_settings_data import ClientEngineSettingsData
+from watchtowr_api_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = watchtowr_api_sdk.Configuration(
+    host = "https://your-tenant-id.sg.client.watchtowr.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API_TOKEN): bearer
+configuration = watchtowr_api_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = watchtowr_api_sdk.SubdomainsApi(api_client)
+    id = 3.4 # float | The asset ID of the subdomain to retrieve engine settings for.
+
+    try:
+        # Get Subdomain Engine Settings
+        api_response = api_instance.get_asset_subdomain_engine_settings(id)
+        print("The response of SubdomainsApi->get_asset_subdomain_engine_settings:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SubdomainsApi->get_asset_subdomain_engine_settings: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **float**| The asset ID of the subdomain to retrieve engine settings for. | 
+
+### Return type
+
+[**ClientEngineSettingsData**](ClientEngineSettingsData.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_custom_properties_subdomain**
 > PaginatedClientCustomProperty get_custom_properties_subdomain(id, page=page, page_size=page_size)
 
@@ -729,7 +812,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     asset_name = 'blog.watchtowr.com' # str | Search subdomain assets by name. (optional)
     statuses = ['statuses_example'] # List[str] | Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack       * parked  (optional)
     source = 'module-adversarysight-tls-ssl-certificate-transparency-discovery' # str | Filter assets by the source that discovered the asset. (optional)
-    integration_connections = '123:aws,456:azure,789:googlecloud' # str | Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).      Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, armiscentrix, qualysvmdr  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud) (optional)
+    integration_connections = '123:aws,456:azure,789:googlecloud' # str | Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, armiscentrix, qualysvmdr  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud) (optional)
     business_unit_ids = '1,2,3' # str | Filter assets by a list of comma separated business unit IDs that the asset is related to. (optional)
     created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter assets created after a given date and time. (optional)
     created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter assets created before a given date and time. (optional)
@@ -759,7 +842,7 @@ Name | Type | Description  | Notes
  **asset_name** | **str**| Search subdomain assets by name. | [optional] 
  **statuses** | [**List[str]**](str.md)| Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack       * parked  | [optional] 
  **source** | **str**| Filter assets by the source that discovered the asset. | [optional] 
- **integration_connections** | **str**| Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).      Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, armiscentrix, qualysvmdr  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud) | [optional] 
+ **integration_connections** | **str**| Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, armiscentrix, qualysvmdr  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud) | [optional] 
  **business_unit_ids** | **str**| Filter assets by a list of comma separated business unit IDs that the asset is related to. | [optional] 
  **created_from** | **datetime**| Filter assets created after a given date and time. | [optional] 
  **created_to** | **datetime**| Filter assets created before a given date and time. | [optional] 
@@ -959,6 +1042,90 @@ Name | Type | Description  | Notes
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
 **409** | Conflict |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_asset_subdomain_engine_settings**
+> ClientEngineSettingsData update_asset_subdomain_engine_settings(id, update_client_engine_settings_dto)
+
+Update Subdomain Engine Settings
+
+Update the engine settings for a specific subdomain asset.
+
+### Example
+
+* Bearer (API_TOKEN) Authentication (bearer):
+
+```python
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_engine_settings_data import ClientEngineSettingsData
+from watchtowr_api_sdk.models.update_client_engine_settings_dto import UpdateClientEngineSettingsDto
+from watchtowr_api_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = watchtowr_api_sdk.Configuration(
+    host = "https://your-tenant-id.sg.client.watchtowr.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API_TOKEN): bearer
+configuration = watchtowr_api_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = watchtowr_api_sdk.SubdomainsApi(api_client)
+    id = 3.4 # float | The asset ID of the subdomain to update engine settings for.
+    update_client_engine_settings_dto = watchtowr_api_sdk.UpdateClientEngineSettingsDto() # UpdateClientEngineSettingsDto | 
+
+    try:
+        # Update Subdomain Engine Settings
+        api_response = api_instance.update_asset_subdomain_engine_settings(id, update_client_engine_settings_dto)
+        print("The response of SubdomainsApi->update_asset_subdomain_engine_settings:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SubdomainsApi->update_asset_subdomain_engine_settings: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **float**| The asset ID of the subdomain to update engine settings for. | 
+ **update_client_engine_settings_dto** | [**UpdateClientEngineSettingsDto**](UpdateClientEngineSettingsDto.md)|  | 
+
+### Return type
+
+[**ClientEngineSettingsData**](ClientEngineSettingsData.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

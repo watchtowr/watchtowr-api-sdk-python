@@ -57,7 +57,13 @@ class TestClientSubdomain(unittest.TestCase):
                 infrastructure = watchtowr_api_sdk.models.infrastructure.Infrastructure(
                     cdn = 'AWS CloudFront', 
                     cloud = 'Amazon Web Services (AWS)', 
-                    waf = 'OWASP ModSecurity', )
+                    waf = 'OWASP ModSecurity', ),
+                engine_settings = watchtowr_api_sdk.models.client_engine_settings.ClientEngineSettings(
+                    adversary_sight_enabled = True, 
+                    automated_red_teaming_enabled = True, 
+                    credential_stuffing_enabled = True, 
+                    dns_bruteforcing_enabled = False, 
+                    rapid_reaction_enabled = True, )
             )
         else:
             return ClientSubdomain(
@@ -79,6 +85,12 @@ class TestClientSubdomain(unittest.TestCase):
                 metadata = {"region":"us-west-1","service":"AWS"},
                 custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"subdomain","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"subdomain","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}],
                 criticality = 'Medium',
+                engine_settings = watchtowr_api_sdk.models.client_engine_settings.ClientEngineSettings(
+                    adversary_sight_enabled = True, 
+                    automated_red_teaming_enabled = True, 
+                    credential_stuffing_enabled = True, 
+                    dns_bruteforcing_enabled = False, 
+                    rapid_reaction_enabled = True, ),
         )
         """
 

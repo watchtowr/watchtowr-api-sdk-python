@@ -76,6 +76,13 @@ class TestDomainsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_asset_domain_engine_settings(self) -> None:
+        """Test case for get_asset_domain_engine_settings
+
+        Get Domain Engine Settings
+        """
+        pass
+
     def test_get_asset_domain_notes(self) -> None:
         """Test case for get_asset_domain_notes
 
@@ -101,6 +108,13 @@ class TestDomainsApi(unittest.TestCase):
         """Test case for unassign_domain_from_business_units
 
         Unassign Domain from Business Units
+        """
+        pass
+
+    def test_update_asset_domain_engine_settings(self) -> None:
+        """Test case for update_asset_domain_engine_settings
+
+        Update Domain Engine Settings
         """
         pass
 

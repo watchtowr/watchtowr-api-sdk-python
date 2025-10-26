@@ -76,6 +76,13 @@ class TestSubdomainsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_asset_subdomain_engine_settings(self) -> None:
+        """Test case for get_asset_subdomain_engine_settings
+
+        Get Subdomain Engine Settings
+        """
+        pass
+
     def test_get_custom_properties_subdomain(self) -> None:
         """Test case for get_custom_properties_subdomain
 
@@ -101,6 +108,13 @@ class TestSubdomainsApi(unittest.TestCase):
         """Test case for unassign_subomain_from_business_units
 
         Unassign Subdomain from Business Units
+        """
+        pass
+
+    def test_update_asset_subdomain_engine_settings(self) -> None:
+        """Test case for update_asset_subdomain_engine_settings
+
+        Update Subdomain Engine Settings
         """
         pass
 

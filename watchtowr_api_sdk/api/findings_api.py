@@ -3195,6 +3195,7 @@ class FindingsApi:
     def start_specific_finding_retest(
         self,
         finding_id: Annotated[StrictFloat, Field(description="The ID of the finding to retest.")],
+        include_dns_connected: Annotated[Optional[StrictBool], Field(description="Include DNS-connected findings with the same vulnerability type in the retest. When enabled, the system will identify all findings with the same KB entry on assets connected via DNS A records (up to 10 findings total) and retest them together.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3214,6 +3215,8 @@ class FindingsApi:
 
         :param finding_id: The ID of the finding to retest. (required)
         :type finding_id: float
+        :param include_dns_connected: Include DNS-connected findings with the same vulnerability type in the retest. When enabled, the system will identify all findings with the same KB entry on assets connected via DNS A records (up to 10 findings total) and retest them together.
+        :type include_dns_connected: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3238,6 +3241,7 @@ class FindingsApi:
 
         _param = self._start_specific_finding_retest_serialize(
             finding_id=finding_id,
+            include_dns_connected=include_dns_connected,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3266,6 +3270,7 @@ class FindingsApi:
     def start_specific_finding_retest_with_http_info(
         self,
         finding_id: Annotated[StrictFloat, Field(description="The ID of the finding to retest.")],
+        include_dns_connected: Annotated[Optional[StrictBool], Field(description="Include DNS-connected findings with the same vulnerability type in the retest. When enabled, the system will identify all findings with the same KB entry on assets connected via DNS A records (up to 10 findings total) and retest them together.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3285,6 +3290,8 @@ class FindingsApi:
 
         :param finding_id: The ID of the finding to retest. (required)
         :type finding_id: float
+        :param include_dns_connected: Include DNS-connected findings with the same vulnerability type in the retest. When enabled, the system will identify all findings with the same KB entry on assets connected via DNS A records (up to 10 findings total) and retest them together.
+        :type include_dns_connected: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3309,6 +3316,7 @@ class FindingsApi:
 
         _param = self._start_specific_finding_retest_serialize(
             finding_id=finding_id,
+            include_dns_connected=include_dns_connected,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3337,6 +3345,7 @@ class FindingsApi:
     def start_specific_finding_retest_without_preload_content(
         self,
         finding_id: Annotated[StrictFloat, Field(description="The ID of the finding to retest.")],
+        include_dns_connected: Annotated[Optional[StrictBool], Field(description="Include DNS-connected findings with the same vulnerability type in the retest. When enabled, the system will identify all findings with the same KB entry on assets connected via DNS A records (up to 10 findings total) and retest them together.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3356,6 +3365,8 @@ class FindingsApi:
 
         :param finding_id: The ID of the finding to retest. (required)
         :type finding_id: float
+        :param include_dns_connected: Include DNS-connected findings with the same vulnerability type in the retest. When enabled, the system will identify all findings with the same KB entry on assets connected via DNS A records (up to 10 findings total) and retest them together.
+        :type include_dns_connected: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3380,6 +3391,7 @@ class FindingsApi:
 
         _param = self._start_specific_finding_retest_serialize(
             finding_id=finding_id,
+            include_dns_connected=include_dns_connected,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3403,6 +3415,7 @@ class FindingsApi:
     def _start_specific_finding_retest_serialize(
         self,
         finding_id,
+        include_dns_connected,
         _request_auth,
         _content_type,
         _headers,
@@ -3427,6 +3440,10 @@ class FindingsApi:
         if finding_id is not None:
             _path_params['finding_id'] = finding_id
         # process the query parameters
+        if include_dns_connected is not None:
+            
+            _query_params.append(('includeDnsConnected', include_dns_connected))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

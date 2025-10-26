@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **custom_properties** | [**List[ClientCustomProperty]**](ClientCustomProperty.md) |  | 
 **criticality** | **str** |  | 
 **infrastructure** | [**Infrastructure**](Infrastructure.md) |  | [optional] 
+**engine_settings** | [**ClientEngineSettings**](ClientEngineSettings.md) |  | 
 
 ## Example
 

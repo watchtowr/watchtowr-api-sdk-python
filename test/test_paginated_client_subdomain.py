@@ -56,7 +56,13 @@ class TestPaginatedClientSubdomain(unittest.TestCase):
                         metadata = {"region":"us-west-1","service":"AWS"}, 
                         custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"subdomain","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"subdomain","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', 
-                        infrastructure = {"CDN":"AWS CloudFront"}, )
+                        infrastructure = {"CDN":"AWS CloudFront"}, 
+                        engine_settings = watchtowr_api_sdk.models.client_engine_settings.ClientEngineSettings(
+                            adversary_sight_enabled = True, 
+                            automated_red_teaming_enabled = True, 
+                            credential_stuffing_enabled = True, 
+                            dns_bruteforcing_enabled = False, 
+                            rapid_reaction_enabled = True, ), )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
@@ -83,7 +89,13 @@ class TestPaginatedClientSubdomain(unittest.TestCase):
                         metadata = {"region":"us-west-1","service":"AWS"}, 
                         custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"subdomain","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"subdomain","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', 
-                        infrastructure = {"CDN":"AWS CloudFront"}, )
+                        infrastructure = {"CDN":"AWS CloudFront"}, 
+                        engine_settings = watchtowr_api_sdk.models.client_engine_settings.ClientEngineSettings(
+                            adversary_sight_enabled = True, 
+                            automated_red_teaming_enabled = True, 
+                            credential_stuffing_enabled = True, 
+                            dns_bruteforcing_enabled = False, 
+                            rapid_reaction_enabled = True, ), )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +28,7 @@ class ForbiddenResponse(BaseModel):
     ForbiddenResponse
     """ # noqa: E501
     message: StrictStr = Field(description="Error message")
-    status_code: StrictFloat = Field(description="HTTP status code", alias="statusCode")
-    __properties: ClassVar[List[str]] = ["message", "statusCode"]
+    __properties: ClassVar[List[str]] = ["message"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,8 +86,7 @@ class ForbiddenResponse(BaseModel):
                 raise ValueError("Error due to additional fields (not defined in ForbiddenResponse) in the input: " + _key)
 
         _obj = cls.model_validate({
-            "message": obj.get("message"),
-            "statusCode": obj.get("statusCode")
+            "message": obj.get("message")
         })
         return _obj
 

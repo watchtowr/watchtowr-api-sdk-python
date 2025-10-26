@@ -22,6 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, Stri
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_business_unit import ClientBusinessUnit
 from watchtowr_api_sdk.models.client_custom_property import ClientCustomProperty
+from watchtowr_api_sdk.models.client_engine_settings import ClientEngineSettings
 from watchtowr_api_sdk.models.client_ip_detail_dns_records import ClientIpDetailDnsRecords
 from watchtowr_api_sdk.models.infrastructure import Infrastructure
 from typing import Optional, Set
@@ -47,7 +48,8 @@ class ClientIp(BaseModel):
     custom_properties: List[ClientCustomProperty] = Field(alias="customProperties")
     criticality: StrictStr
     infrastructure: Optional[Infrastructure] = None
-    __properties: ClassVar[List[str]] = ["type", "source", "status", "created_at", "updated_at", "deleted_at", "id", "name", "businessUnits", "country", "live", "dns_records", "metadata", "customProperties", "criticality", "infrastructure"]
+    engine_settings: ClientEngineSettings = Field(alias="engineSettings")
+    __properties: ClassVar[List[str]] = ["type", "source", "status", "created_at", "updated_at", "deleted_at", "id", "name", "businessUnits", "country", "live", "dns_records", "metadata", "customProperties", "criticality", "infrastructure", "engineSettings"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -124,6 +126,9 @@ class ClientIp(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of infrastructure
         if self.infrastructure:
             _dict['infrastructure'] = self.infrastructure.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of engine_settings
+        if self.engine_settings:
+            _dict['engineSettings'] = self.engine_settings.to_dict()
         return _dict
 
     @classmethod
@@ -156,7 +161,8 @@ class ClientIp(BaseModel):
             "metadata": obj.get("metadata"),
             "customProperties": [ClientCustomProperty.from_dict(_item) for _item in obj["customProperties"]] if obj.get("customProperties") is not None else None,
             "criticality": obj.get("criticality"),
-            "infrastructure": Infrastructure.from_dict(obj["infrastructure"]) if obj.get("infrastructure") is not None else None
+            "infrastructure": Infrastructure.from_dict(obj["infrastructure"]) if obj.get("infrastructure") is not None else None,
+            "engineSettings": ClientEngineSettings.from_dict(obj["engineSettings"]) if obj.get("engineSettings") is not None else None
         })
         return _obj
 

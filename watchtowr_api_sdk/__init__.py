@@ -38,6 +38,7 @@ __all__ = [
     "MobileApplicationsApi",
     "PackageManagersApi",
     "PendingDomainsApi",
+    "PlatformWhitelistingApi",
     "PointsOfInterestApi",
     "PortsApi",
     "RepositoriesApi",
@@ -64,6 +65,7 @@ __all__ = [
     "AssetsListResponse",
     "AttackSurfaceDto",
     "AttackSurfaceResiliencyDto",
+    "BadRequestResponse",
     "Causer",
     "ClientActivityLog",
     "ClientApiDocumentation",
@@ -84,6 +86,9 @@ __all__ = [
     "ClientDnsRecordListData",
     "ClientDomain",
     "ClientDomainData",
+    "ClientEngineSettings",
+    "ClientEngineSettingsData",
+    "ClientEngineSettingsDetails",
     "ClientFinding",
     "ClientFindingAssignee",
     "ClientFindingData",
@@ -130,7 +135,9 @@ __all__ = [
     "CreateClientCustomPropertyDto",
     "CreateClientNoteDto",
     "CreateClientSeedDataRequestBody",
+    "CreateOrganisationWhitelistIpDto",
     "DeleteNoteSucces",
+    "DeleteWhitelistIpData",
     "FilterByBusinessUnitInput",
     "FindingListResponse",
     "FindingRetestResponseDto",
@@ -152,6 +159,7 @@ __all__ = [
     "Meta",
     "MttrMetricsDto",
     "NotFound",
+    "NotFoundResponse",
     "OpenFindingsDto",
     "OrganizationSummaryDto",
     "PaginatedApiDocumentation",
@@ -196,17 +204,25 @@ __all__ = [
     "Technology",
     "ThreatActorDto",
     "Unauthorized",
+    "UnauthorizedResponse",
     "UnprocessableContent",
     "UpdateApiDocumentationStatusDto",
     "UpdateClientCloudAssetStatusDto",
     "UpdateClientCustomPropertyDto",
+    "UpdateClientEngineSettingsDto",
     "UpdateClientFindingStatusRequestBody",
     "UpdateClientLegacyAssetStatusDto",
     "UpdateClientNextGenAssetStatusDto",
     "UpdateKillSwitchData",
     "UpdateKillSwitchRequestDto",
     "UpdateKillSwitchResponse",
+    "UpdateOrganisationWhitelistIpDto",
     "UserDetailData",
+    "WhitelistIpData",
+    "WhitelistIpDataSingle",
+    "WhitelistIpListData",
+    "WhitelistStatusData",
+    "WhitelistStatusDto",
     "WhoisData",
     "WhoisDataObject",
     "WhoisDataObjectEmails",
@@ -234,6 +250,7 @@ from watchtowr_api_sdk.api.kill_switch_api import KillSwitchApi as KillSwitchApi
 from watchtowr_api_sdk.api.mobile_applications_api import MobileApplicationsApi as MobileApplicationsApi
 from watchtowr_api_sdk.api.package_managers_api import PackageManagersApi as PackageManagersApi
 from watchtowr_api_sdk.api.pending_domains_api import PendingDomainsApi as PendingDomainsApi
+from watchtowr_api_sdk.api.platform_whitelisting_api import PlatformWhitelistingApi as PlatformWhitelistingApi
 from watchtowr_api_sdk.api.points_of_interest_api import PointsOfInterestApi as PointsOfInterestApi
 from watchtowr_api_sdk.api.ports_api import PortsApi as PortsApi
 from watchtowr_api_sdk.api.repositories_api import RepositoriesApi as RepositoriesApi
@@ -264,6 +281,7 @@ from watchtowr_api_sdk.models.asset_business_unit_ids_dto import AssetBusinessUn
 from watchtowr_api_sdk.models.assets_list_response import AssetsListResponse as AssetsListResponse
 from watchtowr_api_sdk.models.attack_surface_dto import AttackSurfaceDto as AttackSurfaceDto
 from watchtowr_api_sdk.models.attack_surface_resiliency_dto import AttackSurfaceResiliencyDto as AttackSurfaceResiliencyDto
+from watchtowr_api_sdk.models.bad_request_response import BadRequestResponse as BadRequestResponse
 from watchtowr_api_sdk.models.causer import Causer as Causer
 from watchtowr_api_sdk.models.client_activity_log import ClientActivityLog as ClientActivityLog
 from watchtowr_api_sdk.models.client_api_documentation import ClientApiDocumentation as ClientApiDocumentation
@@ -284,6 +302,9 @@ from watchtowr_api_sdk.models.client_dns_record_asset import ClientDnsRecordAsse
 from watchtowr_api_sdk.models.client_dns_record_list_data import ClientDnsRecordListData as ClientDnsRecordListData
 from watchtowr_api_sdk.models.client_domain import ClientDomain as ClientDomain
 from watchtowr_api_sdk.models.client_domain_data import ClientDomainData as ClientDomainData
+from watchtowr_api_sdk.models.client_engine_settings import ClientEngineSettings as ClientEngineSettings
+from watchtowr_api_sdk.models.client_engine_settings_data import ClientEngineSettingsData as ClientEngineSettingsData
+from watchtowr_api_sdk.models.client_engine_settings_details import ClientEngineSettingsDetails as ClientEngineSettingsDetails
 from watchtowr_api_sdk.models.client_finding import ClientFinding as ClientFinding
 from watchtowr_api_sdk.models.client_finding_assignee import ClientFindingAssignee as ClientFindingAssignee
 from watchtowr_api_sdk.models.client_finding_data import ClientFindingData as ClientFindingData
@@ -330,7 +351,9 @@ from watchtowr_api_sdk.models.client_user_detail import ClientUserDetail as Clie
 from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto as CreateClientCustomPropertyDto
 from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto as CreateClientNoteDto
 from watchtowr_api_sdk.models.create_client_seed_data_request_body import CreateClientSeedDataRequestBody as CreateClientSeedDataRequestBody
+from watchtowr_api_sdk.models.create_organisation_whitelist_ip_dto import CreateOrganisationWhitelistIpDto as CreateOrganisationWhitelistIpDto
 from watchtowr_api_sdk.models.delete_note_succes import DeleteNoteSucces as DeleteNoteSucces
+from watchtowr_api_sdk.models.delete_whitelist_ip_data import DeleteWhitelistIpData as DeleteWhitelistIpData
 from watchtowr_api_sdk.models.filter_by_business_unit_input import FilterByBusinessUnitInput as FilterByBusinessUnitInput
 from watchtowr_api_sdk.models.finding_list_response import FindingListResponse as FindingListResponse
 from watchtowr_api_sdk.models.finding_retest_response_dto import FindingRetestResponseDto as FindingRetestResponseDto
@@ -352,6 +375,7 @@ from watchtowr_api_sdk.models.link import Link as Link
 from watchtowr_api_sdk.models.meta import Meta as Meta
 from watchtowr_api_sdk.models.mttr_metrics_dto import MttrMetricsDto as MttrMetricsDto
 from watchtowr_api_sdk.models.not_found import NotFound as NotFound
+from watchtowr_api_sdk.models.not_found_response import NotFoundResponse as NotFoundResponse
 from watchtowr_api_sdk.models.open_findings_dto import OpenFindingsDto as OpenFindingsDto
 from watchtowr_api_sdk.models.organization_summary_dto import OrganizationSummaryDto as OrganizationSummaryDto
 from watchtowr_api_sdk.models.paginated_api_documentation import PaginatedApiDocumentation as PaginatedApiDocumentation
@@ -396,17 +420,25 @@ from watchtowr_api_sdk.models.suspicious_domain import SuspiciousDomain as Suspi
 from watchtowr_api_sdk.models.technology import Technology as Technology
 from watchtowr_api_sdk.models.threat_actor_dto import ThreatActorDto as ThreatActorDto
 from watchtowr_api_sdk.models.unauthorized import Unauthorized as Unauthorized
+from watchtowr_api_sdk.models.unauthorized_response import UnauthorizedResponse as UnauthorizedResponse
 from watchtowr_api_sdk.models.unprocessable_content import UnprocessableContent as UnprocessableContent
 from watchtowr_api_sdk.models.update_api_documentation_status_dto import UpdateApiDocumentationStatusDto as UpdateApiDocumentationStatusDto
 from watchtowr_api_sdk.models.update_client_cloud_asset_status_dto import UpdateClientCloudAssetStatusDto as UpdateClientCloudAssetStatusDto
 from watchtowr_api_sdk.models.update_client_custom_property_dto import UpdateClientCustomPropertyDto as UpdateClientCustomPropertyDto
+from watchtowr_api_sdk.models.update_client_engine_settings_dto import UpdateClientEngineSettingsDto as UpdateClientEngineSettingsDto
 from watchtowr_api_sdk.models.update_client_finding_status_request_body import UpdateClientFindingStatusRequestBody as UpdateClientFindingStatusRequestBody
 from watchtowr_api_sdk.models.update_client_legacy_asset_status_dto import UpdateClientLegacyAssetStatusDto as UpdateClientLegacyAssetStatusDto
 from watchtowr_api_sdk.models.update_client_next_gen_asset_status_dto import UpdateClientNextGenAssetStatusDto as UpdateClientNextGenAssetStatusDto
 from watchtowr_api_sdk.models.update_kill_switch_data import UpdateKillSwitchData as UpdateKillSwitchData
 from watchtowr_api_sdk.models.update_kill_switch_request_dto import UpdateKillSwitchRequestDto as UpdateKillSwitchRequestDto
 from watchtowr_api_sdk.models.update_kill_switch_response import UpdateKillSwitchResponse as UpdateKillSwitchResponse
+from watchtowr_api_sdk.models.update_organisation_whitelist_ip_dto import UpdateOrganisationWhitelistIpDto as UpdateOrganisationWhitelistIpDto
 from watchtowr_api_sdk.models.user_detail_data import UserDetailData as UserDetailData
+from watchtowr_api_sdk.models.whitelist_ip_data import WhitelistIpData as WhitelistIpData
+from watchtowr_api_sdk.models.whitelist_ip_data_single import WhitelistIpDataSingle as WhitelistIpDataSingle
+from watchtowr_api_sdk.models.whitelist_ip_list_data import WhitelistIpListData as WhitelistIpListData
+from watchtowr_api_sdk.models.whitelist_status_data import WhitelistStatusData as WhitelistStatusData
+from watchtowr_api_sdk.models.whitelist_status_dto import WhitelistStatusDto as WhitelistStatusDto
 from watchtowr_api_sdk.models.whois_data import WhoisData as WhoisData
 from watchtowr_api_sdk.models.whois_data_object import WhoisDataObject as WhoisDataObject
 from watchtowr_api_sdk.models.whois_data_object_emails import WhoisDataObjectEmails as WhoisDataObjectEmails
