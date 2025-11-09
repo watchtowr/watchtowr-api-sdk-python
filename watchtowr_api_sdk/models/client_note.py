@@ -33,7 +33,7 @@ class ClientNote(BaseModel):
     note_id: StrictFloat
     title: StrictStr
     author: Dict[str, Any]
-    last_modified: DatetimeDate
+    last_modified: datetime.date
     __properties: ClassVar[List[str]] = ["id", "note", "note_type", "note_id", "title", "author", "last_modified"]
 
     model_config = ConfigDict(
@@ -101,7 +101,7 @@ class ClientNote(BaseModel):
             "note_id": obj.get("note_id"),
             "title": obj.get("title"),
             "author": obj.get("author"),
-            "last_modified": DatetimeDate.from_dict(obj["last_modified"]) if obj.get("last_modified") is not None else None
+            "last_modified": datetime.date.from_dict(obj["last_modified"]) if obj.get("last_modified") is not None else None
         })
         return _obj
 

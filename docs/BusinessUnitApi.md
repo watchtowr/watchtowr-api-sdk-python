@@ -4,16 +4,18 @@ All URIs are relative to *https://your-tenant-id.sg.client.watchtowr.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_business_unit**](BusinessUnitApi.md#create_business_unit) | **POST** /api/client/business-unit | Create Business Unit
+[**create_business_unit_rule**](BusinessUnitApi.md#create_business_unit_rule) | **POST** /api/client/business-unit/show/{id}/rule | Create Business Unit Rule
 [**get_business_unit_details**](BusinessUnitApi.md#get_business_unit_details) | **GET** /api/client/business-unit/show/{id} | Get Business Unit Details
 [**get_list_business_unit**](BusinessUnitApi.md#get_list_business_unit) | **GET** /api/client/business-unit/list | List Business Units
 
 
-# **get_business_unit_details**
-> ClientBusinessUnitData get_business_unit_details(id)
+# **create_business_unit**
+> ClientBusinessUnitData create_business_unit(create_client_business_unit_dto)
 
-Get Business Unit Details
+Create Business Unit
 
-Get the details of a specific business unit.
+Create a new business unit with name, description, type, and optional user assignments.
 
 ### Example
 
@@ -22,6 +24,172 @@ Get the details of a specific business unit.
 ```python
 import watchtowr_api_sdk
 from watchtowr_api_sdk.models.client_business_unit_data import ClientBusinessUnitData
+from watchtowr_api_sdk.models.create_client_business_unit_dto import CreateClientBusinessUnitDto
+from watchtowr_api_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = watchtowr_api_sdk.Configuration(
+    host = "https://your-tenant-id.sg.client.watchtowr.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API_TOKEN): bearer
+configuration = watchtowr_api_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = watchtowr_api_sdk.BusinessUnitApi(api_client)
+    create_client_business_unit_dto = watchtowr_api_sdk.CreateClientBusinessUnitDto() # CreateClientBusinessUnitDto | 
+
+    try:
+        # Create Business Unit
+        api_response = api_instance.create_business_unit(create_client_business_unit_dto)
+        print("The response of BusinessUnitApi->create_business_unit:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BusinessUnitApi->create_business_unit: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_client_business_unit_dto** | [**CreateClientBusinessUnitDto**](CreateClientBusinessUnitDto.md)|  | 
+
+### Return type
+
+[**ClientBusinessUnitData**](ClientBusinessUnitData.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Successfully created business unit |  -  |
+**400** | Bad Request - Invalid input or duplicate name |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_business_unit_rule**
+> ClientBusinessUnitRuleData create_business_unit_rule(id, create_client_business_unit_rule_dto)
+
+Create Business Unit Rule
+
+Create a new rule for a specific business unit.
+
+### Example
+
+* Bearer (API_TOKEN) Authentication (bearer):
+
+```python
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_business_unit_rule_data import ClientBusinessUnitRuleData
+from watchtowr_api_sdk.models.create_client_business_unit_rule_dto import CreateClientBusinessUnitRuleDto
+from watchtowr_api_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = watchtowr_api_sdk.Configuration(
+    host = "https://your-tenant-id.sg.client.watchtowr.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API_TOKEN): bearer
+configuration = watchtowr_api_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = watchtowr_api_sdk.BusinessUnitApi(api_client)
+    id = 3.4 # float | The ID of the business unit to create a rule for.
+    create_client_business_unit_rule_dto = watchtowr_api_sdk.CreateClientBusinessUnitRuleDto() # CreateClientBusinessUnitRuleDto | 
+
+    try:
+        # Create Business Unit Rule
+        api_response = api_instance.create_business_unit_rule(id, create_client_business_unit_rule_dto)
+        print("The response of BusinessUnitApi->create_business_unit_rule:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BusinessUnitApi->create_business_unit_rule: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **float**| The ID of the business unit to create a rule for. | 
+ **create_client_business_unit_rule_dto** | [**CreateClientBusinessUnitRuleDto**](CreateClientBusinessUnitRuleDto.md)|  | 
+
+### Return type
+
+[**ClientBusinessUnitRuleData**](ClientBusinessUnitRuleData.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_business_unit_details**
+> ClientBusinessUnitDetailWithRulesData get_business_unit_details(id, rule_page=rule_page, rule_page_size=rule_page_size)
+
+Get Business Unit Details
+
+Get the details of a specific business unit including paginated rules.
+
+### Example
+
+* Bearer (API_TOKEN) Authentication (bearer):
+
+```python
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_business_unit_detail_with_rules_data import ClientBusinessUnitDetailWithRulesData
 from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
@@ -46,10 +214,12 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.BusinessUnitApi(api_client)
     id = 3.4 # float | 
+    rule_page = 1 # float | Page number for rules pagination (optional)
+    rule_page_size = 10 # float | Page size for rules pagination (optional)
 
     try:
         # Get Business Unit Details
-        api_response = api_instance.get_business_unit_details(id)
+        api_response = api_instance.get_business_unit_details(id, rule_page=rule_page, rule_page_size=rule_page_size)
         print("The response of BusinessUnitApi->get_business_unit_details:\n")
         pprint(api_response)
     except Exception as e:
@@ -64,10 +234,12 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **float**|  | 
+ **rule_page** | **float**| Page number for rules pagination | [optional] 
+ **rule_page_size** | **float**| Page size for rules pagination | [optional] 
 
 ### Return type
 
-[**ClientBusinessUnitData**](ClientBusinessUnitData.md)
+[**ClientBusinessUnitDetailWithRulesData**](ClientBusinessUnitDetailWithRulesData.md)
 
 ### Authorization
 

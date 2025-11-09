@@ -36,9 +36,9 @@ class ClientCloudAsset(BaseModel):
     sub_type: StrictStr
     hostname: StrictStr
     cloud_resource_id: StrictStr
-    created_at: DatetimeDate
-    updated_at: DatetimeDate
-    deleted_at: DatetimeDate
+    created_at: datetime.date
+    updated_at: datetime.date
+    deleted_at: datetime.date
     metadata: Dict[str, Any]
     custom_properties: List[ClientCustomProperty] = Field(alias="customProperties")
     criticality: StrictStr
@@ -124,9 +124,9 @@ class ClientCloudAsset(BaseModel):
             "sub_type": obj.get("sub_type"),
             "hostname": obj.get("hostname"),
             "cloud_resource_id": obj.get("cloud_resource_id"),
-            "created_at": DatetimeDate.from_dict(obj["created_at"]) if obj.get("created_at") is not None else None,
-            "updated_at": DatetimeDate.from_dict(obj["updated_at"]) if obj.get("updated_at") is not None else None,
-            "deleted_at": DatetimeDate.from_dict(obj["deleted_at"]) if obj.get("deleted_at") is not None else None,
+            "created_at": datetime.date.from_dict(obj["created_at"]) if obj.get("created_at") is not None else None,
+            "updated_at": datetime.date.from_dict(obj["updated_at"]) if obj.get("updated_at") is not None else None,
+            "deleted_at": datetime.date.from_dict(obj["deleted_at"]) if obj.get("deleted_at") is not None else None,
             "metadata": obj.get("metadata"),
             "customProperties": [ClientCustomProperty.from_dict(_item) for _item in obj["customProperties"]] if obj.get("customProperties") is not None else None,
             "criticality": obj.get("criticality")

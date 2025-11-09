@@ -30,10 +30,10 @@ class ClientPort(BaseModel):
     """ # noqa: E501
     type: StrictStr
     status: StrictStr
-    created_at: DatetimeDate
-    updated_at: DatetimeDate
-    last_seen_at: DatetimeDate
-    deleted_at: DatetimeDate
+    created_at: datetime.date
+    updated_at: datetime.date
+    last_seen_at: datetime.date
+    deleted_at: datetime.date
     id: StrictFloat
     ip: StrictStr
     ip_id: StrictFloat
@@ -127,10 +127,10 @@ class ClientPort(BaseModel):
         _obj = cls.model_validate({
             "type": obj.get("type"),
             "status": obj.get("status"),
-            "created_at": DatetimeDate.from_dict(obj["created_at"]) if obj.get("created_at") is not None else None,
-            "updated_at": DatetimeDate.from_dict(obj["updated_at"]) if obj.get("updated_at") is not None else None,
-            "last_seen_at": DatetimeDate.from_dict(obj["last_seen_at"]) if obj.get("last_seen_at") is not None else None,
-            "deleted_at": DatetimeDate.from_dict(obj["deleted_at"]) if obj.get("deleted_at") is not None else None,
+            "created_at": datetime.date.from_dict(obj["created_at"]) if obj.get("created_at") is not None else None,
+            "updated_at": datetime.date.from_dict(obj["updated_at"]) if obj.get("updated_at") is not None else None,
+            "last_seen_at": datetime.date.from_dict(obj["last_seen_at"]) if obj.get("last_seen_at") is not None else None,
+            "deleted_at": datetime.date.from_dict(obj["deleted_at"]) if obj.get("deleted_at") is not None else None,
             "id": obj.get("id"),
             "ip": obj.get("ip"),
             "ip_id": obj.get("ip_id"),

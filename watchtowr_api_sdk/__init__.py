@@ -74,6 +74,10 @@ __all__ = [
     "ClientBusinessUnit",
     "ClientBusinessUnitData",
     "ClientBusinessUnitDetail",
+    "ClientBusinessUnitDetailWithRules",
+    "ClientBusinessUnitDetailWithRulesData",
+    "ClientBusinessUnitRuleData",
+    "ClientBusinessUnitRuleDetail",
     "ClientCloudAsset",
     "ClientCloudAssetData",
     "ClientCloudStorage",
@@ -132,6 +136,8 @@ __all__ = [
     "ClientSuspiciousDomainData",
     "ClientUser",
     "ClientUserDetail",
+    "CreateClientBusinessUnitDto",
+    "CreateClientBusinessUnitRuleDto",
     "CreateClientCustomPropertyDto",
     "CreateClientNoteDto",
     "CreateClientSeedDataRequestBody",
@@ -290,6 +296,10 @@ from watchtowr_api_sdk.models.client_asset_dns_record import ClientAssetDnsRecor
 from watchtowr_api_sdk.models.client_business_unit import ClientBusinessUnit as ClientBusinessUnit
 from watchtowr_api_sdk.models.client_business_unit_data import ClientBusinessUnitData as ClientBusinessUnitData
 from watchtowr_api_sdk.models.client_business_unit_detail import ClientBusinessUnitDetail as ClientBusinessUnitDetail
+from watchtowr_api_sdk.models.client_business_unit_detail_with_rules import ClientBusinessUnitDetailWithRules as ClientBusinessUnitDetailWithRules
+from watchtowr_api_sdk.models.client_business_unit_detail_with_rules_data import ClientBusinessUnitDetailWithRulesData as ClientBusinessUnitDetailWithRulesData
+from watchtowr_api_sdk.models.client_business_unit_rule_data import ClientBusinessUnitRuleData as ClientBusinessUnitRuleData
+from watchtowr_api_sdk.models.client_business_unit_rule_detail import ClientBusinessUnitRuleDetail as ClientBusinessUnitRuleDetail
 from watchtowr_api_sdk.models.client_cloud_asset import ClientCloudAsset as ClientCloudAsset
 from watchtowr_api_sdk.models.client_cloud_asset_data import ClientCloudAssetData as ClientCloudAssetData
 from watchtowr_api_sdk.models.client_cloud_storage import ClientCloudStorage as ClientCloudStorage
@@ -348,6 +358,8 @@ from watchtowr_api_sdk.models.client_subdomain_data import ClientSubdomainData a
 from watchtowr_api_sdk.models.client_suspicious_domain_data import ClientSuspiciousDomainData as ClientSuspiciousDomainData
 from watchtowr_api_sdk.models.client_user import ClientUser as ClientUser
 from watchtowr_api_sdk.models.client_user_detail import ClientUserDetail as ClientUserDetail
+from watchtowr_api_sdk.models.create_client_business_unit_dto import CreateClientBusinessUnitDto as CreateClientBusinessUnitDto
+from watchtowr_api_sdk.models.create_client_business_unit_rule_dto import CreateClientBusinessUnitRuleDto as CreateClientBusinessUnitRuleDto
 from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto as CreateClientCustomPropertyDto
 from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto as CreateClientNoteDto
 from watchtowr_api_sdk.models.create_client_seed_data_request_body import CreateClientSeedDataRequestBody as CreateClientSeedDataRequestBody

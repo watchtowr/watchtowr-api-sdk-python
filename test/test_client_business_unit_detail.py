@@ -39,14 +39,19 @@ class TestClientBusinessUnitDetail(unittest.TestCase):
                 id = 1,
                 name = 'Singapore Business Unit',
                 description = 'Singapore based assets',
-                created_at = 2022-02-13T02:10:00.000000Z
+                type = 'DEPARTMENT',
+                parent_id = 1,
+                created_at = 2022-02-13T02:10:00.000000Z,
+                updated_at = 2022-02-13T02:10:00.000000Z
             )
         else:
             return ClientBusinessUnitDetail(
                 id = 1,
                 name = 'Singapore Business Unit',
                 description = 'Singapore based assets',
+                type = 'DEPARTMENT',
                 created_at = 2022-02-13T02:10:00.000000Z,
+                updated_at = 2022-02-13T02:10:00.000000Z,
         )
         """
 

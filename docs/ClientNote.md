@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **note_id** | **float** |  | 
 **title** | **str** |  | 
 **author** | **object** |  | 
-**last_modified** | [**DatetimeDate**](datetime.date.md) |  | 
+**last_modified** | [**datetime.date**](datetime.date.md) |  | 
 
 ## Example
 

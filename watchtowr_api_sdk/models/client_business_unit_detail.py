@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,8 +30,11 @@ class ClientBusinessUnitDetail(BaseModel):
     id: StrictFloat = Field(description="ID")
     name: StrictStr = Field(description="Name")
     description: StrictStr = Field(description="Description")
+    type: StrictStr = Field(description="Business unit type")
+    parent_id: Optional[StrictFloat] = Field(default=None, description="Parent business unit ID")
     created_at: Dict[str, Any] = Field(description="Created At")
-    __properties: ClassVar[List[str]] = ["id", "name", "description", "created_at"]
+    updated_at: Dict[str, Any] = Field(description="Updated At")
+    __properties: ClassVar[List[str]] = ["id", "name", "description", "type", "parent_id", "created_at", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,7 +95,10 @@ class ClientBusinessUnitDetail(BaseModel):
             "id": obj.get("id"),
             "name": obj.get("name"),
             "description": obj.get("description"),
-            "created_at": obj.get("created_at")
+            "type": obj.get("type"),
+            "parent_id": obj.get("parent_id"),
+            "created_at": obj.get("created_at"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

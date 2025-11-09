@@ -27,6 +27,20 @@ class TestBusinessUnitApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_create_business_unit(self) -> None:
+        """Test case for create_business_unit
+
+        Create Business Unit
+        """
+        pass
+
+    def test_create_business_unit_rule(self) -> None:
+        """Test case for create_business_unit_rule
+
+        Create Business Unit Rule
+        """
+        pass
+
     def test_get_business_unit_details(self) -> None:
         """Test case for get_business_unit_details
 

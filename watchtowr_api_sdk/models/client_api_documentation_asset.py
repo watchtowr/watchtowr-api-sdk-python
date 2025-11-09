@@ -34,7 +34,7 @@ class ClientApiDocumentationAsset(BaseModel):
     source: StrictStr
     platform: StrictStr
     status: StrictStr
-    created_at: DatetimeDate
+    created_at: datetime.date
     url: StrictStr
     custom_properties: List[ClientCustomProperty] = Field(alias="customProperties")
     criticality: StrictStr
@@ -119,7 +119,7 @@ class ClientApiDocumentationAsset(BaseModel):
             "source": obj.get("source"),
             "platform": obj.get("platform"),
             "status": obj.get("status"),
-            "created_at": DatetimeDate.from_dict(obj["created_at"]) if obj.get("created_at") is not None else None,
+            "created_at": datetime.date.from_dict(obj["created_at"]) if obj.get("created_at") is not None else None,
             "url": obj.get("url"),
             "customProperties": [ClientCustomProperty.from_dict(_item) for _item in obj["customProperties"]] if obj.get("customProperties") is not None else None,
             "criticality": obj.get("criticality")

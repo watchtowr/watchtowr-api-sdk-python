@@ -33,7 +33,7 @@ class ClientIpRelatedDnsRecord(BaseModel):
     type: StrictStr
     ttl: StrictFloat = Field(description="Time To Live")
     value: StrictStr
-    discovered_on: DatetimeDate
+    discovered_on: datetime.date
     asset: ClientIpRelatedDnsRecordAsset
     __properties: ClassVar[List[str]] = ["id", "name", "type", "ttl", "value", "discovered_on", "asset"]
 
@@ -104,7 +104,7 @@ class ClientIpRelatedDnsRecord(BaseModel):
             "type": obj.get("type"),
             "ttl": obj.get("ttl"),
             "value": obj.get("value"),
-            "discovered_on": DatetimeDate.from_dict(obj["discovered_on"]) if obj.get("discovered_on") is not None else None,
+            "discovered_on": datetime.date.from_dict(obj["discovered_on"]) if obj.get("discovered_on") is not None else None,
             "asset": ClientIpRelatedDnsRecordAsset.from_dict(obj["asset"]) if obj.get("asset") is not None else None
         })
         return _obj

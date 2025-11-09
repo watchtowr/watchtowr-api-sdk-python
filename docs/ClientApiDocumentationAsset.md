@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **source** | **str** |  | 
 **platform** | **str** |  | 
 **status** | **str** |  | 
-**created_at** | [**DatetimeDate**](datetime.date.md) |  | 
+**created_at** | [**datetime.date**](datetime.date.md) |  | 
 **url** | **str** |  | 
 **custom_properties** | [**List[ClientCustomProperty]**](ClientCustomProperty.md) |  | 
 **criticality** | **str** |  | 

@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 **sub_type** | **str** |  | 
 **hostname** | **str** |  | 
 **cloud_resource_id** | **str** |  | 
-**created_at** | [**DatetimeDate**](datetime.date.md) |  | 
-**updated_at** | [**DatetimeDate**](datetime.date.md) |  | 
-**deleted_at** | [**DatetimeDate**](datetime.date.md) |  | 
+**created_at** | [**datetime.date**](datetime.date.md) |  | 
+**updated_at** | [**datetime.date**](datetime.date.md) |  | 
+**deleted_at** | [**datetime.date**](datetime.date.md) |  | 
 **metadata** | **object** |  | 
 **custom_properties** | [**List[ClientCustomProperty]**](ClientCustomProperty.md) |  | 
 **criticality** | **str** |  | 

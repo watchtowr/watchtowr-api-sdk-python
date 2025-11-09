@@ -8,7 +8,10 @@ Name | Type | Description | Notes
 **id** | **float** | ID | 
 **name** | **str** | Name | 
 **description** | **str** | Description | 
+**type** | **str** | Business unit type | 
+**parent_id** | **float** | Parent business unit ID | [optional] 
 **created_at** | **object** | Created At | 
+**updated_at** | **object** | Updated At | 
 
 ## Example
 

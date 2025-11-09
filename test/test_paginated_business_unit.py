@@ -41,7 +41,10 @@ class TestPaginatedBusinessUnit(unittest.TestCase):
                         id = 1, 
                         name = 'Singapore Business Unit', 
                         description = 'Singapore based assets', 
-                        created_at = 2022-02-13T02:10:00.000000Z, )
+                        type = 'DEPARTMENT', 
+                        parent_id = 1, 
+                        created_at = 2022-02-13T02:10:00.000000Z, 
+                        updated_at = 2022-02-13T02:10:00.000000Z, )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
@@ -53,7 +56,10 @@ class TestPaginatedBusinessUnit(unittest.TestCase):
                         id = 1, 
                         name = 'Singapore Business Unit', 
                         description = 'Singapore based assets', 
-                        created_at = 2022-02-13T02:10:00.000000Z, )
+                        type = 'DEPARTMENT', 
+                        parent_id = 1, 
+                        created_at = 2022-02-13T02:10:00.000000Z, 
+                        updated_at = 2022-02-13T02:10:00.000000Z, )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),

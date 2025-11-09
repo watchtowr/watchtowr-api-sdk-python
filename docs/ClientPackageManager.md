@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **source** | **str** |  | 
 **status** | **str** |  | 
-**created_at** | [**DatetimeDate**](datetime.date.md) |  | 
-**updated_at** | [**DatetimeDate**](datetime.date.md) |  | 
-**deleted_at** | [**DatetimeDate**](datetime.date.md) |  | 
+**created_at** | [**datetime.date**](datetime.date.md) |  | 
+**updated_at** | [**datetime.date**](datetime.date.md) |  | 
+**deleted_at** | [**datetime.date**](datetime.date.md) |  | 
 **id** | **float** |  | 
 **url** | **str** |  | 
 **platform** | **str** |  | 

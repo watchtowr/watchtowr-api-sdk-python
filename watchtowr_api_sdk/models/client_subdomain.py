@@ -34,9 +34,9 @@ class ClientSubdomain(BaseModel):
     type: StrictStr
     source: StrictStr
     status: StrictStr
-    created_at: DatetimeDate
-    updated_at: DatetimeDate
-    deleted_at: DatetimeDate
+    created_at: datetime.date
+    updated_at: datetime.date
+    deleted_at: datetime.date
     id: StrictFloat
     name: StrictStr
     business_units: List[ClientBusinessUnit] = Field(alias="businessUnits")
@@ -144,9 +144,9 @@ class ClientSubdomain(BaseModel):
             "type": obj.get("type"),
             "source": obj.get("source"),
             "status": obj.get("status"),
-            "created_at": DatetimeDate.from_dict(obj["created_at"]) if obj.get("created_at") is not None else None,
-            "updated_at": DatetimeDate.from_dict(obj["updated_at"]) if obj.get("updated_at") is not None else None,
-            "deleted_at": DatetimeDate.from_dict(obj["deleted_at"]) if obj.get("deleted_at") is not None else None,
+            "created_at": datetime.date.from_dict(obj["created_at"]) if obj.get("created_at") is not None else None,
+            "updated_at": datetime.date.from_dict(obj["updated_at"]) if obj.get("updated_at") is not None else None,
+            "deleted_at": datetime.date.from_dict(obj["deleted_at"]) if obj.get("deleted_at") is not None else None,
             "id": obj.get("id"),
             "name": obj.get("name"),
             "businessUnits": [ClientBusinessUnit.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None,

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **type** | **str** |  | 
 **ttl** | **float** | Time To Live | 
 **value** | **str** |  | 
-**discovered_on** | [**DatetimeDate**](datetime.date.md) |  | 
+**discovered_on** | [**datetime.date**](datetime.date.md) |  | 
 **asset** | [**ClientIpRelatedDnsRecordAsset**](ClientIpRelatedDnsRecordAsset.md) |  | 
 
 ## Example

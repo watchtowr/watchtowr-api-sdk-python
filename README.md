@@ -116,6 +116,8 @@ Class | Method | HTTP request | Description
 *APIDocumentationApi* | [**update_custom_property_api_documentation**](docs/APIDocumentationApi.md#update_custom_property_api_documentation) | **PUT** /api/client/assets/apiDocumentation/show/{id}/custom-property/{customPropertyId} | Update Custom Property
 *ActivityLogApi* | [**get_list_activity_logs**](docs/ActivityLogApi.md#get_list_activity_logs) | **GET** /api/client/activity-log/list | List Activity Logs
 *AddAssetApi* | [**submit_asset**](docs/AddAssetApi.md#submit_asset) | **POST** /api/client/seeddata | Submit Seed Data
+*BusinessUnitApi* | [**create_business_unit**](docs/BusinessUnitApi.md#create_business_unit) | **POST** /api/client/business-unit | Create Business Unit
+*BusinessUnitApi* | [**create_business_unit_rule**](docs/BusinessUnitApi.md#create_business_unit_rule) | **POST** /api/client/business-unit/show/{id}/rule | Create Business Unit Rule
 *BusinessUnitApi* | [**get_business_unit_details**](docs/BusinessUnitApi.md#get_business_unit_details) | **GET** /api/client/business-unit/show/{id} | Get Business Unit Details
 *BusinessUnitApi* | [**get_list_business_unit**](docs/BusinessUnitApi.md#get_list_business_unit) | **GET** /api/client/business-unit/list | List Business Units
 *CertificatesApi* | [**get_certificate_details**](docs/CertificatesApi.md#get_certificate_details) | **GET** /api/client/certificates/show/{id} | Get Certificate Details
@@ -339,6 +341,10 @@ Class | Method | HTTP request | Description
  - [ClientBusinessUnit](docs/ClientBusinessUnit.md)
  - [ClientBusinessUnitData](docs/ClientBusinessUnitData.md)
  - [ClientBusinessUnitDetail](docs/ClientBusinessUnitDetail.md)
+ - [ClientBusinessUnitDetailWithRules](docs/ClientBusinessUnitDetailWithRules.md)
+ - [ClientBusinessUnitDetailWithRulesData](docs/ClientBusinessUnitDetailWithRulesData.md)
+ - [ClientBusinessUnitRuleData](docs/ClientBusinessUnitRuleData.md)
+ - [ClientBusinessUnitRuleDetail](docs/ClientBusinessUnitRuleDetail.md)
  - [ClientCloudAsset](docs/ClientCloudAsset.md)
  - [ClientCloudAssetData](docs/ClientCloudAssetData.md)
  - [ClientCloudStorage](docs/ClientCloudStorage.md)
@@ -397,6 +403,8 @@ Class | Method | HTTP request | Description
  - [ClientSuspiciousDomainData](docs/ClientSuspiciousDomainData.md)
  - [ClientUser](docs/ClientUser.md)
  - [ClientUserDetail](docs/ClientUserDetail.md)
+ - [CreateClientBusinessUnitDto](docs/CreateClientBusinessUnitDto.md)
+ - [CreateClientBusinessUnitRuleDto](docs/CreateClientBusinessUnitRuleDto.md)
  - [CreateClientCustomPropertyDto](docs/CreateClientCustomPropertyDto.md)
  - [CreateClientNoteDto](docs/CreateClientNoteDto.md)
  - [CreateClientSeedDataRequestBody](docs/CreateClientSeedDataRequestBody.md)

@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** |  | 
 **status** | **str** |  | 
-**created_at** | [**DatetimeDate**](datetime.date.md) |  | 
-**updated_at** | [**DatetimeDate**](datetime.date.md) |  | 
-**last_seen_at** | [**DatetimeDate**](datetime.date.md) |  | 
-**deleted_at** | [**DatetimeDate**](datetime.date.md) |  | 
+**created_at** | [**datetime.date**](datetime.date.md) |  | 
+**updated_at** | [**datetime.date**](datetime.date.md) |  | 
+**last_seen_at** | [**datetime.date**](datetime.date.md) |  | 
+**deleted_at** | [**datetime.date**](datetime.date.md) |  | 
 **id** | **float** |  | 
 **ip** | **str** |  | 
 **ip_id** | **float** |  | 
