@@ -18,18 +18,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, StrictBool
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
-class UpdateClientFindingStatusRequestBody(BaseModel):
+class DeleteClientBusinessUnitResponseDto(BaseModel):
     """
-    UpdateClientFindingStatusRequestBody
+    DeleteClientBusinessUnitResponseDto
     """ # noqa: E501
-    status: StrictStr = Field(description="Finding status.")
-    status_reason: Optional[StrictStr] = Field(default=None, description="Reason for the status change.", alias="statusReason")
-    __properties: ClassVar[List[str]] = ["status", "statusReason"]
+    success: StrictBool
+    __properties: ClassVar[List[str]] = ["success"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +48,7 @@ class UpdateClientFindingStatusRequestBody(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of UpdateClientFindingStatusRequestBody from a JSON string"""
+        """Create an instance of DeleteClientBusinessUnitResponseDto from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,7 +73,7 @@ class UpdateClientFindingStatusRequestBody(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of UpdateClientFindingStatusRequestBody from a dict"""
+        """Create an instance of DeleteClientBusinessUnitResponseDto from a dict"""
         if obj is None:
             return None
 
@@ -84,11 +83,10 @@ class UpdateClientFindingStatusRequestBody(BaseModel):
         # raise errors for additional fields in the input
         for _key in obj.keys():
             if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in UpdateClientFindingStatusRequestBody) in the input: " + _key)
+                raise ValueError("Error due to additional fields (not defined in DeleteClientBusinessUnitResponseDto) in the input: " + _key)
 
         _obj = cls.model_validate({
-            "status": obj.get("status"),
-            "statusReason": obj.get("statusReason")
+            "success": obj.get("success")
         })
         return _obj
 

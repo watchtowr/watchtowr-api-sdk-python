@@ -15,10 +15,10 @@
 
 import unittest
 
-from watchtowr_api_sdk.models.update_client_finding_status_request_body import UpdateClientFindingStatusRequestBody
+from watchtowr_api_sdk.models.delete_client_business_unit_response_dto import DeleteClientBusinessUnitResponseDto
 
-class TestUpdateClientFindingStatusRequestBody(unittest.TestCase):
-    """UpdateClientFindingStatusRequestBody unit test stubs"""
+class TestDeleteClientBusinessUnitResponseDto(unittest.TestCase):
+    """DeleteClientBusinessUnitResponseDto unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,27 +26,26 @@ class TestUpdateClientFindingStatusRequestBody(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UpdateClientFindingStatusRequestBody:
-        """Test UpdateClientFindingStatusRequestBody
+    def make_instance(self, include_optional) -> DeleteClientBusinessUnitResponseDto:
+        """Test DeleteClientBusinessUnitResponseDto
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `UpdateClientFindingStatusRequestBody`
+        # uncomment below to create an instance of `DeleteClientBusinessUnitResponseDto`
         """
-        model = UpdateClientFindingStatusRequestBody()
+        model = DeleteClientBusinessUnitResponseDto()
         if include_optional:
-            return UpdateClientFindingStatusRequestBody(
-                status = 'confirmed',
-                status_reason = 'Reason for change'
+            return DeleteClientBusinessUnitResponseDto(
+                success = True
             )
         else:
-            return UpdateClientFindingStatusRequestBody(
-                status = 'confirmed',
+            return DeleteClientBusinessUnitResponseDto(
+                success = True,
         )
         """
 
-    def testUpdateClientFindingStatusRequestBody(self):
-        """Test UpdateClientFindingStatusRequestBody"""
+    def testDeleteClientBusinessUnitResponseDto(self):
+        """Test DeleteClientBusinessUnitResponseDto"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

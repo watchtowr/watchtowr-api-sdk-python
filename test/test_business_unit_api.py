@@ -41,6 +41,20 @@ class TestBusinessUnitApi(unittest.TestCase):
         """
         pass
 
+    def test_delete_business_unit(self) -> None:
+        """Test case for delete_business_unit
+
+        Delete Business Unit
+        """
+        pass
+
+    def test_delete_business_unit_rule(self) -> None:
+        """Test case for delete_business_unit_rule
+
+        Delete Business Unit Rule
+        """
+        pass
+
     def test_get_business_unit_details(self) -> None:
         """Test case for get_business_unit_details
 
@@ -52,6 +66,13 @@ class TestBusinessUnitApi(unittest.TestCase):
         """Test case for get_list_business_unit
 
         List Business Units
+        """
+        pass
+
+    def test_update_business_unit(self) -> None:
+        """Test case for update_business_unit
+
+        Update Business Unit
         """
         pass
 

@@ -18,18 +18,28 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class UpdateClientFindingStatusRequestBody(BaseModel):
+class UpdateClientBusinessUnitDto(BaseModel):
     """
-    UpdateClientFindingStatusRequestBody
+    UpdateClientBusinessUnitDto
     """ # noqa: E501
-    status: StrictStr = Field(description="Finding status.")
-    status_reason: Optional[StrictStr] = Field(default=None, description="Reason for the status change.", alias="statusReason")
-    __properties: ClassVar[List[str]] = ["status", "statusReason"]
+    name: StrictStr = Field(description="Business unit name")
+    description: Optional[StrictStr] = Field(default=None, description="Business unit description")
+    type: StrictStr = Field(description="Business unit type")
+    parent_id: Optional[StrictFloat] = Field(default=None, description="Parent business unit ID. Set to null to remove parent relationship.")
+    user_ids: Optional[List[StrictFloat]] = Field(default=None, description="Array of user IDs to assign to this business unit")
+    __properties: ClassVar[List[str]] = ["name", "description", "type", "parent_id", "user_ids"]
+
+    @field_validator('type')
+    def type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['BRAND', 'DEPARTMENT', 'LEGAL_ENTITY', 'M_A', 'THIRD_PARTY', 'USER_DEFINED']):
+            raise ValueError("must be one of enum values ('BRAND', 'DEPARTMENT', 'LEGAL_ENTITY', 'M_A', 'THIRD_PARTY', 'USER_DEFINED')")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +59,7 @@ class UpdateClientFindingStatusRequestBody(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of UpdateClientFindingStatusRequestBody from a JSON string"""
+        """Create an instance of UpdateClientBusinessUnitDto from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,11 +80,16 @@ class UpdateClientFindingStatusRequestBody(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if parent_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.parent_id is None and "parent_id" in self.model_fields_set:
+            _dict['parent_id'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of UpdateClientFindingStatusRequestBody from a dict"""
+        """Create an instance of UpdateClientBusinessUnitDto from a dict"""
         if obj is None:
             return None
 
@@ -84,11 +99,14 @@ class UpdateClientFindingStatusRequestBody(BaseModel):
         # raise errors for additional fields in the input
         for _key in obj.keys():
             if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in UpdateClientFindingStatusRequestBody) in the input: " + _key)
+                raise ValueError("Error due to additional fields (not defined in UpdateClientBusinessUnitDto) in the input: " + _key)
 
         _obj = cls.model_validate({
-            "status": obj.get("status"),
-            "statusReason": obj.get("statusReason")
+            "name": obj.get("name"),
+            "description": obj.get("description"),
+            "type": obj.get("type"),
+            "parent_id": obj.get("parent_id"),
+            "user_ids": obj.get("user_ids")
         })
         return _obj
 

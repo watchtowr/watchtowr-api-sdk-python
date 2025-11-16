@@ -142,6 +142,8 @@ __all__ = [
     "CreateClientNoteDto",
     "CreateClientSeedDataRequestBody",
     "CreateOrganisationWhitelistIpDto",
+    "DeleteClientBusinessUnitResponseDto",
+    "DeleteClientBusinessUnitRuleResponseDto",
     "DeleteNoteSucces",
     "DeleteWhitelistIpData",
     "FilterByBusinessUnitInput",
@@ -213,6 +215,7 @@ __all__ = [
     "UnauthorizedResponse",
     "UnprocessableContent",
     "UpdateApiDocumentationStatusDto",
+    "UpdateClientBusinessUnitDto",
     "UpdateClientCloudAssetStatusDto",
     "UpdateClientCustomPropertyDto",
     "UpdateClientEngineSettingsDto",
@@ -364,6 +367,8 @@ from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateCli
 from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto as CreateClientNoteDto
 from watchtowr_api_sdk.models.create_client_seed_data_request_body import CreateClientSeedDataRequestBody as CreateClientSeedDataRequestBody
 from watchtowr_api_sdk.models.create_organisation_whitelist_ip_dto import CreateOrganisationWhitelistIpDto as CreateOrganisationWhitelistIpDto
+from watchtowr_api_sdk.models.delete_client_business_unit_response_dto import DeleteClientBusinessUnitResponseDto as DeleteClientBusinessUnitResponseDto
+from watchtowr_api_sdk.models.delete_client_business_unit_rule_response_dto import DeleteClientBusinessUnitRuleResponseDto as DeleteClientBusinessUnitRuleResponseDto
 from watchtowr_api_sdk.models.delete_note_succes import DeleteNoteSucces as DeleteNoteSucces
 from watchtowr_api_sdk.models.delete_whitelist_ip_data import DeleteWhitelistIpData as DeleteWhitelistIpData
 from watchtowr_api_sdk.models.filter_by_business_unit_input import FilterByBusinessUnitInput as FilterByBusinessUnitInput
@@ -435,6 +440,7 @@ from watchtowr_api_sdk.models.unauthorized import Unauthorized as Unauthorized
 from watchtowr_api_sdk.models.unauthorized_response import UnauthorizedResponse as UnauthorizedResponse
 from watchtowr_api_sdk.models.unprocessable_content import UnprocessableContent as UnprocessableContent
 from watchtowr_api_sdk.models.update_api_documentation_status_dto import UpdateApiDocumentationStatusDto as UpdateApiDocumentationStatusDto
+from watchtowr_api_sdk.models.update_client_business_unit_dto import UpdateClientBusinessUnitDto as UpdateClientBusinessUnitDto
 from watchtowr_api_sdk.models.update_client_cloud_asset_status_dto import UpdateClientCloudAssetStatusDto as UpdateClientCloudAssetStatusDto
 from watchtowr_api_sdk.models.update_client_custom_property_dto import UpdateClientCustomPropertyDto as UpdateClientCustomPropertyDto
 from watchtowr_api_sdk.models.update_client_engine_settings_dto import UpdateClientEngineSettingsDto as UpdateClientEngineSettingsDto

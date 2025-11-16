@@ -32,9 +32,10 @@ class ClientBusinessUnitDetail(BaseModel):
     description: StrictStr = Field(description="Description")
     type: StrictStr = Field(description="Business unit type")
     parent_id: Optional[StrictFloat] = Field(default=None, description="Parent business unit ID")
+    user_ids: Optional[List[StrictFloat]] = Field(default=None, description="Array of user IDs assigned to this business unit")
     created_at: Dict[str, Any] = Field(description="Created At")
     updated_at: Dict[str, Any] = Field(description="Updated At")
-    __properties: ClassVar[List[str]] = ["id", "name", "description", "type", "parent_id", "created_at", "updated_at"]
+    __properties: ClassVar[List[str]] = ["id", "name", "description", "type", "parent_id", "user_ids", "created_at", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,6 +98,7 @@ class ClientBusinessUnitDetail(BaseModel):
             "description": obj.get("description"),
             "type": obj.get("type"),
             "parent_id": obj.get("parent_id"),
+            "user_ids": obj.get("user_ids"),
             "created_at": obj.get("created_at"),
             "updated_at": obj.get("updated_at")
         })

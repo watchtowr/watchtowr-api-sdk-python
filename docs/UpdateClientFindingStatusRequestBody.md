@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** | Finding status. | 
+**status_reason** | **str** | Reason for the status change. | [optional] 
 
 ## Example
 

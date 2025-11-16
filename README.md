@@ -118,8 +118,11 @@ Class | Method | HTTP request | Description
 *AddAssetApi* | [**submit_asset**](docs/AddAssetApi.md#submit_asset) | **POST** /api/client/seeddata | Submit Seed Data
 *BusinessUnitApi* | [**create_business_unit**](docs/BusinessUnitApi.md#create_business_unit) | **POST** /api/client/business-unit | Create Business Unit
 *BusinessUnitApi* | [**create_business_unit_rule**](docs/BusinessUnitApi.md#create_business_unit_rule) | **POST** /api/client/business-unit/show/{id}/rule | Create Business Unit Rule
+*BusinessUnitApi* | [**delete_business_unit**](docs/BusinessUnitApi.md#delete_business_unit) | **DELETE** /api/client/business-unit/show/{id} | Delete Business Unit
+*BusinessUnitApi* | [**delete_business_unit_rule**](docs/BusinessUnitApi.md#delete_business_unit_rule) | **DELETE** /api/client/business-unit/show/{id}/rule/{ruleId} | Delete Business Unit Rule
 *BusinessUnitApi* | [**get_business_unit_details**](docs/BusinessUnitApi.md#get_business_unit_details) | **GET** /api/client/business-unit/show/{id} | Get Business Unit Details
 *BusinessUnitApi* | [**get_list_business_unit**](docs/BusinessUnitApi.md#get_list_business_unit) | **GET** /api/client/business-unit/list | List Business Units
+*BusinessUnitApi* | [**update_business_unit**](docs/BusinessUnitApi.md#update_business_unit) | **PUT** /api/client/business-unit/show/{id} | Update Business Unit
 *CertificatesApi* | [**get_certificate_details**](docs/CertificatesApi.md#get_certificate_details) | **GET** /api/client/certificates/show/{id} | Get Certificate Details
 *CertificatesApi* | [**get_list_certificates**](docs/CertificatesApi.md#get_list_certificates) | **GET** /api/client/certificates/list | List Certificates
 *CloudIntegrationAssetsApi* | [**add_asset_cloud_asset_note**](docs/CloudIntegrationAssetsApi.md#add_asset_cloud_asset_note) | **POST** /api/client/assets/cloudAsset/show/{id}/note | Create Note
@@ -409,6 +412,8 @@ Class | Method | HTTP request | Description
  - [CreateClientNoteDto](docs/CreateClientNoteDto.md)
  - [CreateClientSeedDataRequestBody](docs/CreateClientSeedDataRequestBody.md)
  - [CreateOrganisationWhitelistIpDto](docs/CreateOrganisationWhitelistIpDto.md)
+ - [DeleteClientBusinessUnitResponseDto](docs/DeleteClientBusinessUnitResponseDto.md)
+ - [DeleteClientBusinessUnitRuleResponseDto](docs/DeleteClientBusinessUnitRuleResponseDto.md)
  - [DeleteNoteSucces](docs/DeleteNoteSucces.md)
  - [DeleteWhitelistIpData](docs/DeleteWhitelistIpData.md)
  - [FilterByBusinessUnitInput](docs/FilterByBusinessUnitInput.md)
@@ -480,6 +485,7 @@ Class | Method | HTTP request | Description
  - [UnauthorizedResponse](docs/UnauthorizedResponse.md)
  - [UnprocessableContent](docs/UnprocessableContent.md)
  - [UpdateApiDocumentationStatusDto](docs/UpdateApiDocumentationStatusDto.md)
+ - [UpdateClientBusinessUnitDto](docs/UpdateClientBusinessUnitDto.md)
  - [UpdateClientCloudAssetStatusDto](docs/UpdateClientCloudAssetStatusDto.md)
  - [UpdateClientCustomPropertyDto](docs/UpdateClientCustomPropertyDto.md)
  - [UpdateClientEngineSettingsDto](docs/UpdateClientEngineSettingsDto.md)

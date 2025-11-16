@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description | 
 **type** | **str** | Business unit type | 
 **parent_id** | **float** | Parent business unit ID | [optional] 
+**user_ids** | **List[float]** | Array of user IDs assigned to this business unit | [optional] 
 **created_at** | **object** | Created At | 
 **updated_at** | **object** | Updated At | 
 **rules** | **object** | Paginated rules for this business unit | 

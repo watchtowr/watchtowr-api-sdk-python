@@ -97,6 +97,8 @@ docs/CreateClientNoteDto.md
 docs/CreateClientSeedDataRequestBody.md
 docs/CreateOrganisationWhitelistIpDto.md
 docs/DNSRecordAnalysisApi.md
+docs/DeleteClientBusinessUnitResponseDto.md
+docs/DeleteClientBusinessUnitRuleResponseDto.md
 docs/DeleteNoteSucces.md
 docs/DeleteWhitelistIpData.md
 docs/DomainsApi.md
@@ -188,6 +190,7 @@ docs/Unauthorized.md
 docs/UnauthorizedResponse.md
 docs/UnprocessableContent.md
 docs/UpdateApiDocumentationStatusDto.md
+docs/UpdateClientBusinessUnitDto.md
 docs/UpdateClientCloudAssetStatusDto.md
 docs/UpdateClientCustomPropertyDto.md
 docs/UpdateClientEngineSettingsDto.md
@@ -309,6 +312,8 @@ test/test_create_client_custom_property_dto.py
 test/test_create_client_note_dto.py
 test/test_create_client_seed_data_request_body.py
 test/test_create_organisation_whitelist_ip_dto.py
+test/test_delete_client_business_unit_response_dto.py
+test/test_delete_client_business_unit_rule_response_dto.py
 test/test_delete_note_succes.py
 test/test_delete_whitelist_ip_data.py
 test/test_dns_record_analysis_api.py
@@ -401,6 +406,7 @@ test/test_unauthorized.py
 test/test_unauthorized_response.py
 test/test_unprocessable_content.py
 test/test_update_api_documentation_status_dto.py
+test/test_update_client_business_unit_dto.py
 test/test_update_client_cloud_asset_status_dto.py
 test/test_update_client_custom_property_dto.py
 test/test_update_client_engine_settings_dto.py
@@ -545,6 +551,8 @@ watchtowr_api_sdk/models/create_client_custom_property_dto.py
 watchtowr_api_sdk/models/create_client_note_dto.py
 watchtowr_api_sdk/models/create_client_seed_data_request_body.py
 watchtowr_api_sdk/models/create_organisation_whitelist_ip_dto.py
+watchtowr_api_sdk/models/delete_client_business_unit_response_dto.py
+watchtowr_api_sdk/models/delete_client_business_unit_rule_response_dto.py
 watchtowr_api_sdk/models/delete_note_succes.py
 watchtowr_api_sdk/models/delete_whitelist_ip_data.py
 watchtowr_api_sdk/models/filter_by_business_unit_input.py
@@ -616,6 +624,7 @@ watchtowr_api_sdk/models/unauthorized.py
 watchtowr_api_sdk/models/unauthorized_response.py
 watchtowr_api_sdk/models/unprocessable_content.py
 watchtowr_api_sdk/models/update_api_documentation_status_dto.py
+watchtowr_api_sdk/models/update_client_business_unit_dto.py
 watchtowr_api_sdk/models/update_client_cloud_asset_status_dto.py
 watchtowr_api_sdk/models/update_client_custom_property_dto.py
 watchtowr_api_sdk/models/update_client_engine_settings_dto.py

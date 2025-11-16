@@ -41,6 +41,7 @@ class TestClientBusinessUnitDetailWithRules(unittest.TestCase):
                 description = 'Singapore based assets',
                 type = 'DEPARTMENT',
                 parent_id = 1,
+                user_ids = [1,2,3],
                 created_at = 2022-02-13T02:10:00.000000Z,
                 updated_at = 2022-02-13T02:10:00.000000Z,
                 rules = None

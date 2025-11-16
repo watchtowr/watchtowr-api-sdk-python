@@ -15,10 +15,10 @@
 
 import unittest
 
-from watchtowr_api_sdk.models.client_business_unit_detail import ClientBusinessUnitDetail
+from watchtowr_api_sdk.models.update_client_business_unit_dto import UpdateClientBusinessUnitDto
 
-class TestClientBusinessUnitDetail(unittest.TestCase):
-    """ClientBusinessUnitDetail unit test stubs"""
+class TestUpdateClientBusinessUnitDto(unittest.TestCase):
+    """UpdateClientBusinessUnitDto unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,38 +26,31 @@ class TestClientBusinessUnitDetail(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ClientBusinessUnitDetail:
-        """Test ClientBusinessUnitDetail
+    def make_instance(self, include_optional) -> UpdateClientBusinessUnitDto:
+        """Test UpdateClientBusinessUnitDto
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ClientBusinessUnitDetail`
+        # uncomment below to create an instance of `UpdateClientBusinessUnitDto`
         """
-        model = ClientBusinessUnitDetail()
+        model = UpdateClientBusinessUnitDto()
         if include_optional:
-            return ClientBusinessUnitDetail(
-                id = 1,
-                name = 'Singapore Business Unit',
-                description = 'Singapore based assets',
+            return UpdateClientBusinessUnitDto(
+                name = 'Updated Business Unit Name',
+                description = 'Updated description',
                 type = 'DEPARTMENT',
                 parent_id = 1,
-                user_ids = [1,2,3],
-                created_at = 2022-02-13T02:10:00.000000Z,
-                updated_at = 2022-02-13T02:10:00.000000Z
+                user_ids = [1,2,3]
             )
         else:
-            return ClientBusinessUnitDetail(
-                id = 1,
-                name = 'Singapore Business Unit',
-                description = 'Singapore based assets',
+            return UpdateClientBusinessUnitDto(
+                name = 'Updated Business Unit Name',
                 type = 'DEPARTMENT',
-                created_at = 2022-02-13T02:10:00.000000Z,
-                updated_at = 2022-02-13T02:10:00.000000Z,
         )
         """
 
-    def testClientBusinessUnitDetail(self):
-        """Test ClientBusinessUnitDetail"""
+    def testUpdateClientBusinessUnitDto(self):
+        """Test UpdateClientBusinessUnitDto"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
