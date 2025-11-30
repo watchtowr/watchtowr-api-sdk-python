@@ -39,7 +39,7 @@ class TestUserDetailData(unittest.TestCase):
                 data = watchtowr_api_sdk.models.client_user_detail.ClientUserDetail(
                     id = 1, 
                     name = 'John Doe', 
-                    email = 'jo*************@example.com', 
+                    email = 'john.doe@example.com', 
                     title = 'Security Manager', 
                     mobile_phone_number = '+65XXXXXX89', 
                     office_phone_number = '+65XXXXXX12', 
@@ -52,7 +52,7 @@ class TestUserDetailData(unittest.TestCase):
                 data = watchtowr_api_sdk.models.client_user_detail.ClientUserDetail(
                     id = 1, 
                     name = 'John Doe', 
-                    email = 'jo*************@example.com', 
+                    email = 'john.doe@example.com', 
                     title = 'Security Manager', 
                     mobile_phone_number = '+65XXXXXX89', 
                     office_phone_number = '+65XXXXXX12', 

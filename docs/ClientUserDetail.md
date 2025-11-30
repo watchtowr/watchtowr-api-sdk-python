@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** | User ID | 
 **name** | **str** | User name | 
-**email** | **str** | User email (masked) | 
+**email** | **str** | User email | 
 **title** | **str** | User title | 
 **mobile_phone_number** | **str** | Mobile phone number (masked) | 
 **office_phone_number** | **str** | Office phone number (masked) | 

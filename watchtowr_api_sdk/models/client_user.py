@@ -30,7 +30,7 @@ class ClientUser(BaseModel):
     """ # noqa: E501
     id: StrictFloat = Field(description="User ID")
     name: StrictStr = Field(description="User name")
-    email: StrictStr = Field(description="User email (masked)")
+    email: StrictStr = Field(description="User email")
     title: StrictStr = Field(description="User title")
     mobile_phone_number: StrictStr = Field(description="Mobile phone number (masked)")
     office_phone_number: StrictStr = Field(description="Office phone number (masked)")
