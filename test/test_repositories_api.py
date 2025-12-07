@@ -62,6 +62,13 @@ class TestRepositoriesApi(unittest.TestCase):
         """
         pass
 
+    def test_get_asset_repository_changelog(self) -> None:
+        """Test case for get_asset_repository_changelog
+
+        Get Repository Changelog
+        """
+        pass
+
     def test_get_asset_repository_details(self) -> None:
         """Test case for get_asset_repository_details
 

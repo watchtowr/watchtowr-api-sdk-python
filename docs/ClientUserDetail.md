@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **created_at** | **datetime** | Created at timestamp | 
 **locked** | **bool** | Whether user is locked | 
 **role** | **object** | User role information | 
+**business_units** | [**List[ClientUserDetailBusinessUnitsInner]**](ClientUserDetailBusinessUnitsInner.md) | User business unit assignments | 
 
 ## Example
 

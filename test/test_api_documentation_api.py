@@ -62,6 +62,13 @@ class TestAPIDocumentationApi(unittest.TestCase):
         """
         pass
 
+    def test_get_asset_api_documentation_changelog(self) -> None:
+        """Test case for get_asset_api_documentation_changelog
+
+        Get API Documentation Changelog
+        """
+        pass
+
     def test_get_asset_api_documentation_details(self) -> None:
         """Test case for get_asset_api_documentation_details
 

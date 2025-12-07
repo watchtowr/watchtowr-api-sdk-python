@@ -69,6 +69,13 @@ class TestIPRangesApi(unittest.TestCase):
         """
         pass
 
+    def test_get_asset_iprange_changelog(self) -> None:
+        """Test case for get_asset_iprange_changelog
+
+        Get IP Range Changelog
+        """
+        pass
+
     def test_get_asset_iprange_details(self) -> None:
         """Test case for get_asset_iprange_details
 

@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**start_specific_finding_retest**](FindingsApi.md#start_specific_finding_retest) | **POST** /api/client/findings/retest/{finding_id} | Retest Finding
 [**update_custom_property_finding**](FindingsApi.md#update_custom_property_finding) | **PUT** /api/client/findings/show/{id}/custom-property/{customPropertyId} | Update Custom Property
 [**update_finding_note**](FindingsApi.md#update_finding_note) | **PUT** /api/client/findings/show/{id}/note/{noteId} | Update Finding Note
+[**update_finding_state**](FindingsApi.md#update_finding_state) | **POST** /api/client/findings/state/{id} | Update Finding State
 [**update_finding_status**](FindingsApi.md#update_finding_status) | **POST** /api/client/findings/status/{id} | Update Finding Status
 
 
@@ -1099,6 +1100,90 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ClientNoteData**](ClientNoteData.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_finding_state**
+> ClientFindingData update_finding_state(id, update_client_finding_state_request_body)
+
+Update Finding State
+
+Update the state of a specific finding.
+
+### Example
+
+* Bearer (API_TOKEN) Authentication (bearer):
+
+```python
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_finding_data import ClientFindingData
+from watchtowr_api_sdk.models.update_client_finding_state_request_body import UpdateClientFindingStateRequestBody
+from watchtowr_api_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = watchtowr_api_sdk.Configuration(
+    host = "https://your-tenant-id.sg.client.watchtowr.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API_TOKEN): bearer
+configuration = watchtowr_api_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = watchtowr_api_sdk.FindingsApi(api_client)
+    id = 3.4 # float | The ID of the finding to update.
+    update_client_finding_state_request_body = watchtowr_api_sdk.UpdateClientFindingStateRequestBody() # UpdateClientFindingStateRequestBody | 
+
+    try:
+        # Update Finding State
+        api_response = api_instance.update_finding_state(id, update_client_finding_state_request_body)
+        print("The response of FindingsApi->update_finding_state:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling FindingsApi->update_finding_state: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **float**| The ID of the finding to update. | 
+ **update_client_finding_state_request_body** | [**UpdateClientFindingStateRequestBody**](UpdateClientFindingStateRequestBody.md)|  | 
+
+### Return type
+
+[**ClientFindingData**](ClientFindingData.md)
 
 ### Authorization
 

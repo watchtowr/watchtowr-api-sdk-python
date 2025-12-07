@@ -41,7 +41,9 @@ class PointsOfInterest(BaseModel):
     business_units: List[ClientBusinessUnit] = Field(description="Business unit", alias="businessUnits")
     last_seen: Optional[datetime] = Field(default=None, description="Last seen at", alias="lastSeen")
     is_concerning: StrictBool = Field(description="Whether the Point of Interest is concerning", alias="isConcerning")
-    __properties: ClassVar[List[str]] = ["id", "name", "type", "url", "discoveryToolId", "discoveryDate", "assetId", "assetName", "assetType", "businessUnits", "lastSeen", "isConcerning"]
+    suppressed: StrictBool = Field(description="Whether the Point of Interest is suppressed")
+    suppressed_at: Optional[datetime] = Field(default=None, description="Suppressed at timestamp", alias="suppressedAt")
+    __properties: ClassVar[List[str]] = ["id", "name", "type", "url", "discoveryToolId", "discoveryDate", "assetId", "assetName", "assetType", "businessUnits", "lastSeen", "isConcerning", "suppressed", "suppressedAt"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +91,11 @@ class PointsOfInterest(BaseModel):
                 if _item_business_units:
                     _items.append(_item_business_units.to_dict())
             _dict['businessUnits'] = _items
+        # set to None if suppressed_at (nullable) is None
+        # and model_fields_set contains the field
+        if self.suppressed_at is None and "suppressed_at" in self.model_fields_set:
+            _dict['suppressedAt'] = None
+
         return _dict
 
     @classmethod
@@ -117,7 +124,9 @@ class PointsOfInterest(BaseModel):
             "assetType": obj.get("assetType"),
             "businessUnits": [ClientBusinessUnit.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None,
             "lastSeen": obj.get("lastSeen"),
-            "isConcerning": obj.get("isConcerning")
+            "isConcerning": obj.get("isConcerning"),
+            "suppressed": obj.get("suppressed"),
+            "suppressedAt": obj.get("suppressedAt")
         })
         return _obj
 

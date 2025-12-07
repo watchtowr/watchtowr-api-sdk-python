@@ -21,6 +21,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr
 from typing import Any, ClassVar, Dict, List
+from watchtowr_api_sdk.models.client_user_detail_business_units_inner import ClientUserDetailBusinessUnitsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -37,7 +38,8 @@ class ClientUserDetail(BaseModel):
     created_at: datetime = Field(description="Created at timestamp")
     locked: StrictBool = Field(description="Whether user is locked")
     role: Dict[str, Any] = Field(description="User role information")
-    __properties: ClassVar[List[str]] = ["id", "name", "email", "title", "mobile_phone_number", "office_phone_number", "created_at", "locked", "role"]
+    business_units: List[ClientUserDetailBusinessUnitsInner] = Field(description="User business unit assignments", alias="businessUnits")
+    __properties: ClassVar[List[str]] = ["id", "name", "email", "title", "mobile_phone_number", "office_phone_number", "created_at", "locked", "role", "businessUnits"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -78,6 +80,13 @@ class ClientUserDetail(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in business_units (list)
+        _items = []
+        if self.business_units:
+            for _item_business_units in self.business_units:
+                if _item_business_units:
+                    _items.append(_item_business_units.to_dict())
+            _dict['businessUnits'] = _items
         return _dict
 
     @classmethod
@@ -103,7 +112,8 @@ class ClientUserDetail(BaseModel):
             "office_phone_number": obj.get("office_phone_number"),
             "created_at": obj.get("created_at"),
             "locked": obj.get("locked"),
-            "role": obj.get("role")
+            "role": obj.get("role"),
+            "businessUnits": [ClientUserDetailBusinessUnitsInner.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None
         })
         return _obj
 

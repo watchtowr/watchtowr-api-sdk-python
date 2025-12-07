@@ -27,6 +27,13 @@ class TestAddAssetApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_list_submitted_assets(self) -> None:
+        """Test case for list_submitted_assets
+
+        List Submitted Assets
+        """
+        pass
+
     def test_submit_asset(self) -> None:
         """Test case for submit_asset
 

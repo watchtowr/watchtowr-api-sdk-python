@@ -321,8 +321,6 @@ class PortsApi:
         include_no_service: Annotated[Optional[StrictBool], Field(description="Include listings without a service")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter ports created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter ports created before a given date and time.")] = None,
-        updated_from: Annotated[Optional[datetime], Field(description="Filter ports updated after a given date and time.")] = None,
-        updated_to: Annotated[Optional[datetime], Field(description="Filter ports updated before a given date and time.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search ports by port number.")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
@@ -356,10 +354,6 @@ class PortsApi:
         :type created_from: datetime
         :param created_to: Filter ports created before a given date and time.
         :type created_to: datetime
-        :param updated_from: Filter ports updated after a given date and time.
-        :type updated_from: datetime
-        :param updated_to: Filter ports updated before a given date and time.
-        :type updated_to: datetime
         :param asset_name: Search ports by port number.
         :type asset_name: str
         :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
@@ -397,8 +391,6 @@ class PortsApi:
             include_no_service=include_no_service,
             created_from=created_from,
             created_to=created_to,
-            updated_from=updated_from,
-            updated_to=updated_to,
             asset_name=asset_name,
             business_unit_ids=business_unit_ids,
             custom_property_key=custom_property_key,
@@ -433,8 +425,6 @@ class PortsApi:
         include_no_service: Annotated[Optional[StrictBool], Field(description="Include listings without a service")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter ports created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter ports created before a given date and time.")] = None,
-        updated_from: Annotated[Optional[datetime], Field(description="Filter ports updated after a given date and time.")] = None,
-        updated_to: Annotated[Optional[datetime], Field(description="Filter ports updated before a given date and time.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search ports by port number.")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
@@ -468,10 +458,6 @@ class PortsApi:
         :type created_from: datetime
         :param created_to: Filter ports created before a given date and time.
         :type created_to: datetime
-        :param updated_from: Filter ports updated after a given date and time.
-        :type updated_from: datetime
-        :param updated_to: Filter ports updated before a given date and time.
-        :type updated_to: datetime
         :param asset_name: Search ports by port number.
         :type asset_name: str
         :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
@@ -509,8 +495,6 @@ class PortsApi:
             include_no_service=include_no_service,
             created_from=created_from,
             created_to=created_to,
-            updated_from=updated_from,
-            updated_to=updated_to,
             asset_name=asset_name,
             business_unit_ids=business_unit_ids,
             custom_property_key=custom_property_key,
@@ -545,8 +529,6 @@ class PortsApi:
         include_no_service: Annotated[Optional[StrictBool], Field(description="Include listings without a service")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter ports created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter ports created before a given date and time.")] = None,
-        updated_from: Annotated[Optional[datetime], Field(description="Filter ports updated after a given date and time.")] = None,
-        updated_to: Annotated[Optional[datetime], Field(description="Filter ports updated before a given date and time.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search ports by port number.")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
@@ -580,10 +562,6 @@ class PortsApi:
         :type created_from: datetime
         :param created_to: Filter ports created before a given date and time.
         :type created_to: datetime
-        :param updated_from: Filter ports updated after a given date and time.
-        :type updated_from: datetime
-        :param updated_to: Filter ports updated before a given date and time.
-        :type updated_to: datetime
         :param asset_name: Search ports by port number.
         :type asset_name: str
         :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
@@ -621,8 +599,6 @@ class PortsApi:
             include_no_service=include_no_service,
             created_from=created_from,
             created_to=created_to,
-            updated_from=updated_from,
-            updated_to=updated_to,
             asset_name=asset_name,
             business_unit_ids=business_unit_ids,
             custom_property_key=custom_property_key,
@@ -652,8 +628,6 @@ class PortsApi:
         include_no_service,
         created_from,
         created_to,
-        updated_from,
-        updated_to,
         asset_name,
         business_unit_ids,
         custom_property_key,
@@ -721,32 +695,6 @@ class PortsApi:
                 )
             else:
                 _query_params.append(('created_to', created_to))
-            
-        if updated_from is not None:
-            if isinstance(updated_from, datetime):
-                _query_params.append(
-                    (
-                        'updated_from',
-                        updated_from.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('updated_from', updated_from))
-            
-        if updated_to is not None:
-            if isinstance(updated_to, datetime):
-                _query_params.append(
-                    (
-                        'updated_to',
-                        updated_to.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('updated_to', updated_to))
             
         if asset_name is not None:
             

@@ -62,6 +62,13 @@ class TestMobileApplicationsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_asset_mobile_app_changelog(self) -> None:
+        """Test case for get_asset_mobile_app_changelog
+
+        Get Mobile App Changelog
+        """
+        pass
+
     def test_get_asset_mobile_app_details(self) -> None:
         """Test case for get_asset_mobile_app_details
 

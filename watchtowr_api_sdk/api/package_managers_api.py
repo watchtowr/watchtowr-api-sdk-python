@@ -29,6 +29,7 @@ from watchtowr_api_sdk.models.client_package_manager_data import ClientPackageMa
 from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto
 from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto
 from watchtowr_api_sdk.models.delete_note_succes import DeleteNoteSucces
+from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog
 from watchtowr_api_sdk.models.paginated_client_custom_property import PaginatedClientCustomProperty
 from watchtowr_api_sdk.models.paginated_client_package_manager import PaginatedClientPackageManager
 from watchtowr_api_sdk.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto
@@ -1521,6 +1522,310 @@ class PackageManagersApi:
 
 
     @validate_call
+    def get_asset_package_manager_changelog(
+        self,
+        id: Annotated[StrictFloat, Field(description="The asset ID of the package manager to retrieve changelog for.")],
+        page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> PaginatedClientActivityLog:
+        """Get Package Manager Changelog
+
+        Get paginated changelog (activity logs) for a specific package manager asset.
+
+        :param id: The asset ID of the package manager to retrieve changelog for. (required)
+        :type id: float
+        :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
+        :type page: float
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :type page_size: float
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_asset_package_manager_changelog_serialize(
+            id=id,
+            page=page,
+            page_size=page_size,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "PaginatedClientActivityLog",
+            '401': "Unauthorized",
+            '403': "ForbiddenResponse",
+            '404': "NotFound",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_asset_package_manager_changelog_with_http_info(
+        self,
+        id: Annotated[StrictFloat, Field(description="The asset ID of the package manager to retrieve changelog for.")],
+        page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[PaginatedClientActivityLog]:
+        """Get Package Manager Changelog
+
+        Get paginated changelog (activity logs) for a specific package manager asset.
+
+        :param id: The asset ID of the package manager to retrieve changelog for. (required)
+        :type id: float
+        :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
+        :type page: float
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :type page_size: float
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_asset_package_manager_changelog_serialize(
+            id=id,
+            page=page,
+            page_size=page_size,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "PaginatedClientActivityLog",
+            '401': "Unauthorized",
+            '403': "ForbiddenResponse",
+            '404': "NotFound",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_asset_package_manager_changelog_without_preload_content(
+        self,
+        id: Annotated[StrictFloat, Field(description="The asset ID of the package manager to retrieve changelog for.")],
+        page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get Package Manager Changelog
+
+        Get paginated changelog (activity logs) for a specific package manager asset.
+
+        :param id: The asset ID of the package manager to retrieve changelog for. (required)
+        :type id: float
+        :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
+        :type page: float
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :type page_size: float
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_asset_package_manager_changelog_serialize(
+            id=id,
+            page=page,
+            page_size=page_size,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "PaginatedClientActivityLog",
+            '401': "Unauthorized",
+            '403': "ForbiddenResponse",
+            '404': "NotFound",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_asset_package_manager_changelog_serialize(
+        self,
+        id,
+        page,
+        page_size,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
+        # process the query parameters
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
+        if page_size is not None:
+            
+            _query_params.append(('pageSize', page_size))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'bearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/api/client/assets/packageManager/show/{id}/changelog',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
     def get_asset_package_manager_details(
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of the Package Manager asset to get.")],
@@ -2406,12 +2711,10 @@ class PackageManagersApi:
         asset_name: Annotated[Optional[StrictStr], Field(description="Search package managers by asset name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
-        integration_connections: Annotated[Optional[StrictStr], Field(description="Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, armiscentrix, qualysvmdr, tenable, orcasecurity  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)")] = None,
+        integration_connections: Annotated[Optional[StrictStr], Field(description="Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, armiscentrix, qualysvmdr, tenablevm, orcasecurity, crowdstrikefalconspotlight, taniumvm, rapid7insightvm  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter assets created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
-        updated_from: Annotated[Optional[datetime], Field(description="Filter assets updated after a given date and time.")] = None,
-        updated_to: Annotated[Optional[datetime], Field(description="Filter assets updated before a given date and time.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
         custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         _request_timeout: Union[
@@ -2441,7 +2744,7 @@ class PackageManagersApi:
         :type statuses: List[str]
         :param source: Filter assets by the source that discovered the asset.
         :type source: str
-        :param integration_connections: Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, armiscentrix, qualysvmdr, tenable, orcasecurity  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)
+        :param integration_connections: Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, armiscentrix, qualysvmdr, tenablevm, orcasecurity, crowdstrikefalconspotlight, taniumvm, rapid7insightvm  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)
         :type integration_connections: str
         :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
         :type business_unit_ids: str
@@ -2449,10 +2752,6 @@ class PackageManagersApi:
         :type created_from: datetime
         :param created_to: Filter assets created before a given date and time.
         :type created_to: datetime
-        :param updated_from: Filter assets updated after a given date and time.
-        :type updated_from: datetime
-        :param updated_to: Filter assets updated before a given date and time.
-        :type updated_to: datetime
         :param custom_property_key: Filter assets by custom property key.
         :type custom_property_key: str
         :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
@@ -2489,8 +2788,6 @@ class PackageManagersApi:
             business_unit_ids=business_unit_ids,
             created_from=created_from,
             created_to=created_to,
-            updated_from=updated_from,
-            updated_to=updated_to,
             custom_property_key=custom_property_key,
             custom_property_value=custom_property_value,
             _request_auth=_request_auth,
@@ -2522,12 +2819,10 @@ class PackageManagersApi:
         asset_name: Annotated[Optional[StrictStr], Field(description="Search package managers by asset name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
-        integration_connections: Annotated[Optional[StrictStr], Field(description="Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, armiscentrix, qualysvmdr, tenable, orcasecurity  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)")] = None,
+        integration_connections: Annotated[Optional[StrictStr], Field(description="Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, armiscentrix, qualysvmdr, tenablevm, orcasecurity, crowdstrikefalconspotlight, taniumvm, rapid7insightvm  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter assets created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
-        updated_from: Annotated[Optional[datetime], Field(description="Filter assets updated after a given date and time.")] = None,
-        updated_to: Annotated[Optional[datetime], Field(description="Filter assets updated before a given date and time.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
         custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         _request_timeout: Union[
@@ -2557,7 +2852,7 @@ class PackageManagersApi:
         :type statuses: List[str]
         :param source: Filter assets by the source that discovered the asset.
         :type source: str
-        :param integration_connections: Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, armiscentrix, qualysvmdr, tenable, orcasecurity  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)
+        :param integration_connections: Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, armiscentrix, qualysvmdr, tenablevm, orcasecurity, crowdstrikefalconspotlight, taniumvm, rapid7insightvm  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)
         :type integration_connections: str
         :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
         :type business_unit_ids: str
@@ -2565,10 +2860,6 @@ class PackageManagersApi:
         :type created_from: datetime
         :param created_to: Filter assets created before a given date and time.
         :type created_to: datetime
-        :param updated_from: Filter assets updated after a given date and time.
-        :type updated_from: datetime
-        :param updated_to: Filter assets updated before a given date and time.
-        :type updated_to: datetime
         :param custom_property_key: Filter assets by custom property key.
         :type custom_property_key: str
         :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
@@ -2605,8 +2896,6 @@ class PackageManagersApi:
             business_unit_ids=business_unit_ids,
             created_from=created_from,
             created_to=created_to,
-            updated_from=updated_from,
-            updated_to=updated_to,
             custom_property_key=custom_property_key,
             custom_property_value=custom_property_value,
             _request_auth=_request_auth,
@@ -2638,12 +2927,10 @@ class PackageManagersApi:
         asset_name: Annotated[Optional[StrictStr], Field(description="Search package managers by asset name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
-        integration_connections: Annotated[Optional[StrictStr], Field(description="Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, armiscentrix, qualysvmdr, tenable, orcasecurity  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)")] = None,
+        integration_connections: Annotated[Optional[StrictStr], Field(description="Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, armiscentrix, qualysvmdr, tenablevm, orcasecurity, crowdstrikefalconspotlight, taniumvm, rapid7insightvm  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter assets created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
-        updated_from: Annotated[Optional[datetime], Field(description="Filter assets updated after a given date and time.")] = None,
-        updated_to: Annotated[Optional[datetime], Field(description="Filter assets updated before a given date and time.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
         custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         _request_timeout: Union[
@@ -2673,7 +2960,7 @@ class PackageManagersApi:
         :type statuses: List[str]
         :param source: Filter assets by the source that discovered the asset.
         :type source: str
-        :param integration_connections: Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, armiscentrix, qualysvmdr, tenable, orcasecurity  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)
+        :param integration_connections: Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, armiscentrix, qualysvmdr, tenablevm, orcasecurity, crowdstrikefalconspotlight, taniumvm, rapid7insightvm  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)
         :type integration_connections: str
         :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
         :type business_unit_ids: str
@@ -2681,10 +2968,6 @@ class PackageManagersApi:
         :type created_from: datetime
         :param created_to: Filter assets created before a given date and time.
         :type created_to: datetime
-        :param updated_from: Filter assets updated after a given date and time.
-        :type updated_from: datetime
-        :param updated_to: Filter assets updated before a given date and time.
-        :type updated_to: datetime
         :param custom_property_key: Filter assets by custom property key.
         :type custom_property_key: str
         :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
@@ -2721,8 +3004,6 @@ class PackageManagersApi:
             business_unit_ids=business_unit_ids,
             created_from=created_from,
             created_to=created_to,
-            updated_from=updated_from,
-            updated_to=updated_to,
             custom_property_key=custom_property_key,
             custom_property_value=custom_property_value,
             _request_auth=_request_auth,
@@ -2753,8 +3034,6 @@ class PackageManagersApi:
         business_unit_ids,
         created_from,
         created_to,
-        updated_from,
-        updated_to,
         custom_property_key,
         custom_property_value,
         _request_auth,
@@ -2833,32 +3112,6 @@ class PackageManagersApi:
                 )
             else:
                 _query_params.append(('created_to', created_to))
-            
-        if updated_from is not None:
-            if isinstance(updated_from, datetime):
-                _query_params.append(
-                    (
-                        'updated_from',
-                        updated_from.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('updated_from', updated_from))
-            
-        if updated_to is not None:
-            if isinstance(updated_to, datetime):
-                _query_params.append(
-                    (
-                        'updated_to',
-                        updated_to.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('updated_to', updated_to))
             
         if custom_property_key is not None:
             

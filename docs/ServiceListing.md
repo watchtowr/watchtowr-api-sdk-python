@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **service_types** | [**List[ServiceType]**](ServiceType.md) | Service types | 
 **business_units** | [**List[ClientBusinessUnit]**](ClientBusinessUnit.md) | Business Units | 
 **is_concerning** | **bool** | Whether the discovered network service is concerning | 
+**suppressed** | **bool** | Whether the service is suppressed | 
+**suppressed_at** | **datetime** | Suppressed at timestamp | [optional] 
 
 ## Example
 

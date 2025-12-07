@@ -62,6 +62,13 @@ class TestDomainsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_asset_domain_changelog(self) -> None:
+        """Test case for get_asset_domain_changelog
+
+        Get Domain Changelog
+        """
+        pass
+
     def test_get_asset_domain_details(self) -> None:
         """Test case for get_asset_domain_details
 

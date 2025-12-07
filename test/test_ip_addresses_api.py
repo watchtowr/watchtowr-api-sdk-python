@@ -62,6 +62,13 @@ class TestIPAddressesApi(unittest.TestCase):
         """
         pass
 
+    def test_get_asset_ip_changelog(self) -> None:
+        """Test case for get_asset_ip_changelog
+
+        Get IP Address Changelog
+        """
+        pass
+
     def test_get_asset_ip_details(self) -> None:
         """Test case for get_asset_ip_details
 

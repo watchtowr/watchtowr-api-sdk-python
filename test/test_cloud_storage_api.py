@@ -62,6 +62,13 @@ class TestCloudStorageApi(unittest.TestCase):
         """
         pass
 
+    def test_get_asset_cloud_storage_changelog(self) -> None:
+        """Test case for get_asset_cloud_storage_changelog
+
+        Get Cloud Storage Changelog
+        """
+        pass
+
     def test_get_asset_cloud_storage_details(self) -> None:
         """Test case for get_asset_cloud_storage_details
 

@@ -45,7 +45,8 @@ class TestUserDetailData(unittest.TestCase):
                     office_phone_number = '+65XXXXXX12', 
                     created_at = '2023-01-01T00:00Z', 
                     locked = False, 
-                    role = watchtowr_api_sdk.models.role.role(), )
+                    role = watchtowr_api_sdk.models.role.role(), 
+                    business_units = [{"id":1,"name":"IT Department"},{"id":2,"name":"Security Team"}], )
             )
         else:
             return UserDetailData(
@@ -58,7 +59,8 @@ class TestUserDetailData(unittest.TestCase):
                     office_phone_number = '+65XXXXXX12', 
                     created_at = '2023-01-01T00:00Z', 
                     locked = False, 
-                    role = watchtowr_api_sdk.models.role.role(), ),
+                    role = watchtowr_api_sdk.models.role.role(), 
+                    business_units = [{"id":1,"name":"IT Department"},{"id":2,"name":"Security Team"}], ),
         )
         """
 

@@ -58,6 +58,7 @@ class PointsOfInterestApi:
         end_date: Annotated[Optional[datetime], Field(description="Filter points of interest by end date.")] = None,
         asset_statuses: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of asset statuses.")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of business unit IDs.")] = None,
+        suppression_filter: Annotated[Optional[StrictStr], Field(description="Filter points of interest by suppression status.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -103,6 +104,8 @@ class PointsOfInterestApi:
         :type asset_statuses: str
         :param business_unit_ids: Filter points of interest by a comma separated list of business unit IDs.
         :type business_unit_ids: str
+        :param suppression_filter: Filter points of interest by suppression status.
+        :type suppression_filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -140,6 +143,7 @@ class PointsOfInterestApi:
             end_date=end_date,
             asset_statuses=asset_statuses,
             business_unit_ids=business_unit_ids,
+            suppression_filter=suppression_filter,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -178,6 +182,7 @@ class PointsOfInterestApi:
         end_date: Annotated[Optional[datetime], Field(description="Filter points of interest by end date.")] = None,
         asset_statuses: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of asset statuses.")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of business unit IDs.")] = None,
+        suppression_filter: Annotated[Optional[StrictStr], Field(description="Filter points of interest by suppression status.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -223,6 +228,8 @@ class PointsOfInterestApi:
         :type asset_statuses: str
         :param business_unit_ids: Filter points of interest by a comma separated list of business unit IDs.
         :type business_unit_ids: str
+        :param suppression_filter: Filter points of interest by suppression status.
+        :type suppression_filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -260,6 +267,7 @@ class PointsOfInterestApi:
             end_date=end_date,
             asset_statuses=asset_statuses,
             business_unit_ids=business_unit_ids,
+            suppression_filter=suppression_filter,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -298,6 +306,7 @@ class PointsOfInterestApi:
         end_date: Annotated[Optional[datetime], Field(description="Filter points of interest by end date.")] = None,
         asset_statuses: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of asset statuses.")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of business unit IDs.")] = None,
+        suppression_filter: Annotated[Optional[StrictStr], Field(description="Filter points of interest by suppression status.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -343,6 +352,8 @@ class PointsOfInterestApi:
         :type asset_statuses: str
         :param business_unit_ids: Filter points of interest by a comma separated list of business unit IDs.
         :type business_unit_ids: str
+        :param suppression_filter: Filter points of interest by suppression status.
+        :type suppression_filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -380,6 +391,7 @@ class PointsOfInterestApi:
             end_date=end_date,
             asset_statuses=asset_statuses,
             business_unit_ids=business_unit_ids,
+            suppression_filter=suppression_filter,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -413,6 +425,7 @@ class PointsOfInterestApi:
         end_date,
         asset_statuses,
         business_unit_ids,
+        suppression_filter,
         _request_auth,
         _content_type,
         _headers,
@@ -544,6 +557,10 @@ class PointsOfInterestApi:
         if business_unit_ids is not None:
             
             _query_params.append(('businessUnitIds', business_unit_ids))
+            
+        if suppression_filter is not None:
+            
+            _query_params.append(('suppressionFilter', suppression_filter))
             
         # process the header parameters
         # process the form parameters

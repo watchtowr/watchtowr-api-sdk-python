@@ -62,6 +62,13 @@ class TestSaaSPlatformsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_asset_saas_platform_changelog(self) -> None:
+        """Test case for get_asset_saas_platform_changelog
+
+        Get SaaS Platform Changelog
+        """
+        pass
+
     def test_get_asset_saas_platform_details(self) -> None:
         """Test case for get_asset_saas_platform_details
 

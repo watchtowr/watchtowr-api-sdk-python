@@ -62,6 +62,13 @@ class TestSubdomainsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_asset_subdomain_changelog(self) -> None:
+        """Test case for get_asset_subdomain_changelog
+
+        Get Subdomain Changelog
+        """
+        pass
+
     def test_get_asset_subdomain_details(self) -> None:
         """Test case for get_asset_subdomain_details
 

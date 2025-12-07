@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_list_points_of_interest**
-> PaginatedPointOfInterest get_list_points_of_interest(page=page, page_size=page_size, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, discovered_date_order=discovered_date_order, search=search, types=types, has_finding=has_finding, start_date=start_date, end_date=end_date, asset_statuses=asset_statuses, business_unit_ids=business_unit_ids)
+> PaginatedPointOfInterest get_list_points_of_interest(page=page, page_size=page_size, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, discovered_date_order=discovered_date_order, search=search, types=types, has_finding=has_finding, start_date=start_date, end_date=end_date, asset_statuses=asset_statuses, business_unit_ids=business_unit_ids, suppression_filter=suppression_filter)
 
 List Points of Interest
 
@@ -58,10 +58,11 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     end_date = '2013-10-20T19:20:30+01:00' # datetime | Filter points of interest by end date. (optional)
     asset_statuses = 'verified,Unregistered,Parked,Incorrect Identification,pending,VerifiedOutOfScope,VerifiedReducedAttack,Tracked,CDN,Hanging Cloud IP,VerifiedHoneypot,Third Party' # str | Filter points of interest by a comma separated list of asset statuses. (optional)
     business_unit_ids = '1,2,3' # str | Filter points of interest by a comma separated list of business unit IDs. (optional)
+    suppression_filter = 'non-suppressed' # str | Filter points of interest by suppression status. (optional)
 
     try:
         # List Points of Interest
-        api_response = api_instance.get_list_points_of_interest(page=page, page_size=page_size, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, discovered_date_order=discovered_date_order, search=search, types=types, has_finding=has_finding, start_date=start_date, end_date=end_date, asset_statuses=asset_statuses, business_unit_ids=business_unit_ids)
+        api_response = api_instance.get_list_points_of_interest(page=page, page_size=page_size, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, discovered_date_order=discovered_date_order, search=search, types=types, has_finding=has_finding, start_date=start_date, end_date=end_date, asset_statuses=asset_statuses, business_unit_ids=business_unit_ids, suppression_filter=suppression_filter)
         print("The response of PointsOfInterestApi->get_list_points_of_interest:\n")
         pprint(api_response)
     except Exception as e:
@@ -89,6 +90,7 @@ Name | Type | Description  | Notes
  **end_date** | **datetime**| Filter points of interest by end date. | [optional] 
  **asset_statuses** | **str**| Filter points of interest by a comma separated list of asset statuses. | [optional] 
  **business_unit_ids** | **str**| Filter points of interest by a comma separated list of business unit IDs. | [optional] 
+ **suppression_filter** | **str**| Filter points of interest by suppression status. | [optional] 
 
 ### Return type
 

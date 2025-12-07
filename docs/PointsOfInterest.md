@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **business_units** | [**List[ClientBusinessUnit]**](ClientBusinessUnit.md) | Business unit | 
 **last_seen** | **datetime** | Last seen at | [optional] 
 **is_concerning** | **bool** | Whether the Point of Interest is concerning | 
+**suppressed** | **bool** | Whether the Point of Interest is suppressed | 
+**suppressed_at** | **datetime** | Suppressed at timestamp | [optional] 
 
 ## Example
 

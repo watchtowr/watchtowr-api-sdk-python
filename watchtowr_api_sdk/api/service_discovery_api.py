@@ -63,6 +63,7 @@ class ServiceDiscoveryApi:
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated business unit IDs they're related to.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort services.")] = None,
         order_by: Annotated[Optional[StrictStr], Field(description="Order services.")] = None,
+        suppression_filter: Annotated[Optional[StrictStr], Field(description="Filter services by suppression status.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -118,6 +119,8 @@ class ServiceDiscoveryApi:
         :type sort_by: str
         :param order_by: Order services.
         :type order_by: str
+        :param suppression_filter: Filter services by suppression status.
+        :type suppression_filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -160,6 +163,7 @@ class ServiceDiscoveryApi:
             business_unit_ids=business_unit_ids,
             sort_by=sort_by,
             order_by=order_by,
+            suppression_filter=suppression_filter,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -203,6 +207,7 @@ class ServiceDiscoveryApi:
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated business unit IDs they're related to.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort services.")] = None,
         order_by: Annotated[Optional[StrictStr], Field(description="Order services.")] = None,
+        suppression_filter: Annotated[Optional[StrictStr], Field(description="Filter services by suppression status.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -258,6 +263,8 @@ class ServiceDiscoveryApi:
         :type sort_by: str
         :param order_by: Order services.
         :type order_by: str
+        :param suppression_filter: Filter services by suppression status.
+        :type suppression_filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -300,6 +307,7 @@ class ServiceDiscoveryApi:
             business_unit_ids=business_unit_ids,
             sort_by=sort_by,
             order_by=order_by,
+            suppression_filter=suppression_filter,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -343,6 +351,7 @@ class ServiceDiscoveryApi:
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated business unit IDs they're related to.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort services.")] = None,
         order_by: Annotated[Optional[StrictStr], Field(description="Order services.")] = None,
+        suppression_filter: Annotated[Optional[StrictStr], Field(description="Filter services by suppression status.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -398,6 +407,8 @@ class ServiceDiscoveryApi:
         :type sort_by: str
         :param order_by: Order services.
         :type order_by: str
+        :param suppression_filter: Filter services by suppression status.
+        :type suppression_filter: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -440,6 +451,7 @@ class ServiceDiscoveryApi:
             business_unit_ids=business_unit_ids,
             sort_by=sort_by,
             order_by=order_by,
+            suppression_filter=suppression_filter,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -478,6 +490,7 @@ class ServiceDiscoveryApi:
         business_unit_ids,
         sort_by,
         order_by,
+        suppression_filter,
         _request_auth,
         _content_type,
         _headers,
@@ -611,6 +624,10 @@ class ServiceDiscoveryApi:
         if order_by is not None:
             
             _query_params.append(('orderBy', order_by))
+            
+        if suppression_filter is not None:
+            
+            _query_params.append(('suppressionFilter', suppression_filter))
             
         # process the header parameters
         # process the form parameters

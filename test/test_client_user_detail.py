@@ -44,7 +44,8 @@ class TestClientUserDetail(unittest.TestCase):
                 office_phone_number = '+65XXXXXX12',
                 created_at = '2023-01-01T00:00Z',
                 locked = False,
-                role = None
+                role = None,
+                business_units = [{"id":1,"name":"IT Department"},{"id":2,"name":"Security Team"}]
             )
         else:
             return ClientUserDetail(
@@ -57,6 +58,7 @@ class TestClientUserDetail(unittest.TestCase):
                 created_at = '2023-01-01T00:00Z',
                 locked = False,
                 role = None,
+                business_units = [{"id":1,"name":"IT Department"},{"id":2,"name":"Security Team"}],
         )
         """
 

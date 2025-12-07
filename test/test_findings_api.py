@@ -118,6 +118,13 @@ class TestFindingsApi(unittest.TestCase):
         """
         pass
 
+    def test_update_finding_state(self) -> None:
+        """Test case for update_finding_state
+
+        Update Finding State
+        """
+        pass
+
     def test_update_finding_status(self) -> None:
         """Test case for update_finding_status
 

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_list_service_listing**
-> PaginatedServiceListing get_list_service_listing(page=page, page_size=page_size, include_closed_port=include_closed_port, include_no_service=include_no_service, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, search=search, countries=countries, technology=technology, ports=ports, port_numbers=port_numbers, port_types=port_types, port_services=port_services, service_type_ids=service_type_ids, business_unit_ids=business_unit_ids, sort_by=sort_by, order_by=order_by)
+> PaginatedServiceListing get_list_service_listing(page=page, page_size=page_size, include_closed_port=include_closed_port, include_no_service=include_no_service, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, search=search, countries=countries, technology=technology, ports=ports, port_numbers=port_numbers, port_types=port_types, port_services=port_services, service_type_ids=service_type_ids, business_unit_ids=business_unit_ids, sort_by=sort_by, order_by=order_by, suppression_filter=suppression_filter)
 
 List Services
 
@@ -63,10 +63,11 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     business_unit_ids = '1,2,3' # str | Filter services by a list of comma separated business unit IDs they're related to. (optional)
     sort_by = 'last_seen' # str | Sort services. (optional)
     order_by = 'DESC' # str | Order services. (optional)
+    suppression_filter = 'non-suppressed' # str | Filter services by suppression status. (optional)
 
     try:
         # List Services
-        api_response = api_instance.get_list_service_listing(page=page, page_size=page_size, include_closed_port=include_closed_port, include_no_service=include_no_service, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, search=search, countries=countries, technology=technology, ports=ports, port_numbers=port_numbers, port_types=port_types, port_services=port_services, service_type_ids=service_type_ids, business_unit_ids=business_unit_ids, sort_by=sort_by, order_by=order_by)
+        api_response = api_instance.get_list_service_listing(page=page, page_size=page_size, include_closed_port=include_closed_port, include_no_service=include_no_service, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, search=search, countries=countries, technology=technology, ports=ports, port_numbers=port_numbers, port_types=port_types, port_services=port_services, service_type_ids=service_type_ids, business_unit_ids=business_unit_ids, sort_by=sort_by, order_by=order_by, suppression_filter=suppression_filter)
         print("The response of ServiceDiscoveryApi->get_list_service_listing:\n")
         pprint(api_response)
     except Exception as e:
@@ -99,6 +100,7 @@ Name | Type | Description  | Notes
  **business_unit_ids** | **str**| Filter services by a list of comma separated business unit IDs they&#39;re related to. | [optional] 
  **sort_by** | **str**| Sort services. | [optional] 
  **order_by** | **str**| Order services. | [optional] 
+ **suppression_filter** | **str**| Filter services by suppression status. | [optional] 
 
 ### Return type
 

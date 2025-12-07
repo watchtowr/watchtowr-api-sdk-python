@@ -79,7 +79,10 @@ docs/ClientRepositoryData.md
 docs/ClientSaasPlatform.md
 docs/ClientSaasPlatformData.md
 docs/ClientSeedData.md
+docs/ClientSeedDataBusinessUnit.md
 docs/ClientSeedDataData.md
+docs/ClientSeedDataListItem.md
+docs/ClientSeedDataUser.md
 docs/ClientServiceInformationResponseData.md
 docs/ClientSourceIpsAddresses.md
 docs/ClientSubdomain.md
@@ -87,6 +90,7 @@ docs/ClientSubdomainData.md
 docs/ClientSuspiciousDomainData.md
 docs/ClientUser.md
 docs/ClientUserDetail.md
+docs/ClientUserDetailBusinessUnitsInner.md
 docs/CloudIntegrationAssetsApi.md
 docs/CloudStorageApi.md
 docs/ContainersApi.md
@@ -153,6 +157,7 @@ docs/PaginatedClientPendingDomain.md
 docs/PaginatedClientPort.md
 docs/PaginatedClientRepository.md
 docs/PaginatedClientSaasPlatform.md
+docs/PaginatedClientSeedData.md
 docs/PaginatedClientSubdomain.md
 docs/PaginatedHunts.md
 docs/PaginatedPointOfInterest.md
@@ -194,6 +199,7 @@ docs/UpdateClientBusinessUnitDto.md
 docs/UpdateClientCloudAssetStatusDto.md
 docs/UpdateClientCustomPropertyDto.md
 docs/UpdateClientEngineSettingsDto.md
+docs/UpdateClientFindingStateRequestBody.md
 docs/UpdateClientFindingStatusRequestBody.md
 docs/UpdateClientLegacyAssetStatusDto.md
 docs/UpdateClientNextGenAssetStatusDto.md
@@ -295,7 +301,10 @@ test/test_client_repository_data.py
 test/test_client_saas_platform.py
 test/test_client_saas_platform_data.py
 test/test_client_seed_data.py
+test/test_client_seed_data_business_unit.py
 test/test_client_seed_data_data.py
+test/test_client_seed_data_list_item.py
+test/test_client_seed_data_user.py
 test/test_client_service_information_response_data.py
 test/test_client_source_ips_addresses.py
 test/test_client_subdomain.py
@@ -303,6 +312,7 @@ test/test_client_subdomain_data.py
 test/test_client_suspicious_domain_data.py
 test/test_client_user.py
 test/test_client_user_detail.py
+test/test_client_user_detail_business_units_inner.py
 test/test_cloud_integration_assets_api.py
 test/test_cloud_storage_api.py
 test/test_containers_api.py
@@ -369,6 +379,7 @@ test/test_paginated_client_pending_domain.py
 test/test_paginated_client_port.py
 test/test_paginated_client_repository.py
 test/test_paginated_client_saas_platform.py
+test/test_paginated_client_seed_data.py
 test/test_paginated_client_subdomain.py
 test/test_paginated_hunts.py
 test/test_paginated_point_of_interest.py
@@ -410,6 +421,7 @@ test/test_update_client_business_unit_dto.py
 test/test_update_client_cloud_asset_status_dto.py
 test/test_update_client_custom_property_dto.py
 test/test_update_client_engine_settings_dto.py
+test/test_update_client_finding_state_request_body.py
 test/test_update_client_finding_status_request_body.py
 test/test_update_client_legacy_asset_status_dto.py
 test/test_update_client_next_gen_asset_status_dto.py
@@ -537,7 +549,10 @@ watchtowr_api_sdk/models/client_repository_data.py
 watchtowr_api_sdk/models/client_saas_platform.py
 watchtowr_api_sdk/models/client_saas_platform_data.py
 watchtowr_api_sdk/models/client_seed_data.py
+watchtowr_api_sdk/models/client_seed_data_business_unit.py
 watchtowr_api_sdk/models/client_seed_data_data.py
+watchtowr_api_sdk/models/client_seed_data_list_item.py
+watchtowr_api_sdk/models/client_seed_data_user.py
 watchtowr_api_sdk/models/client_service_information_response_data.py
 watchtowr_api_sdk/models/client_source_ips_addresses.py
 watchtowr_api_sdk/models/client_subdomain.py
@@ -545,6 +560,7 @@ watchtowr_api_sdk/models/client_subdomain_data.py
 watchtowr_api_sdk/models/client_suspicious_domain_data.py
 watchtowr_api_sdk/models/client_user.py
 watchtowr_api_sdk/models/client_user_detail.py
+watchtowr_api_sdk/models/client_user_detail_business_units_inner.py
 watchtowr_api_sdk/models/create_client_business_unit_dto.py
 watchtowr_api_sdk/models/create_client_business_unit_rule_dto.py
 watchtowr_api_sdk/models/create_client_custom_property_dto.py
@@ -598,6 +614,7 @@ watchtowr_api_sdk/models/paginated_client_pending_domain.py
 watchtowr_api_sdk/models/paginated_client_port.py
 watchtowr_api_sdk/models/paginated_client_repository.py
 watchtowr_api_sdk/models/paginated_client_saas_platform.py
+watchtowr_api_sdk/models/paginated_client_seed_data.py
 watchtowr_api_sdk/models/paginated_client_subdomain.py
 watchtowr_api_sdk/models/paginated_hunts.py
 watchtowr_api_sdk/models/paginated_point_of_interest.py
@@ -628,6 +645,7 @@ watchtowr_api_sdk/models/update_client_business_unit_dto.py
 watchtowr_api_sdk/models/update_client_cloud_asset_status_dto.py
 watchtowr_api_sdk/models/update_client_custom_property_dto.py
 watchtowr_api_sdk/models/update_client_engine_settings_dto.py
+watchtowr_api_sdk/models/update_client_finding_state_request_body.py
 watchtowr_api_sdk/models/update_client_finding_status_request_body.py
 watchtowr_api_sdk/models/update_client_legacy_asset_status_dto.py
 watchtowr_api_sdk/models/update_client_next_gen_asset_status_dto.py

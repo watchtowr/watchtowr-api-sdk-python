@@ -69,6 +69,7 @@ As a long-term measure to ensure that the security impact of breach credentials 
                 cvssv3_score = 8.1,
                 cvssv3_metrics = 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N/E:F/RL:W/RC:C',
                 status = 'confirmed',
+                state = 'Uninvestigated',
                 created_at = 2022-02-13T02:10:00.000000Z,
                 affected = None,
                 cve_id = 'CVE-2023-38180',
@@ -135,6 +136,7 @@ As a long-term measure to ensure that the security impact of breach credentials 
                 cvssv3_score = 8.1,
                 cvssv3_metrics = 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N/E:F/RL:W/RC:C',
                 status = 'confirmed',
+                state = 'Uninvestigated',
                 created_at = 2022-02-13T02:10:00.000000Z,
                 affected = None,
                 finding_retests = [

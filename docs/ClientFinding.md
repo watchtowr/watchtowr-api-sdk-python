@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **cvssv3_score** | **float** |  | 
 **cvssv3_metrics** | **str** |  | 
 **status** | **str** |  | 
+**state** | **str** | Different to status, this is about tracking how the finding is being handled | 
 **created_at** | **object** |  | 
 **affected** | **object** |  | 
 **cve_id** | **str** |  | [optional] 

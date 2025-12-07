@@ -81,8 +81,8 @@ class HuntDetail(BaseModel):
     @field_validator('status')
     def status_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['received', 'in-progress', 'completed', 'not-covered']):
-            raise ValueError("must be one of enum values ('received', 'in-progress', 'completed', 'not-covered')")
+        if value not in set(['received', 'in-progress', 'completed', 'not-covered', 'outdated']):
+            raise ValueError("must be one of enum values ('received', 'in-progress', 'completed', 'not-covered', 'outdated')")
         return value
 
     model_config = ConfigDict(

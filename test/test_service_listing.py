@@ -64,7 +64,9 @@ class TestServiceListing(unittest.TestCase):
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],
-                is_concerning = True
+                is_concerning = True,
+                suppressed = True,
+                suppressed_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
             )
         else:
             return ServiceListing(
@@ -91,6 +93,7 @@ class TestServiceListing(unittest.TestCase):
                         name = 'Singapore Business Unit', )
                     ],
                 is_concerning = True,
+                suppressed = True,
         )
         """
 

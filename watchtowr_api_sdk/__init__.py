@@ -128,7 +128,10 @@ __all__ = [
     "ClientSaasPlatform",
     "ClientSaasPlatformData",
     "ClientSeedData",
+    "ClientSeedDataBusinessUnit",
     "ClientSeedDataData",
+    "ClientSeedDataListItem",
+    "ClientSeedDataUser",
     "ClientServiceInformationResponseData",
     "ClientSourceIpsAddresses",
     "ClientSubdomain",
@@ -136,6 +139,7 @@ __all__ = [
     "ClientSuspiciousDomainData",
     "ClientUser",
     "ClientUserDetail",
+    "ClientUserDetailBusinessUnitsInner",
     "CreateClientBusinessUnitDto",
     "CreateClientBusinessUnitRuleDto",
     "CreateClientCustomPropertyDto",
@@ -189,6 +193,7 @@ __all__ = [
     "PaginatedClientPort",
     "PaginatedClientRepository",
     "PaginatedClientSaasPlatform",
+    "PaginatedClientSeedData",
     "PaginatedClientSubdomain",
     "PaginatedHunts",
     "PaginatedPointOfInterest",
@@ -219,6 +224,7 @@ __all__ = [
     "UpdateClientCloudAssetStatusDto",
     "UpdateClientCustomPropertyDto",
     "UpdateClientEngineSettingsDto",
+    "UpdateClientFindingStateRequestBody",
     "UpdateClientFindingStatusRequestBody",
     "UpdateClientLegacyAssetStatusDto",
     "UpdateClientNextGenAssetStatusDto",
@@ -353,7 +359,10 @@ from watchtowr_api_sdk.models.client_repository_data import ClientRepositoryData
 from watchtowr_api_sdk.models.client_saas_platform import ClientSaasPlatform as ClientSaasPlatform
 from watchtowr_api_sdk.models.client_saas_platform_data import ClientSaasPlatformData as ClientSaasPlatformData
 from watchtowr_api_sdk.models.client_seed_data import ClientSeedData as ClientSeedData
+from watchtowr_api_sdk.models.client_seed_data_business_unit import ClientSeedDataBusinessUnit as ClientSeedDataBusinessUnit
 from watchtowr_api_sdk.models.client_seed_data_data import ClientSeedDataData as ClientSeedDataData
+from watchtowr_api_sdk.models.client_seed_data_list_item import ClientSeedDataListItem as ClientSeedDataListItem
+from watchtowr_api_sdk.models.client_seed_data_user import ClientSeedDataUser as ClientSeedDataUser
 from watchtowr_api_sdk.models.client_service_information_response_data import ClientServiceInformationResponseData as ClientServiceInformationResponseData
 from watchtowr_api_sdk.models.client_source_ips_addresses import ClientSourceIpsAddresses as ClientSourceIpsAddresses
 from watchtowr_api_sdk.models.client_subdomain import ClientSubdomain as ClientSubdomain
@@ -361,6 +370,7 @@ from watchtowr_api_sdk.models.client_subdomain_data import ClientSubdomainData a
 from watchtowr_api_sdk.models.client_suspicious_domain_data import ClientSuspiciousDomainData as ClientSuspiciousDomainData
 from watchtowr_api_sdk.models.client_user import ClientUser as ClientUser
 from watchtowr_api_sdk.models.client_user_detail import ClientUserDetail as ClientUserDetail
+from watchtowr_api_sdk.models.client_user_detail_business_units_inner import ClientUserDetailBusinessUnitsInner as ClientUserDetailBusinessUnitsInner
 from watchtowr_api_sdk.models.create_client_business_unit_dto import CreateClientBusinessUnitDto as CreateClientBusinessUnitDto
 from watchtowr_api_sdk.models.create_client_business_unit_rule_dto import CreateClientBusinessUnitRuleDto as CreateClientBusinessUnitRuleDto
 from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto as CreateClientCustomPropertyDto
@@ -414,6 +424,7 @@ from watchtowr_api_sdk.models.paginated_client_pending_domain import PaginatedCl
 from watchtowr_api_sdk.models.paginated_client_port import PaginatedClientPort as PaginatedClientPort
 from watchtowr_api_sdk.models.paginated_client_repository import PaginatedClientRepository as PaginatedClientRepository
 from watchtowr_api_sdk.models.paginated_client_saas_platform import PaginatedClientSaasPlatform as PaginatedClientSaasPlatform
+from watchtowr_api_sdk.models.paginated_client_seed_data import PaginatedClientSeedData as PaginatedClientSeedData
 from watchtowr_api_sdk.models.paginated_client_subdomain import PaginatedClientSubdomain as PaginatedClientSubdomain
 from watchtowr_api_sdk.models.paginated_hunts import PaginatedHunts as PaginatedHunts
 from watchtowr_api_sdk.models.paginated_point_of_interest import PaginatedPointOfInterest as PaginatedPointOfInterest
@@ -444,6 +455,7 @@ from watchtowr_api_sdk.models.update_client_business_unit_dto import UpdateClien
 from watchtowr_api_sdk.models.update_client_cloud_asset_status_dto import UpdateClientCloudAssetStatusDto as UpdateClientCloudAssetStatusDto
 from watchtowr_api_sdk.models.update_client_custom_property_dto import UpdateClientCustomPropertyDto as UpdateClientCustomPropertyDto
 from watchtowr_api_sdk.models.update_client_engine_settings_dto import UpdateClientEngineSettingsDto as UpdateClientEngineSettingsDto
+from watchtowr_api_sdk.models.update_client_finding_state_request_body import UpdateClientFindingStateRequestBody as UpdateClientFindingStateRequestBody
 from watchtowr_api_sdk.models.update_client_finding_status_request_body import UpdateClientFindingStatusRequestBody as UpdateClientFindingStatusRequestBody
 from watchtowr_api_sdk.models.update_client_legacy_asset_status_dto import UpdateClientLegacyAssetStatusDto as UpdateClientLegacyAssetStatusDto
 from watchtowr_api_sdk.models.update_client_next_gen_asset_status_dto import UpdateClientNextGenAssetStatusDto as UpdateClientNextGenAssetStatusDto

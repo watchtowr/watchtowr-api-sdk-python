@@ -37,8 +37,8 @@ class UpdateClientBusinessUnitDto(BaseModel):
     @field_validator('type')
     def type_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['BRAND', 'DEPARTMENT', 'LEGAL_ENTITY', 'M_A', 'THIRD_PARTY', 'USER_DEFINED']):
-            raise ValueError("must be one of enum values ('BRAND', 'DEPARTMENT', 'LEGAL_ENTITY', 'M_A', 'THIRD_PARTY', 'USER_DEFINED')")
+        if value not in set(['BRAND', 'DEPARTMENT', 'LEGAL_ENTITY', 'LEGAL_ENTITY_ORG_STRUCTURE', 'M_A', 'THIRD_PARTY', 'USER_DEFINED']):
+            raise ValueError("must be one of enum values ('BRAND', 'DEPARTMENT', 'LEGAL_ENTITY', 'LEGAL_ENTITY_ORG_STRUCTURE', 'M_A', 'THIRD_PARTY', 'USER_DEFINED')")
         return value
 
     model_config = ConfigDict(

@@ -46,7 +46,9 @@ class ServiceListing(BaseModel):
     service_types: List[ServiceType] = Field(description="Service types", alias="serviceTypes")
     business_units: List[ClientBusinessUnit] = Field(description="Business Units", alias="businessUnits")
     is_concerning: StrictBool = Field(description="Whether the discovered network service is concerning", alias="isConcerning")
-    __properties: ClassVar[List[str]] = ["id", "portId", "ip", "hostname", "port", "type", "country", "banner", "service", "source", "lastSeen", "technologies", "serviceTypes", "businessUnits", "isConcerning"]
+    suppressed: StrictBool = Field(description="Whether the service is suppressed")
+    suppressed_at: Optional[datetime] = Field(default=None, description="Suppressed at timestamp", alias="suppressedAt")
+    __properties: ClassVar[List[str]] = ["id", "portId", "ip", "hostname", "port", "type", "country", "banner", "service", "source", "lastSeen", "technologies", "serviceTypes", "businessUnits", "isConcerning", "suppressed", "suppressedAt"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -118,6 +120,11 @@ class ServiceListing(BaseModel):
         if self.hostname is None and "hostname" in self.model_fields_set:
             _dict['hostname'] = None
 
+        # set to None if suppressed_at (nullable) is None
+        # and model_fields_set contains the field
+        if self.suppressed_at is None and "suppressed_at" in self.model_fields_set:
+            _dict['suppressedAt'] = None
+
         return _dict
 
     @classmethod
@@ -149,7 +156,9 @@ class ServiceListing(BaseModel):
             "technologies": [Technology.from_dict(_item) for _item in obj["technologies"]] if obj.get("technologies") is not None else None,
             "serviceTypes": [ServiceType.from_dict(_item) for _item in obj["serviceTypes"]] if obj.get("serviceTypes") is not None else None,
             "businessUnits": [ClientBusinessUnit.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None,
-            "isConcerning": obj.get("isConcerning")
+            "isConcerning": obj.get("isConcerning"),
+            "suppressed": obj.get("suppressed"),
+            "suppressedAt": obj.get("suppressedAt")
         })
         return _obj
 

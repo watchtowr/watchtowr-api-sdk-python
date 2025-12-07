@@ -62,6 +62,13 @@ class TestPackageManagersApi(unittest.TestCase):
         """
         pass
 
+    def test_get_asset_package_manager_changelog(self) -> None:
+        """Test case for get_asset_package_manager_changelog
+
+        Get Package Manager Changelog
+        """
+        pass
+
     def test_get_asset_package_manager_details(self) -> None:
         """Test case for get_asset_package_manager_details
 

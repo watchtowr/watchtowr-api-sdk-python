@@ -44,6 +44,7 @@ class ClientFinding(BaseModel):
     cvssv3_score: StrictFloat
     cvssv3_metrics: StrictStr
     status: StrictStr
+    state: StrictStr = Field(description="Different to status, this is about tracking how the finding is being handled")
     created_at: Dict[str, Any]
     affected: Dict[str, Any]
     cve_id: Optional[StrictStr] = None
@@ -57,7 +58,7 @@ class ClientFinding(BaseModel):
     criticality: StrictStr
     custom_properties: List[ClientCustomProperty] = Field(alias="customProperties")
     detection_rules: List[Dict[str, Any]]
-    __properties: ClassVar[List[str]] = ["id", "title", "description", "impact", "finding_impact", "tags", "evidence", "recommendation", "severity", "cvssv3_score", "cvssv3_metrics", "status", "created_at", "affected", "cve_id", "epss_score", "retest", "finding_retests", "assigned_user", "last_seen", "last_status_updated_at", "age", "criticality", "customProperties", "detection_rules"]
+    __properties: ClassVar[List[str]] = ["id", "title", "description", "impact", "finding_impact", "tags", "evidence", "recommendation", "severity", "cvssv3_score", "cvssv3_metrics", "status", "state", "created_at", "affected", "cve_id", "epss_score", "retest", "finding_retests", "assigned_user", "last_seen", "last_status_updated_at", "age", "criticality", "customProperties", "detection_rules"]
 
     @field_validator('severity')
     def severity_validate_enum(cls, value):
@@ -71,6 +72,13 @@ class ClientFinding(BaseModel):
         """Validates the enum"""
         if value not in set(['confirmed', 'unconfirmed', 'remediated', 'risk-accepted', 'closed', 'asset-no-longer-tracked']):
             raise ValueError("must be one of enum values ('confirmed', 'unconfirmed', 'remediated', 'risk-accepted', 'closed', 'asset-no-longer-tracked')")
+        return value
+
+    @field_validator('state')
+    def state_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['Uninvestigated', 'In Progress', 'Completed']):
+            raise ValueError("must be one of enum values ('Uninvestigated', 'In Progress', 'Completed')")
         return value
 
     model_config = ConfigDict(
@@ -168,6 +176,7 @@ class ClientFinding(BaseModel):
             "cvssv3_score": obj.get("cvssv3_score"),
             "cvssv3_metrics": obj.get("cvssv3_metrics"),
             "status": obj.get("status"),
+            "state": obj.get("state"),
             "created_at": obj.get("created_at"),
             "affected": obj.get("affected"),
             "cve_id": obj.get("cve_id"),

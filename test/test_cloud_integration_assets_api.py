@@ -62,6 +62,13 @@ class TestCloudIntegrationAssetsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_asset_cloud_asset_changelog(self) -> None:
+        """Test case for get_asset_cloud_asset_changelog
+
+        Get Cloud Asset Changelog
+        """
+        pass
+
     def test_get_asset_cloud_asset_details(self) -> None:
         """Test case for get_asset_cloud_asset_details
 
