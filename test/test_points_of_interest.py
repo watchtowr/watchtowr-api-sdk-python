@@ -53,7 +53,8 @@ class TestPointsOfInterest(unittest.TestCase):
                 last_seen = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 is_concerning = True,
                 suppressed = True,
-                suppressed_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
+                suppressed_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                finding_id = 123
             )
         else:
             return PointsOfInterest(

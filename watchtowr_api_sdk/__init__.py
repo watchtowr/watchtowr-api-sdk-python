@@ -203,6 +203,7 @@ __all__ = [
     "PaginatedUsers",
     "Pagination",
     "PointsOfInterest",
+    "PointsOfInterestData",
     "RemoveClientCustomPropertyResponseDto",
     "RequiredActionsDto",
     "Retest",
@@ -434,6 +435,7 @@ from watchtowr_api_sdk.models.paginated_suspicious_domain import PaginatedSuspic
 from watchtowr_api_sdk.models.paginated_users import PaginatedUsers as PaginatedUsers
 from watchtowr_api_sdk.models.pagination import Pagination as Pagination
 from watchtowr_api_sdk.models.points_of_interest import PointsOfInterest as PointsOfInterest
+from watchtowr_api_sdk.models.points_of_interest_data import PointsOfInterestData as PointsOfInterestData
 from watchtowr_api_sdk.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto as RemoveClientCustomPropertyResponseDto
 from watchtowr_api_sdk.models.required_actions_dto import RequiredActionsDto as RequiredActionsDto
 from watchtowr_api_sdk.models.retest import Retest as Retest

@@ -159,6 +159,7 @@ from watchtowr_api_sdk.models.paginated_suspicious_domain import PaginatedSuspic
 from watchtowr_api_sdk.models.paginated_users import PaginatedUsers
 from watchtowr_api_sdk.models.pagination import Pagination
 from watchtowr_api_sdk.models.points_of_interest import PointsOfInterest
+from watchtowr_api_sdk.models.points_of_interest_data import PointsOfInterestData
 from watchtowr_api_sdk.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto
 from watchtowr_api_sdk.models.required_actions_dto import RequiredActionsDto
 from watchtowr_api_sdk.models.retest import Retest

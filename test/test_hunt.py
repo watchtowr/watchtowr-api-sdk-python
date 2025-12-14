@@ -37,7 +37,6 @@ class TestHunt(unittest.TestCase):
         if include_optional:
             return Hunt(
                 id = 1,
-                priority = 'high',
                 type = 'bespoke',
                 created_at = '2023-06-28T02:22:36Z',
                 updated_at = '2023-06-28T02:22:36Z',
@@ -51,7 +50,6 @@ class TestHunt(unittest.TestCase):
         else:
             return Hunt(
                 id = 1,
-                priority = 'high',
                 type = 'bespoke',
                 created_at = '2023-06-28T02:22:36Z',
                 updated_at = '2023-06-28T02:22:36Z',

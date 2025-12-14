@@ -4,8 +4,91 @@ All URIs are relative to *https://your-tenant-id.sg.client.watchtowr.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**convert_poi_to_finding**](PointsOfInterestApi.md#convert_poi_to_finding) | **POST** /api/client/points-of-interest/{id}/convert-to-finding | Convert Point of Interest to Finding
 [**get_list_points_of_interest**](PointsOfInterestApi.md#get_list_points_of_interest) | **GET** /api/client/points-of-interest/list | List Points of Interest
 
+
+# **convert_poi_to_finding**
+> PointsOfInterestData convert_poi_to_finding(id)
+
+Convert Point of Interest to Finding
+
+Convert a Point of Interest to a finding. The POI must exist and not already have a finding associated with it.
+
+### Example
+
+* Bearer (API_TOKEN) Authentication (bearer):
+
+```python
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.points_of_interest_data import PointsOfInterestData
+from watchtowr_api_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = watchtowr_api_sdk.Configuration(
+    host = "https://your-tenant-id.sg.client.watchtowr.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API_TOKEN): bearer
+configuration = watchtowr_api_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = watchtowr_api_sdk.PointsOfInterestApi(api_client)
+    id = 3.4 # float | The ID of the Point of Interest to convert to a finding.
+
+    try:
+        # Convert Point of Interest to Finding
+        api_response = api_instance.convert_poi_to_finding(id)
+        print("The response of PointsOfInterestApi->convert_poi_to_finding:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PointsOfInterestApi->convert_poi_to_finding: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **float**| The ID of the Point of Interest to convert to a finding. | 
+
+### Return type
+
+[**PointsOfInterestData**](PointsOfInterestData.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully converted POI to finding |  -  |
+**400** | Bad Request - POI already has a finding |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden - Business unit access denied |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_list_points_of_interest**
 > PaginatedPointOfInterest get_list_points_of_interest(page=page, page_size=page_size, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, discovered_date_order=discovered_date_order, search=search, types=types, has_finding=has_finding, start_date=start_date, end_date=end_date, asset_statuses=asset_statuses, business_unit_ids=business_unit_ids, suppression_filter=suppression_filter)

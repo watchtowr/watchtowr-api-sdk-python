@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** | ID | 
-**priority** | **str** | Priority | 
 **type** | **str** | Type | 
 **created_at** | **datetime** | Created at | 
 **updated_at** | **datetime** | Updated at | 

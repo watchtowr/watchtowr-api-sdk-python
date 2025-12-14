@@ -39,7 +39,6 @@ class TestPaginatedHunts(unittest.TestCase):
                 data = [
                     watchtowr_api_sdk.models.hunt.Hunt(
                         id = 1, 
-                        priority = 'high', 
                         type = 'bespoke', 
                         created_at = '2023-06-28T02:22:36Z', 
                         updated_at = '2023-06-28T02:22:36Z', 
@@ -58,7 +57,6 @@ class TestPaginatedHunts(unittest.TestCase):
                 data = [
                     watchtowr_api_sdk.models.hunt.Hunt(
                         id = 1, 
-                        priority = 'high', 
                         type = 'bespoke', 
                         created_at = '2023-06-28T02:22:36Z', 
                         updated_at = '2023-06-28T02:22:36Z', 

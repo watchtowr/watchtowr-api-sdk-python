@@ -170,6 +170,7 @@ docs/PendingDomainsApi.md
 docs/PlatformWhitelistingApi.md
 docs/PointsOfInterest.md
 docs/PointsOfInterestApi.md
+docs/PointsOfInterestData.md
 docs/PortsApi.md
 docs/RemoveClientCustomPropertyResponseDto.md
 docs/RepositoriesApi.md
@@ -392,6 +393,7 @@ test/test_pending_domains_api.py
 test/test_platform_whitelisting_api.py
 test/test_points_of_interest.py
 test/test_points_of_interest_api.py
+test/test_points_of_interest_data.py
 test/test_ports_api.py
 test/test_remove_client_custom_property_response_dto.py
 test/test_repositories_api.py
@@ -624,6 +626,7 @@ watchtowr_api_sdk/models/paginated_suspicious_domain.py
 watchtowr_api_sdk/models/paginated_users.py
 watchtowr_api_sdk/models/pagination.py
 watchtowr_api_sdk/models/points_of_interest.py
+watchtowr_api_sdk/models/points_of_interest_data.py
 watchtowr_api_sdk/models/remove_client_custom_property_response_dto.py
 watchtowr_api_sdk/models/required_actions_dto.py
 watchtowr_api_sdk/models/retest.py

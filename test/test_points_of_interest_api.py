@@ -27,6 +27,13 @@ class TestPointsOfInterestApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_convert_poi_to_finding(self) -> None:
+        """Test case for convert_poi_to_finding
+
+        Convert Point of Interest to Finding
+        """
+        pass
+
     def test_get_list_points_of_interest(self) -> None:
         """Test case for get_list_points_of_interest
 

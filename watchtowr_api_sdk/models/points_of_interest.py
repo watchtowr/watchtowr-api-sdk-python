@@ -43,7 +43,8 @@ class PointsOfInterest(BaseModel):
     is_concerning: StrictBool = Field(description="Whether the Point of Interest is concerning", alias="isConcerning")
     suppressed: StrictBool = Field(description="Whether the Point of Interest is suppressed")
     suppressed_at: Optional[datetime] = Field(default=None, description="Suppressed at timestamp", alias="suppressedAt")
-    __properties: ClassVar[List[str]] = ["id", "name", "type", "url", "discoveryToolId", "discoveryDate", "assetId", "assetName", "assetType", "businessUnits", "lastSeen", "isConcerning", "suppressed", "suppressedAt"]
+    finding_id: Optional[StrictFloat] = Field(default=None, description="Finding ID if the POI has been converted to a finding", alias="findingId")
+    __properties: ClassVar[List[str]] = ["id", "name", "type", "url", "discoveryToolId", "discoveryDate", "assetId", "assetName", "assetType", "businessUnits", "lastSeen", "isConcerning", "suppressed", "suppressedAt", "findingId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,6 +97,11 @@ class PointsOfInterest(BaseModel):
         if self.suppressed_at is None and "suppressed_at" in self.model_fields_set:
             _dict['suppressedAt'] = None
 
+        # set to None if finding_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.finding_id is None and "finding_id" in self.model_fields_set:
+            _dict['findingId'] = None
+
         return _dict
 
     @classmethod
@@ -126,7 +132,8 @@ class PointsOfInterest(BaseModel):
             "lastSeen": obj.get("lastSeen"),
             "isConcerning": obj.get("isConcerning"),
             "suppressed": obj.get("suppressed"),
-            "suppressedAt": obj.get("suppressedAt")
+            "suppressedAt": obj.get("suppressedAt"),
+            "findingId": obj.get("findingId")
         })
         return _obj
 

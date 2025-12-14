@@ -29,7 +29,6 @@ class HuntDetail(BaseModel):
     HuntDetail
     """ # noqa: E501
     id: StrictFloat = Field(description="ID")
-    priority: StrictStr = Field(description="Priority")
     type: StrictStr = Field(description="Type")
     created_at: datetime = Field(description="Created at")
     updated_at: datetime = Field(description="Updated at")
@@ -45,14 +44,7 @@ class HuntDetail(BaseModel):
     completed_by: StrictStr = Field(description="Completed by")
     requested_by: StrictStr = Field(description="Request by")
     status: StrictStr = Field(description="Status")
-    __properties: ClassVar[List[str]] = ["id", "priority", "type", "created_at", "updated_at", "total_findings", "total_assets", "hunt_request_type", "rapid_exposure_mechanism", "title", "description", "hypothesis", "references", "completed_at", "completed_by", "requested_by", "status"]
-
-    @field_validator('priority')
-    def priority_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['low', 'normal', 'medium', 'high']):
-            raise ValueError("must be one of enum values ('low', 'normal', 'medium', 'high')")
-        return value
+    __properties: ClassVar[List[str]] = ["id", "type", "created_at", "updated_at", "total_findings", "total_assets", "hunt_request_type", "rapid_exposure_mechanism", "title", "description", "hypothesis", "references", "completed_at", "completed_by", "requested_by", "status"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
@@ -142,7 +134,6 @@ class HuntDetail(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
-            "priority": obj.get("priority"),
             "type": obj.get("type"),
             "created_at": obj.get("created_at"),
             "updated_at": obj.get("updated_at"),
