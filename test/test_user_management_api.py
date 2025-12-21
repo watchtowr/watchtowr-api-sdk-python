@@ -27,6 +27,13 @@ class TestUserManagementApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_delete_user(self) -> None:
+        """Test case for delete_user
+
+        Delete User
+        """
+        pass
+
     def test_get_user_details(self) -> None:
         """Test case for get_user_details
 
@@ -34,10 +41,24 @@ class TestUserManagementApi(unittest.TestCase):
         """
         pass
 
+    def test_invite_users(self) -> None:
+        """Test case for invite_users
+
+        Invite Users
+        """
+        pass
+
     def test_list_users(self) -> None:
         """Test case for list_users
 
         List Users
+        """
+        pass
+
+    def test_update_user(self) -> None:
+        """Test case for update_user
+
+        Update User
         """
         pass
 

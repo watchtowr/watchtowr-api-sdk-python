@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** | ID | 
 **name** | **str** | Rule name | 
-**keyword_matcher** | **str** | Keyword for matching domains/subdomains | [optional] 
+**keyword_matcher** | **str** | Keyword for matching assets. Supports wildcard patterns: %.sg, %abc%, %abc.com, abc.com. Wildcards can be defined using %. | [optional] 
+**keyword_rule_type** | **str** | Keyword rule type. HOSTNAME: matches domain/subdomain names (default). CNAME: matches CNAME DNS record values. TLS_SSL: matches TLS/SSL certificate subject names. | [optional] 
 **country** | **str** | Geographical location 2-letter country code (ISO 3166-1 alpha-2). Examples: SG, US, GB, AU | [optional] 
 **cascade_subdomain** | **bool** | Whether to cascade to subdomains | 
 **cascade_ip** | **bool** | Whether to cascade to IPs | 

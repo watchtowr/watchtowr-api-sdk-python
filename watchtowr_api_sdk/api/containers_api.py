@@ -29,7 +29,7 @@ from watchtowr_api_sdk.models.client_note_list_data import ClientNoteListData
 from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto
 from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto
 from watchtowr_api_sdk.models.delete_note_succes import DeleteNoteSucces
-from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog
+from watchtowr_api_sdk.models.get_asset_container_changelog200_response import GetAssetContainerChangelog200Response
 from watchtowr_api_sdk.models.paginated_client_container import PaginatedClientContainer
 from watchtowr_api_sdk.models.paginated_client_custom_property import PaginatedClientCustomProperty
 from watchtowr_api_sdk.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto
@@ -1515,7 +1515,7 @@ class ContainersApi:
     @validate_call
     def get_asset_container_changelog(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the container to retrieve changelog for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Container to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -1530,12 +1530,12 @@ class ContainersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PaginatedClientActivityLog:
+    ) -> GetAssetContainerChangelog200Response:
         """Get Container Changelog
 
-        Get paginated changelog (activity logs) for a specific container asset.
+        Get paginated changelog for a specific Container asset.
 
-        :param id: The asset ID of the container to retrieve changelog for. (required)
+        :param id: The asset ID of the Container to retrieve changelog for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -1574,7 +1574,7 @@ class ContainersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetContainerChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1593,7 +1593,7 @@ class ContainersApi:
     @validate_call
     def get_asset_container_changelog_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the container to retrieve changelog for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Container to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -1608,12 +1608,12 @@ class ContainersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PaginatedClientActivityLog]:
+    ) -> ApiResponse[GetAssetContainerChangelog200Response]:
         """Get Container Changelog
 
-        Get paginated changelog (activity logs) for a specific container asset.
+        Get paginated changelog for a specific Container asset.
 
-        :param id: The asset ID of the container to retrieve changelog for. (required)
+        :param id: The asset ID of the Container to retrieve changelog for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -1652,7 +1652,7 @@ class ContainersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetContainerChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1671,7 +1671,7 @@ class ContainersApi:
     @validate_call
     def get_asset_container_changelog_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the container to retrieve changelog for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Container to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -1689,9 +1689,9 @@ class ContainersApi:
     ) -> RESTResponseType:
         """Get Container Changelog
 
-        Get paginated changelog (activity logs) for a specific container asset.
+        Get paginated changelog for a specific Container asset.
 
-        :param id: The asset ID of the container to retrieve changelog for. (required)
+        :param id: The asset ID of the Container to retrieve changelog for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -1730,7 +1730,7 @@ class ContainersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetContainerChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -2692,7 +2692,7 @@ class ContainersApi:
     def get_list_asset_container(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search Container assets by name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -2721,7 +2721,7 @@ class ContainersApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search Container assets by name.
         :type asset_name: str
@@ -2800,7 +2800,7 @@ class ContainersApi:
     def get_list_asset_container_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search Container assets by name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -2829,7 +2829,7 @@ class ContainersApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search Container assets by name.
         :type asset_name: str
@@ -2908,7 +2908,7 @@ class ContainersApi:
     def get_list_asset_container_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search Container assets by name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -2937,7 +2937,7 @@ class ContainersApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search Container assets by name.
         :type asset_name: str

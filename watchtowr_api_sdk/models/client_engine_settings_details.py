@@ -32,9 +32,10 @@ class ClientEngineSettingsDetails(BaseModel):
     credential_stuffing_enabled: StrictBool = Field(description="Indicates whether the Credential Stuffing engine coverage is enabled for the asset.", alias="credentialStuffingEnabled")
     dns_bruteforcing_enabled: StrictBool = Field(description="Indicates whether the DNS Bruteforcing engine coverage is enabled for the asset.", alias="dnsBruteforcingEnabled")
     rapid_reaction_enabled: StrictBool = Field(description="Indicates whether the Rapid Reaction engine coverage is enabled for the asset", alias="rapidReactionEnabled")
+    intrusive_http_checks_enabled: StrictBool = Field(description="Indicates whether the Intrusive HTTP Checks engine coverage is enabled for the asset.", alias="intrusiveHttpChecksEnabled")
     id: StrictFloat = Field(description="The asset ID")
     type: StrictStr = Field(description="The asset type")
-    __properties: ClassVar[List[str]] = ["adversarySightEnabled", "automatedRedTeamingEnabled", "credentialStuffingEnabled", "dnsBruteforcingEnabled", "rapidReactionEnabled", "id", "type"]
+    __properties: ClassVar[List[str]] = ["adversarySightEnabled", "automatedRedTeamingEnabled", "credentialStuffingEnabled", "dnsBruteforcingEnabled", "rapidReactionEnabled", "intrusiveHttpChecksEnabled", "id", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,6 +98,7 @@ class ClientEngineSettingsDetails(BaseModel):
             "credentialStuffingEnabled": obj.get("credentialStuffingEnabled"),
             "dnsBruteforcingEnabled": obj.get("dnsBruteforcingEnabled"),
             "rapidReactionEnabled": obj.get("rapidReactionEnabled"),
+            "intrusiveHttpChecksEnabled": obj.get("intrusiveHttpChecksEnabled"),
             "id": obj.get("id"),
             "type": obj.get("type")
         })

@@ -29,7 +29,7 @@ from watchtowr_api_sdk.models.client_note_list_data import ClientNoteListData
 from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto
 from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto
 from watchtowr_api_sdk.models.delete_note_succes import DeleteNoteSucces
-from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog
+from watchtowr_api_sdk.models.get_asset_mobile_app_changelog200_response import GetAssetMobileAppChangelog200Response
 from watchtowr_api_sdk.models.paginated_client_custom_property import PaginatedClientCustomProperty
 from watchtowr_api_sdk.models.paginated_client_mobile_app import PaginatedClientMobileApp
 from watchtowr_api_sdk.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto
@@ -358,7 +358,7 @@ class MobileApplicationsApi:
     @validate_call
     def create_custom_property_mobile_app(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to create a new custom property for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to create a new custom property for.")],
         create_client_custom_property_dto: CreateClientCustomPropertyDto,
         _request_timeout: Union[
             None,
@@ -377,7 +377,7 @@ class MobileApplicationsApi:
 
         Create a Custom Property for a specific Mobile Application asset.
 
-        :param id: The asset ID of the mobile application to create a new custom property for. (required)
+        :param id: The asset ID of the Mobile Application to create a new custom property for. (required)
         :type id: float
         :param create_client_custom_property_dto: (required)
         :type create_client_custom_property_dto: CreateClientCustomPropertyDto
@@ -432,7 +432,7 @@ class MobileApplicationsApi:
     @validate_call
     def create_custom_property_mobile_app_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to create a new custom property for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to create a new custom property for.")],
         create_client_custom_property_dto: CreateClientCustomPropertyDto,
         _request_timeout: Union[
             None,
@@ -451,7 +451,7 @@ class MobileApplicationsApi:
 
         Create a Custom Property for a specific Mobile Application asset.
 
-        :param id: The asset ID of the mobile application to create a new custom property for. (required)
+        :param id: The asset ID of the Mobile Application to create a new custom property for. (required)
         :type id: float
         :param create_client_custom_property_dto: (required)
         :type create_client_custom_property_dto: CreateClientCustomPropertyDto
@@ -506,7 +506,7 @@ class MobileApplicationsApi:
     @validate_call
     def create_custom_property_mobile_app_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to create a new custom property for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to create a new custom property for.")],
         create_client_custom_property_dto: CreateClientCustomPropertyDto,
         _request_timeout: Union[
             None,
@@ -525,7 +525,7 @@ class MobileApplicationsApi:
 
         Create a Custom Property for a specific Mobile Application asset.
 
-        :param id: The asset ID of the mobile application to create a new custom property for. (required)
+        :param id: The asset ID of the Mobile Application to create a new custom property for. (required)
         :type id: float
         :param create_client_custom_property_dto: (required)
         :type create_client_custom_property_dto: CreateClientCustomPropertyDto
@@ -656,7 +656,7 @@ class MobileApplicationsApi:
     @validate_call
     def create_note_mobile_app(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to create a new note for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to create a new note for.")],
         create_client_note_dto: CreateClientNoteDto,
         _request_timeout: Union[
             None,
@@ -675,7 +675,7 @@ class MobileApplicationsApi:
 
         Create a Note for a specific Mobile Application asset.
 
-        :param id: The asset ID of the mobile application to create a new note for. (required)
+        :param id: The asset ID of the Mobile Application to create a new note for. (required)
         :type id: float
         :param create_client_note_dto: (required)
         :type create_client_note_dto: CreateClientNoteDto
@@ -729,7 +729,7 @@ class MobileApplicationsApi:
     @validate_call
     def create_note_mobile_app_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to create a new note for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to create a new note for.")],
         create_client_note_dto: CreateClientNoteDto,
         _request_timeout: Union[
             None,
@@ -748,7 +748,7 @@ class MobileApplicationsApi:
 
         Create a Note for a specific Mobile Application asset.
 
-        :param id: The asset ID of the mobile application to create a new note for. (required)
+        :param id: The asset ID of the Mobile Application to create a new note for. (required)
         :type id: float
         :param create_client_note_dto: (required)
         :type create_client_note_dto: CreateClientNoteDto
@@ -802,7 +802,7 @@ class MobileApplicationsApi:
     @validate_call
     def create_note_mobile_app_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to create a new note for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to create a new note for.")],
         create_client_note_dto: CreateClientNoteDto,
         _request_timeout: Union[
             None,
@@ -821,7 +821,7 @@ class MobileApplicationsApi:
 
         Create a Note for a specific Mobile Application asset.
 
-        :param id: The asset ID of the mobile application to create a new note for. (required)
+        :param id: The asset ID of the Mobile Application to create a new note for. (required)
         :type id: float
         :param create_client_note_dto: (required)
         :type create_client_note_dto: CreateClientNoteDto
@@ -951,7 +951,7 @@ class MobileApplicationsApi:
     @validate_call
     def delete_custom_property_mobile_app(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of a mobile application with a custom property to delete.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of a Mobile Application with a custom property to delete.")],
         custom_property_id: Annotated[StrictFloat, Field(description="The ID of the custom property to delete.")],
         _request_timeout: Union[
             None,
@@ -970,7 +970,7 @@ class MobileApplicationsApi:
 
         Delete a Custom Property for a specific Mobile Application asset.
 
-        :param id: The asset ID of a mobile application with a custom property to delete. (required)
+        :param id: The asset ID of a Mobile Application with a custom property to delete. (required)
         :type id: float
         :param custom_property_id: The ID of the custom property to delete. (required)
         :type custom_property_id: float
@@ -1025,7 +1025,7 @@ class MobileApplicationsApi:
     @validate_call
     def delete_custom_property_mobile_app_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of a mobile application with a custom property to delete.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of a Mobile Application with a custom property to delete.")],
         custom_property_id: Annotated[StrictFloat, Field(description="The ID of the custom property to delete.")],
         _request_timeout: Union[
             None,
@@ -1044,7 +1044,7 @@ class MobileApplicationsApi:
 
         Delete a Custom Property for a specific Mobile Application asset.
 
-        :param id: The asset ID of a mobile application with a custom property to delete. (required)
+        :param id: The asset ID of a Mobile Application with a custom property to delete. (required)
         :type id: float
         :param custom_property_id: The ID of the custom property to delete. (required)
         :type custom_property_id: float
@@ -1099,7 +1099,7 @@ class MobileApplicationsApi:
     @validate_call
     def delete_custom_property_mobile_app_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of a mobile application with a custom property to delete.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of a Mobile Application with a custom property to delete.")],
         custom_property_id: Annotated[StrictFloat, Field(description="The ID of the custom property to delete.")],
         _request_timeout: Union[
             None,
@@ -1118,7 +1118,7 @@ class MobileApplicationsApi:
 
         Delete a Custom Property for a specific Mobile Application asset.
 
-        :param id: The asset ID of a mobile application with a custom property to delete. (required)
+        :param id: The asset ID of a Mobile Application with a custom property to delete. (required)
         :type id: float
         :param custom_property_id: The ID of the custom property to delete. (required)
         :type custom_property_id: float
@@ -1236,7 +1236,7 @@ class MobileApplicationsApi:
     @validate_call
     def delete_note_mobile_app(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of a mobile application with a note to delete.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of a Mobile Application with a note to delete.")],
         note_id: Annotated[StrictFloat, Field(description="The ID of the note to delete.")],
         _request_timeout: Union[
             None,
@@ -1255,7 +1255,7 @@ class MobileApplicationsApi:
 
         Delete a Note for a specific Mobile Application asset.
 
-        :param id: The asset ID of a mobile application with a note to delete. (required)
+        :param id: The asset ID of a Mobile Application with a note to delete. (required)
         :type id: float
         :param note_id: The ID of the note to delete. (required)
         :type note_id: float
@@ -1309,7 +1309,7 @@ class MobileApplicationsApi:
     @validate_call
     def delete_note_mobile_app_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of a mobile application with a note to delete.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of a Mobile Application with a note to delete.")],
         note_id: Annotated[StrictFloat, Field(description="The ID of the note to delete.")],
         _request_timeout: Union[
             None,
@@ -1328,7 +1328,7 @@ class MobileApplicationsApi:
 
         Delete a Note for a specific Mobile Application asset.
 
-        :param id: The asset ID of a mobile application with a note to delete. (required)
+        :param id: The asset ID of a Mobile Application with a note to delete. (required)
         :type id: float
         :param note_id: The ID of the note to delete. (required)
         :type note_id: float
@@ -1382,7 +1382,7 @@ class MobileApplicationsApi:
     @validate_call
     def delete_note_mobile_app_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of a mobile application with a note to delete.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of a Mobile Application with a note to delete.")],
         note_id: Annotated[StrictFloat, Field(description="The ID of the note to delete.")],
         _request_timeout: Union[
             None,
@@ -1401,7 +1401,7 @@ class MobileApplicationsApi:
 
         Delete a Note for a specific Mobile Application asset.
 
-        :param id: The asset ID of a mobile application with a note to delete. (required)
+        :param id: The asset ID of a Mobile Application with a note to delete. (required)
         :type id: float
         :param note_id: The ID of the note to delete. (required)
         :type note_id: float
@@ -1518,7 +1518,7 @@ class MobileApplicationsApi:
     @validate_call
     def get_asset_mobile_app_changelog(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile app to retrieve changelog for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -1533,12 +1533,12 @@ class MobileApplicationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PaginatedClientActivityLog:
-        """Get Mobile App Changelog
+    ) -> GetAssetMobileAppChangelog200Response:
+        """Get Mobile Application Changelog
 
-        Get paginated changelog (activity logs) for a specific mobile app asset.
+        Get paginated changelog for a specific Mobile Application.
 
-        :param id: The asset ID of the mobile app to retrieve changelog for. (required)
+        :param id: The asset ID of the Mobile Application to retrieve changelog for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -1577,7 +1577,7 @@ class MobileApplicationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetMobileAppChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1596,7 +1596,7 @@ class MobileApplicationsApi:
     @validate_call
     def get_asset_mobile_app_changelog_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile app to retrieve changelog for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -1611,12 +1611,12 @@ class MobileApplicationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PaginatedClientActivityLog]:
-        """Get Mobile App Changelog
+    ) -> ApiResponse[GetAssetMobileAppChangelog200Response]:
+        """Get Mobile Application Changelog
 
-        Get paginated changelog (activity logs) for a specific mobile app asset.
+        Get paginated changelog for a specific Mobile Application.
 
-        :param id: The asset ID of the mobile app to retrieve changelog for. (required)
+        :param id: The asset ID of the Mobile Application to retrieve changelog for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -1655,7 +1655,7 @@ class MobileApplicationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetMobileAppChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1674,7 +1674,7 @@ class MobileApplicationsApi:
     @validate_call
     def get_asset_mobile_app_changelog_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile app to retrieve changelog for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -1690,11 +1690,11 @@ class MobileApplicationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Mobile App Changelog
+        """Get Mobile Application Changelog
 
-        Get paginated changelog (activity logs) for a specific mobile app asset.
+        Get paginated changelog for a specific Mobile Application.
 
-        :param id: The asset ID of the mobile app to retrieve changelog for. (required)
+        :param id: The asset ID of the Mobile Application to retrieve changelog for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -1733,7 +1733,7 @@ class MobileApplicationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetMobileAppChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1822,7 +1822,7 @@ class MobileApplicationsApi:
     @validate_call
     def get_asset_mobile_app_details(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to get.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to get.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1840,7 +1840,7 @@ class MobileApplicationsApi:
 
         Get the details of a specific Mobile Application.
 
-        :param id: The asset ID of the mobile application to get. (required)
+        :param id: The asset ID of the Mobile Application to get. (required)
         :type id: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1892,7 +1892,7 @@ class MobileApplicationsApi:
     @validate_call
     def get_asset_mobile_app_details_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to get.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to get.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1910,7 +1910,7 @@ class MobileApplicationsApi:
 
         Get the details of a specific Mobile Application.
 
-        :param id: The asset ID of the mobile application to get. (required)
+        :param id: The asset ID of the Mobile Application to get. (required)
         :type id: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1962,7 +1962,7 @@ class MobileApplicationsApi:
     @validate_call
     def get_asset_mobile_app_details_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to get.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to get.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1980,7 +1980,7 @@ class MobileApplicationsApi:
 
         Get the details of a specific Mobile Application.
 
-        :param id: The asset ID of the mobile application to get. (required)
+        :param id: The asset ID of the Mobile Application to get. (required)
         :type id: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2092,7 +2092,7 @@ class MobileApplicationsApi:
     @validate_call
     def get_asset_mobile_app_notes(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to list notes of.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to list notes of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -2112,7 +2112,7 @@ class MobileApplicationsApi:
 
         List the Notes of a specific Mobile Application asset.
 
-        :param id: The asset ID of the mobile application to list notes of. (required)
+        :param id: The asset ID of the Mobile Application to list notes of. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -2169,7 +2169,7 @@ class MobileApplicationsApi:
     @validate_call
     def get_asset_mobile_app_notes_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to list notes of.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to list notes of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -2189,7 +2189,7 @@ class MobileApplicationsApi:
 
         List the Notes of a specific Mobile Application asset.
 
-        :param id: The asset ID of the mobile application to list notes of. (required)
+        :param id: The asset ID of the Mobile Application to list notes of. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -2246,7 +2246,7 @@ class MobileApplicationsApi:
     @validate_call
     def get_asset_mobile_app_notes_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to list notes of.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to list notes of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -2266,7 +2266,7 @@ class MobileApplicationsApi:
 
         List the Notes of a specific Mobile Application asset.
 
-        :param id: The asset ID of the mobile application to list notes of. (required)
+        :param id: The asset ID of the Mobile Application to list notes of. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -2393,7 +2393,7 @@ class MobileApplicationsApi:
     @validate_call
     def get_custom_properties_mobile_app(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to list custom properties of.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to list custom properties of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -2413,7 +2413,7 @@ class MobileApplicationsApi:
 
         List the Custom Properties of a specific Mobile Application asset.
 
-        :param id: The asset ID of the mobile application to list custom properties of. (required)
+        :param id: The asset ID of the Mobile Application to list custom properties of. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -2471,7 +2471,7 @@ class MobileApplicationsApi:
     @validate_call
     def get_custom_properties_mobile_app_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to list custom properties of.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to list custom properties of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -2491,7 +2491,7 @@ class MobileApplicationsApi:
 
         List the Custom Properties of a specific Mobile Application asset.
 
-        :param id: The asset ID of the mobile application to list custom properties of. (required)
+        :param id: The asset ID of the Mobile Application to list custom properties of. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -2549,7 +2549,7 @@ class MobileApplicationsApi:
     @validate_call
     def get_custom_properties_mobile_app_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to list custom properties of.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to list custom properties of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -2569,7 +2569,7 @@ class MobileApplicationsApi:
 
         List the Custom Properties of a specific Mobile Application asset.
 
-        :param id: The asset ID of the mobile application to list custom properties of. (required)
+        :param id: The asset ID of the Mobile Application to list custom properties of. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -2698,7 +2698,7 @@ class MobileApplicationsApi:
     def get_list_asset_mobile_apps(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search Mobile Applications by assets by name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -2727,7 +2727,7 @@ class MobileApplicationsApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search Mobile Applications by assets by name.
         :type asset_name: str
@@ -2806,7 +2806,7 @@ class MobileApplicationsApi:
     def get_list_asset_mobile_apps_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search Mobile Applications by assets by name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -2835,7 +2835,7 @@ class MobileApplicationsApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search Mobile Applications by assets by name.
         :type asset_name: str
@@ -2914,7 +2914,7 @@ class MobileApplicationsApi:
     def get_list_asset_mobile_apps_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search Mobile Applications by assets by name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -2943,7 +2943,7 @@ class MobileApplicationsApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search Mobile Applications by assets by name.
         :type asset_name: str
@@ -3443,7 +3443,7 @@ class MobileApplicationsApi:
     @validate_call
     def update_asset_mobile_app_status(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to update status of.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to update status of.")],
         update_client_next_gen_asset_status_dto: UpdateClientNextGenAssetStatusDto,
         _request_timeout: Union[
             None,
@@ -3462,7 +3462,7 @@ class MobileApplicationsApi:
 
         Update Status of a specific Mobile Application asset.
 
-        :param id: The asset ID of the mobile application to update status of. (required)
+        :param id: The asset ID of the Mobile Application to update status of. (required)
         :type id: float
         :param update_client_next_gen_asset_status_dto: (required)
         :type update_client_next_gen_asset_status_dto: UpdateClientNextGenAssetStatusDto
@@ -3516,7 +3516,7 @@ class MobileApplicationsApi:
     @validate_call
     def update_asset_mobile_app_status_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to update status of.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to update status of.")],
         update_client_next_gen_asset_status_dto: UpdateClientNextGenAssetStatusDto,
         _request_timeout: Union[
             None,
@@ -3535,7 +3535,7 @@ class MobileApplicationsApi:
 
         Update Status of a specific Mobile Application asset.
 
-        :param id: The asset ID of the mobile application to update status of. (required)
+        :param id: The asset ID of the Mobile Application to update status of. (required)
         :type id: float
         :param update_client_next_gen_asset_status_dto: (required)
         :type update_client_next_gen_asset_status_dto: UpdateClientNextGenAssetStatusDto
@@ -3589,7 +3589,7 @@ class MobileApplicationsApi:
     @validate_call
     def update_asset_mobile_app_status_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the mobile application to update status of.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Mobile Application to update status of.")],
         update_client_next_gen_asset_status_dto: UpdateClientNextGenAssetStatusDto,
         _request_timeout: Union[
             None,
@@ -3608,7 +3608,7 @@ class MobileApplicationsApi:
 
         Update Status of a specific Mobile Application asset.
 
-        :param id: The asset ID of the mobile application to update status of. (required)
+        :param id: The asset ID of the Mobile Application to update status of. (required)
         :type id: float
         :param update_client_next_gen_asset_status_dto: (required)
         :type update_client_next_gen_asset_status_dto: UpdateClientNextGenAssetStatusDto
@@ -3738,7 +3738,7 @@ class MobileApplicationsApi:
     @validate_call
     def update_custom_property_mobile_app(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of a mobile application with a custom property to update.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of a Mobile Application with a custom property to update.")],
         custom_property_id: Annotated[StrictFloat, Field(description="The ID of the custom property to update.")],
         update_client_custom_property_dto: UpdateClientCustomPropertyDto,
         _request_timeout: Union[
@@ -3758,7 +3758,7 @@ class MobileApplicationsApi:
 
         Update a Custom Property for a specific Mobile Application asset.
 
-        :param id: The asset ID of a mobile application with a custom property to update. (required)
+        :param id: The asset ID of a Mobile Application with a custom property to update. (required)
         :type id: float
         :param custom_property_id: The ID of the custom property to update. (required)
         :type custom_property_id: float
@@ -3816,7 +3816,7 @@ class MobileApplicationsApi:
     @validate_call
     def update_custom_property_mobile_app_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of a mobile application with a custom property to update.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of a Mobile Application with a custom property to update.")],
         custom_property_id: Annotated[StrictFloat, Field(description="The ID of the custom property to update.")],
         update_client_custom_property_dto: UpdateClientCustomPropertyDto,
         _request_timeout: Union[
@@ -3836,7 +3836,7 @@ class MobileApplicationsApi:
 
         Update a Custom Property for a specific Mobile Application asset.
 
-        :param id: The asset ID of a mobile application with a custom property to update. (required)
+        :param id: The asset ID of a Mobile Application with a custom property to update. (required)
         :type id: float
         :param custom_property_id: The ID of the custom property to update. (required)
         :type custom_property_id: float
@@ -3894,7 +3894,7 @@ class MobileApplicationsApi:
     @validate_call
     def update_custom_property_mobile_app_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of a mobile application with a custom property to update.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of a Mobile Application with a custom property to update.")],
         custom_property_id: Annotated[StrictFloat, Field(description="The ID of the custom property to update.")],
         update_client_custom_property_dto: UpdateClientCustomPropertyDto,
         _request_timeout: Union[
@@ -3914,7 +3914,7 @@ class MobileApplicationsApi:
 
         Update a Custom Property for a specific Mobile Application asset.
 
-        :param id: The asset ID of a mobile application with a custom property to update. (required)
+        :param id: The asset ID of a Mobile Application with a custom property to update. (required)
         :type id: float
         :param custom_property_id: The ID of the custom property to update. (required)
         :type custom_property_id: float
@@ -4051,7 +4051,7 @@ class MobileApplicationsApi:
     @validate_call
     def update_note_mobile_app(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of a mobile application with a note to update.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of a Mobile Application with a note to update.")],
         note_id: Annotated[StrictFloat, Field(description="The ID of the note to update.")],
         create_client_note_dto: CreateClientNoteDto,
         _request_timeout: Union[
@@ -4071,7 +4071,7 @@ class MobileApplicationsApi:
 
         Update a Note for a specific Mobile Application asset.
 
-        :param id: The asset ID of a mobile application with a note to update. (required)
+        :param id: The asset ID of a Mobile Application with a note to update. (required)
         :type id: float
         :param note_id: The ID of the note to update. (required)
         :type note_id: float
@@ -4128,7 +4128,7 @@ class MobileApplicationsApi:
     @validate_call
     def update_note_mobile_app_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of a mobile application with a note to update.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of a Mobile Application with a note to update.")],
         note_id: Annotated[StrictFloat, Field(description="The ID of the note to update.")],
         create_client_note_dto: CreateClientNoteDto,
         _request_timeout: Union[
@@ -4148,7 +4148,7 @@ class MobileApplicationsApi:
 
         Update a Note for a specific Mobile Application asset.
 
-        :param id: The asset ID of a mobile application with a note to update. (required)
+        :param id: The asset ID of a Mobile Application with a note to update. (required)
         :type id: float
         :param note_id: The ID of the note to update. (required)
         :type note_id: float
@@ -4205,7 +4205,7 @@ class MobileApplicationsApi:
     @validate_call
     def update_note_mobile_app_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of a mobile application with a note to update.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of a Mobile Application with a note to update.")],
         note_id: Annotated[StrictFloat, Field(description="The ID of the note to update.")],
         create_client_note_dto: CreateClientNoteDto,
         _request_timeout: Union[
@@ -4225,7 +4225,7 @@ class MobileApplicationsApi:
 
         Update a Note for a specific Mobile Application asset.
 
-        :param id: The asset ID of a mobile application with a note to update. (required)
+        :param id: The asset ID of a Mobile Application with a note to update. (required)
         :type id: float
         :param note_id: The ID of the note to update. (required)
         :type note_id: float

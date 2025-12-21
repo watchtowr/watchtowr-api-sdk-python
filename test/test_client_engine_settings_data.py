@@ -42,6 +42,7 @@ class TestClientEngineSettingsData(unittest.TestCase):
                     credential_stuffing_enabled = True, 
                     dns_bruteforcing_enabled = False, 
                     rapid_reaction_enabled = True, 
+                    intrusive_http_checks_enabled = False, 
                     id = 123, 
                     type = '', )
             )
@@ -53,6 +54,7 @@ class TestClientEngineSettingsData(unittest.TestCase):
                     credential_stuffing_enabled = True, 
                     dns_bruteforcing_enabled = False, 
                     rapid_reaction_enabled = True, 
+                    intrusive_http_checks_enabled = False, 
                     id = 123, 
                     type = '', ),
         )

@@ -64,7 +64,8 @@ class TestClientIpData(unittest.TestCase):
                         automated_red_teaming_enabled = True, 
                         credential_stuffing_enabled = True, 
                         dns_bruteforcing_enabled = False, 
-                        rapid_reaction_enabled = True, ), )
+                        rapid_reaction_enabled = True, 
+                        intrusive_http_checks_enabled = False, ), )
             )
         else:
             return ClientIpData(
@@ -96,7 +97,8 @@ class TestClientIpData(unittest.TestCase):
                         automated_red_teaming_enabled = True, 
                         credential_stuffing_enabled = True, 
                         dns_bruteforcing_enabled = False, 
-                        rapid_reaction_enabled = True, ), ),
+                        rapid_reaction_enabled = True, 
+                        intrusive_http_checks_enabled = False, ), ),
         )
         """
 

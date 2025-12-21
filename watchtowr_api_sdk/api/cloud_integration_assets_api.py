@@ -29,7 +29,7 @@ from watchtowr_api_sdk.models.client_note_list_data import ClientNoteListData
 from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto
 from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto
 from watchtowr_api_sdk.models.delete_note_succes import DeleteNoteSucces
-from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog
+from watchtowr_api_sdk.models.get_asset_cloud_asset_changelog200_response import GetAssetCloudAssetChangelog200Response
 from watchtowr_api_sdk.models.paginated_client_cloud_asset import PaginatedClientCloudAsset
 from watchtowr_api_sdk.models.paginated_client_custom_property import PaginatedClientCustomProperty
 from watchtowr_api_sdk.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto
@@ -1524,7 +1524,7 @@ class CloudIntegrationAssetsApi:
     @validate_call
     def get_asset_cloud_asset_changelog(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the cloud asset to retrieve changelog for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Cloud Integration Asset to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -1539,12 +1539,12 @@ class CloudIntegrationAssetsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PaginatedClientActivityLog:
+    ) -> GetAssetCloudAssetChangelog200Response:
         """Get Cloud Asset Changelog
 
-        Get paginated changelog (activity logs) for a specific cloud asset.
+        Get paginated changelog for a specific Cloud Integration Asset.
 
-        :param id: The asset ID of the cloud asset to retrieve changelog for. (required)
+        :param id: The asset ID of the Cloud Integration Asset to retrieve changelog for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -1583,7 +1583,7 @@ class CloudIntegrationAssetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetCloudAssetChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1602,7 +1602,7 @@ class CloudIntegrationAssetsApi:
     @validate_call
     def get_asset_cloud_asset_changelog_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the cloud asset to retrieve changelog for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Cloud Integration Asset to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -1617,12 +1617,12 @@ class CloudIntegrationAssetsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PaginatedClientActivityLog]:
+    ) -> ApiResponse[GetAssetCloudAssetChangelog200Response]:
         """Get Cloud Asset Changelog
 
-        Get paginated changelog (activity logs) for a specific cloud asset.
+        Get paginated changelog for a specific Cloud Integration Asset.
 
-        :param id: The asset ID of the cloud asset to retrieve changelog for. (required)
+        :param id: The asset ID of the Cloud Integration Asset to retrieve changelog for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -1661,7 +1661,7 @@ class CloudIntegrationAssetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetCloudAssetChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1680,7 +1680,7 @@ class CloudIntegrationAssetsApi:
     @validate_call
     def get_asset_cloud_asset_changelog_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the cloud asset to retrieve changelog for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Cloud Integration Asset to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -1698,9 +1698,9 @@ class CloudIntegrationAssetsApi:
     ) -> RESTResponseType:
         """Get Cloud Asset Changelog
 
-        Get paginated changelog (activity logs) for a specific cloud asset.
+        Get paginated changelog for a specific Cloud Integration Asset.
 
-        :param id: The asset ID of the cloud asset to retrieve changelog for. (required)
+        :param id: The asset ID of the Cloud Integration Asset to retrieve changelog for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -1739,7 +1739,7 @@ class CloudIntegrationAssetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetCloudAssetChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1828,7 +1828,7 @@ class CloudIntegrationAssetsApi:
     @validate_call
     def get_asset_cloud_asset_details(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the cloud integration asset to retrieve.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Cloud Integration Asset to retrieve.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1844,9 +1844,9 @@ class CloudIntegrationAssetsApi:
     ) -> ClientCloudAssetData:
         """Get Cloud Asset Details
 
-        Get the details of a specific cloud integration asset.
+        Get the details of a specific Cloud Integration Asset.
 
-        :param id: The asset ID of the cloud integration asset to retrieve. (required)
+        :param id: The asset ID of the Cloud Integration Asset to retrieve. (required)
         :type id: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1898,7 +1898,7 @@ class CloudIntegrationAssetsApi:
     @validate_call
     def get_asset_cloud_asset_details_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the cloud integration asset to retrieve.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Cloud Integration Asset to retrieve.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1914,9 +1914,9 @@ class CloudIntegrationAssetsApi:
     ) -> ApiResponse[ClientCloudAssetData]:
         """Get Cloud Asset Details
 
-        Get the details of a specific cloud integration asset.
+        Get the details of a specific Cloud Integration Asset.
 
-        :param id: The asset ID of the cloud integration asset to retrieve. (required)
+        :param id: The asset ID of the Cloud Integration Asset to retrieve. (required)
         :type id: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1968,7 +1968,7 @@ class CloudIntegrationAssetsApi:
     @validate_call
     def get_asset_cloud_asset_details_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the cloud integration asset to retrieve.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Cloud Integration Asset to retrieve.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1984,9 +1984,9 @@ class CloudIntegrationAssetsApi:
     ) -> RESTResponseType:
         """Get Cloud Asset Details
 
-        Get the details of a specific cloud integration asset.
+        Get the details of a specific Cloud Integration Asset.
 
-        :param id: The asset ID of the cloud integration asset to retrieve. (required)
+        :param id: The asset ID of the Cloud Integration Asset to retrieve. (required)
         :type id: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2116,7 +2116,7 @@ class CloudIntegrationAssetsApi:
     ) -> ClientNoteListData:
         """List Notes
 
-        List all notes for a specific cloud integration asset.
+        List all notes for a specific Cloud Integration Asset.
 
         :param id: The asset ID of the Cloud Integration Asset to list notes of. (required)
         :type id: float
@@ -2194,7 +2194,7 @@ class CloudIntegrationAssetsApi:
     ) -> ApiResponse[ClientNoteListData]:
         """List Notes
 
-        List all notes for a specific cloud integration asset.
+        List all notes for a specific Cloud Integration Asset.
 
         :param id: The asset ID of the Cloud Integration Asset to list notes of. (required)
         :type id: float
@@ -2272,7 +2272,7 @@ class CloudIntegrationAssetsApi:
     ) -> RESTResponseType:
         """List Notes
 
-        List all notes for a specific cloud integration asset.
+        List all notes for a specific Cloud Integration Asset.
 
         :param id: The asset ID of the Cloud Integration Asset to list notes of. (required)
         :type id: float
@@ -2707,7 +2707,7 @@ class CloudIntegrationAssetsApi:
     def get_list_asset_cloud_asset(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search cloud assets by name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -2735,11 +2735,11 @@ class CloudIntegrationAssetsApi:
     ) -> PaginatedClientCloudAsset:
         """List Cloud Assets
 
-        List all discovered cloud integration assets, ordered by date identified.
+        List all discovered Cloud Integration Assets, ordered by date identified.
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search cloud assets by name.
         :type asset_name: str
@@ -2827,7 +2827,7 @@ class CloudIntegrationAssetsApi:
     def get_list_asset_cloud_asset_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search cloud assets by name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -2855,11 +2855,11 @@ class CloudIntegrationAssetsApi:
     ) -> ApiResponse[PaginatedClientCloudAsset]:
         """List Cloud Assets
 
-        List all discovered cloud integration assets, ordered by date identified.
+        List all discovered Cloud Integration Assets, ordered by date identified.
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search cloud assets by name.
         :type asset_name: str
@@ -2947,7 +2947,7 @@ class CloudIntegrationAssetsApi:
     def get_list_asset_cloud_asset_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search cloud assets by name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -2975,11 +2975,11 @@ class CloudIntegrationAssetsApi:
     ) -> RESTResponseType:
         """List Cloud Assets
 
-        List all discovered cloud integration assets, ordered by date identified.
+        List all discovered Cloud Integration Assets, ordered by date identified.
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search cloud assets by name.
         :type asset_name: str
@@ -3833,7 +3833,7 @@ class CloudIntegrationAssetsApi:
     ) -> ClientCloudAssetData:
         """Update Cloud Asset Status
 
-        Update the status of a specific cloud integration asset.
+        Update the status of a specific Cloud Integration Asset.
 
         :param id: The asset ID of the Cloud Integration Asset to update the status of. (required)
         :type id: float
@@ -3906,7 +3906,7 @@ class CloudIntegrationAssetsApi:
     ) -> ApiResponse[ClientCloudAssetData]:
         """Update Cloud Asset Status
 
-        Update the status of a specific cloud integration asset.
+        Update the status of a specific Cloud Integration Asset.
 
         :param id: The asset ID of the Cloud Integration Asset to update the status of. (required)
         :type id: float
@@ -3979,7 +3979,7 @@ class CloudIntegrationAssetsApi:
     ) -> RESTResponseType:
         """Update Cloud Asset Status
 
-        Update the status of a specific cloud integration asset.
+        Update the status of a specific Cloud Integration Asset.
 
         :param id: The asset ID of the Cloud Integration Asset to update the status of. (required)
         :type id: float

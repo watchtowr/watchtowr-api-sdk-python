@@ -443,11 +443,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_asset_ip_changelog**
-> PaginatedClientActivityLog get_asset_ip_changelog(id, page=page, page_size=page_size)
+> GetAssetIpChangelog200Response get_asset_ip_changelog(id, page=page, page_size=page_size)
 
 Get IP Address Changelog
 
-Get paginated changelog (activity logs) for a specific IP address asset.
+Get paginated changelog for a specific IP Address asset.
 
 ### Example
 
@@ -455,7 +455,7 @@ Get paginated changelog (activity logs) for a specific IP address asset.
 
 ```python
 import watchtowr_api_sdk
-from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog
+from watchtowr_api_sdk.models.get_asset_ip_changelog200_response import GetAssetIpChangelog200Response
 from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
@@ -479,7 +479,7 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.IPAddressesApi(api_client)
-    id = 3.4 # float | The asset ID of the IP address to retrieve changelog for.
+    id = 3.4 # float | The asset ID of the IP Address to retrieve changelog for.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
 
@@ -499,13 +499,13 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of the IP address to retrieve changelog for. | 
+ **id** | **float**| The asset ID of the IP Address to retrieve changelog for. | 
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
  **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
 
 ### Return type
 
-[**PaginatedClientActivityLog**](PaginatedClientActivityLog.md)
+[**GetAssetIpChangelog200Response**](GetAssetIpChangelog200Response.md)
 
 ### Authorization
 
@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
 
 Get IP Address Details
 
-Get the details of a specific IP address asset.
+Get the details of a specific IP Address asset.
 
 ### Example
 
@@ -979,7 +979,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     api_instance = watchtowr_api_sdk.IPAddressesApi(api_client)
     id = 3.4 # float | The asset ID of the IP address to list associated ports of.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
-    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
+    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100. (optional)
     include_closed_port = True # bool | Include listings with closed ports. (optional)
     include_no_service = True # bool | Include listings without a service (optional)
     created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter ports created after a given date and time. (optional)
@@ -1003,7 +1003,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **float**| The asset ID of the IP address to list associated ports of. | 
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
- **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
+ **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100. | [optional] 
  **include_closed_port** | **bool**| Include listings with closed ports. | [optional] 
  **include_no_service** | **bool**| Include listings without a service | [optional] 
  **created_from** | **datetime**| Filter ports created after a given date and time. | [optional] 
@@ -1122,7 +1122,7 @@ Name | Type | Description  | Notes
 
 List IP Addresses
 
-List all discovered IP address assets, ordered by date identified.
+List all discovered IP Address assets, ordered by date identified.
 
 ### Example
 
@@ -1155,7 +1155,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.IPAddressesApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
-    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
+    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100. (optional)
     asset_name = '123.123.123.123' # str | Search IP address by name (full or partial). (optional)
     statuses = ['statuses_example'] # List[str] | Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack       * CDN       * hanging cloud ip       * Third Party       * VerifiedHoneypot  (optional)
     source = 'DNS Refresh' # str | Filter assets by the source that discovered the asset. (optional)
@@ -1184,7 +1184,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
- **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
+ **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100. | [optional] 
  **asset_name** | **str**| Search IP address by name (full or partial). | [optional] 
  **statuses** | [**List[str]**](str.md)| Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack       * CDN       * hanging cloud ip       * Third Party       * VerifiedHoneypot  | [optional] 
  **source** | **str**| Filter assets by the source that discovered the asset. | [optional] 

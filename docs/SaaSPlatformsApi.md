@@ -438,11 +438,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_asset_saas_platform_changelog**
-> PaginatedClientActivityLog get_asset_saas_platform_changelog(id, page=page, page_size=page_size)
+> GetAssetSaasPlatformChangelog200Response get_asset_saas_platform_changelog(id, page=page, page_size=page_size)
 
 Get SaaS Platform Changelog
 
-Get paginated changelog (activity logs) for a specific SaaS platform asset.
+Get paginated changelog for a specific SaaS Platform asset.
 
 ### Example
 
@@ -450,7 +450,7 @@ Get paginated changelog (activity logs) for a specific SaaS platform asset.
 
 ```python
 import watchtowr_api_sdk
-from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog
+from watchtowr_api_sdk.models.get_asset_saas_platform_changelog200_response import GetAssetSaasPlatformChangelog200Response
 from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
@@ -474,7 +474,7 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.SaaSPlatformsApi(api_client)
-    id = 3.4 # float | The asset ID of the SaaS platform to retrieve changelog for.
+    id = 3.4 # float | The asset ID of the SaaS Platform to retrieve changelog for.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
 
@@ -494,13 +494,13 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of the SaaS platform to retrieve changelog for. | 
+ **id** | **float**| The asset ID of the SaaS Platform to retrieve changelog for. | 
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
  **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
 
 ### Return type
 
-[**PaginatedClientActivityLog**](PaginatedClientActivityLog.md)
+[**GetAssetSaasPlatformChangelog200Response**](GetAssetSaasPlatformChangelog200Response.md)
 
 ### Authorization
 
@@ -810,7 +810,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.SaaSPlatformsApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
-    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
+    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100. (optional)
     asset_name = 'example.slack.com' # str | Search SaaS platforms by URL. (optional)
     statuses = ['statuses_example'] # List[str] | Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope  (optional)
     source = 'module-adversarysight-postman-workspace-saas-discovery' # str | Filter assets by the source that discovered the asset. (optional)
@@ -838,7 +838,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
- **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
+ **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100. | [optional] 
  **asset_name** | **str**| Search SaaS platforms by URL. | [optional] 
  **statuses** | [**List[str]**](str.md)| Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope  | [optional] 
  **source** | **str**| Filter assets by the source that discovered the asset. | [optional] 

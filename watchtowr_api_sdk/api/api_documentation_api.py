@@ -29,8 +29,8 @@ from watchtowr_api_sdk.models.client_note_list_data import ClientNoteListData
 from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto
 from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto
 from watchtowr_api_sdk.models.delete_note_succes import DeleteNoteSucces
+from watchtowr_api_sdk.models.get_asset_api_documentation_changelog200_response import GetAssetApiDocumentationChangelog200Response
 from watchtowr_api_sdk.models.paginated_api_documentation import PaginatedApiDocumentation
-from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog
 from watchtowr_api_sdk.models.paginated_client_custom_property import PaginatedClientCustomProperty
 from watchtowr_api_sdk.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto
 from watchtowr_api_sdk.models.update_api_documentation_status_dto import UpdateApiDocumentationStatusDto
@@ -1539,10 +1539,10 @@ class APIDocumentationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PaginatedClientActivityLog:
+    ) -> GetAssetApiDocumentationChangelog200Response:
         """Get API Documentation Changelog
 
-        Get paginated changelog (activity logs) for a specific API documentation asset.
+        Get paginated changelog for a specific API Documentation asset.
 
         :param id: The asset ID of the API documentation to retrieve changelog for. (required)
         :type id: float
@@ -1583,7 +1583,7 @@ class APIDocumentationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetApiDocumentationChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1617,10 +1617,10 @@ class APIDocumentationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PaginatedClientActivityLog]:
+    ) -> ApiResponse[GetAssetApiDocumentationChangelog200Response]:
         """Get API Documentation Changelog
 
-        Get paginated changelog (activity logs) for a specific API documentation asset.
+        Get paginated changelog for a specific API Documentation asset.
 
         :param id: The asset ID of the API documentation to retrieve changelog for. (required)
         :type id: float
@@ -1661,7 +1661,7 @@ class APIDocumentationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetApiDocumentationChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1698,7 +1698,7 @@ class APIDocumentationApi:
     ) -> RESTResponseType:
         """Get API Documentation Changelog
 
-        Get paginated changelog (activity logs) for a specific API documentation asset.
+        Get paginated changelog for a specific API Documentation asset.
 
         :param id: The asset ID of the API documentation to retrieve changelog for. (required)
         :type id: float
@@ -1739,7 +1739,7 @@ class APIDocumentationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetApiDocumentationChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1828,7 +1828,7 @@ class APIDocumentationApi:
     @validate_call
     def get_asset_api_documentation_details(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the API documentation asset to retrieve.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the API Documentation asset to retrieve.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1844,9 +1844,9 @@ class APIDocumentationApi:
     ) -> ClientApiDocumentation:
         """Get API Documentation Details
 
-        Get the details of a specific API documentation asset.
+        Get the details of a specific API Documentation asset.
 
-        :param id: The asset ID of the API documentation asset to retrieve. (required)
+        :param id: The asset ID of the API Documentation asset to retrieve. (required)
         :type id: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1898,7 +1898,7 @@ class APIDocumentationApi:
     @validate_call
     def get_asset_api_documentation_details_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the API documentation asset to retrieve.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the API Documentation asset to retrieve.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1914,9 +1914,9 @@ class APIDocumentationApi:
     ) -> ApiResponse[ClientApiDocumentation]:
         """Get API Documentation Details
 
-        Get the details of a specific API documentation asset.
+        Get the details of a specific API Documentation asset.
 
-        :param id: The asset ID of the API documentation asset to retrieve. (required)
+        :param id: The asset ID of the API Documentation asset to retrieve. (required)
         :type id: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1968,7 +1968,7 @@ class APIDocumentationApi:
     @validate_call
     def get_asset_api_documentation_details_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the API documentation asset to retrieve.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the API Documentation asset to retrieve.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1984,9 +1984,9 @@ class APIDocumentationApi:
     ) -> RESTResponseType:
         """Get API Documentation Details
 
-        Get the details of a specific API documentation asset.
+        Get the details of a specific API Documentation asset.
 
-        :param id: The asset ID of the API documentation asset to retrieve. (required)
+        :param id: The asset ID of the API Documentation asset to retrieve. (required)
         :type id: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2098,7 +2098,7 @@ class APIDocumentationApi:
     @validate_call
     def get_asset_api_documentation_notes(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the API documentation asset to list notes for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the API Documentation asset to list notes for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -2116,9 +2116,9 @@ class APIDocumentationApi:
     ) -> ClientNoteListData:
         """List API Documentation Notes
 
-        List all notes for a specific API documentation asset.
+        List all notes for a specific API Documentation asset.
 
-        :param id: The asset ID of the API documentation asset to list notes for. (required)
+        :param id: The asset ID of the API Documentation asset to list notes for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -2176,7 +2176,7 @@ class APIDocumentationApi:
     @validate_call
     def get_asset_api_documentation_notes_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the API documentation asset to list notes for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the API Documentation asset to list notes for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -2194,9 +2194,9 @@ class APIDocumentationApi:
     ) -> ApiResponse[ClientNoteListData]:
         """List API Documentation Notes
 
-        List all notes for a specific API documentation asset.
+        List all notes for a specific API Documentation asset.
 
-        :param id: The asset ID of the API documentation asset to list notes for. (required)
+        :param id: The asset ID of the API Documentation asset to list notes for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -2254,7 +2254,7 @@ class APIDocumentationApi:
     @validate_call
     def get_asset_api_documentation_notes_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the API documentation asset to list notes for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the API Documentation asset to list notes for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -2272,9 +2272,9 @@ class APIDocumentationApi:
     ) -> RESTResponseType:
         """List API Documentation Notes
 
-        List all notes for a specific API documentation asset.
+        List all notes for a specific API Documentation asset.
 
-        :param id: The asset ID of the API documentation asset to list notes for. (required)
+        :param id: The asset ID of the API Documentation asset to list notes for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -2707,7 +2707,7 @@ class APIDocumentationApi:
     def get_list_asset_api_documentation(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search API documentation by asset name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -2732,11 +2732,11 @@ class APIDocumentationApi:
     ) -> PaginatedApiDocumentation:
         """List API Documentation
 
-        List all discovered API documentation assets, ordered by date identified.
+        List all discovered API Documentation assets, ordered by date identified.
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search API documentation by asset name.
         :type asset_name: str
@@ -2815,7 +2815,7 @@ class APIDocumentationApi:
     def get_list_asset_api_documentation_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search API documentation by asset name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -2840,11 +2840,11 @@ class APIDocumentationApi:
     ) -> ApiResponse[PaginatedApiDocumentation]:
         """List API Documentation
 
-        List all discovered API documentation assets, ordered by date identified.
+        List all discovered API Documentation assets, ordered by date identified.
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search API documentation by asset name.
         :type asset_name: str
@@ -2923,7 +2923,7 @@ class APIDocumentationApi:
     def get_list_asset_api_documentation_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search API documentation by asset name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -2948,11 +2948,11 @@ class APIDocumentationApi:
     ) -> RESTResponseType:
         """List API Documentation
 
-        List all discovered API documentation assets, ordered by date identified.
+        List all discovered API Documentation assets, ordered by date identified.
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search API documentation by asset name.
         :type asset_name: str
@@ -3765,7 +3765,7 @@ class APIDocumentationApi:
     @validate_call
     def update_asset_api_documentation_status(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the API documentation asset to update.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the API Documentation asset to update.")],
         update_api_documentation_status_dto: UpdateApiDocumentationStatusDto,
         _request_timeout: Union[
             None,
@@ -3782,9 +3782,9 @@ class APIDocumentationApi:
     ) -> ClientApiDocumentation:
         """Update API Documentation Status
 
-        Update the status of a specific API documentation asset.
+        Update the status of a specific API Documentation asset.
 
-        :param id: The asset ID of the API documentation asset to update. (required)
+        :param id: The asset ID of the API Documentation asset to update. (required)
         :type id: float
         :param update_api_documentation_status_dto: (required)
         :type update_api_documentation_status_dto: UpdateApiDocumentationStatusDto
@@ -3838,7 +3838,7 @@ class APIDocumentationApi:
     @validate_call
     def update_asset_api_documentation_status_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the API documentation asset to update.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the API Documentation asset to update.")],
         update_api_documentation_status_dto: UpdateApiDocumentationStatusDto,
         _request_timeout: Union[
             None,
@@ -3855,9 +3855,9 @@ class APIDocumentationApi:
     ) -> ApiResponse[ClientApiDocumentation]:
         """Update API Documentation Status
 
-        Update the status of a specific API documentation asset.
+        Update the status of a specific API Documentation asset.
 
-        :param id: The asset ID of the API documentation asset to update. (required)
+        :param id: The asset ID of the API Documentation asset to update. (required)
         :type id: float
         :param update_api_documentation_status_dto: (required)
         :type update_api_documentation_status_dto: UpdateApiDocumentationStatusDto
@@ -3911,7 +3911,7 @@ class APIDocumentationApi:
     @validate_call
     def update_asset_api_documentation_status_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the API documentation asset to update.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the API Documentation asset to update.")],
         update_api_documentation_status_dto: UpdateApiDocumentationStatusDto,
         _request_timeout: Union[
             None,
@@ -3928,9 +3928,9 @@ class APIDocumentationApi:
     ) -> RESTResponseType:
         """Update API Documentation Status
 
-        Update the status of a specific API documentation asset.
+        Update the status of a specific API Documentation asset.
 
-        :param id: The asset ID of the API documentation asset to update. (required)
+        :param id: The asset ID of the API Documentation asset to update. (required)
         :type id: float
         :param update_api_documentation_status_dto: (required)
         :type update_api_documentation_status_dto: UpdateApiDocumentationStatusDto

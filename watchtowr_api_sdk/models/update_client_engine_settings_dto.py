@@ -30,9 +30,10 @@ class UpdateClientEngineSettingsDto(BaseModel):
     adversary_sight_enabled: StrictBool = Field(description="This setting manages the Adversary Sight engine coverage for the asset.", alias="adversarySightEnabled")
     dns_bruteforcing_enabled: StrictBool = Field(description="This setting manages the DNS Bruteforcing engine coverage for the asset.", alias="dnsBruteforcingEnabled")
     automated_red_teaming_enabled: StrictBool = Field(description="This setting manages the Automated Red Teaming engine coverage for the asset.", alias="automatedRedTeamingEnabled")
+    intrusive_http_checks_enabled: StrictBool = Field(description="This setting manages Intrusive HTTP Checks engine coverage for the asset.", alias="intrusiveHttpChecksEnabled")
     credential_stuffing_enabled: StrictBool = Field(description="This setting manages the Credential Stuffing engine coverage for the asset.", alias="credentialStuffingEnabled")
     rapid_reaction_enabled: StrictBool = Field(description=" This setting manages the Rapid Reaction engine coverage for the asset", alias="rapidReactionEnabled")
-    __properties: ClassVar[List[str]] = ["adversarySightEnabled", "dnsBruteforcingEnabled", "automatedRedTeamingEnabled", "credentialStuffingEnabled", "rapidReactionEnabled"]
+    __properties: ClassVar[List[str]] = ["adversarySightEnabled", "dnsBruteforcingEnabled", "automatedRedTeamingEnabled", "intrusiveHttpChecksEnabled", "credentialStuffingEnabled", "rapidReactionEnabled"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +94,7 @@ class UpdateClientEngineSettingsDto(BaseModel):
             "adversarySightEnabled": obj.get("adversarySightEnabled"),
             "dnsBruteforcingEnabled": obj.get("dnsBruteforcingEnabled"),
             "automatedRedTeamingEnabled": obj.get("automatedRedTeamingEnabled"),
+            "intrusiveHttpChecksEnabled": obj.get("intrusiveHttpChecksEnabled"),
             "credentialStuffingEnabled": obj.get("credentialStuffingEnabled"),
             "rapidReactionEnabled": obj.get("rapidReactionEnabled")
         })

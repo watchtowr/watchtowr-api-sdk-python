@@ -39,6 +39,7 @@ class TestUpdateClientEngineSettingsDto(unittest.TestCase):
                 adversary_sight_enabled = True,
                 dns_bruteforcing_enabled = False,
                 automated_red_teaming_enabled = True,
+                intrusive_http_checks_enabled = True,
                 credential_stuffing_enabled = True,
                 rapid_reaction_enabled = True
             )
@@ -47,6 +48,7 @@ class TestUpdateClientEngineSettingsDto(unittest.TestCase):
                 adversary_sight_enabled = True,
                 dns_bruteforcing_enabled = False,
                 automated_red_teaming_enabled = True,
+                intrusive_http_checks_enabled = True,
                 credential_stuffing_enabled = True,
                 rapid_reaction_enabled = True,
         )

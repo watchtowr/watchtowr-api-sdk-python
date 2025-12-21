@@ -316,7 +316,7 @@ class PortsApi:
     def get_list_asset_ports(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         include_closed_port: Annotated[Optional[StrictBool], Field(description="Include listings with closed ports.")] = None,
         include_no_service: Annotated[Optional[StrictBool], Field(description="Include listings without a service")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter ports created after a given date and time.")] = None,
@@ -344,7 +344,7 @@ class PortsApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param include_closed_port: Include listings with closed ports.
         :type include_closed_port: bool
@@ -420,7 +420,7 @@ class PortsApi:
     def get_list_asset_ports_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         include_closed_port: Annotated[Optional[StrictBool], Field(description="Include listings with closed ports.")] = None,
         include_no_service: Annotated[Optional[StrictBool], Field(description="Include listings without a service")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter ports created after a given date and time.")] = None,
@@ -448,7 +448,7 @@ class PortsApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param include_closed_port: Include listings with closed ports.
         :type include_closed_port: bool
@@ -524,7 +524,7 @@ class PortsApi:
     def get_list_asset_ports_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         include_closed_port: Annotated[Optional[StrictBool], Field(description="Include listings with closed ports.")] = None,
         include_no_service: Annotated[Optional[StrictBool], Field(description="Include listings without a service")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter ports created after a given date and time.")] = None,
@@ -552,7 +552,7 @@ class PortsApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param include_closed_port: Include listings with closed ports.
         :type include_closed_port: bool

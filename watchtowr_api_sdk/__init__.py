@@ -149,12 +149,26 @@ __all__ = [
     "DeleteClientBusinessUnitResponseDto",
     "DeleteClientBusinessUnitRuleResponseDto",
     "DeleteNoteSucces",
+    "DeleteUserResponse",
+    "DeleteUserResponseData",
     "DeleteWhitelistIpData",
     "FilterByBusinessUnitInput",
     "FindingListResponse",
     "FindingRetestResponseDto",
     "FindingsSummaryDto",
     "ForbiddenResponse",
+    "GetAssetApiDocumentationChangelog200Response",
+    "GetAssetCloudAssetChangelog200Response",
+    "GetAssetCloudStorageChangelog200Response",
+    "GetAssetContainerChangelog200Response",
+    "GetAssetDomainChangelog200Response",
+    "GetAssetIpChangelog200Response",
+    "GetAssetIprangeChangelog200Response",
+    "GetAssetMobileAppChangelog200Response",
+    "GetAssetPackageManagerChangelog200Response",
+    "GetAssetRepositoryChangelog200Response",
+    "GetAssetSaasPlatformChangelog200Response",
+    "GetAssetSubdomainChangelog200Response",
     "HostnameBusinessUnitIDsDTO",
     "Hunt",
     "HuntAcknowledgementDto",
@@ -162,6 +176,10 @@ __all__ = [
     "HuntDetailResponse",
     "HuntOverviewDto",
     "Infrastructure",
+    "InviteClientUserDto",
+    "InviteClientUsersBodyDto",
+    "InviteUserResponse",
+    "InviteUserResponseData",
     "KillSwitchDisabledError",
     "KillSwitchForbiddenError",
     "KillSwitchStatusData",
@@ -177,6 +195,7 @@ __all__ = [
     "PaginatedApiDocumentation",
     "PaginatedBusinessUnit",
     "PaginatedClientActivityLog",
+    "PaginatedClientAssetChangelog",
     "PaginatedClientCloudAsset",
     "PaginatedClientCloudStorage",
     "PaginatedClientContainer",
@@ -229,10 +248,12 @@ __all__ = [
     "UpdateClientFindingStatusRequestBody",
     "UpdateClientLegacyAssetStatusDto",
     "UpdateClientNextGenAssetStatusDto",
+    "UpdateClientUserBodyDto",
     "UpdateKillSwitchData",
     "UpdateKillSwitchRequestDto",
     "UpdateKillSwitchResponse",
     "UpdateOrganisationWhitelistIpDto",
+    "UpdateUserResponse",
     "UserDetailData",
     "WhitelistIpData",
     "WhitelistIpDataSingle",
@@ -381,12 +402,26 @@ from watchtowr_api_sdk.models.create_organisation_whitelist_ip_dto import Create
 from watchtowr_api_sdk.models.delete_client_business_unit_response_dto import DeleteClientBusinessUnitResponseDto as DeleteClientBusinessUnitResponseDto
 from watchtowr_api_sdk.models.delete_client_business_unit_rule_response_dto import DeleteClientBusinessUnitRuleResponseDto as DeleteClientBusinessUnitRuleResponseDto
 from watchtowr_api_sdk.models.delete_note_succes import DeleteNoteSucces as DeleteNoteSucces
+from watchtowr_api_sdk.models.delete_user_response import DeleteUserResponse as DeleteUserResponse
+from watchtowr_api_sdk.models.delete_user_response_data import DeleteUserResponseData as DeleteUserResponseData
 from watchtowr_api_sdk.models.delete_whitelist_ip_data import DeleteWhitelistIpData as DeleteWhitelistIpData
 from watchtowr_api_sdk.models.filter_by_business_unit_input import FilterByBusinessUnitInput as FilterByBusinessUnitInput
 from watchtowr_api_sdk.models.finding_list_response import FindingListResponse as FindingListResponse
 from watchtowr_api_sdk.models.finding_retest_response_dto import FindingRetestResponseDto as FindingRetestResponseDto
 from watchtowr_api_sdk.models.findings_summary_dto import FindingsSummaryDto as FindingsSummaryDto
 from watchtowr_api_sdk.models.forbidden_response import ForbiddenResponse as ForbiddenResponse
+from watchtowr_api_sdk.models.get_asset_api_documentation_changelog200_response import GetAssetApiDocumentationChangelog200Response as GetAssetApiDocumentationChangelog200Response
+from watchtowr_api_sdk.models.get_asset_cloud_asset_changelog200_response import GetAssetCloudAssetChangelog200Response as GetAssetCloudAssetChangelog200Response
+from watchtowr_api_sdk.models.get_asset_cloud_storage_changelog200_response import GetAssetCloudStorageChangelog200Response as GetAssetCloudStorageChangelog200Response
+from watchtowr_api_sdk.models.get_asset_container_changelog200_response import GetAssetContainerChangelog200Response as GetAssetContainerChangelog200Response
+from watchtowr_api_sdk.models.get_asset_domain_changelog200_response import GetAssetDomainChangelog200Response as GetAssetDomainChangelog200Response
+from watchtowr_api_sdk.models.get_asset_ip_changelog200_response import GetAssetIpChangelog200Response as GetAssetIpChangelog200Response
+from watchtowr_api_sdk.models.get_asset_iprange_changelog200_response import GetAssetIprangeChangelog200Response as GetAssetIprangeChangelog200Response
+from watchtowr_api_sdk.models.get_asset_mobile_app_changelog200_response import GetAssetMobileAppChangelog200Response as GetAssetMobileAppChangelog200Response
+from watchtowr_api_sdk.models.get_asset_package_manager_changelog200_response import GetAssetPackageManagerChangelog200Response as GetAssetPackageManagerChangelog200Response
+from watchtowr_api_sdk.models.get_asset_repository_changelog200_response import GetAssetRepositoryChangelog200Response as GetAssetRepositoryChangelog200Response
+from watchtowr_api_sdk.models.get_asset_saas_platform_changelog200_response import GetAssetSaasPlatformChangelog200Response as GetAssetSaasPlatformChangelog200Response
+from watchtowr_api_sdk.models.get_asset_subdomain_changelog200_response import GetAssetSubdomainChangelog200Response as GetAssetSubdomainChangelog200Response
 from watchtowr_api_sdk.models.hostname_business_unit_ids_dto import HostnameBusinessUnitIDsDTO as HostnameBusinessUnitIDsDTO
 from watchtowr_api_sdk.models.hunt import Hunt as Hunt
 from watchtowr_api_sdk.models.hunt_acknowledgement_dto import HuntAcknowledgementDto as HuntAcknowledgementDto
@@ -394,6 +429,10 @@ from watchtowr_api_sdk.models.hunt_detail import HuntDetail as HuntDetail
 from watchtowr_api_sdk.models.hunt_detail_response import HuntDetailResponse as HuntDetailResponse
 from watchtowr_api_sdk.models.hunt_overview_dto import HuntOverviewDto as HuntOverviewDto
 from watchtowr_api_sdk.models.infrastructure import Infrastructure as Infrastructure
+from watchtowr_api_sdk.models.invite_client_user_dto import InviteClientUserDto as InviteClientUserDto
+from watchtowr_api_sdk.models.invite_client_users_body_dto import InviteClientUsersBodyDto as InviteClientUsersBodyDto
+from watchtowr_api_sdk.models.invite_user_response import InviteUserResponse as InviteUserResponse
+from watchtowr_api_sdk.models.invite_user_response_data import InviteUserResponseData as InviteUserResponseData
 from watchtowr_api_sdk.models.kill_switch_disabled_error import KillSwitchDisabledError as KillSwitchDisabledError
 from watchtowr_api_sdk.models.kill_switch_forbidden_error import KillSwitchForbiddenError as KillSwitchForbiddenError
 from watchtowr_api_sdk.models.kill_switch_status_data import KillSwitchStatusData as KillSwitchStatusData
@@ -409,6 +448,7 @@ from watchtowr_api_sdk.models.organization_summary_dto import OrganizationSummar
 from watchtowr_api_sdk.models.paginated_api_documentation import PaginatedApiDocumentation as PaginatedApiDocumentation
 from watchtowr_api_sdk.models.paginated_business_unit import PaginatedBusinessUnit as PaginatedBusinessUnit
 from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog as PaginatedClientActivityLog
+from watchtowr_api_sdk.models.paginated_client_asset_changelog import PaginatedClientAssetChangelog as PaginatedClientAssetChangelog
 from watchtowr_api_sdk.models.paginated_client_cloud_asset import PaginatedClientCloudAsset as PaginatedClientCloudAsset
 from watchtowr_api_sdk.models.paginated_client_cloud_storage import PaginatedClientCloudStorage as PaginatedClientCloudStorage
 from watchtowr_api_sdk.models.paginated_client_container import PaginatedClientContainer as PaginatedClientContainer
@@ -461,10 +501,12 @@ from watchtowr_api_sdk.models.update_client_finding_state_request_body import Up
 from watchtowr_api_sdk.models.update_client_finding_status_request_body import UpdateClientFindingStatusRequestBody as UpdateClientFindingStatusRequestBody
 from watchtowr_api_sdk.models.update_client_legacy_asset_status_dto import UpdateClientLegacyAssetStatusDto as UpdateClientLegacyAssetStatusDto
 from watchtowr_api_sdk.models.update_client_next_gen_asset_status_dto import UpdateClientNextGenAssetStatusDto as UpdateClientNextGenAssetStatusDto
+from watchtowr_api_sdk.models.update_client_user_body_dto import UpdateClientUserBodyDto as UpdateClientUserBodyDto
 from watchtowr_api_sdk.models.update_kill_switch_data import UpdateKillSwitchData as UpdateKillSwitchData
 from watchtowr_api_sdk.models.update_kill_switch_request_dto import UpdateKillSwitchRequestDto as UpdateKillSwitchRequestDto
 from watchtowr_api_sdk.models.update_kill_switch_response import UpdateKillSwitchResponse as UpdateKillSwitchResponse
 from watchtowr_api_sdk.models.update_organisation_whitelist_ip_dto import UpdateOrganisationWhitelistIpDto as UpdateOrganisationWhitelistIpDto
+from watchtowr_api_sdk.models.update_user_response import UpdateUserResponse as UpdateUserResponse
 from watchtowr_api_sdk.models.user_detail_data import UserDetailData as UserDetailData
 from watchtowr_api_sdk.models.whitelist_ip_data import WhitelistIpData as WhitelistIpData
 from watchtowr_api_sdk.models.whitelist_ip_data_single import WhitelistIpDataSingle as WhitelistIpDataSingle

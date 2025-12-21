@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**create_note_mobile_app**](MobileApplicationsApi.md#create_note_mobile_app) | **POST** /api/client/assets/mobileApp/show/{id}/note | Create Note
 [**delete_custom_property_mobile_app**](MobileApplicationsApi.md#delete_custom_property_mobile_app) | **DELETE** /api/client/assets/mobileApp/show/{id}/custom-property/{customPropertyId} | Delete Custom Property
 [**delete_note_mobile_app**](MobileApplicationsApi.md#delete_note_mobile_app) | **DELETE** /api/client/assets/mobileApp/show/{id}/note/{noteId} | Delete Note
-[**get_asset_mobile_app_changelog**](MobileApplicationsApi.md#get_asset_mobile_app_changelog) | **GET** /api/client/assets/mobileApp/show/{id}/changelog | Get Mobile App Changelog
+[**get_asset_mobile_app_changelog**](MobileApplicationsApi.md#get_asset_mobile_app_changelog) | **GET** /api/client/assets/mobileApp/show/{id}/changelog | Get Mobile Application Changelog
 [**get_asset_mobile_app_details**](MobileApplicationsApi.md#get_asset_mobile_app_details) | **GET** /api/client/assets/mobileApp/show/{id} | Get Mobile Application
 [**get_asset_mobile_app_notes**](MobileApplicationsApi.md#get_asset_mobile_app_notes) | **GET** /api/client/assets/mobileApp/show/{id}/notes | List Notes
 [**get_custom_properties_mobile_app**](MobileApplicationsApi.md#get_custom_properties_mobile_app) | **GET** /api/client/assets/mobileApp/show/{id}/custom-properties | List Custom Properties
@@ -143,7 +143,7 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.MobileApplicationsApi(api_client)
-    id = 3.4 # float | The asset ID of the mobile application to create a new custom property for.
+    id = 3.4 # float | The asset ID of the Mobile Application to create a new custom property for.
     create_client_custom_property_dto = watchtowr_api_sdk.CreateClientCustomPropertyDto() # CreateClientCustomPropertyDto | 
 
     try:
@@ -162,7 +162,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of the mobile application to create a new custom property for. | 
+ **id** | **float**| The asset ID of the Mobile Application to create a new custom property for. | 
  **create_client_custom_property_dto** | [**CreateClientCustomPropertyDto**](CreateClientCustomPropertyDto.md)|  | 
 
 ### Return type
@@ -227,7 +227,7 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.MobileApplicationsApi(api_client)
-    id = 3.4 # float | The asset ID of the mobile application to create a new note for.
+    id = 3.4 # float | The asset ID of the Mobile Application to create a new note for.
     create_client_note_dto = watchtowr_api_sdk.CreateClientNoteDto() # CreateClientNoteDto | 
 
     try:
@@ -246,7 +246,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of the mobile application to create a new note for. | 
+ **id** | **float**| The asset ID of the Mobile Application to create a new note for. | 
  **create_client_note_dto** | [**CreateClientNoteDto**](CreateClientNoteDto.md)|  | 
 
 ### Return type
@@ -309,7 +309,7 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.MobileApplicationsApi(api_client)
-    id = 3.4 # float | The asset ID of a mobile application with a custom property to delete.
+    id = 3.4 # float | The asset ID of a Mobile Application with a custom property to delete.
     custom_property_id = 3.4 # float | The ID of the custom property to delete.
 
     try:
@@ -328,7 +328,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of a mobile application with a custom property to delete. | 
+ **id** | **float**| The asset ID of a Mobile Application with a custom property to delete. | 
  **custom_property_id** | **float**| The ID of the custom property to delete. | 
 
 ### Return type
@@ -392,7 +392,7 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.MobileApplicationsApi(api_client)
-    id = 3.4 # float | The asset ID of a mobile application with a note to delete.
+    id = 3.4 # float | The asset ID of a Mobile Application with a note to delete.
     note_id = 3.4 # float | The ID of the note to delete.
 
     try:
@@ -411,7 +411,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of a mobile application with a note to delete. | 
+ **id** | **float**| The asset ID of a Mobile Application with a note to delete. | 
  **note_id** | **float**| The ID of the note to delete. | 
 
 ### Return type
@@ -438,11 +438,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_asset_mobile_app_changelog**
-> PaginatedClientActivityLog get_asset_mobile_app_changelog(id, page=page, page_size=page_size)
+> GetAssetMobileAppChangelog200Response get_asset_mobile_app_changelog(id, page=page, page_size=page_size)
 
-Get Mobile App Changelog
+Get Mobile Application Changelog
 
-Get paginated changelog (activity logs) for a specific mobile app asset.
+Get paginated changelog for a specific Mobile Application.
 
 ### Example
 
@@ -450,7 +450,7 @@ Get paginated changelog (activity logs) for a specific mobile app asset.
 
 ```python
 import watchtowr_api_sdk
-from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog
+from watchtowr_api_sdk.models.get_asset_mobile_app_changelog200_response import GetAssetMobileAppChangelog200Response
 from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
@@ -474,12 +474,12 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.MobileApplicationsApi(api_client)
-    id = 3.4 # float | The asset ID of the mobile app to retrieve changelog for.
+    id = 3.4 # float | The asset ID of the Mobile Application to retrieve changelog for.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
 
     try:
-        # Get Mobile App Changelog
+        # Get Mobile Application Changelog
         api_response = api_instance.get_asset_mobile_app_changelog(id, page=page, page_size=page_size)
         print("The response of MobileApplicationsApi->get_asset_mobile_app_changelog:\n")
         pprint(api_response)
@@ -494,13 +494,13 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of the mobile app to retrieve changelog for. | 
+ **id** | **float**| The asset ID of the Mobile Application to retrieve changelog for. | 
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
  **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
 
 ### Return type
 
-[**PaginatedClientActivityLog**](PaginatedClientActivityLog.md)
+[**GetAssetMobileAppChangelog200Response**](GetAssetMobileAppChangelog200Response.md)
 
 ### Authorization
 
@@ -559,7 +559,7 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.MobileApplicationsApi(api_client)
-    id = 3.4 # float | The asset ID of the mobile application to get.
+    id = 3.4 # float | The asset ID of the Mobile Application to get.
 
     try:
         # Get Mobile Application
@@ -577,7 +577,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of the mobile application to get. | 
+ **id** | **float**| The asset ID of the Mobile Application to get. | 
 
 ### Return type
 
@@ -640,7 +640,7 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.MobileApplicationsApi(api_client)
-    id = 3.4 # float | The asset ID of the mobile application to list notes of.
+    id = 3.4 # float | The asset ID of the Mobile Application to list notes of.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
 
@@ -660,7 +660,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of the mobile application to list notes of. | 
+ **id** | **float**| The asset ID of the Mobile Application to list notes of. | 
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
  **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
 
@@ -724,7 +724,7 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.MobileApplicationsApi(api_client)
-    id = 3.4 # float | The asset ID of the mobile application to list custom properties of.
+    id = 3.4 # float | The asset ID of the Mobile Application to list custom properties of.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
 
@@ -744,7 +744,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of the mobile application to list custom properties of. | 
+ **id** | **float**| The asset ID of the Mobile Application to list custom properties of. | 
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
  **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
 
@@ -810,7 +810,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.MobileApplicationsApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
-    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
+    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100. (optional)
     asset_name = 'watchTowr-Android' # str | Search Mobile Applications by assets by name. (optional)
     statuses = ['statuses_example'] # List[str] | Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope  (optional)
     source = 'module-adversarysight-playstore-mobileapp-discovery' # str | Filter assets by the source that discovered the asset. (optional)
@@ -838,7 +838,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
- **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
+ **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100. | [optional] 
  **asset_name** | **str**| Search Mobile Applications by assets by name. | [optional] 
  **statuses** | [**List[str]**](str.md)| Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope  | [optional] 
  **source** | **str**| Filter assets by the source that discovered the asset. | [optional] 
@@ -993,7 +993,7 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.MobileApplicationsApi(api_client)
-    id = 3.4 # float | The asset ID of the mobile application to update status of.
+    id = 3.4 # float | The asset ID of the Mobile Application to update status of.
     update_client_next_gen_asset_status_dto = watchtowr_api_sdk.UpdateClientNextGenAssetStatusDto() # UpdateClientNextGenAssetStatusDto | 
 
     try:
@@ -1012,7 +1012,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of the mobile application to update status of. | 
+ **id** | **float**| The asset ID of the Mobile Application to update status of. | 
  **update_client_next_gen_asset_status_dto** | [**UpdateClientNextGenAssetStatusDto**](UpdateClientNextGenAssetStatusDto.md)|  | 
 
 ### Return type
@@ -1076,7 +1076,7 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.MobileApplicationsApi(api_client)
-    id = 3.4 # float | The asset ID of a mobile application with a custom property to update.
+    id = 3.4 # float | The asset ID of a Mobile Application with a custom property to update.
     custom_property_id = 3.4 # float | The ID of the custom property to update.
     update_client_custom_property_dto = watchtowr_api_sdk.UpdateClientCustomPropertyDto() # UpdateClientCustomPropertyDto | 
 
@@ -1096,7 +1096,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of a mobile application with a custom property to update. | 
+ **id** | **float**| The asset ID of a Mobile Application with a custom property to update. | 
  **custom_property_id** | **float**| The ID of the custom property to update. | 
  **update_client_custom_property_dto** | [**UpdateClientCustomPropertyDto**](UpdateClientCustomPropertyDto.md)|  | 
 
@@ -1162,7 +1162,7 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.MobileApplicationsApi(api_client)
-    id = 3.4 # float | The asset ID of a mobile application with a note to update.
+    id = 3.4 # float | The asset ID of a Mobile Application with a note to update.
     note_id = 3.4 # float | The ID of the note to update.
     create_client_note_dto = watchtowr_api_sdk.CreateClientNoteDto() # CreateClientNoteDto | 
 
@@ -1182,7 +1182,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of a mobile application with a note to update. | 
+ **id** | **float**| The asset ID of a Mobile Application with a note to update. | 
  **note_id** | **float**| The ID of the note to update. | 
  **create_client_note_dto** | [**CreateClientNoteDto**](CreateClientNoteDto.md)|  | 
 

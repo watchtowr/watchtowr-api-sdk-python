@@ -440,11 +440,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_asset_api_documentation_changelog**
-> PaginatedClientActivityLog get_asset_api_documentation_changelog(id, page=page, page_size=page_size)
+> GetAssetApiDocumentationChangelog200Response get_asset_api_documentation_changelog(id, page=page, page_size=page_size)
 
 Get API Documentation Changelog
 
-Get paginated changelog (activity logs) for a specific API documentation asset.
+Get paginated changelog for a specific API Documentation asset.
 
 ### Example
 
@@ -452,7 +452,7 @@ Get paginated changelog (activity logs) for a specific API documentation asset.
 
 ```python
 import watchtowr_api_sdk
-from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog
+from watchtowr_api_sdk.models.get_asset_api_documentation_changelog200_response import GetAssetApiDocumentationChangelog200Response
 from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedClientActivityLog**](PaginatedClientActivityLog.md)
+[**GetAssetApiDocumentationChangelog200Response**](GetAssetApiDocumentationChangelog200Response.md)
 
 ### Authorization
 
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 
 Get API Documentation Details
 
-Get the details of a specific API documentation asset.
+Get the details of a specific API Documentation asset.
 
 ### Example
 
@@ -561,7 +561,7 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
-    id = 3.4 # float | The asset ID of the API documentation asset to retrieve.
+    id = 3.4 # float | The asset ID of the API Documentation asset to retrieve.
 
     try:
         # Get API Documentation Details
@@ -579,7 +579,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of the API documentation asset to retrieve. | 
+ **id** | **float**| The asset ID of the API Documentation asset to retrieve. | 
 
 ### Return type
 
@@ -610,7 +610,7 @@ Name | Type | Description  | Notes
 
 List API Documentation Notes
 
-List all notes for a specific API documentation asset.
+List all notes for a specific API Documentation asset.
 
 ### Example
 
@@ -642,7 +642,7 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
-    id = 3.4 # float | The asset ID of the API documentation asset to list notes for.
+    id = 3.4 # float | The asset ID of the API Documentation asset to list notes for.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
 
@@ -662,7 +662,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of the API documentation asset to list notes for. | 
+ **id** | **float**| The asset ID of the API Documentation asset to list notes for. | 
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
  **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
 
@@ -780,7 +780,7 @@ Name | Type | Description  | Notes
 
 List API Documentation
 
-List all discovered API documentation assets, ordered by date identified.
+List all discovered API Documentation assets, ordered by date identified.
 
 ### Example
 
@@ -813,7 +813,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
-    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
+    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100. (optional)
     asset_name = 'watchtowr_docs/watchtowr-swagger-hub' # str | Search API documentation by asset name. (optional)
     statuses = ['statuses_example'] # List[str] | Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope  (optional)
     source = 'module-adversarysight-api-discovery' # str | Filter assets by the source that discovered the asset. (optional)
@@ -841,7 +841,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
- **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
+ **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100. | [optional] 
  **asset_name** | **str**| Search API documentation by asset name. | [optional] 
  **statuses** | [**List[str]**](str.md)| Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope  | [optional] 
  **source** | **str**| Filter assets by the source that discovered the asset. | [optional] 
@@ -1049,7 +1049,7 @@ Name | Type | Description  | Notes
 
 Update API Documentation Status
 
-Update the status of a specific API documentation asset.
+Update the status of a specific API Documentation asset.
 
 ### Example
 
@@ -1082,7 +1082,7 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.APIDocumentationApi(api_client)
-    id = 3.4 # float | The asset ID of the API documentation asset to update.
+    id = 3.4 # float | The asset ID of the API Documentation asset to update.
     update_api_documentation_status_dto = watchtowr_api_sdk.UpdateApiDocumentationStatusDto() # UpdateApiDocumentationStatusDto | 
 
     try:
@@ -1101,7 +1101,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of the API documentation asset to update. | 
+ **id** | **float**| The asset ID of the API Documentation asset to update. | 
  **update_api_documentation_status_dto** | [**UpdateApiDocumentationStatusDto**](UpdateApiDocumentationStatusDto.md)|  | 
 
 ### Return type

@@ -62,7 +62,8 @@ class TestPaginatedClientDomain(unittest.TestCase):
                             automated_red_teaming_enabled = True, 
                             credential_stuffing_enabled = True, 
                             dns_bruteforcing_enabled = False, 
-                            rapid_reaction_enabled = True, ), )
+                            rapid_reaction_enabled = True, 
+                            intrusive_http_checks_enabled = False, ), )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
@@ -95,7 +96,8 @@ class TestPaginatedClientDomain(unittest.TestCase):
                             automated_red_teaming_enabled = True, 
                             credential_stuffing_enabled = True, 
                             dns_bruteforcing_enabled = False, 
-                            rapid_reaction_enabled = True, ), )
+                            rapid_reaction_enabled = True, 
+                            intrusive_http_checks_enabled = False, ), )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),

@@ -522,11 +522,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_asset_iprange_changelog**
-> PaginatedClientActivityLog get_asset_iprange_changelog(id, page=page, page_size=page_size)
+> GetAssetIprangeChangelog200Response get_asset_iprange_changelog(id, page=page, page_size=page_size)
 
 Get IP Range Changelog
 
-Get paginated changelog (activity logs) for a specific IP range asset.
+Get paginated changelog for a specific IP Range asset.
 
 ### Example
 
@@ -534,7 +534,7 @@ Get paginated changelog (activity logs) for a specific IP range asset.
 
 ```python
 import watchtowr_api_sdk
-from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog
+from watchtowr_api_sdk.models.get_asset_iprange_changelog200_response import GetAssetIprangeChangelog200Response
 from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
@@ -558,7 +558,7 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.IPRangesApi(api_client)
-    id = 3.4 # float | The asset ID of the IP range to retrieve changelog for.
+    id = 3.4 # float | The asset ID of the IP Range to retrieve changelog for.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
 
@@ -578,13 +578,13 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **float**| The asset ID of the IP range to retrieve changelog for. | 
+ **id** | **float**| The asset ID of the IP Range to retrieve changelog for. | 
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
  **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
 
 ### Return type
 
-[**PaginatedClientActivityLog**](PaginatedClientActivityLog.md)
+[**GetAssetIprangeChangelog200Response**](GetAssetIprangeChangelog200Response.md)
 
 ### Authorization
 
@@ -810,7 +810,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.IPRangesApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
-    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
+    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100. (optional)
     asset_name = '123.123.123.123/24' # str | Search IP Ranges by name (full or partial). (optional)
     statuses = ['statuses_example'] # List[str] | Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack  (optional)
     source = 'module-adversarysight-ip-range-company-lookup' # str | Filter assets by the source that discovered the asset. (optional)
@@ -838,7 +838,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
- **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
+ **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100. | [optional] 
  **asset_name** | **str**| Search IP Ranges by name (full or partial). | [optional] 
  **statuses** | [**List[str]**](str.md)| Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack  | [optional] 
  **source** | **str**| Filter assets by the source that discovered the asset. | [optional] 

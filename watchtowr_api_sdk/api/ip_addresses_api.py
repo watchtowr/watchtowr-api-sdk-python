@@ -32,7 +32,7 @@ from watchtowr_api_sdk.models.client_port_data import ClientPortData
 from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto
 from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto
 from watchtowr_api_sdk.models.delete_note_succes import DeleteNoteSucces
-from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog
+from watchtowr_api_sdk.models.get_asset_ip_changelog200_response import GetAssetIpChangelog200Response
 from watchtowr_api_sdk.models.paginated_client_custom_property import PaginatedClientCustomProperty
 from watchtowr_api_sdk.models.paginated_client_ip import PaginatedClientIp
 from watchtowr_api_sdk.models.paginated_client_port import PaginatedClientPort
@@ -1523,7 +1523,7 @@ class IPAddressesApi:
     @validate_call
     def get_asset_ip_changelog(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the IP address to retrieve changelog for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the IP Address to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -1538,12 +1538,12 @@ class IPAddressesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PaginatedClientActivityLog:
+    ) -> GetAssetIpChangelog200Response:
         """Get IP Address Changelog
 
-        Get paginated changelog (activity logs) for a specific IP address asset.
+        Get paginated changelog for a specific IP Address asset.
 
-        :param id: The asset ID of the IP address to retrieve changelog for. (required)
+        :param id: The asset ID of the IP Address to retrieve changelog for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -1582,7 +1582,7 @@ class IPAddressesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetIpChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1601,7 +1601,7 @@ class IPAddressesApi:
     @validate_call
     def get_asset_ip_changelog_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the IP address to retrieve changelog for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the IP Address to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -1616,12 +1616,12 @@ class IPAddressesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PaginatedClientActivityLog]:
+    ) -> ApiResponse[GetAssetIpChangelog200Response]:
         """Get IP Address Changelog
 
-        Get paginated changelog (activity logs) for a specific IP address asset.
+        Get paginated changelog for a specific IP Address asset.
 
-        :param id: The asset ID of the IP address to retrieve changelog for. (required)
+        :param id: The asset ID of the IP Address to retrieve changelog for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -1660,7 +1660,7 @@ class IPAddressesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetIpChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1679,7 +1679,7 @@ class IPAddressesApi:
     @validate_call
     def get_asset_ip_changelog_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the IP address to retrieve changelog for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the IP Address to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -1697,9 +1697,9 @@ class IPAddressesApi:
     ) -> RESTResponseType:
         """Get IP Address Changelog
 
-        Get paginated changelog (activity logs) for a specific IP address asset.
+        Get paginated changelog for a specific IP Address asset.
 
-        :param id: The asset ID of the IP address to retrieve changelog for. (required)
+        :param id: The asset ID of the IP Address to retrieve changelog for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -1738,7 +1738,7 @@ class IPAddressesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetIpChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1843,7 +1843,7 @@ class IPAddressesApi:
     ) -> ClientIpData:
         """Get IP Address Details
 
-        Get the details of a specific IP address asset.
+        Get the details of a specific IP Address asset.
 
         :param id: The asset ID of the IP address to retrieve. (required)
         :type id: float
@@ -1913,7 +1913,7 @@ class IPAddressesApi:
     ) -> ApiResponse[ClientIpData]:
         """Get IP Address Details
 
-        Get the details of a specific IP address asset.
+        Get the details of a specific IP Address asset.
 
         :param id: The asset ID of the IP address to retrieve. (required)
         :type id: float
@@ -1983,7 +1983,7 @@ class IPAddressesApi:
     ) -> RESTResponseType:
         """Get IP Address Details
 
-        Get the details of a specific IP address asset.
+        Get the details of a specific IP Address asset.
 
         :param id: The asset ID of the IP address to retrieve. (required)
         :type id: float
@@ -3256,7 +3256,7 @@ class IPAddressesApi:
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of the IP address to list associated ports of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         include_closed_port: Annotated[Optional[StrictBool], Field(description="Include listings with closed ports.")] = None,
         include_no_service: Annotated[Optional[StrictBool], Field(description="Include listings without a service")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter ports created after a given date and time.")] = None,
@@ -3282,7 +3282,7 @@ class IPAddressesApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param include_closed_port: Include listings with closed ports.
         :type include_closed_port: bool
@@ -3349,7 +3349,7 @@ class IPAddressesApi:
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of the IP address to list associated ports of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         include_closed_port: Annotated[Optional[StrictBool], Field(description="Include listings with closed ports.")] = None,
         include_no_service: Annotated[Optional[StrictBool], Field(description="Include listings without a service")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter ports created after a given date and time.")] = None,
@@ -3375,7 +3375,7 @@ class IPAddressesApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param include_closed_port: Include listings with closed ports.
         :type include_closed_port: bool
@@ -3442,7 +3442,7 @@ class IPAddressesApi:
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of the IP address to list associated ports of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         include_closed_port: Annotated[Optional[StrictBool], Field(description="Include listings with closed ports.")] = None,
         include_no_service: Annotated[Optional[StrictBool], Field(description="Include listings without a service")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter ports created after a given date and time.")] = None,
@@ -3468,7 +3468,7 @@ class IPAddressesApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param include_closed_port: Include listings with closed ports.
         :type include_closed_port: bool
@@ -3946,7 +3946,7 @@ class IPAddressesApi:
     def get_list_asset_ips(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search IP address by name (full or partial).")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack       * CDN       * hanging cloud ip       * Third Party       * VerifiedHoneypot ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -3972,11 +3972,11 @@ class IPAddressesApi:
     ) -> PaginatedClientIp:
         """List IP Addresses
 
-        List all discovered IP address assets, ordered by date identified.
+        List all discovered IP Address assets, ordered by date identified.
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search IP address by name (full or partial).
         :type asset_name: str
@@ -4058,7 +4058,7 @@ class IPAddressesApi:
     def get_list_asset_ips_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search IP address by name (full or partial).")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack       * CDN       * hanging cloud ip       * Third Party       * VerifiedHoneypot ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -4084,11 +4084,11 @@ class IPAddressesApi:
     ) -> ApiResponse[PaginatedClientIp]:
         """List IP Addresses
 
-        List all discovered IP address assets, ordered by date identified.
+        List all discovered IP Address assets, ordered by date identified.
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search IP address by name (full or partial).
         :type asset_name: str
@@ -4170,7 +4170,7 @@ class IPAddressesApi:
     def get_list_asset_ips_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search IP address by name (full or partial).")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack       * CDN       * hanging cloud ip       * Third Party       * VerifiedHoneypot ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -4196,11 +4196,11 @@ class IPAddressesApi:
     ) -> RESTResponseType:
         """List IP Addresses
 
-        List all discovered IP address assets, ordered by date identified.
+        List all discovered IP Address assets, ordered by date identified.
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search IP address by name (full or partial).
         :type asset_name: str

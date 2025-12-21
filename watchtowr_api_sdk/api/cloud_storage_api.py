@@ -29,7 +29,7 @@ from watchtowr_api_sdk.models.client_note_list_data import ClientNoteListData
 from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto
 from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto
 from watchtowr_api_sdk.models.delete_note_succes import DeleteNoteSucces
-from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog
+from watchtowr_api_sdk.models.get_asset_cloud_storage_changelog200_response import GetAssetCloudStorageChangelog200Response
 from watchtowr_api_sdk.models.paginated_client_cloud_storage import PaginatedClientCloudStorage
 from watchtowr_api_sdk.models.paginated_client_custom_property import PaginatedClientCustomProperty
 from watchtowr_api_sdk.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto
@@ -1524,7 +1524,7 @@ class CloudStorageApi:
     @validate_call
     def get_asset_cloud_storage_changelog(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the cloud storage to retrieve changelog for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Cloud Storage to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -1539,12 +1539,12 @@ class CloudStorageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PaginatedClientActivityLog:
+    ) -> GetAssetCloudStorageChangelog200Response:
         """Get Cloud Storage Changelog
 
-        Get paginated changelog (activity logs) for a specific cloud storage asset.
+        Get paginated changelog for a specific Cloud Storage asset.
 
-        :param id: The asset ID of the cloud storage to retrieve changelog for. (required)
+        :param id: The asset ID of the Cloud Storage to retrieve changelog for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -1583,7 +1583,7 @@ class CloudStorageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetCloudStorageChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1602,7 +1602,7 @@ class CloudStorageApi:
     @validate_call
     def get_asset_cloud_storage_changelog_with_http_info(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the cloud storage to retrieve changelog for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Cloud Storage to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -1617,12 +1617,12 @@ class CloudStorageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PaginatedClientActivityLog]:
+    ) -> ApiResponse[GetAssetCloudStorageChangelog200Response]:
         """Get Cloud Storage Changelog
 
-        Get paginated changelog (activity logs) for a specific cloud storage asset.
+        Get paginated changelog for a specific Cloud Storage asset.
 
-        :param id: The asset ID of the cloud storage to retrieve changelog for. (required)
+        :param id: The asset ID of the Cloud Storage to retrieve changelog for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -1661,7 +1661,7 @@ class CloudStorageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetCloudStorageChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1680,7 +1680,7 @@ class CloudStorageApi:
     @validate_call
     def get_asset_cloud_storage_changelog_without_preload_content(
         self,
-        id: Annotated[StrictFloat, Field(description="The asset ID of the cloud storage to retrieve changelog for.")],
+        id: Annotated[StrictFloat, Field(description="The asset ID of the Cloud Storage to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         _request_timeout: Union[
@@ -1698,9 +1698,9 @@ class CloudStorageApi:
     ) -> RESTResponseType:
         """Get Cloud Storage Changelog
 
-        Get paginated changelog (activity logs) for a specific cloud storage asset.
+        Get paginated changelog for a specific Cloud Storage asset.
 
-        :param id: The asset ID of the cloud storage to retrieve changelog for. (required)
+        :param id: The asset ID of the Cloud Storage to retrieve changelog for. (required)
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -1739,7 +1739,7 @@ class CloudStorageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PaginatedClientActivityLog",
+            '200': "GetAssetCloudStorageChangelog200Response",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -2704,7 +2704,7 @@ class CloudStorageApi:
     def get_list_asset_cloud_storages(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search cloud storage assets by asset name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -2733,7 +2733,7 @@ class CloudStorageApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search cloud storage assets by asset name.
         :type asset_name: str
@@ -2812,7 +2812,7 @@ class CloudStorageApi:
     def get_list_asset_cloud_storages_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search cloud storage assets by asset name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -2841,7 +2841,7 @@ class CloudStorageApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search cloud storage assets by asset name.
         :type asset_name: str
@@ -2920,7 +2920,7 @@ class CloudStorageApi:
     def get_list_asset_cloud_storages_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search cloud storage assets by asset name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * tracked       * incorrect identification       * pending       * verifiedOutOfScope")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
@@ -2949,7 +2949,7 @@ class CloudStorageApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
         :type page_size: float
         :param asset_name: Search cloud storage assets by asset name.
         :type asset_name: str

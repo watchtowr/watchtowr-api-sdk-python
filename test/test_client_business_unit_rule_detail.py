@@ -39,6 +39,7 @@ class TestClientBusinessUnitRuleDetail(unittest.TestCase):
                 id = 1,
                 name = 'Singapore Assets Rule',
                 keyword_matcher = 'example.com',
+                keyword_rule_type = 'HOSTNAME',
                 country = 'SG',
                 cascade_subdomain = True,
                 cascade_ip = True,

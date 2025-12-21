@@ -39,6 +39,7 @@ class TestCreateClientBusinessUnitRuleDto(unittest.TestCase):
                 name = 'Singapore Assets Rule',
                 type = 'keyword',
                 keyword_matcher = 'example.com',
+                keyword_rule_type = 'HOSTNAME',
                 country_code = 'SG',
                 integration_type = 'aws',
                 integration_id = 1,

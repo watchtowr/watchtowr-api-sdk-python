@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,8 @@ class ClientBusinessUnitRuleDetail(BaseModel):
     """ # noqa: E501
     id: StrictFloat = Field(description="ID")
     name: StrictStr = Field(description="Rule name")
-    keyword_matcher: Optional[StrictStr] = Field(default=None, description="Keyword for matching domains/subdomains")
+    keyword_matcher: Optional[StrictStr] = Field(default=None, description="Keyword for matching assets. Supports wildcard patterns: %.sg, %abc%, %abc.com, abc.com. Wildcards can be defined using %.")
+    keyword_rule_type: Optional[StrictStr] = Field(default=None, description="Keyword rule type. HOSTNAME: matches domain/subdomain names (default). CNAME: matches CNAME DNS record values. TLS_SSL: matches TLS/SSL certificate subject names.")
     country: Optional[StrictStr] = Field(default=None, description="Geographical location 2-letter country code (ISO 3166-1 alpha-2). Examples: SG, US, GB, AU")
     cascade_subdomain: StrictBool = Field(description="Whether to cascade to subdomains")
     cascade_ip: StrictBool = Field(description="Whether to cascade to IPs")
@@ -37,7 +38,17 @@ class ClientBusinessUnitRuleDetail(BaseModel):
     integration_id: Optional[StrictFloat] = Field(default=None, description="Integration ID")
     include_all_integrations: StrictBool = Field(description="Whether to include all integrations")
     created_at: Dict[str, Any] = Field(description="Created At")
-    __properties: ClassVar[List[str]] = ["id", "name", "keyword_matcher", "country", "cascade_subdomain", "cascade_ip", "integration_type", "integration_id", "include_all_integrations", "created_at"]
+    __properties: ClassVar[List[str]] = ["id", "name", "keyword_matcher", "keyword_rule_type", "country", "cascade_subdomain", "cascade_ip", "integration_type", "integration_id", "include_all_integrations", "created_at"]
+
+    @field_validator('keyword_rule_type')
+    def keyword_rule_type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['HOSTNAME', 'CNAME', 'TLS_SSL']):
+            raise ValueError("must be one of enum values ('HOSTNAME', 'CNAME', 'TLS_SSL')")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,6 +109,7 @@ class ClientBusinessUnitRuleDetail(BaseModel):
             "id": obj.get("id"),
             "name": obj.get("name"),
             "keyword_matcher": obj.get("keyword_matcher"),
+            "keyword_rule_type": obj.get("keyword_rule_type"),
             "country": obj.get("country"),
             "cascade_subdomain": obj.get("cascade_subdomain"),
             "cascade_ip": obj.get("cascade_ip"),

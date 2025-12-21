@@ -29,20 +29,31 @@ class CreateClientBusinessUnitRuleDto(BaseModel):
     """ # noqa: E501
     name: StrictStr = Field(description="Rule name")
     type: StrictStr = Field(description="Rule type")
-    keyword_matcher: Optional[StrictStr] = Field(default=None, description="Keyword for matching domains/subdomains (required when type is keyword)")
+    keyword_matcher: Optional[StrictStr] = Field(default=None, description="Keyword for matching assets (required when type is keyword). Supports wildcard patterns: %.sg, %abc%, %abc.com, abc.com. Wildcards can be defined using %.")
+    keyword_rule_type: Optional[StrictStr] = Field(default=None, description="Keyword rule type (optional, defaults to HOSTNAME when keyword_matcher is provided). HOSTNAME: matches domain/subdomain names. CNAME: matches CNAME DNS record values. TLS_SSL: matches TLS/SSL certificate subject names.")
     country_code: Optional[StrictStr] = Field(default=None, description="Geographical location 2-letter country code (ISO 3166-1 alpha-2) for matching IPs (required when type is country). Examples: SG, US, GB, AU")
     integration_type: Optional[StrictStr] = Field(default=None, description="Integration type for matching cloud assets (required when type is integration). Valid values: aws, azure, googlecloud, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, armiscentrix, qualysvmdr, tenable")
     integration_id: Optional[StrictFloat] = Field(default=None, description="Integration ID for matching cloud assets (required when type is integration)")
     cascade_subdomain: Optional[StrictBool] = Field(default=True, description="Whether to cascade rule to subdomains")
     cascade_ip: Optional[StrictBool] = Field(default=True, description="Whether to cascade rule to IPs")
     include_all_integrations: Optional[StrictBool] = Field(default=False, description="Whether to include all integrations")
-    __properties: ClassVar[List[str]] = ["name", "type", "keyword_matcher", "country_code", "integration_type", "integration_id", "cascade_subdomain", "cascade_ip", "include_all_integrations"]
+    __properties: ClassVar[List[str]] = ["name", "type", "keyword_matcher", "keyword_rule_type", "country_code", "integration_type", "integration_id", "cascade_subdomain", "cascade_ip", "include_all_integrations"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
         """Validates the enum"""
         if value not in set(['keyword', 'country', 'integration']):
             raise ValueError("must be one of enum values ('keyword', 'country', 'integration')")
+        return value
+
+    @field_validator('keyword_rule_type')
+    def keyword_rule_type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['HOSTNAME', 'CNAME', 'TLS_SSL']):
+            raise ValueError("must be one of enum values ('HOSTNAME', 'CNAME', 'TLS_SSL')")
         return value
 
     @field_validator('integration_type')
@@ -114,6 +125,7 @@ class CreateClientBusinessUnitRuleDto(BaseModel):
             "name": obj.get("name"),
             "type": obj.get("type"),
             "keyword_matcher": obj.get("keyword_matcher"),
+            "keyword_rule_type": obj.get("keyword_rule_type"),
             "country_code": obj.get("country_code"),
             "integration_type": obj.get("integration_type"),
             "integration_id": obj.get("integration_id"),

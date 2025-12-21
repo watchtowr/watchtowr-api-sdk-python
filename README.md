@@ -247,7 +247,7 @@ Class | Method | HTTP request | Description
 *MobileApplicationsApi* | [**create_note_mobile_app**](docs/MobileApplicationsApi.md#create_note_mobile_app) | **POST** /api/client/assets/mobileApp/show/{id}/note | Create Note
 *MobileApplicationsApi* | [**delete_custom_property_mobile_app**](docs/MobileApplicationsApi.md#delete_custom_property_mobile_app) | **DELETE** /api/client/assets/mobileApp/show/{id}/custom-property/{customPropertyId} | Delete Custom Property
 *MobileApplicationsApi* | [**delete_note_mobile_app**](docs/MobileApplicationsApi.md#delete_note_mobile_app) | **DELETE** /api/client/assets/mobileApp/show/{id}/note/{noteId} | Delete Note
-*MobileApplicationsApi* | [**get_asset_mobile_app_changelog**](docs/MobileApplicationsApi.md#get_asset_mobile_app_changelog) | **GET** /api/client/assets/mobileApp/show/{id}/changelog | Get Mobile App Changelog
+*MobileApplicationsApi* | [**get_asset_mobile_app_changelog**](docs/MobileApplicationsApi.md#get_asset_mobile_app_changelog) | **GET** /api/client/assets/mobileApp/show/{id}/changelog | Get Mobile Application Changelog
 *MobileApplicationsApi* | [**get_asset_mobile_app_details**](docs/MobileApplicationsApi.md#get_asset_mobile_app_details) | **GET** /api/client/assets/mobileApp/show/{id} | Get Mobile Application
 *MobileApplicationsApi* | [**get_asset_mobile_app_notes**](docs/MobileApplicationsApi.md#get_asset_mobile_app_notes) | **GET** /api/client/assets/mobileApp/show/{id}/notes | List Notes
 *MobileApplicationsApi* | [**get_custom_properties_mobile_app**](docs/MobileApplicationsApi.md#get_custom_properties_mobile_app) | **GET** /api/client/assets/mobileApp/show/{id}/custom-properties | List Custom Properties
@@ -337,8 +337,11 @@ Class | Method | HTTP request | Description
 *SubdomainsApi* | [**update_note_subdomain**](docs/SubdomainsApi.md#update_note_subdomain) | **PUT** /api/client/assets/subdomain/show/{id}/note/{noteId} | Update Subdomain Note
 *SuspiciousDomainsApi* | [**get_list_suspicious_domain**](docs/SuspiciousDomainsApi.md#get_list_suspicious_domain) | **GET** /api/client/suspicious-domain/list | List Suspicious Domains
 *SuspiciousDomainsApi* | [**get_suspicious_domain_details**](docs/SuspiciousDomainsApi.md#get_suspicious_domain_details) | **GET** /api/client/suspicious-domain/show/{id} | Get Suspicious Domain Details
+*UserManagementApi* | [**delete_user**](docs/UserManagementApi.md#delete_user) | **DELETE** /api/client/users/{id} | Delete User
 *UserManagementApi* | [**get_user_details**](docs/UserManagementApi.md#get_user_details) | **GET** /api/client/users/show/{id} | Get User Details
+*UserManagementApi* | [**invite_users**](docs/UserManagementApi.md#invite_users) | **POST** /api/client/users/invite | Invite Users
 *UserManagementApi* | [**list_users**](docs/UserManagementApi.md#list_users) | **GET** /api/client/users/list | List Users
+*UserManagementApi* | [**update_user**](docs/UserManagementApi.md#update_user) | **PUT** /api/client/users/{id} | Update User
 
 
 ## Documentation For Models
@@ -434,12 +437,26 @@ Class | Method | HTTP request | Description
  - [DeleteClientBusinessUnitResponseDto](docs/DeleteClientBusinessUnitResponseDto.md)
  - [DeleteClientBusinessUnitRuleResponseDto](docs/DeleteClientBusinessUnitRuleResponseDto.md)
  - [DeleteNoteSucces](docs/DeleteNoteSucces.md)
+ - [DeleteUserResponse](docs/DeleteUserResponse.md)
+ - [DeleteUserResponseData](docs/DeleteUserResponseData.md)
  - [DeleteWhitelistIpData](docs/DeleteWhitelistIpData.md)
  - [FilterByBusinessUnitInput](docs/FilterByBusinessUnitInput.md)
  - [FindingListResponse](docs/FindingListResponse.md)
  - [FindingRetestResponseDto](docs/FindingRetestResponseDto.md)
  - [FindingsSummaryDto](docs/FindingsSummaryDto.md)
  - [ForbiddenResponse](docs/ForbiddenResponse.md)
+ - [GetAssetApiDocumentationChangelog200Response](docs/GetAssetApiDocumentationChangelog200Response.md)
+ - [GetAssetCloudAssetChangelog200Response](docs/GetAssetCloudAssetChangelog200Response.md)
+ - [GetAssetCloudStorageChangelog200Response](docs/GetAssetCloudStorageChangelog200Response.md)
+ - [GetAssetContainerChangelog200Response](docs/GetAssetContainerChangelog200Response.md)
+ - [GetAssetDomainChangelog200Response](docs/GetAssetDomainChangelog200Response.md)
+ - [GetAssetIpChangelog200Response](docs/GetAssetIpChangelog200Response.md)
+ - [GetAssetIprangeChangelog200Response](docs/GetAssetIprangeChangelog200Response.md)
+ - [GetAssetMobileAppChangelog200Response](docs/GetAssetMobileAppChangelog200Response.md)
+ - [GetAssetPackageManagerChangelog200Response](docs/GetAssetPackageManagerChangelog200Response.md)
+ - [GetAssetRepositoryChangelog200Response](docs/GetAssetRepositoryChangelog200Response.md)
+ - [GetAssetSaasPlatformChangelog200Response](docs/GetAssetSaasPlatformChangelog200Response.md)
+ - [GetAssetSubdomainChangelog200Response](docs/GetAssetSubdomainChangelog200Response.md)
  - [HostnameBusinessUnitIDsDTO](docs/HostnameBusinessUnitIDsDTO.md)
  - [Hunt](docs/Hunt.md)
  - [HuntAcknowledgementDto](docs/HuntAcknowledgementDto.md)
@@ -447,6 +464,10 @@ Class | Method | HTTP request | Description
  - [HuntDetailResponse](docs/HuntDetailResponse.md)
  - [HuntOverviewDto](docs/HuntOverviewDto.md)
  - [Infrastructure](docs/Infrastructure.md)
+ - [InviteClientUserDto](docs/InviteClientUserDto.md)
+ - [InviteClientUsersBodyDto](docs/InviteClientUsersBodyDto.md)
+ - [InviteUserResponse](docs/InviteUserResponse.md)
+ - [InviteUserResponseData](docs/InviteUserResponseData.md)
  - [KillSwitchDisabledError](docs/KillSwitchDisabledError.md)
  - [KillSwitchForbiddenError](docs/KillSwitchForbiddenError.md)
  - [KillSwitchStatusData](docs/KillSwitchStatusData.md)
@@ -462,6 +483,7 @@ Class | Method | HTTP request | Description
  - [PaginatedApiDocumentation](docs/PaginatedApiDocumentation.md)
  - [PaginatedBusinessUnit](docs/PaginatedBusinessUnit.md)
  - [PaginatedClientActivityLog](docs/PaginatedClientActivityLog.md)
+ - [PaginatedClientAssetChangelog](docs/PaginatedClientAssetChangelog.md)
  - [PaginatedClientCloudAsset](docs/PaginatedClientCloudAsset.md)
  - [PaginatedClientCloudStorage](docs/PaginatedClientCloudStorage.md)
  - [PaginatedClientContainer](docs/PaginatedClientContainer.md)
@@ -514,10 +536,12 @@ Class | Method | HTTP request | Description
  - [UpdateClientFindingStatusRequestBody](docs/UpdateClientFindingStatusRequestBody.md)
  - [UpdateClientLegacyAssetStatusDto](docs/UpdateClientLegacyAssetStatusDto.md)
  - [UpdateClientNextGenAssetStatusDto](docs/UpdateClientNextGenAssetStatusDto.md)
+ - [UpdateClientUserBodyDto](docs/UpdateClientUserBodyDto.md)
  - [UpdateKillSwitchData](docs/UpdateKillSwitchData.md)
  - [UpdateKillSwitchRequestDto](docs/UpdateKillSwitchRequestDto.md)
  - [UpdateKillSwitchResponse](docs/UpdateKillSwitchResponse.md)
  - [UpdateOrganisationWhitelistIpDto](docs/UpdateOrganisationWhitelistIpDto.md)
+ - [UpdateUserResponse](docs/UpdateUserResponse.md)
  - [UserDetailData](docs/UserDetailData.md)
  - [WhitelistIpData](docs/WhitelistIpData.md)
  - [WhitelistIpDataSingle](docs/WhitelistIpDataSingle.md)
