@@ -32,7 +32,7 @@ class ClientEngineSettings(BaseModel):
     credential_stuffing_enabled: StrictBool = Field(description="Indicates whether the Credential Stuffing engine coverage is enabled for the asset.", alias="credentialStuffingEnabled")
     dns_bruteforcing_enabled: StrictBool = Field(description="Indicates whether the DNS Bruteforcing engine coverage is enabled for the asset.", alias="dnsBruteforcingEnabled")
     rapid_reaction_enabled: StrictBool = Field(description="Indicates whether the Rapid Reaction engine coverage is enabled for the asset", alias="rapidReactionEnabled")
-    intrusive_http_checks_enabled: StrictBool = Field(description="Indicates whether the Intrusive HTTP Checks engine coverage is enabled for the asset.", alias="intrusiveHttpChecksEnabled")
+    intrusive_http_checks_enabled: StrictBool = Field(description="Indicates whether the Intrusive HTTP Check engine coverage is enabled for the asset.", alias="intrusiveHttpChecksEnabled")
     __properties: ClassVar[List[str]] = ["adversarySightEnabled", "automatedRedTeamingEnabled", "credentialStuffingEnabled", "dnsBruteforcingEnabled", "rapidReactionEnabled", "intrusiveHttpChecksEnabled"]
 
     model_config = ConfigDict(

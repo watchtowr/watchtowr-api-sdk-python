@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **credential_stuffing_enabled** | **bool** | Indicates whether the Credential Stuffing engine coverage is enabled for the asset. | 
 **dns_bruteforcing_enabled** | **bool** | Indicates whether the DNS Bruteforcing engine coverage is enabled for the asset. | 
 **rapid_reaction_enabled** | **bool** | Indicates whether the Rapid Reaction engine coverage is enabled for the asset | 
-**intrusive_http_checks_enabled** | **bool** | Indicates whether the Intrusive HTTP Checks engine coverage is enabled for the asset. | 
+**intrusive_http_checks_enabled** | **bool** | Indicates whether the Intrusive HTTP Check engine coverage is enabled for the asset. | 
 
 ## Example
 
