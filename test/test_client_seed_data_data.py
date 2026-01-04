@@ -40,7 +40,8 @@ class TestClientSeedDataData(unittest.TestCase):
                     watchtowr_api_sdk.models.client_seed_data.ClientSeedData(
                         title = 'Main Website', 
                         type = 'subdomain', 
-                        value = 'www.watchTowr.com', )
+                        value = 'www.watchTowr.com', 
+                        values = {"cidr":"192.168.1.0/24","asn":"AS16509"}, )
                     ]
             )
         else:
@@ -49,7 +50,8 @@ class TestClientSeedDataData(unittest.TestCase):
                     watchtowr_api_sdk.models.client_seed_data.ClientSeedData(
                         title = 'Main Website', 
                         type = 'subdomain', 
-                        value = 'www.watchTowr.com', )
+                        value = 'www.watchTowr.com', 
+                        values = {"cidr":"192.168.1.0/24","asn":"AS16509"}, )
                     ],
         )
         """

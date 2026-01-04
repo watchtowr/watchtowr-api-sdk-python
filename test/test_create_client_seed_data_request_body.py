@@ -36,12 +36,12 @@ class TestCreateClientSeedDataRequestBody(unittest.TestCase):
         model = CreateClientSeedDataRequestBody()
         if include_optional:
             return CreateClientSeedDataRequestBody(
-                data = [{"title":"Main Website","type":"subdomain","value":"www.watchTowr.com"},{"title":"Labs Blog IP","type":"ip","value":"123.123.123.123"}],
+                data = [{"title":"Main Website","type":"subdomain","value":"www.watchTowr.com"},{"title":"Labs Blog IP","type":"ip","value":"123.123.123.123"},{"title":"IP Range","type":"ipRange","values":{"cidr":"192.168.1.0/24","asn":"AS16509"}}],
                 business_units = [{"id":-1,"type":"UNASSIGNED"}]
             )
         else:
             return CreateClientSeedDataRequestBody(
-                data = [{"title":"Main Website","type":"subdomain","value":"www.watchTowr.com"},{"title":"Labs Blog IP","type":"ip","value":"123.123.123.123"}],
+                data = [{"title":"Main Website","type":"subdomain","value":"www.watchTowr.com"},{"title":"Labs Blog IP","type":"ip","value":"123.123.123.123"},{"title":"IP Range","type":"ipRange","values":{"cidr":"192.168.1.0/24","asn":"AS16509"}}],
         )
         """
 

@@ -18,28 +18,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional
-from watchtowr_api_sdk.models.ip_range_values import IpRangeValues
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ClientSeedData(BaseModel):
+class IpRangeValues(BaseModel):
     """
-    ClientSeedData
+    IpRangeValues
     """ # noqa: E501
-    title: StrictStr = Field(description="Descriptive title for the new asset")
-    type: StrictStr = Field(description="Asset Type for the new asset. Valid asset types are: [domain, subdomain, ip, ipRange, repository, cloudStorage, container, mobileApp, saasPlatform, apiDocumentation, packageManager]")
-    value: StrictStr = Field(description="Value for the asset to be added.")
-    values: Optional[IpRangeValues] = Field(default=None, description="Values object for ipRange asset type. Must contain both cidr and asn fields. Required when type is ipRange.")
-    __properties: ClassVar[List[str]] = ["title", "type", "value", "values"]
-
-    @field_validator('type')
-    def type_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['domain', 'subdomain', 'ip', 'ipRange', 'repository', 'cloudStorage', 'container', 'mobileApp', 'saasPlatform', 'apiDocumentation', 'packageManager']):
-            raise ValueError("must be one of enum values ('domain', 'subdomain', 'ip', 'ipRange', 'repository', 'cloudStorage', 'container', 'mobileApp', 'saasPlatform', 'apiDocumentation', 'packageManager')")
-        return value
+    cidr: StrictStr = Field(description="CIDR for IP Range (e.g., \"192.168.1.0/24\")")
+    asn: StrictStr = Field(description="ASN for IP Range (e.g., \"AS16509\")")
+    __properties: ClassVar[List[str]] = ["cidr", "asn"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -59,7 +49,7 @@ class ClientSeedData(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ClientSeedData from a JSON string"""
+        """Create an instance of IpRangeValues from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -80,14 +70,11 @@ class ClientSeedData(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of values
-        if self.values:
-            _dict['values'] = self.values.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ClientSeedData from a dict"""
+        """Create an instance of IpRangeValues from a dict"""
         if obj is None:
             return None
 
@@ -97,13 +84,11 @@ class ClientSeedData(BaseModel):
         # raise errors for additional fields in the input
         for _key in obj.keys():
             if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in ClientSeedData) in the input: " + _key)
+                raise ValueError("Error due to additional fields (not defined in IpRangeValues) in the input: " + _key)
 
         _obj = cls.model_validate({
-            "title": obj.get("title"),
-            "type": obj.get("type"),
-            "value": obj.get("value"),
-            "values": IpRangeValues.from_dict(obj["values"]) if obj.get("values") is not None else None
+            "cidr": obj.get("cidr"),
+            "asn": obj.get("asn")
         })
         return _obj
 

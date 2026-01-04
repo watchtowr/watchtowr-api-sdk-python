@@ -141,6 +141,7 @@ docs/InviteClientUserDto.md
 docs/InviteClientUsersBodyDto.md
 docs/InviteUserResponse.md
 docs/InviteUserResponseData.md
+docs/IpRangeValues.md
 docs/KillSwitchApi.md
 docs/KillSwitchDisabledError.md
 docs/KillSwitchForbiddenError.md
@@ -384,6 +385,7 @@ test/test_invite_client_users_body_dto.py
 test/test_invite_user_response.py
 test/test_invite_user_response_data.py
 test/test_ip_addresses_api.py
+test/test_ip_range_values.py
 test/test_ip_ranges_api.py
 test/test_kill_switch_api.py
 test/test_kill_switch_disabled_error.py
@@ -645,6 +647,7 @@ watchtowr_api_sdk/models/invite_client_user_dto.py
 watchtowr_api_sdk/models/invite_client_users_body_dto.py
 watchtowr_api_sdk/models/invite_user_response.py
 watchtowr_api_sdk/models/invite_user_response_data.py
+watchtowr_api_sdk/models/ip_range_values.py
 watchtowr_api_sdk/models/kill_switch_disabled_error.py
 watchtowr_api_sdk/models/kill_switch_forbidden_error.py
 watchtowr_api_sdk/models/kill_switch_status_data.py

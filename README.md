@@ -468,6 +468,7 @@ Class | Method | HTTP request | Description
  - [InviteClientUsersBodyDto](docs/InviteClientUsersBodyDto.md)
  - [InviteUserResponse](docs/InviteUserResponse.md)
  - [InviteUserResponseData](docs/InviteUserResponseData.md)
+ - [IpRangeValues](docs/IpRangeValues.md)
  - [KillSwitchDisabledError](docs/KillSwitchDisabledError.md)
  - [KillSwitchForbiddenError](docs/KillSwitchForbiddenError.md)
  - [KillSwitchStatusData](docs/KillSwitchStatusData.md)

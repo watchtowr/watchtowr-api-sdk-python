@@ -15,10 +15,10 @@
 
 import unittest
 
-from watchtowr_api_sdk.models.client_seed_data import ClientSeedData
+from watchtowr_api_sdk.models.ip_range_values import IpRangeValues
 
-class TestClientSeedData(unittest.TestCase):
-    """ClientSeedData unit test stubs"""
+class TestIpRangeValues(unittest.TestCase):
+    """IpRangeValues unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,33 +26,28 @@ class TestClientSeedData(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ClientSeedData:
-        """Test ClientSeedData
+    def make_instance(self, include_optional) -> IpRangeValues:
+        """Test IpRangeValues
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ClientSeedData`
+        # uncomment below to create an instance of `IpRangeValues`
         """
-        model = ClientSeedData()
+        model = IpRangeValues()
         if include_optional:
-            return ClientSeedData(
-                title = 'Main Website',
-                type = 'subdomain',
-                value = 'www.watchTowr.com',
-                values = watchtowr_api_sdk.models.ip_range_values.IpRangeValues(
-                    cidr = '192.168.1.0/24', 
-                    asn = 'AS16509', )
+            return IpRangeValues(
+                cidr = '192.168.1.0/24',
+                asn = 'AS16509'
             )
         else:
-            return ClientSeedData(
-                title = 'Main Website',
-                type = 'subdomain',
-                value = 'www.watchTowr.com',
+            return IpRangeValues(
+                cidr = '192.168.1.0/24',
+                asn = 'AS16509',
         )
         """
 
-    def testClientSeedData(self):
-        """Test ClientSeedData"""
+    def testIpRangeValues(self):
+        """Test IpRangeValues"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

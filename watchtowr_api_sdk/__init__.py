@@ -180,6 +180,7 @@ __all__ = [
     "InviteClientUsersBodyDto",
     "InviteUserResponse",
     "InviteUserResponseData",
+    "IpRangeValues",
     "KillSwitchDisabledError",
     "KillSwitchForbiddenError",
     "KillSwitchStatusData",
@@ -433,6 +434,7 @@ from watchtowr_api_sdk.models.invite_client_user_dto import InviteClientUserDto 
 from watchtowr_api_sdk.models.invite_client_users_body_dto import InviteClientUsersBodyDto as InviteClientUsersBodyDto
 from watchtowr_api_sdk.models.invite_user_response import InviteUserResponse as InviteUserResponse
 from watchtowr_api_sdk.models.invite_user_response_data import InviteUserResponseData as InviteUserResponseData
+from watchtowr_api_sdk.models.ip_range_values import IpRangeValues as IpRangeValues
 from watchtowr_api_sdk.models.kill_switch_disabled_error import KillSwitchDisabledError as KillSwitchDisabledError
 from watchtowr_api_sdk.models.kill_switch_forbidden_error import KillSwitchForbiddenError as KillSwitchForbiddenError
 from watchtowr_api_sdk.models.kill_switch_status_data import KillSwitchStatusData as KillSwitchStatusData
