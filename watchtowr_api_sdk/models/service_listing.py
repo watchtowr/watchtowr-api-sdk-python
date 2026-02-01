@@ -48,7 +48,8 @@ class ServiceListing(BaseModel):
     is_concerning: StrictBool = Field(description="Whether the discovered network service is concerning", alias="isConcerning")
     suppressed: StrictBool = Field(description="Whether the service is suppressed")
     suppressed_at: Optional[datetime] = Field(default=None, description="Suppressed at timestamp", alias="suppressedAt")
-    __properties: ClassVar[List[str]] = ["id", "portId", "ip", "hostname", "port", "type", "country", "banner", "service", "source", "lastSeen", "technologies", "serviceTypes", "businessUnits", "isConcerning", "suppressed", "suppressedAt"]
+    is_permanent_suppression: Optional[StrictBool] = Field(default=None, description="Whether the service is permanently suppressed", alias="isPermanentSuppression")
+    __properties: ClassVar[List[str]] = ["id", "portId", "ip", "hostname", "port", "type", "country", "banner", "service", "source", "lastSeen", "technologies", "serviceTypes", "businessUnits", "isConcerning", "suppressed", "suppressedAt", "isPermanentSuppression"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -125,6 +126,11 @@ class ServiceListing(BaseModel):
         if self.suppressed_at is None and "suppressed_at" in self.model_fields_set:
             _dict['suppressedAt'] = None
 
+        # set to None if is_permanent_suppression (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_permanent_suppression is None and "is_permanent_suppression" in self.model_fields_set:
+            _dict['isPermanentSuppression'] = None
+
         return _dict
 
     @classmethod
@@ -158,7 +164,8 @@ class ServiceListing(BaseModel):
             "businessUnits": [ClientBusinessUnit.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None,
             "isConcerning": obj.get("isConcerning"),
             "suppressed": obj.get("suppressed"),
-            "suppressedAt": obj.get("suppressedAt")
+            "suppressedAt": obj.get("suppressedAt"),
+            "isPermanentSuppression": obj.get("isPermanentSuppression")
         })
         return _obj
 

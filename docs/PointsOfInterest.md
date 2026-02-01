@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **is_concerning** | **bool** | Whether the Point of Interest is concerning | 
 **suppressed** | **bool** | Whether the Point of Interest is suppressed | 
 **suppressed_at** | **datetime** | Suppressed at timestamp | [optional] 
+**is_permanent_suppression** | **bool** | Whether the Point of Interest is permanently suppressed | [optional] 
 **finding_id** | **float** | Finding ID if the POI has been converted to a finding | [optional] 
 
 ## Example

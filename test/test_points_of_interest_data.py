@@ -55,6 +55,7 @@ class TestPointsOfInterestData(unittest.TestCase):
                     is_concerning = True, 
                     suppressed = True, 
                     suppressed_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                    is_permanent_suppression = True, 
                     finding_id = 123, )
             )
         else:
@@ -78,6 +79,7 @@ class TestPointsOfInterestData(unittest.TestCase):
                     is_concerning = True, 
                     suppressed = True, 
                     suppressed_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                    is_permanent_suppression = True, 
                     finding_id = 123, ),
         )
         """

@@ -43,8 +43,9 @@ class PointsOfInterest(BaseModel):
     is_concerning: StrictBool = Field(description="Whether the Point of Interest is concerning", alias="isConcerning")
     suppressed: StrictBool = Field(description="Whether the Point of Interest is suppressed")
     suppressed_at: Optional[datetime] = Field(default=None, description="Suppressed at timestamp", alias="suppressedAt")
+    is_permanent_suppression: Optional[StrictBool] = Field(default=None, description="Whether the Point of Interest is permanently suppressed", alias="isPermanentSuppression")
     finding_id: Optional[StrictFloat] = Field(default=None, description="Finding ID if the POI has been converted to a finding", alias="findingId")
-    __properties: ClassVar[List[str]] = ["id", "name", "type", "url", "discoveryToolId", "discoveryDate", "assetId", "assetName", "assetType", "businessUnits", "lastSeen", "isConcerning", "suppressed", "suppressedAt", "findingId"]
+    __properties: ClassVar[List[str]] = ["id", "name", "type", "url", "discoveryToolId", "discoveryDate", "assetId", "assetName", "assetType", "businessUnits", "lastSeen", "isConcerning", "suppressed", "suppressedAt", "isPermanentSuppression", "findingId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,6 +98,11 @@ class PointsOfInterest(BaseModel):
         if self.suppressed_at is None and "suppressed_at" in self.model_fields_set:
             _dict['suppressedAt'] = None
 
+        # set to None if is_permanent_suppression (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_permanent_suppression is None and "is_permanent_suppression" in self.model_fields_set:
+            _dict['isPermanentSuppression'] = None
+
         # set to None if finding_id (nullable) is None
         # and model_fields_set contains the field
         if self.finding_id is None and "finding_id" in self.model_fields_set:
@@ -133,6 +139,7 @@ class PointsOfInterest(BaseModel):
             "isConcerning": obj.get("isConcerning"),
             "suppressed": obj.get("suppressed"),
             "suppressedAt": obj.get("suppressedAt"),
+            "isPermanentSuppression": obj.get("isPermanentSuppression"),
             "findingId": obj.get("findingId")
         })
         return _obj
