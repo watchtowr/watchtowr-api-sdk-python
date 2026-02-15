@@ -34,6 +34,13 @@ class TestServiceDiscoveryApi(unittest.TestCase):
         """
         pass
 
+    def test_get_technology_statistics(self) -> None:
+        """Test case for get_technology_statistics
+
+        List Technology Statistics
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

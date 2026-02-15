@@ -220,6 +220,7 @@ __all__ = [
     "PaginatedServiceInformationResponse",
     "PaginatedServiceListing",
     "PaginatedSuspiciousDomain",
+    "PaginatedTechnologyStatistics",
     "PaginatedUsers",
     "Pagination",
     "PointsOfInterest",
@@ -236,6 +237,7 @@ __all__ = [
     "ServiceType",
     "SuspiciousDomain",
     "Technology",
+    "TechnologyStatistic",
     "ThreatActorDto",
     "Unauthorized",
     "UnauthorizedResponse",
@@ -474,6 +476,7 @@ from watchtowr_api_sdk.models.paginated_point_of_interest import PaginatedPointO
 from watchtowr_api_sdk.models.paginated_service_information_response import PaginatedServiceInformationResponse as PaginatedServiceInformationResponse
 from watchtowr_api_sdk.models.paginated_service_listing import PaginatedServiceListing as PaginatedServiceListing
 from watchtowr_api_sdk.models.paginated_suspicious_domain import PaginatedSuspiciousDomain as PaginatedSuspiciousDomain
+from watchtowr_api_sdk.models.paginated_technology_statistics import PaginatedTechnologyStatistics as PaginatedTechnologyStatistics
 from watchtowr_api_sdk.models.paginated_users import PaginatedUsers as PaginatedUsers
 from watchtowr_api_sdk.models.pagination import Pagination as Pagination
 from watchtowr_api_sdk.models.points_of_interest import PointsOfInterest as PointsOfInterest
@@ -490,6 +493,7 @@ from watchtowr_api_sdk.models.service_listing import ServiceListing as ServiceLi
 from watchtowr_api_sdk.models.service_type import ServiceType as ServiceType
 from watchtowr_api_sdk.models.suspicious_domain import SuspiciousDomain as SuspiciousDomain
 from watchtowr_api_sdk.models.technology import Technology as Technology
+from watchtowr_api_sdk.models.technology_statistic import TechnologyStatistic as TechnologyStatistic
 from watchtowr_api_sdk.models.threat_actor_dto import ThreatActorDto as ThreatActorDto
 from watchtowr_api_sdk.models.unauthorized import Unauthorized as Unauthorized
 from watchtowr_api_sdk.models.unauthorized_response import UnauthorizedResponse as UnauthorizedResponse

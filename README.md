@@ -317,6 +317,7 @@ Class | Method | HTTP request | Description
 *SaaSPlatformsApi* | [**update_note_saas_platform**](docs/SaaSPlatformsApi.md#update_note_saas_platform) | **PUT** /api/client/assets/saasPlatform/show/{id}/note/{noteId} | Update Note
 *SecurityPostureDashboardApi* | [**get_security_posture_dashboard**](docs/SecurityPostureDashboardApi.md#get_security_posture_dashboard) | **GET** /api/client/dashboard/security-posture | Get Security Posture Dashboard
 *ServiceDiscoveryApi* | [**get_list_service_listing**](docs/ServiceDiscoveryApi.md#get_list_service_listing) | **GET** /api/client/service-listing/list | List Services
+*ServiceDiscoveryApi* | [**get_technology_statistics**](docs/ServiceDiscoveryApi.md#get_technology_statistics) | **GET** /api/client/service-listing/technology-statistics | List Technology Statistics
 *SourceIPAddressesApi* | [**get_list_source_ip_addresses**](docs/SourceIPAddressesApi.md#get_list_source_ip_addresses) | **GET** /api/client/testing-infrastructure | List Testing Infrastructure
 *SubdomainsApi* | [**assign_subomain_to_business_units**](docs/SubdomainsApi.md#assign_subomain_to_business_units) | **POST** /api/client/assets/subdomain/show/{id}/business-units | Assign Subdomain to Business Units
 *SubdomainsApi* | [**create_custom_property_subdomain**](docs/SubdomainsApi.md#create_custom_property_subdomain) | **POST** /api/client/assets/subdomain/show/{id}/custom-property | Create Subdomain Custom Property
@@ -508,6 +509,7 @@ Class | Method | HTTP request | Description
  - [PaginatedServiceInformationResponse](docs/PaginatedServiceInformationResponse.md)
  - [PaginatedServiceListing](docs/PaginatedServiceListing.md)
  - [PaginatedSuspiciousDomain](docs/PaginatedSuspiciousDomain.md)
+ - [PaginatedTechnologyStatistics](docs/PaginatedTechnologyStatistics.md)
  - [PaginatedUsers](docs/PaginatedUsers.md)
  - [Pagination](docs/Pagination.md)
  - [PointsOfInterest](docs/PointsOfInterest.md)
@@ -524,6 +526,7 @@ Class | Method | HTTP request | Description
  - [ServiceType](docs/ServiceType.md)
  - [SuspiciousDomain](docs/SuspiciousDomain.md)
  - [Technology](docs/Technology.md)
+ - [TechnologyStatistic](docs/TechnologyStatistic.md)
  - [ThreatActorDto](docs/ThreatActorDto.md)
  - [Unauthorized](docs/Unauthorized.md)
  - [UnauthorizedResponse](docs/UnauthorizedResponse.md)

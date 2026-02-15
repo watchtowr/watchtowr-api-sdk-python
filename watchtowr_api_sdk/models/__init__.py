@@ -176,6 +176,7 @@ from watchtowr_api_sdk.models.paginated_point_of_interest import PaginatedPointO
 from watchtowr_api_sdk.models.paginated_service_information_response import PaginatedServiceInformationResponse
 from watchtowr_api_sdk.models.paginated_service_listing import PaginatedServiceListing
 from watchtowr_api_sdk.models.paginated_suspicious_domain import PaginatedSuspiciousDomain
+from watchtowr_api_sdk.models.paginated_technology_statistics import PaginatedTechnologyStatistics
 from watchtowr_api_sdk.models.paginated_users import PaginatedUsers
 from watchtowr_api_sdk.models.pagination import Pagination
 from watchtowr_api_sdk.models.points_of_interest import PointsOfInterest
@@ -192,6 +193,7 @@ from watchtowr_api_sdk.models.service_listing import ServiceListing
 from watchtowr_api_sdk.models.service_type import ServiceType
 from watchtowr_api_sdk.models.suspicious_domain import SuspiciousDomain
 from watchtowr_api_sdk.models.technology import Technology
+from watchtowr_api_sdk.models.technology_statistic import TechnologyStatistic
 from watchtowr_api_sdk.models.threat_actor_dto import ThreatActorDto
 from watchtowr_api_sdk.models.unauthorized import Unauthorized
 from watchtowr_api_sdk.models.unauthorized_response import UnauthorizedResponse
