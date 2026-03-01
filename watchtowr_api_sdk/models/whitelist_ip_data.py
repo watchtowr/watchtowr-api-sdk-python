@@ -36,7 +36,8 @@ class WhitelistIpData(BaseModel):
     __properties: ClassVar[List[str]] = ["id", "ip", "description", "created_at", "updated_at"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )

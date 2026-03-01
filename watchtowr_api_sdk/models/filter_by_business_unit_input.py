@@ -35,12 +35,13 @@ class FilterByBusinessUnitInput(BaseModel):
     @field_validator('type')
     def type_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['BUSINESS_UNIT', 'UNASSIGNED']):
-            raise ValueError("must be one of enum values ('BUSINESS_UNIT', 'UNASSIGNED')")
+        if value not in set(['BUSINESS_UNIT', 'UNASSIGNED', 'SYSTEM_FAVORITE_ASSET']):
+            raise ValueError("must be one of enum values ('BUSINESS_UNIT', 'UNASSIGNED', 'SYSTEM_FAVORITE_ASSET')")
         return value
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )

@@ -37,7 +37,8 @@ class Pagination(BaseModel):
     __properties: ClassVar[List[str]] = ["total", "count", "per_page", "current_page", "total_pages", "links"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )

@@ -34,7 +34,8 @@ class AttackSurfaceResiliencyDto(BaseModel):
     __properties: ClassVar[List[str]] = ["concerningServices", "concerningPointsOfInterest", "validCredentials", "openFindings"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )

@@ -37,7 +37,8 @@ class ClientNote(BaseModel):
     __properties: ClassVar[List[str]] = ["id", "note", "note_type", "note_id", "title", "author", "last_modified"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )

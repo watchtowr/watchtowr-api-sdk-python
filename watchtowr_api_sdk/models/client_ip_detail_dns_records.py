@@ -32,7 +32,8 @@ class ClientIpDetailDnsRecords(BaseModel):
     __properties: ClassVar[List[str]] = ["dns_records_owned", "dns_records_pointing_at"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )

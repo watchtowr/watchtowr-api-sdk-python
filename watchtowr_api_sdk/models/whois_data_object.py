@@ -50,7 +50,8 @@ class WhoisDataObject(BaseModel):
     __properties: ClassVar[List[str]] = ["org", "city", "name", "state", "dnssec", "emails", "status", "address", "country", "zipcode", "registrar", "domain_name", "name_servers", "referral_url", "whois_server", "creation_date", "expiration_date"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )

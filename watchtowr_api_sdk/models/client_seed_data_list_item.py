@@ -43,7 +43,8 @@ class ClientSeedDataListItem(BaseModel):
     __properties: ClassVar[List[str]] = ["id", "title", "type", "value", "values", "status_name", "status_reason", "created_at", "user", "businessUnits"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )

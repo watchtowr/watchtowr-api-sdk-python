@@ -39,7 +39,8 @@ class ClientUser(BaseModel):
     __properties: ClassVar[List[str]] = ["id", "name", "email", "title", "mobile_phone_number", "office_phone_number", "created_at", "locked"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )

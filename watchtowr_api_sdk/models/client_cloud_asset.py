@@ -45,7 +45,8 @@ class ClientCloudAsset(BaseModel):
     __properties: ClassVar[List[str]] = ["type", "name", "source", "provider", "super_type", "sub_type", "hostname", "cloud_resource_id", "created_at", "updated_at", "deleted_at", "metadata", "customProperties", "criticality"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
