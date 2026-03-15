@@ -50,9 +50,9 @@ class TestHuntDetailResponse(unittest.TestCase):
 
 Successful exploitation of this vulnerability requires several prerequisites, including device telemetry being enabled on the affected instance.
 
-As details of the vulnerability have been discovered, analysed and reproduced by watchTowr, impact-less proof-of-concept payload(s) will be used to determine if it is possible to abuse the vulnerabilities.
+As details of the vulnerability have been discovered, analyzed and reproduced by watchTowr, impact-less proof-of-concept payload(s) will be used to determine if it is possible to abuse the vulnerabilities.
 
-Additionally, it is recommended that any affected instances are reviewed for anomalous activity and behaviour that could indicate the prior exploitation of this vulnerability.
+Additionally, it is recommended that any affected instances are reviewed for anomalous activity and behavior that could indicate the prior exploitation of this vulnerability.
 
 Should any instances of Palo Alto GlobalProtect Gateway be identified, they will be attached to this hunt."
 ', 
@@ -90,9 +90,9 @@ Palo Alto state that the GlobalProtect gateway and device telemetry must be enab
 
 Successful exploitation of this vulnerability requires several prerequisites, including device telemetry being enabled on the affected instance.
 
-As details of the vulnerability have been discovered, analysed and reproduced by watchTowr, impact-less proof-of-concept payload(s) will be used to determine if it is possible to abuse the vulnerabilities.
+As details of the vulnerability have been discovered, analyzed and reproduced by watchTowr, impact-less proof-of-concept payload(s) will be used to determine if it is possible to abuse the vulnerabilities.
 
-Additionally, it is recommended that any affected instances are reviewed for anomalous activity and behaviour that could indicate the prior exploitation of this vulnerability.
+Additionally, it is recommended that any affected instances are reviewed for anomalous activity and behavior that could indicate the prior exploitation of this vulnerability.
 
 Should any instances of Palo Alto GlobalProtect Gateway be identified, they will be attached to this hunt."
 ', 

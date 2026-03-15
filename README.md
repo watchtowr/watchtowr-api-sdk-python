@@ -189,6 +189,7 @@ Class | Method | HTTP request | Description
 *DomainsApi* | [**update_custom_property_domain**](docs/DomainsApi.md#update_custom_property_domain) | **PUT** /api/client/assets/domain/show/{id}/custom-property/{customPropertyId} | Update Custom Property
 *FindingRetestHistoryApi* | [**get_list_finding_retest_history**](docs/FindingRetestHistoryApi.md#get_list_finding_retest_history) | **GET** /api/client/finding-retest-history/list | List Finding Retest History
 *FindingsApi* | [**create_custom_property_finding**](docs/FindingsApi.md#create_custom_property_finding) | **POST** /api/client/findings/show/{id}/custom-property | Create Custom Property
+*FindingsApi* | [**create_finding_manual_ticket**](docs/FindingsApi.md#create_finding_manual_ticket) | **POST** /api/client/findings/show/{id}/manual-ticket | Create Finding Manual Ticket
 *FindingsApi* | [**create_finding_note**](docs/FindingsApi.md#create_finding_note) | **POST** /api/client/findings/show/{id}/note | Create Finding Note
 *FindingsApi* | [**delete_custom_property_finding**](docs/FindingsApi.md#delete_custom_property_finding) | **DELETE** /api/client/findings/show/{id}/custom-property/{customPropertyId} | Delete Custom Property
 *FindingsApi* | [**delete_finding_note**](docs/FindingsApi.md#delete_finding_note) | **DELETE** /api/client/findings/show/{id}/note/{noteId} | Delete Finding Note
@@ -386,6 +387,8 @@ Class | Method | HTTP request | Description
  - [ClientFindingAssignee](docs/ClientFindingAssignee.md)
  - [ClientFindingData](docs/ClientFindingData.md)
  - [ClientFindingImpactTag](docs/ClientFindingImpactTag.md)
+ - [ClientFindingManualTicket](docs/ClientFindingManualTicket.md)
+ - [ClientFindingManualTicketData](docs/ClientFindingManualTicketData.md)
  - [ClientFindingRetestHistory](docs/ClientFindingRetestHistory.md)
  - [ClientFindingRetestHistoryAsset](docs/ClientFindingRetestHistoryAsset.md)
  - [ClientFindingRetestHistoryFinding](docs/ClientFindingRetestHistoryFinding.md)
@@ -432,6 +435,7 @@ Class | Method | HTTP request | Description
  - [CreateClientBusinessUnitDto](docs/CreateClientBusinessUnitDto.md)
  - [CreateClientBusinessUnitRuleDto](docs/CreateClientBusinessUnitRuleDto.md)
  - [CreateClientCustomPropertyDto](docs/CreateClientCustomPropertyDto.md)
+ - [CreateClientFindingManualTicketRequestBody](docs/CreateClientFindingManualTicketRequestBody.md)
  - [CreateClientNoteDto](docs/CreateClientNoteDto.md)
  - [CreateClientSeedDataRequestBody](docs/CreateClientSeedDataRequestBody.md)
  - [CreateOrganisationWhitelistIpDto](docs/CreateOrganisationWhitelistIpDto.md)

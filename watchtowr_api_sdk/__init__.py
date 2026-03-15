@@ -97,6 +97,8 @@ __all__ = [
     "ClientFindingAssignee",
     "ClientFindingData",
     "ClientFindingImpactTag",
+    "ClientFindingManualTicket",
+    "ClientFindingManualTicketData",
     "ClientFindingRetestHistory",
     "ClientFindingRetestHistoryAsset",
     "ClientFindingRetestHistoryFinding",
@@ -143,6 +145,7 @@ __all__ = [
     "CreateClientBusinessUnitDto",
     "CreateClientBusinessUnitRuleDto",
     "CreateClientCustomPropertyDto",
+    "CreateClientFindingManualTicketRequestBody",
     "CreateClientNoteDto",
     "CreateClientSeedDataRequestBody",
     "CreateOrganisationWhitelistIpDto",
@@ -353,6 +356,8 @@ from watchtowr_api_sdk.models.client_finding import ClientFinding as ClientFindi
 from watchtowr_api_sdk.models.client_finding_assignee import ClientFindingAssignee as ClientFindingAssignee
 from watchtowr_api_sdk.models.client_finding_data import ClientFindingData as ClientFindingData
 from watchtowr_api_sdk.models.client_finding_impact_tag import ClientFindingImpactTag as ClientFindingImpactTag
+from watchtowr_api_sdk.models.client_finding_manual_ticket import ClientFindingManualTicket as ClientFindingManualTicket
+from watchtowr_api_sdk.models.client_finding_manual_ticket_data import ClientFindingManualTicketData as ClientFindingManualTicketData
 from watchtowr_api_sdk.models.client_finding_retest_history import ClientFindingRetestHistory as ClientFindingRetestHistory
 from watchtowr_api_sdk.models.client_finding_retest_history_asset import ClientFindingRetestHistoryAsset as ClientFindingRetestHistoryAsset
 from watchtowr_api_sdk.models.client_finding_retest_history_finding import ClientFindingRetestHistoryFinding as ClientFindingRetestHistoryFinding
@@ -399,6 +404,7 @@ from watchtowr_api_sdk.models.client_user_detail_business_units_inner import Cli
 from watchtowr_api_sdk.models.create_client_business_unit_dto import CreateClientBusinessUnitDto as CreateClientBusinessUnitDto
 from watchtowr_api_sdk.models.create_client_business_unit_rule_dto import CreateClientBusinessUnitRuleDto as CreateClientBusinessUnitRuleDto
 from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto as CreateClientCustomPropertyDto
+from watchtowr_api_sdk.models.create_client_finding_manual_ticket_request_body import CreateClientFindingManualTicketRequestBody as CreateClientFindingManualTicketRequestBody
 from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto as CreateClientNoteDto
 from watchtowr_api_sdk.models.create_client_seed_data_request_body import CreateClientSeedDataRequestBody as CreateClientSeedDataRequestBody
 from watchtowr_api_sdk.models.create_organisation_whitelist_ip_dto import CreateOrganisationWhitelistIpDto as CreateOrganisationWhitelistIpDto

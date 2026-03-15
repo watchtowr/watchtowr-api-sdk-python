@@ -34,6 +34,13 @@ class TestFindingsApi(unittest.TestCase):
         """
         pass
 
+    def test_create_finding_manual_ticket(self) -> None:
+        """Test case for create_finding_manual_ticket
+
+        Create Finding Manual Ticket
+        """
+        pass
+
     def test_create_finding_note(self) -> None:
         """Test case for create_finding_note
 

@@ -23,9 +23,11 @@ from typing_extensions import Annotated
 from watchtowr_api_sdk.models.client_custom_property import ClientCustomProperty
 from watchtowr_api_sdk.models.client_finding import ClientFinding
 from watchtowr_api_sdk.models.client_finding_data import ClientFindingData
+from watchtowr_api_sdk.models.client_finding_manual_ticket_data import ClientFindingManualTicketData
 from watchtowr_api_sdk.models.client_note_data import ClientNoteData
 from watchtowr_api_sdk.models.client_note_list_data import ClientNoteListData
 from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto
+from watchtowr_api_sdk.models.create_client_finding_manual_ticket_request_body import CreateClientFindingManualTicketRequestBody
 from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto
 from watchtowr_api_sdk.models.delete_note_succes import DeleteNoteSucces
 from watchtowr_api_sdk.models.paginated_client_custom_property import PaginatedClientCustomProperty
@@ -333,6 +335,307 @@ class FindingsApi:
         return self.api_client.param_serialize(
             method='POST',
             resource_path='/api/client/findings/show/{id}/custom-property',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def create_finding_manual_ticket(
+        self,
+        id: Annotated[StrictFloat, Field(description="The ID of the finding to create a manual ticket for.")],
+        create_client_finding_manual_ticket_request_body: CreateClientFindingManualTicketRequestBody,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ClientFindingManualTicketData:
+        """Create Finding Manual Ticket
+
+        Create a manual ticket reference for a specific finding.
+
+        :param id: The ID of the finding to create a manual ticket for. (required)
+        :type id: float
+        :param create_client_finding_manual_ticket_request_body: (required)
+        :type create_client_finding_manual_ticket_request_body: CreateClientFindingManualTicketRequestBody
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._create_finding_manual_ticket_serialize(
+            id=id,
+            create_client_finding_manual_ticket_request_body=create_client_finding_manual_ticket_request_body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ClientFindingManualTicketData",
+            '401': "Unauthorized",
+            '403': "ForbiddenResponse",
+            '404': "NotFound",
+            '422': "UnprocessableContent",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def create_finding_manual_ticket_with_http_info(
+        self,
+        id: Annotated[StrictFloat, Field(description="The ID of the finding to create a manual ticket for.")],
+        create_client_finding_manual_ticket_request_body: CreateClientFindingManualTicketRequestBody,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ClientFindingManualTicketData]:
+        """Create Finding Manual Ticket
+
+        Create a manual ticket reference for a specific finding.
+
+        :param id: The ID of the finding to create a manual ticket for. (required)
+        :type id: float
+        :param create_client_finding_manual_ticket_request_body: (required)
+        :type create_client_finding_manual_ticket_request_body: CreateClientFindingManualTicketRequestBody
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._create_finding_manual_ticket_serialize(
+            id=id,
+            create_client_finding_manual_ticket_request_body=create_client_finding_manual_ticket_request_body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ClientFindingManualTicketData",
+            '401': "Unauthorized",
+            '403': "ForbiddenResponse",
+            '404': "NotFound",
+            '422': "UnprocessableContent",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def create_finding_manual_ticket_without_preload_content(
+        self,
+        id: Annotated[StrictFloat, Field(description="The ID of the finding to create a manual ticket for.")],
+        create_client_finding_manual_ticket_request_body: CreateClientFindingManualTicketRequestBody,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Create Finding Manual Ticket
+
+        Create a manual ticket reference for a specific finding.
+
+        :param id: The ID of the finding to create a manual ticket for. (required)
+        :type id: float
+        :param create_client_finding_manual_ticket_request_body: (required)
+        :type create_client_finding_manual_ticket_request_body: CreateClientFindingManualTicketRequestBody
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._create_finding_manual_ticket_serialize(
+            id=id,
+            create_client_finding_manual_ticket_request_body=create_client_finding_manual_ticket_request_body,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ClientFindingManualTicketData",
+            '401': "Unauthorized",
+            '403': "ForbiddenResponse",
+            '404': "NotFound",
+            '422': "UnprocessableContent",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _create_finding_manual_ticket_serialize(
+        self,
+        id,
+        create_client_finding_manual_ticket_request_body,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if create_client_finding_manual_ticket_request_body is not None:
+            _body_params = create_client_finding_manual_ticket_request_body
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'bearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/client/findings/show/{id}/manual-ticket',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2611,7 +2914,7 @@ class FindingsApi:
         updated_to: Annotated[Optional[datetime], Field(description="Filter findings updated before a given date and time.")] = None,
         statuses: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated statuses they're tagged with.")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated business unit IDs that they're related to.")] = None,
-        finding_impact_threshold: Annotated[Optional[StrictStr], Field(description="Impact Setting: * High - Prioritised Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organisation's security posture. * All - All Findings, a broader range of findings that may not directly impact your organisation's security posture, but may represent deviations from best practices.")] = None,
+        finding_impact_threshold: Annotated[Optional[StrictStr], Field(description="Impact Setting: * High - Prioritized Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organization's security posture. * All - All Findings, a broader range of findings that may not directly impact your organization's security posture, but may represent deviations from best practices.")] = None,
         finding_title: Annotated[Optional[StrictStr], Field(description="Search findings by title contents.")] = None,
         severities: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated severities they're tagged with.")] = None,
         asset_title: Annotated[Optional[StrictStr], Field(description="Search by findings by affected asset.")] = None,
@@ -2654,7 +2957,7 @@ class FindingsApi:
         :type statuses: str
         :param business_unit_ids: Filter findings by a list of comma separated business unit IDs that they're related to.
         :type business_unit_ids: str
-        :param finding_impact_threshold: Impact Setting: * High - Prioritised Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organisation's security posture. * All - All Findings, a broader range of findings that may not directly impact your organisation's security posture, but may represent deviations from best practices.
+        :param finding_impact_threshold: Impact Setting: * High - Prioritized Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organization's security posture. * All - All Findings, a broader range of findings that may not directly impact your organization's security posture, but may represent deviations from best practices.
         :type finding_impact_threshold: str
         :param finding_title: Search findings by title contents.
         :type finding_title: str
@@ -2747,7 +3050,7 @@ class FindingsApi:
         updated_to: Annotated[Optional[datetime], Field(description="Filter findings updated before a given date and time.")] = None,
         statuses: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated statuses they're tagged with.")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated business unit IDs that they're related to.")] = None,
-        finding_impact_threshold: Annotated[Optional[StrictStr], Field(description="Impact Setting: * High - Prioritised Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organisation's security posture. * All - All Findings, a broader range of findings that may not directly impact your organisation's security posture, but may represent deviations from best practices.")] = None,
+        finding_impact_threshold: Annotated[Optional[StrictStr], Field(description="Impact Setting: * High - Prioritized Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organization's security posture. * All - All Findings, a broader range of findings that may not directly impact your organization's security posture, but may represent deviations from best practices.")] = None,
         finding_title: Annotated[Optional[StrictStr], Field(description="Search findings by title contents.")] = None,
         severities: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated severities they're tagged with.")] = None,
         asset_title: Annotated[Optional[StrictStr], Field(description="Search by findings by affected asset.")] = None,
@@ -2790,7 +3093,7 @@ class FindingsApi:
         :type statuses: str
         :param business_unit_ids: Filter findings by a list of comma separated business unit IDs that they're related to.
         :type business_unit_ids: str
-        :param finding_impact_threshold: Impact Setting: * High - Prioritised Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organisation's security posture. * All - All Findings, a broader range of findings that may not directly impact your organisation's security posture, but may represent deviations from best practices.
+        :param finding_impact_threshold: Impact Setting: * High - Prioritized Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organization's security posture. * All - All Findings, a broader range of findings that may not directly impact your organization's security posture, but may represent deviations from best practices.
         :type finding_impact_threshold: str
         :param finding_title: Search findings by title contents.
         :type finding_title: str
@@ -2883,7 +3186,7 @@ class FindingsApi:
         updated_to: Annotated[Optional[datetime], Field(description="Filter findings updated before a given date and time.")] = None,
         statuses: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated statuses they're tagged with.")] = None,
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated business unit IDs that they're related to.")] = None,
-        finding_impact_threshold: Annotated[Optional[StrictStr], Field(description="Impact Setting: * High - Prioritised Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organisation's security posture. * All - All Findings, a broader range of findings that may not directly impact your organisation's security posture, but may represent deviations from best practices.")] = None,
+        finding_impact_threshold: Annotated[Optional[StrictStr], Field(description="Impact Setting: * High - Prioritized Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organization's security posture. * All - All Findings, a broader range of findings that may not directly impact your organization's security posture, but may represent deviations from best practices.")] = None,
         finding_title: Annotated[Optional[StrictStr], Field(description="Search findings by title contents.")] = None,
         severities: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated severities they're tagged with.")] = None,
         asset_title: Annotated[Optional[StrictStr], Field(description="Search by findings by affected asset.")] = None,
@@ -2926,7 +3229,7 @@ class FindingsApi:
         :type statuses: str
         :param business_unit_ids: Filter findings by a list of comma separated business unit IDs that they're related to.
         :type business_unit_ids: str
-        :param finding_impact_threshold: Impact Setting: * High - Prioritised Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organisation's security posture. * All - All Findings, a broader range of findings that may not directly impact your organisation's security posture, but may represent deviations from best practices.
+        :param finding_impact_threshold: Impact Setting: * High - Prioritized Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organization's security posture. * All - All Findings, a broader range of findings that may not directly impact your organization's security posture, but may represent deviations from best practices.
         :type finding_impact_threshold: str
         :param finding_title: Search findings by title contents.
         :type finding_title: str

@@ -48,6 +48,8 @@ docs/ClientFinding.md
 docs/ClientFindingAssignee.md
 docs/ClientFindingData.md
 docs/ClientFindingImpactTag.md
+docs/ClientFindingManualTicket.md
+docs/ClientFindingManualTicketData.md
 docs/ClientFindingRetestHistory.md
 docs/ClientFindingRetestHistoryAsset.md
 docs/ClientFindingRetestHistoryFinding.md
@@ -97,6 +99,7 @@ docs/ContainersApi.md
 docs/CreateClientBusinessUnitDto.md
 docs/CreateClientBusinessUnitRuleDto.md
 docs/CreateClientCustomPropertyDto.md
+docs/CreateClientFindingManualTicketRequestBody.md
 docs/CreateClientNoteDto.md
 docs/CreateClientSeedDataRequestBody.md
 docs/CreateOrganisationWhitelistIpDto.md
@@ -295,6 +298,8 @@ test/test_client_finding.py
 test/test_client_finding_assignee.py
 test/test_client_finding_data.py
 test/test_client_finding_impact_tag.py
+test/test_client_finding_manual_ticket.py
+test/test_client_finding_manual_ticket_data.py
 test/test_client_finding_retest_history.py
 test/test_client_finding_retest_history_asset.py
 test/test_client_finding_retest_history_finding.py
@@ -344,6 +349,7 @@ test/test_containers_api.py
 test/test_create_client_business_unit_dto.py
 test/test_create_client_business_unit_rule_dto.py
 test/test_create_client_custom_property_dto.py
+test/test_create_client_finding_manual_ticket_request_body.py
 test/test_create_client_note_dto.py
 test/test_create_client_seed_data_request_body.py
 test/test_create_organisation_whitelist_ip_dto.py
@@ -568,6 +574,8 @@ watchtowr_api_sdk/models/client_finding.py
 watchtowr_api_sdk/models/client_finding_assignee.py
 watchtowr_api_sdk/models/client_finding_data.py
 watchtowr_api_sdk/models/client_finding_impact_tag.py
+watchtowr_api_sdk/models/client_finding_manual_ticket.py
+watchtowr_api_sdk/models/client_finding_manual_ticket_data.py
 watchtowr_api_sdk/models/client_finding_retest_history.py
 watchtowr_api_sdk/models/client_finding_retest_history_asset.py
 watchtowr_api_sdk/models/client_finding_retest_history_finding.py
@@ -614,6 +622,7 @@ watchtowr_api_sdk/models/client_user_detail_business_units_inner.py
 watchtowr_api_sdk/models/create_client_business_unit_dto.py
 watchtowr_api_sdk/models/create_client_business_unit_rule_dto.py
 watchtowr_api_sdk/models/create_client_custom_property_dto.py
+watchtowr_api_sdk/models/create_client_finding_manual_ticket_request_body.py
 watchtowr_api_sdk/models/create_client_note_dto.py
 watchtowr_api_sdk/models/create_client_seed_data_request_body.py
 watchtowr_api_sdk/models/create_organisation_whitelist_ip_dto.py

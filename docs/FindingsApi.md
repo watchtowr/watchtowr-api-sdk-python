@@ -5,6 +5,7 @@ All URIs are relative to *https://your-tenant-id.sg.client.watchtowr.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_custom_property_finding**](FindingsApi.md#create_custom_property_finding) | **POST** /api/client/findings/show/{id}/custom-property | Create Custom Property
+[**create_finding_manual_ticket**](FindingsApi.md#create_finding_manual_ticket) | **POST** /api/client/findings/show/{id}/manual-ticket | Create Finding Manual Ticket
 [**create_finding_note**](FindingsApi.md#create_finding_note) | **POST** /api/client/findings/show/{id}/note | Create Finding Note
 [**delete_custom_property_finding**](FindingsApi.md#delete_custom_property_finding) | **DELETE** /api/client/findings/show/{id}/custom-property/{customPropertyId} | Delete Custom Property
 [**delete_finding_note**](FindingsApi.md#delete_finding_note) | **DELETE** /api/client/findings/show/{id}/note/{noteId} | Delete Finding Note
@@ -101,6 +102,91 @@ Name | Type | Description  | Notes
 **200** | Success |  -  |
 **401** | Unauthorized |  -  |
 **404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_finding_manual_ticket**
+> ClientFindingManualTicketData create_finding_manual_ticket(id, create_client_finding_manual_ticket_request_body)
+
+Create Finding Manual Ticket
+
+Create a manual ticket reference for a specific finding.
+
+### Example
+
+* Bearer (API_TOKEN) Authentication (bearer):
+
+```python
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.client_finding_manual_ticket_data import ClientFindingManualTicketData
+from watchtowr_api_sdk.models.create_client_finding_manual_ticket_request_body import CreateClientFindingManualTicketRequestBody
+from watchtowr_api_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = watchtowr_api_sdk.Configuration(
+    host = "https://your-tenant-id.sg.client.watchtowr.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API_TOKEN): bearer
+configuration = watchtowr_api_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = watchtowr_api_sdk.FindingsApi(api_client)
+    id = 3.4 # float | The ID of the finding to create a manual ticket for.
+    create_client_finding_manual_ticket_request_body = watchtowr_api_sdk.CreateClientFindingManualTicketRequestBody() # CreateClientFindingManualTicketRequestBody | 
+
+    try:
+        # Create Finding Manual Ticket
+        api_response = api_instance.create_finding_manual_ticket(id, create_client_finding_manual_ticket_request_body)
+        print("The response of FindingsApi->create_finding_manual_ticket:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling FindingsApi->create_finding_manual_ticket: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **float**| The ID of the finding to create a manual ticket for. | 
+ **create_client_finding_manual_ticket_request_body** | [**CreateClientFindingManualTicketRequestBody**](CreateClientFindingManualTicketRequestBody.md)|  | 
+
+### Return type
+
+[**ClientFindingManualTicketData**](ClientFindingManualTicketData.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -798,7 +884,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     updated_to = '2013-10-20T19:20:30+01:00' # datetime | Filter findings updated before a given date and time. (optional)
     statuses = 'confirmed,unconfirmed,remediated,risk-accepted,closed,asset-no-longer-tracked' # str | Filter findings by a list of comma separated statuses they're tagged with. (optional)
     business_unit_ids = '1,2,3' # str | Filter findings by a list of comma separated business unit IDs that they're related to. (optional)
-    finding_impact_threshold = 'finding_impact_threshold_example' # str | Impact Setting: * High - Prioritised Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organisation's security posture. * All - All Findings, a broader range of findings that may not directly impact your organisation's security posture, but may represent deviations from best practices. (optional)
+    finding_impact_threshold = 'finding_impact_threshold_example' # str | Impact Setting: * High - Prioritized Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organization's security posture. * All - All Findings, a broader range of findings that may not directly impact your organization's security posture, but may represent deviations from best practices. (optional)
     finding_title = 'Valid%20Credentials%20Discovered' # str | Search findings by title contents. (optional)
     severities = 'critical,high,medium,low,info' # str | Filter findings by a list of comma separated severities they're tagged with. (optional)
     asset_title = 'www.watchTowr.com' # str | Search by findings by affected asset. (optional)
@@ -833,7 +919,7 @@ Name | Type | Description  | Notes
  **updated_to** | **datetime**| Filter findings updated before a given date and time. | [optional] 
  **statuses** | **str**| Filter findings by a list of comma separated statuses they&#39;re tagged with. | [optional] 
  **business_unit_ids** | **str**| Filter findings by a list of comma separated business unit IDs that they&#39;re related to. | [optional] 
- **finding_impact_threshold** | **str**| Impact Setting: * High - Prioritised Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organisation&#39;s security posture. * All - All Findings, a broader range of findings that may not directly impact your organisation&#39;s security posture, but may represent deviations from best practices. | [optional] 
+ **finding_impact_threshold** | **str**| Impact Setting: * High - Prioritized Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organization&#39;s security posture. * All - All Findings, a broader range of findings that may not directly impact your organization&#39;s security posture, but may represent deviations from best practices. | [optional] 
  **finding_title** | **str**| Search findings by title contents. | [optional] 
  **severities** | **str**| Filter findings by a list of comma separated severities they&#39;re tagged with. | [optional] 
  **asset_title** | **str**| Search by findings by affected asset. | [optional] 

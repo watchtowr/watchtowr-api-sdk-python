@@ -47,7 +47,7 @@ These credentials have been confirmed as valid against the identified system, an
 * Gain access to internal systems
 * Gain access to sensitive and confidential data
 * Gain VPN access for further internal exploitation and deployment of payloads such as ransomware', 
-                    finding_impact = 'Prioritised Findings', 
+                    finding_impact = 'Prioritized Findings', 
                     tags = [
                         watchtowr_api_sdk.models.client_finding_impact_tag.ClientFindingImpactTag(
                             id = 1, 
@@ -60,9 +60,9 @@ Username: user
 Password: user123!
 
 MFA status: Single-factor authentication', 
-                    recommendation = 'As a priority, it is recommended that the identified credentials be revoked and rotated. As a follow-up an analysis should also be performed to ensure that the identified credentials have not previously been utilised by an attacker.
+                    recommendation = 'As a priority, it is recommended that the identified credentials be revoked and rotated. As a follow-up an analysis should also be performed to ensure that the identified credentials have not previously been utilized by an attacker.
 
-As a long-term measure to ensure that the security impact of breach credentials are minimised, it is recommended that:
+As a long-term measure to ensure that the security impact of breach credentials are minimized, it is recommended that:
 * Two-factor authentication (2FA) to be enabled for all business systems that support it, which provides an additional layer of security
 * Use a Single Sign-On (SSO) service for business systems, where possible
 ', 
@@ -115,7 +115,7 @@ These credentials have been confirmed as valid against the identified system, an
 * Gain access to internal systems
 * Gain access to sensitive and confidential data
 * Gain VPN access for further internal exploitation and deployment of payloads such as ransomware', 
-                    finding_impact = 'Prioritised Findings', 
+                    finding_impact = 'Prioritized Findings', 
                     tags = [
                         watchtowr_api_sdk.models.client_finding_impact_tag.ClientFindingImpactTag(
                             id = 1, 
@@ -128,9 +128,9 @@ Username: user
 Password: user123!
 
 MFA status: Single-factor authentication', 
-                    recommendation = 'As a priority, it is recommended that the identified credentials be revoked and rotated. As a follow-up an analysis should also be performed to ensure that the identified credentials have not previously been utilised by an attacker.
+                    recommendation = 'As a priority, it is recommended that the identified credentials be revoked and rotated. As a follow-up an analysis should also be performed to ensure that the identified credentials have not previously been utilized by an attacker.
 
-As a long-term measure to ensure that the security impact of breach credentials are minimised, it is recommended that:
+As a long-term measure to ensure that the security impact of breach credentials are minimized, it is recommended that:
 * Two-factor authentication (2FA) to be enabled for all business systems that support it, which provides an additional layer of security
 * Use a Single Sign-On (SSO) service for business systems, where possible
 ', 
