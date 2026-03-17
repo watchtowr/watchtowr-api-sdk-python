@@ -41,8 +41,6 @@ class TestLink(unittest.TestCase):
             )
         else:
             return Link(
-                previous = '',
-                next = '',
         )
         """
 

@@ -46,13 +46,13 @@ class ClientFinding(BaseModel):
     cvssv3_metrics: StrictStr
     status: StrictStr
     state: StrictStr = Field(description="Different to status, this is about tracking how the finding is being handled")
-    created_at: Dict[str, Any]
+    created_at: StrictStr
     affected: Dict[str, Any]
     cve_id: Optional[StrictStr] = None
     epss_score: Optional[StrictFloat] = None
     retest: Optional[Retest] = None
-    finding_retests: List[FindingRetestResponseDto]
-    assigned_user: ClientFindingAssignee
+    finding_retests: Optional[List[FindingRetestResponseDto]] = None
+    assigned_user: Optional[ClientFindingAssignee] = None
     last_seen: Optional[Dict[str, Any]] = None
     last_status_updated_at: Dict[str, Any]
     age: StrictFloat
@@ -148,6 +148,16 @@ class ClientFinding(BaseModel):
                 if _item_custom_properties:
                     _items.append(_item_custom_properties.to_dict())
             _dict['customProperties'] = _items
+        # set to None if finding_retests (nullable) is None
+        # and model_fields_set contains the field
+        if self.finding_retests is None and "finding_retests" in self.model_fields_set:
+            _dict['finding_retests'] = None
+
+        # set to None if assigned_user (nullable) is None
+        # and model_fields_set contains the field
+        if self.assigned_user is None and "assigned_user" in self.model_fields_set:
+            _dict['assigned_user'] = None
+
         return _dict
 
     @classmethod

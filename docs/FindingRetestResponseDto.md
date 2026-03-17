@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **requested_by** | **str** |  | 
 **requested_at** | **datetime** |  | 
 **retest_status** | **str** |  | 
-**status_occurred_at** | **datetime** |  | 
-**completed_at** | **datetime** |  | 
-**evidence** | **str** |  | 
+**status_occurred_at** | **datetime** |  | [optional] 
+**completed_at** | **datetime** |  | [optional] 
+**evidence** | **str** |  | [optional] 
 
 ## Example
 

@@ -36,11 +36,11 @@ class TestNotFoundResponse(unittest.TestCase):
         model = NotFoundResponse()
         if include_optional:
             return NotFoundResponse(
-                message = 'Organization white list ip not found'
+                message = 'Organization whitelist IP not found'
             )
         else:
             return NotFoundResponse(
-                message = 'Organization white list ip not found',
+                message = 'Organization whitelist IP not found',
         )
         """
 

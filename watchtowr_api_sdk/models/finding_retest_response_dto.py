@@ -20,7 +20,7 @@ import json
 
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -32,9 +32,9 @@ class FindingRetestResponseDto(BaseModel):
     requested_by: StrictStr
     requested_at: datetime
     retest_status: StrictStr
-    status_occurred_at: datetime
-    completed_at: datetime
-    evidence: StrictStr
+    status_occurred_at: Optional[datetime] = None
+    completed_at: Optional[datetime] = None
+    evidence: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["requested_by", "requested_at", "retest_status", "status_occurred_at", "completed_at", "evidence"]
 
     @field_validator('retest_status')
@@ -83,6 +83,21 @@ class FindingRetestResponseDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if status_occurred_at (nullable) is None
+        # and model_fields_set contains the field
+        if self.status_occurred_at is None and "status_occurred_at" in self.model_fields_set:
+            _dict['status_occurred_at'] = None
+
+        # set to None if completed_at (nullable) is None
+        # and model_fields_set contains the field
+        if self.completed_at is None and "completed_at" in self.model_fields_set:
+            _dict['completed_at'] = None
+
+        # set to None if evidence (nullable) is None
+        # and model_fields_set contains the field
+        if self.evidence is None and "evidence" in self.model_fields_set:
+            _dict['evidence'] = None
+
         return _dict
 
     @classmethod

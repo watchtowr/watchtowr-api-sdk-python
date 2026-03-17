@@ -18,13 +18,13 @@ Name | Type | Description | Notes
 **cvssv3_metrics** | **str** |  | 
 **status** | **str** |  | 
 **state** | **str** | Different to status, this is about tracking how the finding is being handled | 
-**created_at** | **object** |  | 
+**created_at** | **str** |  | 
 **affected** | **object** |  | 
 **cve_id** | **str** |  | [optional] 
 **epss_score** | **float** |  | [optional] 
 **retest** | [**Retest**](Retest.md) |  | [optional] 
-**finding_retests** | [**List[FindingRetestResponseDto]**](FindingRetestResponseDto.md) |  | 
-**assigned_user** | [**ClientFindingAssignee**](ClientFindingAssignee.md) |  | 
+**finding_retests** | [**List[FindingRetestResponseDto]**](FindingRetestResponseDto.md) |  | [optional] 
+**assigned_user** | [**ClientFindingAssignee**](ClientFindingAssignee.md) |  | [optional] 
 **last_seen** | **object** |  | [optional] 
 **last_status_updated_at** | **object** |  | 
 **age** | **float** |  | 

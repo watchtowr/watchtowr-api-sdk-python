@@ -71,19 +71,13 @@ As a long-term measure to ensure that the security impact of breach credentials 
                     cvssv3_metrics = 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N/E:F/RL:W/RC:C', 
                     status = 'confirmed', 
                     state = 'Uninvestigated', 
-                    created_at = 2022-02-13T02:10:00.000000Z, 
+                    created_at = '2022-02-13T02:10:00.000000Z', 
                     affected = watchtowr_api_sdk.models.affected.affected(), 
                     cve_id = 'CVE-2023-38180', 
                     epss_score = 0.97521, 
                     retest = watchtowr_api_sdk.models.retest.Retest(
                         retest_remaining = 1, 
-                        current_retest = watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
-                            requested_by = 'Requested by user', 
-                            requested_at = '2024-01-29T08:05:09Z', 
-                            retest_status = 'success', 
-                            status_occurred_at = '2024-01-29T08:05:09Z', 
-                            completed_at = '2024-01-29T08:05:09Z', 
-                            evidence = 'Evidence for retest', ), ), 
+                        current_retest = null, ), 
                     finding_retests = [
                         watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
                             requested_by = 'Requested by user', 
@@ -93,8 +87,7 @@ As a long-term measure to ensure that the security impact of breach credentials 
                             completed_at = '2024-01-29T08:05:09Z', 
                             evidence = 'Evidence for retest', )
                         ], 
-                    assigned_user = watchtowr_api_sdk.models.client_finding_assignee.ClientFindingAssignee(
-                        name = 'John Smith', ), 
+                    assigned_user = null, 
                     last_seen = 2022-02-13T02:10:00.000000Z, 
                     last_status_updated_at = 2022-02-13T02:10:00.000000Z, 
                     age = 30, 
@@ -139,19 +132,13 @@ As a long-term measure to ensure that the security impact of breach credentials 
                     cvssv3_metrics = 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N/E:F/RL:W/RC:C', 
                     status = 'confirmed', 
                     state = 'Uninvestigated', 
-                    created_at = 2022-02-13T02:10:00.000000Z, 
+                    created_at = '2022-02-13T02:10:00.000000Z', 
                     affected = watchtowr_api_sdk.models.affected.affected(), 
                     cve_id = 'CVE-2023-38180', 
                     epss_score = 0.97521, 
                     retest = watchtowr_api_sdk.models.retest.Retest(
                         retest_remaining = 1, 
-                        current_retest = watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
-                            requested_by = 'Requested by user', 
-                            requested_at = '2024-01-29T08:05:09Z', 
-                            retest_status = 'success', 
-                            status_occurred_at = '2024-01-29T08:05:09Z', 
-                            completed_at = '2024-01-29T08:05:09Z', 
-                            evidence = 'Evidence for retest', ), ), 
+                        current_retest = null, ), 
                     finding_retests = [
                         watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
                             requested_by = 'Requested by user', 
@@ -161,8 +148,7 @@ As a long-term measure to ensure that the security impact of breach credentials 
                             completed_at = '2024-01-29T08:05:09Z', 
                             evidence = 'Evidence for retest', )
                         ], 
-                    assigned_user = watchtowr_api_sdk.models.client_finding_assignee.ClientFindingAssignee(
-                        name = 'John Smith', ), 
+                    assigned_user = null, 
                     last_seen = 2022-02-13T02:10:00.000000Z, 
                     last_status_updated_at = 2022-02-13T02:10:00.000000Z, 
                     age = 30, 

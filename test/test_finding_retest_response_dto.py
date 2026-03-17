@@ -48,9 +48,6 @@ class TestFindingRetestResponseDto(unittest.TestCase):
                 requested_by = 'Requested by user',
                 requested_at = '2024-01-29T08:05:09Z',
                 retest_status = 'success',
-                status_occurred_at = '2024-01-29T08:05:09Z',
-                completed_at = '2024-01-29T08:05:09Z',
-                evidence = 'Evidence for retest',
         )
         """
 

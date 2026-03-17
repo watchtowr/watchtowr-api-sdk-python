@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **retest_remaining** | **float** | The number of remaining test cases  | [optional] 
-**current_retest** | [**FindingRetestResponseDto**](FindingRetestResponseDto.md) |  | 
+**current_retest** | [**FindingRetestResponseDto**](FindingRetestResponseDto.md) |  | [optional] 
 
 ## Example
 

@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** | ID | 
 **subject_common_name** | **str** | Subject Common Name | 
-**subject_organisation** | **str** | Subject Organisation | 
+**subject_organisation** | **str** | Subject Organization | 
 **subject_alt_names** | **List[str]** | Subject Alt Names | 
 **subject_country** | **str** | Subject Country | 
 **issuer_common_name** | **str** | Issuer CommonName | 
-**issuer_organisation** | **str** | Issuer Organisation | 
+**issuer_organisation** | **str** | Issuer Organization | 
 **issuer_country** | **str** | Issuer Country | 
 **fingerprint** | **str** | Fingerprint | 
 **public_key_info_alg** | **str** | PublicKeyInfoAlg | 

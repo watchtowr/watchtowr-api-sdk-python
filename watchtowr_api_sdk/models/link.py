@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,8 +28,8 @@ class Link(BaseModel):
     """
     Link
     """ # noqa: E501
-    previous: StrictStr
-    next: StrictStr
+    previous: Optional[StrictStr] = None
+    next: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["previous", "next"]
 
     model_config = ConfigDict(
@@ -71,6 +71,16 @@ class Link(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if previous (nullable) is None
+        # and model_fields_set contains the field
+        if self.previous is None and "previous" in self.model_fields_set:
+            _dict['previous'] = None
+
+        # set to None if next (nullable) is None
+        # and model_fields_set contains the field
+        if self.next is None and "next" in self.model_fields_set:
+            _dict['next'] = None
+
         return _dict
 
     @classmethod

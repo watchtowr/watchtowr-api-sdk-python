@@ -47,13 +47,6 @@ class TestRetest(unittest.TestCase):
             )
         else:
             return Retest(
-                current_retest = watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
-                    requested_by = 'Requested by user', 
-                    requested_at = '2024-01-29T08:05:09Z', 
-                    retest_status = 'success', 
-                    status_occurred_at = '2024-01-29T08:05:09Z', 
-                    completed_at = '2024-01-29T08:05:09Z', 
-                    evidence = 'Evidence for retest', ),
         )
         """
 

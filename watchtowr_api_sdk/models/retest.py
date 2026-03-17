@@ -30,7 +30,7 @@ class Retest(BaseModel):
     Retest
     """ # noqa: E501
     retest_remaining: Optional[StrictFloat] = Field(default=None, description="The number of remaining test cases ")
-    current_retest: FindingRetestResponseDto
+    current_retest: Optional[FindingRetestResponseDto] = None
     __properties: ClassVar[List[str]] = ["retest_remaining", "current_retest"]
 
     model_config = ConfigDict(
@@ -75,6 +75,11 @@ class Retest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of current_retest
         if self.current_retest:
             _dict['current_retest'] = self.current_retest.to_dict()
+        # set to None if current_retest (nullable) is None
+        # and model_fields_set contains the field
+        if self.current_retest is None and "current_retest" in self.model_fields_set:
+            _dict['current_retest'] = None
+
         return _dict
 
     @classmethod

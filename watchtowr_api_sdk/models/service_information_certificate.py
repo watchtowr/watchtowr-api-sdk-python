@@ -31,11 +31,11 @@ class ServiceInformationCertificate(BaseModel):
     """ # noqa: E501
     id: StrictFloat = Field(description="ID")
     subject_common_name: StrictStr = Field(description="Subject Common Name", alias="subjectCommonName")
-    subject_organisation: StrictStr = Field(description="Subject Organisation", alias="subjectOrganisation")
+    subject_organisation: StrictStr = Field(description="Subject Organization", alias="subjectOrganisation")
     subject_alt_names: List[StrictStr] = Field(description="Subject Alt Names", alias="subjectAltNames")
     subject_country: StrictStr = Field(description="Subject Country", alias="subjectCountry")
     issuer_common_name: StrictStr = Field(description="Issuer CommonName", alias="issuerCommonName")
-    issuer_organisation: StrictStr = Field(description="Issuer Organisation", alias="issuerOrganisation")
+    issuer_organisation: StrictStr = Field(description="Issuer Organization", alias="issuerOrganisation")
     issuer_country: StrictStr = Field(description="Issuer Country", alias="issuerCountry")
     fingerprint: StrictStr = Field(description="Fingerprint")
     public_key_info_alg: StrictStr = Field(description="PublicKeyInfoAlg", alias="publicKeyInfoAlg")
