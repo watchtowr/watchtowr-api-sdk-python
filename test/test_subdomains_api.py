@@ -111,6 +111,13 @@ class TestSubdomainsApi(unittest.TestCase):
         """
         pass
 
+    def test_set_criticality_subdomain(self) -> None:
+        """Test case for set_criticality_subdomain
+
+        Set Criticality
+        """
+        pass
+
     def test_unassign_subomain_from_business_units(self) -> None:
         """Test case for unassign_subomain_from_business_units
 

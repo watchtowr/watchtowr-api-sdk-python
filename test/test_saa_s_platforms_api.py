@@ -97,6 +97,13 @@ class TestSaaSPlatformsApi(unittest.TestCase):
         """
         pass
 
+    def test_set_criticality_saas_platform(self) -> None:
+        """Test case for set_criticality_saas_platform
+
+        Set Criticality
+        """
+        pass
+
     def test_unassign_saas_platform_from_business_units(self) -> None:
         """Test case for unassign_saas_platform_from_business_units
 

@@ -97,6 +97,13 @@ class TestCloudStorageApi(unittest.TestCase):
         """
         pass
 
+    def test_set_criticality_cloud_storage(self) -> None:
+        """Test case for set_criticality_cloud_storage
+
+        Set Criticality
+        """
+        pass
+
     def test_unassign_cloud_storage_from_business_units(self) -> None:
         """Test case for unassign_cloud_storage_from_business_units
 

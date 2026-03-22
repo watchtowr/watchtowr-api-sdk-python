@@ -97,6 +97,13 @@ class TestContainersApi(unittest.TestCase):
         """
         pass
 
+    def test_set_criticality_container(self) -> None:
+        """Test case for set_criticality_container
+
+        Set Criticality
+        """
+        pass
+
     def test_unassign_container_from_business_units(self) -> None:
         """Test case for unassign_container_from_business_units
 

@@ -97,6 +97,13 @@ class TestMobileApplicationsApi(unittest.TestCase):
         """
         pass
 
+    def test_set_criticality_mobile_app(self) -> None:
+        """Test case for set_criticality_mobile_app
+
+        Set Criticality
+        """
+        pass
+
     def test_unassign_mobile_app_from_business_units(self) -> None:
         """Test case for unassign_mobile_app_from_business_units
 

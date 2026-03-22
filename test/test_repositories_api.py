@@ -97,6 +97,13 @@ class TestRepositoriesApi(unittest.TestCase):
         """
         pass
 
+    def test_set_criticality_repository(self) -> None:
+        """Test case for set_criticality_repository
+
+        Set Criticality
+        """
+        pass
+
     def test_unassign_repository_from_business_units(self) -> None:
         """Test case for unassign_repository_from_business_units
 

@@ -111,6 +111,7 @@ Class | Method | HTTP request | Description
 *APIDocumentationApi* | [**get_asset_api_documentation_notes**](docs/APIDocumentationApi.md#get_asset_api_documentation_notes) | **GET** /api/client/assets/apiDocumentation/show/{id}/notes | List API Documentation Notes
 *APIDocumentationApi* | [**get_custom_properties_api_documentation**](docs/APIDocumentationApi.md#get_custom_properties_api_documentation) | **GET** /api/client/assets/apiDocumentation/show/{id}/custom-properties | List Custom Properties
 *APIDocumentationApi* | [**get_list_asset_api_documentation**](docs/APIDocumentationApi.md#get_list_asset_api_documentation) | **GET** /api/client/assets/apiDocumentation/list | List API Documentation
+*APIDocumentationApi* | [**set_criticality_api_documentation**](docs/APIDocumentationApi.md#set_criticality_api_documentation) | **PUT** /api/client/assets/apiDocumentation/show/{id}/criticality | Set Criticality
 *APIDocumentationApi* | [**unassign_api_documentation_from_business_units**](docs/APIDocumentationApi.md#unassign_api_documentation_from_business_units) | **DELETE** /api/client/assets/apiDocumentation/show/{id}/business-units | Unassign API Documentation from Business Units
 *APIDocumentationApi* | [**update_asset_api_documentation_note**](docs/APIDocumentationApi.md#update_asset_api_documentation_note) | **PUT** /api/client/assets/apiDocumentation/show/{id}/note/{noteId} | Update Note
 *APIDocumentationApi* | [**update_asset_api_documentation_status**](docs/APIDocumentationApi.md#update_asset_api_documentation_status) | **PUT** /api/client/assets/apiDocumentation/update-status/{id} | Update API Documentation Status
@@ -137,6 +138,7 @@ Class | Method | HTTP request | Description
 *CloudIntegrationAssetsApi* | [**get_asset_cloud_asset_notes**](docs/CloudIntegrationAssetsApi.md#get_asset_cloud_asset_notes) | **GET** /api/client/assets/cloudAsset/show/{id}/notes | List Notes
 *CloudIntegrationAssetsApi* | [**get_custom_properties_cloud_asset**](docs/CloudIntegrationAssetsApi.md#get_custom_properties_cloud_asset) | **GET** /api/client/assets/cloudAsset/show/{id}/custom-properties | List Custom Properties
 *CloudIntegrationAssetsApi* | [**get_list_asset_cloud_asset**](docs/CloudIntegrationAssetsApi.md#get_list_asset_cloud_asset) | **GET** /api/client/assets/cloudAsset/list | List Cloud Assets
+*CloudIntegrationAssetsApi* | [**set_criticality_cloud_asset**](docs/CloudIntegrationAssetsApi.md#set_criticality_cloud_asset) | **PUT** /api/client/assets/cloudAsset/show/{id}/criticality | Set Criticality
 *CloudIntegrationAssetsApi* | [**unassign_cloud_asset_from_business_units**](docs/CloudIntegrationAssetsApi.md#unassign_cloud_asset_from_business_units) | **DELETE** /api/client/assets/cloudAsset/show/{id}/business-units | Unassign Cloud Integration Asset from Business Units
 *CloudIntegrationAssetsApi* | [**update_asset_cloud_asset_note**](docs/CloudIntegrationAssetsApi.md#update_asset_cloud_asset_note) | **PUT** /api/client/assets/cloudAsset/show/{id}/note/{noteId} | Update Note
 *CloudIntegrationAssetsApi* | [**update_asset_cloud_asset_status**](docs/CloudIntegrationAssetsApi.md#update_asset_cloud_asset_status) | **PUT** /api/client/assets/cloudAsset/update-status/{id} | Update Cloud Asset Status
@@ -151,6 +153,7 @@ Class | Method | HTTP request | Description
 *CloudStorageApi* | [**get_asset_cloud_storage_notes**](docs/CloudStorageApi.md#get_asset_cloud_storage_notes) | **GET** /api/client/assets/cloudStorage/show/{id}/notes | List Notes
 *CloudStorageApi* | [**get_custom_properties_cloud_storage**](docs/CloudStorageApi.md#get_custom_properties_cloud_storage) | **GET** /api/client/assets/cloudStorage/show/{id}/custom-properties | List Custom Properties
 *CloudStorageApi* | [**get_list_asset_cloud_storages**](docs/CloudStorageApi.md#get_list_asset_cloud_storages) | **GET** /api/client/assets/cloudStorage/list | List Cloud Storage
+*CloudStorageApi* | [**set_criticality_cloud_storage**](docs/CloudStorageApi.md#set_criticality_cloud_storage) | **PUT** /api/client/assets/cloudStorage/show/{id}/criticality | Set Criticality
 *CloudStorageApi* | [**unassign_cloud_storage_from_business_units**](docs/CloudStorageApi.md#unassign_cloud_storage_from_business_units) | **DELETE** /api/client/assets/cloudStorage/show/{id}/business-units | Unassign Cloud Storage from Business Units
 *CloudStorageApi* | [**update_asset_cloud_storage_note**](docs/CloudStorageApi.md#update_asset_cloud_storage_note) | **PUT** /api/client/assets/cloudStorage/show/{id}/note/{noteId} | Update Note
 *CloudStorageApi* | [**update_asset_cloud_storage_status**](docs/CloudStorageApi.md#update_asset_cloud_storage_status) | **PUT** /api/client/assets/cloudStorage/update-status/{id} | Update Status
@@ -165,6 +168,7 @@ Class | Method | HTTP request | Description
 *ContainersApi* | [**get_asset_container_notes**](docs/ContainersApi.md#get_asset_container_notes) | **GET** /api/client/assets/container/show/{id}/notes | List Notes
 *ContainersApi* | [**get_custom_properties_container**](docs/ContainersApi.md#get_custom_properties_container) | **GET** /api/client/assets/container/show/{id}/custom-properties | List Custom Properties
 *ContainersApi* | [**get_list_asset_container**](docs/ContainersApi.md#get_list_asset_container) | **GET** /api/client/assets/container/list | List Containers
+*ContainersApi* | [**set_criticality_container**](docs/ContainersApi.md#set_criticality_container) | **PUT** /api/client/assets/container/show/{id}/criticality | Set Criticality
 *ContainersApi* | [**unassign_container_from_business_units**](docs/ContainersApi.md#unassign_container_from_business_units) | **DELETE** /api/client/assets/container/show/{id}/business-units | Unassign Container from Business Units
 *ContainersApi* | [**update_asset_container_status**](docs/ContainersApi.md#update_asset_container_status) | **PUT** /api/client/assets/container/update-status/{id} | Update Status
 *ContainersApi* | [**update_custom_property_container**](docs/ContainersApi.md#update_custom_property_container) | **PUT** /api/client/assets/container/show/{id}/custom-property/{customPropertyId} | Update Custom Property
@@ -182,6 +186,7 @@ Class | Method | HTTP request | Description
 *DomainsApi* | [**get_asset_domain_notes**](docs/DomainsApi.md#get_asset_domain_notes) | **GET** /api/client/assets/domain/show/{id}/notes | List Notes
 *DomainsApi* | [**get_custom_properties_domain**](docs/DomainsApi.md#get_custom_properties_domain) | **GET** /api/client/assets/domain/show/{id}/custom-properties | List Custom Properties
 *DomainsApi* | [**get_list_asset_domains**](docs/DomainsApi.md#get_list_asset_domains) | **GET** /api/client/assets/domain/list | List Domains
+*DomainsApi* | [**set_criticality_domain**](docs/DomainsApi.md#set_criticality_domain) | **PUT** /api/client/assets/domain/show/{id}/criticality | Set Criticality
 *DomainsApi* | [**unassign_domain_from_business_units**](docs/DomainsApi.md#unassign_domain_from_business_units) | **DELETE** /api/client/assets/domain/show/{id}/business-units | Unassign Domain from Business Units
 *DomainsApi* | [**update_asset_domain_engine_settings**](docs/DomainsApi.md#update_asset_domain_engine_settings) | **PUT** /api/client/assets/domain/show/{id}/engine-settings | Update Domain Engine Settings
 *DomainsApi* | [**update_asset_domain_note**](docs/DomainsApi.md#update_asset_domain_note) | **PUT** /api/client/assets/domain/show/{id}/note/{noteId} | Update Note
@@ -222,6 +227,7 @@ Class | Method | HTTP request | Description
 *IPAddressesApi* | [**get_asset_ip_ports**](docs/IPAddressesApi.md#get_asset_ip_ports) | **GET** /api/client/assets/ip/show/{id}/port/list | List Ports
 *IPAddressesApi* | [**get_custom_properties_ip**](docs/IPAddressesApi.md#get_custom_properties_ip) | **GET** /api/client/assets/ip/show/{id}/custom-properties | List Custom Properties
 *IPAddressesApi* | [**get_list_asset_ips**](docs/IPAddressesApi.md#get_list_asset_ips) | **GET** /api/client/assets/ip/list | List IP Addresses
+*IPAddressesApi* | [**set_criticality_ip**](docs/IPAddressesApi.md#set_criticality_ip) | **PUT** /api/client/assets/ip/show/{id}/criticality | Set Criticality
 *IPAddressesApi* | [**unassign_ip_from_business_units**](docs/IPAddressesApi.md#unassign_ip_from_business_units) | **DELETE** /api/client/assets/ip/show/{id}/business-units | Unassign IP from Business Units
 *IPAddressesApi* | [**update_asset_ip_engine_settings**](docs/IPAddressesApi.md#update_asset_ip_engine_settings) | **PUT** /api/client/assets/ip/show/{id}/engine-settings | Update IP Engine Settings
 *IPAddressesApi* | [**update_asset_ip_note**](docs/IPAddressesApi.md#update_asset_ip_note) | **PUT** /api/client/assets/ip/show/{id}/note/{noteId} | Update Note
@@ -237,6 +243,7 @@ Class | Method | HTTP request | Description
 *IPRangesApi* | [**get_asset_iprange_details**](docs/IPRangesApi.md#get_asset_iprange_details) | **GET** /api/client/assets/ipRange/show/{id} | Get IP Range
 *IPRangesApi* | [**get_custom_properties_ip_range**](docs/IPRangesApi.md#get_custom_properties_ip_range) | **GET** /api/client/assets/ipRange/show/{id}/custom-properties | List Custom Properties
 *IPRangesApi* | [**get_list_asset_ipranges**](docs/IPRangesApi.md#get_list_asset_ipranges) | **GET** /api/client/assets/ipRange/list | List IP Ranges
+*IPRangesApi* | [**set_criticality_ip_range**](docs/IPRangesApi.md#set_criticality_ip_range) | **PUT** /api/client/assets/ipRange/show/{id}/criticality | Set Criticality
 *IPRangesApi* | [**unassign_ip_range_from_business_units**](docs/IPRangesApi.md#unassign_ip_range_from_business_units) | **DELETE** /api/client/assets/ipRange/show/{id}/business-units | Unassign IP Range from Business Units
 *IPRangesApi* | [**update_asset_ip_range_status**](docs/IPRangesApi.md#update_asset_ip_range_status) | **PUT** /api/client/assets/ipRange/update-status/{id} | Update Status
 *IPRangesApi* | [**update_custom_property_ip_range**](docs/IPRangesApi.md#update_custom_property_ip_range) | **PUT** /api/client/assets/ipRange/show/{id}/custom-property/{customPropertyId} | Update Custom Property
@@ -253,6 +260,7 @@ Class | Method | HTTP request | Description
 *MobileApplicationsApi* | [**get_asset_mobile_app_notes**](docs/MobileApplicationsApi.md#get_asset_mobile_app_notes) | **GET** /api/client/assets/mobileApp/show/{id}/notes | List Notes
 *MobileApplicationsApi* | [**get_custom_properties_mobile_app**](docs/MobileApplicationsApi.md#get_custom_properties_mobile_app) | **GET** /api/client/assets/mobileApp/show/{id}/custom-properties | List Custom Properties
 *MobileApplicationsApi* | [**get_list_asset_mobile_apps**](docs/MobileApplicationsApi.md#get_list_asset_mobile_apps) | **GET** /api/client/assets/mobileApp/list | List Mobile Applications
+*MobileApplicationsApi* | [**set_criticality_mobile_app**](docs/MobileApplicationsApi.md#set_criticality_mobile_app) | **PUT** /api/client/assets/mobileApp/show/{id}/criticality | Set Criticality
 *MobileApplicationsApi* | [**unassign_mobile_app_from_business_units**](docs/MobileApplicationsApi.md#unassign_mobile_app_from_business_units) | **DELETE** /api/client/assets/mobileApp/show/{id}/business-units | Unassign Mobile App from Business Units
 *MobileApplicationsApi* | [**update_asset_mobile_app_status**](docs/MobileApplicationsApi.md#update_asset_mobile_app_status) | **PUT** /api/client/assets/mobileApp/update-status/{id} | Update Status
 *MobileApplicationsApi* | [**update_custom_property_mobile_app**](docs/MobileApplicationsApi.md#update_custom_property_mobile_app) | **PUT** /api/client/assets/mobileApp/show/{id}/custom-property/{customPropertyId} | Update Custom Property
@@ -267,6 +275,7 @@ Class | Method | HTTP request | Description
 *PackageManagersApi* | [**get_asset_package_manager_notes**](docs/PackageManagersApi.md#get_asset_package_manager_notes) | **GET** /api/client/assets/packageManager/show/{id}/notes | List Notes
 *PackageManagersApi* | [**get_custom_properties_package_manager**](docs/PackageManagersApi.md#get_custom_properties_package_manager) | **GET** /api/client/assets/packageManager/show/{id}/custom-properties | List Custom Properties
 *PackageManagersApi* | [**get_list_asset_package_managers**](docs/PackageManagersApi.md#get_list_asset_package_managers) | **GET** /api/client/assets/packageManager/list | List Package Managers
+*PackageManagersApi* | [**set_criticality_package_manager**](docs/PackageManagersApi.md#set_criticality_package_manager) | **PUT** /api/client/assets/packageManager/show/{id}/criticality | Set Criticality
 *PackageManagersApi* | [**unassign_package_manager_from_business_units**](docs/PackageManagersApi.md#unassign_package_manager_from_business_units) | **DELETE** /api/client/assets/packageManager/show/{id}/business-units | Unassign Package Manager from Business Units
 *PackageManagersApi* | [**update_asset_package_manager_note**](docs/PackageManagersApi.md#update_asset_package_manager_note) | **PUT** /api/client/assets/packageManager/show/{id}/note/{noteId} | Update Note
 *PackageManagersApi* | [**update_asset_package_manager_status**](docs/PackageManagersApi.md#update_asset_package_manager_status) | **PUT** /api/client/assets/packageManager/update-status/{id} | Update Status
@@ -298,6 +307,7 @@ Class | Method | HTTP request | Description
 *RepositoriesApi* | [**get_asset_repository_notes**](docs/RepositoriesApi.md#get_asset_repository_notes) | **GET** /api/client/assets/repository/show/{id}/notes | List Notes
 *RepositoriesApi* | [**get_custom_properties_repository**](docs/RepositoriesApi.md#get_custom_properties_repository) | **GET** /api/client/assets/repository/show/{id}/custom-properties | List Custom Properties
 *RepositoriesApi* | [**get_list_asset_repositories**](docs/RepositoriesApi.md#get_list_asset_repositories) | **GET** /api/client/assets/repository/list | List Repositories
+*RepositoriesApi* | [**set_criticality_repository**](docs/RepositoriesApi.md#set_criticality_repository) | **PUT** /api/client/assets/repository/show/{id}/criticality | Set Criticality
 *RepositoriesApi* | [**unassign_repository_from_business_units**](docs/RepositoriesApi.md#unassign_repository_from_business_units) | **DELETE** /api/client/assets/repository/show/{id}/business-units | Unassign Repository from Business Units
 *RepositoriesApi* | [**update_asset_repository_status**](docs/RepositoriesApi.md#update_asset_repository_status) | **PUT** /api/client/assets/repository/update-status/{id} | Update Status
 *RepositoriesApi* | [**update_custom_property_repository**](docs/RepositoriesApi.md#update_custom_property_repository) | **PUT** /api/client/assets/repository/show/{id}/custom-property/{customPropertyId} | Update Custom Property
@@ -312,6 +322,7 @@ Class | Method | HTTP request | Description
 *SaaSPlatformsApi* | [**get_asset_saas_platform_notes**](docs/SaaSPlatformsApi.md#get_asset_saas_platform_notes) | **GET** /api/client/assets/saasPlatform/show/{id}/notes | List Notes
 *SaaSPlatformsApi* | [**get_custom_properties_saas_platform**](docs/SaaSPlatformsApi.md#get_custom_properties_saas_platform) | **GET** /api/client/assets/saasPlatform/show/{id}/custom-properties | List Custom Properties
 *SaaSPlatformsApi* | [**get_list_asset_saas_platforms**](docs/SaaSPlatformsApi.md#get_list_asset_saas_platforms) | **GET** /api/client/assets/saasPlatform/list | List SaaS Platforms
+*SaaSPlatformsApi* | [**set_criticality_saas_platform**](docs/SaaSPlatformsApi.md#set_criticality_saas_platform) | **PUT** /api/client/assets/saasPlatform/show/{id}/criticality | Set Criticality
 *SaaSPlatformsApi* | [**unassign_saas_platform_from_business_units**](docs/SaaSPlatformsApi.md#unassign_saas_platform_from_business_units) | **DELETE** /api/client/assets/saasPlatform/show/{id}/business-units | Unassign SaaS Platform from Business Units
 *SaaSPlatformsApi* | [**update_asset_saas_platform_status**](docs/SaaSPlatformsApi.md#update_asset_saas_platform_status) | **PUT** /api/client/assets/saasPlatform/update-status/{id} | Update Status
 *SaaSPlatformsApi* | [**update_custom_property_saas_platform**](docs/SaaSPlatformsApi.md#update_custom_property_saas_platform) | **PUT** /api/client/assets/saasPlatform/show/{id}/custom-property/{customPropertyId} | Update Custom Property
@@ -332,6 +343,7 @@ Class | Method | HTTP request | Description
 *SubdomainsApi* | [**get_custom_properties_subdomain**](docs/SubdomainsApi.md#get_custom_properties_subdomain) | **GET** /api/client/assets/subdomain/show/{id}/custom-properties | List Subdomain Custom Properties
 *SubdomainsApi* | [**get_list_asset_subdomains**](docs/SubdomainsApi.md#get_list_asset_subdomains) | **GET** /api/client/assets/subdomain/list | List Subdomains
 *SubdomainsApi* | [**get_notes_subdomain**](docs/SubdomainsApi.md#get_notes_subdomain) | **GET** /api/client/assets/subdomain/show/{id}/notes | List Subdomain Notes
+*SubdomainsApi* | [**set_criticality_subdomain**](docs/SubdomainsApi.md#set_criticality_subdomain) | **PUT** /api/client/assets/subdomain/show/{id}/criticality | Set Criticality
 *SubdomainsApi* | [**unassign_subomain_from_business_units**](docs/SubdomainsApi.md#unassign_subomain_from_business_units) | **DELETE** /api/client/assets/subdomain/show/{id}/business-units | Unassign Subdomain from Business Units
 *SubdomainsApi* | [**update_asset_subdomain_engine_settings**](docs/SubdomainsApi.md#update_asset_subdomain_engine_settings) | **PUT** /api/client/assets/subdomain/show/{id}/engine-settings | Update Subdomain Engine Settings
 *SubdomainsApi* | [**update_asset_subdomain_status**](docs/SubdomainsApi.md#update_asset_subdomain_status) | **PUT** /api/client/assets/subdomain/update-status/{id} | Update Subdomain Status
@@ -528,6 +540,9 @@ Class | Method | HTTP request | Description
  - [ServiceInformationResponse](docs/ServiceInformationResponse.md)
  - [ServiceListing](docs/ServiceListing.md)
  - [ServiceType](docs/ServiceType.md)
+ - [SetCriticalityDataResponseDto](docs/SetCriticalityDataResponseDto.md)
+ - [SetCriticalityDto](docs/SetCriticalityDto.md)
+ - [SetCriticalityResponseDto](docs/SetCriticalityResponseDto.md)
  - [SuspiciousDomain](docs/SuspiciousDomain.md)
  - [Technology](docs/Technology.md)
  - [TechnologyStatistic](docs/TechnologyStatistic.md)

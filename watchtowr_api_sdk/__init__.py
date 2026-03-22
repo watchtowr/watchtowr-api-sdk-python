@@ -238,6 +238,9 @@ __all__ = [
     "ServiceInformationResponse",
     "ServiceListing",
     "ServiceType",
+    "SetCriticalityDataResponseDto",
+    "SetCriticalityDto",
+    "SetCriticalityResponseDto",
     "SuspiciousDomain",
     "Technology",
     "TechnologyStatistic",
@@ -497,6 +500,9 @@ from watchtowr_api_sdk.models.service_information_certificate import ServiceInfo
 from watchtowr_api_sdk.models.service_information_response import ServiceInformationResponse as ServiceInformationResponse
 from watchtowr_api_sdk.models.service_listing import ServiceListing as ServiceListing
 from watchtowr_api_sdk.models.service_type import ServiceType as ServiceType
+from watchtowr_api_sdk.models.set_criticality_data_response_dto import SetCriticalityDataResponseDto as SetCriticalityDataResponseDto
+from watchtowr_api_sdk.models.set_criticality_dto import SetCriticalityDto as SetCriticalityDto
+from watchtowr_api_sdk.models.set_criticality_response_dto import SetCriticalityResponseDto as SetCriticalityResponseDto
 from watchtowr_api_sdk.models.suspicious_domain import SuspiciousDomain as SuspiciousDomain
 from watchtowr_api_sdk.models.technology import Technology as Technology
 from watchtowr_api_sdk.models.technology_statistic import TechnologyStatistic as TechnologyStatistic

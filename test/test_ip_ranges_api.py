@@ -97,6 +97,13 @@ class TestIPRangesApi(unittest.TestCase):
         """
         pass
 
+    def test_set_criticality_ip_range(self) -> None:
+        """Test case for set_criticality_ip_range
+
+        Set Criticality
+        """
+        pass
+
     def test_unassign_ip_range_from_business_units(self) -> None:
         """Test case for unassign_ip_range_from_business_units
 

@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**get_asset_iprange_details**](IPRangesApi.md#get_asset_iprange_details) | **GET** /api/client/assets/ipRange/show/{id} | Get IP Range
 [**get_custom_properties_ip_range**](IPRangesApi.md#get_custom_properties_ip_range) | **GET** /api/client/assets/ipRange/show/{id}/custom-properties | List Custom Properties
 [**get_list_asset_ipranges**](IPRangesApi.md#get_list_asset_ipranges) | **GET** /api/client/assets/ipRange/list | List IP Ranges
+[**set_criticality_ip_range**](IPRangesApi.md#set_criticality_ip_range) | **PUT** /api/client/assets/ipRange/show/{id}/criticality | Set Criticality
 [**unassign_ip_range_from_business_units**](IPRangesApi.md#unassign_ip_range_from_business_units) | **DELETE** /api/client/assets/ipRange/show/{id}/business-units | Unassign IP Range from Business Units
 [**update_asset_ip_range_status**](IPRangesApi.md#update_asset_ip_range_status) | **PUT** /api/client/assets/ipRange/update-status/{id} | Update Status
 [**update_custom_property_ip_range**](IPRangesApi.md#update_custom_property_ip_range) | **PUT** /api/client/assets/ipRange/show/{id}/custom-property/{customPropertyId} | Update Custom Property
@@ -868,6 +869,90 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_criticality_ip_range**
+> SetCriticalityDataResponseDto set_criticality_ip_range(id, set_criticality_dto)
+
+Set Criticality
+
+Set or update the criticality level of a specific IP Range asset.
+
+### Example
+
+* Bearer (API_TOKEN) Authentication (bearer):
+
+```python
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.set_criticality_data_response_dto import SetCriticalityDataResponseDto
+from watchtowr_api_sdk.models.set_criticality_dto import SetCriticalityDto
+from watchtowr_api_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = watchtowr_api_sdk.Configuration(
+    host = "https://your-tenant-id.sg.client.watchtowr.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API_TOKEN): bearer
+configuration = watchtowr_api_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = watchtowr_api_sdk.IPRangesApi(api_client)
+    id = 3.4 # float | The asset ID of the IP Range to set criticality for.
+    set_criticality_dto = watchtowr_api_sdk.SetCriticalityDto() # SetCriticalityDto | 
+
+    try:
+        # Set Criticality
+        api_response = api_instance.set_criticality_ip_range(id, set_criticality_dto)
+        print("The response of IPRangesApi->set_criticality_ip_range:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IPRangesApi->set_criticality_ip_range: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **float**| The asset ID of the IP Range to set criticality for. | 
+ **set_criticality_dto** | [**SetCriticalityDto**](SetCriticalityDto.md)|  | 
+
+### Return type
+
+[**SetCriticalityDataResponseDto**](SetCriticalityDataResponseDto.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

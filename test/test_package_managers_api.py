@@ -97,6 +97,13 @@ class TestPackageManagersApi(unittest.TestCase):
         """
         pass
 
+    def test_set_criticality_package_manager(self) -> None:
+        """Test case for set_criticality_package_manager
+
+        Set Criticality
+        """
+        pass
+
     def test_unassign_package_manager_from_business_units(self) -> None:
         """Test case for unassign_package_manager_from_business_units
 

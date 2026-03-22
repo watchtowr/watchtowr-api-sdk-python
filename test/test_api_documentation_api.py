@@ -97,6 +97,13 @@ class TestAPIDocumentationApi(unittest.TestCase):
         """
         pass
 
+    def test_set_criticality_api_documentation(self) -> None:
+        """Test case for set_criticality_api_documentation
+
+        Set Criticality
+        """
+        pass
+
     def test_unassign_api_documentation_from_business_units(self) -> None:
         """Test case for unassign_api_documentation_from_business_units
 

@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**get_asset_package_manager_notes**](PackageManagersApi.md#get_asset_package_manager_notes) | **GET** /api/client/assets/packageManager/show/{id}/notes | List Notes
 [**get_custom_properties_package_manager**](PackageManagersApi.md#get_custom_properties_package_manager) | **GET** /api/client/assets/packageManager/show/{id}/custom-properties | List Custom Properties
 [**get_list_asset_package_managers**](PackageManagersApi.md#get_list_asset_package_managers) | **GET** /api/client/assets/packageManager/list | List Package Managers
+[**set_criticality_package_manager**](PackageManagersApi.md#set_criticality_package_manager) | **PUT** /api/client/assets/packageManager/show/{id}/criticality | Set Criticality
 [**unassign_package_manager_from_business_units**](PackageManagersApi.md#unassign_package_manager_from_business_units) | **DELETE** /api/client/assets/packageManager/show/{id}/business-units | Unassign Package Manager from Business Units
 [**update_asset_package_manager_note**](PackageManagersApi.md#update_asset_package_manager_note) | **PUT** /api/client/assets/packageManager/show/{id}/note/{noteId} | Update Note
 [**update_asset_package_manager_status**](PackageManagersApi.md#update_asset_package_manager_status) | **PUT** /api/client/assets/packageManager/update-status/{id} | Update Status
@@ -871,6 +872,90 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_criticality_package_manager**
+> SetCriticalityDataResponseDto set_criticality_package_manager(id, set_criticality_dto)
+
+Set Criticality
+
+Set or update the criticality level of a specific Package Manager asset.
+
+### Example
+
+* Bearer (API_TOKEN) Authentication (bearer):
+
+```python
+import watchtowr_api_sdk
+from watchtowr_api_sdk.models.set_criticality_data_response_dto import SetCriticalityDataResponseDto
+from watchtowr_api_sdk.models.set_criticality_dto import SetCriticalityDto
+from watchtowr_api_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://your-tenant-id.sg.client.watchtowr.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = watchtowr_api_sdk.Configuration(
+    host = "https://your-tenant-id.sg.client.watchtowr.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (API_TOKEN): bearer
+configuration = watchtowr_api_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with watchtowr_api_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = watchtowr_api_sdk.PackageManagersApi(api_client)
+    id = 3.4 # float | The asset ID of the Package Manager to set criticality for.
+    set_criticality_dto = watchtowr_api_sdk.SetCriticalityDto() # SetCriticalityDto | 
+
+    try:
+        # Set Criticality
+        api_response = api_instance.set_criticality_package_manager(id, set_criticality_dto)
+        print("The response of PackageManagersApi->set_criticality_package_manager:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PackageManagersApi->set_criticality_package_manager: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **float**| The asset ID of the Package Manager to set criticality for. | 
+ **set_criticality_dto** | [**SetCriticalityDto**](SetCriticalityDto.md)|  | 
+
+### Return type
+
+[**SetCriticalityDataResponseDto**](SetCriticalityDataResponseDto.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -210,6 +210,9 @@ docs/ServiceInformationCertificate.md
 docs/ServiceInformationResponse.md
 docs/ServiceListing.md
 docs/ServiceType.md
+docs/SetCriticalityDataResponseDto.md
+docs/SetCriticalityDto.md
+docs/SetCriticalityResponseDto.md
 docs/SourceIPAddressesApi.md
 docs/SubdomainsApi.md
 docs/SuspiciousDomain.md
@@ -460,6 +463,9 @@ test/test_service_information_certificate.py
 test/test_service_information_response.py
 test/test_service_listing.py
 test/test_service_type.py
+test/test_set_criticality_data_response_dto.py
+test/test_set_criticality_dto.py
+test/test_set_criticality_response_dto.py
 test/test_source_ip_addresses_api.py
 test/test_subdomains_api.py
 test/test_suspicious_domain.py
@@ -715,6 +721,9 @@ watchtowr_api_sdk/models/service_information_certificate.py
 watchtowr_api_sdk/models/service_information_response.py
 watchtowr_api_sdk/models/service_listing.py
 watchtowr_api_sdk/models/service_type.py
+watchtowr_api_sdk/models/set_criticality_data_response_dto.py
+watchtowr_api_sdk/models/set_criticality_dto.py
+watchtowr_api_sdk/models/set_criticality_response_dto.py
 watchtowr_api_sdk/models/suspicious_domain.py
 watchtowr_api_sdk/models/technology.py
 watchtowr_api_sdk/models/technology_statistic.py

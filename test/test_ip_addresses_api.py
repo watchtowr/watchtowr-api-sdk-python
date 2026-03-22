@@ -125,6 +125,13 @@ class TestIPAddressesApi(unittest.TestCase):
         """
         pass
 
+    def test_set_criticality_ip(self) -> None:
+        """Test case for set_criticality_ip
+
+        Set Criticality
+        """
+        pass
+
     def test_unassign_ip_from_business_units(self) -> None:
         """Test case for unassign_ip_from_business_units
 

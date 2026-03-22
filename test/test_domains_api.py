@@ -111,6 +111,13 @@ class TestDomainsApi(unittest.TestCase):
         """
         pass
 
+    def test_set_criticality_domain(self) -> None:
+        """Test case for set_criticality_domain
+
+        Set Criticality
+        """
+        pass
+
     def test_unassign_domain_from_business_units(self) -> None:
         """Test case for unassign_domain_from_business_units
 
