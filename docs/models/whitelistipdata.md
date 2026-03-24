@@ -1,0 +1,12 @@
+# WhitelistIPData
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `id`                                                                 | *float*                                                              | :heavy_check_mark:                                                   | IP address ID                                                        | 1                                                                    |
+| `ip`                                                                 | *str*                                                                | :heavy_check_mark:                                                   | IP address or CIDR range                                             | 192.168.1.1                                                          |
+| `description`                                                        | *Nullable[str]*                                                      | :heavy_check_mark:                                                   | Description of the IP address                                        | Office network                                                       |
+| `created_at`                                                         | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_check_mark:                                                   | Creation timestamp                                                   | 2024-01-01T00:00:00.000Z                                             |
+| `updated_at`                                                         | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_check_mark:                                                   | Last update timestamp                                                | 2024-01-01T00:00:00.000Z                                             |

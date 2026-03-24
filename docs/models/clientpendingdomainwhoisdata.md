@@ -1,0 +1,11 @@
+# ClientPendingDomainWhoisData
+
+WHOIS data for the domain
+
+
+## Fields
+
+| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   | Example                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `raw`                                                                                                         | *str*                                                                                                         | :heavy_check_mark:                                                                                            | Raw WHOIS data                                                                                                | Domain Name: example.com<br/>Registrar: Example Registrar                                                     |
+| `data`                                                                                                        | [models.Data](../models/data.md)                                                                              | :heavy_check_mark:                                                                                            | Formatted WHOIS data                                                                                          | {<br/>"domainName": "example.com",<br/>"registrar": "Example Registrar",<br/>"creationDate": "2020-01-01T00:00:00.000Z"<br/>} |

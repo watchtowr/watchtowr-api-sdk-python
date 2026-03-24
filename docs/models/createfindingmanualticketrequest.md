@@ -1,0 +1,9 @@
+# CreateFindingManualTicketRequest
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                         | *float*                                                                                                      | :heavy_check_mark:                                                                                           | The ID of the finding to create a manual ticket for.                                                         |
+| `create_client_finding_manual_ticket_request_body`                                                           | [models.CreateClientFindingManualTicketRequestBody](../models/createclientfindingmanualticketrequestbody.md) | :heavy_check_mark:                                                                                           | N/A                                                                                                          |

@@ -1,0 +1,10 @@
+# HuntOverviewDto
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              | Example                                                                  |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `total_hunts_executed`                                                   | *float*                                                                  | :heavy_check_mark:                                                       | Total number of rapid reaction hunts executed                            | 25                                                                       |
+| `total_unresolved_hunts`                                                 | *float*                                                                  | :heavy_check_mark:                                                       | Total number of unresolved hunts                                         | 3                                                                        |
+| `latest_executed_hunts`                                                  | List[[models.LatestExecutedHuntDto](../models/latestexecutedhuntdto.md)] | :heavy_check_mark:                                                       | Array of latest executed hunts                                           |                                                                          |

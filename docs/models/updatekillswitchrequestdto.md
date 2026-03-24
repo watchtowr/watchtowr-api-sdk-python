@@ -1,0 +1,10 @@
+# UpdateKillSwitchRequestDto
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             | Example                                                                 |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `value`                                                                 | *bool*                                                                  | :heavy_check_mark:                                                      | Kill switch value (true to enable, false to disable)                    | true                                                                    |
+| `reason`                                                                | *Optional[str]*                                                         | :heavy_minus_sign:                                                      | Reason for enabling the kill switch (required when enabling)            | Emergency response to security incident                                 |
+| `request_support`                                                       | *Optional[bool]*                                                        | :heavy_minus_sign:                                                      | Whether to request support from watchTowr (optional, defaults to false) | false                                                                   |

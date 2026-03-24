@@ -1,94 +1,55 @@
 [project]
-name = "watchtowr_api_sdk"
-version = "1.0.0"
-description = "Complete watchTowr Platform API Documentation"
-authors = [
-  {name = "watchTowr Support",email = "support@watchTowr.io"},
-]
+name = "watchtowr-complete-watchtowr-platform-api-documentation-python"
+version = "1.0.1"
+description = "Python Client SDK for watchtowr/complete-watchtowr-platform-api-documentation-python"
+authors = [{ name = "watchtowr" },]
 readme = "README.md"
-keywords = ["OpenAPI", "OpenAPI-Generator", "Complete watchTowr Platform API Documentation"]
-requires-python = ">=3.9"
-
+requires-python = ">=3.9.2"
 dependencies = [
-  "urllib3 (>=2.1.0,<3.0.0)",
-  "python-dateutil (>=2.8.2)",
-  "pydantic (>=2.11)",
-  "typing-extensions (>=4.7.1)",
+    "httpcore >=1.0.9",
+    "httpx >=0.28.1",
+    "pydantic >=2.11.2",
 ]
-
-[project.urls]
-Repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
 
 [tool.poetry]
-requires-poetry = ">=2.0"
+packages = [
+    { include = "watchtowr_complete_watchtowr_platform_api_documentation_python", from = "src" }
+]
+include = ["py.typed", "src/watchtowr_complete_watchtowr_platform_api_documentation_python/py.typed"]
+
+[tool.setuptools.package-data]
+"*" = ["py.typed", "src/watchtowr_complete_watchtowr_platform_api_documentation_python/py.typed"]
+
+[virtualenvs]
+in-project = true
 
 [tool.poetry.group.dev.dependencies]
-pytest = ">= 7.2.1"
-pytest-cov = ">= 2.8.1"
-tox = ">= 3.9.0"
-flake8 = ">= 4.0.0"
-types-python-dateutil = ">= 2.8.19.14"
-mypy = ">= 1.5"
-
+mypy = "==1.15.0"
+pylint = "==3.2.3"
 
 [build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
-[tool.pylint.'MESSAGES CONTROL']
-extension-pkg-whitelist = "pydantic"
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"
+pythonpath = ["src"]
 
 [tool.mypy]
-files = [
-  "watchtowr_api_sdk",
-  #"test",  # auto-generated tests
-  "tests", # hand-written tests
-]
-# TODO: enable "strict" once all these individual checks are passing
-# strict = true
-
-# List from: https://mypy.readthedocs.io/en/stable/existing_code.html#introduce-stricter-options
-warn_unused_configs = true
-warn_redundant_casts = true
-warn_unused_ignores = true
-
-## Getting these passing should be easy
-strict_equality = true
-extra_checks = true
-
-## Strongly recommend enabling this one as soon as you can
-check_untyped_defs = true
-
-## These shouldn't be too much additional work, but may be tricky to
-## get passing if you use a lot of untyped libraries
-disallow_subclassing_any = true
-disallow_untyped_decorators = true
-disallow_any_generics = true
-
-### These next few are various gradations of forcing use of type annotations
-#disallow_untyped_calls = true
-#disallow_incomplete_defs = true
-#disallow_untyped_defs = true
-#
-### This one isn't too hard to get passing, but return on investment is lower
-#no_implicit_reexport = true
-#
-### This one can be tricky to get passing if you use a lot of untyped libraries
-#warn_return_any = true
+disable_error_code = "misc"
+explicit_package_bases = true
+mypy_path = "src"
 
 [[tool.mypy.overrides]]
-module = [
-  "watchtowr_api_sdk.configuration",
-]
-warn_unused_ignores = true
-strict_equality = true
-extra_checks = true
-check_untyped_defs = true
-disallow_subclassing_any = true
-disallow_untyped_decorators = true
-disallow_any_generics = true
-disallow_untyped_calls = true
-disallow_incomplete_defs = true
-disallow_untyped_defs = true
-no_implicit_reexport = true
-warn_return_any = true
+module = "typing_inspect"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "jsonpath"
+ignore_missing_imports = true
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
+
