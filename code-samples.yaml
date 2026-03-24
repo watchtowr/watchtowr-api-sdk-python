@@ -1,0 +1,1535 @@
+overlay: 1.0.0
+info:
+  title: CodeSamples overlay for python target
+  version: 0.0.0
+actions:
+  - target: $["paths"]["/api/client/activity-log/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_activity_logs"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.activity_log.get_list_activity_logs(page=1, page_size=10, created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), types=\"UserInvite,UserRoleType,UserLock,ResetUser2FA,SetupSSO,DisableSSO,UpdateUserSessionTimeout,SuccessfulLogin,PasswordResetTriggered,UserDelete,UserCreated,UserBusinessUnit,IntegrationSetUp,IntegrationUpdated,IntegrationDeleted,KillSwitch,FindingSetting,TestingInfrastructureUpdate,UpdatePriorityPort,PlatformIpWhitelist,AutomaticRetestsUpdated,ReportGenerated,ReportGenerationRequest,ReportDownloaded,AutomaticOutOfScope,PrismaCloudApigeeAccountRemoved,PrismaCloudAccountNameUpdate,ServiceAccountCreated,ServiceAccountUpdated,ServiceAccountDeleted,ServiceAccountEnabled,ServiceAccountDisabled,ServiceAccountTokenRegenerated,PlatformSchedulerGlobalConfigUpdated,PlatformSchedulerDayConfigUpdated,PlatformSchedulerEnabled,PlatformSchedulerDisabled,AssetFavoriteAdded,AssetFavoriteRemoved\", search=\"requested%20to%20generate%20technical%20report\", user_ids=\"1,2,3\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/apiDocumentation/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_asset_apiDocumentation"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.api_documentation.get_list_asset_api_documentation(page=1, page_size=10, asset_name=\"watchtowr_docs/watchtowr-swagger-hub\", source=\"module-adversarysight-api-discovery\", integration_connections=\"123:aws,456:azure,789:googlecloud\", business_unit_ids=\"1,2,3\", created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), custom_property_key=\"environment\", custom_property_value=\"production\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/apiDocumentation/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_apiDocumentation_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.api_documentation.get_asset_api_documentation_details(id=1548.14)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/apiDocumentation/show/{id}/business-units"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "unassign_api_documentation_from_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.api_documentation.unassign_api_documentation_from_business_units(id=2941.09, business_unit_ids=[\n        \"<value 1>\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/apiDocumentation/show/{id}/business-units"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "assign_api_documentation_to_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.api_documentation.assign_api_documentation_to_business_units(id=397.53, business_unit_ids=[\n        \"1\",\n        \"2\",\n        \"3\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/apiDocumentation/show/{id}/changelog"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_apiDocumentation_changelog"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.api_documentation.get_asset_api_documentation_changelog(id=1439.26, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/apiDocumentation/show/{id}/criticality"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "set_criticality_apiDocumentation"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.api_documentation.set_criticality_api_documentation(id=2797.78, criticality=watchtowr_complete_watchtowr_platform_api_documentation_python.Criticality.HIGH)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/apiDocumentation/show/{id}/custom-properties"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_custom_properties_api_documentation"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.api_documentation.get_custom_properties_api_documentation(id=9935.02, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/apiDocumentation/show/{id}/custom-property"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_custom_property_api_documentation"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.api_documentation.create_custom_property_api_documentation(id=2113.11, key=\"Severity\", value={}, is_preset=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/apiDocumentation/show/{id}/custom-property/{customPropertyId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_custom_property_api_documentation"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.api_documentation.delete_custom_property_api_documentation(id=5772.9, custom_property_id=6492.43)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/apiDocumentation/show/{id}/custom-property/{customPropertyId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_custom_property_api_documentation"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.api_documentation.update_custom_property_api_documentation(id=9925.13, custom_property_id=9098.89, key=\"Severity\", value=\"Low\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/apiDocumentation/show/{id}/note"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "add_asset_apiDocumentation_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.api_documentation.add_asset_api_documentation_note(id=6236.68, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/apiDocumentation/show/{id}/note/{noteId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_asset_apiDocumentation_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.api_documentation.delete_asset_api_documentation_note(id=5222.13, note_id=1231.68)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/apiDocumentation/show/{id}/note/{noteId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_apiDocumentation_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.api_documentation.update_asset_api_documentation_note(id=2244.76, note_id=9198.55, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/apiDocumentation/show/{id}/notes"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_api_documentation_notes"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.api_documentation.get_asset_api_documentation_notes(id=5809.49, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/apiDocumentation/update-status/{id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_apiDocumentation_status"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.api_documentation.update_asset_api_documentation_status(id=3952.43, status=watchtowr_complete_watchtowr_platform_api_documentation_python.UpdateAPIDocumentationStatusDtoStatus.VERIFIED, status_reason=\"Manually verified via Client API.\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudAsset/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_asset_cloudAsset"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_integration_assets.get_list_asset_cloud_asset(page=1, page_size=10, asset_name=\"example-aws-cloud-asset-rds-database.example.com\", source=\"watchtowr-cloud-integration-aws-snapshot-ebs\", integration_connections=\"123:aws,456:azure,789:googlecloud\", business_unit_ids=\"1,2,3\", created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), custom_property_key=\"environment\", custom_property_value=\"production\", provider=\"aws\", super_type=\"database\", sub_type=\"RDS\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudAsset/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_cloudAsset_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_integration_assets.get_asset_cloud_asset_details(id=5722.7)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudAsset/show/{id}/business-units"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "unassign_cloud_asset_from_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_integration_assets.unassign_cloud_asset_from_business_units(id=5098.81, business_unit_ids=[\n        \"<value 1>\",\n        \"<value 2>\",\n        \"<value 3>\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudAsset/show/{id}/business-units"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "assign_cloud_asset_to_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_integration_assets.assign_cloud_asset_to_business_units(id=596.77, business_unit_ids=[\n        \"1\",\n        \"2\",\n        \"3\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudAsset/show/{id}/changelog"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_cloudAsset_changelog"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_integration_assets.get_asset_cloud_asset_changelog(id=8655.62, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudAsset/show/{id}/criticality"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "set_criticality_cloudAsset"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_integration_assets.set_criticality_cloud_asset(id=4271.66, criticality=watchtowr_complete_watchtowr_platform_api_documentation_python.Criticality.HIGH)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudAsset/show/{id}/custom-properties"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_custom_properties_cloud_asset"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_integration_assets.get_custom_properties_cloud_asset(id=8843.52, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudAsset/show/{id}/custom-property"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_custom_property_cloud_asset"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_integration_assets.create_custom_property_cloud_asset(id=9555.5, key=\"Severity\", value={}, is_preset=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudAsset/show/{id}/custom-property/{customPropertyId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_custom_property_cloud_asset"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_integration_assets.delete_custom_property_cloud_asset(id=7567.02, custom_property_id=3400.6)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudAsset/show/{id}/custom-property/{customPropertyId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_custom_property_cloud_asset"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_integration_assets.update_custom_property_cloud_asset(id=7760.25, custom_property_id=6123.66, key=\"Severity\", value=\"Low\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudAsset/show/{id}/note"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "add_asset_cloudAsset_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_integration_assets.add_asset_cloud_asset_note(id=1371, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudAsset/show/{id}/note/{noteId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_asset_cloudAsset_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_integration_assets.delete_asset_cloud_asset_note(id=250.46, note_id=885.01)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudAsset/show/{id}/note/{noteId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_cloudAsset_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_integration_assets.update_asset_cloud_asset_note(id=9176.02, note_id=2801.75, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudAsset/show/{id}/notes"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_cloudAsset_notes"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_integration_assets.get_asset_cloud_asset_notes(id=1713.14, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudAsset/update-status/{id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_cloudAsset_status"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_integration_assets.update_asset_cloud_asset_status(id=9985.5, status=watchtowr_complete_watchtowr_platform_api_documentation_python.UpdateClientCloudAssetStatusDtoStatus.VERIFIED, status_reason=\"Manually verified via Client API\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudStorage/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_asset_cloudStorages"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_storage.get_list_asset_cloud_storages(page=1, page_size=10, asset_name=\"watchTowr-aws-bucket\", source=\"module-adversarysight-cloud-integration-aws-s3-buckets\", integration_connections=\"123:aws,456:azure,789:googlecloud\", business_unit_ids=\"1,2,3\", created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), custom_property_key=\"environment\", custom_property_value=\"production\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudStorage/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_cloudStorage_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_storage.get_asset_cloud_storage_details(id=687.49)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudStorage/show/{id}/business-units"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "unassign_cloudStorage_from_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_storage.unassign_cloud_storage_from_business_units(id=7002.56, business_unit_ids=[\n        \"<value 1>\",\n        \"<value 2>\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudStorage/show/{id}/business-units"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "assign_cloudStorage_to_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_storage.assign_cloud_storage_to_business_units(id=6556.77, business_unit_ids=[\n        \"1\",\n        \"2\",\n        \"3\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudStorage/show/{id}/changelog"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_cloudStorage_changelog"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_storage.get_asset_cloud_storage_changelog(id=2007.85, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudStorage/show/{id}/criticality"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "set_criticality_cloudStorage"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_storage.set_criticality_cloud_storage(id=4888.65, criticality=watchtowr_complete_watchtowr_platform_api_documentation_python.Criticality.HIGH)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudStorage/show/{id}/custom-properties"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_custom_properties_cloud_storage"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_storage.get_custom_properties_cloud_storage(id=6528.53, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudStorage/show/{id}/custom-property"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_custom_property_cloud_storage"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_storage.create_custom_property_cloud_storage(id=1426.62, key=\"Severity\", value={}, is_preset=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudStorage/show/{id}/custom-property/{customPropertyId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_custom_property_cloud_storage"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_storage.delete_custom_property_cloud_storage(id=3277.87, custom_property_id=7087.69)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudStorage/show/{id}/custom-property/{customPropertyId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_custom_property_cloud_storage"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_storage.update_custom_property_cloud_storage(id=8083.48, custom_property_id=1400.91, key=\"Severity\", value=\"Low\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudStorage/show/{id}/note"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "add_asset_cloudStorage_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_storage.add_asset_cloud_storage_note(id=1780.48, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudStorage/show/{id}/note/{noteId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_asset_cloudStorage_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_storage.delete_asset_cloud_storage_note(id=6799.1, note_id=13.87)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudStorage/show/{id}/note/{noteId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_cloudStorage_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_storage.update_asset_cloud_storage_note(id=2445.21, note_id=9434.72, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudStorage/show/{id}/notes"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_cloudStorage_notes"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_storage.get_asset_cloud_storage_notes(id=235.51, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/cloudStorage/update-status/{id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_cloudStorage_status"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.cloud_storage.update_asset_cloud_storage_status(id=5902.94, status=watchtowr_complete_watchtowr_platform_api_documentation_python.UpdateClientNextGenAssetStatusDtoStatus.VERIFIED, status_reason=\"Manually verified via Client API\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/container/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_asset_container"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.containers.get_list_asset_container(page=1, page_size=10, asset_name=\"docker/container/name\", source=\"module-adversarysight-ecr-containers-discovery\", integration_connections=\"123:aws,456:azure,789:googlecloud\", business_unit_ids=\"1,2,3\", created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), custom_property_key=\"environment\", custom_property_value=\"production\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/container/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_container_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.containers.get_asset_container_details(id=997.91)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/container/show/{id}/business-units"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "unassign_container_from_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.containers.unassign_container_from_business_units(id=9543.78, business_unit_ids=[\n        \"<value 1>\",\n        \"<value 2>\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/container/show/{id}/business-units"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "assign_container_to_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.containers.assign_container_to_business_units(id=9438.39, business_unit_ids=[\n        \"1\",\n        \"2\",\n        \"3\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/container/show/{id}/changelog"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_container_changelog"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.containers.get_asset_container_changelog(id=2886.63, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/container/show/{id}/criticality"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "set_criticality_container"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.containers.set_criticality_container(id=4562.14, criticality=watchtowr_complete_watchtowr_platform_api_documentation_python.Criticality.HIGH)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/container/show/{id}/custom-properties"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_custom_properties_container"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.containers.get_custom_properties_container(id=1242.78, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/container/show/{id}/custom-property"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_custom_property_container"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.containers.create_custom_property_container(id=9589.17, key=\"Severity\", value={}, is_preset=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/container/show/{id}/custom-property/{customPropertyId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_custom_property_container"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.containers.delete_custom_property_container(id=7999.77, custom_property_id=7285.68)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/container/show/{id}/custom-property/{customPropertyId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_custom_property_container"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.containers.update_custom_property_container(id=8676.71, custom_property_id=6992.58, key=\"Severity\", value=\"Low\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/container/show/{id}/note"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_note_container"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.containers.create_note_container(id=4035.81, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/container/show/{id}/note/{noteId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_note_container"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.containers.delete_note_container(id=3095.8, note_id=5784.92)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/container/show/{id}/note/{noteId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_note_container"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.containers.update_note_container(id=1971.89, note_id=357.55, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/container/show/{id}/notes"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_container_notes"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.containers.get_asset_container_notes(id=1089.85, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/container/update-status/{id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_container_status"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.containers.update_asset_container_status(id=4124.61, status=watchtowr_complete_watchtowr_platform_api_documentation_python.UpdateClientNextGenAssetStatusDtoStatus.VERIFIED, status_reason=\"Manually verified via Client API\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_asset_domains"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.get_list_asset_domains(page=1, page_size=10, asset_name=\"watchtowr.com\", source=\"watchtowr-cloud-integration-aws-hosts\", integration_connections=\"123:aws,456:azure,789:googlecloud\", business_unit_ids=\"1,2,3\", created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), custom_property_key=\"environment\", custom_property_value=\"production\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_domain_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.get_asset_domain_details(id=91.86)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/show/{id}/business-units"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "unassign_domain_from_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.unassign_domain_from_business_units(id=9413.07, business_unit_ids=[\n        \"<value 1>\",\n        \"<value 2>\",\n    ], cascade_subdomain=\"<value>\", cascade_ip=\"<value>\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/show/{id}/business-units"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "assign_domain_to_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.assign_domain_to_business_units(id=9691.98, business_unit_ids=[\n        \"1\",\n        \"2\",\n        \"3\",\n    ], cascade_subdomain=True, cascade_ip=True)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/show/{id}/changelog"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_domain_changelog"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.get_asset_domain_changelog(id=7077.61, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/show/{id}/criticality"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "set_criticality_domain"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.set_criticality_domain(id=4669.76, criticality=watchtowr_complete_watchtowr_platform_api_documentation_python.Criticality.HIGH)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/show/{id}/custom-properties"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_custom_properties_domain"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.get_custom_properties_domain(id=7891.81, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/show/{id}/custom-property"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_custom_property_domain"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.create_custom_property_domain(id=4481.07, key=\"Severity\", value={}, is_preset=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/show/{id}/custom-property/{customPropertyId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_custom_property_domain"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.delete_custom_property_domain(id=6505.38, custom_property_id=8622.88)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/show/{id}/custom-property/{customPropertyId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_custom_property_domain"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.update_custom_property_domain(id=5355.81, custom_property_id=5967.51, key=\"Severity\", value=\"Low\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/show/{id}/dns-records"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_domain_dns_records"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.get_asset_domain_dns_records(id=9665.96, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/show/{id}/engine-settings"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_domain_engine_settings"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.get_asset_domain_engine_settings(id=8902.94)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/show/{id}/engine-settings"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_domain_engine_settings"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.update_asset_domain_engine_settings(id=5288.77, adversary_sight_enabled=True, dns_bruteforcing_enabled=False, automated_red_teaming_enabled=True, intrusive_http_checks_enabled=True, credential_stuffing_enabled=True, rapid_reaction_enabled=True)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/show/{id}/note"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_asset_domain_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.create_asset_domain_note(id=2341.83, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/show/{id}/note/{noteId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_asset_domain_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.delete_asset_domain_note(id=3988.93, note_id=808.49)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/show/{id}/note/{noteId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_domain_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.update_asset_domain_note(id=8805.97, note_id=3816.64, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/show/{id}/notes"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_domain_notes"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.get_asset_domain_notes(id=7168.44, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/domain/update-status/{id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_domain_status"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.domains.update_asset_domain_status(id=2078.36, status=watchtowr_complete_watchtowr_platform_api_documentation_python.UpdateClientLegacyAssetStatusDtoStatus.VERIFIED, status_reason=\"Manually verified via Client API\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_asset_ips"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.get_list_asset_ips(page=1, page_size=10, asset_name=\"123.123.123.123\", source=\"DNS Refresh\", integration_connections=\"123:aws,456:azure,789:googlecloud\", business_unit_ids=\"1,2,3\", created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), custom_property_key=\"environment\", custom_property_value=\"production\", match_type=watchtowr_complete_watchtowr_platform_api_documentation_python.MatchType.EXACT)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/port/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_asset_ports"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ports.get_list_asset_ports(page=1, page_size=10, created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), asset_name=\"80\", business_unit_ids=\"1,2,3\", custom_property_key=\"environment\", custom_property_value=\"production\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/port/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_port_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ports.get_asset_port_details(id=2113.83)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_ip_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.get_asset_ip_details(id=7467.21)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}/business-units"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "unassign_ip_from_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.unassign_ip_from_business_units(id=6802.38, business_unit_ids=[\n        \"<value 1>\",\n        \"<value 2>\",\n        \"<value 3>\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}/business-units"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "assign_ip_to_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.assign_ip_to_business_units(id=970.96, business_unit_ids=[\n        \"1\",\n        \"2\",\n        \"3\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}/changelog"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_ip_changelog"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.get_asset_ip_changelog(id=4270.41, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}/criticality"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "set_criticality_ip"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.set_criticality_ip(id=7513.65, criticality=watchtowr_complete_watchtowr_platform_api_documentation_python.Criticality.HIGH)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}/custom-properties"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_custom_properties_ip"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.get_custom_properties_ip(id=7835.27, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}/custom-property"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_custom_property_ip"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.create_custom_property_ip(id=8002.01, key=\"Severity\", value={}, is_preset=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}/custom-property/{customPropertyId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_custom_property_ip"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.delete_custom_property_ip(id=9074.67, custom_property_id=1283.99)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}/custom-property/{customPropertyId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_custom_property_ip"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.update_custom_property_ip(id=9900.76, custom_property_id=9160.55, key=\"Severity\", value=\"Low\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}/dns-records"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_ip_dns_records"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.get_asset_ip_dns_records(id=6924.2, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}/engine-settings"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_ip_engine_settings"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.get_asset_ip_engine_settings(id=7494.92)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}/engine-settings"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_ip_engine_settings"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.update_asset_ip_engine_settings(id=8507.82, adversary_sight_enabled=True, dns_bruteforcing_enabled=False, automated_red_teaming_enabled=True, intrusive_http_checks_enabled=True, credential_stuffing_enabled=True, rapid_reaction_enabled=True)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}/note"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_asset_ip_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.create_asset_ip_note(id=8240.07, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}/note/{noteId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_asset_ip_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.delete_asset_ip_note(id=9970.66, note_id=100.21)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}/note/{noteId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_ip_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.update_asset_ip_note(id=7597.28, note_id=2432.86, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}/notes"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_ip_notes"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.get_asset_ip_notes(id=2433.39, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{id}/port/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_ip_ports"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.get_asset_ip_ports(id=7387.86, page=1, page_size=10, created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"))\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/show/{ipId}/port/show/{portId}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_ip_port_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.get_asset_ip_port_details(ip_id=\"<id>\", port_id=\"<id>\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ip/update-status/{id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_ip_status"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_addresses.update_asset_ip_status(id=3787.99, status=watchtowr_complete_watchtowr_platform_api_documentation_python.UpdateClientLegacyAssetStatusDtoStatus.VERIFIED, status_reason=\"Manually verified via Client API\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ipRange/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_asset_ipranges"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_ranges.get_list_asset_ipranges(page=1, page_size=10, asset_name=\"123.123.123.123/24\", source=\"module-adversarysight-ip-range-company-lookup\", integration_connections=\"123:aws,456:azure,789:googlecloud\", business_unit_ids=\"1,2,3\", created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), custom_property_key=\"environment\", custom_property_value=\"production\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ipRange/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_iprange_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_ranges.get_asset_iprange_details(id=1534.53)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ipRange/show/{id}/business-units"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "unassign_ip_range_from_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_ranges.unassign_ip_range_from_business_units(id=4792.25, business_unit_ids=[\n        \"<value 1>\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ipRange/show/{id}/business-units"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "assign_ip_range_to_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_ranges.assign_ip_range_to_business_units(id=9564.27, business_unit_ids=[\n        \"1\",\n        \"2\",\n        \"3\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ipRange/show/{id}/changelog"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_iprange_changelog"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_ranges.get_asset_iprange_changelog(id=2878.93, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ipRange/show/{id}/criticality"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "set_criticality_ipRange"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_ranges.set_criticality_ip_range(id=3460.92, criticality=watchtowr_complete_watchtowr_platform_api_documentation_python.Criticality.HIGH)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ipRange/show/{id}/custom-properties"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_custom_properties_ipRange"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_ranges.get_custom_properties_ip_range(id=8481.32, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ipRange/show/{id}/custom-property"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_custom_property_ip_range"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_ranges.create_custom_property_ip_range(id=8047.27, key=\"Severity\", value={}, is_preset=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ipRange/show/{id}/custom-property/{customPropertyId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_custom_property_ip_range"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_ranges.delete_custom_property_ip_range(id=8979.82, custom_property_id=5197.04)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ipRange/show/{id}/custom-property/{customPropertyId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_custom_property_ip_range"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_ranges.update_custom_property_ip_range(id=4924.24, custom_property_id=3488, key=\"Severity\", value=\"Low\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ipRange/show/{id}/note"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_note_ip_range"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_ranges.create_note_ip_range(id=7118.24, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ipRange/show/{id}/note/{noteId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_note_ip_range"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_ranges.delete_note_ip_range(id=7802.12, note_id=2750.67)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ipRange/show/{id}/note/{noteId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_note_ip_range"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_ranges.update_note_ip_range(id=2316.79, note_id=6682.31, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ipRange/show/{id}/notes"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_ip_range_notes"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_ranges.get_asset_ip_range_notes(id=9512.12, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/ipRange/update-status/{id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_ipRange_status"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.ip_ranges.update_asset_ip_range_status(id=1670.03, status=watchtowr_complete_watchtowr_platform_api_documentation_python.UpdateClientLegacyAssetStatusDtoStatus.VERIFIED, status_reason=\"Manually verified via Client API\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/mobileApp/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_asset_mobileApps"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.mobile_applications.get_list_asset_mobile_apps(page=1, page_size=10, asset_name=\"watchTowr-Android\", source=\"module-adversarysight-playstore-mobileapp-discovery\", integration_connections=\"123:aws,456:azure,789:googlecloud\", business_unit_ids=\"1,2,3\", created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), custom_property_key=\"environment\", custom_property_value=\"production\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/mobileApp/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_mobileApp_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.mobile_applications.get_asset_mobile_app_details(id=3573.01)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/mobileApp/show/{id}/business-units"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "unassign_mobile_app_from_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.mobile_applications.unassign_mobile_app_from_business_units(id=9779.35, business_unit_ids=[\n        \"<value 1>\",\n        \"<value 2>\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/mobileApp/show/{id}/business-units"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "assign_mobile_app_to_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.mobile_applications.assign_mobile_app_to_business_units(id=8964.59, business_unit_ids=[\n        \"1\",\n        \"2\",\n        \"3\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/mobileApp/show/{id}/changelog"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_mobileApp_changelog"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.mobile_applications.get_asset_mobile_app_changelog(id=6404.02, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/mobileApp/show/{id}/criticality"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "set_criticality_mobileApp"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.mobile_applications.set_criticality_mobile_app(id=9489.86, criticality=watchtowr_complete_watchtowr_platform_api_documentation_python.Criticality.HIGH)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/mobileApp/show/{id}/custom-properties"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_custom_properties_mobile_app"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.mobile_applications.get_custom_properties_mobile_app(id=6206.97, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/mobileApp/show/{id}/custom-property"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_custom_property_mobile_app"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.mobile_applications.create_custom_property_mobile_app(id=3935.7, key=\"Severity\", value={}, is_preset=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/mobileApp/show/{id}/custom-property/{customPropertyId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_custom_property_mobile_app"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.mobile_applications.delete_custom_property_mobile_app(id=8660.78, custom_property_id=7129.52)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/mobileApp/show/{id}/custom-property/{customPropertyId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_custom_property_mobile_app"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.mobile_applications.update_custom_property_mobile_app(id=6298.24, custom_property_id=7250.3, key=\"Severity\", value=\"Low\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/mobileApp/show/{id}/note"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_note_mobile_app"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.mobile_applications.create_note_mobile_app(id=6974.85, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/mobileApp/show/{id}/note/{noteId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_note_mobile_app"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.mobile_applications.delete_note_mobile_app(id=5606.24, note_id=7915.99)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/mobileApp/show/{id}/note/{noteId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_note_mobile_app"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.mobile_applications.update_note_mobile_app(id=6183.34, note_id=5533.5, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/mobileApp/show/{id}/notes"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_mobile_app_notes"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.mobile_applications.get_asset_mobile_app_notes(id=369.99, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/mobileApp/update-status/{id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_mobileApp_status"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.mobile_applications.update_asset_mobile_app_status(id=7305.94, status=watchtowr_complete_watchtowr_platform_api_documentation_python.UpdateClientNextGenAssetStatusDtoStatus.VERIFIED, status_reason=\"Manually verified via Client API\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/packageManager/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_asset_packageManagers"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.package_managers.get_list_asset_package_managers(page=1, page_size=10, asset_name=\"watchTowr/devel_repo\", source=\"module-adversarysight-yarn-project-discovery\", integration_connections=\"123:aws,456:azure,789:googlecloud\", business_unit_ids=\"1,2,3\", created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), custom_property_key=\"environment\", custom_property_value=\"production\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/packageManager/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_packageManager_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.package_managers.get_asset_package_manager_details(id=6495.39)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/packageManager/show/{id}/business-units"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "unassign_package_manager_from_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.package_managers.unassign_package_manager_from_business_units(id=3306.23, business_unit_ids=[\n        \"<value 1>\",\n        \"<value 2>\",\n        \"<value 3>\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/packageManager/show/{id}/business-units"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "assign_package_manager_to_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.package_managers.assign_package_manager_to_business_units(id=5219.83, business_unit_ids=[\n        \"1\",\n        \"2\",\n        \"3\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/packageManager/show/{id}/changelog"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_packageManager_changelog"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.package_managers.get_asset_package_manager_changelog(id=7633.3, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/packageManager/show/{id}/criticality"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "set_criticality_packageManager"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.package_managers.set_criticality_package_manager(id=7146.27, criticality=watchtowr_complete_watchtowr_platform_api_documentation_python.Criticality.HIGH)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/packageManager/show/{id}/custom-properties"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_custom_properties_package_manager"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.package_managers.get_custom_properties_package_manager(id=2214.45, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/packageManager/show/{id}/custom-property"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_custom_property_package_manager"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.package_managers.create_custom_property_package_manager(id=6117.41, key=\"Severity\", value={}, is_preset=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/packageManager/show/{id}/custom-property/{customPropertyId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_custom_property_by_id"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.package_managers.delete_custom_property_by_id(id=3392.26, custom_property_id=4402.24)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/packageManager/show/{id}/custom-property/{customPropertyId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_custom_property_package_manager"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.package_managers.update_custom_property_package_manager(id=8368.11, custom_property_id=4764.87, key=\"Severity\", value=\"Low\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/packageManager/show/{id}/note"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "add_asset_packageManager_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.package_managers.add_asset_package_manager_note(id=1013.13, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/packageManager/show/{id}/note/{noteId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_asset_package_manager_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.package_managers.delete_asset_package_manager_note(id=2051.97, note_id=4556.05)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/packageManager/show/{id}/note/{noteId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_packageManager_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.package_managers.update_asset_package_manager_note(id=2652.27, note_id=2762.42, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/packageManager/show/{id}/notes"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_packageManager_notes"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.package_managers.get_asset_package_manager_notes(id=9175.69, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/packageManager/update-status/{id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_packageManager_status"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.package_managers.update_asset_package_manager_status(id=3576.87, status=watchtowr_complete_watchtowr_platform_api_documentation_python.UpdateClientNextGenAssetStatusDtoStatus.VERIFIED, status_reason=\"Manually verified via Client API\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/repository/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_asset_repositories"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.repositories.get_list_asset_repositories(page=1, page_size=10, asset_name=\"watchTowr/repository\", source=\"module-adversarysight-github-domain-based-repository-discovery\", integration_connections=\"123:aws,456:azure,789:googlecloud\", business_unit_ids=\"1,2,3\", created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), custom_property_key=\"environment\", custom_property_value=\"production\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/repository/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_repository_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.repositories.get_asset_repository_details(id=2684.94)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/repository/show/{id}/business-units"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "unassign_repository_from_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.repositories.unassign_repository_from_business_units(id=9925.38, business_unit_ids=[\n        \"<value 1>\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/repository/show/{id}/business-units"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "assign_repository_to_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.repositories.assign_repository_to_business_units(id=384.83, business_unit_ids=[\n        \"1\",\n        \"2\",\n        \"3\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/repository/show/{id}/changelog"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_repository_changelog"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.repositories.get_asset_repository_changelog(id=1495.17, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/repository/show/{id}/criticality"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "set_criticality_repository"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.repositories.set_criticality_repository(id=393.36, criticality=watchtowr_complete_watchtowr_platform_api_documentation_python.Criticality.HIGH)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/repository/show/{id}/custom-properties"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_custom_properties_repository"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.repositories.get_custom_properties_repository(id=1791.88, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/repository/show/{id}/custom-property"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_custom_property_repository"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.repositories.create_custom_property_repository(id=3482.7, key=\"Severity\", value={}, is_preset=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/repository/show/{id}/custom-property/{customPropertyId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_custom_property_repository"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.repositories.delete_custom_property_repository(id=4526.29, custom_property_id=8590.65)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/repository/show/{id}/custom-property/{customPropertyId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_custom_property_repository"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.repositories.update_custom_property_repository(id=4656.05, custom_property_id=5915.93, key=\"Severity\", value=\"Low\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/repository/show/{id}/note"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_note_repository"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.repositories.create_note_repository(id=8323.76, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/repository/show/{id}/note/{noteId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_note_repository"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.repositories.delete_note_repository(id=3430.02, note_id=244.94)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/repository/show/{id}/note/{noteId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_note_repository"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.repositories.update_note_repository(id=71.08, note_id=1177.69, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/repository/show/{id}/notes"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_repository_notes"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.repositories.get_asset_repository_notes(id=1609.26, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/repository/update-status/{id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_repository_status"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.repositories.update_asset_repository_status(id=7682.41, status=watchtowr_complete_watchtowr_platform_api_documentation_python.UpdateClientNextGenAssetStatusDtoStatus.VERIFIED, status_reason=\"Manually verified via Client API\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/saasPlatform/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_asset_saasPlatforms"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.saa_s_platforms.get_list_asset_saas_platforms(page=1, page_size=10, asset_name=\"example.slack.com\", source=\"module-adversarysight-postman-workspace-saas-discovery\", integration_connections=\"123:aws,456:azure,789:googlecloud\", business_unit_ids=\"1,2,3\", created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), custom_property_key=\"environment\", custom_property_value=\"production\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/saasPlatform/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_saasPlatform_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.saa_s_platforms.get_asset_saas_platform_details(id=4687.65)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/saasPlatform/show/{id}/business-units"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "unassign_saasPlatform_from_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.saa_s_platforms.unassign_saas_platform_from_business_units(id=2614.07, business_unit_ids=[\n        \"<value 1>\",\n        \"<value 2>\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/saasPlatform/show/{id}/business-units"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "assign_saasPlatform_to_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.saa_s_platforms.assign_saas_platform_to_business_units(id=6364.61, business_unit_ids=[\n        \"1\",\n        \"2\",\n        \"3\",\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/saasPlatform/show/{id}/changelog"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_saasPlatform_changelog"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.saa_s_platforms.get_asset_saas_platform_changelog(id=5712.68, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/saasPlatform/show/{id}/criticality"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "set_criticality_saasPlatform"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.saa_s_platforms.set_criticality_saas_platform(id=2611.42, criticality=watchtowr_complete_watchtowr_platform_api_documentation_python.Criticality.HIGH)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/saasPlatform/show/{id}/custom-properties"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_custom_properties_saas_platform"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.saa_s_platforms.get_custom_properties_saas_platform(id=3843.65, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/saasPlatform/show/{id}/custom-property"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_custom_property_saas_platform"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.saa_s_platforms.create_custom_property_saas_platform(id=9319, key=\"Severity\", value={}, is_preset=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/saasPlatform/show/{id}/custom-property/{customPropertyId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_custom_property_saas_platform"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.saa_s_platforms.delete_custom_property_saas_platform(id=7164.29, custom_property_id=2346.91)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/saasPlatform/show/{id}/custom-property/{customPropertyId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_custom_property_saas_platform"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.saa_s_platforms.update_custom_property_saas_platform(id=623.46, custom_property_id=1282.19, key=\"Severity\", value=\"Low\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/saasPlatform/show/{id}/note"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_note_saasPlatform"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.saa_s_platforms.create_note_saas_platform(id=3778.79, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/saasPlatform/show/{id}/note/{noteId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_note_saasPlatform"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.saa_s_platforms.delete_note_saas_platform(id=4566.58, note_id=3244.04)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/saasPlatform/show/{id}/note/{noteId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_note_saasPlatform"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.saa_s_platforms.update_note_saas_platform(id=7441.54, note_id=93.87, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/saasPlatform/show/{id}/notes"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_saasPlatform_notes"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.saa_s_platforms.get_asset_saas_platform_notes(id=1371.88, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/saasPlatform/update-status/{id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_saasPlatform_status"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.saa_s_platforms.update_asset_saas_platform_status(id=4850.85, status=watchtowr_complete_watchtowr_platform_api_documentation_python.UpdateClientNextGenAssetStatusDtoStatus.VERIFIED, status_reason=\"Manually verified via Client API\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_asset_subdomains"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.get_list_asset_subdomains(page=1, page_size=10, asset_name=\"blog.watchtowr.com\", source=\"module-adversarysight-tls-ssl-certificate-transparency-discovery\", integration_connections=\"123:aws,456:azure,789:googlecloud\", business_unit_ids=\"1,2,3\", created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), custom_property_key=\"environment\", custom_property_value=\"production\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_subdomain_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.get_asset_subdomain_details(id=4530.77)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/show/{id}/business-units"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "unassign_subomain_from_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.unassign_subomain_from_business_units(id=3649.27, business_unit_ids=[\n        \"<value 1>\",\n        \"<value 2>\",\n    ], cascade_subdomain=\"<value>\", cascade_ip=\"<value>\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/show/{id}/business-units"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "assign_subomain_to_business_units"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.assign_subomain_to_business_units(id=3137.52, business_unit_ids=[\n        \"1\",\n        \"2\",\n        \"3\",\n    ], cascade_subdomain=False, cascade_ip=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/show/{id}/changelog"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_subdomain_changelog"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.get_asset_subdomain_changelog(id=2391.33, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/show/{id}/criticality"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "set_criticality_subdomain"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.set_criticality_subdomain(id=5124.09, criticality=watchtowr_complete_watchtowr_platform_api_documentation_python.Criticality.HIGH)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/show/{id}/custom-properties"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_custom_properties_subdomain"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.get_custom_properties_subdomain(id=9528.79, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/show/{id}/custom-property"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_custom_property_subdomain"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.create_custom_property_subdomain(id=8648.23, key=\"Severity\", value={}, is_preset=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/show/{id}/custom-property/{customPropertyId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_custom_property_subdomain"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.delete_custom_property_subdomain(id=1838.57, custom_property_id=7653.37)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/show/{id}/custom-property/{customPropertyId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_custom_property_subdomain"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.update_custom_property_subdomain(id=3510.14, custom_property_id=961.69, key=\"Severity\", value=\"Low\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/show/{id}/dns-records"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_subdomain_dns_records"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.get_asset_subdomain_dns_records(id=7270.29, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/show/{id}/engine-settings"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_asset_subdomain_engine_settings"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.get_asset_subdomain_engine_settings(id=6993.53)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/show/{id}/engine-settings"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_subdomain_engine_settings"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.update_asset_subdomain_engine_settings(id=3561.35, adversary_sight_enabled=True, dns_bruteforcing_enabled=False, automated_red_teaming_enabled=True, intrusive_http_checks_enabled=True, credential_stuffing_enabled=True, rapid_reaction_enabled=True)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/show/{id}/note"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_note_subdomain"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.create_note_subdomain(id=751.84, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/show/{id}/note/{noteId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_note_subdomain"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.delete_note_subdomain(id=9094.89, note_id=8340.03)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/show/{id}/note/{noteId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_note_subdomain"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.update_note_subdomain(id=3602.02, note_id=7425.9, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/show/{id}/notes"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_notes_subdomain"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.get_notes_subdomain(id=4548.56, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/assets/subdomain/update-status/{id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_asset_subdomain_status"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.subdomains.update_asset_subdomain_status(id=420.56, status=watchtowr_complete_watchtowr_platform_api_documentation_python.UpdateClientLegacyAssetStatusDtoStatus.VERIFIED, status_reason=\"Manually verified via Client API\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/business-unit"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_business_unit"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.business_unit.create_business_unit(name=\"Singapore Business Unit\", type_=watchtowr_complete_watchtowr_platform_api_documentation_python.CreateClientBusinessUnitDtoType.DEPARTMENT, description=\"Singapore based assets\", parent_id=1, user_ids=[\n        1,\n        2,\n        3,\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/business-unit/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_business_unit"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.business_unit.get_list_business_unit(page=1, page_size=10, created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), updated_from=parse_datetime(\"2022-02-22 22:00:00\"), updated_to=parse_datetime(\"2022-02-23 22:00:00\"), search=\"Singapore Business Unit\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/business-unit/show/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_business_unit"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.business_unit.delete_business_unit(id=314.53)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/business-unit/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_business_unit_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.business_unit.get_business_unit_details(id=1182.08, rule_page=1, rule_page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/business-unit/show/{id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_business_unit"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.business_unit.update_business_unit(id=5950.44, name=\"Updated Business Unit Name\", type_=watchtowr_complete_watchtowr_platform_api_documentation_python.UpdateClientBusinessUnitDtoType.DEPARTMENT, description=\"Updated description\", parent_id=1, user_ids=[\n        1,\n        2,\n        3,\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/business-unit/show/{id}/rule"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_business_unit_rule"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.business_unit.create_business_unit_rule(id=6666.97, name=\"Singapore Assets Rule\", type_=watchtowr_complete_watchtowr_platform_api_documentation_python.CreateClientBusinessUnitRuleDtoType.KEYWORD, keyword_matcher=\"example.com\", keyword_rule_type=watchtowr_complete_watchtowr_platform_api_documentation_python.KeywordRuleType.HOSTNAME, country_code=\"SG\", integration_type=watchtowr_complete_watchtowr_platform_api_documentation_python.IntegrationType.AWS, integration_id=1, cascade_subdomain=True, cascade_ip=True, include_all_integrations=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/business-unit/show/{id}/rule/{ruleId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_business_unit_rule"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.business_unit.delete_business_unit_rule(id=4149.12, rule_id=2460.86)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/certificates/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_certificates"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.certificates.get_list_certificates(page=1, page_size=10, created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), updated_from=parse_datetime(\"2022-02-22 22:00:00\"), updated_to=parse_datetime(\"2022-02-23 22:00:00\"), not_after_from=parse_datetime(\"2022-02-22 22:00:00\"), not_after_to=parse_datetime(\"2022-02-23 22:00:00\"), subject_common_name_search=\"example.com\", subject_alt_name_search=\"example.com\", subject_organisation_search=\"example\", asset_name_search=\"example.watchTowr.com\", statuses=\"Expired,Expiring Within 30 Days,Valid\", business_unit_ids=\"1,2,3\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/certificates/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_certificate_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.certificates.get_certificate_details(id=6334.62)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/dashboard/security-posture"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_security_posture_dashboard"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.security_posture_dashboard.get_security_posture_dashboard()\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/dns-records/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_dns_records"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.dns_record_analysis.get_list_dns_records(page=1, page_size=20, business_unit_ids=\"1,2,3\", sort_by=watchtowr_complete_watchtowr_platform_api_documentation_python.GetListDNSRecordsQueryParamSortBy.CREATED_AT, sort_order=watchtowr_complete_watchtowr_platform_api_documentation_python.QueryParamSortOrder.DESC, asset_name=\"example.com\", record_name=\"example.com\", record_value=\"192.168.1.1\", record_types=watchtowr_complete_watchtowr_platform_api_documentation_python.RecordTypes.PTR, start_date=parse_datetime(\"2022-02-23 22:00:00\"), end_date=parse_datetime(\"2022-02-23 22:00:00\"))\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/finding-retest-history/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_finding_retest_history"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.finding_retest_history.get_list_finding_retest_history(page=1, page_size=10, business_unit_ids=\"1,2,3\", sort_by=watchtowr_complete_watchtowr_platform_api_documentation_python.QueryParamSortBy.CREATED_AT, sort_order=watchtowr_complete_watchtowr_platform_api_documentation_python.SortOrder.DESC)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/findings/export/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "export_PDF_for_finding"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    complete_watchtowr_platform_api_documentation.findings.export_pdf_for_finding(id=717.37)\n\n    # Use the SDK ..."
+  - target: $["paths"]["/api/client/findings/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_findings"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.findings.get_list_findings(page=1, page_size=10, created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), updated_from=parse_datetime(\"2022-02-22 22:00:00\"), updated_to=parse_datetime(\"2022-02-23 22:00:00\"), statuses=\"confirmed,unconfirmed,remediated,risk-accepted,closed,asset-no-longer-tracked\", business_unit_ids=\"1,2,3\", finding_title=\"Valid%20Credentials%20Discovered\", severities=watchtowr_complete_watchtowr_platform_api_documentation_python.Severities.MEDIUM, asset_title=\"www.watchTowr.com\", asset_types=watchtowr_complete_watchtowr_platform_api_documentation_python.AssetTypes.PORT, tags=\"CISA-KEV,Defacement,Credentials\", only_validated_exploitable=False, only_unacknowledged=False, exploitation_risk_level=watchtowr_complete_watchtowr_platform_api_documentation_python.ExploitationRiskLevel.HIGH)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/findings/retest/{finding_id}"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "start_specific_finding_retest"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.findings.start_specific_finding_retest(finding_id=3023.54, include_dns_connected=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/findings/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_finding_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.findings.get_finding_details(id=8884.68)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/findings/show/{id}/custom-properties"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_custom_properties_finding"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.findings.get_custom_properties_finding(id=4698.1, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/findings/show/{id}/custom-property"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_custom_property_finding"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.findings.create_custom_property_finding(id=1297.87, key=\"Severity\", value={}, is_preset=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/findings/show/{id}/custom-property/{customPropertyId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_custom_property_finding"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.findings.delete_custom_property_finding(id=3475.31, custom_property_id=7408.86)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/findings/show/{id}/custom-property/{customPropertyId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_custom_property_finding"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.findings.update_custom_property_finding(id=2139.97, custom_property_id=2380.63, key=\"Severity\", value=\"Low\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/findings/show/{id}/manual-ticket"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_finding_manual_ticket"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.findings.create_finding_manual_ticket(id=3073.46, board_name=\"Acme Jira Board\", issue_link=\"https://example.atlassian.net/browse/ABC-123\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/findings/show/{id}/note"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_finding_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.findings.create_finding_note(id=4650.48, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/findings/show/{id}/note/{noteId}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_finding_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.findings.delete_finding_note(id=7951.65, note_id=9970.42)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/findings/show/{id}/note/{noteId}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_finding_note"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.findings.update_finding_note(id=4987.21, note_id=2947.79, note=\"Passed to the engineering team. Review on 01/07/2024\", title=\"Initial Review - 01/01/2024\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/findings/show/{id}/notes"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_finding_notes"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.findings.get_finding_notes(id=2829.09, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/findings/state/{id}"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_finding_state"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.findings.update_finding_state(id=431.2, state=watchtowr_complete_watchtowr_platform_api_documentation_python.UpdateClientFindingStateRequestBodyState.IN_PROGRESS)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/findings/status/{id}"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_finding_status"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.findings.update_finding_status(id=515.74, status=\"confirmed\", status_reason=\"Reason for change\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/findings/statuses"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_available_finding_statuses"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    complete_watchtowr_platform_api_documentation.findings.get_available_finding_statuses()\n\n    # Use the SDK ..."
+  - target: $["paths"]["/api/client/hunts/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_client_hunts"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.hunts.get_client_hunts(page=1, page_size=10, hunt_search=\"remote%20code%20execution\", created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), updated_from=parse_datetime(\"2022-02-22 22:00:00\"), updated_to=parse_datetime(\"2022-02-23 22:00:00\"), only_resolved=True, is_unacknowledged=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/hunts/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "show_the_detail_hunt"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.hunts.show_the_detail_hunt(id=782.63)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/hunts/show/{id}/assets"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_asset_by_hunt"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.hunts.get_list_asset_by_hunt(id=1452.06, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/hunts/show/{id}/findings"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_finding_by_hunt"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.hunts.get_list_finding_by_hunt(id=5349.56, page=1, page_size=10)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/kill-switch"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_kill_switch_status"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.kill_switch.get_kill_switch_status()\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/kill-switch"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_kill_switch"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.kill_switch.update_kill_switch(value=True, reason=\"Emergency response to security incident\", request_support=False)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/pending-domains/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_pending_domains"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.pending_domains.get_list_pending_domains(page=1, page_size=10, name=\"example.com\", source=\"example-source\", start_date=parse_datetime(\"2022-02-23 22:00:00\"), end_date=parse_datetime(\"2022-02-23 22:00:00\"), sort_by=watchtowr_complete_watchtowr_platform_api_documentation_python.GetListPendingDomainsQueryParamSortBy.CREATED_AT, sort_order=watchtowr_complete_watchtowr_platform_api_documentation_python.GetListPendingDomainsQueryParamSortOrder.DESC)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/platform/whitelisting/api"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_platform_api_whitelist_ips"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.platform_whitelisting.get_platform_api_whitelist_ips()\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/platform/whitelisting/api"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_platform_api_whitelist_ip"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.platform_whitelisting.create_platform_api_whitelist_ip(ip=\"192.168.1.1\", description=\"Office network\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/platform/whitelisting/api/status"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_platform_api_whitelist_status"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.platform_whitelisting.get_platform_api_whitelist_status()\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/platform/whitelisting/api/status"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_platform_api_whitelist_status"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.platform_whitelisting.update_platform_api_whitelist_status(enabled=True)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/platform/whitelisting/api/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_platform_api_whitelist_ip"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.platform_whitelisting.delete_platform_api_whitelist_ip(id=2913.28)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/platform/whitelisting/api/{id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_platform_api_whitelist_ip"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.platform_whitelisting.update_platform_api_whitelist_ip(id_param=8772.98, id=1, ip=\"192.168.1.1\", description=\"Office network\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/platform/whitelisting/dashboard"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_platform_dashboard_whitelist_ips"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.platform_whitelisting.get_platform_dashboard_whitelist_ips()\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/platform/whitelisting/dashboard"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "create_platform_dashboard_whitelist_ip"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.platform_whitelisting.create_platform_dashboard_whitelist_ip(ip=\"192.168.1.1\", description=\"Office network\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/platform/whitelisting/dashboard/status"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_platform_dashboard_whitelist_status"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.platform_whitelisting.get_platform_dashboard_whitelist_status()\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/platform/whitelisting/dashboard/status"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_platform_dashboard_whitelist_status"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.platform_whitelisting.update_platform_dashboard_whitelist_status(enabled=True)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/platform/whitelisting/dashboard/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_platform_dashboard_whitelist_ip"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.platform_whitelisting.delete_platform_dashboard_whitelist_ip(id=2946.55)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/platform/whitelisting/dashboard/{id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_platform_dashboard_whitelist_ip"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.platform_whitelisting.update_platform_dashboard_whitelist_ip(id_param=9748.85, id=1, ip=\"192.168.1.1\", description=\"Office network\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/points-of-interest/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_points_of_interest"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.points_of_interest.get_list_points_of_interest(page=1, page_size=10, created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), updated_from=parse_datetime(\"2022-02-22 22:00:00\"), updated_to=parse_datetime(\"2022-02-23 22:00:00\"), discovered_date_order=watchtowr_complete_watchtowr_platform_api_documentation_python.DiscoveredDateOrder.DESC, search=\"Apache%20Airflow%20Admin%20Login\", types=\"admin-panel,open-directory\", has_finding=False, start_date=parse_datetime(\"2022-02-23 22:00:00\"), end_date=parse_datetime(\"2022-02-23 22:00:00\"), asset_statuses=\"verified,Unregistered,Parked,Incorrect Identification,pending,VerifiedOutOfScope,VerifiedReducedAttack,Tracked,CDN,Hanging Cloud IP,VerifiedHoneypot,Third Party\", business_unit_ids=\"1,2,3\", suppression_filter=watchtowr_complete_watchtowr_platform_api_documentation_python.QueryParamSuppressionFilter.NON_SUPPRESSED)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/points-of-interest/{id}/convert-to-finding"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "convert_poi_to_finding"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.points_of_interest.convert_poi_to_finding(id=6980.65)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/seeddata"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "submit_asset"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.add_asset.submit_asset(data=[\n        {\n            \"title\": \"Main Website\",\n            \"type\": watchtowr_complete_watchtowr_platform_api_documentation_python.Type.SUBDOMAIN,\n            \"value\": \"www.watchTowr.com\",\n        },\n        {\n            \"title\": \"Labs Blog IP\",\n            \"type\": watchtowr_complete_watchtowr_platform_api_documentation_python.Type.IP,\n            \"value\": \"123.123.123.123\",\n        },\n        {\n            \"title\": \"IP Range\",\n            \"type\": watchtowr_complete_watchtowr_platform_api_documentation_python.Type.IP_RANGE,\n            \"value\": \"www.watchTowr.com\",\n            \"values\": {\n                \"cidr\": \"192.168.1.0/24\",\n                \"asn\": \"AS16509\",\n            },\n        },\n    ], business_units=[\n        {\n            \"id\": -1,\n            \"type\": watchtowr_complete_watchtowr_platform_api_documentation_python.FilterByBusinessUnitInputType.UNASSIGNED,\n        },\n    ])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/seeddata/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "list_submitted_assets"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.add_asset.list_submitted_assets(page=1, page_size=20, business_unit_ids=\"1,2,3\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/service-listing/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_service_listing"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.service_discovery.get_list_service_listing(page=1, page_size=10, created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), updated_from=parse_datetime(\"2022-02-22 22:00:00\"), updated_to=parse_datetime(\"2022-02-23 22:00:00\"), search=\"1.2.3.4\", countries=\"US,UK\", technology=\"react\", ports=\"22/TCP,443/TCP,3389/UDP\", port_numbers=\"80,443\", port_types=\"TCP,UDP\", port_services=\"SSH,HTTP\", service_type_ids=\"1,2,3\", business_unit_ids=\"1,2,3\", sort_by=watchtowr_complete_watchtowr_platform_api_documentation_python.SortBy.LAST_SEEN, order_by=watchtowr_complete_watchtowr_platform_api_documentation_python.OrderBy.DESC, suppression_filter=watchtowr_complete_watchtowr_platform_api_documentation_python.SuppressionFilter.NON_SUPPRESSED)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/service-listing/technology-statistics"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_technology_statistics"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.service_discovery.get_technology_statistics(page=1, page_size=10, search=\"apache\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/suspicious-domain/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_suspicious_domain"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python.utils import parse_datetime\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.suspicious_domains.get_list_suspicious_domain(page=1, page_size=10, created_from=parse_datetime(\"2022-02-22 22:00:00\"), created_to=parse_datetime(\"2022-02-23 22:00:00\"), updated_from=parse_datetime(\"2022-02-22 22:00:00\"), updated_to=parse_datetime(\"2022-02-23 22:00:00\"), search=\"watchtowr.com\", discovery_reason=\"suspicious-words\", whois_search=\"Name%20Server:%20malicious.ns.com\", statuses=\"pending,malicious,legitimate,benign\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/suspicious-domain/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_suspicious_domain_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.suspicious_domains.get_suspicious_domain_details(id=8648.02)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/testing-infrastructure"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_list_source_ip_addresses"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.source_ip_addresses.get_list_source_ip_addresses()\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/users/invite"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "invite_users"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.user_management.invite_users(user_agent=\"<value>\", users=[])\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/users/list"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "list_users"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.user_management.list_users(page=1, page_size=10, name=\"John Doe\", title=\"Security Manager\", status=[\n        watchtowr_complete_watchtowr_platform_api_documentation_python.QueryParamStatus.ACTIVE,\n    ], role_ids=[\n        1,\n        2,\n    ], created_from=\"2023-01-01T00:00:00Z\", created_to=\"2023-12-31T23:59:59Z\")\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/users/show/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "get_user_details"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.user_management.get_user_details(id=9150.36)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/users/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "delete_user"
+          "source": "from watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.user_management.delete_user(id=3548.59)\n\n    # Handle response\n    print(res)"
+  - target: $["paths"]["/api/client/users/{id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "python"
+          "label": "update_user"
+          "source": "import watchtowr_complete_watchtowr_platform_api_documentation_python\nfrom watchtowr_complete_watchtowr_platform_api_documentation_python import CompleteWatchtowrPlatformAPIDocumentation\n\n\nwith CompleteWatchtowrPlatformAPIDocumentation(\n    bearer=\"<YOUR_BEARER_TOKEN_HERE>\",\n) as complete_watchtowr_platform_api_documentation:\n\n    res = complete_watchtowr_platform_api_documentation.user_management.update_user(id=599.27, user_agent=\"<value>\", role_type=watchtowr_complete_watchtowr_platform_api_documentation_python.UpdateClientUserBodyDtoRoleType.USER, business_unit_ids=[\n        1,\n        2,\n    ], locked=False)\n\n    # Handle response\n    print(res)"

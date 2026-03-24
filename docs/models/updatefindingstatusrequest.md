@@ -1,0 +1,9 @@
+# UpdateFindingStatusRequest
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `id`                                                                                             | *float*                                                                                          | :heavy_check_mark:                                                                               | The ID of the finding to update.                                                                 |
+| `update_client_finding_status_request_body`                                                      | [models.UpdateClientFindingStatusRequestBody](../models/updateclientfindingstatusrequestbody.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |

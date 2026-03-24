@@ -1,0 +1,10 @@
+# ClientIPDNSRecordData
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `dns_records_total_count`                                                              | *float*                                                                                | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `dns_records_owned`                                                                    | [models.ClientIPDNSRecordOwnedData](../models/clientipdnsrecordowneddata.md)           | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `dns_records_pointing_at`                                                              | [models.ClientIPDNSRecordPointingAtData](../models/clientipdnsrecordpointingatdata.md) | :heavy_check_mark:                                                                     | N/A                                                                                    |

@@ -1,0 +1,8 @@
+# UpdateClientFindingStateRequestBody
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              | Example                                                                                                  |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `state`                                                                                                  | [models.UpdateClientFindingStateRequestBodyState](../models/updateclientfindingstaterequestbodystate.md) | :heavy_check_mark:                                                                                       | Finding state. Different to status, this is about tracking how the finding is being handled.             | In Progress                                                                                              |

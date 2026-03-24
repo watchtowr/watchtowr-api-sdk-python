@@ -1,0 +1,11 @@
+# ServiceInformationAsset
+
+
+## Fields
+
+| Field                                                              | Type                                                               | Required                                                           | Description                                                        | Example                                                            |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `id`                                                               | *float*                                                            | :heavy_check_mark:                                                 | ID                                                                 | 1                                                                  |
+| `name`                                                             | *str*                                                              | :heavy_check_mark:                                                 | Asset name                                                         | 123.123.123.123                                                    |
+| `type`                                                             | *str*                                                              | :heavy_check_mark:                                                 | Asset type                                                         | ip                                                                 |
+| `business_units`                                                   | List[[models.ClientBusinessUnit](../models/clientbusinessunit.md)] | :heavy_check_mark:                                                 | Business Unit                                                      |                                                                    |
