@@ -54,7 +54,7 @@ class ServiceDiscoveryApi:
         updated_to: Annotated[Optional[datetime], Field(description="Filter services updated before a given date and time.")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search services by IP address.")] = None,
         countries: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated subject countries that they're related to.")] = None,
-        technology: Annotated[Optional[StrictStr], Field(description="Filter services by technology name.")] = None,
+        technology: Annotated[Optional[StrictStr], Field(description="Filter services by technology name. Supports comma-separated values for multiple technologies (max 10).")] = None,
         ports: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated port/protocols.")] = None,
         port_numbers: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated ports.")] = None,
         port_types: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated transport layer protocols (e.g. UDP/TCP).")] = None,
@@ -101,7 +101,7 @@ class ServiceDiscoveryApi:
         :type search: str
         :param countries: Filter services by a list of comma separated subject countries that they're related to.
         :type countries: str
-        :param technology: Filter services by technology name.
+        :param technology: Filter services by technology name. Supports comma-separated values for multiple technologies (max 10).
         :type technology: str
         :param ports: Filter services by a list of comma separated port/protocols.
         :type ports: str
@@ -198,7 +198,7 @@ class ServiceDiscoveryApi:
         updated_to: Annotated[Optional[datetime], Field(description="Filter services updated before a given date and time.")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search services by IP address.")] = None,
         countries: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated subject countries that they're related to.")] = None,
-        technology: Annotated[Optional[StrictStr], Field(description="Filter services by technology name.")] = None,
+        technology: Annotated[Optional[StrictStr], Field(description="Filter services by technology name. Supports comma-separated values for multiple technologies (max 10).")] = None,
         ports: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated port/protocols.")] = None,
         port_numbers: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated ports.")] = None,
         port_types: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated transport layer protocols (e.g. UDP/TCP).")] = None,
@@ -245,7 +245,7 @@ class ServiceDiscoveryApi:
         :type search: str
         :param countries: Filter services by a list of comma separated subject countries that they're related to.
         :type countries: str
-        :param technology: Filter services by technology name.
+        :param technology: Filter services by technology name. Supports comma-separated values for multiple technologies (max 10).
         :type technology: str
         :param ports: Filter services by a list of comma separated port/protocols.
         :type ports: str
@@ -342,7 +342,7 @@ class ServiceDiscoveryApi:
         updated_to: Annotated[Optional[datetime], Field(description="Filter services updated before a given date and time.")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search services by IP address.")] = None,
         countries: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated subject countries that they're related to.")] = None,
-        technology: Annotated[Optional[StrictStr], Field(description="Filter services by technology name.")] = None,
+        technology: Annotated[Optional[StrictStr], Field(description="Filter services by technology name. Supports comma-separated values for multiple technologies (max 10).")] = None,
         ports: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated port/protocols.")] = None,
         port_numbers: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated ports.")] = None,
         port_types: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated transport layer protocols (e.g. UDP/TCP).")] = None,
@@ -389,7 +389,7 @@ class ServiceDiscoveryApi:
         :type search: str
         :param countries: Filter services by a list of comma separated subject countries that they're related to.
         :type countries: str
-        :param technology: Filter services by technology name.
+        :param technology: Filter services by technology name. Supports comma-separated values for multiple technologies (max 10).
         :type technology: str
         :param ports: Filter services by a list of comma separated port/protocols.
         :type ports: str

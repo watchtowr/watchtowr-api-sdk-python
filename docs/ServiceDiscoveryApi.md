@@ -55,7 +55,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     updated_to = '2013-10-20T19:20:30+01:00' # datetime | Filter services updated before a given date and time. (optional)
     search = '1.2.3.4' # str | Search services by IP address. (optional)
     countries = 'US,UK' # str | Filter services by a list of comma separated subject countries that they're related to. (optional)
-    technology = 'react' # str | Filter services by technology name. (optional)
+    technology = 'aws,nginx,cloudfront' # str | Filter services by technology name. Supports comma-separated values for multiple technologies (max 10). (optional)
     ports = '22/TCP,443/TCP,3389/UDP' # str | Filter services by a list of comma separated port/protocols. (optional)
     port_numbers = '80,443' # str | Filter services by a list of comma separated ports. (optional)
     port_types = 'TCP,UDP' # str | Filter services by a list of comma separated transport layer protocols (e.g. UDP/TCP). (optional)
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
  **updated_to** | **datetime**| Filter services updated before a given date and time. | [optional] 
  **search** | **str**| Search services by IP address. | [optional] 
  **countries** | **str**| Filter services by a list of comma separated subject countries that they&#39;re related to. | [optional] 
- **technology** | **str**| Filter services by technology name. | [optional] 
+ **technology** | **str**| Filter services by technology name. Supports comma-separated values for multiple technologies (max 10). | [optional] 
  **ports** | **str**| Filter services by a list of comma separated port/protocols. | [optional] 
  **port_numbers** | **str**| Filter services by a list of comma separated ports. | [optional] 
  **port_types** | **str**| Filter services by a list of comma separated transport layer protocols (e.g. UDP/TCP). | [optional] 
