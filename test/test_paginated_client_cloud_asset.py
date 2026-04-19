@@ -48,7 +48,6 @@ class TestPaginatedClientCloudAsset(unittest.TestCase):
                         cloud_resource_id = 'resource-db-v-2', 
                         created_at = 2022-02-13T02:10:00.000000Z, 
                         updated_at = 2022-02-13T02:10:00.000000Z, 
-                        deleted_at = 2022-02-13T02:10:00.000000Z, 
                         metadata = {"createdAt":"2024-06-26T02:43:11.443000Z","registryId":"294444990188","repositoryArn":"arn:aws:ecr:ap-southeast-1:294444990188:repository/folder-test","repositoryUri":"294444990188.dkr.ecr.ap-southeast-1.amazonaws.com/folder-test","repositoryName":"folder-test","_wt_internal_func":"fetch_private_elastic_container_registry_assets","imageTagMutability":"MUTABLE","encryptionConfiguration":{"encryptionType":"AES256"},"imageScanningConfiguration":{"scanOnPush":false}}, 
                         custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"cloudAsset","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"cloudAsset","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', )
@@ -70,7 +69,6 @@ class TestPaginatedClientCloudAsset(unittest.TestCase):
                         cloud_resource_id = 'resource-db-v-2', 
                         created_at = 2022-02-13T02:10:00.000000Z, 
                         updated_at = 2022-02-13T02:10:00.000000Z, 
-                        deleted_at = 2022-02-13T02:10:00.000000Z, 
                         metadata = {"createdAt":"2024-06-26T02:43:11.443000Z","registryId":"294444990188","repositoryArn":"arn:aws:ecr:ap-southeast-1:294444990188:repository/folder-test","repositoryUri":"294444990188.dkr.ecr.ap-southeast-1.amazonaws.com/folder-test","repositoryName":"folder-test","_wt_internal_func":"fetch_private_elastic_container_registry_assets","imageTagMutability":"MUTABLE","encryptionConfiguration":{"encryptionType":"AES256"},"imageScanningConfiguration":{"scanOnPush":false}}, 
                         custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"cloudAsset","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"cloudAsset","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', )

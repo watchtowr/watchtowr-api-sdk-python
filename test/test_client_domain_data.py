@@ -42,7 +42,6 @@ class TestClientDomainData(unittest.TestCase):
                     status = 'verified', 
                     created_at = 2022-02-13T02:10:00.000000Z, 
                     updated_at = 2022-02-13T02:10:00.000000Z, 
-                    deleted_at = 2022-02-13T02:10:00.000000Z, 
                     id = 123, 
                     name = 'watchtowr.com', 
                     business_units = [
@@ -72,7 +71,6 @@ class TestClientDomainData(unittest.TestCase):
                     status = 'verified', 
                     created_at = 2022-02-13T02:10:00.000000Z, 
                     updated_at = 2022-02-13T02:10:00.000000Z, 
-                    deleted_at = 2022-02-13T02:10:00.000000Z, 
                     id = 123, 
                     name = 'watchtowr.com', 
                     business_units = [

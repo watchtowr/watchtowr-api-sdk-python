@@ -126,6 +126,7 @@ Class | Method | HTTP request | Description
 *BusinessUnitApi* | [**get_business_unit_details**](docs/BusinessUnitApi.md#get_business_unit_details) | **GET** /api/client/business-unit/show/{id} | Get Business Unit Details
 *BusinessUnitApi* | [**get_list_business_unit**](docs/BusinessUnitApi.md#get_list_business_unit) | **GET** /api/client/business-unit/list | List Business Units
 *BusinessUnitApi* | [**update_business_unit**](docs/BusinessUnitApi.md#update_business_unit) | **PUT** /api/client/business-unit/show/{id} | Update Business Unit
+*CapabilitySearchApi* | [**capability_search**](docs/CapabilitySearchApi.md#capability_search) | **GET** /api/client/capability-search | Capability Search
 *CertificatesApi* | [**get_certificate_details**](docs/CertificatesApi.md#get_certificate_details) | **GET** /api/client/certificates/show/{id} | Get Certificate Details
 *CertificatesApi* | [**get_list_certificates**](docs/CertificatesApi.md#get_list_certificates) | **GET** /api/client/certificates/list | List Certificates
 *CloudIntegrationAssetsApi* | [**add_asset_cloud_asset_note**](docs/CloudIntegrationAssetsApi.md#add_asset_cloud_asset_note) | **POST** /api/client/assets/cloudAsset/show/{id}/note | Create Note
@@ -368,6 +369,9 @@ Class | Method | HTTP request | Description
  - [AttackSurfaceDto](docs/AttackSurfaceDto.md)
  - [AttackSurfaceResiliencyDto](docs/AttackSurfaceResiliencyDto.md)
  - [BadRequestResponse](docs/BadRequestResponse.md)
+ - [CapabilitySearchData](docs/CapabilitySearchData.md)
+ - [CapabilitySearchHuntItem](docs/CapabilitySearchHuntItem.md)
+ - [CapabilitySearchResponse](docs/CapabilitySearchResponse.md)
  - [Causer](docs/Causer.md)
  - [ClientActivityLog](docs/ClientActivityLog.md)
  - [ClientApiDocumentation](docs/ClientApiDocumentation.md)
@@ -547,6 +551,8 @@ Class | Method | HTTP request | Description
  - [Technology](docs/Technology.md)
  - [TechnologyStatistic](docs/TechnologyStatistic.md)
  - [ThreatActorDto](docs/ThreatActorDto.md)
+ - [TtpLibraryCategoryItem](docs/TtpLibraryCategoryItem.md)
+ - [TtpLibraryItem](docs/TtpLibraryItem.md)
  - [Unauthorized](docs/Unauthorized.md)
  - [UnauthorizedResponse](docs/UnauthorizedResponse.md)
  - [UnprocessableContent](docs/UnprocessableContent.md)

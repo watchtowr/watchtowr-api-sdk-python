@@ -22,6 +22,9 @@ from watchtowr_api_sdk.models.assets_list_response import AssetsListResponse
 from watchtowr_api_sdk.models.attack_surface_dto import AttackSurfaceDto
 from watchtowr_api_sdk.models.attack_surface_resiliency_dto import AttackSurfaceResiliencyDto
 from watchtowr_api_sdk.models.bad_request_response import BadRequestResponse
+from watchtowr_api_sdk.models.capability_search_data import CapabilitySearchData
+from watchtowr_api_sdk.models.capability_search_hunt_item import CapabilitySearchHuntItem
+from watchtowr_api_sdk.models.capability_search_response import CapabilitySearchResponse
 from watchtowr_api_sdk.models.causer import Causer
 from watchtowr_api_sdk.models.client_activity_log import ClientActivityLog
 from watchtowr_api_sdk.models.client_api_documentation import ClientApiDocumentation
@@ -201,6 +204,8 @@ from watchtowr_api_sdk.models.suspicious_domain import SuspiciousDomain
 from watchtowr_api_sdk.models.technology import Technology
 from watchtowr_api_sdk.models.technology_statistic import TechnologyStatistic
 from watchtowr_api_sdk.models.threat_actor_dto import ThreatActorDto
+from watchtowr_api_sdk.models.ttp_library_category_item import TtpLibraryCategoryItem
+from watchtowr_api_sdk.models.ttp_library_item import TtpLibraryItem
 from watchtowr_api_sdk.models.unauthorized import Unauthorized
 from watchtowr_api_sdk.models.unauthorized_response import UnauthorizedResponse
 from watchtowr_api_sdk.models.unprocessable_content import UnprocessableContent

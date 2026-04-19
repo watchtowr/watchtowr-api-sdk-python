@@ -39,11 +39,10 @@ class ClientCloudAsset(BaseModel):
     cloud_resource_id: StrictStr
     created_at: datetime.date
     updated_at: datetime.date
-    deleted_at: datetime.date
     metadata: Dict[str, Any]
     custom_properties: List[ClientCustomProperty] = Field(alias="customProperties")
     criticality: StrictStr
-    __properties: ClassVar[List[str]] = ["type", "name", "source", "provider", "super_type", "sub_type", "hostname", "cloud_resource_id", "created_at", "updated_at", "deleted_at", "metadata", "customProperties", "criticality"]
+    __properties: ClassVar[List[str]] = ["type", "name", "source", "provider", "super_type", "sub_type", "hostname", "cloud_resource_id", "created_at", "updated_at", "metadata", "customProperties", "criticality"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -90,9 +89,6 @@ class ClientCloudAsset(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of updated_at
         if self.updated_at:
             _dict['updated_at'] = self.updated_at.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of deleted_at
-        if self.deleted_at:
-            _dict['deleted_at'] = self.deleted_at.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in custom_properties (list)
         _items = []
         if self.custom_properties:
@@ -127,7 +123,6 @@ class ClientCloudAsset(BaseModel):
             "cloud_resource_id": obj.get("cloud_resource_id"),
             "created_at": datetime.date.from_dict(obj["created_at"]) if obj.get("created_at") is not None else None,
             "updated_at": datetime.date.from_dict(obj["updated_at"]) if obj.get("updated_at") is not None else None,
-            "deleted_at": datetime.date.from_dict(obj["deleted_at"]) if obj.get("deleted_at") is not None else None,
             "metadata": obj.get("metadata"),
             "customProperties": [ClientCustomProperty.from_dict(_item) for _item in obj["customProperties"]] if obj.get("customProperties") is not None else None,
             "criticality": obj.get("criticality")

@@ -5,6 +5,7 @@ from watchtowr_api_sdk.api.api_documentation_api import APIDocumentationApi
 from watchtowr_api_sdk.api.activity_log_api import ActivityLogApi
 from watchtowr_api_sdk.api.add_asset_api import AddAssetApi
 from watchtowr_api_sdk.api.business_unit_api import BusinessUnitApi
+from watchtowr_api_sdk.api.capability_search_api import CapabilitySearchApi
 from watchtowr_api_sdk.api.certificates_api import CertificatesApi
 from watchtowr_api_sdk.api.cloud_integration_assets_api import CloudIntegrationAssetsApi
 from watchtowr_api_sdk.api.cloud_storage_api import CloudStorageApi

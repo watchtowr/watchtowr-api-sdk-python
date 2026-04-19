@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **created_at** | [**datetime.date**](datetime.date.md) |  | 
 **updated_at** | [**datetime.date**](datetime.date.md) |  | 
 **last_seen_at** | [**datetime.date**](datetime.date.md) |  | 
-**deleted_at** | [**datetime.date**](datetime.date.md) |  | 
 **id** | **float** |  | 
 **ip** | **str** |  | 
 **ip_id** | **float** |  | 

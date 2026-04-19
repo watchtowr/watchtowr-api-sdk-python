@@ -34,7 +34,6 @@ class ClientPort(BaseModel):
     created_at: datetime.date
     updated_at: datetime.date
     last_seen_at: datetime.date
-    deleted_at: datetime.date
     id: StrictFloat
     ip: StrictStr
     ip_id: StrictFloat
@@ -42,7 +41,7 @@ class ClientPort(BaseModel):
     banner: StrictStr
     service: StrictStr
     business_units: List[ClientBusinessUnit] = Field(alias="businessUnits")
-    __properties: ClassVar[List[str]] = ["type", "status", "created_at", "updated_at", "last_seen_at", "deleted_at", "id", "ip", "ip_id", "port", "banner", "service", "businessUnits"]
+    __properties: ClassVar[List[str]] = ["type", "status", "created_at", "updated_at", "last_seen_at", "id", "ip", "ip_id", "port", "banner", "service", "businessUnits"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -99,9 +98,6 @@ class ClientPort(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of last_seen_at
         if self.last_seen_at:
             _dict['last_seen_at'] = self.last_seen_at.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of deleted_at
-        if self.deleted_at:
-            _dict['deleted_at'] = self.deleted_at.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in business_units (list)
         _items = []
         if self.business_units:
@@ -131,7 +127,6 @@ class ClientPort(BaseModel):
             "created_at": datetime.date.from_dict(obj["created_at"]) if obj.get("created_at") is not None else None,
             "updated_at": datetime.date.from_dict(obj["updated_at"]) if obj.get("updated_at") is not None else None,
             "last_seen_at": datetime.date.from_dict(obj["last_seen_at"]) if obj.get("last_seen_at") is not None else None,
-            "deleted_at": datetime.date.from_dict(obj["deleted_at"]) if obj.get("deleted_at") is not None else None,
             "id": obj.get("id"),
             "ip": obj.get("ip"),
             "ip_id": obj.get("ip_id"),

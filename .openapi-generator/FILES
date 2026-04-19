@@ -16,6 +16,10 @@ docs/AttackSurfaceDto.md
 docs/AttackSurfaceResiliencyDto.md
 docs/BadRequestResponse.md
 docs/BusinessUnitApi.md
+docs/CapabilitySearchApi.md
+docs/CapabilitySearchData.md
+docs/CapabilitySearchHuntItem.md
+docs/CapabilitySearchResponse.md
 docs/Causer.md
 docs/CertificatesApi.md
 docs/ClientActivityLog.md
@@ -220,6 +224,8 @@ docs/SuspiciousDomainsApi.md
 docs/Technology.md
 docs/TechnologyStatistic.md
 docs/ThreatActorDto.md
+docs/TtpLibraryCategoryItem.md
+docs/TtpLibraryItem.md
 docs/Unauthorized.md
 docs/UnauthorizedResponse.md
 docs/UnprocessableContent.md
@@ -269,6 +275,10 @@ test/test_attack_surface_dto.py
 test/test_attack_surface_resiliency_dto.py
 test/test_bad_request_response.py
 test/test_business_unit_api.py
+test/test_capability_search_api.py
+test/test_capability_search_data.py
+test/test_capability_search_hunt_item.py
+test/test_capability_search_response.py
 test/test_causer.py
 test/test_certificates_api.py
 test/test_client_activity_log.py
@@ -473,6 +483,8 @@ test/test_suspicious_domains_api.py
 test/test_technology.py
 test/test_technology_statistic.py
 test/test_threat_actor_dto.py
+test/test_ttp_library_category_item.py
+test/test_ttp_library_item.py
 test/test_unauthorized.py
 test/test_unauthorized_response.py
 test/test_unprocessable_content.py
@@ -510,6 +522,7 @@ watchtowr_api_sdk/api/activity_log_api.py
 watchtowr_api_sdk/api/add_asset_api.py
 watchtowr_api_sdk/api/api_documentation_api.py
 watchtowr_api_sdk/api/business_unit_api.py
+watchtowr_api_sdk/api/capability_search_api.py
 watchtowr_api_sdk/api/certificates_api.py
 watchtowr_api_sdk/api/cloud_integration_assets_api.py
 watchtowr_api_sdk/api/cloud_storage_api.py
@@ -549,6 +562,9 @@ watchtowr_api_sdk/models/assets_list_response.py
 watchtowr_api_sdk/models/attack_surface_dto.py
 watchtowr_api_sdk/models/attack_surface_resiliency_dto.py
 watchtowr_api_sdk/models/bad_request_response.py
+watchtowr_api_sdk/models/capability_search_data.py
+watchtowr_api_sdk/models/capability_search_hunt_item.py
+watchtowr_api_sdk/models/capability_search_response.py
 watchtowr_api_sdk/models/causer.py
 watchtowr_api_sdk/models/client_activity_log.py
 watchtowr_api_sdk/models/client_api_documentation.py
@@ -728,6 +744,8 @@ watchtowr_api_sdk/models/suspicious_domain.py
 watchtowr_api_sdk/models/technology.py
 watchtowr_api_sdk/models/technology_statistic.py
 watchtowr_api_sdk/models/threat_actor_dto.py
+watchtowr_api_sdk/models/ttp_library_category_item.py
+watchtowr_api_sdk/models/ttp_library_item.py
 watchtowr_api_sdk/models/unauthorized.py
 watchtowr_api_sdk/models/unauthorized_response.py
 watchtowr_api_sdk/models/unprocessable_content.py

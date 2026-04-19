@@ -35,7 +35,6 @@ class ClientContainer(BaseModel):
     status: StrictStr
     created_at: datetime.date
     updated_at: datetime.date
-    deleted_at: datetime.date
     id: StrictFloat
     name: StrictStr
     owner: StrictStr
@@ -44,7 +43,7 @@ class ClientContainer(BaseModel):
     business_units: List[ClientBusinessUnit] = Field(alias="businessUnits")
     custom_properties: List[ClientCustomProperty] = Field(alias="customProperties")
     criticality: StrictStr
-    __properties: ClassVar[List[str]] = ["type", "source", "status", "created_at", "updated_at", "deleted_at", "id", "name", "owner", "platform", "url", "businessUnits", "customProperties", "criticality"]
+    __properties: ClassVar[List[str]] = ["type", "source", "status", "created_at", "updated_at", "id", "name", "owner", "platform", "url", "businessUnits", "customProperties", "criticality"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -98,9 +97,6 @@ class ClientContainer(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of updated_at
         if self.updated_at:
             _dict['updated_at'] = self.updated_at.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of deleted_at
-        if self.deleted_at:
-            _dict['deleted_at'] = self.deleted_at.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in business_units (list)
         _items = []
         if self.business_units:
@@ -137,7 +133,6 @@ class ClientContainer(BaseModel):
             "status": obj.get("status"),
             "created_at": datetime.date.from_dict(obj["created_at"]) if obj.get("created_at") is not None else None,
             "updated_at": datetime.date.from_dict(obj["updated_at"]) if obj.get("updated_at") is not None else None,
-            "deleted_at": datetime.date.from_dict(obj["deleted_at"]) if obj.get("deleted_at") is not None else None,
             "id": obj.get("id"),
             "name": obj.get("name"),
             "owner": obj.get("owner"),

@@ -23,6 +23,7 @@ __all__ = [
     "ActivityLogApi",
     "AddAssetApi",
     "BusinessUnitApi",
+    "CapabilitySearchApi",
     "CertificatesApi",
     "CloudIntegrationAssetsApi",
     "CloudStorageApi",
@@ -66,6 +67,9 @@ __all__ = [
     "AttackSurfaceDto",
     "AttackSurfaceResiliencyDto",
     "BadRequestResponse",
+    "CapabilitySearchData",
+    "CapabilitySearchHuntItem",
+    "CapabilitySearchResponse",
     "Causer",
     "ClientActivityLog",
     "ClientApiDocumentation",
@@ -245,6 +249,8 @@ __all__ = [
     "Technology",
     "TechnologyStatistic",
     "ThreatActorDto",
+    "TtpLibraryCategoryItem",
+    "TtpLibraryItem",
     "Unauthorized",
     "UnauthorizedResponse",
     "UnprocessableContent",
@@ -281,6 +287,7 @@ from watchtowr_api_sdk.api.api_documentation_api import APIDocumentationApi as A
 from watchtowr_api_sdk.api.activity_log_api import ActivityLogApi as ActivityLogApi
 from watchtowr_api_sdk.api.add_asset_api import AddAssetApi as AddAssetApi
 from watchtowr_api_sdk.api.business_unit_api import BusinessUnitApi as BusinessUnitApi
+from watchtowr_api_sdk.api.capability_search_api import CapabilitySearchApi as CapabilitySearchApi
 from watchtowr_api_sdk.api.certificates_api import CertificatesApi as CertificatesApi
 from watchtowr_api_sdk.api.cloud_integration_assets_api import CloudIntegrationAssetsApi as CloudIntegrationAssetsApi
 from watchtowr_api_sdk.api.cloud_storage_api import CloudStorageApi as CloudStorageApi
@@ -328,6 +335,9 @@ from watchtowr_api_sdk.models.assets_list_response import AssetsListResponse as 
 from watchtowr_api_sdk.models.attack_surface_dto import AttackSurfaceDto as AttackSurfaceDto
 from watchtowr_api_sdk.models.attack_surface_resiliency_dto import AttackSurfaceResiliencyDto as AttackSurfaceResiliencyDto
 from watchtowr_api_sdk.models.bad_request_response import BadRequestResponse as BadRequestResponse
+from watchtowr_api_sdk.models.capability_search_data import CapabilitySearchData as CapabilitySearchData
+from watchtowr_api_sdk.models.capability_search_hunt_item import CapabilitySearchHuntItem as CapabilitySearchHuntItem
+from watchtowr_api_sdk.models.capability_search_response import CapabilitySearchResponse as CapabilitySearchResponse
 from watchtowr_api_sdk.models.causer import Causer as Causer
 from watchtowr_api_sdk.models.client_activity_log import ClientActivityLog as ClientActivityLog
 from watchtowr_api_sdk.models.client_api_documentation import ClientApiDocumentation as ClientApiDocumentation
@@ -507,6 +517,8 @@ from watchtowr_api_sdk.models.suspicious_domain import SuspiciousDomain as Suspi
 from watchtowr_api_sdk.models.technology import Technology as Technology
 from watchtowr_api_sdk.models.technology_statistic import TechnologyStatistic as TechnologyStatistic
 from watchtowr_api_sdk.models.threat_actor_dto import ThreatActorDto as ThreatActorDto
+from watchtowr_api_sdk.models.ttp_library_category_item import TtpLibraryCategoryItem as TtpLibraryCategoryItem
+from watchtowr_api_sdk.models.ttp_library_item import TtpLibraryItem as TtpLibraryItem
 from watchtowr_api_sdk.models.unauthorized import Unauthorized as Unauthorized
 from watchtowr_api_sdk.models.unauthorized_response import UnauthorizedResponse as UnauthorizedResponse
 from watchtowr_api_sdk.models.unprocessable_content import UnprocessableContent as UnprocessableContent

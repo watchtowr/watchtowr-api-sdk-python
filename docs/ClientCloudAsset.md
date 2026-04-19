@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **cloud_resource_id** | **str** |  | 
 **created_at** | [**datetime.date**](datetime.date.md) |  | 
 **updated_at** | [**datetime.date**](datetime.date.md) |  | 
-**deleted_at** | [**datetime.date**](datetime.date.md) |  | 
 **metadata** | **object** |  | 
 **custom_properties** | [**List[ClientCustomProperty]**](ClientCustomProperty.md) |  | 
 **criticality** | **str** |  | 

@@ -38,7 +38,6 @@ class ClientIp(BaseModel):
     status: StrictStr
     created_at: datetime.date
     updated_at: datetime.date
-    deleted_at: datetime.date
     id: StrictFloat
     name: StrictStr
     business_units: List[ClientBusinessUnit] = Field(alias="businessUnits")
@@ -50,7 +49,7 @@ class ClientIp(BaseModel):
     criticality: StrictStr
     infrastructure: Optional[Infrastructure] = None
     engine_settings: ClientEngineSettings = Field(alias="engineSettings")
-    __properties: ClassVar[List[str]] = ["type", "source", "status", "created_at", "updated_at", "deleted_at", "id", "name", "businessUnits", "country", "live", "dns_records", "metadata", "customProperties", "criticality", "infrastructure", "engineSettings"]
+    __properties: ClassVar[List[str]] = ["type", "source", "status", "created_at", "updated_at", "id", "name", "businessUnits", "country", "live", "dns_records", "metadata", "customProperties", "criticality", "infrastructure", "engineSettings"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -104,9 +103,6 @@ class ClientIp(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of updated_at
         if self.updated_at:
             _dict['updated_at'] = self.updated_at.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of deleted_at
-        if self.deleted_at:
-            _dict['deleted_at'] = self.deleted_at.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in business_units (list)
         _items = []
         if self.business_units:
@@ -152,7 +148,6 @@ class ClientIp(BaseModel):
             "status": obj.get("status"),
             "created_at": datetime.date.from_dict(obj["created_at"]) if obj.get("created_at") is not None else None,
             "updated_at": datetime.date.from_dict(obj["updated_at"]) if obj.get("updated_at") is not None else None,
-            "deleted_at": datetime.date.from_dict(obj["deleted_at"]) if obj.get("deleted_at") is not None else None,
             "id": obj.get("id"),
             "name": obj.get("name"),
             "businessUnits": [ClientBusinessUnit.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None,
