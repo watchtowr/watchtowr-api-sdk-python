@@ -5,7 +5,7 @@ All URIs are relative to *https://your-tenant-id.sg.client.watchtowr.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_client_hunts**](HuntsApi.md#get_client_hunts) | **GET** /api/client/hunts/list | List Hunts
-[**get_list_asset_by_hunt**](HuntsApi.md#get_list_asset_by_hunt) | **GET** /api/client/hunts/show/{id}/assets | List Assets
+[**get_list_asset_by_hunt**](HuntsApi.md#get_list_asset_by_hunt) | **GET** /api/client/hunts/show/{id}/assets | List Hunt Assets
 [**get_list_finding_by_hunt**](HuntsApi.md#get_list_finding_by_hunt) | **GET** /api/client/hunts/show/{id}/findings | List Hunt Findings
 [**show_the_detail_hunt**](HuntsApi.md#show_the_detail_hunt) | **GET** /api/client/hunts/show/{id} | Get Hunt Details
 
@@ -114,9 +114,9 @@ Name | Type | Description  | Notes
 # **get_list_asset_by_hunt**
 > AssetsListResponse get_list_asset_by_hunt(id, page=page, page_size=page_size)
 
-List Assets
+List Hunt Assets
 
-Get a list of Assets for a specific Hunt.
+Get a list of Hunt Assets for a specific Hunt.
 
 ### Example
 
@@ -153,7 +153,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
 
     try:
-        # List Assets
+        # List Hunt Assets
         api_response = api_instance.get_list_asset_by_hunt(id, page=page, page_size=page_size)
         print("The response of HuntsApi->get_list_asset_by_hunt:\n")
         pprint(api_response)

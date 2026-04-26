@@ -3,7 +3,7 @@
 """
     Complete watchTowr Platform API Documentation
 
-    The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Automated Red Teaming API       * Adversary Sight API       * Intelligence API       * Platform API 
+    The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Automated Red Teaming API       * Adversary Sight API       * Intelligence API       * Active Defense API       * Platform API 
 
     The version of the OpenAPI document: 1.0
     Contact: support@watchTowr.io
@@ -34,7 +34,6 @@ class PointsOfInterest(BaseModel):
     name: StrictStr = Field(description="Name")
     type: StrictStr = Field(description="Type")
     url: StrictStr = Field(description="Url")
-    discovery_tool_id: StrictStr = Field(description="Discovery tool ID", alias="discoveryToolId")
     discovery_date: Optional[datetime] = Field(default=None, description="Discovery date", alias="discoveryDate")
     asset_id: StrictFloat = Field(description="Asset ID", alias="assetId")
     asset_name: StrictStr = Field(description="Asset name", alias="assetName")
@@ -46,7 +45,7 @@ class PointsOfInterest(BaseModel):
     suppressed_at: Optional[datetime] = Field(default=None, description="Suppressed at timestamp", alias="suppressedAt")
     is_permanent_suppression: Optional[StrictBool] = Field(default=None, description="Whether the Point of Interest is permanently suppressed", alias="isPermanentSuppression")
     finding_id: Optional[StrictFloat] = Field(default=None, description="Finding ID if the POI has been converted to a finding", alias="findingId")
-    __properties: ClassVar[List[str]] = ["id", "name", "type", "url", "discoveryToolId", "discoveryDate", "assetId", "assetName", "assetType", "businessUnits", "lastSeen", "isConcerning", "suppressed", "suppressedAt", "isPermanentSuppression", "findingId"]
+    __properties: ClassVar[List[str]] = ["id", "name", "type", "url", "discoveryDate", "assetId", "assetName", "assetType", "businessUnits", "lastSeen", "isConcerning", "suppressed", "suppressedAt", "isPermanentSuppression", "findingId"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -130,7 +129,6 @@ class PointsOfInterest(BaseModel):
             "name": obj.get("name"),
             "type": obj.get("type"),
             "url": obj.get("url"),
-            "discoveryToolId": obj.get("discoveryToolId"),
             "discoveryDate": obj.get("discoveryDate"),
             "assetId": obj.get("assetId"),
             "assetName": obj.get("assetName"),

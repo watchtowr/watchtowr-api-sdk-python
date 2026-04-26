@@ -3,7 +3,7 @@
 """
     Complete watchTowr Platform API Documentation
 
-    The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Automated Red Teaming API       * Adversary Sight API       * Intelligence API       * Platform API 
+    The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Automated Red Teaming API       * Adversary Sight API       * Intelligence API       * Active Defense API       * Platform API 
 
     The version of the OpenAPI document: 1.0
     Contact: support@watchTowr.io
@@ -37,7 +37,7 @@ class TestHuntsApi(unittest.TestCase):
     def test_get_list_asset_by_hunt(self) -> None:
         """Test case for get_list_asset_by_hunt
 
-        List Assets
+        List Hunt Assets
         """
         pass
 

@@ -5,7 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **str** | Error message | 
+**message** | **str** |  | 
+**status_code** | **float** |  | 
 
 ## Example
 

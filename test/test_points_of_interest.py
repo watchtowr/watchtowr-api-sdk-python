@@ -3,7 +3,7 @@
 """
     Complete watchTowr Platform API Documentation
 
-    The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Automated Red Teaming API       * Adversary Sight API       * Intelligence API       * Platform API 
+    The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Automated Red Teaming API       * Adversary Sight API       * Intelligence API       * Active Defense API       * Platform API 
 
     The version of the OpenAPI document: 1.0
     Contact: support@watchTowr.io
@@ -40,7 +40,6 @@ class TestPointsOfInterest(unittest.TestCase):
                 name = 'phpMyAdmin',
                 type = 'admin-panel',
                 url = 'http://watchtowr.com/phpmyadmin',
-                discovery_tool_id = 'test-id',
                 discovery_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 asset_id = 1,
                 asset_name = '123.123.123.123',
@@ -63,7 +62,6 @@ class TestPointsOfInterest(unittest.TestCase):
                 name = 'phpMyAdmin',
                 type = 'admin-panel',
                 url = 'http://watchtowr.com/phpmyadmin',
-                discovery_tool_id = 'test-id',
                 asset_id = 1,
                 asset_name = '123.123.123.123',
                 asset_type = 'ip',

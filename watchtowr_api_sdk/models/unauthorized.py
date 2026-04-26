@@ -3,7 +3,7 @@
 """
     Complete watchTowr Platform API Documentation
 
-    The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Automated Red Teaming API       * Adversary Sight API       * Intelligence API       * Platform API 
+    The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Automated Red Teaming API       * Adversary Sight API       * Intelligence API       * Active Defense API       * Platform API 
 
     The version of the OpenAPI document: 1.0
     Contact: support@watchTowr.io
@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,9 +28,10 @@ class Unauthorized(BaseModel):
     """
     Unauthorized
     """ # noqa: E501
-    message: StrictStr = Field(description="Error message")
-    status_code: StrictFloat = Field(description="HTTP status code", alias="statusCode")
-    __properties: ClassVar[List[str]] = ["message", "statusCode"]
+    status_code: Optional[StrictFloat] = Field(default=None, alias="statusCode")
+    message: Optional[StrictStr] = None
+    error: StrictStr
+    __properties: ClassVar[List[str]] = ["statusCode", "message", "error"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -88,8 +89,9 @@ class Unauthorized(BaseModel):
                 raise ValueError("Error due to additional fields (not defined in Unauthorized) in the input: " + _key)
 
         _obj = cls.model_validate({
+            "statusCode": obj.get("statusCode"),
             "message": obj.get("message"),
-            "statusCode": obj.get("statusCode")
+            "error": obj.get("error")
         })
         return _obj
 

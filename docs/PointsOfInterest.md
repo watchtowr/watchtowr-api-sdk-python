@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **name** | **str** | Name | 
 **type** | **str** | Type | 
 **url** | **str** | Url | 
-**discovery_tool_id** | **str** | Discovery tool ID | 
 **discovery_date** | **datetime** | Discovery date | [optional] 
 **asset_id** | **float** | Asset ID | 
 **asset_name** | **str** | Asset name | 

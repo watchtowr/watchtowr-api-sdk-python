@@ -3,6 +3,7 @@ The watchTowr Client API combining all watchTowr Platform APIs into a single com
       * Automated Red Teaming API
       * Adversary Sight API
       * Intelligence API
+      * Active Defense API
       * Platform API
 
 
@@ -116,9 +117,14 @@ Class | Method | HTTP request | Description
 *APIDocumentationApi* | [**update_asset_api_documentation_note**](docs/APIDocumentationApi.md#update_asset_api_documentation_note) | **PUT** /api/client/assets/apiDocumentation/show/{id}/note/{noteId} | Update Note
 *APIDocumentationApi* | [**update_asset_api_documentation_status**](docs/APIDocumentationApi.md#update_asset_api_documentation_status) | **PUT** /api/client/assets/apiDocumentation/update-status/{id} | Update API Documentation Status
 *APIDocumentationApi* | [**update_custom_property_api_documentation**](docs/APIDocumentationApi.md#update_custom_property_api_documentation) | **PUT** /api/client/assets/apiDocumentation/show/{id}/custom-property/{customPropertyId} | Update Custom Property
+*ActiveDefenseLibraryApi* | [**get_active_defense_library_rule_details**](docs/ActiveDefenseLibraryApi.md#get_active_defense_library_rule_details) | **GET** /api/client/active-defense-library/show/{ruleId} | Get Active Defense Rule Details
+*ActiveDefenseLibraryApi* | [**get_active_defense_library_rule_provider_template**](docs/ActiveDefenseLibraryApi.md#get_active_defense_library_rule_provider_template) | **GET** /api/client/active-defense-library/show/{ruleId}/provider/show/{provider} | Get Active Defense Rule Provider Template
+*ActiveDefenseLibraryApi* | [**get_list_active_defense_library_rules**](docs/ActiveDefenseLibraryApi.md#get_list_active_defense_library_rules) | **GET** /api/client/active-defense-library/list | List Active Defense Rules
 *ActivityLogApi* | [**get_list_activity_logs**](docs/ActivityLogApi.md#get_list_activity_logs) | **GET** /api/client/activity-log/list | List Activity Logs
 *AddAssetApi* | [**list_submitted_assets**](docs/AddAssetApi.md#list_submitted_assets) | **GET** /api/client/seeddata/list | List Submitted Assets
 *AddAssetApi* | [**submit_asset**](docs/AddAssetApi.md#submit_asset) | **POST** /api/client/seeddata | Submit Seed Data
+*AdversaryIntelligenceApi* | [**get_adversary_intelligence_details**](docs/AdversaryIntelligenceApi.md#get_adversary_intelligence_details) | **GET** /api/client/adversary-intelligence/show/{attackerId} | Get Adversary Details
+*AdversaryIntelligenceApi* | [**get_list_adversary_intelligence**](docs/AdversaryIntelligenceApi.md#get_list_adversary_intelligence) | **GET** /api/client/adversary-intelligence/list | List Adversaries
 *BusinessUnitApi* | [**create_business_unit**](docs/BusinessUnitApi.md#create_business_unit) | **POST** /api/client/business-unit | Create Business Unit
 *BusinessUnitApi* | [**create_business_unit_rule**](docs/BusinessUnitApi.md#create_business_unit_rule) | **POST** /api/client/business-unit/show/{id}/rule | Create Business Unit Rule
 *BusinessUnitApi* | [**delete_business_unit**](docs/BusinessUnitApi.md#delete_business_unit) | **DELETE** /api/client/business-unit/show/{id} | Delete Business Unit
@@ -211,7 +217,7 @@ Class | Method | HTTP request | Description
 *FindingsApi* | [**update_finding_state**](docs/FindingsApi.md#update_finding_state) | **POST** /api/client/findings/state/{id} | Update Finding State
 *FindingsApi* | [**update_finding_status**](docs/FindingsApi.md#update_finding_status) | **POST** /api/client/findings/status/{id} | Update Finding Status
 *HuntsApi* | [**get_client_hunts**](docs/HuntsApi.md#get_client_hunts) | **GET** /api/client/hunts/list | List Hunts
-*HuntsApi* | [**get_list_asset_by_hunt**](docs/HuntsApi.md#get_list_asset_by_hunt) | **GET** /api/client/hunts/show/{id}/assets | List Assets
+*HuntsApi* | [**get_list_asset_by_hunt**](docs/HuntsApi.md#get_list_asset_by_hunt) | **GET** /api/client/hunts/show/{id}/assets | List Hunt Assets
 *HuntsApi* | [**get_list_finding_by_hunt**](docs/HuntsApi.md#get_list_finding_by_hunt) | **GET** /api/client/hunts/show/{id}/findings | List Hunt Findings
 *HuntsApi* | [**show_the_detail_hunt**](docs/HuntsApi.md#show_the_detail_hunt) | **GET** /api/client/hunts/show/{id} | Get Hunt Details
 *IPAddressesApi* | [**assign_ip_to_business_units**](docs/IPAddressesApi.md#assign_ip_to_business_units) | **POST** /api/client/assets/ip/show/{id}/business-units | Assign IP to Business Units
@@ -357,10 +363,19 @@ Class | Method | HTTP request | Description
 *UserManagementApi* | [**invite_users**](docs/UserManagementApi.md#invite_users) | **POST** /api/client/users/invite | Invite Users
 *UserManagementApi* | [**list_users**](docs/UserManagementApi.md#list_users) | **GET** /api/client/users/list | List Users
 *UserManagementApi* | [**update_user**](docs/UserManagementApi.md#update_user) | **PUT** /api/client/users/{id} | Update User
+*VulnerabilityIntelligenceApi* | [**get_list_vulnerability_intelligence**](docs/VulnerabilityIntelligenceApi.md#get_list_vulnerability_intelligence) | **GET** /api/client/vulnerability-intelligence/list | List Vulnerabilities
+*VulnerabilityIntelligenceApi* | [**get_vulnerability_intelligence_details**](docs/VulnerabilityIntelligenceApi.md#get_vulnerability_intelligence_details) | **GET** /api/client/vulnerability-intelligence/show/{identifier} | Get Vulnerability Details
 
 
 ## Documentation For Models
 
+ - [ActiveDefenseRule](docs/ActiveDefenseRule.md)
+ - [ActiveDefenseRuleDetails](docs/ActiveDefenseRuleDetails.md)
+ - [ActiveDefenseRuleKevStatus](docs/ActiveDefenseRuleKevStatus.md)
+ - [ActiveDefenseRuleTemplate](docs/ActiveDefenseRuleTemplate.md)
+ - [ActiveDefenseRuleVulnerability](docs/ActiveDefenseRuleVulnerability.md)
+ - [AdversaryIntel](docs/AdversaryIntel.md)
+ - [AdversaryIntelDetails](docs/AdversaryIntelDetails.md)
  - [Asset](docs/Asset.md)
  - [AssetAndBusinessUnitAlreadyAssociatedConflictErrorResponse](docs/AssetAndBusinessUnitAlreadyAssociatedConflictErrorResponse.md)
  - [AssetAndBusinessUnitNotAssociatedConflictErrorResponse](docs/AssetAndBusinessUnitNotAssociatedConflictErrorResponse.md)
@@ -368,12 +383,17 @@ Class | Method | HTTP request | Description
  - [AssetsListResponse](docs/AssetsListResponse.md)
  - [AttackSurfaceDto](docs/AttackSurfaceDto.md)
  - [AttackSurfaceResiliencyDto](docs/AttackSurfaceResiliencyDto.md)
+ - [AttackerTypes](docs/AttackerTypes.md)
  - [BadRequestResponse](docs/BadRequestResponse.md)
  - [CapabilitySearchData](docs/CapabilitySearchData.md)
  - [CapabilitySearchHuntItem](docs/CapabilitySearchHuntItem.md)
  - [CapabilitySearchResponse](docs/CapabilitySearchResponse.md)
+ - [CapecPattern](docs/CapecPattern.md)
  - [Causer](docs/Causer.md)
+ - [ClientActiveDefenseRuleData](docs/ClientActiveDefenseRuleData.md)
+ - [ClientActiveDefenseRuleProviderData](docs/ClientActiveDefenseRuleProviderData.md)
  - [ClientActivityLog](docs/ClientActivityLog.md)
+ - [ClientAdversaryIntelData](docs/ClientAdversaryIntelData.md)
  - [ClientApiDocumentation](docs/ClientApiDocumentation.md)
  - [ClientApiDocumentationAsset](docs/ClientApiDocumentationAsset.md)
  - [ClientAssetDnsRecord](docs/ClientAssetDnsRecord.md)
@@ -448,6 +468,7 @@ Class | Method | HTTP request | Description
  - [ClientUser](docs/ClientUser.md)
  - [ClientUserDetail](docs/ClientUserDetail.md)
  - [ClientUserDetailBusinessUnitsInner](docs/ClientUserDetailBusinessUnitsInner.md)
+ - [ClientVulnerabilityIntelData](docs/ClientVulnerabilityIntelData.md)
  - [CreateClientBusinessUnitDto](docs/CreateClientBusinessUnitDto.md)
  - [CreateClientBusinessUnitRuleDto](docs/CreateClientBusinessUnitRuleDto.md)
  - [CreateClientCustomPropertyDto](docs/CreateClientCustomPropertyDto.md)
@@ -465,6 +486,7 @@ Class | Method | HTTP request | Description
  - [FindingListResponse](docs/FindingListResponse.md)
  - [FindingRetestResponseDto](docs/FindingRetestResponseDto.md)
  - [FindingsSummaryDto](docs/FindingsSummaryDto.md)
+ - [FirstReportedByAttackerSummary](docs/FirstReportedByAttackerSummary.md)
  - [ForbiddenResponse](docs/ForbiddenResponse.md)
  - [GetAssetApiDocumentationChangelog200Response](docs/GetAssetApiDocumentationChangelog200Response.md)
  - [GetAssetCloudAssetChangelog200Response](docs/GetAssetCloudAssetChangelog200Response.md)
@@ -490,18 +512,23 @@ Class | Method | HTTP request | Description
  - [InviteUserResponse](docs/InviteUserResponse.md)
  - [InviteUserResponseData](docs/InviteUserResponseData.md)
  - [IpRangeValues](docs/IpRangeValues.md)
+ - [KbEntryCwe](docs/KbEntryCwe.md)
+ - [KevTypes](docs/KevTypes.md)
  - [KillSwitchDisabledError](docs/KillSwitchDisabledError.md)
  - [KillSwitchForbiddenError](docs/KillSwitchForbiddenError.md)
  - [KillSwitchStatusData](docs/KillSwitchStatusData.md)
  - [KillSwitchStatusResponse](docs/KillSwitchStatusResponse.md)
  - [LatestExecutedHuntDto](docs/LatestExecutedHuntDto.md)
  - [Link](docs/Link.md)
+ - [Media](docs/Media.md)
  - [Meta](docs/Meta.md)
  - [MttrMetricsDto](docs/MttrMetricsDto.md)
  - [NotFound](docs/NotFound.md)
  - [NotFoundResponse](docs/NotFoundResponse.md)
  - [OpenFindingsDto](docs/OpenFindingsDto.md)
  - [OrganizationSummaryDto](docs/OrganizationSummaryDto.md)
+ - [PaginatedActiveDefenseRules](docs/PaginatedActiveDefenseRules.md)
+ - [PaginatedAdversaryIntel](docs/PaginatedAdversaryIntel.md)
  - [PaginatedApiDocumentation](docs/PaginatedApiDocumentation.md)
  - [PaginatedBusinessUnit](docs/PaginatedBusinessUnit.md)
  - [PaginatedClientActivityLog](docs/PaginatedClientActivityLog.md)
@@ -531,6 +558,7 @@ Class | Method | HTTP request | Description
  - [PaginatedSuspiciousDomain](docs/PaginatedSuspiciousDomain.md)
  - [PaginatedTechnologyStatistics](docs/PaginatedTechnologyStatistics.md)
  - [PaginatedUsers](docs/PaginatedUsers.md)
+ - [PaginatedVulnerabilityIntel](docs/PaginatedVulnerabilityIntel.md)
  - [Pagination](docs/Pagination.md)
  - [PointsOfInterest](docs/PointsOfInterest.md)
  - [PointsOfInterestData](docs/PointsOfInterestData.md)
@@ -548,6 +576,8 @@ Class | Method | HTTP request | Description
  - [SetCriticalityDto](docs/SetCriticalityDto.md)
  - [SetCriticalityResponseDto](docs/SetCriticalityResponseDto.md)
  - [SuspiciousDomain](docs/SuspiciousDomain.md)
+ - [TargetIndustry](docs/TargetIndustry.md)
+ - [TargetIndustrySummary](docs/TargetIndustrySummary.md)
  - [Technology](docs/Technology.md)
  - [TechnologyStatistic](docs/TechnologyStatistic.md)
  - [ThreatActorDto](docs/ThreatActorDto.md)
@@ -572,6 +602,13 @@ Class | Method | HTTP request | Description
  - [UpdateOrganisationWhitelistIpDto](docs/UpdateOrganisationWhitelistIpDto.md)
  - [UpdateUserResponse](docs/UpdateUserResponse.md)
  - [UserDetailData](docs/UserDetailData.md)
+ - [VictimCountry](docs/VictimCountry.md)
+ - [VictimCountrySummary](docs/VictimCountrySummary.md)
+ - [VulnCvssV3XMetrics](docs/VulnCvssV3XMetrics.md)
+ - [VulnDetailKev](docs/VulnDetailKev.md)
+ - [VulnEpss](docs/VulnEpss.md)
+ - [VulnerabilityIntel](docs/VulnerabilityIntel.md)
+ - [VulnerabilityIntelDetails](docs/VulnerabilityIntelDetails.md)
  - [WhitelistIpData](docs/WhitelistIpData.md)
  - [WhitelistIpDataSingle](docs/WhitelistIpDataSingle.md)
  - [WhitelistIpListData](docs/WhitelistIpListData.md)

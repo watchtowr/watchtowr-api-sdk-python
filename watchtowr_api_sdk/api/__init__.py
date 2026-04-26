@@ -2,8 +2,10 @@
 
 # import apis into api package
 from watchtowr_api_sdk.api.api_documentation_api import APIDocumentationApi
+from watchtowr_api_sdk.api.active_defense_library_api import ActiveDefenseLibraryApi
 from watchtowr_api_sdk.api.activity_log_api import ActivityLogApi
 from watchtowr_api_sdk.api.add_asset_api import AddAssetApi
+from watchtowr_api_sdk.api.adversary_intelligence_api import AdversaryIntelligenceApi
 from watchtowr_api_sdk.api.business_unit_api import BusinessUnitApi
 from watchtowr_api_sdk.api.capability_search_api import CapabilitySearchApi
 from watchtowr_api_sdk.api.certificates_api import CertificatesApi
@@ -32,4 +34,5 @@ from watchtowr_api_sdk.api.source_ip_addresses_api import SourceIPAddressesApi
 from watchtowr_api_sdk.api.subdomains_api import SubdomainsApi
 from watchtowr_api_sdk.api.suspicious_domains_api import SuspiciousDomainsApi
 from watchtowr_api_sdk.api.user_management_api import UserManagementApi
+from watchtowr_api_sdk.api.vulnerability_intelligence_api import VulnerabilityIntelligenceApi
 

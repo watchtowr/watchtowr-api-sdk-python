@@ -4,7 +4,7 @@
 """
     Complete watchTowr Platform API Documentation
 
-    The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Automated Red Teaming API       * Adversary Sight API       * Intelligence API       * Platform API 
+    The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Automated Red Teaming API       * Adversary Sight API       * Intelligence API       * Active Defense API       * Platform API 
 
     The version of the OpenAPI document: 1.0
     Contact: support@watchTowr.io
@@ -14,6 +14,13 @@
 """  # noqa: E501
 
 # import models into model package
+from watchtowr_api_sdk.models.active_defense_rule import ActiveDefenseRule
+from watchtowr_api_sdk.models.active_defense_rule_details import ActiveDefenseRuleDetails
+from watchtowr_api_sdk.models.active_defense_rule_kev_status import ActiveDefenseRuleKevStatus
+from watchtowr_api_sdk.models.active_defense_rule_template import ActiveDefenseRuleTemplate
+from watchtowr_api_sdk.models.active_defense_rule_vulnerability import ActiveDefenseRuleVulnerability
+from watchtowr_api_sdk.models.adversary_intel import AdversaryIntel
+from watchtowr_api_sdk.models.adversary_intel_details import AdversaryIntelDetails
 from watchtowr_api_sdk.models.asset import Asset
 from watchtowr_api_sdk.models.asset_and_business_unit_already_associated_conflict_error_response import AssetAndBusinessUnitAlreadyAssociatedConflictErrorResponse
 from watchtowr_api_sdk.models.asset_and_business_unit_not_associated_conflict_error_response import AssetAndBusinessUnitNotAssociatedConflictErrorResponse
@@ -21,12 +28,17 @@ from watchtowr_api_sdk.models.asset_business_unit_ids_dto import AssetBusinessUn
 from watchtowr_api_sdk.models.assets_list_response import AssetsListResponse
 from watchtowr_api_sdk.models.attack_surface_dto import AttackSurfaceDto
 from watchtowr_api_sdk.models.attack_surface_resiliency_dto import AttackSurfaceResiliencyDto
+from watchtowr_api_sdk.models.attacker_types import AttackerTypes
 from watchtowr_api_sdk.models.bad_request_response import BadRequestResponse
 from watchtowr_api_sdk.models.capability_search_data import CapabilitySearchData
 from watchtowr_api_sdk.models.capability_search_hunt_item import CapabilitySearchHuntItem
 from watchtowr_api_sdk.models.capability_search_response import CapabilitySearchResponse
+from watchtowr_api_sdk.models.capec_pattern import CapecPattern
 from watchtowr_api_sdk.models.causer import Causer
+from watchtowr_api_sdk.models.client_active_defense_rule_data import ClientActiveDefenseRuleData
+from watchtowr_api_sdk.models.client_active_defense_rule_provider_data import ClientActiveDefenseRuleProviderData
 from watchtowr_api_sdk.models.client_activity_log import ClientActivityLog
+from watchtowr_api_sdk.models.client_adversary_intel_data import ClientAdversaryIntelData
 from watchtowr_api_sdk.models.client_api_documentation import ClientApiDocumentation
 from watchtowr_api_sdk.models.client_api_documentation_asset import ClientApiDocumentationAsset
 from watchtowr_api_sdk.models.client_asset_dns_record import ClientAssetDnsRecord
@@ -101,6 +113,7 @@ from watchtowr_api_sdk.models.client_suspicious_domain_data import ClientSuspici
 from watchtowr_api_sdk.models.client_user import ClientUser
 from watchtowr_api_sdk.models.client_user_detail import ClientUserDetail
 from watchtowr_api_sdk.models.client_user_detail_business_units_inner import ClientUserDetailBusinessUnitsInner
+from watchtowr_api_sdk.models.client_vulnerability_intel_data import ClientVulnerabilityIntelData
 from watchtowr_api_sdk.models.create_client_business_unit_dto import CreateClientBusinessUnitDto
 from watchtowr_api_sdk.models.create_client_business_unit_rule_dto import CreateClientBusinessUnitRuleDto
 from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto
@@ -118,6 +131,7 @@ from watchtowr_api_sdk.models.filter_by_business_unit_input import FilterByBusin
 from watchtowr_api_sdk.models.finding_list_response import FindingListResponse
 from watchtowr_api_sdk.models.finding_retest_response_dto import FindingRetestResponseDto
 from watchtowr_api_sdk.models.findings_summary_dto import FindingsSummaryDto
+from watchtowr_api_sdk.models.first_reported_by_attacker_summary import FirstReportedByAttackerSummary
 from watchtowr_api_sdk.models.forbidden_response import ForbiddenResponse
 from watchtowr_api_sdk.models.get_asset_api_documentation_changelog200_response import GetAssetApiDocumentationChangelog200Response
 from watchtowr_api_sdk.models.get_asset_cloud_asset_changelog200_response import GetAssetCloudAssetChangelog200Response
@@ -143,18 +157,23 @@ from watchtowr_api_sdk.models.invite_client_users_body_dto import InviteClientUs
 from watchtowr_api_sdk.models.invite_user_response import InviteUserResponse
 from watchtowr_api_sdk.models.invite_user_response_data import InviteUserResponseData
 from watchtowr_api_sdk.models.ip_range_values import IpRangeValues
+from watchtowr_api_sdk.models.kb_entry_cwe import KbEntryCwe
+from watchtowr_api_sdk.models.kev_types import KevTypes
 from watchtowr_api_sdk.models.kill_switch_disabled_error import KillSwitchDisabledError
 from watchtowr_api_sdk.models.kill_switch_forbidden_error import KillSwitchForbiddenError
 from watchtowr_api_sdk.models.kill_switch_status_data import KillSwitchStatusData
 from watchtowr_api_sdk.models.kill_switch_status_response import KillSwitchStatusResponse
 from watchtowr_api_sdk.models.latest_executed_hunt_dto import LatestExecutedHuntDto
 from watchtowr_api_sdk.models.link import Link
+from watchtowr_api_sdk.models.media import Media
 from watchtowr_api_sdk.models.meta import Meta
 from watchtowr_api_sdk.models.mttr_metrics_dto import MttrMetricsDto
 from watchtowr_api_sdk.models.not_found import NotFound
 from watchtowr_api_sdk.models.not_found_response import NotFoundResponse
 from watchtowr_api_sdk.models.open_findings_dto import OpenFindingsDto
 from watchtowr_api_sdk.models.organization_summary_dto import OrganizationSummaryDto
+from watchtowr_api_sdk.models.paginated_active_defense_rules import PaginatedActiveDefenseRules
+from watchtowr_api_sdk.models.paginated_adversary_intel import PaginatedAdversaryIntel
 from watchtowr_api_sdk.models.paginated_api_documentation import PaginatedApiDocumentation
 from watchtowr_api_sdk.models.paginated_business_unit import PaginatedBusinessUnit
 from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog
@@ -184,6 +203,7 @@ from watchtowr_api_sdk.models.paginated_service_listing import PaginatedServiceL
 from watchtowr_api_sdk.models.paginated_suspicious_domain import PaginatedSuspiciousDomain
 from watchtowr_api_sdk.models.paginated_technology_statistics import PaginatedTechnologyStatistics
 from watchtowr_api_sdk.models.paginated_users import PaginatedUsers
+from watchtowr_api_sdk.models.paginated_vulnerability_intel import PaginatedVulnerabilityIntel
 from watchtowr_api_sdk.models.pagination import Pagination
 from watchtowr_api_sdk.models.points_of_interest import PointsOfInterest
 from watchtowr_api_sdk.models.points_of_interest_data import PointsOfInterestData
@@ -201,6 +221,8 @@ from watchtowr_api_sdk.models.set_criticality_data_response_dto import SetCritic
 from watchtowr_api_sdk.models.set_criticality_dto import SetCriticalityDto
 from watchtowr_api_sdk.models.set_criticality_response_dto import SetCriticalityResponseDto
 from watchtowr_api_sdk.models.suspicious_domain import SuspiciousDomain
+from watchtowr_api_sdk.models.target_industry import TargetIndustry
+from watchtowr_api_sdk.models.target_industry_summary import TargetIndustrySummary
 from watchtowr_api_sdk.models.technology import Technology
 from watchtowr_api_sdk.models.technology_statistic import TechnologyStatistic
 from watchtowr_api_sdk.models.threat_actor_dto import ThreatActorDto
@@ -225,6 +247,13 @@ from watchtowr_api_sdk.models.update_kill_switch_response import UpdateKillSwitc
 from watchtowr_api_sdk.models.update_organisation_whitelist_ip_dto import UpdateOrganisationWhitelistIpDto
 from watchtowr_api_sdk.models.update_user_response import UpdateUserResponse
 from watchtowr_api_sdk.models.user_detail_data import UserDetailData
+from watchtowr_api_sdk.models.victim_country import VictimCountry
+from watchtowr_api_sdk.models.victim_country_summary import VictimCountrySummary
+from watchtowr_api_sdk.models.vuln_cvss_v3_x_metrics import VulnCvssV3XMetrics
+from watchtowr_api_sdk.models.vuln_detail_kev import VulnDetailKev
+from watchtowr_api_sdk.models.vuln_epss import VulnEpss
+from watchtowr_api_sdk.models.vulnerability_intel import VulnerabilityIntel
+from watchtowr_api_sdk.models.vulnerability_intel_details import VulnerabilityIntelDetails
 from watchtowr_api_sdk.models.whitelist_ip_data import WhitelistIpData
 from watchtowr_api_sdk.models.whitelist_ip_data_single import WhitelistIpDataSingle
 from watchtowr_api_sdk.models.whitelist_ip_list_data import WhitelistIpListData

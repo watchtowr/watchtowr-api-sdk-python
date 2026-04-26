@@ -5,7 +5,7 @@
 """
     Complete watchTowr Platform API Documentation
 
-    The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Automated Red Teaming API       * Adversary Sight API       * Intelligence API       * Platform API 
+    The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Automated Red Teaming API       * Adversary Sight API       * Intelligence API       * Active Defense API       * Platform API 
 
     The version of the OpenAPI document: 1.0
     Contact: support@watchTowr.io
@@ -20,8 +20,10 @@ __version__ = "1.0.0"
 # Define package exports
 __all__ = [
     "APIDocumentationApi",
+    "ActiveDefenseLibraryApi",
     "ActivityLogApi",
     "AddAssetApi",
+    "AdversaryIntelligenceApi",
     "BusinessUnitApi",
     "CapabilitySearchApi",
     "CertificatesApi",
@@ -50,6 +52,7 @@ __all__ = [
     "SubdomainsApi",
     "SuspiciousDomainsApi",
     "UserManagementApi",
+    "VulnerabilityIntelligenceApi",
     "ApiResponse",
     "ApiClient",
     "Configuration",
@@ -59,6 +62,13 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
+    "ActiveDefenseRule",
+    "ActiveDefenseRuleDetails",
+    "ActiveDefenseRuleKevStatus",
+    "ActiveDefenseRuleTemplate",
+    "ActiveDefenseRuleVulnerability",
+    "AdversaryIntel",
+    "AdversaryIntelDetails",
     "Asset",
     "AssetAndBusinessUnitAlreadyAssociatedConflictErrorResponse",
     "AssetAndBusinessUnitNotAssociatedConflictErrorResponse",
@@ -66,12 +76,17 @@ __all__ = [
     "AssetsListResponse",
     "AttackSurfaceDto",
     "AttackSurfaceResiliencyDto",
+    "AttackerTypes",
     "BadRequestResponse",
     "CapabilitySearchData",
     "CapabilitySearchHuntItem",
     "CapabilitySearchResponse",
+    "CapecPattern",
     "Causer",
+    "ClientActiveDefenseRuleData",
+    "ClientActiveDefenseRuleProviderData",
     "ClientActivityLog",
+    "ClientAdversaryIntelData",
     "ClientApiDocumentation",
     "ClientApiDocumentationAsset",
     "ClientAssetDnsRecord",
@@ -146,6 +161,7 @@ __all__ = [
     "ClientUser",
     "ClientUserDetail",
     "ClientUserDetailBusinessUnitsInner",
+    "ClientVulnerabilityIntelData",
     "CreateClientBusinessUnitDto",
     "CreateClientBusinessUnitRuleDto",
     "CreateClientCustomPropertyDto",
@@ -163,6 +179,7 @@ __all__ = [
     "FindingListResponse",
     "FindingRetestResponseDto",
     "FindingsSummaryDto",
+    "FirstReportedByAttackerSummary",
     "ForbiddenResponse",
     "GetAssetApiDocumentationChangelog200Response",
     "GetAssetCloudAssetChangelog200Response",
@@ -188,18 +205,23 @@ __all__ = [
     "InviteUserResponse",
     "InviteUserResponseData",
     "IpRangeValues",
+    "KbEntryCwe",
+    "KevTypes",
     "KillSwitchDisabledError",
     "KillSwitchForbiddenError",
     "KillSwitchStatusData",
     "KillSwitchStatusResponse",
     "LatestExecutedHuntDto",
     "Link",
+    "Media",
     "Meta",
     "MttrMetricsDto",
     "NotFound",
     "NotFoundResponse",
     "OpenFindingsDto",
     "OrganizationSummaryDto",
+    "PaginatedActiveDefenseRules",
+    "PaginatedAdversaryIntel",
     "PaginatedApiDocumentation",
     "PaginatedBusinessUnit",
     "PaginatedClientActivityLog",
@@ -229,6 +251,7 @@ __all__ = [
     "PaginatedSuspiciousDomain",
     "PaginatedTechnologyStatistics",
     "PaginatedUsers",
+    "PaginatedVulnerabilityIntel",
     "Pagination",
     "PointsOfInterest",
     "PointsOfInterestData",
@@ -246,6 +269,8 @@ __all__ = [
     "SetCriticalityDto",
     "SetCriticalityResponseDto",
     "SuspiciousDomain",
+    "TargetIndustry",
+    "TargetIndustrySummary",
     "Technology",
     "TechnologyStatistic",
     "ThreatActorDto",
@@ -270,6 +295,13 @@ __all__ = [
     "UpdateOrganisationWhitelistIpDto",
     "UpdateUserResponse",
     "UserDetailData",
+    "VictimCountry",
+    "VictimCountrySummary",
+    "VulnCvssV3XMetrics",
+    "VulnDetailKev",
+    "VulnEpss",
+    "VulnerabilityIntel",
+    "VulnerabilityIntelDetails",
     "WhitelistIpData",
     "WhitelistIpDataSingle",
     "WhitelistIpListData",
@@ -284,8 +316,10 @@ __all__ = [
 
 # import apis into sdk package
 from watchtowr_api_sdk.api.api_documentation_api import APIDocumentationApi as APIDocumentationApi
+from watchtowr_api_sdk.api.active_defense_library_api import ActiveDefenseLibraryApi as ActiveDefenseLibraryApi
 from watchtowr_api_sdk.api.activity_log_api import ActivityLogApi as ActivityLogApi
 from watchtowr_api_sdk.api.add_asset_api import AddAssetApi as AddAssetApi
+from watchtowr_api_sdk.api.adversary_intelligence_api import AdversaryIntelligenceApi as AdversaryIntelligenceApi
 from watchtowr_api_sdk.api.business_unit_api import BusinessUnitApi as BusinessUnitApi
 from watchtowr_api_sdk.api.capability_search_api import CapabilitySearchApi as CapabilitySearchApi
 from watchtowr_api_sdk.api.certificates_api import CertificatesApi as CertificatesApi
@@ -314,6 +348,7 @@ from watchtowr_api_sdk.api.source_ip_addresses_api import SourceIPAddressesApi a
 from watchtowr_api_sdk.api.subdomains_api import SubdomainsApi as SubdomainsApi
 from watchtowr_api_sdk.api.suspicious_domains_api import SuspiciousDomainsApi as SuspiciousDomainsApi
 from watchtowr_api_sdk.api.user_management_api import UserManagementApi as UserManagementApi
+from watchtowr_api_sdk.api.vulnerability_intelligence_api import VulnerabilityIntelligenceApi as VulnerabilityIntelligenceApi
 
 # import ApiClient
 from watchtowr_api_sdk.api_response import ApiResponse as ApiResponse
@@ -327,6 +362,13 @@ from watchtowr_api_sdk.exceptions import ApiAttributeError as ApiAttributeError
 from watchtowr_api_sdk.exceptions import ApiException as ApiException
 
 # import models into sdk package
+from watchtowr_api_sdk.models.active_defense_rule import ActiveDefenseRule as ActiveDefenseRule
+from watchtowr_api_sdk.models.active_defense_rule_details import ActiveDefenseRuleDetails as ActiveDefenseRuleDetails
+from watchtowr_api_sdk.models.active_defense_rule_kev_status import ActiveDefenseRuleKevStatus as ActiveDefenseRuleKevStatus
+from watchtowr_api_sdk.models.active_defense_rule_template import ActiveDefenseRuleTemplate as ActiveDefenseRuleTemplate
+from watchtowr_api_sdk.models.active_defense_rule_vulnerability import ActiveDefenseRuleVulnerability as ActiveDefenseRuleVulnerability
+from watchtowr_api_sdk.models.adversary_intel import AdversaryIntel as AdversaryIntel
+from watchtowr_api_sdk.models.adversary_intel_details import AdversaryIntelDetails as AdversaryIntelDetails
 from watchtowr_api_sdk.models.asset import Asset as Asset
 from watchtowr_api_sdk.models.asset_and_business_unit_already_associated_conflict_error_response import AssetAndBusinessUnitAlreadyAssociatedConflictErrorResponse as AssetAndBusinessUnitAlreadyAssociatedConflictErrorResponse
 from watchtowr_api_sdk.models.asset_and_business_unit_not_associated_conflict_error_response import AssetAndBusinessUnitNotAssociatedConflictErrorResponse as AssetAndBusinessUnitNotAssociatedConflictErrorResponse
@@ -334,12 +376,17 @@ from watchtowr_api_sdk.models.asset_business_unit_ids_dto import AssetBusinessUn
 from watchtowr_api_sdk.models.assets_list_response import AssetsListResponse as AssetsListResponse
 from watchtowr_api_sdk.models.attack_surface_dto import AttackSurfaceDto as AttackSurfaceDto
 from watchtowr_api_sdk.models.attack_surface_resiliency_dto import AttackSurfaceResiliencyDto as AttackSurfaceResiliencyDto
+from watchtowr_api_sdk.models.attacker_types import AttackerTypes as AttackerTypes
 from watchtowr_api_sdk.models.bad_request_response import BadRequestResponse as BadRequestResponse
 from watchtowr_api_sdk.models.capability_search_data import CapabilitySearchData as CapabilitySearchData
 from watchtowr_api_sdk.models.capability_search_hunt_item import CapabilitySearchHuntItem as CapabilitySearchHuntItem
 from watchtowr_api_sdk.models.capability_search_response import CapabilitySearchResponse as CapabilitySearchResponse
+from watchtowr_api_sdk.models.capec_pattern import CapecPattern as CapecPattern
 from watchtowr_api_sdk.models.causer import Causer as Causer
+from watchtowr_api_sdk.models.client_active_defense_rule_data import ClientActiveDefenseRuleData as ClientActiveDefenseRuleData
+from watchtowr_api_sdk.models.client_active_defense_rule_provider_data import ClientActiveDefenseRuleProviderData as ClientActiveDefenseRuleProviderData
 from watchtowr_api_sdk.models.client_activity_log import ClientActivityLog as ClientActivityLog
+from watchtowr_api_sdk.models.client_adversary_intel_data import ClientAdversaryIntelData as ClientAdversaryIntelData
 from watchtowr_api_sdk.models.client_api_documentation import ClientApiDocumentation as ClientApiDocumentation
 from watchtowr_api_sdk.models.client_api_documentation_asset import ClientApiDocumentationAsset as ClientApiDocumentationAsset
 from watchtowr_api_sdk.models.client_asset_dns_record import ClientAssetDnsRecord as ClientAssetDnsRecord
@@ -414,6 +461,7 @@ from watchtowr_api_sdk.models.client_suspicious_domain_data import ClientSuspici
 from watchtowr_api_sdk.models.client_user import ClientUser as ClientUser
 from watchtowr_api_sdk.models.client_user_detail import ClientUserDetail as ClientUserDetail
 from watchtowr_api_sdk.models.client_user_detail_business_units_inner import ClientUserDetailBusinessUnitsInner as ClientUserDetailBusinessUnitsInner
+from watchtowr_api_sdk.models.client_vulnerability_intel_data import ClientVulnerabilityIntelData as ClientVulnerabilityIntelData
 from watchtowr_api_sdk.models.create_client_business_unit_dto import CreateClientBusinessUnitDto as CreateClientBusinessUnitDto
 from watchtowr_api_sdk.models.create_client_business_unit_rule_dto import CreateClientBusinessUnitRuleDto as CreateClientBusinessUnitRuleDto
 from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto as CreateClientCustomPropertyDto
@@ -431,6 +479,7 @@ from watchtowr_api_sdk.models.filter_by_business_unit_input import FilterByBusin
 from watchtowr_api_sdk.models.finding_list_response import FindingListResponse as FindingListResponse
 from watchtowr_api_sdk.models.finding_retest_response_dto import FindingRetestResponseDto as FindingRetestResponseDto
 from watchtowr_api_sdk.models.findings_summary_dto import FindingsSummaryDto as FindingsSummaryDto
+from watchtowr_api_sdk.models.first_reported_by_attacker_summary import FirstReportedByAttackerSummary as FirstReportedByAttackerSummary
 from watchtowr_api_sdk.models.forbidden_response import ForbiddenResponse as ForbiddenResponse
 from watchtowr_api_sdk.models.get_asset_api_documentation_changelog200_response import GetAssetApiDocumentationChangelog200Response as GetAssetApiDocumentationChangelog200Response
 from watchtowr_api_sdk.models.get_asset_cloud_asset_changelog200_response import GetAssetCloudAssetChangelog200Response as GetAssetCloudAssetChangelog200Response
@@ -456,18 +505,23 @@ from watchtowr_api_sdk.models.invite_client_users_body_dto import InviteClientUs
 from watchtowr_api_sdk.models.invite_user_response import InviteUserResponse as InviteUserResponse
 from watchtowr_api_sdk.models.invite_user_response_data import InviteUserResponseData as InviteUserResponseData
 from watchtowr_api_sdk.models.ip_range_values import IpRangeValues as IpRangeValues
+from watchtowr_api_sdk.models.kb_entry_cwe import KbEntryCwe as KbEntryCwe
+from watchtowr_api_sdk.models.kev_types import KevTypes as KevTypes
 from watchtowr_api_sdk.models.kill_switch_disabled_error import KillSwitchDisabledError as KillSwitchDisabledError
 from watchtowr_api_sdk.models.kill_switch_forbidden_error import KillSwitchForbiddenError as KillSwitchForbiddenError
 from watchtowr_api_sdk.models.kill_switch_status_data import KillSwitchStatusData as KillSwitchStatusData
 from watchtowr_api_sdk.models.kill_switch_status_response import KillSwitchStatusResponse as KillSwitchStatusResponse
 from watchtowr_api_sdk.models.latest_executed_hunt_dto import LatestExecutedHuntDto as LatestExecutedHuntDto
 from watchtowr_api_sdk.models.link import Link as Link
+from watchtowr_api_sdk.models.media import Media as Media
 from watchtowr_api_sdk.models.meta import Meta as Meta
 from watchtowr_api_sdk.models.mttr_metrics_dto import MttrMetricsDto as MttrMetricsDto
 from watchtowr_api_sdk.models.not_found import NotFound as NotFound
 from watchtowr_api_sdk.models.not_found_response import NotFoundResponse as NotFoundResponse
 from watchtowr_api_sdk.models.open_findings_dto import OpenFindingsDto as OpenFindingsDto
 from watchtowr_api_sdk.models.organization_summary_dto import OrganizationSummaryDto as OrganizationSummaryDto
+from watchtowr_api_sdk.models.paginated_active_defense_rules import PaginatedActiveDefenseRules as PaginatedActiveDefenseRules
+from watchtowr_api_sdk.models.paginated_adversary_intel import PaginatedAdversaryIntel as PaginatedAdversaryIntel
 from watchtowr_api_sdk.models.paginated_api_documentation import PaginatedApiDocumentation as PaginatedApiDocumentation
 from watchtowr_api_sdk.models.paginated_business_unit import PaginatedBusinessUnit as PaginatedBusinessUnit
 from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog as PaginatedClientActivityLog
@@ -497,6 +551,7 @@ from watchtowr_api_sdk.models.paginated_service_listing import PaginatedServiceL
 from watchtowr_api_sdk.models.paginated_suspicious_domain import PaginatedSuspiciousDomain as PaginatedSuspiciousDomain
 from watchtowr_api_sdk.models.paginated_technology_statistics import PaginatedTechnologyStatistics as PaginatedTechnologyStatistics
 from watchtowr_api_sdk.models.paginated_users import PaginatedUsers as PaginatedUsers
+from watchtowr_api_sdk.models.paginated_vulnerability_intel import PaginatedVulnerabilityIntel as PaginatedVulnerabilityIntel
 from watchtowr_api_sdk.models.pagination import Pagination as Pagination
 from watchtowr_api_sdk.models.points_of_interest import PointsOfInterest as PointsOfInterest
 from watchtowr_api_sdk.models.points_of_interest_data import PointsOfInterestData as PointsOfInterestData
@@ -514,6 +569,8 @@ from watchtowr_api_sdk.models.set_criticality_data_response_dto import SetCritic
 from watchtowr_api_sdk.models.set_criticality_dto import SetCriticalityDto as SetCriticalityDto
 from watchtowr_api_sdk.models.set_criticality_response_dto import SetCriticalityResponseDto as SetCriticalityResponseDto
 from watchtowr_api_sdk.models.suspicious_domain import SuspiciousDomain as SuspiciousDomain
+from watchtowr_api_sdk.models.target_industry import TargetIndustry as TargetIndustry
+from watchtowr_api_sdk.models.target_industry_summary import TargetIndustrySummary as TargetIndustrySummary
 from watchtowr_api_sdk.models.technology import Technology as Technology
 from watchtowr_api_sdk.models.technology_statistic import TechnologyStatistic as TechnologyStatistic
 from watchtowr_api_sdk.models.threat_actor_dto import ThreatActorDto as ThreatActorDto
@@ -538,6 +595,13 @@ from watchtowr_api_sdk.models.update_kill_switch_response import UpdateKillSwitc
 from watchtowr_api_sdk.models.update_organisation_whitelist_ip_dto import UpdateOrganisationWhitelistIpDto as UpdateOrganisationWhitelistIpDto
 from watchtowr_api_sdk.models.update_user_response import UpdateUserResponse as UpdateUserResponse
 from watchtowr_api_sdk.models.user_detail_data import UserDetailData as UserDetailData
+from watchtowr_api_sdk.models.victim_country import VictimCountry as VictimCountry
+from watchtowr_api_sdk.models.victim_country_summary import VictimCountrySummary as VictimCountrySummary
+from watchtowr_api_sdk.models.vuln_cvss_v3_x_metrics import VulnCvssV3XMetrics as VulnCvssV3XMetrics
+from watchtowr_api_sdk.models.vuln_detail_kev import VulnDetailKev as VulnDetailKev
+from watchtowr_api_sdk.models.vuln_epss import VulnEpss as VulnEpss
+from watchtowr_api_sdk.models.vulnerability_intel import VulnerabilityIntel as VulnerabilityIntel
+from watchtowr_api_sdk.models.vulnerability_intel_details import VulnerabilityIntelDetails as VulnerabilityIntelDetails
 from watchtowr_api_sdk.models.whitelist_ip_data import WhitelistIpData as WhitelistIpData
 from watchtowr_api_sdk.models.whitelist_ip_data_single import WhitelistIpDataSingle as WhitelistIpDataSingle
 from watchtowr_api_sdk.models.whitelist_ip_list_data import WhitelistIpListData as WhitelistIpListData

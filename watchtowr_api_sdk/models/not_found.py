@@ -3,7 +3,7 @@
 """
     Complete watchTowr Platform API Documentation
 
-    The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Automated Red Teaming API       * Adversary Sight API       * Intelligence API       * Platform API 
+    The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Automated Red Teaming API       * Adversary Sight API       * Intelligence API       * Active Defense API       * Platform API 
 
     The version of the OpenAPI document: 1.0
     Contact: support@watchTowr.io
@@ -28,8 +28,8 @@ class NotFound(BaseModel):
     """
     NotFound
     """ # noqa: E501
-    message: StrictStr = Field(description="Error message")
-    status_code: StrictFloat = Field(description="HTTP status code", alias="statusCode")
+    message: StrictStr
+    status_code: StrictFloat = Field(alias="statusCode")
     __properties: ClassVar[List[str]] = ["message", "statusCode"]
 
     model_config = ConfigDict(
