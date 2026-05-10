@@ -41,7 +41,9 @@ class ClientFindingRetestHistory(BaseModel):
     completed_at: Optional[Dict[str, Any]] = Field(description="Date and time when the retest was completed", alias="completedAt")
     updated_at: datetime = Field(description="Date and time when the retest was last updated", alias="updatedAt")
     created_at: datetime = Field(description="Creation date", alias="createdAt")
-    __properties: ClassVar[List[str]] = ["id", "finding", "asset", "triggeredBy", "currentRetestStatus", "startedAt", "completedAt", "updatedAt", "createdAt"]
+    attempt_number: Optional[StrictFloat] = Field(default=None, description="Retest attempt number for this finding", alias="attemptNumber")
+    days_open_before_retest: Optional[StrictFloat] = Field(default=None, description="Number of days the finding was open before this retest was triggered", alias="daysOpenBeforeRetest")
+    __properties: ClassVar[List[str]] = ["id", "finding", "asset", "triggeredBy", "currentRetestStatus", "startedAt", "completedAt", "updatedAt", "createdAt", "attemptNumber", "daysOpenBeforeRetest"]
 
     @field_validator('current_retest_status')
     def current_retest_status_validate_enum(cls, value):
@@ -143,7 +145,9 @@ class ClientFindingRetestHistory(BaseModel):
             "startedAt": obj.get("startedAt"),
             "completedAt": obj.get("completedAt"),
             "updatedAt": obj.get("updatedAt"),
-            "createdAt": obj.get("createdAt")
+            "createdAt": obj.get("createdAt"),
+            "attemptNumber": obj.get("attemptNumber"),
+            "daysOpenBeforeRetest": obj.get("daysOpenBeforeRetest")
         })
         return _obj
 

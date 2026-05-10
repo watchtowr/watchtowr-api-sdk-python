@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **completed_at** | **object** | Date and time when the retest was completed | 
 **updated_at** | **datetime** | Date and time when the retest was last updated | 
 **created_at** | **datetime** | Creation date | 
+**attempt_number** | **float** | Retest attempt number for this finding | [optional] 
+**days_open_before_retest** | **float** | Number of days the finding was open before this retest was triggered | [optional] 
 
 ## Example
 

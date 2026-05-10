@@ -882,7 +882,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter findings created before a given date and time. (optional)
     updated_from = '2013-10-20T19:20:30+01:00' # datetime | Filter findings updated after a given date and time. (optional)
     updated_to = '2013-10-20T19:20:30+01:00' # datetime | Filter findings updated before a given date and time. (optional)
-    statuses = 'confirmed,unconfirmed,remediated,risk-accepted,closed,asset-no-longer-tracked' # str | Filter findings by a list of comma separated statuses they're tagged with. (optional)
+    statuses = 'confirmed,remediated,risk-accepted,closed,asset-no-longer-tracked' # str | Filter findings by a list of comma separated statuses they're tagged with. (optional)
     business_unit_ids = '1,2,3' # str | Filter findings by a list of comma separated business unit IDs that they're related to. (optional)
     finding_impact_threshold = 'finding_impact_threshold_example' # str | Impact Setting: * High - Prioritized Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organization's security posture. * All - All Findings, a broader range of findings that may not directly impact your organization's security posture, but may represent deviations from best practices. (optional)
     finding_title = 'Valid%20Credentials%20Discovered' # str | Search findings by title contents. (optional)

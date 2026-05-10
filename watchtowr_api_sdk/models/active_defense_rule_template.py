@@ -35,8 +35,8 @@ class ActiveDefenseRuleTemplate(BaseModel):
     @field_validator('type')
     def type_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['cloudflare', 'aws_cfn', 'fastly', 'akamai_waf', 'google_cloud_armor', 'mod_security', 'microsoft_azure_waf']):
-            raise ValueError("must be one of enum values ('cloudflare', 'aws_cfn', 'fastly', 'akamai_waf', 'google_cloud_armor', 'mod_security', 'microsoft_azure_waf')")
+        if value not in set(['cloudflare', 'aws_cfn', 'fastly', 'akamai_waf', 'google_cloud_armor', 'mod_security', 'azure_appgw']):
+            raise ValueError("must be one of enum values ('cloudflare', 'aws_cfn', 'fastly', 'akamai_waf', 'google_cloud_armor', 'mod_security', 'azure_appgw')")
         return value
 
     model_config = ConfigDict(

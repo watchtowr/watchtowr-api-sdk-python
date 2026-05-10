@@ -46,7 +46,9 @@ class TestPaginatedClientFindingRetestHistory(unittest.TestCase):
                         started_at = '2023-01-01T12:00Z', 
                         completed_at = 2023-01-01T13:00:00.000Z, 
                         updated_at = '2023-01-01T12:30Z', 
-                        created_at = '2023-01-01T12:00Z', )
+                        created_at = '2023-01-01T12:00Z', 
+                        attempt_number = 2, 
+                        days_open_before_retest = 14, )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
@@ -63,7 +65,9 @@ class TestPaginatedClientFindingRetestHistory(unittest.TestCase):
                         started_at = '2023-01-01T12:00Z', 
                         completed_at = 2023-01-01T13:00:00.000Z, 
                         updated_at = '2023-01-01T12:30Z', 
-                        created_at = '2023-01-01T12:00Z', )
+                        created_at = '2023-01-01T12:00Z', 
+                        attempt_number = 2, 
+                        days_open_before_retest = 14, )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_list_finding_retest_history**
-> PaginatedClientFindingRetestHistory get_list_finding_retest_history(page=page, page_size=page_size, business_unit_ids=business_unit_ids, sort_by=sort_by, sort_order=sort_order)
+> PaginatedClientFindingRetestHistory get_list_finding_retest_history(page=page, page_size=page_size, business_unit_ids=business_unit_ids, sort_by=sort_by, sort_order=sort_order, severities=severities, attempts=attempts, retest_statuses=retest_statuses, finding_title=finding_title, asset_name=asset_name, finding_id=finding_id, triggered_by=triggered_by, retest_start_date_from=retest_start_date_from, retest_start_date_to=retest_start_date_to)
 
 List Finding Retest History
 
@@ -49,10 +49,19 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     business_unit_ids = '1,2,3' # str | Filter assets by a list of comma separated business unit IDs that the asset is related to. (optional)
     sort_by = created_at # str | Sort by field (optional) (default to created_at)
     sort_order = DESC # str | Sort order (optional) (default to DESC)
+    severities = 'critical,high,medium' # str | Filter retests by a list of comma separated severities they're tagged with. (optional)
+    attempts = 'oneAttempt,multipleAttempts' # str | Filter retests by a list of comma separated attempt types. (optional)
+    retest_statuses = 'remediated,unresolved' # str | Filter retests by a list of comma separated retest statuses. (optional)
+    finding_title = 'SQL Injection' # str | Filter retests by finding title. (optional)
+    asset_name = 'example.com' # str | Filter retests by asset name. (optional)
+    finding_id = 'CORE-1234' # str | Filter retests by finding ID (e.g. CORE-1234 or 1234). (optional)
+    triggered_by = ['triggered_by_example'] # List[str] | Filter retests by a list of comma separated users who triggered them. (optional)
+    retest_start_date_from = '2013-10-20T19:20:30+01:00' # datetime | Filter retests started after a given date and time. (optional)
+    retest_start_date_to = '2013-10-20T19:20:30+01:00' # datetime | Filter retests started before a given date and time. (optional)
 
     try:
         # List Finding Retest History
-        api_response = api_instance.get_list_finding_retest_history(page=page, page_size=page_size, business_unit_ids=business_unit_ids, sort_by=sort_by, sort_order=sort_order)
+        api_response = api_instance.get_list_finding_retest_history(page=page, page_size=page_size, business_unit_ids=business_unit_ids, sort_by=sort_by, sort_order=sort_order, severities=severities, attempts=attempts, retest_statuses=retest_statuses, finding_title=finding_title, asset_name=asset_name, finding_id=finding_id, triggered_by=triggered_by, retest_start_date_from=retest_start_date_from, retest_start_date_to=retest_start_date_to)
         print("The response of FindingRetestHistoryApi->get_list_finding_retest_history:\n")
         pprint(api_response)
     except Exception as e:
@@ -71,6 +80,15 @@ Name | Type | Description  | Notes
  **business_unit_ids** | **str**| Filter assets by a list of comma separated business unit IDs that the asset is related to. | [optional] 
  **sort_by** | **str**| Sort by field | [optional] [default to created_at]
  **sort_order** | **str**| Sort order | [optional] [default to DESC]
+ **severities** | **str**| Filter retests by a list of comma separated severities they&#39;re tagged with. | [optional] 
+ **attempts** | **str**| Filter retests by a list of comma separated attempt types. | [optional] 
+ **retest_statuses** | **str**| Filter retests by a list of comma separated retest statuses. | [optional] 
+ **finding_title** | **str**| Filter retests by finding title. | [optional] 
+ **asset_name** | **str**| Filter retests by asset name. | [optional] 
+ **finding_id** | **str**| Filter retests by finding ID (e.g. CORE-1234 or 1234). | [optional] 
+ **triggered_by** | [**List[str]**](str.md)| Filter retests by a list of comma separated users who triggered them. | [optional] 
+ **retest_start_date_from** | **datetime**| Filter retests started after a given date and time. | [optional] 
+ **retest_start_date_to** | **datetime**| Filter retests started before a given date and time. | [optional] 
 
 ### Return type
 

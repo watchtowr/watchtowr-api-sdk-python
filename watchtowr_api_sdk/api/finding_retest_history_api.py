@@ -16,8 +16,9 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
+from datetime import datetime
 from pydantic import Field, StrictFloat, StrictStr, field_validator
-from typing import Optional
+from typing import List, Optional
 from typing_extensions import Annotated
 from watchtowr_api_sdk.models.paginated_client_finding_retest_history import PaginatedClientFindingRetestHistory
 
@@ -47,6 +48,15 @@ class FindingRetestHistoryApi:
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort by field")] = None,
         sort_order: Annotated[Optional[StrictStr], Field(description="Sort order")] = None,
+        severities: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated severities they're tagged with.")] = None,
+        attempts: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated attempt types.")] = None,
+        retest_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated retest statuses.")] = None,
+        finding_title: Annotated[Optional[StrictStr], Field(description="Filter retests by finding title.")] = None,
+        asset_name: Annotated[Optional[StrictStr], Field(description="Filter retests by asset name.")] = None,
+        finding_id: Annotated[Optional[StrictStr], Field(description="Filter retests by finding ID (e.g. CORE-1234 or 1234).")] = None,
+        triggered_by: Annotated[Optional[List[StrictStr]], Field(description="Filter retests by a list of comma separated users who triggered them.")] = None,
+        retest_start_date_from: Annotated[Optional[datetime], Field(description="Filter retests started after a given date and time.")] = None,
+        retest_start_date_to: Annotated[Optional[datetime], Field(description="Filter retests started before a given date and time.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -74,6 +84,24 @@ class FindingRetestHistoryApi:
         :type sort_by: str
         :param sort_order: Sort order
         :type sort_order: str
+        :param severities: Filter retests by a list of comma separated severities they're tagged with.
+        :type severities: str
+        :param attempts: Filter retests by a list of comma separated attempt types.
+        :type attempts: str
+        :param retest_statuses: Filter retests by a list of comma separated retest statuses.
+        :type retest_statuses: str
+        :param finding_title: Filter retests by finding title.
+        :type finding_title: str
+        :param asset_name: Filter retests by asset name.
+        :type asset_name: str
+        :param finding_id: Filter retests by finding ID (e.g. CORE-1234 or 1234).
+        :type finding_id: str
+        :param triggered_by: Filter retests by a list of comma separated users who triggered them.
+        :type triggered_by: List[str]
+        :param retest_start_date_from: Filter retests started after a given date and time.
+        :type retest_start_date_from: datetime
+        :param retest_start_date_to: Filter retests started before a given date and time.
+        :type retest_start_date_to: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -102,6 +130,15 @@ class FindingRetestHistoryApi:
             business_unit_ids=business_unit_ids,
             sort_by=sort_by,
             sort_order=sort_order,
+            severities=severities,
+            attempts=attempts,
+            retest_statuses=retest_statuses,
+            finding_title=finding_title,
+            asset_name=asset_name,
+            finding_id=finding_id,
+            triggered_by=triggered_by,
+            retest_start_date_from=retest_start_date_from,
+            retest_start_date_to=retest_start_date_to,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -131,6 +168,15 @@ class FindingRetestHistoryApi:
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort by field")] = None,
         sort_order: Annotated[Optional[StrictStr], Field(description="Sort order")] = None,
+        severities: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated severities they're tagged with.")] = None,
+        attempts: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated attempt types.")] = None,
+        retest_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated retest statuses.")] = None,
+        finding_title: Annotated[Optional[StrictStr], Field(description="Filter retests by finding title.")] = None,
+        asset_name: Annotated[Optional[StrictStr], Field(description="Filter retests by asset name.")] = None,
+        finding_id: Annotated[Optional[StrictStr], Field(description="Filter retests by finding ID (e.g. CORE-1234 or 1234).")] = None,
+        triggered_by: Annotated[Optional[List[StrictStr]], Field(description="Filter retests by a list of comma separated users who triggered them.")] = None,
+        retest_start_date_from: Annotated[Optional[datetime], Field(description="Filter retests started after a given date and time.")] = None,
+        retest_start_date_to: Annotated[Optional[datetime], Field(description="Filter retests started before a given date and time.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -158,6 +204,24 @@ class FindingRetestHistoryApi:
         :type sort_by: str
         :param sort_order: Sort order
         :type sort_order: str
+        :param severities: Filter retests by a list of comma separated severities they're tagged with.
+        :type severities: str
+        :param attempts: Filter retests by a list of comma separated attempt types.
+        :type attempts: str
+        :param retest_statuses: Filter retests by a list of comma separated retest statuses.
+        :type retest_statuses: str
+        :param finding_title: Filter retests by finding title.
+        :type finding_title: str
+        :param asset_name: Filter retests by asset name.
+        :type asset_name: str
+        :param finding_id: Filter retests by finding ID (e.g. CORE-1234 or 1234).
+        :type finding_id: str
+        :param triggered_by: Filter retests by a list of comma separated users who triggered them.
+        :type triggered_by: List[str]
+        :param retest_start_date_from: Filter retests started after a given date and time.
+        :type retest_start_date_from: datetime
+        :param retest_start_date_to: Filter retests started before a given date and time.
+        :type retest_start_date_to: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -186,6 +250,15 @@ class FindingRetestHistoryApi:
             business_unit_ids=business_unit_ids,
             sort_by=sort_by,
             sort_order=sort_order,
+            severities=severities,
+            attempts=attempts,
+            retest_statuses=retest_statuses,
+            finding_title=finding_title,
+            asset_name=asset_name,
+            finding_id=finding_id,
+            triggered_by=triggered_by,
+            retest_start_date_from=retest_start_date_from,
+            retest_start_date_to=retest_start_date_to,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -215,6 +288,15 @@ class FindingRetestHistoryApi:
         business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort by field")] = None,
         sort_order: Annotated[Optional[StrictStr], Field(description="Sort order")] = None,
+        severities: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated severities they're tagged with.")] = None,
+        attempts: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated attempt types.")] = None,
+        retest_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated retest statuses.")] = None,
+        finding_title: Annotated[Optional[StrictStr], Field(description="Filter retests by finding title.")] = None,
+        asset_name: Annotated[Optional[StrictStr], Field(description="Filter retests by asset name.")] = None,
+        finding_id: Annotated[Optional[StrictStr], Field(description="Filter retests by finding ID (e.g. CORE-1234 or 1234).")] = None,
+        triggered_by: Annotated[Optional[List[StrictStr]], Field(description="Filter retests by a list of comma separated users who triggered them.")] = None,
+        retest_start_date_from: Annotated[Optional[datetime], Field(description="Filter retests started after a given date and time.")] = None,
+        retest_start_date_to: Annotated[Optional[datetime], Field(description="Filter retests started before a given date and time.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -242,6 +324,24 @@ class FindingRetestHistoryApi:
         :type sort_by: str
         :param sort_order: Sort order
         :type sort_order: str
+        :param severities: Filter retests by a list of comma separated severities they're tagged with.
+        :type severities: str
+        :param attempts: Filter retests by a list of comma separated attempt types.
+        :type attempts: str
+        :param retest_statuses: Filter retests by a list of comma separated retest statuses.
+        :type retest_statuses: str
+        :param finding_title: Filter retests by finding title.
+        :type finding_title: str
+        :param asset_name: Filter retests by asset name.
+        :type asset_name: str
+        :param finding_id: Filter retests by finding ID (e.g. CORE-1234 or 1234).
+        :type finding_id: str
+        :param triggered_by: Filter retests by a list of comma separated users who triggered them.
+        :type triggered_by: List[str]
+        :param retest_start_date_from: Filter retests started after a given date and time.
+        :type retest_start_date_from: datetime
+        :param retest_start_date_to: Filter retests started before a given date and time.
+        :type retest_start_date_to: datetime
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -270,6 +370,15 @@ class FindingRetestHistoryApi:
             business_unit_ids=business_unit_ids,
             sort_by=sort_by,
             sort_order=sort_order,
+            severities=severities,
+            attempts=attempts,
+            retest_statuses=retest_statuses,
+            finding_title=finding_title,
+            asset_name=asset_name,
+            finding_id=finding_id,
+            triggered_by=triggered_by,
+            retest_start_date_from=retest_start_date_from,
+            retest_start_date_to=retest_start_date_to,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -294,6 +403,15 @@ class FindingRetestHistoryApi:
         business_unit_ids,
         sort_by,
         sort_order,
+        severities,
+        attempts,
+        retest_statuses,
+        finding_title,
+        asset_name,
+        finding_id,
+        triggered_by,
+        retest_start_date_from,
+        retest_start_date_to,
         _request_auth,
         _content_type,
         _headers,
@@ -303,6 +421,7 @@ class FindingRetestHistoryApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'triggeredBy': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -335,6 +454,60 @@ class FindingRetestHistoryApi:
         if sort_order is not None:
             
             _query_params.append(('sortOrder', sort_order))
+            
+        if severities is not None:
+            
+            _query_params.append(('severities', severities))
+            
+        if attempts is not None:
+            
+            _query_params.append(('attempts', attempts))
+            
+        if retest_statuses is not None:
+            
+            _query_params.append(('retestStatuses', retest_statuses))
+            
+        if finding_title is not None:
+            
+            _query_params.append(('findingTitle', finding_title))
+            
+        if asset_name is not None:
+            
+            _query_params.append(('assetName', asset_name))
+            
+        if finding_id is not None:
+            
+            _query_params.append(('findingId', finding_id))
+            
+        if triggered_by is not None:
+            
+            _query_params.append(('triggeredBy', triggered_by))
+            
+        if retest_start_date_from is not None:
+            if isinstance(retest_start_date_from, datetime):
+                _query_params.append(
+                    (
+                        'retestStartDateFrom',
+                        retest_start_date_from.strftime(
+                            self.api_client.configuration.datetime_format
+                        )
+                    )
+                )
+            else:
+                _query_params.append(('retestStartDateFrom', retest_start_date_from))
+            
+        if retest_start_date_to is not None:
+            if isinstance(retest_start_date_to, datetime):
+                _query_params.append(
+                    (
+                        'retestStartDateTo',
+                        retest_start_date_to.strftime(
+                            self.api_client.configuration.datetime_format
+                        )
+                    )
+                )
+            else:
+                _query_params.append(('retestStartDateTo', retest_start_date_to))
             
         # process the header parameters
         # process the form parameters

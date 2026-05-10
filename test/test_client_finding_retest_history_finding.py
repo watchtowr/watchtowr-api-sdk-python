@@ -38,15 +38,15 @@ class TestClientFindingRetestHistoryFinding(unittest.TestCase):
             return ClientFindingRetestHistoryFinding(
                 id = 123,
                 title = 'SQL Injection Vulnerability',
-                severity = 'High',
-                status = 'Confirmed'
+                severity = 'high',
+                status = 'confirmed'
             )
         else:
             return ClientFindingRetestHistoryFinding(
                 id = 123,
                 title = 'SQL Injection Vulnerability',
-                severity = 'High',
-                status = 'Confirmed',
+                severity = 'high',
+                status = 'confirmed',
         )
         """
 
