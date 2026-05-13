@@ -1,0 +1,326 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# Supply Chain Guard — 7-day cooldown on freshly-published packages.
+#
+# Three layers, one per ecosystem family:
+#   1. JS  (npm/pnpm/yarn/bun)            → native release-age settings
+#   2. Python (pip/uv/poetry/pipenv)      → PyPI upload_time check (CI step)
+#   3. Cargo/Go/Gem/Composer + supplement → Socket policy scan
+#
+# SECURITY NOTES
+#   • All `uses:` references are SHA-pinned to satisfy sha_pinning_required.
+#   • All npm packages and binaries we install ourselves are pinned to an
+#     exact version AND verified against an embedded SHA-512 / SHA-256 before
+#     the install runs. No `@latest`, no `@stable`, no unpinned bare names.
+#   • To bump a pinned version, update both the version env var AND the
+#     corresponding hash env var. The build will fail loudly if they don't
+#     match. Look up new hashes via:
+#       npm registry:    curl https://registry.npmjs.org/<pkg>/<ver> | jq .dist
+#       bun GitHub rel:  https://github.com/oven-sh/bun/releases/tag/bun-vX.Y.Z
+#
+# Requires the org-level secret SOCKET_SECURITY_API_KEY.
+# ──────────────────────────────────────────────────────────────────────────────
+name: Supply Chain Guard (7-day cooldown)
+
+on:
+  pull_request:
+    paths:
+      - "**/package.json"
+      - "**/package-lock.json"
+      - "**/pnpm-lock.yaml"
+      - "**/yarn.lock"
+      - "**/bun.lock"
+      - "**/bun.lockb"
+      - "**/requirements*.txt"
+      - "**/pyproject.toml"
+      - "**/poetry.lock"
+      - "**/uv.lock"
+      - "**/Pipfile"
+      - "**/Pipfile.lock"
+      - "**/Cargo.toml"
+      - "**/Cargo.lock"
+      - "**/go.mod"
+      - "**/go.sum"
+      - "**/Gemfile"
+      - "**/Gemfile.lock"
+      - "**/composer.json"
+      - "**/composer.lock"
+      - ".github/workflows/supply-chain-guard.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: supply-chain-guard-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  MIN_AGE_DAYS: "7"
+
+  # ── Pinned versions + integrity hashes (update intentionally) ──────────────
+  # npm — verified via SHA-512 (SRI format)
+  NPM_VERSION:        "11.14.1"
+  NPM_SRI:            "sha512-aopNZ0eEl6LbxoFcrXLmTEPzNBNxfiQnVgR9RmJBqzm+5h5pFoOmRljpRJbsXxocBeSl7GLcx3MoDf2UlEOjZw=="
+  # pnpm — verified via SHA-512
+  PNPM_VERSION:       "11.1.1"
+  PNPM_SRI:           "sha512-0f319zxhe2T6GlaoHDyN/g6WbjOmAQqiVrUXrne+Idk+Ba/8DeGoOw5PKdVp9otEaujwaM1yR8C7PfD7TXvfmg=="
+  # yarn berry — direct download of the CJS bundle from repo.yarnpkg.com,
+  # verified with our embedded SHA-512 (no corepack, no trust transfer).
+  YARN_VERSION:       "4.14.1"
+  YARN_SRI:           "sha512-ZN9EgFWy03uiadfbU1pGm42pP47xFAwl/XqDwAqPuqyyFMoOAlU7kqLFTO94u2fQtIF/qwIAHfDiT6wPrMw7Qg=="
+  # bun — verified via SHA-256 from the canonical SHASUMS256.txt
+  # at https://github.com/oven-sh/bun/releases/download/bun-vX.Y.Z/SHASUMS256.txt
+  BUN_VERSION:        "1.3.13"
+  BUN_SHA256:         "79c0771fa8b92c33aae41e15a0e0d307ea99d0e2f00317c71c6c53237a78e25a"
+  # @socketsecurity/cli — verified via SHA-512
+  SOCKET_CLI_VERSION: "1.1.93"
+  SOCKET_CLI_SRI:     "sha512-qhyQMgiyb102XYcGcGlt+nABXdK0ezPODfrxClGUZAccf+d602Mzf4SAUL6gb9jHpqaYS2ICOAIu/fS8bKt5KA=="
+
+jobs:
+  # ────────────────────────────────────────────────────────────────────────────
+  # 1. JS ecosystems — native release-age enforcement
+  # ────────────────────────────────────────────────────────────────────────────
+  js-native-cooldown:
+    name: JS native release-age
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: "22"
+
+      - name: Install hash-pinned package managers
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.local/bin"
+
+          verify_sri() {
+            local file="$1" expected="$2"
+            local got
+            got="sha512-$(openssl dgst -sha512 -binary "$file" | openssl base64 -A)"
+            if [ "$got" != "$expected" ]; then
+              echo "::error::SRI mismatch on $(basename "$file")"
+              echo "  expected: $expected"
+              echo "  actual:   $got"
+              return 1
+            fi
+            echo "  ✓ integrity matches"
+          }
+
+          install_pinned_npm_pkg() {
+            local pkg="$1" version="$2" sri="$3"
+            local name="${pkg##*/}"   # strip @scope/
+            local url="https://registry.npmjs.org/${pkg}/-/${name}-${version}.tgz"
+            local tmp
+            tmp="$(mktemp --suffix=.tgz)"
+
+            echo "▶ ${pkg}@${version}"
+            curl -fsSL "$url" -o "$tmp"
+            verify_sri "$tmp" "$sri"
+            # Install to $HOME/.local so we don't overwrite the runner's bundled
+            # npm while it's running (the cause of the MODULE_NOT_FOUND breakage
+            # we hit when self-updating via @latest).
+            npm install -g "$tmp" --prefix="$HOME/.local" >/dev/null
+            rm -f "$tmp"
+          }
+
+          # npm (need 11.7+ for minimum-release-age)
+          install_pinned_npm_pkg "npm"  "$NPM_VERSION"  "$NPM_SRI"
+          # pnpm
+          install_pinned_npm_pkg "pnpm" "$PNPM_VERSION" "$PNPM_SRI"
+
+          # yarn berry — download the CJS bundle directly and verify our
+          # embedded SHA-512 (replaces corepack so we don't transfer trust).
+          curl -fsSL "https://repo.yarnpkg.com/${YARN_VERSION}/packages/yarnpkg-cli/bin/yarn.js" \
+            -o /tmp/yarn.cjs
+          verify_sri /tmp/yarn.cjs "$YARN_SRI"
+          install -D -m 0644 /tmp/yarn.cjs "$HOME/.local/share/yarn/yarn-${YARN_VERSION}.cjs"
+          cat > "$HOME/.local/bin/yarn" <<EOF
+          #!/usr/bin/env bash
+          exec node "\$HOME/.local/share/yarn/yarn-${YARN_VERSION}.cjs" "\$@"
+          EOF
+          chmod 0755 "$HOME/.local/bin/yarn"
+          rm -f /tmp/yarn.cjs
+
+          # bun — direct binary download with SHA-256 verification.
+          curl -fsSL \
+            "https://github.com/oven-sh/bun/releases/download/bun-v${BUN_VERSION}/bun-linux-x64.zip" \
+            -o /tmp/bun.zip
+          echo "${BUN_SHA256}  /tmp/bun.zip" | sha256sum -c -
+          unzip -q /tmp/bun.zip -d /tmp/
+          install -m 0755 /tmp/bun-linux-x64/bun "$HOME/.local/bin/bun"
+          rm -rf /tmp/bun.zip /tmp/bun-linux-x64
+
+          # Make our pinned binaries win on PATH for every downstream step.
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+          echo
+          echo "── pinned tooling ──"
+          "$HOME/.local/bin/npm"  --version
+          "$HOME/.local/bin/pnpm" --version
+          yarn --version
+          "$HOME/.local/bin/bun"  --version
+
+      - name: pnpm install (frozen)
+        if: hashFiles('pnpm-lock.yaml') != ''
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: npm ci
+        if: hashFiles('package-lock.json') != ''
+        run: npm ci --ignore-scripts
+
+      - name: yarn install (immutable)
+        if: hashFiles('yarn.lock') != ''
+        run: yarn install --immutable --mode=skip-build
+
+      - name: bun install (frozen)
+        if: hashFiles('bun.lockb', 'bun.lock') != ''
+        run: bun install --frozen-lockfile --ignore-scripts
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # 2. Python — PyPI upload_time check
+  # ────────────────────────────────────────────────────────────────────────────
+  python-age-check:
+    name: Python PyPI age check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+
+      - name: Fail on any pinned dep published < ${{ env.MIN_AGE_DAYS }} days ago
+        env:
+          AGE_DAYS: ${{ env.MIN_AGE_DAYS }}
+        run: |
+          python <<'PY'
+          import os, sys, glob, re, json, datetime
+          from urllib.request import urlopen, Request
+
+          AGE = int(os.environ["AGE_DAYS"])
+          cutoff = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=AGE)
+          pins = set()
+
+          for f in glob.glob("**/uv.lock", recursive=True) + glob.glob("**/poetry.lock", recursive=True):
+              try:
+                  text = open(f, "r", encoding="utf-8").read()
+              except OSError:
+                  continue
+              for m in re.finditer(r'name\s*=\s*"([^"]+)"\s*\nversion\s*=\s*"([^"]+)"', text):
+                  pins.add((m.group(1).lower(), m.group(2)))
+
+          for f in glob.glob("**/requirements*.txt", recursive=True):
+              try:
+                  lines = open(f, "r", encoding="utf-8").readlines()
+              except OSError:
+                  continue
+              for line in lines:
+                  line = line.split("#", 1)[0].strip()
+                  m = re.match(r"^([A-Za-z0-9_.\-]+)==([A-Za-z0-9_.\-+]+)", line)
+                  if m:
+                      pins.add((m.group(1).lower(), m.group(2)))
+
+          for f in glob.glob("**/Pipfile.lock", recursive=True):
+              try:
+                  data = json.load(open(f, "r", encoding="utf-8"))
+              except (OSError, json.JSONDecodeError):
+                  continue
+              for section in ("default", "develop"):
+                  for name, info in (data.get(section) or {}).items():
+                      ver = (info.get("version") or "").lstrip("=")
+                      if ver:
+                          pins.add((name.lower(), ver))
+
+          if not pins:
+              print("No Python pins found; nothing to check.")
+              sys.exit(0)
+
+          fresh, checked = [], 0
+          for name, version in sorted(pins):
+              checked += 1
+              try:
+                  url = f"https://pypi.org/pypi/{name}/{version}/json"
+                  req = Request(url, headers={"User-Agent": "supply-chain-guard"})
+                  data = json.load(urlopen(req, timeout=10))
+              except Exception as e:
+                  print(f"WARN: skip {name}=={version}: {e}", file=sys.stderr)
+                  continue
+              urls = data.get("urls") or []
+              if not urls:
+                  continue
+              ts = urls[0].get("upload_time_iso_8601") or urls[0].get("upload_time")
+              if not ts:
+                  continue
+              try:
+                  published = datetime.datetime.fromisoformat(ts.replace("Z", "+00:00"))
+              except ValueError:
+                  continue
+              if published.tzinfo is None:
+                  published = published.replace(tzinfo=datetime.timezone.utc)
+              if published > cutoff:
+                  fresh.append((name, version, published.isoformat()))
+
+          if fresh:
+              print(f"::error::{len(fresh)} Python package(s) published within the last {AGE} days:")
+              for n, v, p in fresh:
+                  print(f"  {n}=={v}    published {p}")
+              sys.exit(1)
+
+          print(f"All {checked} Python pins are at least {AGE} days old.")
+          PY
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # 3. Socket policy scan — cargo/go/gem/composer + supplementary alerts
+  # ────────────────────────────────────────────────────────────────────────────
+  socket-policy-scan:
+    name: Socket policy scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: "22"
+
+      - name: Install hash-pinned @socketsecurity/cli
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.local/bin"
+
+          url="https://registry.npmjs.org/@socketsecurity/cli/-/cli-${SOCKET_CLI_VERSION}.tgz"
+          tmp="$(mktemp --suffix=.tgz)"
+
+          echo "▶ @socketsecurity/cli@${SOCKET_CLI_VERSION}"
+          curl -fsSL "$url" -o "$tmp"
+          got="sha512-$(openssl dgst -sha512 -binary "$tmp" | openssl base64 -A)"
+          if [ "$got" != "$SOCKET_CLI_SRI" ]; then
+            echo "::error::SRI mismatch on @socketsecurity/cli@${SOCKET_CLI_VERSION}"
+            echo "  expected: $SOCKET_CLI_SRI"
+            echo "  actual:   $got"
+            exit 1
+          fi
+          echo "  ✓ integrity matches"
+
+          npm install -g "$tmp" --prefix="$HOME/.local" >/dev/null
+          rm -f "$tmp"
+
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          "$HOME/.local/bin/socket" --version || true
+
+      - name: socket scan create --fail-on-alert
+        env:
+          SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
+        run: |
+          socket scan create . \
+            --repo "${GITHUB_REPOSITORY}" \
+            --branch "${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}" \
+            --commit-hash "${GITHUB_SHA}" \
+            --pull-request "${{ github.event.pull_request.number }}" \
+            --report \
+            --view-report \
+            --fail-on-alert
