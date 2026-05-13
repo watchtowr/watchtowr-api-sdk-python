@@ -160,24 +160,66 @@ jobs:
           echo "── pinned tooling ──"
           "$HOME/.local/bin/npm"  --version
           "$HOME/.local/bin/pnpm" --version
-          yarn --version
+          "$HOME/.local/bin/yarn" --version
           "$HOME/.local/bin/bun"  --version
 
-      - name: pnpm install (frozen)
-        if: hashFiles('pnpm-lock.yaml') != ''
-        run: pnpm install --frozen-lockfile --ignore-scripts
+      # ────────────────────────────────────────────────────────────────────
+      # Each install step iterates every matching lockfile in the repo and
+      # runs the install in that lockfile's directory. This handles three
+      # layouts uniformly:
+      #   • root-only             (lockfile at repo root)
+      #   • workspace monorepo    (single root lockfile, packages in subdirs)
+      #   • subdir-only monorepo  (each subpackage has its own lockfile)
+      # node_modules and .git are excluded so vendored / pulled-down lockfiles
+      # don't trigger spurious installs.
+      # ────────────────────────────────────────────────────────────────────
+      - name: pnpm install (frozen, per lockfile)
+        if: hashFiles('**/pnpm-lock.yaml') != ''
+        run: |
+          set -eo pipefail
+          find . \( -name node_modules -o -name .git \) -prune -o \
+                 -type f -name pnpm-lock.yaml -print0 \
+          | while IFS= read -r -d '' lock; do
+              dir=$(dirname "$lock")
+              echo "▶ pnpm install --frozen-lockfile in $dir"
+              ( cd "$dir" && pnpm install --frozen-lockfile --ignore-scripts )
+            done
 
-      - name: npm ci
-        if: hashFiles('package-lock.json') != ''
-        run: npm ci --ignore-scripts
+      - name: npm ci (per lockfile)
+        if: hashFiles('**/package-lock.json') != ''
+        run: |
+          set -eo pipefail
+          find . \( -name node_modules -o -name .git \) -prune -o \
+                 -type f -name package-lock.json -print0 \
+          | while IFS= read -r -d '' lock; do
+              dir=$(dirname "$lock")
+              echo "▶ npm ci in $dir"
+              ( cd "$dir" && npm ci --ignore-scripts )
+            done
 
-      - name: yarn install (immutable)
-        if: hashFiles('yarn.lock') != ''
-        run: yarn install --immutable --mode=skip-build
+      - name: yarn install (immutable, per lockfile)
+        if: hashFiles('**/yarn.lock') != ''
+        run: |
+          set -eo pipefail
+          find . \( -name node_modules -o -name .git \) -prune -o \
+                 -type f -name yarn.lock -print0 \
+          | while IFS= read -r -d '' lock; do
+              dir=$(dirname "$lock")
+              echo "▶ yarn install --immutable in $dir"
+              ( cd "$dir" && yarn install --immutable --mode=skip-build )
+            done
 
-      - name: bun install (frozen)
-        if: hashFiles('bun.lockb', 'bun.lock') != ''
-        run: bun install --frozen-lockfile --ignore-scripts
+      - name: bun install (frozen, per lockfile)
+        if: hashFiles('**/bun.lockb', '**/bun.lock') != ''
+        run: |
+          set -eo pipefail
+          find . \( -name node_modules -o -name .git \) -prune -o \
+                 -type f \( -name bun.lock -o -name bun.lockb \) -print0 \
+          | while IFS= read -r -d '' lock; do
+              dir=$(dirname "$lock")
+              echo "▶ bun install --frozen-lockfile in $dir"
+              ( cd "$dir" && bun install --frozen-lockfile --ignore-scripts )
+            done
 
   # ────────────────────────────────────────────────────────────────────────────
   # 2. Python — PyPI upload_time check
@@ -197,21 +239,70 @@ jobs:
           AGE_DAYS: ${{ env.MIN_AGE_DAYS }}
         run: |
           python <<'PY'
-          import os, sys, glob, re, json, datetime
+          import os, sys, glob, re, json, datetime, tomllib
           from urllib.request import urlopen, Request
 
           AGE = int(os.environ["AGE_DAYS"])
           cutoff = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=AGE)
           pins = set()
 
-          for f in glob.glob("**/uv.lock", recursive=True) + glob.glob("**/poetry.lock", recursive=True):
-              try:
-                  text = open(f, "r", encoding="utf-8").read()
-              except OSError:
-                  continue
-              for m in re.finditer(r'name\s*=\s*"([^"]+)"\s*\nversion\s*=\s*"([^"]+)"', text):
-                  pins.add((m.group(1).lower(), m.group(2)))
+          # Parse uv.lock and poetry.lock with a real TOML parser so we can
+          # honour their different schemas. Both flag non-registry deps but
+          # in different ways:
+          #
+          #   uv.lock     → each [[package]] has an inline `source = { ... }`
+          #                 mapping; "registry" key indicates PyPI. Absence of
+          #                 a source field means default registry.
+          #   poetry.lock → each [[package]] gets a `[package.source]` *table*
+          #                 ONLY if it's non-registry (git, path, url, etc.).
+          #                 Registry-sourced packages have no source field.
+          #
+          # We deliberately don't try to recognise every private-registry url
+          # as "non-PyPI"; if a repo points uv/poetry at a private registry,
+          # the operator should adjust the workflow.
 
+          def _is_uv_lock(pkg):
+              src = pkg.get("source")
+              if src is None:
+                  return True
+              if isinstance(src, dict):
+                  return "registry" in src
+              return False
+
+          def _is_poetry_registry(pkg):
+              return not pkg.get("source")
+
+          for f in glob.glob("**/uv.lock", recursive=True):
+              try:
+                  with open(f, "rb") as fp:
+                      data = tomllib.load(fp)
+              except (OSError, tomllib.TOMLDecodeError) as e:
+                  print(f"WARN: could not parse {f}: {e}", file=sys.stderr)
+                  continue
+              for pkg in data.get("package", []) or []:
+                  if not _is_uv_lock(pkg):
+                      continue
+                  name = (pkg.get("name") or "").lower()
+                  version = pkg.get("version") or ""
+                  if name and version:
+                      pins.add((name, version))
+
+          for f in glob.glob("**/poetry.lock", recursive=True):
+              try:
+                  with open(f, "rb") as fp:
+                      data = tomllib.load(fp)
+              except (OSError, tomllib.TOMLDecodeError) as e:
+                  print(f"WARN: could not parse {f}: {e}", file=sys.stderr)
+                  continue
+              for pkg in data.get("package", []) or []:
+                  if not _is_poetry_registry(pkg):
+                      continue
+                  name = (pkg.get("name") or "").lower()
+                  version = pkg.get("version") or ""
+                  if name and version:
+                      pins.add((name, version))
+
+          # requirements*.txt
           for f in glob.glob("**/requirements*.txt", recursive=True):
               try:
                   lines = open(f, "r", encoding="utf-8").readlines()
@@ -223,6 +314,7 @@ jobs:
                   if m:
                       pins.add((m.group(1).lower(), m.group(2)))
 
+          # Pipfile.lock
           for f in glob.glob("**/Pipfile.lock", recursive=True):
               try:
                   data = json.load(open(f, "r", encoding="utf-8"))
@@ -238,28 +330,33 @@ jobs:
               print("No Python pins found; nothing to check.")
               sys.exit(0)
 
-          fresh, checked = [], 0
+          fresh, verified, failed = [], 0, []
           for name, version in sorted(pins):
-              checked += 1
               try:
                   url = f"https://pypi.org/pypi/{name}/{version}/json"
                   req = Request(url, headers={"User-Agent": "supply-chain-guard"})
                   data = json.load(urlopen(req, timeout=10))
               except Exception as e:
-                  print(f"WARN: skip {name}=={version}: {e}", file=sys.stderr)
+                  failed.append((name, version, str(e)))
                   continue
               urls = data.get("urls") or []
               if not urls:
+                  # Package metadata exists but no release files — treat as
+                  # verified (nothing to install) rather than a lookup failure.
+                  verified += 1
                   continue
               ts = urls[0].get("upload_time_iso_8601") or urls[0].get("upload_time")
               if not ts:
+                  failed.append((name, version, "no upload_time in response"))
                   continue
               try:
                   published = datetime.datetime.fromisoformat(ts.replace("Z", "+00:00"))
-              except ValueError:
+              except ValueError as e:
+                  failed.append((name, version, f"bad timestamp: {e}"))
                   continue
               if published.tzinfo is None:
                   published = published.replace(tzinfo=datetime.timezone.utc)
+              verified += 1
               if published > cutoff:
                   fresh.append((name, version, published.isoformat()))
 
@@ -269,7 +366,18 @@ jobs:
                   print(f"  {n}=={v}    published {p}")
               sys.exit(1)
 
-          print(f"All {checked} Python pins are at least {AGE} days old.")
+          # Fail-closed: if we couldn't verify the age of any pinned dep
+          # (PyPI outage, network blocked, etc.), the security check is
+          # meaningless. Refuse to give a misleading green status.
+          if failed:
+              print(f"::error::could not verify age of {len(failed)} of {len(pins)} pinned deps")
+              for n, v, why in failed[:20]:
+                  print(f"  {n}=={v}    {why}")
+              if len(failed) > 20:
+                  print(f"  …and {len(failed) - 20} more")
+              sys.exit(1)
+
+          print(f"All {verified} Python pins are at least {AGE} days old.")
           PY
 
   # ────────────────────────────────────────────────────────────────────────────
@@ -315,12 +423,22 @@ jobs:
       - name: socket scan create --fail-on-alert
         env:
           SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
+          # github.event.pull_request.number is empty on workflow_dispatch /
+          # push events. Use a shell var so we can conditionally include the
+          # --pull-request flag below.
+          PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          socket scan create . \
-            --repo "${GITHUB_REPOSITORY}" \
-            --branch "${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}" \
-            --commit-hash "${GITHUB_SHA}" \
-            --pull-request "${{ github.event.pull_request.number }}" \
-            --report \
-            --view-report \
+          set -euo pipefail
+          args=(
+            scan create .
+            --repo "${GITHUB_REPOSITORY}"
+            --branch "${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+            --commit-hash "${GITHUB_SHA}"
+            --report
+            --view-report
             --fail-on-alert
+          )
+          if [ -n "${PR_NUMBER:-}" ]; then
+            args+=(--pull-request "${PR_NUMBER}")
+          fi
+          socket "${args[@]}"
