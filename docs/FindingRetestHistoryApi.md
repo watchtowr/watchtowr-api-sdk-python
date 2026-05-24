@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_list_finding_retest_history**
-> PaginatedClientFindingRetestHistory get_list_finding_retest_history(page=page, page_size=page_size, business_unit_ids=business_unit_ids, sort_by=sort_by, sort_order=sort_order, severities=severities, attempts=attempts, retest_statuses=retest_statuses, finding_title=finding_title, asset_name=asset_name, finding_id=finding_id, triggered_by=triggered_by, retest_start_date_from=retest_start_date_from, retest_start_date_to=retest_start_date_to)
+> PaginatedClientFindingRetestHistory get_list_finding_retest_history(page=page, page_size=page_size, business_unit_ids=business_unit_ids, sort_by=sort_by, sort_order=sort_order, severities=severities, attempts=attempts, retest_run_statuses=retest_run_statuses, finding_title=finding_title, asset_name=asset_name, finding_id=finding_id, triggered_by=triggered_by, retest_start_date_from=retest_start_date_from, retest_start_date_to=retest_start_date_to)
 
 List Finding Retest History
 
@@ -51,7 +51,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     sort_order = DESC # str | Sort order (optional) (default to DESC)
     severities = 'critical,high,medium' # str | Filter retests by a list of comma separated severities they're tagged with. (optional)
     attempts = 'oneAttempt,multipleAttempts' # str | Filter retests by a list of comma separated attempt types. (optional)
-    retest_statuses = 'remediated,unresolved' # str | Filter retests by a list of comma separated retest statuses. (optional)
+    retest_run_statuses = 'success,inProgress' # str | Filter retests by a list of comma separated retest run statuses. (optional)
     finding_title = 'SQL Injection' # str | Filter retests by finding title. (optional)
     asset_name = 'example.com' # str | Filter retests by asset name. (optional)
     finding_id = 'CORE-1234' # str | Filter retests by finding ID (e.g. CORE-1234 or 1234). (optional)
@@ -61,7 +61,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
     try:
         # List Finding Retest History
-        api_response = api_instance.get_list_finding_retest_history(page=page, page_size=page_size, business_unit_ids=business_unit_ids, sort_by=sort_by, sort_order=sort_order, severities=severities, attempts=attempts, retest_statuses=retest_statuses, finding_title=finding_title, asset_name=asset_name, finding_id=finding_id, triggered_by=triggered_by, retest_start_date_from=retest_start_date_from, retest_start_date_to=retest_start_date_to)
+        api_response = api_instance.get_list_finding_retest_history(page=page, page_size=page_size, business_unit_ids=business_unit_ids, sort_by=sort_by, sort_order=sort_order, severities=severities, attempts=attempts, retest_run_statuses=retest_run_statuses, finding_title=finding_title, asset_name=asset_name, finding_id=finding_id, triggered_by=triggered_by, retest_start_date_from=retest_start_date_from, retest_start_date_to=retest_start_date_to)
         print("The response of FindingRetestHistoryApi->get_list_finding_retest_history:\n")
         pprint(api_response)
     except Exception as e:
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
  **sort_order** | **str**| Sort order | [optional] [default to DESC]
  **severities** | **str**| Filter retests by a list of comma separated severities they&#39;re tagged with. | [optional] 
  **attempts** | **str**| Filter retests by a list of comma separated attempt types. | [optional] 
- **retest_statuses** | **str**| Filter retests by a list of comma separated retest statuses. | [optional] 
+ **retest_run_statuses** | **str**| Filter retests by a list of comma separated retest run statuses. | [optional] 
  **finding_title** | **str**| Filter retests by finding title. | [optional] 
  **asset_name** | **str**| Filter retests by asset name. | [optional] 
  **finding_id** | **str**| Filter retests by finding ID (e.g. CORE-1234 or 1234). | [optional] 

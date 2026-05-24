@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **asset** | [**ClientFindingRetestHistoryAsset**](ClientFindingRetestHistoryAsset.md) | Affected asset information | 
 **triggered_by** | [**ClientFindingRetestHistoryTriggeredBy**](ClientFindingRetestHistoryTriggeredBy.md) | User who triggered the retest | 
 **current_retest_status** | **str** | Current retest status | 
+**result** | **str** | Finding status verdict snapshot at the time this retest completed. Independent of the live &#x60;findings.status_name&#x60;, which may change later. | 
 **started_at** | **datetime** | Date and time when the retest was started | 
 **completed_at** | **object** | Date and time when the retest was completed | 
 **updated_at** | **datetime** | Date and time when the retest was last updated | 

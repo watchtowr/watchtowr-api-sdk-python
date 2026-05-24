@@ -37,19 +37,30 @@ class ClientFindingRetestHistory(BaseModel):
     asset: Optional[ClientFindingRetestHistoryAsset] = Field(description="Affected asset information")
     triggered_by: Optional[ClientFindingRetestHistoryTriggeredBy] = Field(description="User who triggered the retest", alias="triggeredBy")
     current_retest_status: StrictStr = Field(description="Current retest status", alias="currentRetestStatus")
+    result: Optional[StrictStr] = Field(description="Finding status verdict snapshot at the time this retest completed. Independent of the live `findings.status_name`, which may change later.")
     started_at: datetime = Field(description="Date and time when the retest was started", alias="startedAt")
     completed_at: Optional[Dict[str, Any]] = Field(description="Date and time when the retest was completed", alias="completedAt")
     updated_at: datetime = Field(description="Date and time when the retest was last updated", alias="updatedAt")
     created_at: datetime = Field(description="Creation date", alias="createdAt")
     attempt_number: Optional[StrictFloat] = Field(default=None, description="Retest attempt number for this finding", alias="attemptNumber")
     days_open_before_retest: Optional[StrictFloat] = Field(default=None, description="Number of days the finding was open before this retest was triggered", alias="daysOpenBeforeRetest")
-    __properties: ClassVar[List[str]] = ["id", "finding", "asset", "triggeredBy", "currentRetestStatus", "startedAt", "completedAt", "updatedAt", "createdAt", "attemptNumber", "daysOpenBeforeRetest"]
+    __properties: ClassVar[List[str]] = ["id", "finding", "asset", "triggeredBy", "currentRetestStatus", "result", "startedAt", "completedAt", "updatedAt", "createdAt", "attemptNumber", "daysOpenBeforeRetest"]
 
     @field_validator('current_retest_status')
     def current_retest_status_validate_enum(cls, value):
         """Validates the enum"""
         if value not in set(['started', 'in-progress', 'success', 'error']):
             raise ValueError("must be one of enum values ('started', 'in-progress', 'success', 'error')")
+        return value
+
+    @field_validator('result')
+    def result_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['confirmed', 'unconfirmed', 'remediated', 'risk-accepted', 'closed', 'asset-no-longer-tracked']):
+            raise ValueError("must be one of enum values ('confirmed', 'unconfirmed', 'remediated', 'risk-accepted', 'closed', 'asset-no-longer-tracked')")
         return value
 
     model_config = ConfigDict(
@@ -115,6 +126,11 @@ class ClientFindingRetestHistory(BaseModel):
         if self.triggered_by is None and "triggered_by" in self.model_fields_set:
             _dict['triggeredBy'] = None
 
+        # set to None if result (nullable) is None
+        # and model_fields_set contains the field
+        if self.result is None and "result" in self.model_fields_set:
+            _dict['result'] = None
+
         # set to None if completed_at (nullable) is None
         # and model_fields_set contains the field
         if self.completed_at is None and "completed_at" in self.model_fields_set:
@@ -142,6 +158,7 @@ class ClientFindingRetestHistory(BaseModel):
             "asset": ClientFindingRetestHistoryAsset.from_dict(obj["asset"]) if obj.get("asset") is not None else None,
             "triggeredBy": ClientFindingRetestHistoryTriggeredBy.from_dict(obj["triggeredBy"]) if obj.get("triggeredBy") is not None else None,
             "currentRetestStatus": obj.get("currentRetestStatus"),
+            "result": obj.get("result"),
             "startedAt": obj.get("startedAt"),
             "completedAt": obj.get("completedAt"),
             "updatedAt": obj.get("updatedAt"),
