@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **description** | **str** |  | 
 **zero_day** | **bool** |  | 
-**created_at** | **str** |  | 
-**updated_at** | **str** |  | 
+**created_at** | **datetime** |  | 
+**updated_at** | **datetime** |  | 
 **rules** | [**List[ActiveDefenseRuleTemplate]**](ActiveDefenseRuleTemplate.md) |  | 
 **vulnerability** | [**ActiveDefenseRuleVulnerability**](ActiveDefenseRuleVulnerability.md) |  | [optional] 
 **findings_count** | **float** | Count of confirmed open findings against the rule&#39;s vulnerability. Scoped to the requesting user&#39;s business units and the organization&#39;s finding impact threshold. | 

@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,7 +30,7 @@ class Technology(BaseModel):
     """ # noqa: E501
     id: StrictFloat = Field(description="ID")
     name: StrictStr = Field(description="Name")
-    version: StrictStr = Field(description="Version")
+    version: Optional[StrictStr] = Field(default=None, description="Version")
     display_name: StrictStr = Field(description="Display name", alias="displayName")
     __properties: ClassVar[List[str]] = ["id", "name", "version", "displayName"]
 
@@ -73,6 +73,11 @@ class Technology(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if version (nullable) is None
+        # and model_fields_set contains the field
+        if self.version is None and "version" in self.model_fields_set:
+            _dict['version'] = None
+
         return _dict
 
     @classmethod

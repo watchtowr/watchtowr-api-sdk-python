@@ -5,10 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** | Descriptive title for the new asset | 
-**type** | **str** | Asset Type for the new asset. Valid asset types are: [domain, subdomain, ip, ipRange, repository, cloudStorage, container, mobileApp, saasPlatform, apiDocumentation, packageManager] | 
-**value** | **str** | Value for the asset to be added. | 
-**values** | [**IpRangeValues**](IpRangeValues.md) | Values object for ipRange asset type. Must contain both cidr and asn fields. Required when type is ipRange. | [optional] 
+**title** | **str** |  | 
+**type** | **str** |  | 
+**value** | **str** |  | [optional] 
+**values** | **object** |  | [optional] 
+**business_units** | [**List[ClientSeedDataBusinessUnit]**](ClientSeedDataBusinessUnit.md) | Business units associated with the seed data | 
 
 ## Example
 

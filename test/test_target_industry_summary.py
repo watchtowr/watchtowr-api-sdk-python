@@ -36,11 +36,7 @@ class TestTargetIndustrySummary(unittest.TestCase):
         model = TargetIndustrySummary()
         if include_optional:
             return TargetIndustrySummary(
-                data = [
-                    watchtowr_api_sdk.models.target_industry.TargetIndustry(
-                        name = 'Financial Services', 
-                        count = 8, )
-                    ],
+                data = ["Financial Services","Technology"],
                 total_count = 12
             )
         else:

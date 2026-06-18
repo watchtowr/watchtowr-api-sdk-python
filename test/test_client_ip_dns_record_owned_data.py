@@ -43,7 +43,7 @@ class TestClientIpDnsRecordOwnedData(unittest.TestCase):
                         type = 'A', 
                         ttl = 60, 
                         value = '123.123.123.123', 
-                        discovered_on = 2022-02-13T02:10:00.000000Z, )
+                        discovered_on = '2022-02-13T02:10Z', )
                     ]
             )
         else:
@@ -55,7 +55,7 @@ class TestClientIpDnsRecordOwnedData(unittest.TestCase):
                         type = 'A', 
                         ttl = 60, 
                         value = '123.123.123.123', 
-                        discovered_on = 2022-02-13T02:10:00.000000Z, )
+                        discovered_on = '2022-02-13T02:10Z', )
                     ],
         )
         """

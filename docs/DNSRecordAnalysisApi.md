@@ -53,8 +53,8 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     record_name = 'example.com' # str | Filter by record name (optional)
     record_value = '192.168.1.1' # str | Filter by record value (optional)
     record_types = 'A,AAAA,CNAME' # str | Filter by record types (comma separated) (optional)
-    start_date = '2013-10-20T19:20:30+01:00' # datetime | Filter by start date (optional)
-    end_date = '2013-10-20T19:20:30+01:00' # datetime | Filter by end date (optional)
+    start_date = '2022-02-23T22:00Z' # datetime | Filter by start date (optional)
+    end_date = '2022-02-23T22:00Z' # datetime | Filter by end date (optional)
 
     try:
         # List DNS Records

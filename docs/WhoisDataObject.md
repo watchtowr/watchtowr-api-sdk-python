@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **name_servers** | [**WhoisDataObjectNameServers**](WhoisDataObjectNameServers.md) |  | [optional] 
 **referral_url** | **str** | referral_url | [optional] 
 **whois_server** | **str** | whois_server | [optional] 
-**creation_date** | **str** | creation_date | [optional] 
-**expiration_date** | **str** | expiration_date | [optional] 
+**creation_date** | [**WhoisDataObjectCreationDate**](WhoisDataObjectCreationDate.md) |  | [optional] 
+**expiration_date** | [**WhoisDataObjectExpirationDate**](WhoisDataObjectExpirationDate.md) |  | [optional] 
 
 ## Example
 

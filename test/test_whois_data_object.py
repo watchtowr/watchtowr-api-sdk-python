@@ -51,8 +51,8 @@ class TestWhoisDataObject(unittest.TestCase):
                 name_servers = None,
                 referral_url = '',
                 whois_server = 'whois.godaddy.com',
-                creation_date = '1989-07-15T04:00:00',
-                expiration_date = '2030-07-15T04:00:00'
+                creation_date = None,
+                expiration_date = None
             )
         else:
             return WhoisDataObject(

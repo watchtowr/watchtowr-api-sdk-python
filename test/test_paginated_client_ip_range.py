@@ -38,12 +38,12 @@ class TestPaginatedClientIpRange(unittest.TestCase):
             return PaginatedClientIpRange(
                 data = [
                     watchtowr_api_sdk.models.client_ip_range.ClientIpRange(
+                        discovery_reason = 'dns-discovery', 
                         type = 'ipRange', 
                         source = 'module-continuousassurance-controller', 
                         status = 'pending', 
-                        created_at = 2022-02-13T02:10:00.000000Z, 
-                        updated_at = 2022-02-13T02:10:00.000000Z, 
-                        id = 123, 
+                        created_at = '2022-02-13T02:10Z', 
+                        id = '123', 
                         iprange = '123.123.123.123/32', 
                         asn = 'AS4676', 
                         desc = 'IpRange Eg 1', 
@@ -53,7 +53,8 @@ class TestPaginatedClientIpRange(unittest.TestCase):
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
-                        custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"ipRange","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"ipRange","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
+                        metadata = {}, 
+                        custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"ipRange","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"ipRange","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
@@ -63,12 +64,12 @@ class TestPaginatedClientIpRange(unittest.TestCase):
             return PaginatedClientIpRange(
                 data = [
                     watchtowr_api_sdk.models.client_ip_range.ClientIpRange(
+                        discovery_reason = 'dns-discovery', 
                         type = 'ipRange', 
                         source = 'module-continuousassurance-controller', 
                         status = 'pending', 
-                        created_at = 2022-02-13T02:10:00.000000Z, 
-                        updated_at = 2022-02-13T02:10:00.000000Z, 
-                        id = 123, 
+                        created_at = '2022-02-13T02:10Z', 
+                        id = '123', 
                         iprange = '123.123.123.123/32', 
                         asn = 'AS4676', 
                         desc = 'IpRange Eg 1', 
@@ -78,7 +79,8 @@ class TestPaginatedClientIpRange(unittest.TestCase):
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
-                        custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"ipRange","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"ipRange","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
+                        metadata = {}, 
+                        custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"ipRange","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"ipRange","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(

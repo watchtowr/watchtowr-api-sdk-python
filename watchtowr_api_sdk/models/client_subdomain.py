@@ -18,8 +18,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr, field_validator
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from watchtowr_api_sdk.models.client_asset_dns_record import ClientAssetDnsRecord
 from watchtowr_api_sdk.models.client_business_unit import ClientBusinessUnit
 from watchtowr_api_sdk.models.client_custom_property import ClientCustomProperty
 from watchtowr_api_sdk.models.client_engine_settings import ClientEngineSettings
@@ -32,29 +34,22 @@ class ClientSubdomain(BaseModel):
     """
     ClientSubdomain
     """ # noqa: E501
+    discovery_reason: Optional[StrictStr] = None
     type: StrictStr
     source: StrictStr
-    status: StrictStr
-    created_at: datetime.date
-    updated_at: datetime.date
-    id: StrictFloat
+    status: Optional[StrictStr] = None
+    created_at: datetime
+    id: StrictStr
     name: StrictStr
     business_units: List[ClientBusinessUnit] = Field(alias="businessUnits")
     live: StrictBool
-    dns_records: List[StrictStr]
-    metadata: Dict[str, Any]
+    dns_records: Optional[List[ClientAssetDnsRecord]] = Field(default=None, description="DNS records for the subdomain. In list responses, included only when `includeDnsRecords=true` (capped at 5 per asset). Always populated on the detail endpoints (`GET /assets/subdomain/show/{id}` and `GET /assets/subdomain/show/{id}/dns-records`). Not included in finding `affected` objects.")
+    metadata: Dict[str, Any] = Field(description="Cloud/IaaS integration metadata where available; defaults to an empty object.")
     custom_properties: List[ClientCustomProperty] = Field(alias="customProperties")
-    criticality: StrictStr
+    criticality: Optional[StrictStr] = None
     infrastructure: Optional[Infrastructure] = None
     engine_settings: ClientEngineSettings = Field(alias="engineSettings")
-    __properties: ClassVar[List[str]] = ["type", "source", "status", "created_at", "updated_at", "id", "name", "businessUnits", "live", "dns_records", "metadata", "customProperties", "criticality", "infrastructure", "engineSettings"]
-
-    @field_validator('status')
-    def status_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['verified', 'Unregistered', 'Incorrect Identification', 'pending', 'VerifiedOutOfScope', 'VerifiedReducedAttack', 'Parked']):
-            raise ValueError("must be one of enum values ('verified', 'Unregistered', 'Incorrect Identification', 'pending', 'VerifiedOutOfScope', 'VerifiedReducedAttack', 'Parked')")
-        return value
+    __properties: ClassVar[List[str]] = ["discovery_reason", "type", "source", "status", "created_at", "id", "name", "businessUnits", "live", "dns_records", "metadata", "customProperties", "criticality", "infrastructure", "engineSettings"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -95,12 +90,6 @@ class ClientSubdomain(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of created_at
-        if self.created_at:
-            _dict['created_at'] = self.created_at.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of updated_at
-        if self.updated_at:
-            _dict['updated_at'] = self.updated_at.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in business_units (list)
         _items = []
         if self.business_units:
@@ -108,6 +97,13 @@ class ClientSubdomain(BaseModel):
                 if _item_business_units:
                     _items.append(_item_business_units.to_dict())
             _dict['businessUnits'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in dns_records (list)
+        _items = []
+        if self.dns_records:
+            for _item_dns_records in self.dns_records:
+                if _item_dns_records:
+                    _items.append(_item_dns_records.to_dict())
+            _dict['dns_records'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in custom_properties (list)
         _items = []
         if self.custom_properties:
@@ -121,6 +117,26 @@ class ClientSubdomain(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of engine_settings
         if self.engine_settings:
             _dict['engineSettings'] = self.engine_settings.to_dict()
+        # set to None if discovery_reason (nullable) is None
+        # and model_fields_set contains the field
+        if self.discovery_reason is None and "discovery_reason" in self.model_fields_set:
+            _dict['discovery_reason'] = None
+
+        # set to None if status (nullable) is None
+        # and model_fields_set contains the field
+        if self.status is None and "status" in self.model_fields_set:
+            _dict['status'] = None
+
+        # set to None if dns_records (nullable) is None
+        # and model_fields_set contains the field
+        if self.dns_records is None and "dns_records" in self.model_fields_set:
+            _dict['dns_records'] = None
+
+        # set to None if criticality (nullable) is None
+        # and model_fields_set contains the field
+        if self.criticality is None and "criticality" in self.model_fields_set:
+            _dict['criticality'] = None
+
         return _dict
 
     @classmethod
@@ -138,16 +154,16 @@ class ClientSubdomain(BaseModel):
                 raise ValueError("Error due to additional fields (not defined in ClientSubdomain) in the input: " + _key)
 
         _obj = cls.model_validate({
+            "discovery_reason": obj.get("discovery_reason"),
             "type": obj.get("type"),
             "source": obj.get("source"),
             "status": obj.get("status"),
-            "created_at": datetime.date.from_dict(obj["created_at"]) if obj.get("created_at") is not None else None,
-            "updated_at": datetime.date.from_dict(obj["updated_at"]) if obj.get("updated_at") is not None else None,
+            "created_at": obj.get("created_at"),
             "id": obj.get("id"),
             "name": obj.get("name"),
             "businessUnits": [ClientBusinessUnit.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None,
             "live": obj.get("live"),
-            "dns_records": obj.get("dns_records"),
+            "dns_records": [ClientAssetDnsRecord.from_dict(_item) for _item in obj["dns_records"]] if obj.get("dns_records") is not None else None,
             "metadata": obj.get("metadata"),
             "customProperties": [ClientCustomProperty.from_dict(_item) for _item in obj["customProperties"]] if obj.get("customProperties") is not None else None,
             "criticality": obj.get("criticality"),

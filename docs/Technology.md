@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** | ID | 
 **name** | **str** | Name | 
-**version** | **str** | Version | 
+**version** | **str** | Version | [optional] 
 **display_name** | **str** | Display name | 
 
 ## Example

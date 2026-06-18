@@ -42,8 +42,8 @@ class SourceIPAddressesApi:
     @validate_call
     def get_list_source_ip_addresses(
         self,
-        whitelist: Annotated[Optional[StrictBool], Field(description="Filter by whitelist status (true for whitelisted items only)")] = None,
         region: Annotated[Optional[StrictStr], Field(description="Filter by region")] = None,
+        whitelist: Annotated[Optional[StrictBool], Field(description="Filter by whitelist status (true for whitelisted items only).")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -61,10 +61,10 @@ class SourceIPAddressesApi:
 
         List IP addresses and hostnames used by watchTowr for all outbound platform traffic.
 
-        :param whitelist: Filter by whitelist status (true for whitelisted items only)
-        :type whitelist: bool
         :param region: Filter by region
         :type region: str
+        :param whitelist: Filter by whitelist status (true for whitelisted items only).
+        :type whitelist: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -88,8 +88,8 @@ class SourceIPAddressesApi:
         """ # noqa: E501
 
         _param = self._get_list_source_ip_addresses_serialize(
-            whitelist=whitelist,
             region=region,
+            whitelist=whitelist,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -114,8 +114,8 @@ class SourceIPAddressesApi:
     @validate_call
     def get_list_source_ip_addresses_with_http_info(
         self,
-        whitelist: Annotated[Optional[StrictBool], Field(description="Filter by whitelist status (true for whitelisted items only)")] = None,
         region: Annotated[Optional[StrictStr], Field(description="Filter by region")] = None,
+        whitelist: Annotated[Optional[StrictBool], Field(description="Filter by whitelist status (true for whitelisted items only).")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -133,10 +133,10 @@ class SourceIPAddressesApi:
 
         List IP addresses and hostnames used by watchTowr for all outbound platform traffic.
 
-        :param whitelist: Filter by whitelist status (true for whitelisted items only)
-        :type whitelist: bool
         :param region: Filter by region
         :type region: str
+        :param whitelist: Filter by whitelist status (true for whitelisted items only).
+        :type whitelist: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -160,8 +160,8 @@ class SourceIPAddressesApi:
         """ # noqa: E501
 
         _param = self._get_list_source_ip_addresses_serialize(
-            whitelist=whitelist,
             region=region,
+            whitelist=whitelist,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -186,8 +186,8 @@ class SourceIPAddressesApi:
     @validate_call
     def get_list_source_ip_addresses_without_preload_content(
         self,
-        whitelist: Annotated[Optional[StrictBool], Field(description="Filter by whitelist status (true for whitelisted items only)")] = None,
         region: Annotated[Optional[StrictStr], Field(description="Filter by region")] = None,
+        whitelist: Annotated[Optional[StrictBool], Field(description="Filter by whitelist status (true for whitelisted items only).")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -205,10 +205,10 @@ class SourceIPAddressesApi:
 
         List IP addresses and hostnames used by watchTowr for all outbound platform traffic.
 
-        :param whitelist: Filter by whitelist status (true for whitelisted items only)
-        :type whitelist: bool
         :param region: Filter by region
         :type region: str
+        :param whitelist: Filter by whitelist status (true for whitelisted items only).
+        :type whitelist: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -232,8 +232,8 @@ class SourceIPAddressesApi:
         """ # noqa: E501
 
         _param = self._get_list_source_ip_addresses_serialize(
-            whitelist=whitelist,
             region=region,
+            whitelist=whitelist,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -253,8 +253,8 @@ class SourceIPAddressesApi:
 
     def _get_list_source_ip_addresses_serialize(
         self,
-        whitelist,
         region,
+        whitelist,
         _request_auth,
         _content_type,
         _headers,
@@ -277,13 +277,13 @@ class SourceIPAddressesApi:
 
         # process the path parameters
         # process the query parameters
-        if whitelist is not None:
-            
-            _query_params.append(('whitelist', whitelist))
-            
         if region is not None:
             
             _query_params.append(('region', region))
+            
+        if whitelist is not None:
+            
+            _query_params.append(('whitelist', whitelist))
             
         # process the header parameters
         # process the form parameters

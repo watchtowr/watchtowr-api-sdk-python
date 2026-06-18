@@ -390,6 +390,7 @@ class BusinessUnitApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientBusinessUnitRuleData",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': None,
@@ -464,6 +465,7 @@ class BusinessUnitApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientBusinessUnitRuleData",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': None,
@@ -538,6 +540,7 @@ class BusinessUnitApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientBusinessUnitRuleData",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': None,

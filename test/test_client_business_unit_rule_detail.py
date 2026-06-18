@@ -46,7 +46,7 @@ class TestClientBusinessUnitRuleDetail(unittest.TestCase):
                 integration_type = 'aws',
                 integration_id = 1,
                 include_all_integrations = False,
-                created_at = 2022-02-13T02:10:00.000000Z
+                created_at = '2022-02-13T02:10Z'
             )
         else:
             return ClientBusinessUnitRuleDetail(
@@ -55,7 +55,7 @@ class TestClientBusinessUnitRuleDetail(unittest.TestCase):
                 cascade_subdomain = True,
                 cascade_ip = True,
                 include_all_integrations = False,
-                created_at = 2022-02-13T02:10:00.000000Z,
+                created_at = '2022-02-13T02:10Z',
         )
         """
 

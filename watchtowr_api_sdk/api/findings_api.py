@@ -21,15 +21,16 @@ from pydantic import Field, StrictBool, StrictFloat, StrictStr, field_validator
 from typing import Optional
 from typing_extensions import Annotated
 from watchtowr_api_sdk.models.client_custom_property import ClientCustomProperty
-from watchtowr_api_sdk.models.client_finding import ClientFinding
 from watchtowr_api_sdk.models.client_finding_data import ClientFindingData
 from watchtowr_api_sdk.models.client_finding_manual_ticket_data import ClientFindingManualTicketData
+from watchtowr_api_sdk.models.client_finding_retest_response import ClientFindingRetestResponse
 from watchtowr_api_sdk.models.client_note_data import ClientNoteData
 from watchtowr_api_sdk.models.client_note_list_data import ClientNoteListData
 from watchtowr_api_sdk.models.create_client_custom_property_dto import CreateClientCustomPropertyDto
 from watchtowr_api_sdk.models.create_client_finding_manual_ticket_request_body import CreateClientFindingManualTicketRequestBody
 from watchtowr_api_sdk.models.create_client_note_dto import CreateClientNoteDto
 from watchtowr_api_sdk.models.delete_note_succes import DeleteNoteSucces
+from watchtowr_api_sdk.models.finding_statuses_response import FindingStatusesResponse
 from watchtowr_api_sdk.models.paginated_client_custom_property import PaginatedClientCustomProperty
 from watchtowr_api_sdk.models.paginated_client_findings import PaginatedClientFindings
 from watchtowr_api_sdk.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto
@@ -114,6 +115,7 @@ class FindingsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '404': "NotFound",
         }
@@ -187,6 +189,7 @@ class FindingsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '404': "NotFound",
         }
@@ -260,6 +263,7 @@ class FindingsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '404': "NotFound",
         }
@@ -1801,7 +1805,7 @@ class FindingsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> FindingStatusesResponse:
         """List Finding Statuses
 
         List all available statuses for findings.
@@ -1836,7 +1840,7 @@ class FindingsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "FindingStatusesResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1864,7 +1868,7 @@ class FindingsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[FindingStatusesResponse]:
         """List Finding Statuses
 
         List all available statuses for findings.
@@ -1899,7 +1903,7 @@ class FindingsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "FindingStatusesResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1962,7 +1966,7 @@ class FindingsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "FindingStatusesResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2000,6 +2004,13 @@ class FindingsApi:
         # process the body parameter
 
 
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -3026,6 +3037,7 @@ class FindingsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PaginatedClientFindings",
+            '400': None,
             '401': "Unauthorized",
         }
         response_data = self.api_client.call_api(
@@ -3162,6 +3174,7 @@ class FindingsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PaginatedClientFindings",
+            '400': None,
             '401': "Unauthorized",
         }
         response_data = self.api_client.call_api(
@@ -3298,6 +3311,7 @@ class FindingsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PaginatedClientFindings",
+            '400': None,
             '401': "Unauthorized",
         }
         response_data = self.api_client.call_api(
@@ -3511,7 +3525,7 @@ class FindingsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ClientFinding:
+    ) -> ClientFindingRetestResponse:
         """Retest Finding
 
         Initiate a retest for a specific finding.
@@ -3552,7 +3566,8 @@ class FindingsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ClientFinding",
+            '200': "ClientFindingRetestResponse",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': None,
@@ -3586,7 +3601,7 @@ class FindingsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ClientFinding]:
+    ) -> ApiResponse[ClientFindingRetestResponse]:
         """Retest Finding
 
         Initiate a retest for a specific finding.
@@ -3627,7 +3642,8 @@ class FindingsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ClientFinding",
+            '200': "ClientFindingRetestResponse",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': None,
@@ -3702,7 +3718,8 @@ class FindingsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ClientFinding",
+            '200': "ClientFindingRetestResponse",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': None,
@@ -3847,6 +3864,7 @@ class FindingsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '404': "NotFound",
         }
@@ -3924,6 +3942,7 @@ class FindingsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '404': "NotFound",
         }
@@ -4001,6 +4020,7 @@ class FindingsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '404': "NotFound",
         }
@@ -4469,6 +4489,7 @@ class FindingsApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '422': "UnprocessableContent",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4543,6 +4564,7 @@ class FindingsApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '422': "UnprocessableContent",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4617,6 +4639,7 @@ class FindingsApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '422': "UnprocessableContent",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4767,6 +4790,7 @@ class FindingsApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '422': "UnprocessableContent",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4841,6 +4865,7 @@ class FindingsApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '422': "UnprocessableContent",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4915,6 +4940,7 @@ class FindingsApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '422': "UnprocessableContent",
         }
         response_data = self.api_client.call_api(
             *_param,

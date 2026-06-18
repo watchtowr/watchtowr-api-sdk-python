@@ -20,6 +20,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictFloat, StrictStr
 from typing import Any, ClassVar, Dict, List
+from watchtowr_api_sdk.models.client_note_author import ClientNoteAuthor
+from watchtowr_api_sdk.models.client_note_last_modified import ClientNoteLastModified
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -33,8 +35,8 @@ class ClientNote(BaseModel):
     note_type: StrictStr
     note_id: StrictFloat
     title: StrictStr
-    author: Dict[str, Any]
-    last_modified: datetime.date
+    author: ClientNoteAuthor
+    last_modified: ClientNoteLastModified
     __properties: ClassVar[List[str]] = ["id", "note", "note_type", "note_id", "title", "author", "last_modified"]
 
     model_config = ConfigDict(
@@ -76,6 +78,9 @@ class ClientNote(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of author
+        if self.author:
+            _dict['author'] = self.author.to_dict()
         # override the default output from pydantic by calling `to_dict()` of last_modified
         if self.last_modified:
             _dict['last_modified'] = self.last_modified.to_dict()
@@ -101,8 +106,8 @@ class ClientNote(BaseModel):
             "note_type": obj.get("note_type"),
             "note_id": obj.get("note_id"),
             "title": obj.get("title"),
-            "author": obj.get("author"),
-            "last_modified": datetime.date.from_dict(obj["last_modified"]) if obj.get("last_modified") is not None else None
+            "author": ClientNoteAuthor.from_dict(obj["author"]) if obj.get("author") is not None else None,
+            "last_modified": ClientNoteLastModified.from_dict(obj["last_modified"]) if obj.get("last_modified") is not None else None
         })
         return _obj
 

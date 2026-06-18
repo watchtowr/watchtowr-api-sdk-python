@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List
+from watchtowr_api_sdk.models.client_testing_infrastructure import ClientTestingInfrastructure
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,7 +29,7 @@ class ClientSourceIpsAddresses(BaseModel):
     """
     ClientSourceIpsAddresses
     """ # noqa: E501
-    data: List[StrictStr]
+    data: List[ClientTestingInfrastructure]
     __properties: ClassVar[List[str]] = ["data"]
 
     model_config = ConfigDict(
@@ -70,6 +71,13 @@ class ClientSourceIpsAddresses(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
+        _items = []
+        if self.data:
+            for _item_data in self.data:
+                if _item_data:
+                    _items.append(_item_data.to_dict())
+            _dict['data'] = _items
         return _dict
 
     @classmethod
@@ -87,7 +95,7 @@ class ClientSourceIpsAddresses(BaseModel):
                 raise ValueError("Error due to additional fields (not defined in ClientSourceIpsAddresses) in the input: " + _key)
 
         _obj = cls.model_validate({
-            "data": obj.get("data")
+            "data": [ClientTestingInfrastructure.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
         })
         return _obj
 

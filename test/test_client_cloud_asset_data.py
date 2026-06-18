@@ -37,35 +37,49 @@ class TestClientCloudAssetData(unittest.TestCase):
         if include_optional:
             return ClientCloudAssetData(
                 data = watchtowr_api_sdk.models.client_cloud_asset.ClientCloudAsset(
+                    discovery_reason = 'dns-discovery', 
                     type = 'cloudAsset', 
+                    id = '123', 
                     name = 'example-aws-cloud-asset-rds-database', 
                     source = 'test-module-controller-1-0', 
                     provider = 'aws', 
+                    status = 'verified', 
                     super_type = 'database', 
                     sub_type = 'EC2', 
                     hostname = 'example-aws-cloud-asset-rds-database.example.com', 
                     cloud_resource_id = 'resource-db-v-2', 
-                    created_at = 2022-02-13T02:10:00.000000Z, 
-                    updated_at = 2022-02-13T02:10:00.000000Z, 
-                    metadata = {"createdAt":"2024-06-26T02:43:11.443000Z","registryId":"294444990188","repositoryArn":"arn:aws:ecr:ap-southeast-1:294444990188:repository/folder-test","repositoryUri":"294444990188.dkr.ecr.ap-southeast-1.amazonaws.com/folder-test","repositoryName":"folder-test","_wt_internal_func":"fetch_private_elastic_container_registry_assets","imageTagMutability":"MUTABLE","encryptionConfiguration":{"encryptionType":"AES256"},"imageScanningConfiguration":{"scanOnPush":false}}, 
-                    custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"cloudAsset","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"cloudAsset","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
+                    created_at = '2022-02-13T02:10Z', 
+                    metadata = {"createdAt":"2024-06-26T02:43:11.443Z","registryId":"294444990188","repositoryArn":"arn:aws:ecr:ap-southeast-1:294444990188:repository/folder-test","repositoryUri":"294444990188.dkr.ecr.ap-southeast-1.amazonaws.com/folder-test","repositoryName":"folder-test","_wt_internal_func":"fetch_private_elastic_container_registry_assets","imageTagMutability":"MUTABLE","encryptionConfiguration":{"encryptionType":"AES256"},"imageScanningConfiguration":{"scanOnPush":false}}, 
+                    business_units = [
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
+                            id = 1, 
+                            name = 'Singapore Business Unit', )
+                        ], 
+                    custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"cloudAsset","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"cloudAsset","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}], 
                     criticality = 'Medium', )
             )
         else:
             return ClientCloudAssetData(
                 data = watchtowr_api_sdk.models.client_cloud_asset.ClientCloudAsset(
+                    discovery_reason = 'dns-discovery', 
                     type = 'cloudAsset', 
+                    id = '123', 
                     name = 'example-aws-cloud-asset-rds-database', 
                     source = 'test-module-controller-1-0', 
                     provider = 'aws', 
+                    status = 'verified', 
                     super_type = 'database', 
                     sub_type = 'EC2', 
                     hostname = 'example-aws-cloud-asset-rds-database.example.com', 
                     cloud_resource_id = 'resource-db-v-2', 
-                    created_at = 2022-02-13T02:10:00.000000Z, 
-                    updated_at = 2022-02-13T02:10:00.000000Z, 
-                    metadata = {"createdAt":"2024-06-26T02:43:11.443000Z","registryId":"294444990188","repositoryArn":"arn:aws:ecr:ap-southeast-1:294444990188:repository/folder-test","repositoryUri":"294444990188.dkr.ecr.ap-southeast-1.amazonaws.com/folder-test","repositoryName":"folder-test","_wt_internal_func":"fetch_private_elastic_container_registry_assets","imageTagMutability":"MUTABLE","encryptionConfiguration":{"encryptionType":"AES256"},"imageScanningConfiguration":{"scanOnPush":false}}, 
-                    custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"cloudAsset","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"cloudAsset","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
+                    created_at = '2022-02-13T02:10Z', 
+                    metadata = {"createdAt":"2024-06-26T02:43:11.443Z","registryId":"294444990188","repositoryArn":"arn:aws:ecr:ap-southeast-1:294444990188:repository/folder-test","repositoryUri":"294444990188.dkr.ecr.ap-southeast-1.amazonaws.com/folder-test","repositoryName":"folder-test","_wt_internal_func":"fetch_private_elastic_container_registry_assets","imageTagMutability":"MUTABLE","encryptionConfiguration":{"encryptionType":"AES256"},"imageScanningConfiguration":{"scanOnPush":false}}, 
+                    business_units = [
+                        watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
+                            id = 1, 
+                            name = 'Singapore Business Unit', )
+                        ], 
+                    custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"cloudAsset","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"cloudAsset","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}], 
                     criticality = 'Medium', ),
         )
         """

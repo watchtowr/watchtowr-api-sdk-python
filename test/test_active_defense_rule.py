@@ -47,8 +47,8 @@ class TestActiveDefenseRule(unittest.TestCase):
                     watchtowr = False, ),
                 zero_day = False,
                 providers = ["cloudflare"],
-                created_at = '2023-12-01T00:00:00.000Z',
-                updated_at = '2023-12-02T00:00:00.000Z'
+                created_at = '2023-12-01T00:00Z',
+                updated_at = '2023-12-02T00:00Z'
             )
         else:
             return ActiveDefenseRule(
@@ -60,8 +60,8 @@ class TestActiveDefenseRule(unittest.TestCase):
                     watchtowr = False, ),
                 zero_day = False,
                 providers = ["cloudflare"],
-                created_at = '2023-12-01T00:00:00.000Z',
-                updated_at = '2023-12-02T00:00:00.000Z',
+                created_at = '2023-12-01T00:00Z',
+                updated_at = '2023-12-02T00:00Z',
         )
         """
 

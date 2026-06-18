@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from watchtowr_api_sdk.models.client_seed_data import ClientSeedData
+from watchtowr_api_sdk.models.client_seed_data_dto import ClientSeedDataDto
 from watchtowr_api_sdk.models.filter_by_business_unit_input import FilterByBusinessUnitInput
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,7 @@ class CreateClientSeedDataRequestBody(BaseModel):
     """
     CreateClientSeedDataRequestBody
     """ # noqa: E501
-    data: List[ClientSeedData] = Field(description="JSON array listing seed data assets to submit for review.")
+    data: List[ClientSeedDataDto] = Field(description="JSON array listing seed data assets to submit for review.")
     business_units: Optional[List[FilterByBusinessUnitInput]] = Field(default=None, description="List of business units to allocate new assets to. -1 indicates UNASSIGNED business unit", alias="businessUnits")
     __properties: ClassVar[List[str]] = ["data", "businessUnits"]
 
@@ -104,7 +104,7 @@ class CreateClientSeedDataRequestBody(BaseModel):
                 raise ValueError("Error due to additional fields (not defined in CreateClientSeedDataRequestBody) in the input: " + _key)
 
         _obj = cls.model_validate({
-            "data": [ClientSeedData.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None,
+            "data": [ClientSeedDataDto.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None,
             "businessUnits": [FilterByBusinessUnitInput.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None
         })
         return _obj

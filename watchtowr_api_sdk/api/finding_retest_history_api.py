@@ -51,6 +51,7 @@ class FindingRetestHistoryApi:
         severities: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated severities they're tagged with.")] = None,
         attempts: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated attempt types.")] = None,
         retest_run_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated retest run statuses.")] = None,
+        retest_result_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated result statuses.")] = None,
         finding_title: Annotated[Optional[StrictStr], Field(description="Filter retests by finding title.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Filter retests by asset name.")] = None,
         finding_id: Annotated[Optional[StrictStr], Field(description="Filter retests by finding ID (e.g. CORE-1234 or 1234).")] = None,
@@ -90,6 +91,8 @@ class FindingRetestHistoryApi:
         :type attempts: str
         :param retest_run_statuses: Filter retests by a list of comma separated retest run statuses.
         :type retest_run_statuses: str
+        :param retest_result_statuses: Filter retests by a list of comma separated result statuses.
+        :type retest_result_statuses: str
         :param finding_title: Filter retests by finding title.
         :type finding_title: str
         :param asset_name: Filter retests by asset name.
@@ -133,6 +136,7 @@ class FindingRetestHistoryApi:
             severities=severities,
             attempts=attempts,
             retest_run_statuses=retest_run_statuses,
+            retest_result_statuses=retest_result_statuses,
             finding_title=finding_title,
             asset_name=asset_name,
             finding_id=finding_id,
@@ -171,6 +175,7 @@ class FindingRetestHistoryApi:
         severities: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated severities they're tagged with.")] = None,
         attempts: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated attempt types.")] = None,
         retest_run_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated retest run statuses.")] = None,
+        retest_result_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated result statuses.")] = None,
         finding_title: Annotated[Optional[StrictStr], Field(description="Filter retests by finding title.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Filter retests by asset name.")] = None,
         finding_id: Annotated[Optional[StrictStr], Field(description="Filter retests by finding ID (e.g. CORE-1234 or 1234).")] = None,
@@ -210,6 +215,8 @@ class FindingRetestHistoryApi:
         :type attempts: str
         :param retest_run_statuses: Filter retests by a list of comma separated retest run statuses.
         :type retest_run_statuses: str
+        :param retest_result_statuses: Filter retests by a list of comma separated result statuses.
+        :type retest_result_statuses: str
         :param finding_title: Filter retests by finding title.
         :type finding_title: str
         :param asset_name: Filter retests by asset name.
@@ -253,6 +260,7 @@ class FindingRetestHistoryApi:
             severities=severities,
             attempts=attempts,
             retest_run_statuses=retest_run_statuses,
+            retest_result_statuses=retest_result_statuses,
             finding_title=finding_title,
             asset_name=asset_name,
             finding_id=finding_id,
@@ -291,6 +299,7 @@ class FindingRetestHistoryApi:
         severities: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated severities they're tagged with.")] = None,
         attempts: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated attempt types.")] = None,
         retest_run_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated retest run statuses.")] = None,
+        retest_result_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated result statuses.")] = None,
         finding_title: Annotated[Optional[StrictStr], Field(description="Filter retests by finding title.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Filter retests by asset name.")] = None,
         finding_id: Annotated[Optional[StrictStr], Field(description="Filter retests by finding ID (e.g. CORE-1234 or 1234).")] = None,
@@ -330,6 +339,8 @@ class FindingRetestHistoryApi:
         :type attempts: str
         :param retest_run_statuses: Filter retests by a list of comma separated retest run statuses.
         :type retest_run_statuses: str
+        :param retest_result_statuses: Filter retests by a list of comma separated result statuses.
+        :type retest_result_statuses: str
         :param finding_title: Filter retests by finding title.
         :type finding_title: str
         :param asset_name: Filter retests by asset name.
@@ -373,6 +384,7 @@ class FindingRetestHistoryApi:
             severities=severities,
             attempts=attempts,
             retest_run_statuses=retest_run_statuses,
+            retest_result_statuses=retest_result_statuses,
             finding_title=finding_title,
             asset_name=asset_name,
             finding_id=finding_id,
@@ -406,6 +418,7 @@ class FindingRetestHistoryApi:
         severities,
         attempts,
         retest_run_statuses,
+        retest_result_statuses,
         finding_title,
         asset_name,
         finding_id,
@@ -466,6 +479,10 @@ class FindingRetestHistoryApi:
         if retest_run_statuses is not None:
             
             _query_params.append(('retestRunStatuses', retest_run_statuses))
+            
+        if retest_result_statuses is not None:
+            
+            _query_params.append(('retestResultStatuses', retest_result_statuses))
             
         if finding_title is not None:
             

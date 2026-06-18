@@ -17,9 +17,9 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictFloat, StrictStr
-from typing import Optional
+from typing import List, Optional
 from typing_extensions import Annotated
-from watchtowr_api_sdk.models.client_seed_data_data import ClientSeedDataData
+from watchtowr_api_sdk.models.client_seed_data import ClientSeedData
 from watchtowr_api_sdk.models.create_client_seed_data_request_body import CreateClientSeedDataRequestBody
 from watchtowr_api_sdk.models.paginated_client_seed_data import PaginatedClientSeedData
 
@@ -357,7 +357,7 @@ class AddAssetApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ClientSeedDataData:
+    ) -> List[ClientSeedData]:
         """Submit Seed Data
 
         Submit one or more seed data assets to your attack surface for review.
@@ -395,8 +395,10 @@ class AddAssetApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ClientSeedDataData",
+            '200': "List[ClientSeedData]",
+            '400': None,
             '401': "Unauthorized",
+            '422': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -425,7 +427,7 @@ class AddAssetApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ClientSeedDataData]:
+    ) -> ApiResponse[List[ClientSeedData]]:
         """Submit Seed Data
 
         Submit one or more seed data assets to your attack surface for review.
@@ -463,8 +465,10 @@ class AddAssetApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ClientSeedDataData",
+            '200': "List[ClientSeedData]",
+            '400': None,
             '401': "Unauthorized",
+            '422': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -531,8 +535,10 @@ class AddAssetApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ClientSeedDataData",
+            '200': "List[ClientSeedData]",
+            '400': None,
             '401': "Unauthorized",
+            '422': None,
         }
         response_data = self.api_client.call_api(
             *_param,

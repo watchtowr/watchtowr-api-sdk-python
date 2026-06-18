@@ -18,7 +18,7 @@ from typing_extensions import Annotated
 
 from datetime import datetime
 from pydantic import Field, StrictFloat, StrictStr
-from typing import Optional
+from typing import List, Optional
 from typing_extensions import Annotated
 from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClientActivityLog
 
@@ -49,7 +49,7 @@ class ActivityLogApi:
         created_to: Annotated[Optional[datetime], Field(description="Filter logs created before a given date and time.")] = None,
         types: Annotated[Optional[StrictStr], Field(description="Filter logs by a comma separated list of types.")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search logs across various fields such as user, or description.")] = None,
-        user_ids: Annotated[Optional[StrictStr], Field(description="Filter logs by a comma separated list of user IDs.")] = None,
+        user_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter logs by a comma separated list of user IDs.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -80,7 +80,7 @@ class ActivityLogApi:
         :param search: Search logs across various fields such as user, or description.
         :type search: str
         :param user_ids: Filter logs by a comma separated list of user IDs.
-        :type user_ids: str
+        :type user_ids: List[float]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -141,7 +141,7 @@ class ActivityLogApi:
         created_to: Annotated[Optional[datetime], Field(description="Filter logs created before a given date and time.")] = None,
         types: Annotated[Optional[StrictStr], Field(description="Filter logs by a comma separated list of types.")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search logs across various fields such as user, or description.")] = None,
-        user_ids: Annotated[Optional[StrictStr], Field(description="Filter logs by a comma separated list of user IDs.")] = None,
+        user_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter logs by a comma separated list of user IDs.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -172,7 +172,7 @@ class ActivityLogApi:
         :param search: Search logs across various fields such as user, or description.
         :type search: str
         :param user_ids: Filter logs by a comma separated list of user IDs.
-        :type user_ids: str
+        :type user_ids: List[float]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -233,7 +233,7 @@ class ActivityLogApi:
         created_to: Annotated[Optional[datetime], Field(description="Filter logs created before a given date and time.")] = None,
         types: Annotated[Optional[StrictStr], Field(description="Filter logs by a comma separated list of types.")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search logs across various fields such as user, or description.")] = None,
-        user_ids: Annotated[Optional[StrictStr], Field(description="Filter logs by a comma separated list of user IDs.")] = None,
+        user_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter logs by a comma separated list of user IDs.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -264,7 +264,7 @@ class ActivityLogApi:
         :param search: Search logs across various fields such as user, or description.
         :type search: str
         :param user_ids: Filter logs by a comma separated list of user IDs.
-        :type user_ids: str
+        :type user_ids: List[float]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -330,6 +330,7 @@ class ActivityLogApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'user_ids': 'multi',
         }
 
         _path_params: Dict[str, str] = {}

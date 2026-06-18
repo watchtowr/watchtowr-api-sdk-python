@@ -46,7 +46,7 @@ class TestClientIpDnsRecordResponse(unittest.TestCase):
                                 type = 'A', 
                                 ttl = 60, 
                                 value = '123.123.123.123', 
-                                discovered_on = 2022-02-13T02:10:00.000000Z, )
+                                discovered_on = '2022-02-13T02:10Z', )
                             ], ), 
                     dns_records_pointing_at = watchtowr_api_sdk.models.client_ip_dns_record_pointing_at_data.ClientIpDnsRecordPointingAtData(
                         data = [
@@ -56,7 +56,7 @@ class TestClientIpDnsRecordResponse(unittest.TestCase):
                                 type = 'A', 
                                 ttl = 60, 
                                 value = '123.123.123.123', 
-                                discovered_on = 2022-02-13T02:10:00.000000Z, 
+                                discovered_on = '2022-02-13T02:10Z', 
                                 asset = watchtowr_api_sdk.models.client_ip_related_dns_record_asset.ClientIpRelatedDnsRecordAsset(
                                     id = 1, 
                                     name = 'watchtowr.com', ), )
@@ -76,7 +76,7 @@ class TestClientIpDnsRecordResponse(unittest.TestCase):
                                 type = 'A', 
                                 ttl = 60, 
                                 value = '123.123.123.123', 
-                                discovered_on = 2022-02-13T02:10:00.000000Z, )
+                                discovered_on = '2022-02-13T02:10Z', )
                             ], ), 
                     dns_records_pointing_at = watchtowr_api_sdk.models.client_ip_dns_record_pointing_at_data.ClientIpDnsRecordPointingAtData(
                         data = [
@@ -86,7 +86,7 @@ class TestClientIpDnsRecordResponse(unittest.TestCase):
                                 type = 'A', 
                                 ttl = 60, 
                                 value = '123.123.123.123', 
-                                discovered_on = 2022-02-13T02:10:00.000000Z, 
+                                discovered_on = '2022-02-13T02:10Z', 
                                 asset = watchtowr_api_sdk.models.client_ip_related_dns_record_asset.ClientIpRelatedDnsRecordAsset(
                                     id = 1, 
                                     name = 'watchtowr.com', ), )

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**business_unit_ids** | **List[str]** | List of business unit IDs to assign the asset to. | 
+**business_unit_ids** | **List[float]** | List of business unit IDs to assign the asset to. | 
 **cascade_subdomain** | **bool** | Cascade business units to domain&#39;s subdomains | 
 **cascade_ip** | **bool** | Cascade business units to domain&#39;s ipaddresses | 
 

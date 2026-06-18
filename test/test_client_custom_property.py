@@ -39,13 +39,19 @@ class TestClientCustomProperty(unittest.TestCase):
                 id = 1,
                 key = 'Severity',
                 value = 'Low',
-                is_preset = False
+                model_type = 'domain',
+                model_id = 22,
+                is_preset = False,
+                created_at = '2024-09-23T01:24:28.626Z',
+                updated_at = '2024-09-23T01:24:28.626Z'
             )
         else:
             return ClientCustomProperty(
                 id = 1,
                 key = 'Severity',
                 value = 'Low',
+                model_type = 'domain',
+                model_id = 22,
                 is_preset = False,
         )
         """

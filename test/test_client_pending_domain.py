@@ -53,10 +53,6 @@ Registrar: Example Registrar',
                 name = 'example.com',
                 source = 'example-source',
                 created_at = '2023-01-01T12:00Z',
-                whois_data = watchtowr_api_sdk.models.client_pending_domain_whois_data.ClientPendingDomainWhoisData(
-                    raw = 'Domain Name: example.com
-Registrar: Example Registrar', 
-                    data = {"domainName":"example.com","registrar":"Example Registrar","creationDate":"2020-01-01T00:00:00.000Z"}, ),
         )
         """
 

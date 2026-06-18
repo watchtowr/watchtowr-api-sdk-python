@@ -38,12 +38,12 @@ class TestPaginatedClientSaasPlatform(unittest.TestCase):
             return PaginatedClientSaasPlatform(
                 data = [
                     watchtowr_api_sdk.models.client_saas_platform.ClientSaasPlatform(
+                        discovery_reason = 'dns-discovery', 
                         type = 'saasPlatform', 
                         source = 'module-adversarysight-slack-saas-discovery', 
                         status = 'verified', 
-                        created_at = 2022-02-13T02:10:00.000000Z, 
-                        updated_at = 2022-02-13T02:10:00.000000Z, 
-                        id = 123, 
+                        created_at = '2022-02-13T02:10Z', 
+                        id = '123', 
                         url = 'https://example.slack.com', 
                         provider = 'Slack', 
                         business_units = [
@@ -51,7 +51,8 @@ class TestPaginatedClientSaasPlatform(unittest.TestCase):
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
-                        custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"saasPlatform","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"saasPlatform","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
+                        metadata = {}, 
+                        custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"saasPlatform","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"saasPlatform","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
@@ -61,12 +62,12 @@ class TestPaginatedClientSaasPlatform(unittest.TestCase):
             return PaginatedClientSaasPlatform(
                 data = [
                     watchtowr_api_sdk.models.client_saas_platform.ClientSaasPlatform(
+                        discovery_reason = 'dns-discovery', 
                         type = 'saasPlatform', 
                         source = 'module-adversarysight-slack-saas-discovery', 
                         status = 'verified', 
-                        created_at = 2022-02-13T02:10:00.000000Z, 
-                        updated_at = 2022-02-13T02:10:00.000000Z, 
-                        id = 123, 
+                        created_at = '2022-02-13T02:10Z', 
+                        id = '123', 
                         url = 'https://example.slack.com', 
                         provider = 'Slack', 
                         business_units = [
@@ -74,7 +75,8 @@ class TestPaginatedClientSaasPlatform(unittest.TestCase):
                                 id = 1, 
                                 name = 'Singapore Business Unit', )
                             ], 
-                        custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"saasPlatform","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"saasPlatform","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
+                        metadata = {}, 
+                        custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"saasPlatform","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"saasPlatform","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}], 
                         criticality = 'Medium', )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(

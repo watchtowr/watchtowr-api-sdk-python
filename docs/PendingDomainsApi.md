@@ -48,8 +48,8 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100. (optional)
     name = 'example.com' # str | Filter by domain name (optional)
     source = 'example-source' # str | Filter by source that discovered the domain (optional)
-    start_date = '2013-10-20T19:20:30+01:00' # datetime | Filter by start date (optional)
-    end_date = '2013-10-20T19:20:30+01:00' # datetime | Filter by end date (optional)
+    start_date = '2022-02-23T22:00Z' # datetime | Filter by start date (optional)
+    end_date = '2022-02-23T22:00Z' # datetime | Filter by end date (optional)
     sort_by = created_at # str | Sort by field (optional) (default to created_at)
     sort_order = DESC # str | Sort order (optional) (default to DESC)
 

@@ -37,7 +37,8 @@ class TestKbEntryCwe(unittest.TestCase):
         if include_optional:
             return KbEntryCwe(
                 cwe_id = 'CWE-89',
-                name = 'Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')'
+                name = 'Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')',
+                cwe_url = 'https://cwe.mitre.org/data/definitions/89.html'
             )
         else:
             return KbEntryCwe(

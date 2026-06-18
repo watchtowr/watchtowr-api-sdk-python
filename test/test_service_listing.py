@@ -46,7 +46,7 @@ class TestServiceListing(unittest.TestCase):
                 banner = 'Apache/2.4.7',
                 service = 'HTTPS',
                 source = 'DNS Refresh',
-                last_seen = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                last_seen = '2022-02-22T22:00Z',
                 technologies = [
                     watchtowr_api_sdk.models.technology.Technology(
                         id = 1, 
@@ -66,16 +66,17 @@ class TestServiceListing(unittest.TestCase):
                     ],
                 is_concerning = True,
                 suppressed = True,
-                suppressed_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                is_permanent_suppression = True
+                suppressed_at = '2022-02-22T22:00Z',
+                is_permanent_suppression = True,
+                ip_id = 1,
+                state = 'open',
+                finding_id = 1,
+                suppressed_by_id = 1
             )
         else:
             return ServiceListing(
                 id = 1,
                 port_id = 1,
-                ip = '123.123.123.123',
-                hostname = 'sub.example.com',
-                last_seen = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 technologies = [
                     watchtowr_api_sdk.models.technology.Technology(
                         id = 1, 

@@ -48,8 +48,8 @@ class TestIPRangesApi(unittest.TestCase):
         """
         pass
 
-    def test_delete_custom_property_ip_range_(self) -> None:
-        """Test case for delete_custom_property_ip_range_
+    def test_delete_custom_property_ip_range(self) -> None:
+        """Test case for delete_custom_property_ip_range
 
         Delete Custom Property
         """

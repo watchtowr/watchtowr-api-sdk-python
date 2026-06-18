@@ -36,29 +36,40 @@ class TestClientApiDocumentationAsset(unittest.TestCase):
         model = ClientApiDocumentationAsset()
         if include_optional:
             return ClientApiDocumentationAsset(
-                id = 1,
+                discovery_reason = 'dns-discovery',
+                id = '1',
                 type = 'apiDocumentation',
                 name = 'example_docs/example-swagger-hub',
                 source = 'module-adversarysight-swaggerhub-saas-discovery',
                 platform = 'SwaggerHub API',
                 status = 'verified',
-                created_at = 2022-02-13T02:10:00.000000Z,
+                created_at = '2022-02-13T02:10Z',
                 url = 'https://app.swaggerhub.com/apis/example_docs/example-swagger-hub/',
-                custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"apiDocumentation","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"apiDocumentation","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}],
+                business_units = [
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
+                        id = 1, 
+                        name = 'Singapore Business Unit', )
+                    ],
+                metadata = {},
+                custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"apiDocumentation","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"apiDocumentation","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}],
                 criticality = 'Medium'
             )
         else:
             return ClientApiDocumentationAsset(
-                id = 1,
+                id = '1',
                 type = 'apiDocumentation',
                 name = 'example_docs/example-swagger-hub',
                 source = 'module-adversarysight-swaggerhub-saas-discovery',
                 platform = 'SwaggerHub API',
-                status = 'verified',
-                created_at = 2022-02-13T02:10:00.000000Z,
+                created_at = '2022-02-13T02:10Z',
                 url = 'https://app.swaggerhub.com/apis/example_docs/example-swagger-hub/',
-                custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"apiDocumentation","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"apiDocumentation","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}],
-                criticality = 'Medium',
+                business_units = [
+                    watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
+                        id = 1, 
+                        name = 'Singapore Business Unit', )
+                    ],
+                metadata = {},
+                custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"apiDocumentation","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"apiDocumentation","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}],
         )
         """
 

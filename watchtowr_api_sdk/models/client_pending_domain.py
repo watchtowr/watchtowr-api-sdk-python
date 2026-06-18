@@ -35,7 +35,7 @@ class ClientPendingDomain(BaseModel):
     name: StrictStr = Field(description="Domain name")
     source: StrictStr = Field(description="Source that discovered the domain")
     created_at: datetime = Field(description="Creation date")
-    whois_data: Optional[ClientPendingDomainWhoisData] = Field(description="WHOIS data for the domain", alias="whoisData")
+    whois_data: Optional[ClientPendingDomainWhoisData] = Field(default=None, description="WHOIS data for the domain", alias="whoisData")
     __properties: ClassVar[List[str]] = ["id", "status", "name", "source", "created_at", "whoisData"]
 
     model_config = ConfigDict(

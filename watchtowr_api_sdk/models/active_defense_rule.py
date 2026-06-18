@@ -18,6 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.active_defense_rule_kev_status import ActiveDefenseRuleKevStatus
@@ -37,8 +38,8 @@ class ActiveDefenseRule(BaseModel):
     kev_status: ActiveDefenseRuleKevStatus = Field(alias="kevStatus")
     zero_day: StrictBool = Field(alias="zeroDay")
     providers: List[StrictStr]
-    created_at: StrictStr = Field(alias="createdAt")
-    updated_at: StrictStr = Field(alias="updatedAt")
+    created_at: datetime = Field(alias="createdAt")
+    updated_at: datetime = Field(alias="updatedAt")
     __properties: ClassVar[List[str]] = ["id", "ruleName", "cveId", "wtId", "type", "kevStatus", "zeroDay", "providers", "createdAt", "updatedAt"]
 
     @field_validator('type')
@@ -55,8 +56,8 @@ class ActiveDefenseRule(BaseModel):
     def providers_validate_enum(cls, value):
         """Validates the enum"""
         for i in value:
-            if i not in set(['cloudflare', 'aws_cfn', 'fastly', 'akamai_waf', 'google_cloud_armor', 'mod_security', 'azure_appgw']):
-                raise ValueError("each list item must be one of ('cloudflare', 'aws_cfn', 'fastly', 'akamai_waf', 'google_cloud_armor', 'mod_security', 'azure_appgw')")
+            if i not in set(['cloudflare', 'aws_cfn', 'fastly', 'akamai_waf', 'google_cloud_armor', 'mod_security', 'azure_appgw', 'imperva']):
+                raise ValueError("each list item must be one of ('cloudflare', 'aws_cfn', 'fastly', 'akamai_waf', 'google_cloud_armor', 'mod_security', 'azure_appgw', 'imperva')")
         return value
 
     model_config = ConfigDict(

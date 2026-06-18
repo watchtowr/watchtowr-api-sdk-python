@@ -41,7 +41,7 @@ class TestPointsOfInterestData(unittest.TestCase):
                     name = 'phpMyAdmin', 
                     type = 'admin-panel', 
                     url = 'http://watchtowr.com/phpmyadmin', 
-                    discovery_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                    discovery_date = '2022-02-22T22:00Z', 
                     asset_id = 1, 
                     asset_name = '123.123.123.123', 
                     asset_type = 'ip', 
@@ -50,10 +50,10 @@ class TestPointsOfInterestData(unittest.TestCase):
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 
-                    last_seen = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                    last_seen = '2022-02-22T22:00Z', 
                     is_concerning = True, 
                     suppressed = True, 
-                    suppressed_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                    suppressed_at = '2022-02-22T22:00Z', 
                     is_permanent_suppression = True, 
                     finding_id = 123, )
             )
@@ -64,7 +64,7 @@ class TestPointsOfInterestData(unittest.TestCase):
                     name = 'phpMyAdmin', 
                     type = 'admin-panel', 
                     url = 'http://watchtowr.com/phpmyadmin', 
-                    discovery_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                    discovery_date = '2022-02-22T22:00Z', 
                     asset_id = 1, 
                     asset_name = '123.123.123.123', 
                     asset_type = 'ip', 
@@ -73,10 +73,10 @@ class TestPointsOfInterestData(unittest.TestCase):
                             id = 1, 
                             name = 'Singapore Business Unit', )
                         ], 
-                    last_seen = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                    last_seen = '2022-02-22T22:00Z', 
                     is_concerning = True, 
                     suppressed = True, 
-                    suppressed_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                    suppressed_at = '2022-02-22T22:00Z', 
                     is_permanent_suppression = True, 
                     finding_id = 123, ),
         )

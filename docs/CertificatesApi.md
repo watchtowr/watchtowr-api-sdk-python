@@ -96,6 +96,8 @@ List Certificates
 
 List all discovered TLS/SSL certificate assets, ordered by discovery date.
 
+Note: certificates whose underlying port is not linked to a domain, subdomain, or IP asset are silently skipped from `data`. The pagination metadata (`meta.pagination.count` / `total`) still reflects the database row count including such orphans, so `data.length` may be less than `meta.pagination.count` when orphan rows exist. Iterate `data` directly rather than relying on `count` to size the array.
+
 ### Example
 
 * Bearer (API_TOKEN) Authentication (bearer):
@@ -128,12 +130,12 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     api_instance = watchtowr_api_sdk.CertificatesApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
-    created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter certificates created after a given date and time. (optional)
-    created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter certificates created before a given date and time. (optional)
-    updated_from = '2013-10-20T19:20:30+01:00' # datetime | Filter certificates updated after a given date and time. (optional)
-    updated_to = '2013-10-20T19:20:30+01:00' # datetime | Filter certificates updated before a given date and time. (optional)
-    not_after_from = '2013-10-20T19:20:30+01:00' # datetime | Filter certificates that do not expire after a given date and time. (optional)
-    not_after_to = '2013-10-20T19:20:30+01:00' # datetime | Filter certificates that do not expire before a given date and time. (optional)
+    created_from = '2022-02-22T22:00Z' # datetime | Filter certificates created after a given date and time. (optional)
+    created_to = '2022-02-23T22:00Z' # datetime | Filter certificates created before a given date and time. (optional)
+    updated_from = '2022-02-22T22:00Z' # datetime | Filter certificates updated after a given date and time. (optional)
+    updated_to = '2022-02-23T22:00Z' # datetime | Filter certificates updated before a given date and time. (optional)
+    not_after_from = '2022-02-22T22:00Z' # datetime | Filter certificates that do not expire after a given date and time. (optional)
+    not_after_to = '2022-02-23T22:00Z' # datetime | Filter certificates that do not expire before a given date and time. (optional)
     subject_common_name_search = 'example.com' # str | Search certificates by Subject Common Name. (optional)
     subject_alt_name_search = 'example.com' # str | Search certificates by Subject Alt Name. (optional)
     subject_organisation_search = 'example' # str | Search by subject organization. (optional)

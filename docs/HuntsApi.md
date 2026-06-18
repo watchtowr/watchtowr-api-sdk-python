@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **get_client_hunts**
-> PaginatedHunts get_client_hunts(page=page, page_size=page_size, statuses=statuses, hunt_search=hunt_search, types=types, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, resource_filter=resource_filter, only_resolved=only_resolved, is_unacknowledged=is_unacknowledged)
+> PaginatedHunts get_client_hunts(page=page, page_size=page_size, statuses=statuses, hunt_search=hunt_search, types=types, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, resource_filter=resource_filter, resolved=resolved, only_resolved=only_resolved, is_unacknowledged=is_unacknowledged)
 
 List Hunts
 
@@ -49,20 +49,21 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     api_instance = watchtowr_api_sdk.HuntsApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
-    statuses = 'statuses_example' # str | Filter hunts by hunt status. (optional)
+    statuses = ['received,in-progress,completed,not-covered,outdated'] # List[str] | Filter hunts by a comma separated list of hunt statuses. Values are case-sensitive — pass the canonical lowercase form (e.g. `received,in-progress`). (optional)
     hunt_search = 'remote%20code%20execution' # str | Search for hunts by text in hunt name. (optional)
-    types = 'types_example' # str | Filter hunts by hunt types. (optional)
-    created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter hunts created after a given date and time. (optional)
-    created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter hunts created before a given date and time. (optional)
-    updated_from = '2013-10-20T19:20:30+01:00' # datetime | Filter hunts updated after a given date and time. (optional)
-    updated_to = '2013-10-20T19:20:30+01:00' # datetime | Filter hunts updated before a given date and time. (optional)
+    types = ['bespoke,proactive'] # List[str] | Filter hunts by a comma separated list of hunt types. Values are case-sensitive — pass the canonical lowercase form (e.g. `bespoke,proactive`). (optional)
+    created_from = '2022-02-22T22:00Z' # datetime | Filter hunts created after a given date and time. (optional)
+    created_to = '2022-02-23T22:00Z' # datetime | Filter hunts created before a given date and time. (optional)
+    updated_from = '2022-02-22T22:00Z' # datetime | Filter hunts updated after a given date and time. (optional)
+    updated_to = '2022-02-23T22:00Z' # datetime | Filter hunts updated before a given date and time. (optional)
     resource_filter = 'resource_filter_example' # str | General (optional)
-    only_resolved = true # bool | Filter to only show resolved hunts. (optional)
+    resolved = true # bool | Filter hunts by resolution status. `true` returns resolved hunts, `false` returns unresolved hunts. (optional)
+    only_resolved = true # bool | Deprecated — use `resolved` instead. This is kept for backward compatibility and will be removed in a future release. (optional)
     is_unacknowledged = true # bool | Filter to only show hunts that are not acknowledged. (optional)
 
     try:
         # List Hunts
-        api_response = api_instance.get_client_hunts(page=page, page_size=page_size, statuses=statuses, hunt_search=hunt_search, types=types, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, resource_filter=resource_filter, only_resolved=only_resolved, is_unacknowledged=is_unacknowledged)
+        api_response = api_instance.get_client_hunts(page=page, page_size=page_size, statuses=statuses, hunt_search=hunt_search, types=types, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, resource_filter=resource_filter, resolved=resolved, only_resolved=only_resolved, is_unacknowledged=is_unacknowledged)
         print("The response of HuntsApi->get_client_hunts:\n")
         pprint(api_response)
     except Exception as e:
@@ -78,15 +79,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
  **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
- **statuses** | **str**| Filter hunts by hunt status. | [optional] 
+ **statuses** | [**List[str]**](str.md)| Filter hunts by a comma separated list of hunt statuses. Values are case-sensitive — pass the canonical lowercase form (e.g. &#x60;received,in-progress&#x60;). | [optional] 
  **hunt_search** | **str**| Search for hunts by text in hunt name. | [optional] 
- **types** | **str**| Filter hunts by hunt types. | [optional] 
+ **types** | [**List[str]**](str.md)| Filter hunts by a comma separated list of hunt types. Values are case-sensitive — pass the canonical lowercase form (e.g. &#x60;bespoke,proactive&#x60;). | [optional] 
  **created_from** | **datetime**| Filter hunts created after a given date and time. | [optional] 
  **created_to** | **datetime**| Filter hunts created before a given date and time. | [optional] 
  **updated_from** | **datetime**| Filter hunts updated after a given date and time. | [optional] 
  **updated_to** | **datetime**| Filter hunts updated before a given date and time. | [optional] 
  **resource_filter** | **str**| General | [optional] 
- **only_resolved** | **bool**| Filter to only show resolved hunts. | [optional] 
+ **resolved** | **bool**| Filter hunts by resolution status. &#x60;true&#x60; returns resolved hunts, &#x60;false&#x60; returns unresolved hunts. | [optional] 
+ **only_resolved** | **bool**| Deprecated — use &#x60;resolved&#x60; instead. This is kept for backward compatibility and will be removed in a future release. | [optional] 
  **is_unacknowledged** | **bool**| Filter to only show hunts that are not acknowledged. | [optional] 
 
 ### Return type

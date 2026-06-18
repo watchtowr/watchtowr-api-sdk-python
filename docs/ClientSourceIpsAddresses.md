@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | **List[str]** |  | 
+**data** | [**List[ClientTestingInfrastructure]**](ClientTestingInfrastructure.md) |  | 
 
 ## Example
 

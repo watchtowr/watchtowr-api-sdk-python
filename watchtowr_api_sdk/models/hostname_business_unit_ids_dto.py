@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class HostnameBusinessUnitIDsDTO(BaseModel):
     """
     HostnameBusinessUnitIDsDTO
     """ # noqa: E501
-    business_unit_ids: List[StrictStr] = Field(description="List of business unit IDs to assign the asset to.", alias="businessUnitIds")
+    business_unit_ids: List[StrictFloat] = Field(description="List of business unit IDs to assign the asset to.", alias="businessUnitIds")
     cascade_subdomain: StrictBool = Field(description="Cascade business units to domain's subdomains", alias="cascadeSubdomain")
     cascade_ip: StrictBool = Field(description="Cascade business units to domain's ipaddresses", alias="cascadeIp")
     __properties: ClassVar[List[str]] = ["businessUnitIds", "cascadeSubdomain", "cascadeIp"]

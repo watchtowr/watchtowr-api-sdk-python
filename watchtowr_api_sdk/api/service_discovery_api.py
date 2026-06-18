@@ -18,7 +18,7 @@ from typing_extensions import Annotated
 
 from datetime import datetime
 from pydantic import Field, StrictBool, StrictFloat, StrictStr, field_validator
-from typing import Optional
+from typing import List, Optional
 from typing_extensions import Annotated
 from watchtowr_api_sdk.models.paginated_service_listing import PaginatedServiceListing
 from watchtowr_api_sdk.models.paginated_technology_statistics import PaginatedTechnologyStatistics
@@ -59,8 +59,8 @@ class ServiceDiscoveryApi:
         port_numbers: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated ports.")] = None,
         port_types: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated transport layer protocols (e.g. UDP/TCP).")] = None,
         port_services: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated services.")] = None,
-        service_type_ids: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated service type IDs.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated business unit IDs they're related to.")] = None,
+        service_type_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter services by a list of comma separated service type IDs.")] = None,
+        business_unit_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter services by a list of comma separated business unit IDs they're related to.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort services.")] = None,
         order_by: Annotated[Optional[StrictStr], Field(description="Order services.")] = None,
         suppression_filter: Annotated[Optional[StrictStr], Field(description="Filter services by suppression status.")] = None,
@@ -112,9 +112,9 @@ class ServiceDiscoveryApi:
         :param port_services: Filter services by a list of comma separated services.
         :type port_services: str
         :param service_type_ids: Filter services by a list of comma separated service type IDs.
-        :type service_type_ids: str
+        :type service_type_ids: List[float]
         :param business_unit_ids: Filter services by a list of comma separated business unit IDs they're related to.
-        :type business_unit_ids: str
+        :type business_unit_ids: List[float]
         :param sort_by: Sort services.
         :type sort_by: str
         :param order_by: Order services.
@@ -203,8 +203,8 @@ class ServiceDiscoveryApi:
         port_numbers: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated ports.")] = None,
         port_types: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated transport layer protocols (e.g. UDP/TCP).")] = None,
         port_services: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated services.")] = None,
-        service_type_ids: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated service type IDs.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated business unit IDs they're related to.")] = None,
+        service_type_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter services by a list of comma separated service type IDs.")] = None,
+        business_unit_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter services by a list of comma separated business unit IDs they're related to.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort services.")] = None,
         order_by: Annotated[Optional[StrictStr], Field(description="Order services.")] = None,
         suppression_filter: Annotated[Optional[StrictStr], Field(description="Filter services by suppression status.")] = None,
@@ -256,9 +256,9 @@ class ServiceDiscoveryApi:
         :param port_services: Filter services by a list of comma separated services.
         :type port_services: str
         :param service_type_ids: Filter services by a list of comma separated service type IDs.
-        :type service_type_ids: str
+        :type service_type_ids: List[float]
         :param business_unit_ids: Filter services by a list of comma separated business unit IDs they're related to.
-        :type business_unit_ids: str
+        :type business_unit_ids: List[float]
         :param sort_by: Sort services.
         :type sort_by: str
         :param order_by: Order services.
@@ -347,8 +347,8 @@ class ServiceDiscoveryApi:
         port_numbers: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated ports.")] = None,
         port_types: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated transport layer protocols (e.g. UDP/TCP).")] = None,
         port_services: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated services.")] = None,
-        service_type_ids: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated service type IDs.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated business unit IDs they're related to.")] = None,
+        service_type_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter services by a list of comma separated service type IDs.")] = None,
+        business_unit_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter services by a list of comma separated business unit IDs they're related to.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort services.")] = None,
         order_by: Annotated[Optional[StrictStr], Field(description="Order services.")] = None,
         suppression_filter: Annotated[Optional[StrictStr], Field(description="Filter services by suppression status.")] = None,
@@ -400,9 +400,9 @@ class ServiceDiscoveryApi:
         :param port_services: Filter services by a list of comma separated services.
         :type port_services: str
         :param service_type_ids: Filter services by a list of comma separated service type IDs.
-        :type service_type_ids: str
+        :type service_type_ids: List[float]
         :param business_unit_ids: Filter services by a list of comma separated business unit IDs they're related to.
-        :type business_unit_ids: str
+        :type business_unit_ids: List[float]
         :param sort_by: Sort services.
         :type sort_by: str
         :param order_by: Order services.
@@ -500,6 +500,8 @@ class ServiceDiscoveryApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'serviceTypeIds': 'multi',
+            'businessUnitIds': 'multi',
         }
 
         _path_params: Dict[str, str] = {}

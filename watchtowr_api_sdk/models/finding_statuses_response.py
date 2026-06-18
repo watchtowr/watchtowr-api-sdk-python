@@ -18,19 +18,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class TargetIndustry(BaseModel):
+class FindingStatusesResponse(BaseModel):
     """
-    TargetIndustry
+    FindingStatusesResponse
     """ # noqa: E501
-    name: Optional[StrictStr] = None
-    count: Optional[StrictFloat] = None
-    __properties: ClassVar[List[str]] = ["name", "count"]
+    data: List[List[StrictStr]] = Field(description="Returns a single-element array containing all finding statuses.")
+    __properties: ClassVar[List[str]] = ["data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -50,7 +49,7 @@ class TargetIndustry(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of TargetIndustry from a JSON string"""
+        """Create an instance of FindingStatusesResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,7 +74,7 @@ class TargetIndustry(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of TargetIndustry from a dict"""
+        """Create an instance of FindingStatusesResponse from a dict"""
         if obj is None:
             return None
 
@@ -85,11 +84,10 @@ class TargetIndustry(BaseModel):
         # raise errors for additional fields in the input
         for _key in obj.keys():
             if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in TargetIndustry) in the input: " + _key)
+                raise ValueError("Error due to additional fields (not defined in FindingStatusesResponse) in the input: " + _key)
 
         _obj = cls.model_validate({
-            "name": obj.get("name"),
-            "count": obj.get("count")
+            "data": obj.get("data")
         })
         return _obj
 

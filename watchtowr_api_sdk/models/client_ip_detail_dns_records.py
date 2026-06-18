@@ -18,8 +18,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List
+from watchtowr_api_sdk.models.client_asset_dns_record import ClientAssetDnsRecord
+from watchtowr_api_sdk.models.client_ip_related_dns_record import ClientIpRelatedDnsRecord
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,8 +30,8 @@ class ClientIpDetailDnsRecords(BaseModel):
     """
     ClientIpDetailDnsRecords
     """ # noqa: E501
-    dns_records_owned: List[StrictStr]
-    dns_records_pointing_at: List[StrictStr]
+    dns_records_owned: List[ClientAssetDnsRecord]
+    dns_records_pointing_at: List[ClientIpRelatedDnsRecord]
     __properties: ClassVar[List[str]] = ["dns_records_owned", "dns_records_pointing_at"]
 
     model_config = ConfigDict(
@@ -71,6 +73,20 @@ class ClientIpDetailDnsRecords(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in dns_records_owned (list)
+        _items = []
+        if self.dns_records_owned:
+            for _item_dns_records_owned in self.dns_records_owned:
+                if _item_dns_records_owned:
+                    _items.append(_item_dns_records_owned.to_dict())
+            _dict['dns_records_owned'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in dns_records_pointing_at (list)
+        _items = []
+        if self.dns_records_pointing_at:
+            for _item_dns_records_pointing_at in self.dns_records_pointing_at:
+                if _item_dns_records_pointing_at:
+                    _items.append(_item_dns_records_pointing_at.to_dict())
+            _dict['dns_records_pointing_at'] = _items
         return _dict
 
     @classmethod
@@ -88,8 +104,8 @@ class ClientIpDetailDnsRecords(BaseModel):
                 raise ValueError("Error due to additional fields (not defined in ClientIpDetailDnsRecords) in the input: " + _key)
 
         _obj = cls.model_validate({
-            "dns_records_owned": obj.get("dns_records_owned"),
-            "dns_records_pointing_at": obj.get("dns_records_pointing_at")
+            "dns_records_owned": [ClientAssetDnsRecord.from_dict(_item) for _item in obj["dns_records_owned"]] if obj.get("dns_records_owned") is not None else None,
+            "dns_records_pointing_at": [ClientIpRelatedDnsRecord.from_dict(_item) for _item in obj["dns_records_pointing_at"]] if obj.get("dns_records_pointing_at") is not None else None
         })
         return _obj
 

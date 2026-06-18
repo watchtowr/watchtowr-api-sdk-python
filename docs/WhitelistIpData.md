@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** | IP address ID | 
 **ip** | **str** | IP address or CIDR range | 
-**description** | **str** | Description of the IP address | 
+**description** | **str** | Description of the IP address | [optional] 
+**enabled_for** | **str** | Whitelisting scope this IP applies to | 
 **created_at** | **datetime** | Creation timestamp | 
 **updated_at** | **datetime** | Last update timestamp | 
 

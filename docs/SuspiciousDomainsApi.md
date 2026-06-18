@@ -47,14 +47,14 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     api_instance = watchtowr_api_sdk.SuspiciousDomainsApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
-    created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter suspicious domains created after a given date and time. (optional)
-    created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter suspicious domains created before a given date and time. (optional)
-    updated_from = '2013-10-20T19:20:30+01:00' # datetime | Filter suspicious domains updated after a given date and time. (optional)
-    updated_to = '2013-10-20T19:20:30+01:00' # datetime | Filter suspicious domains updated before a given date and time. (optional)
+    created_from = '2022-02-22T22:00Z' # datetime | Filter suspicious domains created after a given date and time. (optional)
+    created_to = '2022-02-23T22:00Z' # datetime | Filter suspicious domains created before a given date and time. (optional)
+    updated_from = '2022-02-22T22:00Z' # datetime | Filter suspicious domains updated after a given date and time. (optional)
+    updated_to = '2022-02-23T22:00Z' # datetime | Filter suspicious domains updated before a given date and time. (optional)
     search = 'watchtowr.com' # str | Search suspicious domains by text within the domain. (optional)
     discovery_reason = 'suspicious-words' # str | Search suspicious domains by discovery reason. (optional)
     whois_search = 'Name%20Server:%20malicious.ns.com' # str | Search suspicious domains by contents of Whois data. (optional)
-    statuses = 'pending,malicious,legitimate,benign' # str | Filter suspicious domains by a list of comma separated statuses that asset is tagged with. (optional)
+    statuses = ['pending,malicious,legitimate,benign'] # List[str] | Filter suspicious domains by a list of comma separated statuses that asset is tagged with. Values are case-sensitive — pass the canonical lowercase form (e.g. `pending,malicious`). (optional)
 
     try:
         # List Suspicious Domains
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
  **search** | **str**| Search suspicious domains by text within the domain. | [optional] 
  **discovery_reason** | **str**| Search suspicious domains by discovery reason. | [optional] 
  **whois_search** | **str**| Search suspicious domains by contents of Whois data. | [optional] 
- **statuses** | **str**| Filter suspicious domains by a list of comma separated statuses that asset is tagged with. | [optional] 
+ **statuses** | [**List[str]**](str.md)| Filter suspicious domains by a list of comma separated statuses that asset is tagged with. Values are case-sensitive — pass the canonical lowercase form (e.g. &#x60;pending,malicious&#x60;). | [optional] 
 
 ### Return type
 

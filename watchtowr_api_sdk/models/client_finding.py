@@ -18,9 +18,11 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_custom_property import ClientCustomProperty
+from watchtowr_api_sdk.models.client_finding_affected import ClientFindingAffected
 from watchtowr_api_sdk.models.client_finding_assignee import ClientFindingAssignee
 from watchtowr_api_sdk.models.client_finding_impact_tag import ClientFindingImpactTag
 from watchtowr_api_sdk.models.finding_retest_response_dto import FindingRetestResponseDto
@@ -44,22 +46,23 @@ class ClientFinding(BaseModel):
     severity: StrictStr
     cvssv3_score: StrictFloat
     cvssv3_metrics: StrictStr
+    references: StrictStr = Field(description="Finding references from the knowledge base entry, or `\"No references.\"` when none exist.")
     status: StrictStr
-    state: StrictStr = Field(description="Different to status, this is about tracking how the finding is being handled")
-    created_at: StrictStr
-    affected: Dict[str, Any]
+    state: Optional[StrictStr] = Field(default=None, description="Different to status, this is about tracking how the finding is being handled")
+    created_at: datetime
+    affected: ClientFindingAffected = Field(description="Affected asset envelope. The asset object is nested under `data`; shape varies by asset type.")
     cve_id: Optional[StrictStr] = None
     epss_score: Optional[StrictFloat] = None
     retest: Optional[Retest] = None
-    finding_retests: Optional[List[FindingRetestResponseDto]] = None
+    retest_history: Optional[List[FindingRetestResponseDto]] = None
     assigned_user: Optional[ClientFindingAssignee] = None
-    last_seen: Optional[Dict[str, Any]] = None
-    last_status_updated_at: Dict[str, Any]
-    age: StrictFloat
-    criticality: StrictStr
+    last_seen: Optional[datetime] = None
+    last_status_updated_at: datetime
+    age: Optional[StrictFloat] = None
+    criticality: Optional[StrictStr] = None
     custom_properties: List[ClientCustomProperty] = Field(alias="customProperties")
     detection_rules: List[Dict[str, Any]]
-    __properties: ClassVar[List[str]] = ["id", "title", "description", "impact", "finding_impact", "tags", "evidence", "recommendation", "severity", "cvssv3_score", "cvssv3_metrics", "status", "state", "created_at", "affected", "cve_id", "epss_score", "retest", "finding_retests", "assigned_user", "last_seen", "last_status_updated_at", "age", "criticality", "customProperties", "detection_rules"]
+    __properties: ClassVar[List[str]] = ["id", "title", "description", "impact", "finding_impact", "tags", "evidence", "recommendation", "severity", "cvssv3_score", "cvssv3_metrics", "references", "status", "state", "created_at", "affected", "cve_id", "epss_score", "retest", "retest_history", "assigned_user", "last_seen", "last_status_updated_at", "age", "criticality", "customProperties", "detection_rules"]
 
     @field_validator('severity')
     def severity_validate_enum(cls, value):
@@ -78,6 +81,9 @@ class ClientFinding(BaseModel):
     @field_validator('state')
     def state_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['Uninvestigated', 'In Progress', 'Completed']):
             raise ValueError("must be one of enum values ('Uninvestigated', 'In Progress', 'Completed')")
         return value
@@ -128,16 +134,19 @@ class ClientFinding(BaseModel):
                 if _item_tags:
                     _items.append(_item_tags.to_dict())
             _dict['tags'] = _items
+        # override the default output from pydantic by calling `to_dict()` of affected
+        if self.affected:
+            _dict['affected'] = self.affected.to_dict()
         # override the default output from pydantic by calling `to_dict()` of retest
         if self.retest:
             _dict['retest'] = self.retest.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in finding_retests (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in retest_history (list)
         _items = []
-        if self.finding_retests:
-            for _item_finding_retests in self.finding_retests:
-                if _item_finding_retests:
-                    _items.append(_item_finding_retests.to_dict())
-            _dict['finding_retests'] = _items
+        if self.retest_history:
+            for _item_retest_history in self.retest_history:
+                if _item_retest_history:
+                    _items.append(_item_retest_history.to_dict())
+            _dict['retest_history'] = _items
         # override the default output from pydantic by calling `to_dict()` of assigned_user
         if self.assigned_user:
             _dict['assigned_user'] = self.assigned_user.to_dict()
@@ -148,15 +157,35 @@ class ClientFinding(BaseModel):
                 if _item_custom_properties:
                     _items.append(_item_custom_properties.to_dict())
             _dict['customProperties'] = _items
-        # set to None if finding_retests (nullable) is None
+        # set to None if state (nullable) is None
         # and model_fields_set contains the field
-        if self.finding_retests is None and "finding_retests" in self.model_fields_set:
-            _dict['finding_retests'] = None
+        if self.state is None and "state" in self.model_fields_set:
+            _dict['state'] = None
+
+        # set to None if retest_history (nullable) is None
+        # and model_fields_set contains the field
+        if self.retest_history is None and "retest_history" in self.model_fields_set:
+            _dict['retest_history'] = None
 
         # set to None if assigned_user (nullable) is None
         # and model_fields_set contains the field
         if self.assigned_user is None and "assigned_user" in self.model_fields_set:
             _dict['assigned_user'] = None
+
+        # set to None if last_seen (nullable) is None
+        # and model_fields_set contains the field
+        if self.last_seen is None and "last_seen" in self.model_fields_set:
+            _dict['last_seen'] = None
+
+        # set to None if age (nullable) is None
+        # and model_fields_set contains the field
+        if self.age is None and "age" in self.model_fields_set:
+            _dict['age'] = None
+
+        # set to None if criticality (nullable) is None
+        # and model_fields_set contains the field
+        if self.criticality is None and "criticality" in self.model_fields_set:
+            _dict['criticality'] = None
 
         return _dict
 
@@ -186,14 +215,15 @@ class ClientFinding(BaseModel):
             "severity": obj.get("severity"),
             "cvssv3_score": obj.get("cvssv3_score"),
             "cvssv3_metrics": obj.get("cvssv3_metrics"),
+            "references": obj.get("references"),
             "status": obj.get("status"),
             "state": obj.get("state"),
             "created_at": obj.get("created_at"),
-            "affected": obj.get("affected"),
+            "affected": ClientFindingAffected.from_dict(obj["affected"]) if obj.get("affected") is not None else None,
             "cve_id": obj.get("cve_id"),
             "epss_score": obj.get("epss_score"),
             "retest": Retest.from_dict(obj["retest"]) if obj.get("retest") is not None else None,
-            "finding_retests": [FindingRetestResponseDto.from_dict(_item) for _item in obj["finding_retests"]] if obj.get("finding_retests") is not None else None,
+            "retest_history": [FindingRetestResponseDto.from_dict(_item) for _item in obj["retest_history"]] if obj.get("retest_history") is not None else None,
             "assigned_user": ClientFindingAssignee.from_dict(obj["assigned_user"]) if obj.get("assigned_user") is not None else None,
             "last_seen": obj.get("last_seen"),
             "last_status_updated_at": obj.get("last_status_updated_at"),

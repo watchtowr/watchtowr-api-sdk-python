@@ -36,12 +36,12 @@ class TestClientDomain(unittest.TestCase):
         model = ClientDomain()
         if include_optional:
             return ClientDomain(
+                discovery_reason = 'dns-discovery',
                 type = 'domain',
                 source = 'watchtowr-cloud-integration-aws-hosts',
                 status = 'verified',
-                created_at = 2022-02-13T02:10:00.000000Z,
-                updated_at = 2022-02-13T02:10:00.000000Z,
-                id = 123,
+                created_at = '2022-02-13T02:10Z',
+                id = '123',
                 name = 'watchtowr.com',
                 business_units = [
                     watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
@@ -49,9 +49,39 @@ class TestClientDomain(unittest.TestCase):
                         name = 'Singapore Business Unit', )
                     ],
                 live = True,
+                whois_data = [
+                    watchtowr_api_sdk.models.whois_data.WhoisData(
+                        id = 1, 
+                        data = watchtowr_api_sdk.models.whois_data_object.WhoisDataObject(
+                            org = 'ACME Corp', 
+                            city = 'Singapore', 
+                            name = 'John Doe', 
+                            state = 'Singapore', 
+                            dnssec = 'unsigned', 
+                            emails = null, 
+                            status = null, 
+                            address = 'Singapore 123456', 
+                            country = 'Singapore', 
+                            zipcode = '123456', 
+                            registrar = 'GoDaddy.com, LLC', 
+                            domain_name = 'example.com', 
+                            name_servers = null, 
+                            referral_url = '', 
+                            whois_server = 'whois.godaddy.com', 
+                            creation_date = null, 
+                            expiration_date = null, ), 
+                        raw = 'Domain Name: example.com
+Registry Domain ID: 5066842_DOMAIN_COM-VRSN
+Registrar WHOIS Server: whois.godaddy.com
+Registrar URL: http://www.example.com
+Updated Date: 2023-04-13T19:03:58Z
+Creation Date: 1997-06-18T04:00:00Z
+Registrar Registration Expiration Date: 2027-06-17T04:00:00Z
+            ...', )
+                    ],
                 dns_records = [{"id":1690,"name":"example.com","type":"A","ttl":922,"value":"123.123.123.123","discovered_on":"2024-08-19T08:58:26.000Z"},{"id":1685,"name":"example.com","type":"AAAA","ttl":2687,"value":"0000:0000:0000:0000:0000:ffff:7b7b:7b7b","discovered_on":"2024-08-19T08:58:26.000Z"}],
                 metadata = {"region":"us-west-1","service":"AWS"},
-                custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"domain","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":10,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"domain","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}],
+                custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"domain","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"domain","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}],
                 criticality = 'Medium',
                 infrastructure = watchtowr_api_sdk.models.infrastructure.Infrastructure(
                     cdn = 'AWS CloudFront', 
@@ -69,10 +99,8 @@ class TestClientDomain(unittest.TestCase):
             return ClientDomain(
                 type = 'domain',
                 source = 'watchtowr-cloud-integration-aws-hosts',
-                status = 'verified',
-                created_at = 2022-02-13T02:10:00.000000Z,
-                updated_at = 2022-02-13T02:10:00.000000Z,
-                id = 123,
+                created_at = '2022-02-13T02:10Z',
+                id = '123',
                 name = 'watchtowr.com',
                 business_units = [
                     watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
@@ -80,10 +108,8 @@ class TestClientDomain(unittest.TestCase):
                         name = 'Singapore Business Unit', )
                     ],
                 live = True,
-                dns_records = [{"id":1690,"name":"example.com","type":"A","ttl":922,"value":"123.123.123.123","discovered_on":"2024-08-19T08:58:26.000Z"},{"id":1685,"name":"example.com","type":"AAAA","ttl":2687,"value":"0000:0000:0000:0000:0000:ffff:7b7b:7b7b","discovered_on":"2024-08-19T08:58:26.000Z"}],
                 metadata = {"region":"us-west-1","service":"AWS"},
-                custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"domain","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":10,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"domain","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}],
-                criticality = 'Medium',
+                custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"domain","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"domain","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}],
                 engine_settings = watchtowr_api_sdk.models.client_engine_settings.ClientEngineSettings(
                     adversary_sight_enabled = True, 
                     automated_red_teaming_enabled = True, 

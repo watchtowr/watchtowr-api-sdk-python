@@ -46,11 +46,11 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     api_instance = watchtowr_api_sdk.ActivityLogApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
-    created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter logs created after a given date and time. (optional)
-    created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter logs created before a given date and time. (optional)
+    created_from = '2022-02-22T22:00Z' # datetime | Filter logs created after a given date and time. (optional)
+    created_to = '2022-02-23T22:00Z' # datetime | Filter logs created before a given date and time. (optional)
     types = 'UserInvite,UserRoleType,UserLock,ResetUser2FA,SetupSSO,DisableSSO,UpdateUserSessionTimeout,SuccessfulLogin,PasswordResetTriggered,UserDelete,UserCreated,UserBusinessUnit,IntegrationSetUp,IntegrationUpdated,IntegrationDeleted,KillSwitch,FindingSetting,TestingInfrastructureUpdate,UpdatePriorityPort,PlatformIpWhitelist,AutomaticRetestsUpdated,ReportGenerated,ReportGenerationRequest,ReportDownloaded,AutomaticOutOfScope,PrismaCloudApigeeAccountRemoved,PrismaCloudAccountNameUpdate,ServiceAccountCreated,ServiceAccountUpdated,ServiceAccountDeleted,ServiceAccountEnabled,ServiceAccountDisabled,ServiceAccountTokenRegenerated,PlatformSchedulerGlobalConfigUpdated,PlatformSchedulerDayConfigUpdated,PlatformSchedulerEnabled,PlatformSchedulerDisabled,AssetFavoriteAdded,AssetFavoriteRemoved,ActiveDefenseRuleCreated,ActiveDefenseRuleUpdated,ActiveDefenseRuleDeployed,ActiveDefenseRuleApplyExpired' # str | Filter logs by a comma separated list of types. (optional)
     search = 'requested%20to%20generate%20technical%20report' # str | Search logs across various fields such as user, or description. (optional)
-    user_ids = '1,2,3' # str | Filter logs by a comma separated list of user IDs. (optional)
+    user_ids = [1,2,3] # List[float] | Filter logs by a comma separated list of user IDs. (optional)
 
     try:
         # List Activity Logs
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
  **created_to** | **datetime**| Filter logs created before a given date and time. | [optional] 
  **types** | **str**| Filter logs by a comma separated list of types. | [optional] 
  **search** | **str**| Search logs across various fields such as user, or description. | [optional] 
- **user_ids** | **str**| Filter logs by a comma separated list of user IDs. | [optional] 
+ **user_ids** | [**List[float]**](float.md)| Filter logs by a comma separated list of user IDs. | [optional] 
 
 ### Return type
 

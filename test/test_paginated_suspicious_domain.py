@@ -61,8 +61,8 @@ class TestPaginatedSuspiciousDomain(unittest.TestCase):
                                     name_servers = null, 
                                     referral_url = '', 
                                     whois_server = 'whois.godaddy.com', 
-                                    creation_date = '1989-07-15T04:00:00', 
-                                    expiration_date = '2030-07-15T04:00:00', ), 
+                                    creation_date = null, 
+                                    expiration_date = null, ), 
                                 raw = 'Domain Name: example.com
 Registry Domain ID: 5066842_DOMAIN_COM-VRSN
 Registrar WHOIS Server: whois.godaddy.com
@@ -72,7 +72,7 @@ Creation Date: 1997-06-18T04:00:00Z
 Registrar Registration Expiration Date: 2027-06-17T04:00:00Z
             ...', )
                             ], 
-                        created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
+                        created_at = '2022-02-22T22:00Z', )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
@@ -104,8 +104,8 @@ Registrar Registration Expiration Date: 2027-06-17T04:00:00Z
                                     name_servers = null, 
                                     referral_url = '', 
                                     whois_server = 'whois.godaddy.com', 
-                                    creation_date = '1989-07-15T04:00:00', 
-                                    expiration_date = '2030-07-15T04:00:00', ), 
+                                    creation_date = null, 
+                                    expiration_date = null, ), 
                                 raw = 'Domain Name: example.com
 Registry Domain ID: 5066842_DOMAIN_COM-VRSN
 Registrar WHOIS Server: whois.godaddy.com
@@ -115,7 +115,7 @@ Creation Date: 1997-06-18T04:00:00Z
 Registrar Registration Expiration Date: 2027-06-17T04:00:00Z
             ...', )
                             ], 
-                        created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
+                        created_at = '2022-02-22T22:00Z', )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),

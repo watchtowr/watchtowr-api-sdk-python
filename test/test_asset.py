@@ -36,7 +36,7 @@ class TestAsset(unittest.TestCase):
         model = Asset()
         if include_optional:
             return Asset(
-                id = '11',
+                id = 11,
                 created_at = '2021-11-22T22:17:12Z',
                 source = 'module-github-enumeration-v0.1',
                 type = 'repository',
@@ -46,17 +46,24 @@ class TestAsset(unittest.TestCase):
                 platform = '',
                 provider = 'github',
                 url = 'https://example.com',
-                business_units = [],
+                business_units = [{"id":153,"name":"BU SG-01"}],
                 discovery_reason = '',
                 owner = 'example_user',
                 live = True,
                 sub_type = 'Amazon RDS',
                 super_type = 'Databases',
-                metadata = {}
+                metadata = {},
+                engine_settings = watchtowr_api_sdk.models.client_engine_settings.ClientEngineSettings(
+                    adversary_sight_enabled = True, 
+                    automated_red_teaming_enabled = True, 
+                    credential_stuffing_enabled = True, 
+                    dns_bruteforcing_enabled = False, 
+                    rapid_reaction_enabled = True, 
+                    intrusive_http_checks_enabled = False, )
             )
         else:
             return Asset(
-                id = '11',
+                id = 11,
                 created_at = '2021-11-22T22:17:12Z',
                 source = 'module-github-enumeration-v0.1',
                 type = 'repository',
@@ -66,7 +73,7 @@ class TestAsset(unittest.TestCase):
                 platform = '',
                 provider = 'github',
                 url = 'https://example.com',
-                business_units = [],
+                business_units = [{"id":153,"name":"BU SG-01"}],
                 discovery_reason = '',
                 owner = 'example_user',
                 live = True,

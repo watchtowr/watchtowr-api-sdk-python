@@ -37,12 +37,12 @@ class TestCauser(unittest.TestCase):
         if include_optional:
             return Causer(
                 id = 1,
-                name = Example
+                name = 'Example'
             )
         else:
             return Causer(
                 id = 1,
-                name = Example,
+                name = 'Example',
         )
         """
 

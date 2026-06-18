@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **integration_type** | **str** | Integration type. Valid values: aws, azure, googlecloud, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, armiscentrix, qualysvmdr, tenable | [optional] 
 **integration_id** | **float** | Integration ID | [optional] 
 **include_all_integrations** | **bool** | Whether to include all integrations | 
-**created_at** | **object** | Created At | 
+**created_at** | **datetime** | Created At | 
 
 ## Example
 

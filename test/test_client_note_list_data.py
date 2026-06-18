@@ -44,7 +44,7 @@ class TestClientNoteListData(unittest.TestCase):
                         note_id = 2, 
                         title = 'Initial Review - 01/01/2024', 
                         author = {"id":1,"name":"Steve"}, 
-                        last_modified = 2022-02-13T02:10:00.000000Z, )
+                        last_modified = null, )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
@@ -59,7 +59,7 @@ class TestClientNoteListData(unittest.TestCase):
                         note_id = 2, 
                         title = 'Initial Review - 01/01/2024', 
                         author = {"id":1,"name":"Steve"}, 
-                        last_modified = 2022-02-13T02:10:00.000000Z, )
+                        last_modified = null, )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),

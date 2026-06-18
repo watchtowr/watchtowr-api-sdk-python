@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,10 +31,18 @@ class WhitelistIpData(BaseModel):
     """ # noqa: E501
     id: StrictFloat = Field(description="IP address ID")
     ip: StrictStr = Field(description="IP address or CIDR range")
-    description: Optional[StrictStr] = Field(description="Description of the IP address")
+    description: Optional[StrictStr] = Field(default=None, description="Description of the IP address")
+    enabled_for: StrictStr = Field(description="Whitelisting scope this IP applies to")
     created_at: datetime = Field(description="Creation timestamp")
     updated_at: datetime = Field(description="Last update timestamp")
-    __properties: ClassVar[List[str]] = ["id", "ip", "description", "created_at", "updated_at"]
+    __properties: ClassVar[List[str]] = ["id", "ip", "description", "enabled_for", "created_at", "updated_at"]
+
+    @field_validator('enabled_for')
+    def enabled_for_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['Client API']):
+            raise ValueError("must be one of enum values ('Client API')")
+        return value
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -100,6 +108,7 @@ class WhitelistIpData(BaseModel):
             "id": obj.get("id"),
             "ip": obj.get("ip"),
             "description": obj.get("description"),
+            "enabled_for": obj.get("enabled_for"),
             "created_at": obj.get("created_at"),
             "updated_at": obj.get("updated_at")
         })

@@ -36,13 +36,15 @@ class TestDeleteNoteSucces(unittest.TestCase):
         model = DeleteNoteSucces()
         if include_optional:
             return DeleteNoteSucces(
-                status_code = 200,
-                message = 'Note deleted successfully'
+                message = 'Note deleted successfully',
+                status = 200,
+                status_code = 200
             )
         else:
             return DeleteNoteSucces(
-                status_code = 200,
                 message = 'Note deleted successfully',
+                status = 200,
+                status_code = 200,
         )
         """
 

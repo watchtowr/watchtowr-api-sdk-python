@@ -34,7 +34,7 @@ class TtpLibraryItem(BaseModel):
     name: StrictStr = Field(description="Tactic name")
     identifier: StrictStr = Field(description="Tactic identifier")
     type: StrictStr = Field(description="Tactic type")
-    category: TtpLibraryCategoryItem = Field(description="Parent category")
+    category: Optional[TtpLibraryCategoryItem] = None
     module: Optional[StrictStr] = Field(default=None, description="Module name")
     enabled_on: Optional[datetime] = Field(default=None, description="Date the tactic was enabled")
     __properties: ClassVar[List[str]] = ["id", "name", "identifier", "type", "category", "module", "enabled_on"]
@@ -81,6 +81,11 @@ class TtpLibraryItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of category
         if self.category:
             _dict['category'] = self.category.to_dict()
+        # set to None if category (nullable) is None
+        # and model_fields_set contains the field
+        if self.category is None and "category" in self.model_fields_set:
+            _dict['category'] = None
+
         return _dict
 
     @classmethod

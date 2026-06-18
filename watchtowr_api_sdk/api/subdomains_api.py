@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from datetime import datetime
-from pydantic import Field, StrictFloat, StrictStr
+from pydantic import Field, StrictBool, StrictFloat, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
 from watchtowr_api_sdk.models.client_custom_property import ClientCustomProperty
@@ -418,6 +418,7 @@ class SubdomainsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -492,6 +493,7 @@ class SubdomainsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -566,6 +568,7 @@ class SubdomainsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1585,6 +1588,7 @@ class SubdomainsApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1663,6 +1667,7 @@ class SubdomainsApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1741,6 +1746,7 @@ class SubdomainsApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1881,6 +1887,7 @@ class SubdomainsApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1951,6 +1958,7 @@ class SubdomainsApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2021,6 +2029,7 @@ class SubdomainsApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2982,6 +2991,7 @@ class SubdomainsApi:
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
         custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
+        include_dns_records: Annotated[Optional[StrictBool], Field(description="When `true`, include up to 5 DNS records per asset inline in each item's `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/subdomain/show/{id}/dns-records` for the full paginated set.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3021,6 +3031,8 @@ class SubdomainsApi:
         :type custom_property_key: str
         :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
         :type custom_property_value: str
+        :param include_dns_records: When `true`, include up to 5 DNS records per asset inline in each item's `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/subdomain/show/{id}/dns-records` for the full paginated set.
+        :type include_dns_records: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3055,6 +3067,7 @@ class SubdomainsApi:
             created_to=created_to,
             custom_property_key=custom_property_key,
             custom_property_value=custom_property_value,
+            include_dns_records=include_dns_records,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3090,6 +3103,7 @@ class SubdomainsApi:
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
         custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
+        include_dns_records: Annotated[Optional[StrictBool], Field(description="When `true`, include up to 5 DNS records per asset inline in each item's `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/subdomain/show/{id}/dns-records` for the full paginated set.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3129,6 +3143,8 @@ class SubdomainsApi:
         :type custom_property_key: str
         :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
         :type custom_property_value: str
+        :param include_dns_records: When `true`, include up to 5 DNS records per asset inline in each item's `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/subdomain/show/{id}/dns-records` for the full paginated set.
+        :type include_dns_records: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3163,6 +3179,7 @@ class SubdomainsApi:
             created_to=created_to,
             custom_property_key=custom_property_key,
             custom_property_value=custom_property_value,
+            include_dns_records=include_dns_records,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3198,6 +3215,7 @@ class SubdomainsApi:
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
         custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
+        include_dns_records: Annotated[Optional[StrictBool], Field(description="When `true`, include up to 5 DNS records per asset inline in each item's `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/subdomain/show/{id}/dns-records` for the full paginated set.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3237,6 +3255,8 @@ class SubdomainsApi:
         :type custom_property_key: str
         :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
         :type custom_property_value: str
+        :param include_dns_records: When `true`, include up to 5 DNS records per asset inline in each item's `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/subdomain/show/{id}/dns-records` for the full paginated set.
+        :type include_dns_records: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3271,6 +3291,7 @@ class SubdomainsApi:
             created_to=created_to,
             custom_property_key=custom_property_key,
             custom_property_value=custom_property_value,
+            include_dns_records=include_dns_records,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3301,6 +3322,7 @@ class SubdomainsApi:
         created_to,
         custom_property_key,
         custom_property_value,
+        include_dns_records,
         _request_auth,
         _content_type,
         _headers,
@@ -3385,6 +3407,10 @@ class SubdomainsApi:
         if custom_property_value is not None:
             
             _query_params.append(('customPropertyValue', custom_property_value))
+            
+        if include_dns_records is not None:
+            
+            _query_params.append(('includeDnsRecords', include_dns_records))
             
         # process the header parameters
         # process the form parameters
@@ -5003,6 +5029,7 @@ class SubdomainsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -5081,6 +5108,7 @@ class SubdomainsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -5159,6 +5187,7 @@ class SubdomainsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",

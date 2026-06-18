@@ -18,6 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
@@ -38,7 +39,7 @@ class ClientBusinessUnitRuleDetail(BaseModel):
     integration_type: Optional[StrictStr] = Field(default=None, description="Integration type. Valid values: aws, azure, googlecloud, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, armiscentrix, qualysvmdr, tenable")
     integration_id: Optional[StrictFloat] = Field(default=None, description="Integration ID")
     include_all_integrations: StrictBool = Field(description="Whether to include all integrations")
-    created_at: Dict[str, Any] = Field(description="Created At")
+    created_at: datetime = Field(description="Created At")
     __properties: ClassVar[List[str]] = ["id", "name", "keyword_matcher", "keyword_rule_type", "country", "cascade_subdomain", "cascade_ip", "integration_type", "integration_id", "include_all_integrations", "created_at"]
 
     @field_validator('keyword_rule_type')

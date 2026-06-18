@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **name** | **str** | Domain name | 
 **source** | **str** | Source that discovered the domain | 
 **created_at** | **datetime** | Creation date | 
-**whois_data** | [**ClientPendingDomainWhoisData**](ClientPendingDomainWhoisData.md) | WHOIS data for the domain | 
+**whois_data** | [**ClientPendingDomainWhoisData**](ClientPendingDomainWhoisData.md) | WHOIS data for the domain | [optional] 
 
 ## Example
 

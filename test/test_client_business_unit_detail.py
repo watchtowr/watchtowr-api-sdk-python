@@ -42,8 +42,8 @@ class TestClientBusinessUnitDetail(unittest.TestCase):
                 type = 'DEPARTMENT',
                 parent_id = 1,
                 user_ids = [1,2,3],
-                created_at = 2022-02-13T02:10:00.000000Z,
-                updated_at = 2022-02-13T02:10:00.000000Z
+                created_at = '2022-02-13T02:10Z',
+                updated_at = '2022-02-13T02:10Z'
             )
         else:
             return ClientBusinessUnitDetail(
@@ -51,8 +51,8 @@ class TestClientBusinessUnitDetail(unittest.TestCase):
                 name = 'Singapore Business Unit',
                 description = 'Singapore based assets',
                 type = 'DEPARTMENT',
-                created_at = 2022-02-13T02:10:00.000000Z,
-                updated_at = 2022-02-13T02:10:00.000000Z,
+                created_at = '2022-02-13T02:10Z',
+                updated_at = '2022-02-13T02:10Z',
         )
         """
 

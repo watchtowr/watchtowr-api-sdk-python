@@ -72,7 +72,9 @@ __all__ = [
     "Asset",
     "AssetAndBusinessUnitAlreadyAssociatedConflictErrorResponse",
     "AssetAndBusinessUnitNotAssociatedConflictErrorResponse",
+    "AssetBusinessUnitDto",
     "AssetBusinessUnitIdsDTO",
+    "AssetId",
     "AssetsListResponse",
     "AttackSurfaceDto",
     "AttackSurfaceResiliencyDto",
@@ -113,6 +115,7 @@ __all__ = [
     "ClientEngineSettingsData",
     "ClientEngineSettingsDetails",
     "ClientFinding",
+    "ClientFindingAffected",
     "ClientFindingAssignee",
     "ClientFindingData",
     "ClientFindingImpactTag",
@@ -122,6 +125,7 @@ __all__ = [
     "ClientFindingRetestHistoryAsset",
     "ClientFindingRetestHistoryFinding",
     "ClientFindingRetestHistoryTriggeredBy",
+    "ClientFindingRetestResponse",
     "ClientIp",
     "ClientIpData",
     "ClientIpDetailDnsRecords",
@@ -136,7 +140,9 @@ __all__ = [
     "ClientMobileApp",
     "ClientMobileAppData",
     "ClientNote",
+    "ClientNoteAuthor",
     "ClientNoteData",
+    "ClientNoteLastModified",
     "ClientNoteListData",
     "ClientPackageManager",
     "ClientPackageManagerData",
@@ -150,7 +156,7 @@ __all__ = [
     "ClientSaasPlatformData",
     "ClientSeedData",
     "ClientSeedDataBusinessUnit",
-    "ClientSeedDataData",
+    "ClientSeedDataDto",
     "ClientSeedDataListItem",
     "ClientSeedDataUser",
     "ClientServiceInformationResponseData",
@@ -158,6 +164,7 @@ __all__ = [
     "ClientSubdomain",
     "ClientSubdomainData",
     "ClientSuspiciousDomainData",
+    "ClientTestingInfrastructure",
     "ClientUser",
     "ClientUserDetail",
     "ClientUserDetailBusinessUnitsInner",
@@ -178,6 +185,7 @@ __all__ = [
     "FilterByBusinessUnitInput",
     "FindingListResponse",
     "FindingRetestResponseDto",
+    "FindingStatusesResponse",
     "FindingsSummaryDto",
     "FirstReportedByAttackerSummary",
     "ForbiddenResponse",
@@ -269,7 +277,6 @@ __all__ = [
     "SetCriticalityDto",
     "SetCriticalityResponseDto",
     "SuspiciousDomain",
-    "TargetIndustry",
     "TargetIndustrySummary",
     "Technology",
     "TechnologyStatistic",
@@ -295,7 +302,6 @@ __all__ = [
     "UpdateOrganisationWhitelistIpDto",
     "UpdateUserResponse",
     "UserDetailData",
-    "VictimCountry",
     "VictimCountrySummary",
     "VulnCvssV3XMetrics",
     "VulnDetailKev",
@@ -309,7 +315,9 @@ __all__ = [
     "WhitelistStatusDto",
     "WhoisData",
     "WhoisDataObject",
+    "WhoisDataObjectCreationDate",
     "WhoisDataObjectEmails",
+    "WhoisDataObjectExpirationDate",
     "WhoisDataObjectNameServers",
     "WhoisDataObjectStatus",
 ]
@@ -372,7 +380,9 @@ from watchtowr_api_sdk.models.adversary_intel_details import AdversaryIntelDetai
 from watchtowr_api_sdk.models.asset import Asset as Asset
 from watchtowr_api_sdk.models.asset_and_business_unit_already_associated_conflict_error_response import AssetAndBusinessUnitAlreadyAssociatedConflictErrorResponse as AssetAndBusinessUnitAlreadyAssociatedConflictErrorResponse
 from watchtowr_api_sdk.models.asset_and_business_unit_not_associated_conflict_error_response import AssetAndBusinessUnitNotAssociatedConflictErrorResponse as AssetAndBusinessUnitNotAssociatedConflictErrorResponse
+from watchtowr_api_sdk.models.asset_business_unit_dto import AssetBusinessUnitDto as AssetBusinessUnitDto
 from watchtowr_api_sdk.models.asset_business_unit_ids_dto import AssetBusinessUnitIdsDTO as AssetBusinessUnitIdsDTO
+from watchtowr_api_sdk.models.asset_id import AssetId as AssetId
 from watchtowr_api_sdk.models.assets_list_response import AssetsListResponse as AssetsListResponse
 from watchtowr_api_sdk.models.attack_surface_dto import AttackSurfaceDto as AttackSurfaceDto
 from watchtowr_api_sdk.models.attack_surface_resiliency_dto import AttackSurfaceResiliencyDto as AttackSurfaceResiliencyDto
@@ -413,6 +423,7 @@ from watchtowr_api_sdk.models.client_engine_settings import ClientEngineSettings
 from watchtowr_api_sdk.models.client_engine_settings_data import ClientEngineSettingsData as ClientEngineSettingsData
 from watchtowr_api_sdk.models.client_engine_settings_details import ClientEngineSettingsDetails as ClientEngineSettingsDetails
 from watchtowr_api_sdk.models.client_finding import ClientFinding as ClientFinding
+from watchtowr_api_sdk.models.client_finding_affected import ClientFindingAffected as ClientFindingAffected
 from watchtowr_api_sdk.models.client_finding_assignee import ClientFindingAssignee as ClientFindingAssignee
 from watchtowr_api_sdk.models.client_finding_data import ClientFindingData as ClientFindingData
 from watchtowr_api_sdk.models.client_finding_impact_tag import ClientFindingImpactTag as ClientFindingImpactTag
@@ -422,6 +433,7 @@ from watchtowr_api_sdk.models.client_finding_retest_history import ClientFinding
 from watchtowr_api_sdk.models.client_finding_retest_history_asset import ClientFindingRetestHistoryAsset as ClientFindingRetestHistoryAsset
 from watchtowr_api_sdk.models.client_finding_retest_history_finding import ClientFindingRetestHistoryFinding as ClientFindingRetestHistoryFinding
 from watchtowr_api_sdk.models.client_finding_retest_history_triggered_by import ClientFindingRetestHistoryTriggeredBy as ClientFindingRetestHistoryTriggeredBy
+from watchtowr_api_sdk.models.client_finding_retest_response import ClientFindingRetestResponse as ClientFindingRetestResponse
 from watchtowr_api_sdk.models.client_ip import ClientIp as ClientIp
 from watchtowr_api_sdk.models.client_ip_data import ClientIpData as ClientIpData
 from watchtowr_api_sdk.models.client_ip_detail_dns_records import ClientIpDetailDnsRecords as ClientIpDetailDnsRecords
@@ -436,7 +448,9 @@ from watchtowr_api_sdk.models.client_ip_related_dns_record_asset import ClientIp
 from watchtowr_api_sdk.models.client_mobile_app import ClientMobileApp as ClientMobileApp
 from watchtowr_api_sdk.models.client_mobile_app_data import ClientMobileAppData as ClientMobileAppData
 from watchtowr_api_sdk.models.client_note import ClientNote as ClientNote
+from watchtowr_api_sdk.models.client_note_author import ClientNoteAuthor as ClientNoteAuthor
 from watchtowr_api_sdk.models.client_note_data import ClientNoteData as ClientNoteData
+from watchtowr_api_sdk.models.client_note_last_modified import ClientNoteLastModified as ClientNoteLastModified
 from watchtowr_api_sdk.models.client_note_list_data import ClientNoteListData as ClientNoteListData
 from watchtowr_api_sdk.models.client_package_manager import ClientPackageManager as ClientPackageManager
 from watchtowr_api_sdk.models.client_package_manager_data import ClientPackageManagerData as ClientPackageManagerData
@@ -450,7 +464,7 @@ from watchtowr_api_sdk.models.client_saas_platform import ClientSaasPlatform as 
 from watchtowr_api_sdk.models.client_saas_platform_data import ClientSaasPlatformData as ClientSaasPlatformData
 from watchtowr_api_sdk.models.client_seed_data import ClientSeedData as ClientSeedData
 from watchtowr_api_sdk.models.client_seed_data_business_unit import ClientSeedDataBusinessUnit as ClientSeedDataBusinessUnit
-from watchtowr_api_sdk.models.client_seed_data_data import ClientSeedDataData as ClientSeedDataData
+from watchtowr_api_sdk.models.client_seed_data_dto import ClientSeedDataDto as ClientSeedDataDto
 from watchtowr_api_sdk.models.client_seed_data_list_item import ClientSeedDataListItem as ClientSeedDataListItem
 from watchtowr_api_sdk.models.client_seed_data_user import ClientSeedDataUser as ClientSeedDataUser
 from watchtowr_api_sdk.models.client_service_information_response_data import ClientServiceInformationResponseData as ClientServiceInformationResponseData
@@ -458,6 +472,7 @@ from watchtowr_api_sdk.models.client_source_ips_addresses import ClientSourceIps
 from watchtowr_api_sdk.models.client_subdomain import ClientSubdomain as ClientSubdomain
 from watchtowr_api_sdk.models.client_subdomain_data import ClientSubdomainData as ClientSubdomainData
 from watchtowr_api_sdk.models.client_suspicious_domain_data import ClientSuspiciousDomainData as ClientSuspiciousDomainData
+from watchtowr_api_sdk.models.client_testing_infrastructure import ClientTestingInfrastructure as ClientTestingInfrastructure
 from watchtowr_api_sdk.models.client_user import ClientUser as ClientUser
 from watchtowr_api_sdk.models.client_user_detail import ClientUserDetail as ClientUserDetail
 from watchtowr_api_sdk.models.client_user_detail_business_units_inner import ClientUserDetailBusinessUnitsInner as ClientUserDetailBusinessUnitsInner
@@ -478,6 +493,7 @@ from watchtowr_api_sdk.models.delete_whitelist_ip_data import DeleteWhitelistIpD
 from watchtowr_api_sdk.models.filter_by_business_unit_input import FilterByBusinessUnitInput as FilterByBusinessUnitInput
 from watchtowr_api_sdk.models.finding_list_response import FindingListResponse as FindingListResponse
 from watchtowr_api_sdk.models.finding_retest_response_dto import FindingRetestResponseDto as FindingRetestResponseDto
+from watchtowr_api_sdk.models.finding_statuses_response import FindingStatusesResponse as FindingStatusesResponse
 from watchtowr_api_sdk.models.findings_summary_dto import FindingsSummaryDto as FindingsSummaryDto
 from watchtowr_api_sdk.models.first_reported_by_attacker_summary import FirstReportedByAttackerSummary as FirstReportedByAttackerSummary
 from watchtowr_api_sdk.models.forbidden_response import ForbiddenResponse as ForbiddenResponse
@@ -569,7 +585,6 @@ from watchtowr_api_sdk.models.set_criticality_data_response_dto import SetCritic
 from watchtowr_api_sdk.models.set_criticality_dto import SetCriticalityDto as SetCriticalityDto
 from watchtowr_api_sdk.models.set_criticality_response_dto import SetCriticalityResponseDto as SetCriticalityResponseDto
 from watchtowr_api_sdk.models.suspicious_domain import SuspiciousDomain as SuspiciousDomain
-from watchtowr_api_sdk.models.target_industry import TargetIndustry as TargetIndustry
 from watchtowr_api_sdk.models.target_industry_summary import TargetIndustrySummary as TargetIndustrySummary
 from watchtowr_api_sdk.models.technology import Technology as Technology
 from watchtowr_api_sdk.models.technology_statistic import TechnologyStatistic as TechnologyStatistic
@@ -595,7 +610,6 @@ from watchtowr_api_sdk.models.update_kill_switch_response import UpdateKillSwitc
 from watchtowr_api_sdk.models.update_organisation_whitelist_ip_dto import UpdateOrganisationWhitelistIpDto as UpdateOrganisationWhitelistIpDto
 from watchtowr_api_sdk.models.update_user_response import UpdateUserResponse as UpdateUserResponse
 from watchtowr_api_sdk.models.user_detail_data import UserDetailData as UserDetailData
-from watchtowr_api_sdk.models.victim_country import VictimCountry as VictimCountry
 from watchtowr_api_sdk.models.victim_country_summary import VictimCountrySummary as VictimCountrySummary
 from watchtowr_api_sdk.models.vuln_cvss_v3_x_metrics import VulnCvssV3XMetrics as VulnCvssV3XMetrics
 from watchtowr_api_sdk.models.vuln_detail_kev import VulnDetailKev as VulnDetailKev
@@ -609,7 +623,9 @@ from watchtowr_api_sdk.models.whitelist_status_data import WhitelistStatusData a
 from watchtowr_api_sdk.models.whitelist_status_dto import WhitelistStatusDto as WhitelistStatusDto
 from watchtowr_api_sdk.models.whois_data import WhoisData as WhoisData
 from watchtowr_api_sdk.models.whois_data_object import WhoisDataObject as WhoisDataObject
+from watchtowr_api_sdk.models.whois_data_object_creation_date import WhoisDataObjectCreationDate as WhoisDataObjectCreationDate
 from watchtowr_api_sdk.models.whois_data_object_emails import WhoisDataObjectEmails as WhoisDataObjectEmails
+from watchtowr_api_sdk.models.whois_data_object_expiration_date import WhoisDataObjectExpirationDate as WhoisDataObjectExpirationDate
 from watchtowr_api_sdk.models.whois_data_object_name_servers import WhoisDataObjectNameServers as WhoisDataObjectNameServers
 from watchtowr_api_sdk.models.whois_data_object_status import WhoisDataObjectStatus as WhoisDataObjectStatus
 

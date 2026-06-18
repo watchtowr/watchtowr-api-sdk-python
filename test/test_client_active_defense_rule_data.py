@@ -41,8 +41,8 @@ class TestClientActiveDefenseRuleData(unittest.TestCase):
                     name = 'SQL Injection in MOVEit Transfer (CVE-2023-34362)', 
                     description = 'Mitigates exploitation attempts against CVE-2023-34362.', 
                     zero_day = False, 
-                    created_at = '2023-12-01T00:00:00.000Z', 
-                    updated_at = '2023-12-02T00:00:00.000Z', 
+                    created_at = '2023-12-01T00:00Z', 
+                    updated_at = '2023-12-02T00:00Z', 
                     rules = [
                         watchtowr_api_sdk.models.active_defense_rule_template.ActiveDefenseRuleTemplate(
                             type = 'cloudflare', 
@@ -59,8 +59,8 @@ class TestClientActiveDefenseRuleData(unittest.TestCase):
                     name = 'SQL Injection in MOVEit Transfer (CVE-2023-34362)', 
                     description = 'Mitigates exploitation attempts against CVE-2023-34362.', 
                     zero_day = False, 
-                    created_at = '2023-12-01T00:00:00.000Z', 
-                    updated_at = '2023-12-02T00:00:00.000Z', 
+                    created_at = '2023-12-01T00:00Z', 
+                    updated_at = '2023-12-02T00:00Z', 
                     rules = [
                         watchtowr_api_sdk.models.active_defense_rule_template.ActiveDefenseRuleTemplate(
                             type = 'cloudflare', 

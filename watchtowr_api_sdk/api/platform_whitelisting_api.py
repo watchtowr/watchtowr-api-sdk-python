@@ -3094,6 +3094,7 @@ class PlatformWhitelistingApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WhitelistStatusData",
+            '400': "BadRequestResponse",
             '401': "UnauthorizedResponse",
             '403': "ForbiddenResponse",
         }
@@ -3163,6 +3164,7 @@ class PlatformWhitelistingApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WhitelistStatusData",
+            '400': "BadRequestResponse",
             '401': "UnauthorizedResponse",
             '403': "ForbiddenResponse",
         }
@@ -3232,6 +3234,7 @@ class PlatformWhitelistingApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WhitelistStatusData",
+            '400': "BadRequestResponse",
             '401': "UnauthorizedResponse",
             '403': "ForbiddenResponse",
         }

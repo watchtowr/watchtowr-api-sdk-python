@@ -36,13 +36,13 @@ class TestClientPackageManager(unittest.TestCase):
         model = ClientPackageManager()
         if include_optional:
             return ClientPackageManager(
+                discovery_reason = 'dns-discovery',
                 type = 'packageManager',
                 name = 'example-package',
                 source = 'module-adversarysight-npmjs-project-discovery',
                 status = 'verified',
-                created_at = 2022-02-13T02:10:00.000000Z,
-                updated_at = 2022-02-13T02:10:00.000000Z,
-                id = 123,
+                created_at = '2022-02-13T02:10Z',
+                id = '123',
                 url = 'https://www.npmjs.com/package/example-package',
                 platform = 'npm',
                 business_units = [
@@ -50,7 +50,8 @@ class TestClientPackageManager(unittest.TestCase):
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],
-                custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"packageManager","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"packageManager","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}],
+                metadata = {},
+                custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"packageManager","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"packageManager","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}],
                 criticality = 'Medium'
             )
         else:
@@ -58,19 +59,16 @@ class TestClientPackageManager(unittest.TestCase):
                 type = 'packageManager',
                 name = 'example-package',
                 source = 'module-adversarysight-npmjs-project-discovery',
-                status = 'verified',
-                created_at = 2022-02-13T02:10:00.000000Z,
-                updated_at = 2022-02-13T02:10:00.000000Z,
-                id = 123,
-                url = 'https://www.npmjs.com/package/example-package',
+                created_at = '2022-02-13T02:10Z',
+                id = '123',
                 platform = 'npm',
                 business_units = [
                     watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
                         name = 'Singapore Business Unit', )
                     ],
-                custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"packageManager","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"packageManager","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}],
-                criticality = 'Medium',
+                metadata = {},
+                custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"packageManager","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"packageManager","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}],
         )
         """
 

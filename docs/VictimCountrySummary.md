@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**List[VictimCountry]**](VictimCountry.md) |  | [optional] 
+**data** | **List[str]** |  | [optional] 
 **total_count** | **float** |  | [optional] 
 
 ## Example

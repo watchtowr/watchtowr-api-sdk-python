@@ -29,7 +29,7 @@ class CreateClientCustomPropertyDto(BaseModel):
     CreateClientCustomPropertyDto
     """ # noqa: E501
     key: StrictStr = Field(description="The key of the custom property. Key provided must not be empty and must be unique for the model type. If is_preset is true, key must belong to one of watchTowr's preset custom properties. Accepted preset keys include: 'Criticality'.")
-    value: Dict[str, Any] = Field(description="The value of the custom property. If existing custom property's preset is true, the value supplied must belong to one of the valid watchTowr preset values. Accepted preset values are 'Low', 'Medium', 'High', 'Unknown' for key: 'Criticality'.")
+    value: StrictStr = Field(description="The value of the custom property. If existing custom property's preset is true, the value supplied must belong to one of the valid watchTowr preset values. Accepted preset values are 'Low', 'Medium', 'High', 'Unknown' for key: 'Criticality'.")
     is_preset: Optional[StrictBool] = Field(default=None, description="Defaults to false. If true, custom property is a watchTowr preset custom property.", alias="isPreset")
     __properties: ClassVar[List[str]] = ["key", "value", "isPreset"]
 

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **title** | **str** | Title | 
 **description** | **str** |  | 
 **hypothesis** | **str** | Hypothesis | 
-**references** | **List[str]** | references | 
+**references** | **List[Optional[str]]** | references | 
 **completed_at** | **datetime** | Completed at | 
 **completed_by** | **str** | Completed by | 
 **requested_by** | **str** | Request by | 

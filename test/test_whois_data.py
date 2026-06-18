@@ -53,8 +53,8 @@ class TestWhoisData(unittest.TestCase):
                     name_servers = null, 
                     referral_url = '', 
                     whois_server = 'whois.godaddy.com', 
-                    creation_date = '1989-07-15T04:00:00', 
-                    expiration_date = '2030-07-15T04:00:00', ),
+                    creation_date = null, 
+                    expiration_date = null, ),
                 raw = 'Domain Name: example.com
 Registry Domain ID: 5066842_DOMAIN_COM-VRSN
 Registrar WHOIS Server: whois.godaddy.com
@@ -83,8 +83,8 @@ Registrar Registration Expiration Date: 2027-06-17T04:00:00Z
                     name_servers = null, 
                     referral_url = '', 
                     whois_server = 'whois.godaddy.com', 
-                    creation_date = '1989-07-15T04:00:00', 
-                    expiration_date = '2030-07-15T04:00:00', ),
+                    creation_date = null, 
+                    expiration_date = null, ),
                 raw = 'Domain Name: example.com
 Registry Domain ID: 5066842_DOMAIN_COM-VRSN
 Registrar WHOIS Server: whois.godaddy.com

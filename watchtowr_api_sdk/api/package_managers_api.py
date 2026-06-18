@@ -713,6 +713,7 @@ class PackageManagersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -787,6 +788,7 @@ class PackageManagersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -861,6 +863,7 @@ class PackageManagersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1588,6 +1591,7 @@ class PackageManagersApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1666,6 +1670,7 @@ class PackageManagersApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1744,6 +1749,7 @@ class PackageManagersApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1884,6 +1890,7 @@ class PackageManagersApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1954,6 +1961,7 @@ class PackageManagersApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2024,6 +2032,7 @@ class PackageManagersApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4419,6 +4428,7 @@ class PackageManagersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -4497,6 +4507,7 @@ class PackageManagersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -4575,6 +4586,7 @@ class PackageManagersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",

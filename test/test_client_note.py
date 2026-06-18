@@ -41,8 +41,10 @@ class TestClientNote(unittest.TestCase):
                 note_type = 'Domain',
                 note_id = 2,
                 title = 'Initial Review - 01/01/2024',
-                author = {"id":1,"name":"Steve"},
-                last_modified = 2022-02-13T02:10:00.000000Z
+                author = watchtowr_api_sdk.models.client_note_author.ClientNoteAuthor(
+                    id = 1, 
+                    name = 'Steve', ),
+                last_modified = None
             )
         else:
             return ClientNote(
@@ -51,8 +53,10 @@ class TestClientNote(unittest.TestCase):
                 note_type = 'Domain',
                 note_id = 2,
                 title = 'Initial Review - 01/01/2024',
-                author = {"id":1,"name":"Steve"},
-                last_modified = 2022-02-13T02:10:00.000000Z,
+                author = watchtowr_api_sdk.models.client_note_author.ClientNoteAuthor(
+                    id = 1, 
+                    name = 'Steve', ),
+                last_modified = None,
         )
         """
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cwe_id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**cwe_url** | **str** | MITRE CWE definition URL for the entry. | [optional] 
 
 ## Example
 

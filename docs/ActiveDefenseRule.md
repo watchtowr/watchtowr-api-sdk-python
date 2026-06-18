@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **kev_status** | [**ActiveDefenseRuleKevStatus**](ActiveDefenseRuleKevStatus.md) |  | 
 **zero_day** | **bool** |  | 
 **providers** | **List[str]** |  | 
-**created_at** | **str** |  | 
-**updated_at** | **str** |  | 
+**created_at** | **datetime** |  | 
+**updated_at** | **datetime** |  | 
 
 ## Example
 

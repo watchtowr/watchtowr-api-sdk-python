@@ -5,19 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**discovery_reason** | **str** |  | [optional] 
 **type** | **str** |  | 
 **source** | **str** |  | 
-**status** | **str** |  | 
-**created_at** | [**datetime.date**](datetime.date.md) |  | 
-**updated_at** | [**datetime.date**](datetime.date.md) |  | 
-**id** | **float** |  | 
+**status** | **str** |  | [optional] 
+**created_at** | **datetime** |  | 
+**id** | **str** |  | 
 **name** | **str** |  | 
 **business_units** | [**List[ClientBusinessUnit]**](ClientBusinessUnit.md) |  | 
 **live** | **bool** |  | 
-**dns_records** | **List[str]** |  | 
-**metadata** | **object** |  | 
+**dns_records** | [**List[ClientAssetDnsRecord]**](ClientAssetDnsRecord.md) | DNS records for the subdomain. In list responses, included only when &#x60;includeDnsRecords&#x3D;true&#x60; (capped at 5 per asset). Always populated on the detail endpoints (&#x60;GET /assets/subdomain/show/{id}&#x60; and &#x60;GET /assets/subdomain/show/{id}/dns-records&#x60;). Not included in finding &#x60;affected&#x60; objects. | [optional] 
+**metadata** | **object** | Cloud/IaaS integration metadata where available; defaults to an empty object. | 
 **custom_properties** | [**List[ClientCustomProperty]**](ClientCustomProperty.md) |  | 
-**criticality** | **str** |  | 
+**criticality** | **str** |  | [optional] 
 **infrastructure** | [**Infrastructure**](Infrastructure.md) |  | [optional] 
 **engine_settings** | [**ClientEngineSettings**](ClientEngineSettings.md) |  | 
 

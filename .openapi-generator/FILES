@@ -19,7 +19,9 @@ docs/AdversaryIntelligenceApi.md
 docs/Asset.md
 docs/AssetAndBusinessUnitAlreadyAssociatedConflictErrorResponse.md
 docs/AssetAndBusinessUnitNotAssociatedConflictErrorResponse.md
+docs/AssetBusinessUnitDto.md
 docs/AssetBusinessUnitIdsDTO.md
+docs/AssetId.md
 docs/AssetsListResponse.md
 docs/AttackSurfaceDto.md
 docs/AttackSurfaceResiliencyDto.md
@@ -63,6 +65,7 @@ docs/ClientEngineSettings.md
 docs/ClientEngineSettingsData.md
 docs/ClientEngineSettingsDetails.md
 docs/ClientFinding.md
+docs/ClientFindingAffected.md
 docs/ClientFindingAssignee.md
 docs/ClientFindingData.md
 docs/ClientFindingImpactTag.md
@@ -72,6 +75,7 @@ docs/ClientFindingRetestHistory.md
 docs/ClientFindingRetestHistoryAsset.md
 docs/ClientFindingRetestHistoryFinding.md
 docs/ClientFindingRetestHistoryTriggeredBy.md
+docs/ClientFindingRetestResponse.md
 docs/ClientIp.md
 docs/ClientIpData.md
 docs/ClientIpDetailDnsRecords.md
@@ -86,7 +90,9 @@ docs/ClientIpRelatedDnsRecordAsset.md
 docs/ClientMobileApp.md
 docs/ClientMobileAppData.md
 docs/ClientNote.md
+docs/ClientNoteAuthor.md
 docs/ClientNoteData.md
+docs/ClientNoteLastModified.md
 docs/ClientNoteListData.md
 docs/ClientPackageManager.md
 docs/ClientPackageManagerData.md
@@ -100,7 +106,7 @@ docs/ClientSaasPlatform.md
 docs/ClientSaasPlatformData.md
 docs/ClientSeedData.md
 docs/ClientSeedDataBusinessUnit.md
-docs/ClientSeedDataData.md
+docs/ClientSeedDataDto.md
 docs/ClientSeedDataListItem.md
 docs/ClientSeedDataUser.md
 docs/ClientServiceInformationResponseData.md
@@ -108,6 +114,7 @@ docs/ClientSourceIpsAddresses.md
 docs/ClientSubdomain.md
 docs/ClientSubdomainData.md
 docs/ClientSuspiciousDomainData.md
+docs/ClientTestingInfrastructure.md
 docs/ClientUser.md
 docs/ClientUserDetail.md
 docs/ClientUserDetailBusinessUnitsInner.md
@@ -134,6 +141,7 @@ docs/FilterByBusinessUnitInput.md
 docs/FindingListResponse.md
 docs/FindingRetestHistoryApi.md
 docs/FindingRetestResponseDto.md
+docs/FindingStatusesResponse.md
 docs/FindingsApi.md
 docs/FindingsSummaryDto.md
 docs/FirstReportedByAttackerSummary.md
@@ -243,7 +251,6 @@ docs/SourceIPAddressesApi.md
 docs/SubdomainsApi.md
 docs/SuspiciousDomain.md
 docs/SuspiciousDomainsApi.md
-docs/TargetIndustry.md
 docs/TargetIndustrySummary.md
 docs/Technology.md
 docs/TechnologyStatistic.md
@@ -270,7 +277,6 @@ docs/UpdateOrganisationWhitelistIpDto.md
 docs/UpdateUserResponse.md
 docs/UserDetailData.md
 docs/UserManagementApi.md
-docs/VictimCountry.md
 docs/VictimCountrySummary.md
 docs/VulnCvssV3XMetrics.md
 docs/VulnDetailKev.md
@@ -285,7 +291,9 @@ docs/WhitelistStatusData.md
 docs/WhitelistStatusDto.md
 docs/WhoisData.md
 docs/WhoisDataObject.md
+docs/WhoisDataObjectCreationDate.md
 docs/WhoisDataObjectEmails.md
+docs/WhoisDataObjectExpirationDate.md
 docs/WhoisDataObjectNameServers.md
 docs/WhoisDataObjectStatus.md
 git_push.sh
@@ -310,7 +318,9 @@ test/test_api_documentation_api.py
 test/test_asset.py
 test/test_asset_and_business_unit_already_associated_conflict_error_response.py
 test/test_asset_and_business_unit_not_associated_conflict_error_response.py
+test/test_asset_business_unit_dto.py
 test/test_asset_business_unit_ids_dto.py
+test/test_asset_id.py
 test/test_assets_list_response.py
 test/test_attack_surface_dto.py
 test/test_attack_surface_resiliency_dto.py
@@ -354,6 +364,7 @@ test/test_client_engine_settings.py
 test/test_client_engine_settings_data.py
 test/test_client_engine_settings_details.py
 test/test_client_finding.py
+test/test_client_finding_affected.py
 test/test_client_finding_assignee.py
 test/test_client_finding_data.py
 test/test_client_finding_impact_tag.py
@@ -363,6 +374,7 @@ test/test_client_finding_retest_history.py
 test/test_client_finding_retest_history_asset.py
 test/test_client_finding_retest_history_finding.py
 test/test_client_finding_retest_history_triggered_by.py
+test/test_client_finding_retest_response.py
 test/test_client_ip.py
 test/test_client_ip_data.py
 test/test_client_ip_detail_dns_records.py
@@ -377,7 +389,9 @@ test/test_client_ip_related_dns_record_asset.py
 test/test_client_mobile_app.py
 test/test_client_mobile_app_data.py
 test/test_client_note.py
+test/test_client_note_author.py
 test/test_client_note_data.py
+test/test_client_note_last_modified.py
 test/test_client_note_list_data.py
 test/test_client_package_manager.py
 test/test_client_package_manager_data.py
@@ -391,7 +405,7 @@ test/test_client_saas_platform.py
 test/test_client_saas_platform_data.py
 test/test_client_seed_data.py
 test/test_client_seed_data_business_unit.py
-test/test_client_seed_data_data.py
+test/test_client_seed_data_dto.py
 test/test_client_seed_data_list_item.py
 test/test_client_seed_data_user.py
 test/test_client_service_information_response_data.py
@@ -399,6 +413,7 @@ test/test_client_source_ips_addresses.py
 test/test_client_subdomain.py
 test/test_client_subdomain_data.py
 test/test_client_suspicious_domain_data.py
+test/test_client_testing_infrastructure.py
 test/test_client_user.py
 test/test_client_user_detail.py
 test/test_client_user_detail_business_units_inner.py
@@ -425,6 +440,7 @@ test/test_filter_by_business_unit_input.py
 test/test_finding_list_response.py
 test/test_finding_retest_history_api.py
 test/test_finding_retest_response_dto.py
+test/test_finding_statuses_response.py
 test/test_findings_api.py
 test/test_findings_summary_dto.py
 test/test_first_reported_by_attacker_summary.py
@@ -534,7 +550,6 @@ test/test_source_ip_addresses_api.py
 test/test_subdomains_api.py
 test/test_suspicious_domain.py
 test/test_suspicious_domains_api.py
-test/test_target_industry.py
 test/test_target_industry_summary.py
 test/test_technology.py
 test/test_technology_statistic.py
@@ -561,7 +576,6 @@ test/test_update_organisation_whitelist_ip_dto.py
 test/test_update_user_response.py
 test/test_user_detail_data.py
 test/test_user_management_api.py
-test/test_victim_country.py
 test/test_victim_country_summary.py
 test/test_vuln_cvss_v3_x_metrics.py
 test/test_vuln_detail_kev.py
@@ -576,7 +590,9 @@ test/test_whitelist_status_data.py
 test/test_whitelist_status_dto.py
 test/test_whois_data.py
 test/test_whois_data_object.py
+test/test_whois_data_object_creation_date.py
 test/test_whois_data_object_emails.py
+test/test_whois_data_object_expiration_date.py
 test/test_whois_data_object_name_servers.py
 test/test_whois_data_object_status.py
 tox.ini
@@ -631,7 +647,9 @@ watchtowr_api_sdk/models/adversary_intel_details.py
 watchtowr_api_sdk/models/asset.py
 watchtowr_api_sdk/models/asset_and_business_unit_already_associated_conflict_error_response.py
 watchtowr_api_sdk/models/asset_and_business_unit_not_associated_conflict_error_response.py
+watchtowr_api_sdk/models/asset_business_unit_dto.py
 watchtowr_api_sdk/models/asset_business_unit_ids_dto.py
+watchtowr_api_sdk/models/asset_id.py
 watchtowr_api_sdk/models/assets_list_response.py
 watchtowr_api_sdk/models/attack_surface_dto.py
 watchtowr_api_sdk/models/attack_surface_resiliency_dto.py
@@ -672,6 +690,7 @@ watchtowr_api_sdk/models/client_engine_settings.py
 watchtowr_api_sdk/models/client_engine_settings_data.py
 watchtowr_api_sdk/models/client_engine_settings_details.py
 watchtowr_api_sdk/models/client_finding.py
+watchtowr_api_sdk/models/client_finding_affected.py
 watchtowr_api_sdk/models/client_finding_assignee.py
 watchtowr_api_sdk/models/client_finding_data.py
 watchtowr_api_sdk/models/client_finding_impact_tag.py
@@ -681,6 +700,7 @@ watchtowr_api_sdk/models/client_finding_retest_history.py
 watchtowr_api_sdk/models/client_finding_retest_history_asset.py
 watchtowr_api_sdk/models/client_finding_retest_history_finding.py
 watchtowr_api_sdk/models/client_finding_retest_history_triggered_by.py
+watchtowr_api_sdk/models/client_finding_retest_response.py
 watchtowr_api_sdk/models/client_ip.py
 watchtowr_api_sdk/models/client_ip_data.py
 watchtowr_api_sdk/models/client_ip_detail_dns_records.py
@@ -695,7 +715,9 @@ watchtowr_api_sdk/models/client_ip_related_dns_record_asset.py
 watchtowr_api_sdk/models/client_mobile_app.py
 watchtowr_api_sdk/models/client_mobile_app_data.py
 watchtowr_api_sdk/models/client_note.py
+watchtowr_api_sdk/models/client_note_author.py
 watchtowr_api_sdk/models/client_note_data.py
+watchtowr_api_sdk/models/client_note_last_modified.py
 watchtowr_api_sdk/models/client_note_list_data.py
 watchtowr_api_sdk/models/client_package_manager.py
 watchtowr_api_sdk/models/client_package_manager_data.py
@@ -709,7 +731,7 @@ watchtowr_api_sdk/models/client_saas_platform.py
 watchtowr_api_sdk/models/client_saas_platform_data.py
 watchtowr_api_sdk/models/client_seed_data.py
 watchtowr_api_sdk/models/client_seed_data_business_unit.py
-watchtowr_api_sdk/models/client_seed_data_data.py
+watchtowr_api_sdk/models/client_seed_data_dto.py
 watchtowr_api_sdk/models/client_seed_data_list_item.py
 watchtowr_api_sdk/models/client_seed_data_user.py
 watchtowr_api_sdk/models/client_service_information_response_data.py
@@ -717,6 +739,7 @@ watchtowr_api_sdk/models/client_source_ips_addresses.py
 watchtowr_api_sdk/models/client_subdomain.py
 watchtowr_api_sdk/models/client_subdomain_data.py
 watchtowr_api_sdk/models/client_suspicious_domain_data.py
+watchtowr_api_sdk/models/client_testing_infrastructure.py
 watchtowr_api_sdk/models/client_user.py
 watchtowr_api_sdk/models/client_user_detail.py
 watchtowr_api_sdk/models/client_user_detail_business_units_inner.py
@@ -737,6 +760,7 @@ watchtowr_api_sdk/models/delete_whitelist_ip_data.py
 watchtowr_api_sdk/models/filter_by_business_unit_input.py
 watchtowr_api_sdk/models/finding_list_response.py
 watchtowr_api_sdk/models/finding_retest_response_dto.py
+watchtowr_api_sdk/models/finding_statuses_response.py
 watchtowr_api_sdk/models/findings_summary_dto.py
 watchtowr_api_sdk/models/first_reported_by_attacker_summary.py
 watchtowr_api_sdk/models/forbidden_response.py
@@ -828,7 +852,6 @@ watchtowr_api_sdk/models/set_criticality_data_response_dto.py
 watchtowr_api_sdk/models/set_criticality_dto.py
 watchtowr_api_sdk/models/set_criticality_response_dto.py
 watchtowr_api_sdk/models/suspicious_domain.py
-watchtowr_api_sdk/models/target_industry.py
 watchtowr_api_sdk/models/target_industry_summary.py
 watchtowr_api_sdk/models/technology.py
 watchtowr_api_sdk/models/technology_statistic.py
@@ -854,7 +877,6 @@ watchtowr_api_sdk/models/update_kill_switch_response.py
 watchtowr_api_sdk/models/update_organisation_whitelist_ip_dto.py
 watchtowr_api_sdk/models/update_user_response.py
 watchtowr_api_sdk/models/user_detail_data.py
-watchtowr_api_sdk/models/victim_country.py
 watchtowr_api_sdk/models/victim_country_summary.py
 watchtowr_api_sdk/models/vuln_cvss_v3_x_metrics.py
 watchtowr_api_sdk/models/vuln_detail_kev.py
@@ -868,7 +890,9 @@ watchtowr_api_sdk/models/whitelist_status_data.py
 watchtowr_api_sdk/models/whitelist_status_dto.py
 watchtowr_api_sdk/models/whois_data.py
 watchtowr_api_sdk/models/whois_data_object.py
+watchtowr_api_sdk/models/whois_data_object_creation_date.py
 watchtowr_api_sdk/models/whois_data_object_emails.py
+watchtowr_api_sdk/models/whois_data_object_expiration_date.py
 watchtowr_api_sdk/models/whois_data_object_name_servers.py
 watchtowr_api_sdk/models/whois_data_object_status.py
 watchtowr_api_sdk/py.typed

@@ -41,6 +41,7 @@ class TestWhitelistIpListData(unittest.TestCase):
                         id = 1, 
                         ip = '192.168.1.1', 
                         description = 'Office network', 
+                        enabled_for = 'Client API', 
                         created_at = '2024-01-01T00:00Z', 
                         updated_at = '2024-01-01T00:00Z', )
                     ]
@@ -52,6 +53,7 @@ class TestWhitelistIpListData(unittest.TestCase):
                         id = 1, 
                         ip = '192.168.1.1', 
                         description = 'Office network', 
+                        enabled_for = 'Client API', 
                         created_at = '2024-01-01T00:00Z', 
                         updated_at = '2024-01-01T00:00Z', )
                     ],

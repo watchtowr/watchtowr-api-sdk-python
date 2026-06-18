@@ -43,7 +43,7 @@ class AdversaryIntelDetails(BaseModel):
     mitre_last_updated: Optional[datetime] = Field(default=None, alias="mitreLastUpdated")
     victim_countries: Optional[VictimCountrySummary] = Field(default=None, alias="victimCountries")
     target_industries: Optional[TargetIndustrySummary] = Field(default=None, alias="targetIndustries")
-    latest_media: Optional[List[Media]] = Field(default=None, alias="latestMedia")
+    latest_media: Optional[List[Media]] = Field(default=None, description="Recent media references for this adversary. Not currently populated — returns an empty array.", alias="latestMedia")
     is_affected: StrictBool = Field(description="Whether the user has confirmed open findings against vulnerabilities exploited by this adversary. Scoped to the requesting user's business units and the organization's finding impact threshold.", alias="isAffected")
     affected_kb_entry_ids: List[StrictFloat] = Field(description="KB entry IDs that drive the `isAffected` flag, scoped to the requesting user's business units.", alias="affectedKbEntryIds")
     __properties: ClassVar[List[str]] = ["attackerId", "name", "type", "description", "aliases", "countryCode", "firstReportedDate", "vulnerabilityLastUpdated", "mitreLastUpdated", "victimCountries", "targetIndustries", "latestMedia", "isAffected", "affectedKbEntryIds"]

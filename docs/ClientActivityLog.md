@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** | ID | 
-**description** | **object** | Description | 
-**type** | **object** | Subject | 
+**description** | **str** | Description | 
+**type** | **str** | Subject | 
 **properties** | **object** | Log properties | [optional] 
-**created_at** | **object** | Timestamp | [optional] 
+**created_at** | **datetime** | Timestamp | [optional] 
 **caused_by** | [**Causer**](Causer.md) |  | 
 
 ## Example

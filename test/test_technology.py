@@ -45,7 +45,6 @@ class TestTechnology(unittest.TestCase):
             return Technology(
                 id = 1,
                 name = 'APACHE',
-                version = '0.1',
                 display_name = 'APACHE',
         )
         """

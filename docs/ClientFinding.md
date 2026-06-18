@@ -16,19 +16,20 @@ Name | Type | Description | Notes
 **severity** | **str** |  | 
 **cvssv3_score** | **float** |  | 
 **cvssv3_metrics** | **str** |  | 
+**references** | **str** | Finding references from the knowledge base entry, or &#x60;\&quot;No references.\&quot;&#x60; when none exist. | 
 **status** | **str** |  | 
-**state** | **str** | Different to status, this is about tracking how the finding is being handled | 
-**created_at** | **str** |  | 
-**affected** | **object** |  | 
+**state** | **str** | Different to status, this is about tracking how the finding is being handled | [optional] 
+**created_at** | **datetime** |  | 
+**affected** | [**ClientFindingAffected**](ClientFindingAffected.md) | Affected asset envelope. The asset object is nested under &#x60;data&#x60;; shape varies by asset type. | 
 **cve_id** | **str** |  | [optional] 
 **epss_score** | **float** |  | [optional] 
 **retest** | [**Retest**](Retest.md) |  | [optional] 
-**finding_retests** | [**List[FindingRetestResponseDto]**](FindingRetestResponseDto.md) |  | [optional] 
+**retest_history** | [**List[FindingRetestResponseDto]**](FindingRetestResponseDto.md) |  | [optional] 
 **assigned_user** | [**ClientFindingAssignee**](ClientFindingAssignee.md) |  | [optional] 
-**last_seen** | **object** |  | [optional] 
-**last_status_updated_at** | **object** |  | 
-**age** | **float** |  | 
-**criticality** | **str** |  | 
+**last_seen** | **datetime** |  | [optional] 
+**last_status_updated_at** | **datetime** |  | 
+**age** | **float** |  | [optional] 
+**criticality** | **str** |  | [optional] 
 **custom_properties** | [**List[ClientCustomProperty]**](ClientCustomProperty.md) |  | 
 **detection_rules** | **List[object]** |  | 
 

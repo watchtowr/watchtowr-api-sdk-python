@@ -344,7 +344,7 @@ class CertificatesApi:
     ) -> PaginatedServiceInformationResponse:
         """List Certificates
 
-        List all discovered TLS/SSL certificate assets, ordered by discovery date.
+        List all discovered TLS/SSL certificate assets, ordered by discovery date.  Note: certificates whose underlying port is not linked to a domain, subdomain, or IP asset are silently skipped from `data`. The pagination metadata (`meta.pagination.count` / `total`) still reflects the database row count including such orphans, so `data.length` may be less than `meta.pagination.count` when orphan rows exist. Iterate `data` directly rather than relying on `count` to size the array.
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -468,7 +468,7 @@ class CertificatesApi:
     ) -> ApiResponse[PaginatedServiceInformationResponse]:
         """List Certificates
 
-        List all discovered TLS/SSL certificate assets, ordered by discovery date.
+        List all discovered TLS/SSL certificate assets, ordered by discovery date.  Note: certificates whose underlying port is not linked to a domain, subdomain, or IP asset are silently skipped from `data`. The pagination metadata (`meta.pagination.count` / `total`) still reflects the database row count including such orphans, so `data.length` may be less than `meta.pagination.count` when orphan rows exist. Iterate `data` directly rather than relying on `count` to size the array.
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
@@ -592,7 +592,7 @@ class CertificatesApi:
     ) -> RESTResponseType:
         """List Certificates
 
-        List all discovered TLS/SSL certificate assets, ordered by discovery date.
+        List all discovered TLS/SSL certificate assets, ordered by discovery date.  Note: certificates whose underlying port is not linked to a domain, subdomain, or IP asset are silently skipped from `data`. The pagination metadata (`meta.pagination.count` / `total`) still reflects the database row count including such orphans, so `data.length` may be less than `meta.pagination.count` when orphan rows exist. Iterate `data` directly rather than relying on `count` to size the array.
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float

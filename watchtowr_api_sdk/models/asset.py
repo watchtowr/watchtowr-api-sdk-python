@@ -20,7 +20,10 @@ import json
 
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
+from watchtowr_api_sdk.models.asset_business_unit_dto import AssetBusinessUnitDto
+from watchtowr_api_sdk.models.asset_id import AssetId
+from watchtowr_api_sdk.models.client_engine_settings import ClientEngineSettings
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,24 +32,25 @@ class Asset(BaseModel):
     """
     Asset
     """ # noqa: E501
-    id: StrictStr = Field(description="ID")
+    id: AssetId
     created_at: datetime = Field(description="Created at")
-    source: StrictStr = Field(description="Source")
+    source: Optional[StrictStr] = Field(description="Source")
     type: StrictStr = Field(description="Type")
     status: StrictStr = Field(description="Status")
     name: StrictStr = Field(description="Name")
-    country: StrictStr = Field(description="Country")
-    platform: StrictStr = Field(description="Platform")
-    provider: StrictStr = Field(description="Provider")
-    url: StrictStr = Field(description="URL")
-    business_units: List[StrictStr] = Field(description="Business units", alias="businessUnits")
-    discovery_reason: StrictStr = Field(description="Discovery reason")
-    owner: StrictStr = Field(description="Owner")
-    live: StrictBool = Field(description="Live")
-    sub_type: StrictStr = Field(description="Sub type")
-    super_type: StrictStr = Field(description="Super type")
+    country: Optional[StrictStr] = Field(description="Country")
+    platform: Optional[StrictStr] = Field(description="Platform")
+    provider: Optional[StrictStr] = Field(description="Provider")
+    url: Optional[StrictStr] = Field(description="URL")
+    business_units: List[AssetBusinessUnitDto] = Field(description="Business units", alias="businessUnits")
+    discovery_reason: Optional[StrictStr] = Field(description="Discovery reason")
+    owner: Optional[StrictStr] = Field(description="Owner")
+    live: Optional[StrictBool] = Field(description="Live")
+    sub_type: Optional[StrictStr] = Field(description="Sub type")
+    super_type: Optional[StrictStr] = Field(description="Super type")
     metadata: Dict[str, Any] = Field(description="Metadata")
-    __properties: ClassVar[List[str]] = ["id", "created_at", "source", "type", "status", "name", "country", "platform", "provider", "url", "businessUnits", "discovery_reason", "owner", "live", "sub_type", "super_type", "metadata"]
+    engine_settings: Optional[ClientEngineSettings] = Field(default=None, description="Engine coverage settings. Present on domain, container, and IP hunt assets; omitted for other asset types.", alias="engineSettings")
+    __properties: ClassVar[List[str]] = ["id", "created_at", "source", "type", "status", "name", "country", "platform", "provider", "url", "businessUnits", "discovery_reason", "owner", "live", "sub_type", "super_type", "metadata", "engineSettings"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -94,6 +98,74 @@ class Asset(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of id
+        if self.id:
+            _dict['id'] = self.id.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in business_units (list)
+        _items = []
+        if self.business_units:
+            for _item_business_units in self.business_units:
+                if _item_business_units:
+                    _items.append(_item_business_units.to_dict())
+            _dict['businessUnits'] = _items
+        # override the default output from pydantic by calling `to_dict()` of engine_settings
+        if self.engine_settings:
+            _dict['engineSettings'] = self.engine_settings.to_dict()
+        # set to None if source (nullable) is None
+        # and model_fields_set contains the field
+        if self.source is None and "source" in self.model_fields_set:
+            _dict['source'] = None
+
+        # set to None if country (nullable) is None
+        # and model_fields_set contains the field
+        if self.country is None and "country" in self.model_fields_set:
+            _dict['country'] = None
+
+        # set to None if platform (nullable) is None
+        # and model_fields_set contains the field
+        if self.platform is None and "platform" in self.model_fields_set:
+            _dict['platform'] = None
+
+        # set to None if provider (nullable) is None
+        # and model_fields_set contains the field
+        if self.provider is None and "provider" in self.model_fields_set:
+            _dict['provider'] = None
+
+        # set to None if url (nullable) is None
+        # and model_fields_set contains the field
+        if self.url is None and "url" in self.model_fields_set:
+            _dict['url'] = None
+
+        # set to None if discovery_reason (nullable) is None
+        # and model_fields_set contains the field
+        if self.discovery_reason is None and "discovery_reason" in self.model_fields_set:
+            _dict['discovery_reason'] = None
+
+        # set to None if owner (nullable) is None
+        # and model_fields_set contains the field
+        if self.owner is None and "owner" in self.model_fields_set:
+            _dict['owner'] = None
+
+        # set to None if live (nullable) is None
+        # and model_fields_set contains the field
+        if self.live is None and "live" in self.model_fields_set:
+            _dict['live'] = None
+
+        # set to None if sub_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.sub_type is None and "sub_type" in self.model_fields_set:
+            _dict['sub_type'] = None
+
+        # set to None if super_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.super_type is None and "super_type" in self.model_fields_set:
+            _dict['super_type'] = None
+
+        # set to None if engine_settings (nullable) is None
+        # and model_fields_set contains the field
+        if self.engine_settings is None and "engine_settings" in self.model_fields_set:
+            _dict['engineSettings'] = None
+
         return _dict
 
     @classmethod
@@ -111,7 +183,7 @@ class Asset(BaseModel):
                 raise ValueError("Error due to additional fields (not defined in Asset) in the input: " + _key)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
+            "id": AssetId.from_dict(obj["id"]) if obj.get("id") is not None else None,
             "created_at": obj.get("created_at"),
             "source": obj.get("source"),
             "type": obj.get("type"),
@@ -121,13 +193,14 @@ class Asset(BaseModel):
             "platform": obj.get("platform"),
             "provider": obj.get("provider"),
             "url": obj.get("url"),
-            "businessUnits": obj.get("businessUnits"),
+            "businessUnits": [AssetBusinessUnitDto.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None,
             "discovery_reason": obj.get("discovery_reason"),
             "owner": obj.get("owner"),
             "live": obj.get("live"),
             "sub_type": obj.get("sub_type"),
             "super_type": obj.get("super_type"),
-            "metadata": obj.get("metadata")
+            "metadata": obj.get("metadata"),
+            "engineSettings": ClientEngineSettings.from_dict(obj["engineSettings"]) if obj.get("engineSettings") is not None else None
         })
         return _obj
 

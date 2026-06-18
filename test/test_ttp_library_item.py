@@ -52,9 +52,6 @@ class TestTtpLibraryItem(unittest.TestCase):
                 name = 'CVE-2024-3400 - PAN-OS GlobalProtect Gateway Command Injection',
                 identifier = 'CVE-2024-3400',
                 type = 'AdversarySight',
-                category = watchtowr_api_sdk.models.ttp_library_category_item.TtpLibraryCategoryItem(
-                    id = 42, 
-                    name = 'Network Infrastructure', ),
         )
         """
 

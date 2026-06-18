@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **id** | **float** |  | 
 **name** | **str** |  | 
 **type** | **str** |  | 
-**ttl** | **float** | Time To Live | 
+**ttl** | **float** | Time To Live | [optional] 
 **value** | **str** |  | 
-**discovered_on** | [**datetime.date**](datetime.date.md) |  | 
+**discovered_on** | **datetime** |  | 
 
 ## Example
 

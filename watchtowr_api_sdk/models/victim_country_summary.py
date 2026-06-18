@@ -18,9 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from watchtowr_api_sdk.models.victim_country import VictimCountry
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,7 +28,7 @@ class VictimCountrySummary(BaseModel):
     """
     VictimCountrySummary
     """ # noqa: E501
-    data: Optional[List[VictimCountry]] = None
+    data: Optional[List[StrictStr]] = None
     total_count: Optional[StrictFloat] = Field(default=None, alias="totalCount")
     __properties: ClassVar[List[str]] = ["data", "totalCount"]
 
@@ -72,13 +71,6 @@ class VictimCountrySummary(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
-        _items = []
-        if self.data:
-            for _item_data in self.data:
-                if _item_data:
-                    _items.append(_item_data.to_dict())
-            _dict['data'] = _items
         return _dict
 
     @classmethod
@@ -96,7 +88,7 @@ class VictimCountrySummary(BaseModel):
                 raise ValueError("Error due to additional fields (not defined in VictimCountrySummary) in the input: " + _key)
 
         _obj = cls.model_validate({
-            "data": [VictimCountry.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None,
+            "data": obj.get("data"),
             "totalCount": obj.get("totalCount")
         })
         return _obj

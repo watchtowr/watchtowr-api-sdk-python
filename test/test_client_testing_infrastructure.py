@@ -15,10 +15,10 @@
 
 import unittest
 
-from watchtowr_api_sdk.models.target_industry import TargetIndustry
+from watchtowr_api_sdk.models.client_testing_infrastructure import ClientTestingInfrastructure
 
-class TestTargetIndustry(unittest.TestCase):
-    """TargetIndustry unit test stubs"""
+class TestClientTestingInfrastructure(unittest.TestCase):
+    """ClientTestingInfrastructure unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,26 +26,31 @@ class TestTargetIndustry(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> TargetIndustry:
-        """Test TargetIndustry
+    def make_instance(self, include_optional) -> ClientTestingInfrastructure:
+        """Test ClientTestingInfrastructure
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `TargetIndustry`
+        # uncomment below to create an instance of `ClientTestingInfrastructure`
         """
-        model = TargetIndustry()
+        model = ClientTestingInfrastructure()
         if include_optional:
-            return TargetIndustry(
-                name = 'Financial Services',
-                count = 8
+            return ClientTestingInfrastructure(
+                name = '',
+                description = '',
+                region = 'US',
+                whitelist = True
             )
         else:
-            return TargetIndustry(
+            return ClientTestingInfrastructure(
+                name = '',
+                description = '',
+                whitelist = True,
         )
         """
 
-    def testTargetIndustry(self):
-        """Test TargetIndustry"""
+    def testClientTestingInfrastructure(self):
+        """Test ClientTestingInfrastructure"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

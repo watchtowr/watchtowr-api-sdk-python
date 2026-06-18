@@ -37,22 +37,22 @@ class TestClientActivityLog(unittest.TestCase):
         if include_optional:
             return ClientActivityLog(
                 id = 1,
-                description = Successful login from 123.123.123.123,
-                type = Successful Login,
+                description = 'Successful login from 123.123.123.123',
+                type = 'Successful Login',
                 properties = {"attributes": {"ip": "123.123.123.123"}},
-                created_at = 2022-02-22 22:00:00,
+                created_at = '2022-02-22T22:00Z',
                 caused_by = watchtowr_api_sdk.models.causer.Causer(
                     id = 1, 
-                    name = Example, )
+                    name = 'Example', )
             )
         else:
             return ClientActivityLog(
                 id = 1,
-                description = Successful login from 123.123.123.123,
-                type = Successful Login,
+                description = 'Successful login from 123.123.123.123',
+                type = 'Successful Login',
                 caused_by = watchtowr_api_sdk.models.causer.Causer(
                     id = 1, 
-                    name = Example, ),
+                    name = 'Example', ),
         )
         """
 

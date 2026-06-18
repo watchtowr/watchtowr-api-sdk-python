@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **note_type** | **str** |  | 
 **note_id** | **float** |  | 
 **title** | **str** |  | 
-**author** | **object** |  | 
-**last_modified** | [**datetime.date**](datetime.date.md) |  | 
+**author** | [**ClientNoteAuthor**](ClientNoteAuthor.md) |  | 
+**last_modified** | [**ClientNoteLastModified**](ClientNoteLastModified.md) |  | 
 
 ## Example
 

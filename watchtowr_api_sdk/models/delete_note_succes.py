@@ -28,9 +28,10 @@ class DeleteNoteSucces(BaseModel):
     """
     DeleteNoteSucces
     """ # noqa: E501
-    status_code: StrictFloat = Field(alias="statusCode")
     message: StrictStr
-    __properties: ClassVar[List[str]] = ["statusCode", "message"]
+    status: StrictFloat
+    status_code: StrictFloat = Field(alias="statusCode")
+    __properties: ClassVar[List[str]] = ["message", "status", "statusCode"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -88,8 +89,9 @@ class DeleteNoteSucces(BaseModel):
                 raise ValueError("Error due to additional fields (not defined in DeleteNoteSucces) in the input: " + _key)
 
         _obj = cls.model_validate({
-            "statusCode": obj.get("statusCode"),
-            "message": obj.get("message")
+            "message": obj.get("message"),
+            "status": obj.get("status"),
+            "statusCode": obj.get("statusCode")
         })
         return _obj
 

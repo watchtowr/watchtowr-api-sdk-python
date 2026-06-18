@@ -43,7 +43,7 @@ class TestClientNoteData(unittest.TestCase):
                     note_id = 2, 
                     title = 'Initial Review - 01/01/2024', 
                     author = {"id":1,"name":"Steve"}, 
-                    last_modified = 2022-02-13T02:10:00.000000Z, )
+                    last_modified = null, )
             )
         else:
             return ClientNoteData(
@@ -54,7 +54,7 @@ class TestClientNoteData(unittest.TestCase):
                     note_id = 2, 
                     title = 'Initial Review - 01/01/2024', 
                     author = {"id":1,"name":"Steve"}, 
-                    last_modified = 2022-02-13T02:10:00.000000Z, ),
+                    last_modified = null, ),
         )
         """
 

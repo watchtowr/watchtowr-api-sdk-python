@@ -37,13 +37,13 @@ class TestCreateClientCustomPropertyDto(unittest.TestCase):
         if include_optional:
             return CreateClientCustomPropertyDto(
                 key = 'Severity',
-                value = Low,
+                value = 'Low',
                 is_preset = False
             )
         else:
             return CreateClientCustomPropertyDto(
                 key = 'Severity',
-                value = Low,
+                value = 'Low',
         )
         """
 

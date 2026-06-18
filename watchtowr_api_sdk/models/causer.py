@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class Causer(BaseModel):
     Causer
     """ # noqa: E501
     id: StrictFloat = Field(description="ID")
-    name: Dict[str, Any] = Field(description="User name")
+    name: StrictStr = Field(description="User name")
     __properties: ClassVar[List[str]] = ["id", "name"]
 
     model_config = ConfigDict(

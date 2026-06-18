@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,10 +28,9 @@ class UpdateOrganisationWhitelistIpDto(BaseModel):
     """
     UpdateOrganisationWhitelistIpDto
     """ # noqa: E501
-    id: StrictFloat = Field(description="IP address ID")
     ip: StrictStr = Field(description="IP address or CIDR range to whitelist")
     description: Optional[StrictStr] = Field(default=None, description="Description of the IP address")
-    __properties: ClassVar[List[str]] = ["id", "ip", "description"]
+    __properties: ClassVar[List[str]] = ["ip", "description"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -94,7 +93,6 @@ class UpdateOrganisationWhitelistIpDto(BaseModel):
                 raise ValueError("Error due to additional fields (not defined in UpdateOrganisationWhitelistIpDto) in the input: " + _key)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
             "ip": obj.get("ip"),
             "description": obj.get("description")
         })

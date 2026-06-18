@@ -18,8 +18,10 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
+from watchtowr_api_sdk.models.client_business_unit import ClientBusinessUnit
 from watchtowr_api_sdk.models.client_custom_property import ClientCustomProperty
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,20 +31,23 @@ class ClientCloudAsset(BaseModel):
     """
     ClientCloudAsset
     """ # noqa: E501
+    discovery_reason: Optional[StrictStr] = None
     type: StrictStr
+    id: StrictStr
     name: StrictStr
     source: StrictStr
     provider: StrictStr
-    super_type: StrictStr
-    sub_type: StrictStr
-    hostname: StrictStr
+    status: Optional[StrictStr] = None
+    super_type: Optional[StrictStr] = None
+    sub_type: Optional[StrictStr] = None
+    hostname: Optional[StrictStr] = None
     cloud_resource_id: StrictStr
-    created_at: datetime.date
-    updated_at: datetime.date
+    created_at: datetime
     metadata: Dict[str, Any]
+    business_units: List[ClientBusinessUnit] = Field(alias="businessUnits")
     custom_properties: List[ClientCustomProperty] = Field(alias="customProperties")
-    criticality: StrictStr
-    __properties: ClassVar[List[str]] = ["type", "name", "source", "provider", "super_type", "sub_type", "hostname", "cloud_resource_id", "created_at", "updated_at", "metadata", "customProperties", "criticality"]
+    criticality: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["discovery_reason", "type", "id", "name", "source", "provider", "status", "super_type", "sub_type", "hostname", "cloud_resource_id", "created_at", "metadata", "businessUnits", "customProperties", "criticality"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -83,12 +88,13 @@ class ClientCloudAsset(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of created_at
-        if self.created_at:
-            _dict['created_at'] = self.created_at.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of updated_at
-        if self.updated_at:
-            _dict['updated_at'] = self.updated_at.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in business_units (list)
+        _items = []
+        if self.business_units:
+            for _item_business_units in self.business_units:
+                if _item_business_units:
+                    _items.append(_item_business_units.to_dict())
+            _dict['businessUnits'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in custom_properties (list)
         _items = []
         if self.custom_properties:
@@ -96,6 +102,36 @@ class ClientCloudAsset(BaseModel):
                 if _item_custom_properties:
                     _items.append(_item_custom_properties.to_dict())
             _dict['customProperties'] = _items
+        # set to None if discovery_reason (nullable) is None
+        # and model_fields_set contains the field
+        if self.discovery_reason is None and "discovery_reason" in self.model_fields_set:
+            _dict['discovery_reason'] = None
+
+        # set to None if status (nullable) is None
+        # and model_fields_set contains the field
+        if self.status is None and "status" in self.model_fields_set:
+            _dict['status'] = None
+
+        # set to None if super_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.super_type is None and "super_type" in self.model_fields_set:
+            _dict['super_type'] = None
+
+        # set to None if sub_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.sub_type is None and "sub_type" in self.model_fields_set:
+            _dict['sub_type'] = None
+
+        # set to None if hostname (nullable) is None
+        # and model_fields_set contains the field
+        if self.hostname is None and "hostname" in self.model_fields_set:
+            _dict['hostname'] = None
+
+        # set to None if criticality (nullable) is None
+        # and model_fields_set contains the field
+        if self.criticality is None and "criticality" in self.model_fields_set:
+            _dict['criticality'] = None
+
         return _dict
 
     @classmethod
@@ -113,17 +149,20 @@ class ClientCloudAsset(BaseModel):
                 raise ValueError("Error due to additional fields (not defined in ClientCloudAsset) in the input: " + _key)
 
         _obj = cls.model_validate({
+            "discovery_reason": obj.get("discovery_reason"),
             "type": obj.get("type"),
+            "id": obj.get("id"),
             "name": obj.get("name"),
             "source": obj.get("source"),
             "provider": obj.get("provider"),
+            "status": obj.get("status"),
             "super_type": obj.get("super_type"),
             "sub_type": obj.get("sub_type"),
             "hostname": obj.get("hostname"),
             "cloud_resource_id": obj.get("cloud_resource_id"),
-            "created_at": datetime.date.from_dict(obj["created_at"]) if obj.get("created_at") is not None else None,
-            "updated_at": datetime.date.from_dict(obj["updated_at"]) if obj.get("updated_at") is not None else None,
+            "created_at": obj.get("created_at"),
             "metadata": obj.get("metadata"),
+            "businessUnits": [ClientBusinessUnit.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None,
             "customProperties": [ClientCustomProperty.from_dict(_item) for _item in obj["customProperties"]] if obj.get("customProperties") is not None else None,
             "criticality": obj.get("criticality")
         })

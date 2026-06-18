@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dns_records_owned** | **List[str]** |  | 
-**dns_records_pointing_at** | **List[str]** |  | 
+**dns_records_owned** | [**List[ClientAssetDnsRecord]**](ClientAssetDnsRecord.md) |  | 
+**dns_records_pointing_at** | [**List[ClientIpRelatedDnsRecord]**](ClientIpRelatedDnsRecord.md) |  | 
 
 ## Example
 

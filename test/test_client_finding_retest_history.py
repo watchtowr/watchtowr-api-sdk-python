@@ -50,9 +50,9 @@ class TestClientFindingRetestHistory(unittest.TestCase):
                     id = 1, 
                     name = 'John Doe', ),
                 current_retest_status = 'in-progress',
-                result = 'remediated',
+                result = 'resolved',
                 started_at = '2023-01-01T12:00Z',
-                completed_at = 2023-01-01T13:00:00.000Z,
+                completed_at = '2023-01-01T13:00Z',
                 updated_at = '2023-01-01T12:30Z',
                 created_at = '2023-01-01T12:00Z',
                 attempt_number = 2,
@@ -61,22 +61,9 @@ class TestClientFindingRetestHistory(unittest.TestCase):
         else:
             return ClientFindingRetestHistory(
                 id = 789,
-                finding = watchtowr_api_sdk.models.client_finding_retest_history_finding.ClientFindingRetestHistoryFinding(
-                    id = 123, 
-                    title = 'SQL Injection Vulnerability', 
-                    severity = 'high', 
-                    status = 'confirmed', ),
-                asset = watchtowr_api_sdk.models.client_finding_retest_history_asset.ClientFindingRetestHistoryAsset(
-                    id = 456, 
-                    name = 'example.com', 
-                    type = 'domain', ),
-                triggered_by = watchtowr_api_sdk.models.client_finding_retest_history_triggered_by.ClientFindingRetestHistoryTriggeredBy(
-                    id = 1, 
-                    name = 'John Doe', ),
                 current_retest_status = 'in-progress',
-                result = 'remediated',
+                result = 'resolved',
                 started_at = '2023-01-01T12:00Z',
-                completed_at = 2023-01-01T13:00:00.000Z,
                 updated_at = '2023-01-01T12:30Z',
                 created_at = '2023-01-01T12:00Z',
         )

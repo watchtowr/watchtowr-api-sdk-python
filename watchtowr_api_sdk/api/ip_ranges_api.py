@@ -415,6 +415,7 @@ class IPRangesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -489,6 +490,7 @@ class IPRangesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -563,6 +565,7 @@ class IPRangesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -950,7 +953,7 @@ class IPRangesApi:
 
 
     @validate_call
-    def delete_custom_property_ip_range_(
+    def delete_custom_property_ip_range(
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of an IP Range with a custom property to delete.")],
         custom_property_id: Annotated[StrictFloat, Field(description="The ID of the custom property to delete.")],
@@ -997,7 +1000,7 @@ class IPRangesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_custom_property_ip_range__serialize(
+        _param = self._delete_custom_property_ip_range_serialize(
             id=id,
             custom_property_id=custom_property_id,
             _request_auth=_request_auth,
@@ -1024,7 +1027,7 @@ class IPRangesApi:
 
 
     @validate_call
-    def delete_custom_property_ip_range__with_http_info(
+    def delete_custom_property_ip_range_with_http_info(
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of an IP Range with a custom property to delete.")],
         custom_property_id: Annotated[StrictFloat, Field(description="The ID of the custom property to delete.")],
@@ -1071,7 +1074,7 @@ class IPRangesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_custom_property_ip_range__serialize(
+        _param = self._delete_custom_property_ip_range_serialize(
             id=id,
             custom_property_id=custom_property_id,
             _request_auth=_request_auth,
@@ -1098,7 +1101,7 @@ class IPRangesApi:
 
 
     @validate_call
-    def delete_custom_property_ip_range__without_preload_content(
+    def delete_custom_property_ip_range_without_preload_content(
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of an IP Range with a custom property to delete.")],
         custom_property_id: Annotated[StrictFloat, Field(description="The ID of the custom property to delete.")],
@@ -1145,7 +1148,7 @@ class IPRangesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_custom_property_ip_range__serialize(
+        _param = self._delete_custom_property_ip_range_serialize(
             id=id,
             custom_property_id=custom_property_id,
             _request_auth=_request_auth,
@@ -1167,7 +1170,7 @@ class IPRangesApi:
         return response_data.response
 
 
-    def _delete_custom_property_ip_range__serialize(
+    def _delete_custom_property_ip_range_serialize(
         self,
         id,
         custom_property_id,
@@ -1883,6 +1886,7 @@ class IPRangesApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1961,6 +1965,7 @@ class IPRangesApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2039,6 +2044,7 @@ class IPRangesApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2179,6 +2185,7 @@ class IPRangesApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2249,6 +2256,7 @@ class IPRangesApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2319,6 +2327,7 @@ class IPRangesApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4097,6 +4106,7 @@ class IPRangesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -4175,6 +4185,7 @@ class IPRangesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -4253,6 +4264,7 @@ class IPRangesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",

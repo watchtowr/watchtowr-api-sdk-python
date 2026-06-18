@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **submit_asset**
-> ClientSeedDataData submit_asset(create_client_seed_data_request_body)
+> List[ClientSeedData] submit_asset(create_client_seed_data_request_body)
 
 Submit Seed Data
 
@@ -104,7 +104,7 @@ Submit one or more seed data assets to your attack surface for review.
 
 ```python
 import watchtowr_api_sdk
-from watchtowr_api_sdk.models.client_seed_data_data import ClientSeedDataData
+from watchtowr_api_sdk.models.client_seed_data import ClientSeedData
 from watchtowr_api_sdk.models.create_client_seed_data_request_body import CreateClientSeedDataRequestBody
 from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ClientSeedDataData**](ClientSeedDataData.md)
+[**List[ClientSeedData]**](ClientSeedData.md)
 
 ### Authorization
 
@@ -167,7 +167,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
+**422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -44,8 +44,8 @@ class TestPaginatedBusinessUnit(unittest.TestCase):
                         type = 'DEPARTMENT', 
                         parent_id = 1, 
                         user_ids = [1,2,3], 
-                        created_at = 2022-02-13T02:10:00.000000Z, 
-                        updated_at = 2022-02-13T02:10:00.000000Z, )
+                        created_at = '2022-02-13T02:10Z', 
+                        updated_at = '2022-02-13T02:10Z', )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
@@ -60,8 +60,8 @@ class TestPaginatedBusinessUnit(unittest.TestCase):
                         type = 'DEPARTMENT', 
                         parent_id = 1, 
                         user_ids = [1,2,3], 
-                        created_at = 2022-02-13T02:10:00.000000Z, 
-                        updated_at = 2022-02-13T02:10:00.000000Z, )
+                        created_at = '2022-02-13T02:10Z', 
+                        updated_at = '2022-02-13T02:10Z', )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),

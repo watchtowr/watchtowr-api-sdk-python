@@ -38,15 +38,15 @@ class TestClientPort(unittest.TestCase):
             return ClientPort(
                 type = 'TCP',
                 status = 'verified',
-                created_at = 2022-02-13T02:10:00.000000Z,
-                updated_at = 2022-02-13T02:10:00.000000Z,
-                last_seen_at = 2022-02-13T02:10:00.000000Z,
-                id = 123,
+                created_at = '2022-02-13T02:10Z',
+                last_seen_at = '2022-02-13T02:10Z',
+                id = '123',
                 ip = '123.123.123.123',
                 ip_id = 333,
                 port = 22,
                 banner = 'OpenSSH6.6.1p1 Ubuntu 2ubuntu2.13Ubuntu Linux; protocol 2.0',
                 service = 'ssh',
+                state = 'open',
                 business_units = [
                     watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                         id = 1, 
@@ -56,15 +56,10 @@ class TestClientPort(unittest.TestCase):
         else:
             return ClientPort(
                 type = 'TCP',
-                status = 'verified',
-                created_at = 2022-02-13T02:10:00.000000Z,
-                updated_at = 2022-02-13T02:10:00.000000Z,
-                last_seen_at = 2022-02-13T02:10:00.000000Z,
-                id = 123,
-                ip = '123.123.123.123',
-                ip_id = 333,
+                created_at = '2022-02-13T02:10Z',
+                last_seen_at = '2022-02-13T02:10Z',
+                id = '123',
                 port = 22,
-                banner = 'OpenSSH6.6.1p1 Ubuntu 2ubuntu2.13Ubuntu Linux; protocol 2.0',
                 service = 'ssh',
                 business_units = [
                     watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(

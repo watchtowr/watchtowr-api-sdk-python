@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | ID | 
+**id** | [**AssetId**](AssetId.md) |  | 
 **created_at** | **datetime** | Created at | 
 **source** | **str** | Source | 
 **type** | **str** | Type | 
@@ -15,13 +15,14 @@ Name | Type | Description | Notes
 **platform** | **str** | Platform | 
 **provider** | **str** | Provider | 
 **url** | **str** | URL | 
-**business_units** | **List[str]** | Business units | 
+**business_units** | [**List[AssetBusinessUnitDto]**](AssetBusinessUnitDto.md) | Business units | 
 **discovery_reason** | **str** | Discovery reason | 
 **owner** | **str** | Owner | 
 **live** | **bool** | Live | 
 **sub_type** | **str** | Sub type | 
 **super_type** | **str** | Super type | 
 **metadata** | **object** | Metadata | 
+**engine_settings** | [**ClientEngineSettings**](ClientEngineSettings.md) | Engine coverage settings. Present on domain, container, and IP hunt assets; omitted for other asset types. | [optional] 
 
 ## Example
 

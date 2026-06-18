@@ -70,16 +70,17 @@ As a long-term measure to ensure that the security impact of breach credentials 
                         severity = 'high', 
                         cvssv3_score = 8.1, 
                         cvssv3_metrics = 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N/E:F/RL:W/RC:C', 
+                        references = 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N/E:F/RL:W/RC:C', 
                         status = 'confirmed', 
                         state = 'Uninvestigated', 
-                        created_at = '2022-02-13T02:10:00.000000Z', 
-                        affected = watchtowr_api_sdk.models.affected.affected(), 
+                        created_at = '2022-02-13T02:10Z', 
+                        affected = null, 
                         cve_id = 'CVE-2023-38180', 
                         epss_score = 0.97521, 
                         retest = watchtowr_api_sdk.models.retest.Retest(
                             retest_remaining = 1, 
                             current_retest = null, ), 
-                        finding_retests = [
+                        retest_history = [
                             watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
                                 requested_by = 'Requested by user', 
                                 requested_at = '2024-01-29T08:05:09Z', 
@@ -89,11 +90,11 @@ As a long-term measure to ensure that the security impact of breach credentials 
                                 evidence = 'Evidence for retest', )
                             ], 
                         assigned_user = null, 
-                        last_seen = 2022-02-13T02:10:00.000000Z, 
-                        last_status_updated_at = 2022-02-13T02:10:00.000000Z, 
+                        last_seen = '2022-02-13T02:10Z', 
+                        last_status_updated_at = '2022-02-13T02:10Z', 
                         age = 30, 
                         criticality = 'Medium', 
-                        custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"finding","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"finding","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
+                        custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"finding","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"finding","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}], 
                         detection_rules = [{"type":"sigma","id":155,"tags":["attack.initial-access","attack.t1190","cve.2021-44228","detection.emerging-threats"],"title":"Potential CVE-2021-44228 Exploitation Attempt - VMware Horizon","url":"https://github.com/SigmaHQ/sigma/blob/master/rules-emerging-threats/2021/Exploits/CVE-2021-44228/proc_creation_win_exploit_cve_2021_44228_vmware_horizon_log4j.yml"}], )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
@@ -135,16 +136,17 @@ As a long-term measure to ensure that the security impact of breach credentials 
                         severity = 'high', 
                         cvssv3_score = 8.1, 
                         cvssv3_metrics = 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N/E:F/RL:W/RC:C', 
+                        references = 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N/E:F/RL:W/RC:C', 
                         status = 'confirmed', 
                         state = 'Uninvestigated', 
-                        created_at = '2022-02-13T02:10:00.000000Z', 
-                        affected = watchtowr_api_sdk.models.affected.affected(), 
+                        created_at = '2022-02-13T02:10Z', 
+                        affected = null, 
                         cve_id = 'CVE-2023-38180', 
                         epss_score = 0.97521, 
                         retest = watchtowr_api_sdk.models.retest.Retest(
                             retest_remaining = 1, 
                             current_retest = null, ), 
-                        finding_retests = [
+                        retest_history = [
                             watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
                                 requested_by = 'Requested by user', 
                                 requested_at = '2024-01-29T08:05:09Z', 
@@ -154,11 +156,11 @@ As a long-term measure to ensure that the security impact of breach credentials 
                                 evidence = 'Evidence for retest', )
                             ], 
                         assigned_user = null, 
-                        last_seen = 2022-02-13T02:10:00.000000Z, 
-                        last_status_updated_at = 2022-02-13T02:10:00.000000Z, 
+                        last_seen = '2022-02-13T02:10Z', 
+                        last_status_updated_at = '2022-02-13T02:10Z', 
                         age = 30, 
                         criticality = 'Medium', 
-                        custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"finding","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"finding","modelId":209,"createdAt":"2024-09-24T02:37:27.000Z","updatedAt":"2024-09-24T02:38:35.000Z"}], 
+                        custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"finding","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"finding","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}], 
                         detection_rules = [{"type":"sigma","id":155,"tags":["attack.initial-access","attack.t1190","cve.2021-44228","detection.emerging-threats"],"title":"Potential CVE-2021-44228 Exploitation Attempt - VMware Horizon","url":"https://github.com/SigmaHQ/sigma/blob/master/rules-emerging-threats/2021/Exploits/CVE-2021-44228/proc_creation_win_exploit_cve_2021_44228_vmware_horizon_log4j.yml"}], )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(

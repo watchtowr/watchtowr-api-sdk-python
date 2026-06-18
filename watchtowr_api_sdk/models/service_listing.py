@@ -34,15 +34,15 @@ class ServiceListing(BaseModel):
     """ # noqa: E501
     id: StrictFloat = Field(description="ID")
     port_id: StrictFloat = Field(description="Port ID", alias="portId")
-    ip: Optional[StrictStr] = Field(description="IP Address")
-    hostname: Optional[StrictStr] = Field(description="Hostname")
+    ip: Optional[StrictStr] = Field(default=None, description="IP Address")
+    hostname: Optional[StrictStr] = Field(default=None, description="Hostname")
     port: Optional[StrictFloat] = Field(default=None, description="Port number")
     type: Optional[StrictStr] = Field(default=None, description="Port Protocol")
     country: Optional[StrictStr] = Field(default=None, description="Country code")
     banner: Optional[StrictStr] = Field(default=None, description="Banner")
     service: Optional[StrictStr] = Field(default=None, description="Service")
     source: Optional[StrictStr] = Field(default=None, description="Asset source")
-    last_seen: datetime = Field(description="Last seen date Range", alias="lastSeen")
+    last_seen: Optional[datetime] = Field(default=None, description="Last seen date Range", alias="lastSeen")
     technologies: List[Technology] = Field(description="Technology list")
     service_types: List[ServiceType] = Field(description="Service types", alias="serviceTypes")
     business_units: List[ClientBusinessUnit] = Field(description="Business Units", alias="businessUnits")
@@ -50,7 +50,11 @@ class ServiceListing(BaseModel):
     suppressed: StrictBool = Field(description="Whether the service is suppressed")
     suppressed_at: Optional[datetime] = Field(default=None, description="Suppressed at timestamp", alias="suppressedAt")
     is_permanent_suppression: Optional[StrictBool] = Field(default=None, description="Whether the service is permanently suppressed", alias="isPermanentSuppression")
-    __properties: ClassVar[List[str]] = ["id", "portId", "ip", "hostname", "port", "type", "country", "banner", "service", "source", "lastSeen", "technologies", "serviceTypes", "businessUnits", "isConcerning", "suppressed", "suppressedAt", "isPermanentSuppression"]
+    ip_id: Optional[StrictFloat] = Field(default=None, description="IP ID", alias="ipId")
+    state: Optional[StrictStr] = Field(default=None, description="Port State")
+    finding_id: Optional[StrictFloat] = Field(default=None, description="Finding ID associated with the service", alias="findingId")
+    suppressed_by_id: Optional[StrictFloat] = Field(default=None, description="ID of the user who suppressed the service", alias="suppressedById")
+    __properties: ClassVar[List[str]] = ["id", "portId", "ip", "hostname", "port", "type", "country", "banner", "service", "source", "lastSeen", "technologies", "serviceTypes", "businessUnits", "isConcerning", "suppressed", "suppressedAt", "isPermanentSuppression", "ipId", "state", "findingId", "suppressedById"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -122,6 +126,11 @@ class ServiceListing(BaseModel):
         if self.hostname is None and "hostname" in self.model_fields_set:
             _dict['hostname'] = None
 
+        # set to None if last_seen (nullable) is None
+        # and model_fields_set contains the field
+        if self.last_seen is None and "last_seen" in self.model_fields_set:
+            _dict['lastSeen'] = None
+
         # set to None if suppressed_at (nullable) is None
         # and model_fields_set contains the field
         if self.suppressed_at is None and "suppressed_at" in self.model_fields_set:
@@ -131,6 +140,26 @@ class ServiceListing(BaseModel):
         # and model_fields_set contains the field
         if self.is_permanent_suppression is None and "is_permanent_suppression" in self.model_fields_set:
             _dict['isPermanentSuppression'] = None
+
+        # set to None if ip_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.ip_id is None and "ip_id" in self.model_fields_set:
+            _dict['ipId'] = None
+
+        # set to None if state (nullable) is None
+        # and model_fields_set contains the field
+        if self.state is None and "state" in self.model_fields_set:
+            _dict['state'] = None
+
+        # set to None if finding_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.finding_id is None and "finding_id" in self.model_fields_set:
+            _dict['findingId'] = None
+
+        # set to None if suppressed_by_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.suppressed_by_id is None and "suppressed_by_id" in self.model_fields_set:
+            _dict['suppressedById'] = None
 
         return _dict
 
@@ -166,7 +195,11 @@ class ServiceListing(BaseModel):
             "isConcerning": obj.get("isConcerning"),
             "suppressed": obj.get("suppressed"),
             "suppressedAt": obj.get("suppressedAt"),
-            "isPermanentSuppression": obj.get("isPermanentSuppression")
+            "isPermanentSuppression": obj.get("isPermanentSuppression"),
+            "ipId": obj.get("ipId"),
+            "state": obj.get("state"),
+            "findingId": obj.get("findingId"),
+            "suppressedById": obj.get("suppressedById")
         })
         return _obj
 

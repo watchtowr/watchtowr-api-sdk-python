@@ -7,15 +7,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** | ID | 
 **port_id** | **float** | Port ID | 
-**ip** | **str** | IP Address | 
-**hostname** | **str** | Hostname | 
+**ip** | **str** | IP Address | [optional] 
+**hostname** | **str** | Hostname | [optional] 
 **port** | **float** | Port number | [optional] 
 **type** | **str** | Port Protocol | [optional] 
 **country** | **str** | Country code | [optional] 
 **banner** | **str** | Banner | [optional] 
 **service** | **str** | Service | [optional] 
 **source** | **str** | Asset source | [optional] 
-**last_seen** | **datetime** | Last seen date Range | 
+**last_seen** | **datetime** | Last seen date Range | [optional] 
 **technologies** | [**List[Technology]**](Technology.md) | Technology list | 
 **service_types** | [**List[ServiceType]**](ServiceType.md) | Service types | 
 **business_units** | [**List[ClientBusinessUnit]**](ClientBusinessUnit.md) | Business Units | 
@@ -23,6 +23,10 @@ Name | Type | Description | Notes
 **suppressed** | **bool** | Whether the service is suppressed | 
 **suppressed_at** | **datetime** | Suppressed at timestamp | [optional] 
 **is_permanent_suppression** | **bool** | Whether the service is permanently suppressed | [optional] 
+**ip_id** | **float** | IP ID | [optional] 
+**state** | **str** | Port State | [optional] 
+**finding_id** | **float** | Finding ID associated with the service | [optional] 
+**suppressed_by_id** | **float** | ID of the user who suppressed the service | [optional] 
 
 ## Example
 

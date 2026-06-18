@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | IP address ID | 
 **ip** | **str** | IP address or CIDR range to whitelist | 
 **description** | **str** | Description of the IP address | [optional] 
 

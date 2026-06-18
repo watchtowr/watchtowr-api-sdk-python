@@ -18,6 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
@@ -34,8 +35,8 @@ class ClientBusinessUnitDetailWithRules(BaseModel):
     type: StrictStr = Field(description="Business unit type")
     parent_id: Optional[StrictFloat] = Field(default=None, description="Parent business unit ID")
     user_ids: Optional[List[StrictFloat]] = Field(default=None, description="Array of user IDs assigned to this business unit")
-    created_at: Dict[str, Any] = Field(description="Created At")
-    updated_at: Dict[str, Any] = Field(description="Updated At")
+    created_at: datetime = Field(description="Created At")
+    updated_at: datetime = Field(description="Updated At")
     rules: Dict[str, Any] = Field(description="Paginated rules for this business unit")
     __properties: ClassVar[List[str]] = ["id", "name", "description", "type", "parent_id", "user_ids", "created_at", "updated_at", "rules"]
 

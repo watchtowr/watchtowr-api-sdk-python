@@ -35,9 +35,9 @@ class PointsOfInterest(BaseModel):
     type: StrictStr = Field(description="Type")
     url: StrictStr = Field(description="Url")
     discovery_date: Optional[datetime] = Field(default=None, description="Discovery date", alias="discoveryDate")
-    asset_id: StrictFloat = Field(description="Asset ID", alias="assetId")
-    asset_name: StrictStr = Field(description="Asset name", alias="assetName")
-    asset_type: StrictStr = Field(description="Asset type", alias="assetType")
+    asset_id: Optional[StrictFloat] = Field(description="Asset ID", alias="assetId")
+    asset_name: Optional[StrictStr] = Field(description="Asset name", alias="assetName")
+    asset_type: Optional[StrictStr] = Field(description="Asset type", alias="assetType")
     business_units: List[ClientBusinessUnit] = Field(description="Business unit", alias="businessUnits")
     last_seen: Optional[datetime] = Field(default=None, description="Last seen at", alias="lastSeen")
     is_concerning: StrictBool = Field(description="Whether the Point of Interest is concerning", alias="isConcerning")
@@ -93,6 +93,21 @@ class PointsOfInterest(BaseModel):
                 if _item_business_units:
                     _items.append(_item_business_units.to_dict())
             _dict['businessUnits'] = _items
+        # set to None if asset_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.asset_id is None and "asset_id" in self.model_fields_set:
+            _dict['assetId'] = None
+
+        # set to None if asset_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.asset_name is None and "asset_name" in self.model_fields_set:
+            _dict['assetName'] = None
+
+        # set to None if asset_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.asset_type is None and "asset_type" in self.model_fields_set:
+            _dict['assetType'] = None
+
         # set to None if suppressed_at (nullable) is None
         # and model_fields_set contains the field
         if self.suppressed_at is None and "suppressed_at" in self.model_fields_set:

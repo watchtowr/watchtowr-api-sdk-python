@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_ip_related_dns_record_asset import ClientIpRelatedDnsRecordAsset
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,9 +33,9 @@ class ClientIpRelatedDnsRecord(BaseModel):
     id: StrictFloat
     name: StrictStr
     type: StrictStr
-    ttl: StrictFloat = Field(description="Time To Live")
+    ttl: Optional[StrictFloat] = Field(default=None, description="Time To Live")
     value: StrictStr
-    discovered_on: datetime.date
+    discovered_on: datetime
     asset: ClientIpRelatedDnsRecordAsset
     __properties: ClassVar[List[str]] = ["id", "name", "type", "ttl", "value", "discovered_on", "asset"]
 
@@ -77,12 +78,14 @@ class ClientIpRelatedDnsRecord(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of discovered_on
-        if self.discovered_on:
-            _dict['discovered_on'] = self.discovered_on.to_dict()
         # override the default output from pydantic by calling `to_dict()` of asset
         if self.asset:
             _dict['asset'] = self.asset.to_dict()
+        # set to None if ttl (nullable) is None
+        # and model_fields_set contains the field
+        if self.ttl is None and "ttl" in self.model_fields_set:
+            _dict['ttl'] = None
+
         return _dict
 
     @classmethod
@@ -105,7 +108,7 @@ class ClientIpRelatedDnsRecord(BaseModel):
             "type": obj.get("type"),
             "ttl": obj.get("ttl"),
             "value": obj.get("value"),
-            "discovered_on": datetime.date.from_dict(obj["discovered_on"]) if obj.get("discovered_on") is not None else None,
+            "discovered_on": obj.get("discovered_on"),
             "asset": ClientIpRelatedDnsRecordAsset.from_dict(obj["asset"]) if obj.get("asset") is not None else None
         })
         return _obj

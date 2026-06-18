@@ -14,10 +14,15 @@ Name | Type | Description | Notes
 **issuer_organisation** | **str** | Issuer Organization | 
 **issuer_country** | **str** | Issuer Country | 
 **fingerprint** | **str** | Fingerprint | 
+**serial_number** | **str** | Certificate serial number | 
 **public_key_info_alg** | **str** | PublicKeyInfoAlg | 
-**public_key_info_size** | **str** | PublicKeyInfoSize | 
+**public_key_info_size** | **float** | PublicKeyInfoSize | 
 **status** | **str** |  | 
 **created_at** | **datetime** | Discovery date | [optional] 
+**updated_at** | **datetime** | Last update timestamp | [optional] 
+**not_before** | **datetime** | Certificate validity start | 
+**not_after** | **datetime** | Certificate expiry | 
+**last_seen_at** | **datetime** | Last time the certificate was observed on the linked port | 
 
 ## Example
 

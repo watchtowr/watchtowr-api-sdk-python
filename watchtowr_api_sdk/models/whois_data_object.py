@@ -20,7 +20,9 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from watchtowr_api_sdk.models.whois_data_object_creation_date import WhoisDataObjectCreationDate
 from watchtowr_api_sdk.models.whois_data_object_emails import WhoisDataObjectEmails
+from watchtowr_api_sdk.models.whois_data_object_expiration_date import WhoisDataObjectExpirationDate
 from watchtowr_api_sdk.models.whois_data_object_name_servers import WhoisDataObjectNameServers
 from watchtowr_api_sdk.models.whois_data_object_status import WhoisDataObjectStatus
 from typing import Optional, Set
@@ -46,8 +48,8 @@ class WhoisDataObject(BaseModel):
     name_servers: Optional[WhoisDataObjectNameServers] = None
     referral_url: Optional[StrictStr] = Field(default=None, description="referral_url")
     whois_server: Optional[StrictStr] = Field(default=None, description="whois_server")
-    creation_date: Optional[StrictStr] = Field(default=None, description="creation_date")
-    expiration_date: Optional[StrictStr] = Field(default=None, description="expiration_date")
+    creation_date: Optional[WhoisDataObjectCreationDate] = None
+    expiration_date: Optional[WhoisDataObjectExpirationDate] = None
     __properties: ClassVar[List[str]] = ["org", "city", "name", "state", "dnssec", "emails", "status", "address", "country", "zipcode", "registrar", "domain_name", "name_servers", "referral_url", "whois_server", "creation_date", "expiration_date"]
 
     model_config = ConfigDict(
@@ -98,6 +100,12 @@ class WhoisDataObject(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of name_servers
         if self.name_servers:
             _dict['name_servers'] = self.name_servers.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of creation_date
+        if self.creation_date:
+            _dict['creation_date'] = self.creation_date.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of expiration_date
+        if self.expiration_date:
+            _dict['expiration_date'] = self.expiration_date.to_dict()
         return _dict
 
     @classmethod
@@ -130,8 +138,8 @@ class WhoisDataObject(BaseModel):
             "name_servers": WhoisDataObjectNameServers.from_dict(obj["name_servers"]) if obj.get("name_servers") is not None else None,
             "referral_url": obj.get("referral_url"),
             "whois_server": obj.get("whois_server"),
-            "creation_date": obj.get("creation_date"),
-            "expiration_date": obj.get("expiration_date")
+            "creation_date": WhoisDataObjectCreationDate.from_dict(obj["creation_date"]) if obj.get("creation_date") is not None else None,
+            "expiration_date": WhoisDataObjectExpirationDate.from_dict(obj["expiration_date"]) if obj.get("expiration_date") is not None else None
         })
         return _obj
 

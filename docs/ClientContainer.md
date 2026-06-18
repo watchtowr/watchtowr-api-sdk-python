@@ -5,19 +5,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**discovery_reason** | **str** |  | [optional] 
 **type** | **str** |  | 
 **source** | **str** |  | 
-**status** | **str** |  | 
-**created_at** | [**datetime.date**](datetime.date.md) |  | 
-**updated_at** | [**datetime.date**](datetime.date.md) |  | 
-**id** | **float** |  | 
+**status** | **str** |  | [optional] 
+**created_at** | **datetime** |  | 
+**id** | **str** |  | 
 **name** | **str** |  | 
 **owner** | **str** |  | 
 **platform** | **str** |  | 
-**url** | **str** |  | 
+**url** | **str** |  | [optional] 
 **business_units** | [**List[ClientBusinessUnit]**](ClientBusinessUnit.md) |  | 
+**metadata** | **object** | Additional asset metadata; shape varies by asset type. Defaults to an empty object. | 
 **custom_properties** | [**List[ClientCustomProperty]**](ClientCustomProperty.md) |  | 
-**criticality** | **str** |  | 
+**criticality** | **str** |  | [optional] 
 
 ## Example
 

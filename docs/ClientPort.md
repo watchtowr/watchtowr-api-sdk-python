@@ -5,17 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**status** | **str** |  | 
-**created_at** | [**datetime.date**](datetime.date.md) |  | 
-**updated_at** | [**datetime.date**](datetime.date.md) |  | 
-**last_seen_at** | [**datetime.date**](datetime.date.md) |  | 
-**id** | **float** |  | 
-**ip** | **str** |  | 
-**ip_id** | **float** |  | 
+**type** | **str** | Port protocol, always uppercased (e.g. &#x60;TCP&#x60;, &#x60;UDP&#x60;). | 
+**status** | **str** |  | [optional] 
+**created_at** | **datetime** |  | 
+**last_seen_at** | **datetime** |  | 
+**id** | **str** |  | 
+**ip** | **str** |  | [optional] 
+**ip_id** | **float** |  | [optional] 
 **port** | **float** |  | 
-**banner** | **str** |  | 
+**banner** | **str** |  | [optional] 
 **service** | **str** |  | 
+**state** | **str** | Port state (e.g. &#x60;open&#x60;, &#x60;closed&#x60;, &#x60;filtered&#x60;). | [optional] 
 **business_units** | [**List[ClientBusinessUnit]**](ClientBusinessUnit.md) |  | 
 
 ## Example

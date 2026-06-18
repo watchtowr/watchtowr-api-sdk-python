@@ -715,6 +715,7 @@ class IPAddressesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -789,6 +790,7 @@ class IPAddressesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -863,6 +865,7 @@ class IPAddressesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1587,6 +1590,7 @@ class IPAddressesApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1665,6 +1669,7 @@ class IPAddressesApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1743,6 +1748,7 @@ class IPAddressesApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1883,6 +1889,7 @@ class IPAddressesApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1953,6 +1960,7 @@ class IPAddressesApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2023,6 +2031,7 @@ class IPAddressesApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2970,8 +2979,8 @@ class IPAddressesApi:
     @validate_call
     def get_asset_ip_port_details(
         self,
-        ip_id: Annotated[StrictStr, Field(description="The asset ID of an IP address with an associated port to get the details of.")],
-        port_id: Annotated[StrictStr, Field(description="The ID of the Port to retrieve details of.")],
+        ip_id: Annotated[StrictFloat, Field(description="The asset ID of an IP address with an associated port to get the details of.")],
+        port_id: Annotated[StrictFloat, Field(description="The ID of the Port to retrieve details of.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2990,9 +2999,9 @@ class IPAddressesApi:
         Get the details of a specific Port asset belonging to an IP Address.
 
         :param ip_id: The asset ID of an IP address with an associated port to get the details of. (required)
-        :type ip_id: str
+        :type ip_id: float
         :param port_id: The ID of the Port to retrieve details of. (required)
-        :type port_id: str
+        :type port_id: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3044,8 +3053,8 @@ class IPAddressesApi:
     @validate_call
     def get_asset_ip_port_details_with_http_info(
         self,
-        ip_id: Annotated[StrictStr, Field(description="The asset ID of an IP address with an associated port to get the details of.")],
-        port_id: Annotated[StrictStr, Field(description="The ID of the Port to retrieve details of.")],
+        ip_id: Annotated[StrictFloat, Field(description="The asset ID of an IP address with an associated port to get the details of.")],
+        port_id: Annotated[StrictFloat, Field(description="The ID of the Port to retrieve details of.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3064,9 +3073,9 @@ class IPAddressesApi:
         Get the details of a specific Port asset belonging to an IP Address.
 
         :param ip_id: The asset ID of an IP address with an associated port to get the details of. (required)
-        :type ip_id: str
+        :type ip_id: float
         :param port_id: The ID of the Port to retrieve details of. (required)
-        :type port_id: str
+        :type port_id: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3118,8 +3127,8 @@ class IPAddressesApi:
     @validate_call
     def get_asset_ip_port_details_without_preload_content(
         self,
-        ip_id: Annotated[StrictStr, Field(description="The asset ID of an IP address with an associated port to get the details of.")],
-        port_id: Annotated[StrictStr, Field(description="The ID of the Port to retrieve details of.")],
+        ip_id: Annotated[StrictFloat, Field(description="The asset ID of an IP address with an associated port to get the details of.")],
+        port_id: Annotated[StrictFloat, Field(description="The ID of the Port to retrieve details of.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3138,9 +3147,9 @@ class IPAddressesApi:
         Get the details of a specific Port asset belonging to an IP Address.
 
         :param ip_id: The asset ID of an IP address with an associated port to get the details of. (required)
-        :type ip_id: str
+        :type ip_id: float
         :param port_id: The ID of the Port to retrieve details of. (required)
-        :type port_id: str
+        :type port_id: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3957,6 +3966,7 @@ class IPAddressesApi:
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
         custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
+        include_dns_records: Annotated[Optional[StrictBool], Field(description="When `true`, include up to 5 owned (PTR) and 5 pointing-at (A) DNS records per IP inline in the `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/ip/show/{id}/dns-records` for the full paginated set.")] = None,
         match_type: Annotated[Optional[StrictStr], Field(description="Match assetName searches based on exact names or partial names with contains. Valid match types are:       * contains       * exact ")] = None,
         _request_timeout: Union[
             None,
@@ -3997,6 +4007,8 @@ class IPAddressesApi:
         :type custom_property_key: str
         :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
         :type custom_property_value: str
+        :param include_dns_records: When `true`, include up to 5 owned (PTR) and 5 pointing-at (A) DNS records per IP inline in the `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/ip/show/{id}/dns-records` for the full paginated set.
+        :type include_dns_records: bool
         :param match_type: Match assetName searches based on exact names or partial names with contains. Valid match types are:       * contains       * exact 
         :type match_type: str
         :param _request_timeout: timeout setting for this request. If one
@@ -4033,6 +4045,7 @@ class IPAddressesApi:
             created_to=created_to,
             custom_property_key=custom_property_key,
             custom_property_value=custom_property_value,
+            include_dns_records=include_dns_records,
             match_type=match_type,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4069,6 +4082,7 @@ class IPAddressesApi:
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
         custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
+        include_dns_records: Annotated[Optional[StrictBool], Field(description="When `true`, include up to 5 owned (PTR) and 5 pointing-at (A) DNS records per IP inline in the `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/ip/show/{id}/dns-records` for the full paginated set.")] = None,
         match_type: Annotated[Optional[StrictStr], Field(description="Match assetName searches based on exact names or partial names with contains. Valid match types are:       * contains       * exact ")] = None,
         _request_timeout: Union[
             None,
@@ -4109,6 +4123,8 @@ class IPAddressesApi:
         :type custom_property_key: str
         :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
         :type custom_property_value: str
+        :param include_dns_records: When `true`, include up to 5 owned (PTR) and 5 pointing-at (A) DNS records per IP inline in the `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/ip/show/{id}/dns-records` for the full paginated set.
+        :type include_dns_records: bool
         :param match_type: Match assetName searches based on exact names or partial names with contains. Valid match types are:       * contains       * exact 
         :type match_type: str
         :param _request_timeout: timeout setting for this request. If one
@@ -4145,6 +4161,7 @@ class IPAddressesApi:
             created_to=created_to,
             custom_property_key=custom_property_key,
             custom_property_value=custom_property_value,
+            include_dns_records=include_dns_records,
             match_type=match_type,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4181,6 +4198,7 @@ class IPAddressesApi:
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
         custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
+        include_dns_records: Annotated[Optional[StrictBool], Field(description="When `true`, include up to 5 owned (PTR) and 5 pointing-at (A) DNS records per IP inline in the `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/ip/show/{id}/dns-records` for the full paginated set.")] = None,
         match_type: Annotated[Optional[StrictStr], Field(description="Match assetName searches based on exact names or partial names with contains. Valid match types are:       * contains       * exact ")] = None,
         _request_timeout: Union[
             None,
@@ -4221,6 +4239,8 @@ class IPAddressesApi:
         :type custom_property_key: str
         :param custom_property_value: Filter assets by custom property value. Must be used together with customPropertyKey.
         :type custom_property_value: str
+        :param include_dns_records: When `true`, include up to 5 owned (PTR) and 5 pointing-at (A) DNS records per IP inline in the `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/ip/show/{id}/dns-records` for the full paginated set.
+        :type include_dns_records: bool
         :param match_type: Match assetName searches based on exact names or partial names with contains. Valid match types are:       * contains       * exact 
         :type match_type: str
         :param _request_timeout: timeout setting for this request. If one
@@ -4257,6 +4277,7 @@ class IPAddressesApi:
             created_to=created_to,
             custom_property_key=custom_property_key,
             custom_property_value=custom_property_value,
+            include_dns_records=include_dns_records,
             match_type=match_type,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4288,6 +4309,7 @@ class IPAddressesApi:
         created_to,
         custom_property_key,
         custom_property_value,
+        include_dns_records,
         match_type,
         _request_auth,
         _content_type,
@@ -4373,6 +4395,10 @@ class IPAddressesApi:
         if custom_property_value is not None:
             
             _query_params.append(('customPropertyValue', custom_property_value))
+            
+        if include_dns_records is not None:
+            
+            _query_params.append(('includeDnsRecords', include_dns_records))
             
         if match_type is not None:
             
@@ -5970,6 +5996,7 @@ class IPAddressesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -6048,6 +6075,7 @@ class IPAddressesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -6126,6 +6154,7 @@ class IPAddressesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",

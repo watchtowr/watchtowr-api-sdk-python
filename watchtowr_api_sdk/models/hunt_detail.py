@@ -38,12 +38,12 @@ class HuntDetail(BaseModel):
     hunt_request_type: StrictStr = Field(description="Hunt request type")
     rapid_exposure_mechanism: Optional[StrictStr] = Field(default=None, description="Rapid exposure mechanism")
     title: StrictStr = Field(description="Title")
-    description: StrictStr
-    hypothesis: StrictStr = Field(description="Hypothesis")
-    references: List[StrictStr] = Field(description="references")
-    completed_at: datetime = Field(description="Completed at")
-    completed_by: StrictStr = Field(description="Completed by")
-    requested_by: StrictStr = Field(description="Request by")
+    description: Optional[StrictStr]
+    hypothesis: Optional[StrictStr] = Field(description="Hypothesis")
+    references: Optional[List[Optional[StrictStr]]] = Field(description="references")
+    completed_at: Optional[datetime] = Field(description="Completed at")
+    completed_by: Optional[StrictStr] = Field(description="Completed by")
+    requested_by: Optional[StrictStr] = Field(description="Request by")
     status: StrictStr = Field(description="Status")
     __properties: ClassVar[List[str]] = ["id", "type", "created_at", "updated_at", "total_findings", "total_assets", "hunt_request_type", "rapid_exposure_mechanism", "title", "description", "hypothesis", "references", "completed_at", "completed_by", "requested_by", "status"]
 
@@ -117,6 +117,36 @@ class HuntDetail(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if description (nullable) is None
+        # and model_fields_set contains the field
+        if self.description is None and "description" in self.model_fields_set:
+            _dict['description'] = None
+
+        # set to None if hypothesis (nullable) is None
+        # and model_fields_set contains the field
+        if self.hypothesis is None and "hypothesis" in self.model_fields_set:
+            _dict['hypothesis'] = None
+
+        # set to None if references (nullable) is None
+        # and model_fields_set contains the field
+        if self.references is None and "references" in self.model_fields_set:
+            _dict['references'] = None
+
+        # set to None if completed_at (nullable) is None
+        # and model_fields_set contains the field
+        if self.completed_at is None and "completed_at" in self.model_fields_set:
+            _dict['completed_at'] = None
+
+        # set to None if completed_by (nullable) is None
+        # and model_fields_set contains the field
+        if self.completed_by is None and "completed_by" in self.model_fields_set:
+            _dict['completed_by'] = None
+
+        # set to None if requested_by (nullable) is None
+        # and model_fields_set contains the field
+        if self.requested_by is None and "requested_by" in self.model_fields_set:
+            _dict['requested_by'] = None
+
         return _dict
 
     @classmethod

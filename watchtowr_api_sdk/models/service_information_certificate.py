@@ -30,19 +30,24 @@ class ServiceInformationCertificate(BaseModel):
     ServiceInformationCertificate
     """ # noqa: E501
     id: StrictFloat = Field(description="ID")
-    subject_common_name: StrictStr = Field(description="Subject Common Name", alias="subjectCommonName")
-    subject_organisation: StrictStr = Field(description="Subject Organization", alias="subjectOrganisation")
-    subject_alt_names: List[StrictStr] = Field(description="Subject Alt Names", alias="subjectAltNames")
-    subject_country: StrictStr = Field(description="Subject Country", alias="subjectCountry")
-    issuer_common_name: StrictStr = Field(description="Issuer CommonName", alias="issuerCommonName")
-    issuer_organisation: StrictStr = Field(description="Issuer Organization", alias="issuerOrganisation")
-    issuer_country: StrictStr = Field(description="Issuer Country", alias="issuerCountry")
+    subject_common_name: Optional[StrictStr] = Field(description="Subject Common Name", alias="subjectCommonName")
+    subject_organisation: Optional[StrictStr] = Field(description="Subject Organization", alias="subjectOrganisation")
+    subject_alt_names: Optional[List[StrictStr]] = Field(description="Subject Alt Names", alias="subjectAltNames")
+    subject_country: Optional[StrictStr] = Field(description="Subject Country", alias="subjectCountry")
+    issuer_common_name: Optional[StrictStr] = Field(description="Issuer CommonName", alias="issuerCommonName")
+    issuer_organisation: Optional[StrictStr] = Field(description="Issuer Organization", alias="issuerOrganisation")
+    issuer_country: Optional[StrictStr] = Field(description="Issuer Country", alias="issuerCountry")
     fingerprint: StrictStr = Field(description="Fingerprint")
+    serial_number: StrictStr = Field(description="Certificate serial number", alias="serialNumber")
     public_key_info_alg: StrictStr = Field(description="PublicKeyInfoAlg", alias="publicKeyInfoAlg")
-    public_key_info_size: StrictStr = Field(description="PublicKeyInfoSize", alias="publicKeyInfoSize")
+    public_key_info_size: StrictFloat = Field(description="PublicKeyInfoSize", alias="publicKeyInfoSize")
     status: StrictStr
     created_at: Optional[datetime] = Field(default=None, description="Discovery date", alias="createdAt")
-    __properties: ClassVar[List[str]] = ["id", "subjectCommonName", "subjectOrganisation", "subjectAltNames", "subjectCountry", "issuerCommonName", "issuerOrganisation", "issuerCountry", "fingerprint", "publicKeyInfoAlg", "publicKeyInfoSize", "status", "createdAt"]
+    updated_at: Optional[datetime] = Field(default=None, description="Last update timestamp", alias="updatedAt")
+    not_before: datetime = Field(description="Certificate validity start", alias="notBefore")
+    not_after: datetime = Field(description="Certificate expiry", alias="notAfter")
+    last_seen_at: datetime = Field(description="Last time the certificate was observed on the linked port", alias="lastSeenAt")
+    __properties: ClassVar[List[str]] = ["id", "subjectCommonName", "subjectOrganisation", "subjectAltNames", "subjectCountry", "issuerCommonName", "issuerOrganisation", "issuerCountry", "fingerprint", "serialNumber", "publicKeyInfoAlg", "publicKeyInfoSize", "status", "createdAt", "updatedAt", "notBefore", "notAfter", "lastSeenAt"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -90,6 +95,46 @@ class ServiceInformationCertificate(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if subject_common_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.subject_common_name is None and "subject_common_name" in self.model_fields_set:
+            _dict['subjectCommonName'] = None
+
+        # set to None if subject_organisation (nullable) is None
+        # and model_fields_set contains the field
+        if self.subject_organisation is None and "subject_organisation" in self.model_fields_set:
+            _dict['subjectOrganisation'] = None
+
+        # set to None if subject_alt_names (nullable) is None
+        # and model_fields_set contains the field
+        if self.subject_alt_names is None and "subject_alt_names" in self.model_fields_set:
+            _dict['subjectAltNames'] = None
+
+        # set to None if subject_country (nullable) is None
+        # and model_fields_set contains the field
+        if self.subject_country is None and "subject_country" in self.model_fields_set:
+            _dict['subjectCountry'] = None
+
+        # set to None if issuer_common_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.issuer_common_name is None and "issuer_common_name" in self.model_fields_set:
+            _dict['issuerCommonName'] = None
+
+        # set to None if issuer_organisation (nullable) is None
+        # and model_fields_set contains the field
+        if self.issuer_organisation is None and "issuer_organisation" in self.model_fields_set:
+            _dict['issuerOrganisation'] = None
+
+        # set to None if issuer_country (nullable) is None
+        # and model_fields_set contains the field
+        if self.issuer_country is None and "issuer_country" in self.model_fields_set:
+            _dict['issuerCountry'] = None
+
+        # set to None if updated_at (nullable) is None
+        # and model_fields_set contains the field
+        if self.updated_at is None and "updated_at" in self.model_fields_set:
+            _dict['updatedAt'] = None
+
         return _dict
 
     @classmethod
@@ -116,10 +161,15 @@ class ServiceInformationCertificate(BaseModel):
             "issuerOrganisation": obj.get("issuerOrganisation"),
             "issuerCountry": obj.get("issuerCountry"),
             "fingerprint": obj.get("fingerprint"),
+            "serialNumber": obj.get("serialNumber"),
             "publicKeyInfoAlg": obj.get("publicKeyInfoAlg"),
             "publicKeyInfoSize": obj.get("publicKeyInfoSize"),
             "status": obj.get("status"),
-            "createdAt": obj.get("createdAt")
+            "createdAt": obj.get("createdAt"),
+            "updatedAt": obj.get("updatedAt"),
+            "notBefore": obj.get("notBefore"),
+            "notAfter": obj.get("notAfter"),
+            "lastSeenAt": obj.get("lastSeenAt")
         })
         return _obj
 

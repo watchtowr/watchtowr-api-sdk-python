@@ -8,7 +8,11 @@ Name | Type | Description | Notes
 **id** | **float** |  | 
 **key** | **str** | The key of the custom property. Key provided must not be empty and must be unique for the model type. If is_preset is true, key must belong to one of watchTowr&#39;s preset custom properties. Accepted preset keys include: &#39;Criticality&#39;. | 
 **value** | **str** | The value of the custom property. Any string value is accepted if preset is false. If existing custom property&#39;s preset is true, the value supplied must belong to one of the valid watchTowr preset values. Accepted values are &#39;Low&#39;, &#39;Medium&#39;, &#39;High&#39;, &#39;Unknown&#39; for key: &#39;Criticality&#39;. | 
+**model_type** | **str** | The model type that the custom property is attached to. | 
+**model_id** | **float** | The ID of the model type that the custom property is attached to. | 
 **is_preset** | **bool** | Indicates whether this is a watchTowr preset custom property. | 
+**created_at** | **datetime** |  | [optional] 
+**updated_at** | **datetime** |  | [optional] 
 
 ## Example
 

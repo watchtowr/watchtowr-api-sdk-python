@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_business_unit import ClientBusinessUnit
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,26 +30,19 @@ class ClientPort(BaseModel):
     """
     ClientPort
     """ # noqa: E501
-    type: StrictStr
-    status: StrictStr
-    created_at: datetime.date
-    updated_at: datetime.date
-    last_seen_at: datetime.date
-    id: StrictFloat
-    ip: StrictStr
-    ip_id: StrictFloat
+    type: StrictStr = Field(description="Port protocol, always uppercased (e.g. `TCP`, `UDP`).")
+    status: Optional[StrictStr] = None
+    created_at: datetime
+    last_seen_at: datetime
+    id: StrictStr
+    ip: Optional[StrictStr] = None
+    ip_id: Optional[StrictFloat] = None
     port: StrictFloat
-    banner: StrictStr
+    banner: Optional[StrictStr] = None
     service: StrictStr
+    state: Optional[StrictStr] = Field(default=None, description="Port state (e.g. `open`, `closed`, `filtered`).")
     business_units: List[ClientBusinessUnit] = Field(alias="businessUnits")
-    __properties: ClassVar[List[str]] = ["type", "status", "created_at", "updated_at", "last_seen_at", "id", "ip", "ip_id", "port", "banner", "service", "businessUnits"]
-
-    @field_validator('status')
-    def status_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['verified', 'Unregistered', 'Incorrect Identification', 'pending', 'VerifiedOutOfScope', 'VerifiedReducedAttack', 'Tracked']):
-            raise ValueError("must be one of enum values ('verified', 'Unregistered', 'Incorrect Identification', 'pending', 'VerifiedOutOfScope', 'VerifiedReducedAttack', 'Tracked')")
-        return value
+    __properties: ClassVar[List[str]] = ["type", "status", "created_at", "last_seen_at", "id", "ip", "ip_id", "port", "banner", "service", "state", "businessUnits"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -89,15 +83,6 @@ class ClientPort(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of created_at
-        if self.created_at:
-            _dict['created_at'] = self.created_at.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of updated_at
-        if self.updated_at:
-            _dict['updated_at'] = self.updated_at.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of last_seen_at
-        if self.last_seen_at:
-            _dict['last_seen_at'] = self.last_seen_at.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in business_units (list)
         _items = []
         if self.business_units:
@@ -105,6 +90,31 @@ class ClientPort(BaseModel):
                 if _item_business_units:
                     _items.append(_item_business_units.to_dict())
             _dict['businessUnits'] = _items
+        # set to None if status (nullable) is None
+        # and model_fields_set contains the field
+        if self.status is None and "status" in self.model_fields_set:
+            _dict['status'] = None
+
+        # set to None if ip (nullable) is None
+        # and model_fields_set contains the field
+        if self.ip is None and "ip" in self.model_fields_set:
+            _dict['ip'] = None
+
+        # set to None if ip_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.ip_id is None and "ip_id" in self.model_fields_set:
+            _dict['ip_id'] = None
+
+        # set to None if banner (nullable) is None
+        # and model_fields_set contains the field
+        if self.banner is None and "banner" in self.model_fields_set:
+            _dict['banner'] = None
+
+        # set to None if state (nullable) is None
+        # and model_fields_set contains the field
+        if self.state is None and "state" in self.model_fields_set:
+            _dict['state'] = None
+
         return _dict
 
     @classmethod
@@ -124,15 +134,15 @@ class ClientPort(BaseModel):
         _obj = cls.model_validate({
             "type": obj.get("type"),
             "status": obj.get("status"),
-            "created_at": datetime.date.from_dict(obj["created_at"]) if obj.get("created_at") is not None else None,
-            "updated_at": datetime.date.from_dict(obj["updated_at"]) if obj.get("updated_at") is not None else None,
-            "last_seen_at": datetime.date.from_dict(obj["last_seen_at"]) if obj.get("last_seen_at") is not None else None,
+            "created_at": obj.get("created_at"),
+            "last_seen_at": obj.get("last_seen_at"),
             "id": obj.get("id"),
             "ip": obj.get("ip"),
             "ip_id": obj.get("ip_id"),
             "port": obj.get("port"),
             "banner": obj.get("banner"),
             "service": obj.get("service"),
+            "state": obj.get("state"),
             "businessUnits": [ClientBusinessUnit.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None
         })
         return _obj

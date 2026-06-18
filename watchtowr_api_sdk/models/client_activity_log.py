@@ -18,7 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.causer import Causer
 from typing import Optional, Set
@@ -30,10 +31,10 @@ class ClientActivityLog(BaseModel):
     ClientActivityLog
     """ # noqa: E501
     id: StrictFloat = Field(description="ID")
-    description: Dict[str, Any] = Field(description="Description")
-    type: Dict[str, Any] = Field(description="Subject")
+    description: StrictStr = Field(description="Description")
+    type: StrictStr = Field(description="Subject")
     properties: Optional[Dict[str, Any]] = Field(default=None, description="Log properties")
-    created_at: Optional[Dict[str, Any]] = Field(default=None, description="Timestamp")
+    created_at: Optional[datetime] = Field(default=None, description="Timestamp")
     caused_by: Causer
     __properties: ClassVar[List[str]] = ["id", "description", "type", "properties", "created_at", "caused_by"]
 

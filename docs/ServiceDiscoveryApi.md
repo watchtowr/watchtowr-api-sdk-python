@@ -49,10 +49,10 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
     include_closed_port = True # bool | Include listings with closed ports. (optional)
     include_no_service = True # bool | Include listings without a service (optional)
-    created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter services created after a given date and time. (optional)
-    created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter services created before a given date and time. (optional)
-    updated_from = '2013-10-20T19:20:30+01:00' # datetime | Filter services updated after a given date and time. (optional)
-    updated_to = '2013-10-20T19:20:30+01:00' # datetime | Filter services updated before a given date and time. (optional)
+    created_from = '2022-02-22T22:00Z' # datetime | Filter services created after a given date and time. (optional)
+    created_to = '2022-02-23T22:00Z' # datetime | Filter services created before a given date and time. (optional)
+    updated_from = '2022-02-22T22:00Z' # datetime | Filter services updated after a given date and time. (optional)
+    updated_to = '2022-02-23T22:00Z' # datetime | Filter services updated before a given date and time. (optional)
     search = '1.2.3.4' # str | Search services by IP address. (optional)
     countries = 'US,UK' # str | Filter services by a list of comma separated subject countries that they're related to. (optional)
     technology = 'aws,nginx,cloudfront' # str | Filter services by technology name. Supports comma-separated values for multiple technologies (max 10). (optional)
@@ -60,8 +60,8 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     port_numbers = '80,443' # str | Filter services by a list of comma separated ports. (optional)
     port_types = 'TCP,UDP' # str | Filter services by a list of comma separated transport layer protocols (e.g. UDP/TCP). (optional)
     port_services = 'SSH,HTTP' # str | Filter services by a list of comma separated services. (optional)
-    service_type_ids = '1,2,3' # str | Filter services by a list of comma separated service type IDs. (optional)
-    business_unit_ids = '1,2,3' # str | Filter services by a list of comma separated business unit IDs they're related to. (optional)
+    service_type_ids = [1,2,3] # List[float] | Filter services by a list of comma separated service type IDs. (optional)
+    business_unit_ids = [1,2,3] # List[float] | Filter services by a list of comma separated business unit IDs they're related to. (optional)
     sort_by = 'last_seen' # str | Sort services. (optional)
     order_by = 'DESC' # str | Order services. (optional)
     suppression_filter = 'non-suppressed' # str | Filter services by suppression status. (optional)
@@ -97,8 +97,8 @@ Name | Type | Description  | Notes
  **port_numbers** | **str**| Filter services by a list of comma separated ports. | [optional] 
  **port_types** | **str**| Filter services by a list of comma separated transport layer protocols (e.g. UDP/TCP). | [optional] 
  **port_services** | **str**| Filter services by a list of comma separated services. | [optional] 
- **service_type_ids** | **str**| Filter services by a list of comma separated service type IDs. | [optional] 
- **business_unit_ids** | **str**| Filter services by a list of comma separated business unit IDs they&#39;re related to. | [optional] 
+ **service_type_ids** | [**List[float]**](float.md)| Filter services by a list of comma separated service type IDs. | [optional] 
+ **business_unit_ids** | [**List[float]**](float.md)| Filter services by a list of comma separated business unit IDs they&#39;re related to. | [optional] 
  **sort_by** | **str**| Sort services. | [optional] 
  **order_by** | **str**| Order services. | [optional] 
  **suppression_filter** | **str**| Filter services by suppression status. | [optional] 

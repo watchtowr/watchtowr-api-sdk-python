@@ -100,6 +100,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **404** | Not Found |  -  |
 
@@ -518,7 +519,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_available_finding_statuses**
-> get_available_finding_statuses()
+> FindingStatusesResponse get_available_finding_statuses()
 
 List Finding Statuses
 
@@ -530,6 +531,7 @@ List all available statuses for findings.
 
 ```python
 import watchtowr_api_sdk
+from watchtowr_api_sdk.models.finding_statuses_response import FindingStatusesResponse
 from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
@@ -556,7 +558,9 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
     try:
         # List Finding Statuses
-        api_instance.get_available_finding_statuses()
+        api_response = api_instance.get_available_finding_statuses()
+        print("The response of FindingsApi->get_available_finding_statuses:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling FindingsApi->get_available_finding_statuses: %s\n" % e)
 ```
@@ -569,7 +573,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**FindingStatusesResponse**](FindingStatusesResponse.md)
 
 ### Authorization
 
@@ -578,13 +582,13 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -878,10 +882,10 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     api_instance = watchtowr_api_sdk.FindingsApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
-    created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter findings created after a given date and time. (optional)
-    created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter findings created before a given date and time. (optional)
-    updated_from = '2013-10-20T19:20:30+01:00' # datetime | Filter findings updated after a given date and time. (optional)
-    updated_to = '2013-10-20T19:20:30+01:00' # datetime | Filter findings updated before a given date and time. (optional)
+    created_from = '2022-02-22T22:00Z' # datetime | Filter findings created after a given date and time. (optional)
+    created_to = '2022-02-23T22:00Z' # datetime | Filter findings created before a given date and time. (optional)
+    updated_from = '2022-02-22T22:00Z' # datetime | Filter findings updated after a given date and time. (optional)
+    updated_to = '2022-02-23T22:00Z' # datetime | Filter findings updated before a given date and time. (optional)
     statuses = 'confirmed,remediated,risk-accepted,closed,asset-no-longer-tracked' # str | Filter findings by a list of comma separated statuses they're tagged with. (optional)
     business_unit_ids = '1,2,3' # str | Filter findings by a list of comma separated business unit IDs that they're related to. (optional)
     finding_impact_threshold = 'finding_impact_threshold_example' # str | Impact Setting: * High - Prioritized Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organization's security posture. * All - All Findings, a broader range of findings that may not directly impact your organization's security posture, but may represent deviations from best practices. (optional)
@@ -948,12 +952,13 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **start_specific_finding_retest**
-> ClientFinding start_specific_finding_retest(finding_id, include_dns_connected=include_dns_connected)
+> ClientFindingRetestResponse start_specific_finding_retest(finding_id, include_dns_connected=include_dns_connected)
 
 Retest Finding
 
@@ -965,7 +970,7 @@ Initiate a retest for a specific finding.
 
 ```python
 import watchtowr_api_sdk
-from watchtowr_api_sdk.models.client_finding import ClientFinding
+from watchtowr_api_sdk.models.client_finding_retest_response import ClientFindingRetestResponse
 from watchtowr_api_sdk.rest import ApiException
 from pprint import pprint
 
@@ -1013,7 +1018,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ClientFinding**](ClientFinding.md)
+[**ClientFindingRetestResponse**](ClientFindingRetestResponse.md)
 
 ### Authorization
 
@@ -1029,6 +1034,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
@@ -1116,6 +1122,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **404** | Not Found |  -  |
 
@@ -1288,6 +1295,7 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
+**422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1372,6 +1380,7 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
+**422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

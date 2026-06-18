@@ -45,14 +45,10 @@ class TestPaginatedAdversaryIntel(unittest.TestCase):
                         origin_country_code = 'RU', 
                         last_reported_date = '2023-12-01T00:00Z', 
                         victim_countries = watchtowr_api_sdk.models.victim_country_summary.VictimCountrySummary(
-                            data = [
-                                watchtowr_api_sdk.models.victim_country.VictimCountry(
-                                    country_code = 'US', 
-                                    country_name = 'United States', 
-                                    count = 12, )
-                                ], 
+                            data = ["SG","US"], 
                             total_count = 25, ), 
                         target_industries = watchtowr_api_sdk.models.target_industry_summary.TargetIndustrySummary(
+                            data = ["Financial Services","Technology"], 
                             total_count = 12, ), 
                         affected_tracked_hunts_count = 3, 
                         affected_open_findings_count = 7, 
@@ -73,14 +69,10 @@ class TestPaginatedAdversaryIntel(unittest.TestCase):
                         origin_country_code = 'RU', 
                         last_reported_date = '2023-12-01T00:00Z', 
                         victim_countries = watchtowr_api_sdk.models.victim_country_summary.VictimCountrySummary(
-                            data = [
-                                watchtowr_api_sdk.models.victim_country.VictimCountry(
-                                    country_code = 'US', 
-                                    country_name = 'United States', 
-                                    count = 12, )
-                                ], 
+                            data = ["SG","US"], 
                             total_count = 25, ), 
                         target_industries = watchtowr_api_sdk.models.target_industry_summary.TargetIndustrySummary(
+                            data = ["Financial Services","Technology"], 
                             total_count = 12, ), 
                         affected_tracked_hunts_count = 3, 
                         affected_open_findings_count = 7, 

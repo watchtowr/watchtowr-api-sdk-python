@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**assign_ip_range_to_business_units**](IPRangesApi.md#assign_ip_range_to_business_units) | **POST** /api/client/assets/ipRange/show/{id}/business-units | Assign IP Range to Business Units
 [**create_custom_property_ip_range**](IPRangesApi.md#create_custom_property_ip_range) | **POST** /api/client/assets/ipRange/show/{id}/custom-property | Create Custom Property
 [**create_note_ip_range**](IPRangesApi.md#create_note_ip_range) | **POST** /api/client/assets/ipRange/show/{id}/note | Create Note
-[**delete_custom_property_ip_range_**](IPRangesApi.md#delete_custom_property_ip_range_) | **DELETE** /api/client/assets/ipRange/show/{id}/custom-property/{customPropertyId} | Delete Custom Property
+[**delete_custom_property_ip_range**](IPRangesApi.md#delete_custom_property_ip_range) | **DELETE** /api/client/assets/ipRange/show/{id}/custom-property/{customPropertyId} | Delete Custom Property
 [**delete_note_ip_range**](IPRangesApi.md#delete_note_ip_range) | **DELETE** /api/client/assets/ipRange/show/{id}/note/{noteId} | Delete Note
 [**get_asset_ip_range_notes**](IPRangesApi.md#get_asset_ip_range_notes) | **GET** /api/client/assets/ipRange/show/{id}/notes | List Notes
 [**get_asset_iprange_changelog**](IPRangesApi.md#get_asset_iprange_changelog) | **GET** /api/client/assets/ipRange/show/{id}/changelog | Get IP Range Changelog
@@ -184,6 +184,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
@@ -273,8 +274,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_custom_property_ip_range_**
-> RemoveClientCustomPropertyResponseDto delete_custom_property_ip_range_(id, custom_property_id)
+# **delete_custom_property_ip_range**
+> RemoveClientCustomPropertyResponseDto delete_custom_property_ip_range(id, custom_property_id)
 
 Delete Custom Property
 
@@ -315,11 +316,11 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Delete Custom Property
-        api_response = api_instance.delete_custom_property_ip_range_(id, custom_property_id)
-        print("The response of IPRangesApi->delete_custom_property_ip_range_:\n")
+        api_response = api_instance.delete_custom_property_ip_range(id, custom_property_id)
+        print("The response of IPRangesApi->delete_custom_property_ip_range:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling IPRangesApi->delete_custom_property_ip_range_: %s\n" % e)
+        print("Exception when calling IPRangesApi->delete_custom_property_ip_range: %s\n" % e)
 ```
 
 
@@ -604,6 +605,7 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -685,6 +687,7 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -817,8 +820,8 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     source = 'module-adversarysight-ip-range-company-lookup' # str | Filter assets by the source that discovered the asset. (optional)
     integration_connections = '123:aws,456:azure,789:googlecloud' # str | Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, markmonitor, armiscentrix, qualysvmdr, tenablevm, orcasecurity, crowdstrikefalconspotlight, taniumvm, rapid7insightvm, fastlywaf, cloudflarewaf, awswaf  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud) (optional)
     business_unit_ids = '1,2,3' # str | Filter assets by a list of comma separated business unit IDs that the asset is related to. (optional)
-    created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter assets created after a given date and time. (optional)
-    created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter assets created before a given date and time. (optional)
+    created_from = '2022-02-22T22:00Z' # datetime | Filter assets created after a given date and time. (optional)
+    created_to = '2022-02-23T22:00Z' # datetime | Filter assets created before a given date and time. (optional)
     custom_property_key = 'environment' # str | Filter assets by custom property key. (optional)
     custom_property_value = 'production' # str | Filter assets by custom property value. Must be used together with customPropertyKey. (optional)
 
@@ -1203,6 +1206,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |

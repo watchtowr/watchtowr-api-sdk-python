@@ -30,7 +30,8 @@ class KbEntryCwe(BaseModel):
     """ # noqa: E501
     cwe_id: Optional[StrictStr] = Field(default=None, alias="cweId")
     name: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cweId", "name"]
+    cwe_url: Optional[StrictStr] = Field(default=None, description="MITRE CWE definition URL for the entry.", alias="cweUrl")
+    __properties: ClassVar[List[str]] = ["cweId", "name", "cweUrl"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -89,7 +90,8 @@ class KbEntryCwe(BaseModel):
 
         _obj = cls.model_validate({
             "cweId": obj.get("cweId"),
-            "name": obj.get("name")
+            "name": obj.get("name"),
+            "cweUrl": obj.get("cweUrl")
         })
         return _obj
 

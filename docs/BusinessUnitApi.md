@@ -173,6 +173,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
@@ -467,10 +468,10 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     api_instance = watchtowr_api_sdk.BusinessUnitApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
-    created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter business units created after a given date and time. (optional)
-    created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter business units created before a given date and time. (optional)
-    updated_from = '2013-10-20T19:20:30+01:00' # datetime | Filter business units updated after a given date and time. (optional)
-    updated_to = '2013-10-20T19:20:30+01:00' # datetime | Filter business units updated before a given date and time. (optional)
+    created_from = '2022-02-22T22:00Z' # datetime | Filter business units created after a given date and time. (optional)
+    created_to = '2022-02-23T22:00Z' # datetime | Filter business units created before a given date and time. (optional)
+    updated_from = '2022-02-22T22:00Z' # datetime | Filter business units updated after a given date and time. (optional)
+    updated_to = '2022-02-23T22:00Z' # datetime | Filter business units updated before a given date and time. (optional)
     search = 'Singapore Business Unit' # str | Search business units by name. (optional)
 
     try:

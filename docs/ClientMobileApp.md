@@ -5,21 +5,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**discovery_reason** | **str** |  | [optional] 
 **type** | **str** |  | 
 **source** | **str** |  | 
-**status** | **str** |  | 
-**created_at** | [**datetime.date**](datetime.date.md) |  | 
-**updated_at** | [**datetime.date**](datetime.date.md) |  | 
-**id** | **float** |  | 
+**status** | **str** |  | [optional] 
+**created_at** | **datetime** |  | 
+**id** | **str** |  | 
 **name** | **str** |  | 
 **publisher** | **str** |  | 
 **platform** | **str** |  | 
 **app_id** | **str** |  | 
-**url** | **str** |  | 
-**s3path** | **str** |  | 
+**url** | **str** |  | [optional] 
+**s3path** | **str** |  | [optional] 
 **business_units** | [**List[ClientBusinessUnit]**](ClientBusinessUnit.md) |  | 
+**metadata** | **object** | Additional asset metadata; shape varies by asset type. Defaults to an empty object. | 
 **custom_properties** | [**List[ClientCustomProperty]**](ClientCustomProperty.md) |  | 
-**criticality** | **str** |  | 
+**criticality** | **str** |  | [optional] 
 
 ## Example
 

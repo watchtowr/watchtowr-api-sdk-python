@@ -15,10 +15,10 @@
 
 import unittest
 
-from watchtowr_api_sdk.models.victim_country import VictimCountry
+from watchtowr_api_sdk.models.asset_id import AssetId
 
-class TestVictimCountry(unittest.TestCase):
-    """VictimCountry unit test stubs"""
+class TestAssetId(unittest.TestCase):
+    """AssetId unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,27 +26,24 @@ class TestVictimCountry(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> VictimCountry:
-        """Test VictimCountry
+    def make_instance(self, include_optional) -> AssetId:
+        """Test AssetId
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `VictimCountry`
+        # uncomment below to create an instance of `AssetId`
         """
-        model = VictimCountry()
+        model = AssetId()
         if include_optional:
-            return VictimCountry(
-                country_code = 'US',
-                country_name = 'United States',
-                count = 12
+            return AssetId(
             )
         else:
-            return VictimCountry(
+            return AssetId(
         )
         """
 
-    def testVictimCountry(self):
-        """Test VictimCountry"""
+    def testAssetId(self):
+        """Test AssetId"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

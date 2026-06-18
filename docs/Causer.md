@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** | ID | 
-**name** | **object** | User name | 
+**name** | **str** | User name | 
 
 ## Example
 

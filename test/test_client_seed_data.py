@@ -36,18 +36,33 @@ class TestClientSeedData(unittest.TestCase):
         model = ClientSeedData()
         if include_optional:
             return ClientSeedData(
-                title = 'Main Website',
-                type = 'subdomain',
-                value = 'www.watchTowr.com',
-                values = watchtowr_api_sdk.models.ip_range_values.IpRangeValues(
-                    cidr = '192.168.1.0/24', 
-                    asn = 'AS16509', )
+                title = 'breitenberg.net',
+                type = 'domain',
+                value = 'www.example.com',
+                values = {"cidr":"192.168.1.0/24","asn":"AS16509"},
+                business_units = [
+                    watchtowr_api_sdk.models.client_seed_data_business_unit.ClientSeedDataBusinessUnit(
+                        id = 1, 
+                        name = 'Engineering', 
+                        description = 'Engineering team business unit', 
+                        type = 'USER_DEFINED', 
+                        created_at = '2023-01-01T12:00Z', 
+                        updated_at = '2023-01-01T12:00Z', )
+                    ]
             )
         else:
             return ClientSeedData(
-                title = 'Main Website',
-                type = 'subdomain',
-                value = 'www.watchTowr.com',
+                title = 'breitenberg.net',
+                type = 'domain',
+                business_units = [
+                    watchtowr_api_sdk.models.client_seed_data_business_unit.ClientSeedDataBusinessUnit(
+                        id = 1, 
+                        name = 'Engineering', 
+                        description = 'Engineering team business unit', 
+                        type = 'USER_DEFINED', 
+                        created_at = '2023-01-01T12:00Z', 
+                        updated_at = '2023-01-01T12:00Z', )
+                    ],
         )
         """
 

@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr
-from typing import Any, ClassVar, Dict, List
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -31,8 +32,19 @@ class ClientCustomProperty(BaseModel):
     id: StrictFloat
     key: StrictStr = Field(description="The key of the custom property. Key provided must not be empty and must be unique for the model type. If is_preset is true, key must belong to one of watchTowr's preset custom properties. Accepted preset keys include: 'Criticality'.")
     value: StrictStr = Field(description="The value of the custom property. Any string value is accepted if preset is false. If existing custom property's preset is true, the value supplied must belong to one of the valid watchTowr preset values. Accepted values are 'Low', 'Medium', 'High', 'Unknown' for key: 'Criticality'.")
+    model_type: StrictStr = Field(description="The model type that the custom property is attached to.", alias="modelType")
+    model_id: StrictFloat = Field(description="The ID of the model type that the custom property is attached to.", alias="modelId")
     is_preset: StrictBool = Field(description="Indicates whether this is a watchTowr preset custom property.", alias="isPreset")
-    __properties: ClassVar[List[str]] = ["id", "key", "value", "isPreset"]
+    created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None
+    __properties: ClassVar[List[str]] = ["id", "key", "value", "modelType", "modelId", "isPreset", "created_at", "updated_at"]
+
+    @field_validator('model_type')
+    def model_type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['finding', 'domain', 'subdomain', 'ip', 'ipRange', 'repository', 'saasPlatform', 'mobileApp', 'cloudStorage', 'container', 'cloudAsset', 'packageManager', 'apiDocumentation']):
+            raise ValueError("must be one of enum values ('finding', 'domain', 'subdomain', 'ip', 'ipRange', 'repository', 'saasPlatform', 'mobileApp', 'cloudStorage', 'container', 'cloudAsset', 'packageManager', 'apiDocumentation')")
+        return value
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -93,7 +105,11 @@ class ClientCustomProperty(BaseModel):
             "id": obj.get("id"),
             "key": obj.get("key"),
             "value": obj.get("value"),
-            "isPreset": obj.get("isPreset")
+            "modelType": obj.get("modelType"),
+            "modelId": obj.get("modelId"),
+            "isPreset": obj.get("isPreset"),
+            "created_at": obj.get("created_at"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

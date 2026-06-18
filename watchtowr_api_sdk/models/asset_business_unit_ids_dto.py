@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class AssetBusinessUnitIdsDTO(BaseModel):
     """
     AssetBusinessUnitIdsDTO
     """ # noqa: E501
-    business_unit_ids: List[StrictStr] = Field(description="List of business unit IDs to assign the asset to.", alias="businessUnitIds")
+    business_unit_ids: List[StrictFloat] = Field(description="List of business unit IDs to assign the asset to.", alias="businessUnitIds")
     __properties: ClassVar[List[str]] = ["businessUnitIds"]
 
     model_config = ConfigDict(

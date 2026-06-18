@@ -243,7 +243,7 @@ Class | Method | HTTP request | Description
 *IPRangesApi* | [**assign_ip_range_to_business_units**](docs/IPRangesApi.md#assign_ip_range_to_business_units) | **POST** /api/client/assets/ipRange/show/{id}/business-units | Assign IP Range to Business Units
 *IPRangesApi* | [**create_custom_property_ip_range**](docs/IPRangesApi.md#create_custom_property_ip_range) | **POST** /api/client/assets/ipRange/show/{id}/custom-property | Create Custom Property
 *IPRangesApi* | [**create_note_ip_range**](docs/IPRangesApi.md#create_note_ip_range) | **POST** /api/client/assets/ipRange/show/{id}/note | Create Note
-*IPRangesApi* | [**delete_custom_property_ip_range_**](docs/IPRangesApi.md#delete_custom_property_ip_range_) | **DELETE** /api/client/assets/ipRange/show/{id}/custom-property/{customPropertyId} | Delete Custom Property
+*IPRangesApi* | [**delete_custom_property_ip_range**](docs/IPRangesApi.md#delete_custom_property_ip_range) | **DELETE** /api/client/assets/ipRange/show/{id}/custom-property/{customPropertyId} | Delete Custom Property
 *IPRangesApi* | [**delete_note_ip_range**](docs/IPRangesApi.md#delete_note_ip_range) | **DELETE** /api/client/assets/ipRange/show/{id}/note/{noteId} | Delete Note
 *IPRangesApi* | [**get_asset_ip_range_notes**](docs/IPRangesApi.md#get_asset_ip_range_notes) | **GET** /api/client/assets/ipRange/show/{id}/notes | List Notes
 *IPRangesApi* | [**get_asset_iprange_changelog**](docs/IPRangesApi.md#get_asset_iprange_changelog) | **GET** /api/client/assets/ipRange/show/{id}/changelog | Get IP Range Changelog
@@ -379,7 +379,9 @@ Class | Method | HTTP request | Description
  - [Asset](docs/Asset.md)
  - [AssetAndBusinessUnitAlreadyAssociatedConflictErrorResponse](docs/AssetAndBusinessUnitAlreadyAssociatedConflictErrorResponse.md)
  - [AssetAndBusinessUnitNotAssociatedConflictErrorResponse](docs/AssetAndBusinessUnitNotAssociatedConflictErrorResponse.md)
+ - [AssetBusinessUnitDto](docs/AssetBusinessUnitDto.md)
  - [AssetBusinessUnitIdsDTO](docs/AssetBusinessUnitIdsDTO.md)
+ - [AssetId](docs/AssetId.md)
  - [AssetsListResponse](docs/AssetsListResponse.md)
  - [AttackSurfaceDto](docs/AttackSurfaceDto.md)
  - [AttackSurfaceResiliencyDto](docs/AttackSurfaceResiliencyDto.md)
@@ -420,6 +422,7 @@ Class | Method | HTTP request | Description
  - [ClientEngineSettingsData](docs/ClientEngineSettingsData.md)
  - [ClientEngineSettingsDetails](docs/ClientEngineSettingsDetails.md)
  - [ClientFinding](docs/ClientFinding.md)
+ - [ClientFindingAffected](docs/ClientFindingAffected.md)
  - [ClientFindingAssignee](docs/ClientFindingAssignee.md)
  - [ClientFindingData](docs/ClientFindingData.md)
  - [ClientFindingImpactTag](docs/ClientFindingImpactTag.md)
@@ -429,6 +432,7 @@ Class | Method | HTTP request | Description
  - [ClientFindingRetestHistoryAsset](docs/ClientFindingRetestHistoryAsset.md)
  - [ClientFindingRetestHistoryFinding](docs/ClientFindingRetestHistoryFinding.md)
  - [ClientFindingRetestHistoryTriggeredBy](docs/ClientFindingRetestHistoryTriggeredBy.md)
+ - [ClientFindingRetestResponse](docs/ClientFindingRetestResponse.md)
  - [ClientIp](docs/ClientIp.md)
  - [ClientIpData](docs/ClientIpData.md)
  - [ClientIpDetailDnsRecords](docs/ClientIpDetailDnsRecords.md)
@@ -443,7 +447,9 @@ Class | Method | HTTP request | Description
  - [ClientMobileApp](docs/ClientMobileApp.md)
  - [ClientMobileAppData](docs/ClientMobileAppData.md)
  - [ClientNote](docs/ClientNote.md)
+ - [ClientNoteAuthor](docs/ClientNoteAuthor.md)
  - [ClientNoteData](docs/ClientNoteData.md)
+ - [ClientNoteLastModified](docs/ClientNoteLastModified.md)
  - [ClientNoteListData](docs/ClientNoteListData.md)
  - [ClientPackageManager](docs/ClientPackageManager.md)
  - [ClientPackageManagerData](docs/ClientPackageManagerData.md)
@@ -457,7 +463,7 @@ Class | Method | HTTP request | Description
  - [ClientSaasPlatformData](docs/ClientSaasPlatformData.md)
  - [ClientSeedData](docs/ClientSeedData.md)
  - [ClientSeedDataBusinessUnit](docs/ClientSeedDataBusinessUnit.md)
- - [ClientSeedDataData](docs/ClientSeedDataData.md)
+ - [ClientSeedDataDto](docs/ClientSeedDataDto.md)
  - [ClientSeedDataListItem](docs/ClientSeedDataListItem.md)
  - [ClientSeedDataUser](docs/ClientSeedDataUser.md)
  - [ClientServiceInformationResponseData](docs/ClientServiceInformationResponseData.md)
@@ -465,6 +471,7 @@ Class | Method | HTTP request | Description
  - [ClientSubdomain](docs/ClientSubdomain.md)
  - [ClientSubdomainData](docs/ClientSubdomainData.md)
  - [ClientSuspiciousDomainData](docs/ClientSuspiciousDomainData.md)
+ - [ClientTestingInfrastructure](docs/ClientTestingInfrastructure.md)
  - [ClientUser](docs/ClientUser.md)
  - [ClientUserDetail](docs/ClientUserDetail.md)
  - [ClientUserDetailBusinessUnitsInner](docs/ClientUserDetailBusinessUnitsInner.md)
@@ -485,6 +492,7 @@ Class | Method | HTTP request | Description
  - [FilterByBusinessUnitInput](docs/FilterByBusinessUnitInput.md)
  - [FindingListResponse](docs/FindingListResponse.md)
  - [FindingRetestResponseDto](docs/FindingRetestResponseDto.md)
+ - [FindingStatusesResponse](docs/FindingStatusesResponse.md)
  - [FindingsSummaryDto](docs/FindingsSummaryDto.md)
  - [FirstReportedByAttackerSummary](docs/FirstReportedByAttackerSummary.md)
  - [ForbiddenResponse](docs/ForbiddenResponse.md)
@@ -576,7 +584,6 @@ Class | Method | HTTP request | Description
  - [SetCriticalityDto](docs/SetCriticalityDto.md)
  - [SetCriticalityResponseDto](docs/SetCriticalityResponseDto.md)
  - [SuspiciousDomain](docs/SuspiciousDomain.md)
- - [TargetIndustry](docs/TargetIndustry.md)
  - [TargetIndustrySummary](docs/TargetIndustrySummary.md)
  - [Technology](docs/Technology.md)
  - [TechnologyStatistic](docs/TechnologyStatistic.md)
@@ -602,7 +609,6 @@ Class | Method | HTTP request | Description
  - [UpdateOrganisationWhitelistIpDto](docs/UpdateOrganisationWhitelistIpDto.md)
  - [UpdateUserResponse](docs/UpdateUserResponse.md)
  - [UserDetailData](docs/UserDetailData.md)
- - [VictimCountry](docs/VictimCountry.md)
  - [VictimCountrySummary](docs/VictimCountrySummary.md)
  - [VulnCvssV3XMetrics](docs/VulnCvssV3XMetrics.md)
  - [VulnDetailKev](docs/VulnDetailKev.md)
@@ -616,7 +622,9 @@ Class | Method | HTTP request | Description
  - [WhitelistStatusDto](docs/WhitelistStatusDto.md)
  - [WhoisData](docs/WhoisData.md)
  - [WhoisDataObject](docs/WhoisDataObject.md)
+ - [WhoisDataObjectCreationDate](docs/WhoisDataObjectCreationDate.md)
  - [WhoisDataObjectEmails](docs/WhoisDataObjectEmails.md)
+ - [WhoisDataObjectExpirationDate](docs/WhoisDataObjectExpirationDate.md)
  - [WhoisDataObjectNameServers](docs/WhoisDataObjectNameServers.md)
  - [WhoisDataObjectStatus](docs/WhoisDataObjectStatus.md)
 

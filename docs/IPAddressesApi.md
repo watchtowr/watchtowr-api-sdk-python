@@ -272,6 +272,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
@@ -525,6 +526,7 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -606,6 +608,7 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -895,8 +898,8 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.IPAddressesApi(api_client)
-    ip_id = 'ip_id_example' # str | The asset ID of an IP address with an associated port to get the details of.
-    port_id = 'port_id_example' # str | The ID of the Port to retrieve details of.
+    ip_id = 3.4 # float | The asset ID of an IP address with an associated port to get the details of.
+    port_id = 3.4 # float | The ID of the Port to retrieve details of.
 
     try:
         # Get Port
@@ -914,8 +917,8 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ip_id** | **str**| The asset ID of an IP address with an associated port to get the details of. | 
- **port_id** | **str**| The ID of the Port to retrieve details of. | 
+ **ip_id** | **float**| The asset ID of an IP address with an associated port to get the details of. | 
+ **port_id** | **float**| The ID of the Port to retrieve details of. | 
 
 ### Return type
 
@@ -983,8 +986,8 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100. (optional)
     include_closed_port = True # bool | Include listings with closed ports. (optional)
     include_no_service = True # bool | Include listings without a service (optional)
-    created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter ports created after a given date and time. (optional)
-    created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter ports created before a given date and time. (optional)
+    created_from = '2022-02-22T22:00Z' # datetime | Filter ports created after a given date and time. (optional)
+    created_to = '2022-02-23T22:00Z' # datetime | Filter ports created before a given date and time. (optional)
 
     try:
         # List Ports
@@ -1119,7 +1122,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_list_asset_ips**
-> PaginatedClientIp get_list_asset_ips(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, custom_property_key=custom_property_key, custom_property_value=custom_property_value, match_type=match_type)
+> PaginatedClientIp get_list_asset_ips(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, custom_property_key=custom_property_key, custom_property_value=custom_property_value, include_dns_records=include_dns_records, match_type=match_type)
 
 List IP Addresses
 
@@ -1162,15 +1165,16 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     source = 'DNS Refresh' # str | Filter assets by the source that discovered the asset. (optional)
     integration_connections = '123:aws,456:azure,789:googlecloud' # str | Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, markmonitor, armiscentrix, qualysvmdr, tenablevm, orcasecurity, crowdstrikefalconspotlight, taniumvm, rapid7insightvm, fastlywaf, cloudflarewaf, awswaf  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud) (optional)
     business_unit_ids = '1,2,3' # str | Filter assets by a list of comma separated business unit IDs that the asset is related to. (optional)
-    created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter assets created after a given date and time. (optional)
-    created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter assets created before a given date and time. (optional)
+    created_from = '2022-02-22T22:00Z' # datetime | Filter assets created after a given date and time. (optional)
+    created_to = '2022-02-23T22:00Z' # datetime | Filter assets created before a given date and time. (optional)
     custom_property_key = 'environment' # str | Filter assets by custom property key. (optional)
     custom_property_value = 'production' # str | Filter assets by custom property value. Must be used together with customPropertyKey. (optional)
+    include_dns_records = true # bool | When `true`, include up to 5 owned (PTR) and 5 pointing-at (A) DNS records per IP inline in the `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/ip/show/{id}/dns-records` for the full paginated set. (optional)
     match_type = contains # str | Match assetName searches based on exact names or partial names with contains. Valid match types are:       * contains       * exact  (optional) (default to contains)
 
     try:
         # List IP Addresses
-        api_response = api_instance.get_list_asset_ips(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, custom_property_key=custom_property_key, custom_property_value=custom_property_value, match_type=match_type)
+        api_response = api_instance.get_list_asset_ips(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, custom_property_key=custom_property_key, custom_property_value=custom_property_value, include_dns_records=include_dns_records, match_type=match_type)
         print("The response of IPAddressesApi->get_list_asset_ips:\n")
         pprint(api_response)
     except Exception as e:
@@ -1195,6 +1199,7 @@ Name | Type | Description  | Notes
  **created_to** | **datetime**| Filter assets created before a given date and time. | [optional] 
  **custom_property_key** | **str**| Filter assets by custom property key. | [optional] 
  **custom_property_value** | **str**| Filter assets by custom property value. Must be used together with customPropertyKey. | [optional] 
+ **include_dns_records** | **bool**| When &#x60;true&#x60;, include up to 5 owned (PTR) and 5 pointing-at (A) DNS records per IP inline in the &#x60;dns_records&#x60; field. Defaults to &#x60;false&#x60; to keep list responses fast; use &#x60;GET /assets/ip/show/{id}/dns-records&#x60; for the full paginated set. | [optional] 
  **match_type** | **str**| Match assetName searches based on exact names or partial names with contains. Valid match types are:       * contains       * exact  | [optional] [default to contains]
 
 ### Return type
@@ -1719,6 +1724,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |

@@ -187,6 +187,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
@@ -523,6 +524,7 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -604,6 +606,7 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -858,7 +861,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_list_asset_subdomains**
-> PaginatedClientSubdomain get_list_asset_subdomains(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, custom_property_key=custom_property_key, custom_property_value=custom_property_value)
+> PaginatedClientSubdomain get_list_asset_subdomains(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, custom_property_key=custom_property_key, custom_property_value=custom_property_value, include_dns_records=include_dns_records)
 
 List Subdomains
 
@@ -901,14 +904,15 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     source = 'module-adversarysight-tls-ssl-certificate-transparency-discovery' # str | Filter assets by the source that discovered the asset. (optional)
     integration_connections = '123:aws,456:azure,789:googlecloud' # str | Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, markmonitor, armiscentrix, qualysvmdr, tenablevm, orcasecurity, crowdstrikefalconspotlight, taniumvm, rapid7insightvm, fastlywaf, cloudflarewaf, awswaf  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud) (optional)
     business_unit_ids = '1,2,3' # str | Filter assets by a list of comma separated business unit IDs that the asset is related to. (optional)
-    created_from = '2013-10-20T19:20:30+01:00' # datetime | Filter assets created after a given date and time. (optional)
-    created_to = '2013-10-20T19:20:30+01:00' # datetime | Filter assets created before a given date and time. (optional)
+    created_from = '2022-02-22T22:00Z' # datetime | Filter assets created after a given date and time. (optional)
+    created_to = '2022-02-23T22:00Z' # datetime | Filter assets created before a given date and time. (optional)
     custom_property_key = 'environment' # str | Filter assets by custom property key. (optional)
     custom_property_value = 'production' # str | Filter assets by custom property value. Must be used together with customPropertyKey. (optional)
+    include_dns_records = true # bool | When `true`, include up to 5 DNS records per asset inline in each item's `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/subdomain/show/{id}/dns-records` for the full paginated set. (optional)
 
     try:
         # List Subdomains
-        api_response = api_instance.get_list_asset_subdomains(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, custom_property_key=custom_property_key, custom_property_value=custom_property_value)
+        api_response = api_instance.get_list_asset_subdomains(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, custom_property_key=custom_property_key, custom_property_value=custom_property_value, include_dns_records=include_dns_records)
         print("The response of SubdomainsApi->get_list_asset_subdomains:\n")
         pprint(api_response)
     except Exception as e:
@@ -933,6 +937,7 @@ Name | Type | Description  | Notes
  **created_to** | **datetime**| Filter assets created before a given date and time. | [optional] 
  **custom_property_key** | **str**| Filter assets by custom property key. | [optional] 
  **custom_property_value** | **str**| Filter assets by custom property value. Must be used together with customPropertyKey. | [optional] 
+ **include_dns_records** | **bool**| When &#x60;true&#x60;, include up to 5 DNS records per asset inline in each item&#39;s &#x60;dns_records&#x60; field. Defaults to &#x60;false&#x60; to keep list responses fast; use &#x60;GET /assets/subdomain/show/{id}/dns-records&#x60; for the full paginated set. | [optional] 
 
 ### Return type
 
@@ -1459,6 +1464,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |

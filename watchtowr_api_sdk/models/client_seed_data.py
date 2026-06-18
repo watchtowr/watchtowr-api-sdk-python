@@ -18,9 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from watchtowr_api_sdk.models.ip_range_values import IpRangeValues
+from watchtowr_api_sdk.models.client_seed_data_business_unit import ClientSeedDataBusinessUnit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,18 +29,12 @@ class ClientSeedData(BaseModel):
     """
     ClientSeedData
     """ # noqa: E501
-    title: StrictStr = Field(description="Descriptive title for the new asset")
-    type: StrictStr = Field(description="Asset Type for the new asset. Valid asset types are: [domain, subdomain, ip, ipRange, repository, cloudStorage, container, mobileApp, saasPlatform, apiDocumentation, packageManager]")
-    value: StrictStr = Field(description="Value for the asset to be added.")
-    values: Optional[IpRangeValues] = Field(default=None, description="Values object for ipRange asset type. Must contain both cidr and asn fields. Required when type is ipRange.")
-    __properties: ClassVar[List[str]] = ["title", "type", "value", "values"]
-
-    @field_validator('type')
-    def type_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['domain', 'subdomain', 'ip', 'ipRange', 'repository', 'cloudStorage', 'container', 'mobileApp', 'saasPlatform', 'apiDocumentation', 'packageManager']):
-            raise ValueError("must be one of enum values ('domain', 'subdomain', 'ip', 'ipRange', 'repository', 'cloudStorage', 'container', 'mobileApp', 'saasPlatform', 'apiDocumentation', 'packageManager')")
-        return value
+    title: StrictStr
+    type: StrictStr
+    value: Optional[StrictStr] = None
+    values: Optional[Dict[str, Any]] = None
+    business_units: List[ClientSeedDataBusinessUnit] = Field(description="Business units associated with the seed data", alias="businessUnits")
+    __properties: ClassVar[List[str]] = ["title", "type", "value", "values", "businessUnits"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -81,9 +75,13 @@ class ClientSeedData(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of values
-        if self.values:
-            _dict['values'] = self.values.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in business_units (list)
+        _items = []
+        if self.business_units:
+            for _item_business_units in self.business_units:
+                if _item_business_units:
+                    _items.append(_item_business_units.to_dict())
+            _dict['businessUnits'] = _items
         return _dict
 
     @classmethod
@@ -104,7 +102,8 @@ class ClientSeedData(BaseModel):
             "title": obj.get("title"),
             "type": obj.get("type"),
             "value": obj.get("value"),
-            "values": IpRangeValues.from_dict(obj["values"]) if obj.get("values") is not None else None
+            "values": obj.get("values"),
+            "businessUnits": [ClientSeedDataBusinessUnit.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None
         })
         return _obj
 

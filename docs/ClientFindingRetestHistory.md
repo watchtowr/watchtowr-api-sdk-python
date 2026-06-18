@@ -6,13 +6,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** | Retest ID | 
-**finding** | [**ClientFindingRetestHistoryFinding**](ClientFindingRetestHistoryFinding.md) | Finding information | 
-**asset** | [**ClientFindingRetestHistoryAsset**](ClientFindingRetestHistoryAsset.md) | Affected asset information | 
-**triggered_by** | [**ClientFindingRetestHistoryTriggeredBy**](ClientFindingRetestHistoryTriggeredBy.md) | User who triggered the retest | 
+**finding** | [**ClientFindingRetestHistoryFinding**](ClientFindingRetestHistoryFinding.md) | Finding information | [optional] 
+**asset** | [**ClientFindingRetestHistoryAsset**](ClientFindingRetestHistoryAsset.md) | Affected asset information | [optional] 
+**triggered_by** | [**ClientFindingRetestHistoryTriggeredBy**](ClientFindingRetestHistoryTriggeredBy.md) | User who triggered the retest | [optional] 
 **current_retest_status** | **str** | Current retest status | 
-**result** | **str** | Finding status verdict snapshot at the time this retest completed. Independent of the live &#x60;findings.status_name&#x60;, which may change later. | 
+**result** | **str** | Retest result status at the time this retest completed. | 
 **started_at** | **datetime** | Date and time when the retest was started | 
-**completed_at** | **object** | Date and time when the retest was completed | 
+**completed_at** | **datetime** | Date and time when the retest was completed | [optional] 
 **updated_at** | **datetime** | Date and time when the retest was last updated | 
 **created_at** | **datetime** | Creation date | 
 **attempt_number** | **float** | Retest attempt number for this finding | [optional] 

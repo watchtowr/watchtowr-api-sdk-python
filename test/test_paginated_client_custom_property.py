@@ -41,7 +41,11 @@ class TestPaginatedClientCustomProperty(unittest.TestCase):
                         id = 1, 
                         key = 'Severity', 
                         value = 'Low', 
-                        is_preset = False, )
+                        model_type = 'domain', 
+                        model_id = 22, 
+                        is_preset = False, 
+                        created_at = '2024-09-23T01:24:28.626Z', 
+                        updated_at = '2024-09-23T01:24:28.626Z', )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
@@ -53,7 +57,11 @@ class TestPaginatedClientCustomProperty(unittest.TestCase):
                         id = 1, 
                         key = 'Severity', 
                         value = 'Low', 
-                        is_preset = False, )
+                        model_type = 'domain', 
+                        model_id = 22, 
+                        is_preset = False, 
+                        created_at = '2024-09-23T01:24:28.626Z', 
+                        updated_at = '2024-09-23T01:24:28.626Z', )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),

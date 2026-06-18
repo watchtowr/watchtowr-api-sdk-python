@@ -18,20 +18,29 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from watchtowr_api_sdk.models.ip_range_values import IpRangeValues
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class VictimCountry(BaseModel):
+class ClientSeedDataDto(BaseModel):
     """
-    VictimCountry
+    ClientSeedDataDto
     """ # noqa: E501
-    country_code: Optional[StrictStr] = Field(default=None, alias="countryCode")
-    country_name: Optional[StrictStr] = Field(default=None, alias="countryName")
-    count: Optional[StrictFloat] = None
-    __properties: ClassVar[List[str]] = ["countryCode", "countryName", "count"]
+    title: StrictStr = Field(description="Descriptive title for the new asset")
+    type: StrictStr = Field(description="Asset Type for the new asset. Valid asset types are: [domain, subdomain, ip, ipRange, repository, cloudStorage, container, mobileApp, saasPlatform, apiDocumentation, packageManager]")
+    value: StrictStr = Field(description="Value for the asset to be added.")
+    values: Optional[IpRangeValues] = Field(default=None, description="Values object for ipRange asset type. Must contain both cidr and asn fields. Required when type is ipRange.")
+    __properties: ClassVar[List[str]] = ["title", "type", "value", "values"]
+
+    @field_validator('type')
+    def type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['domain', 'subdomain', 'ip', 'ipRange', 'repository', 'cloudStorage', 'container', 'mobileApp', 'saasPlatform', 'apiDocumentation', 'packageManager']):
+            raise ValueError("must be one of enum values ('domain', 'subdomain', 'ip', 'ipRange', 'repository', 'cloudStorage', 'container', 'mobileApp', 'saasPlatform', 'apiDocumentation', 'packageManager')")
+        return value
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -51,7 +60,7 @@ class VictimCountry(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of VictimCountry from a JSON string"""
+        """Create an instance of ClientSeedDataDto from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -72,11 +81,14 @@ class VictimCountry(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of values
+        if self.values:
+            _dict['values'] = self.values.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of VictimCountry from a dict"""
+        """Create an instance of ClientSeedDataDto from a dict"""
         if obj is None:
             return None
 
@@ -86,12 +98,13 @@ class VictimCountry(BaseModel):
         # raise errors for additional fields in the input
         for _key in obj.keys():
             if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in VictimCountry) in the input: " + _key)
+                raise ValueError("Error due to additional fields (not defined in ClientSeedDataDto) in the input: " + _key)
 
         _obj = cls.model_validate({
-            "countryCode": obj.get("countryCode"),
-            "countryName": obj.get("countryName"),
-            "count": obj.get("count")
+            "title": obj.get("title"),
+            "type": obj.get("type"),
+            "value": obj.get("value"),
+            "values": IpRangeValues.from_dict(obj["values"]) if obj.get("values") is not None else None
         })
         return _obj
 

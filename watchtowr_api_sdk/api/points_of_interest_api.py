@@ -18,7 +18,7 @@ from typing_extensions import Annotated
 
 from datetime import datetime
 from pydantic import Field, StrictBool, StrictFloat, StrictStr, field_validator
-from typing import Optional
+from typing import List, Optional
 from typing_extensions import Annotated
 from watchtowr_api_sdk.models.paginated_point_of_interest import PaginatedPointOfInterest
 from watchtowr_api_sdk.models.points_of_interest_data import PointsOfInterestData
@@ -325,7 +325,7 @@ class PointsOfInterestApi:
         updated_to: Annotated[Optional[datetime], Field(description="Filter points of interest updated before a given date and time.")] = None,
         discovered_date_order: Annotated[Optional[StrictStr], Field(description="Order points of interest by their discovery date.")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search Points of Interest by name or URL.")] = None,
-        types: Annotated[Optional[StrictStr], Field(description="Filter by a comma separated list of types.")] = None,
+        types: Annotated[Optional[List[StrictStr]], Field(description="Filter by a comma separated list of types. Values are case-sensitive — pass the canonical lowercase form (e.g. `admin-panel,open-directory`).")] = None,
         has_finding: Annotated[Optional[StrictBool], Field(description="Filter points of interest that have findings.")] = None,
         start_date: Annotated[Optional[datetime], Field(description="Filter points of interest by start date.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Filter points of interest by end date.")] = None,
@@ -365,8 +365,8 @@ class PointsOfInterestApi:
         :type discovered_date_order: str
         :param search: Search Points of Interest by name or URL.
         :type search: str
-        :param types: Filter by a comma separated list of types.
-        :type types: str
+        :param types: Filter by a comma separated list of types. Values are case-sensitive — pass the canonical lowercase form (e.g. `admin-panel,open-directory`).
+        :type types: List[str]
         :param has_finding: Filter points of interest that have findings.
         :type has_finding: bool
         :param start_date: Filter points of interest by start date.
@@ -449,7 +449,7 @@ class PointsOfInterestApi:
         updated_to: Annotated[Optional[datetime], Field(description="Filter points of interest updated before a given date and time.")] = None,
         discovered_date_order: Annotated[Optional[StrictStr], Field(description="Order points of interest by their discovery date.")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search Points of Interest by name or URL.")] = None,
-        types: Annotated[Optional[StrictStr], Field(description="Filter by a comma separated list of types.")] = None,
+        types: Annotated[Optional[List[StrictStr]], Field(description="Filter by a comma separated list of types. Values are case-sensitive — pass the canonical lowercase form (e.g. `admin-panel,open-directory`).")] = None,
         has_finding: Annotated[Optional[StrictBool], Field(description="Filter points of interest that have findings.")] = None,
         start_date: Annotated[Optional[datetime], Field(description="Filter points of interest by start date.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Filter points of interest by end date.")] = None,
@@ -489,8 +489,8 @@ class PointsOfInterestApi:
         :type discovered_date_order: str
         :param search: Search Points of Interest by name or URL.
         :type search: str
-        :param types: Filter by a comma separated list of types.
-        :type types: str
+        :param types: Filter by a comma separated list of types. Values are case-sensitive — pass the canonical lowercase form (e.g. `admin-panel,open-directory`).
+        :type types: List[str]
         :param has_finding: Filter points of interest that have findings.
         :type has_finding: bool
         :param start_date: Filter points of interest by start date.
@@ -573,7 +573,7 @@ class PointsOfInterestApi:
         updated_to: Annotated[Optional[datetime], Field(description="Filter points of interest updated before a given date and time.")] = None,
         discovered_date_order: Annotated[Optional[StrictStr], Field(description="Order points of interest by their discovery date.")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search Points of Interest by name or URL.")] = None,
-        types: Annotated[Optional[StrictStr], Field(description="Filter by a comma separated list of types.")] = None,
+        types: Annotated[Optional[List[StrictStr]], Field(description="Filter by a comma separated list of types. Values are case-sensitive — pass the canonical lowercase form (e.g. `admin-panel,open-directory`).")] = None,
         has_finding: Annotated[Optional[StrictBool], Field(description="Filter points of interest that have findings.")] = None,
         start_date: Annotated[Optional[datetime], Field(description="Filter points of interest by start date.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Filter points of interest by end date.")] = None,
@@ -613,8 +613,8 @@ class PointsOfInterestApi:
         :type discovered_date_order: str
         :param search: Search Points of Interest by name or URL.
         :type search: str
-        :param types: Filter by a comma separated list of types.
-        :type types: str
+        :param types: Filter by a comma separated list of types. Values are case-sensitive — pass the canonical lowercase form (e.g. `admin-panel,open-directory`).
+        :type types: List[str]
         :param has_finding: Filter points of interest that have findings.
         :type has_finding: bool
         :param start_date: Filter points of interest by start date.
@@ -708,6 +708,7 @@ class PointsOfInterestApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'types': 'multi',
         }
 
         _path_params: Dict[str, str] = {}

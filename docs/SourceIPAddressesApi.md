@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_list_source_ip_addresses**
-> ClientSourceIpsAddresses get_list_source_ip_addresses(whitelist=whitelist, region=region)
+> ClientSourceIpsAddresses get_list_source_ip_addresses(region=region, whitelist=whitelist)
 
 List Testing Infrastructure
 
@@ -44,12 +44,12 @@ configuration = watchtowr_api_sdk.Configuration(
 with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.SourceIPAddressesApi(api_client)
-    whitelist = True # bool | Filter by whitelist status (true for whitelisted items only) (optional)
     region = 'region_example' # str | Filter by region (optional)
+    whitelist = true # bool | Filter by whitelist status (true for whitelisted items only). (optional)
 
     try:
         # List Testing Infrastructure
-        api_response = api_instance.get_list_source_ip_addresses(whitelist=whitelist, region=region)
+        api_response = api_instance.get_list_source_ip_addresses(region=region, whitelist=whitelist)
         print("The response of SourceIPAddressesApi->get_list_source_ip_addresses:\n")
         pprint(api_response)
     except Exception as e:
@@ -63,8 +63,8 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **whitelist** | **bool**| Filter by whitelist status (true for whitelisted items only) | [optional] 
  **region** | **str**| Filter by region | [optional] 
+ **whitelist** | **bool**| Filter by whitelist status (true for whitelisted items only). | [optional] 
 
 ### Return type
 

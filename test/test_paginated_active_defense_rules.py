@@ -49,8 +49,8 @@ class TestPaginatedActiveDefenseRules(unittest.TestCase):
                             watchtowr = False, ), 
                         zero_day = False, 
                         providers = ["cloudflare"], 
-                        created_at = '2023-12-01T00:00:00.000Z', 
-                        updated_at = '2023-12-02T00:00:00.000Z', )
+                        created_at = '2023-12-01T00:00Z', 
+                        updated_at = '2023-12-02T00:00Z', )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, )
@@ -70,8 +70,8 @@ class TestPaginatedActiveDefenseRules(unittest.TestCase):
                             watchtowr = False, ), 
                         zero_day = False, 
                         providers = ["cloudflare"], 
-                        created_at = '2023-12-01T00:00:00.000Z', 
-                        updated_at = '2023-12-02T00:00:00.000Z', )
+                        created_at = '2023-12-01T00:00Z', 
+                        updated_at = '2023-12-02T00:00Z', )
                     ],
                 meta = watchtowr_api_sdk.models.meta.Meta(
                     pagination = {"total":20,"count":10,"per_page":10,"current_page":1,"total_pages":2,"links":{"previous":"url","next":"url"}}, ),

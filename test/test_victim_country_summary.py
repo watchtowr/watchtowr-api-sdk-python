@@ -36,12 +36,7 @@ class TestVictimCountrySummary(unittest.TestCase):
         model = VictimCountrySummary()
         if include_optional:
             return VictimCountrySummary(
-                data = [
-                    watchtowr_api_sdk.models.victim_country.VictimCountry(
-                        country_code = 'US', 
-                        country_name = 'United States', 
-                        count = 12, )
-                    ],
+                data = ["SG","US"],
                 total_count = 25
             )
         else:

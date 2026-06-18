@@ -18,6 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.active_defense_rule_template import ActiveDefenseRuleTemplate
@@ -34,8 +35,8 @@ class ActiveDefenseRuleDetails(BaseModel):
     name: StrictStr
     description: StrictStr
     zero_day: StrictBool = Field(alias="zeroDay")
-    created_at: StrictStr = Field(alias="createdAt")
-    updated_at: StrictStr = Field(alias="updatedAt")
+    created_at: datetime = Field(alias="createdAt")
+    updated_at: datetime = Field(alias="updatedAt")
     rules: List[ActiveDefenseRuleTemplate]
     vulnerability: Optional[ActiveDefenseRuleVulnerability] = None
     findings_count: StrictFloat = Field(description="Count of confirmed open findings against the rule's vulnerability. Scoped to the requesting user's business units and the organization's finding impact threshold.", alias="findingsCount")

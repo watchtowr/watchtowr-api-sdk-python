@@ -36,13 +36,11 @@ class TestUpdateOrganisationWhitelistIpDto(unittest.TestCase):
         model = UpdateOrganisationWhitelistIpDto()
         if include_optional:
             return UpdateOrganisationWhitelistIpDto(
-                id = 1,
                 ip = '192.168.1.1',
                 description = 'Office network'
             )
         else:
             return UpdateOrganisationWhitelistIpDto(
-                id = 1,
                 ip = '192.168.1.1',
         )
         """

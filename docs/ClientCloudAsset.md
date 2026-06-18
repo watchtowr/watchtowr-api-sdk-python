@@ -5,19 +5,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**discovery_reason** | **str** |  | [optional] 
 **type** | **str** |  | 
+**id** | **str** |  | 
 **name** | **str** |  | 
 **source** | **str** |  | 
 **provider** | **str** |  | 
-**super_type** | **str** |  | 
-**sub_type** | **str** |  | 
-**hostname** | **str** |  | 
+**status** | **str** |  | [optional] 
+**super_type** | **str** |  | [optional] 
+**sub_type** | **str** |  | [optional] 
+**hostname** | **str** |  | [optional] 
 **cloud_resource_id** | **str** |  | 
-**created_at** | [**datetime.date**](datetime.date.md) |  | 
-**updated_at** | [**datetime.date**](datetime.date.md) |  | 
+**created_at** | **datetime** |  | 
 **metadata** | **object** |  | 
+**business_units** | [**List[ClientBusinessUnit]**](ClientBusinessUnit.md) |  | 
 **custom_properties** | [**List[ClientCustomProperty]**](ClientCustomProperty.md) |  | 
-**criticality** | **str** |  | 
+**criticality** | **str** |  | [optional] 
 
 ## Example
 

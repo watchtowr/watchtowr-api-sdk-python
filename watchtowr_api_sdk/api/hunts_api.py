@@ -18,7 +18,7 @@ from typing_extensions import Annotated
 
 from datetime import datetime
 from pydantic import Field, StrictBool, StrictFloat, StrictStr, field_validator
-from typing import Optional
+from typing import List, Optional
 from typing_extensions import Annotated
 from watchtowr_api_sdk.models.assets_list_response import AssetsListResponse
 from watchtowr_api_sdk.models.finding_list_response import FindingListResponse
@@ -48,15 +48,16 @@ class HuntsApi:
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
-        statuses: Annotated[Optional[StrictStr], Field(description="Filter hunts by hunt status.")] = None,
+        statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter hunts by a comma separated list of hunt statuses. Values are case-sensitive — pass the canonical lowercase form (e.g. `received,in-progress`).")] = None,
         hunt_search: Annotated[Optional[StrictStr], Field(description="Search for hunts by text in hunt name.")] = None,
-        types: Annotated[Optional[StrictStr], Field(description="Filter hunts by hunt types.")] = None,
+        types: Annotated[Optional[List[StrictStr]], Field(description="Filter hunts by a comma separated list of hunt types. Values are case-sensitive — pass the canonical lowercase form (e.g. `bespoke,proactive`).")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter hunts created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter hunts created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter hunts updated after a given date and time.")] = None,
         updated_to: Annotated[Optional[datetime], Field(description="Filter hunts updated before a given date and time.")] = None,
         resource_filter: Annotated[Optional[StrictStr], Field(description="General")] = None,
-        only_resolved: Annotated[Optional[StrictBool], Field(description="Filter to only show resolved hunts.")] = None,
+        resolved: Annotated[Optional[StrictBool], Field(description="Filter hunts by resolution status. `true` returns resolved hunts, `false` returns unresolved hunts.")] = None,
+        only_resolved: Annotated[Optional[StrictBool], Field(description="Deprecated — use `resolved` instead. This is kept for backward compatibility and will be removed in a future release.")] = None,
         is_unacknowledged: Annotated[Optional[StrictBool], Field(description="Filter to only show hunts that are not acknowledged.")] = None,
         _request_timeout: Union[
             None,
@@ -79,12 +80,12 @@ class HuntsApi:
         :type page: float
         :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
         :type page_size: float
-        :param statuses: Filter hunts by hunt status.
-        :type statuses: str
+        :param statuses: Filter hunts by a comma separated list of hunt statuses. Values are case-sensitive — pass the canonical lowercase form (e.g. `received,in-progress`).
+        :type statuses: List[str]
         :param hunt_search: Search for hunts by text in hunt name.
         :type hunt_search: str
-        :param types: Filter hunts by hunt types.
-        :type types: str
+        :param types: Filter hunts by a comma separated list of hunt types. Values are case-sensitive — pass the canonical lowercase form (e.g. `bespoke,proactive`).
+        :type types: List[str]
         :param created_from: Filter hunts created after a given date and time.
         :type created_from: datetime
         :param created_to: Filter hunts created before a given date and time.
@@ -95,7 +96,9 @@ class HuntsApi:
         :type updated_to: datetime
         :param resource_filter: General
         :type resource_filter: str
-        :param only_resolved: Filter to only show resolved hunts.
+        :param resolved: Filter hunts by resolution status. `true` returns resolved hunts, `false` returns unresolved hunts.
+        :type resolved: bool
+        :param only_resolved: Deprecated — use `resolved` instead. This is kept for backward compatibility and will be removed in a future release.
         :type only_resolved: bool
         :param is_unacknowledged: Filter to only show hunts that are not acknowledged.
         :type is_unacknowledged: bool
@@ -132,6 +135,7 @@ class HuntsApi:
             updated_from=updated_from,
             updated_to=updated_to,
             resource_filter=resource_filter,
+            resolved=resolved,
             only_resolved=only_resolved,
             is_unacknowledged=is_unacknowledged,
             _request_auth=_request_auth,
@@ -160,15 +164,16 @@ class HuntsApi:
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
-        statuses: Annotated[Optional[StrictStr], Field(description="Filter hunts by hunt status.")] = None,
+        statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter hunts by a comma separated list of hunt statuses. Values are case-sensitive — pass the canonical lowercase form (e.g. `received,in-progress`).")] = None,
         hunt_search: Annotated[Optional[StrictStr], Field(description="Search for hunts by text in hunt name.")] = None,
-        types: Annotated[Optional[StrictStr], Field(description="Filter hunts by hunt types.")] = None,
+        types: Annotated[Optional[List[StrictStr]], Field(description="Filter hunts by a comma separated list of hunt types. Values are case-sensitive — pass the canonical lowercase form (e.g. `bespoke,proactive`).")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter hunts created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter hunts created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter hunts updated after a given date and time.")] = None,
         updated_to: Annotated[Optional[datetime], Field(description="Filter hunts updated before a given date and time.")] = None,
         resource_filter: Annotated[Optional[StrictStr], Field(description="General")] = None,
-        only_resolved: Annotated[Optional[StrictBool], Field(description="Filter to only show resolved hunts.")] = None,
+        resolved: Annotated[Optional[StrictBool], Field(description="Filter hunts by resolution status. `true` returns resolved hunts, `false` returns unresolved hunts.")] = None,
+        only_resolved: Annotated[Optional[StrictBool], Field(description="Deprecated — use `resolved` instead. This is kept for backward compatibility and will be removed in a future release.")] = None,
         is_unacknowledged: Annotated[Optional[StrictBool], Field(description="Filter to only show hunts that are not acknowledged.")] = None,
         _request_timeout: Union[
             None,
@@ -191,12 +196,12 @@ class HuntsApi:
         :type page: float
         :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
         :type page_size: float
-        :param statuses: Filter hunts by hunt status.
-        :type statuses: str
+        :param statuses: Filter hunts by a comma separated list of hunt statuses. Values are case-sensitive — pass the canonical lowercase form (e.g. `received,in-progress`).
+        :type statuses: List[str]
         :param hunt_search: Search for hunts by text in hunt name.
         :type hunt_search: str
-        :param types: Filter hunts by hunt types.
-        :type types: str
+        :param types: Filter hunts by a comma separated list of hunt types. Values are case-sensitive — pass the canonical lowercase form (e.g. `bespoke,proactive`).
+        :type types: List[str]
         :param created_from: Filter hunts created after a given date and time.
         :type created_from: datetime
         :param created_to: Filter hunts created before a given date and time.
@@ -207,7 +212,9 @@ class HuntsApi:
         :type updated_to: datetime
         :param resource_filter: General
         :type resource_filter: str
-        :param only_resolved: Filter to only show resolved hunts.
+        :param resolved: Filter hunts by resolution status. `true` returns resolved hunts, `false` returns unresolved hunts.
+        :type resolved: bool
+        :param only_resolved: Deprecated — use `resolved` instead. This is kept for backward compatibility and will be removed in a future release.
         :type only_resolved: bool
         :param is_unacknowledged: Filter to only show hunts that are not acknowledged.
         :type is_unacknowledged: bool
@@ -244,6 +251,7 @@ class HuntsApi:
             updated_from=updated_from,
             updated_to=updated_to,
             resource_filter=resource_filter,
+            resolved=resolved,
             only_resolved=only_resolved,
             is_unacknowledged=is_unacknowledged,
             _request_auth=_request_auth,
@@ -272,15 +280,16 @@ class HuntsApi:
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
-        statuses: Annotated[Optional[StrictStr], Field(description="Filter hunts by hunt status.")] = None,
+        statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter hunts by a comma separated list of hunt statuses. Values are case-sensitive — pass the canonical lowercase form (e.g. `received,in-progress`).")] = None,
         hunt_search: Annotated[Optional[StrictStr], Field(description="Search for hunts by text in hunt name.")] = None,
-        types: Annotated[Optional[StrictStr], Field(description="Filter hunts by hunt types.")] = None,
+        types: Annotated[Optional[List[StrictStr]], Field(description="Filter hunts by a comma separated list of hunt types. Values are case-sensitive — pass the canonical lowercase form (e.g. `bespoke,proactive`).")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter hunts created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter hunts created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter hunts updated after a given date and time.")] = None,
         updated_to: Annotated[Optional[datetime], Field(description="Filter hunts updated before a given date and time.")] = None,
         resource_filter: Annotated[Optional[StrictStr], Field(description="General")] = None,
-        only_resolved: Annotated[Optional[StrictBool], Field(description="Filter to only show resolved hunts.")] = None,
+        resolved: Annotated[Optional[StrictBool], Field(description="Filter hunts by resolution status. `true` returns resolved hunts, `false` returns unresolved hunts.")] = None,
+        only_resolved: Annotated[Optional[StrictBool], Field(description="Deprecated — use `resolved` instead. This is kept for backward compatibility and will be removed in a future release.")] = None,
         is_unacknowledged: Annotated[Optional[StrictBool], Field(description="Filter to only show hunts that are not acknowledged.")] = None,
         _request_timeout: Union[
             None,
@@ -303,12 +312,12 @@ class HuntsApi:
         :type page: float
         :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
         :type page_size: float
-        :param statuses: Filter hunts by hunt status.
-        :type statuses: str
+        :param statuses: Filter hunts by a comma separated list of hunt statuses. Values are case-sensitive — pass the canonical lowercase form (e.g. `received,in-progress`).
+        :type statuses: List[str]
         :param hunt_search: Search for hunts by text in hunt name.
         :type hunt_search: str
-        :param types: Filter hunts by hunt types.
-        :type types: str
+        :param types: Filter hunts by a comma separated list of hunt types. Values are case-sensitive — pass the canonical lowercase form (e.g. `bespoke,proactive`).
+        :type types: List[str]
         :param created_from: Filter hunts created after a given date and time.
         :type created_from: datetime
         :param created_to: Filter hunts created before a given date and time.
@@ -319,7 +328,9 @@ class HuntsApi:
         :type updated_to: datetime
         :param resource_filter: General
         :type resource_filter: str
-        :param only_resolved: Filter to only show resolved hunts.
+        :param resolved: Filter hunts by resolution status. `true` returns resolved hunts, `false` returns unresolved hunts.
+        :type resolved: bool
+        :param only_resolved: Deprecated — use `resolved` instead. This is kept for backward compatibility and will be removed in a future release.
         :type only_resolved: bool
         :param is_unacknowledged: Filter to only show hunts that are not acknowledged.
         :type is_unacknowledged: bool
@@ -356,6 +367,7 @@ class HuntsApi:
             updated_from=updated_from,
             updated_to=updated_to,
             resource_filter=resource_filter,
+            resolved=resolved,
             only_resolved=only_resolved,
             is_unacknowledged=is_unacknowledged,
             _request_auth=_request_auth,
@@ -387,6 +399,7 @@ class HuntsApi:
         updated_from,
         updated_to,
         resource_filter,
+        resolved,
         only_resolved,
         is_unacknowledged,
         _request_auth,
@@ -398,6 +411,8 @@ class HuntsApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'statuses': 'multi',
+            'types': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -486,6 +501,10 @@ class HuntsApi:
         if resource_filter is not None:
             
             _query_params.append(('resourceFilter', resource_filter))
+            
+        if resolved is not None:
+            
+            _query_params.append(('resolved', resolved))
             
         if only_resolved is not None:
             

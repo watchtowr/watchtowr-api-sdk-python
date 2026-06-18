@@ -17,8 +17,8 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from datetime import datetime
-from pydantic import Field, StrictFloat, StrictStr
-from typing import Optional
+from pydantic import Field, StrictFloat, StrictStr, field_validator
+from typing import List, Optional
 from typing_extensions import Annotated
 from watchtowr_api_sdk.models.client_suspicious_domain_data import ClientSuspiciousDomainData
 from watchtowr_api_sdk.models.paginated_suspicious_domain import PaginatedSuspiciousDomain
@@ -53,7 +53,7 @@ class SuspiciousDomainsApi:
         search: Annotated[Optional[StrictStr], Field(description="Search suspicious domains by text within the domain.")] = None,
         discovery_reason: Annotated[Optional[StrictStr], Field(description="Search suspicious domains by discovery reason.")] = None,
         whois_search: Annotated[Optional[StrictStr], Field(description="Search suspicious domains by contents of Whois data.")] = None,
-        statuses: Annotated[Optional[StrictStr], Field(description="Filter suspicious domains by a list of comma separated statuses that asset is tagged with.")] = None,
+        statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter suspicious domains by a list of comma separated statuses that asset is tagged with. Values are case-sensitive — pass the canonical lowercase form (e.g. `pending,malicious`).")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -89,8 +89,8 @@ class SuspiciousDomainsApi:
         :type discovery_reason: str
         :param whois_search: Search suspicious domains by contents of Whois data.
         :type whois_search: str
-        :param statuses: Filter suspicious domains by a list of comma separated statuses that asset is tagged with.
-        :type statuses: str
+        :param statuses: Filter suspicious domains by a list of comma separated statuses that asset is tagged with. Values are case-sensitive — pass the canonical lowercase form (e.g. `pending,malicious`).
+        :type statuses: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -157,7 +157,7 @@ class SuspiciousDomainsApi:
         search: Annotated[Optional[StrictStr], Field(description="Search suspicious domains by text within the domain.")] = None,
         discovery_reason: Annotated[Optional[StrictStr], Field(description="Search suspicious domains by discovery reason.")] = None,
         whois_search: Annotated[Optional[StrictStr], Field(description="Search suspicious domains by contents of Whois data.")] = None,
-        statuses: Annotated[Optional[StrictStr], Field(description="Filter suspicious domains by a list of comma separated statuses that asset is tagged with.")] = None,
+        statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter suspicious domains by a list of comma separated statuses that asset is tagged with. Values are case-sensitive — pass the canonical lowercase form (e.g. `pending,malicious`).")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -193,8 +193,8 @@ class SuspiciousDomainsApi:
         :type discovery_reason: str
         :param whois_search: Search suspicious domains by contents of Whois data.
         :type whois_search: str
-        :param statuses: Filter suspicious domains by a list of comma separated statuses that asset is tagged with.
-        :type statuses: str
+        :param statuses: Filter suspicious domains by a list of comma separated statuses that asset is tagged with. Values are case-sensitive — pass the canonical lowercase form (e.g. `pending,malicious`).
+        :type statuses: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -261,7 +261,7 @@ class SuspiciousDomainsApi:
         search: Annotated[Optional[StrictStr], Field(description="Search suspicious domains by text within the domain.")] = None,
         discovery_reason: Annotated[Optional[StrictStr], Field(description="Search suspicious domains by discovery reason.")] = None,
         whois_search: Annotated[Optional[StrictStr], Field(description="Search suspicious domains by contents of Whois data.")] = None,
-        statuses: Annotated[Optional[StrictStr], Field(description="Filter suspicious domains by a list of comma separated statuses that asset is tagged with.")] = None,
+        statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter suspicious domains by a list of comma separated statuses that asset is tagged with. Values are case-sensitive — pass the canonical lowercase form (e.g. `pending,malicious`).")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -297,8 +297,8 @@ class SuspiciousDomainsApi:
         :type discovery_reason: str
         :param whois_search: Search suspicious domains by contents of Whois data.
         :type whois_search: str
-        :param statuses: Filter suspicious domains by a list of comma separated statuses that asset is tagged with.
-        :type statuses: str
+        :param statuses: Filter suspicious domains by a list of comma separated statuses that asset is tagged with. Values are case-sensitive — pass the canonical lowercase form (e.g. `pending,malicious`).
+        :type statuses: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -370,6 +370,7 @@ class SuspiciousDomainsApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'statuses': 'multi',
         }
 
         _path_params: Dict[str, str] = {}

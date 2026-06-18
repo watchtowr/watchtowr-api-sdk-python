@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **name** | **str** | Tactic name | 
 **identifier** | **str** | Tactic identifier | 
 **type** | **str** | Tactic type | 
-**category** | [**TtpLibraryCategoryItem**](TtpLibraryCategoryItem.md) | Parent category | 
+**category** | [**TtpLibraryCategoryItem**](TtpLibraryCategoryItem.md) |  | [optional] 
 **module** | **str** | Module name | [optional] 
 **enabled_on** | **datetime** | Date the tactic was enabled | [optional] 
 

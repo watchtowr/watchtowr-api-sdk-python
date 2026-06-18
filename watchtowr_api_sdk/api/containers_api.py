@@ -415,6 +415,7 @@ class ContainersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -489,6 +490,7 @@ class ContainersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -563,6 +565,7 @@ class ContainersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -1579,6 +1582,7 @@ class ContainersApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1657,6 +1661,7 @@ class ContainersApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1735,6 +1740,7 @@ class ContainersApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1875,6 +1881,7 @@ class ContainersApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1945,6 +1952,7 @@ class ContainersApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2015,6 +2023,7 @@ class ContainersApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '500': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4091,6 +4100,7 @@ class ContainersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '404': "NotFound",
         }
@@ -4168,6 +4178,7 @@ class ContainersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '404': "NotFound",
         }
@@ -4245,6 +4256,7 @@ class ContainersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientCustomProperty",
+            '400': None,
             '401': "Unauthorized",
             '404': "NotFound",
         }
