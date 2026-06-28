@@ -41,8 +41,11 @@ class TestCreateClientBusinessUnitRuleDto(unittest.TestCase):
                 keyword_matcher = 'example.com',
                 keyword_rule_type = 'HOSTNAME',
                 country_code = 'SG',
-                integration_type = 'aws',
-                integration_id = 1,
+                integrations = [
+                    watchtowr_api_sdk.models.client_integration_item_dto.ClientIntegrationItemDto(
+                        integration_type = 'aws', 
+                        integration_id = 1, )
+                    ],
                 cascade_subdomain = True,
                 cascade_ip = True,
                 include_all_integrations = False

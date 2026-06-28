@@ -42,18 +42,29 @@ class ServiceInformationCertificate(BaseModel):
     public_key_info_alg: StrictStr = Field(description="PublicKeyInfoAlg", alias="publicKeyInfoAlg")
     public_key_info_size: StrictFloat = Field(description="PublicKeyInfoSize", alias="publicKeyInfoSize")
     status: StrictStr
+    issued_by_status: Optional[StrictStr] = Field(description="Trust provenance of the certificate issuer as classified upstream", alias="issuedByStatus")
     created_at: Optional[datetime] = Field(default=None, description="Discovery date", alias="createdAt")
     updated_at: Optional[datetime] = Field(default=None, description="Last update timestamp", alias="updatedAt")
     not_before: datetime = Field(description="Certificate validity start", alias="notBefore")
     not_after: datetime = Field(description="Certificate expiry", alias="notAfter")
     last_seen_at: datetime = Field(description="Last time the certificate was observed on the linked port", alias="lastSeenAt")
-    __properties: ClassVar[List[str]] = ["id", "subjectCommonName", "subjectOrganisation", "subjectAltNames", "subjectCountry", "issuerCommonName", "issuerOrganisation", "issuerCountry", "fingerprint", "serialNumber", "publicKeyInfoAlg", "publicKeyInfoSize", "status", "createdAt", "updatedAt", "notBefore", "notAfter", "lastSeenAt"]
+    __properties: ClassVar[List[str]] = ["id", "subjectCommonName", "subjectOrganisation", "subjectAltNames", "subjectCountry", "issuerCommonName", "issuerOrganisation", "issuerCountry", "fingerprint", "serialNumber", "publicKeyInfoAlg", "publicKeyInfoSize", "status", "issuedByStatus", "createdAt", "updatedAt", "notBefore", "notAfter", "lastSeenAt"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
         """Validates the enum"""
         if value not in set(['Expired', 'Expiring Within 30 Days', 'Valid']):
             raise ValueError("must be one of enum values ('Expired', 'Expiring Within 30 Days', 'Valid')")
+        return value
+
+    @field_validator('issued_by_status')
+    def issued_by_status_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['self_signed', 'untrusted', 'trusted_ca']):
+            raise ValueError("must be one of enum values ('self_signed', 'untrusted', 'trusted_ca')")
         return value
 
     model_config = ConfigDict(
@@ -130,6 +141,11 @@ class ServiceInformationCertificate(BaseModel):
         if self.issuer_country is None and "issuer_country" in self.model_fields_set:
             _dict['issuerCountry'] = None
 
+        # set to None if issued_by_status (nullable) is None
+        # and model_fields_set contains the field
+        if self.issued_by_status is None and "issued_by_status" in self.model_fields_set:
+            _dict['issuedByStatus'] = None
+
         # set to None if updated_at (nullable) is None
         # and model_fields_set contains the field
         if self.updated_at is None and "updated_at" in self.model_fields_set:
@@ -165,6 +181,7 @@ class ServiceInformationCertificate(BaseModel):
             "publicKeyInfoAlg": obj.get("publicKeyInfoAlg"),
             "publicKeyInfoSize": obj.get("publicKeyInfoSize"),
             "status": obj.get("status"),
+            "issuedByStatus": obj.get("issuedByStatus"),
             "createdAt": obj.get("createdAt"),
             "updatedAt": obj.get("updatedAt"),
             "notBefore": obj.get("notBefore"),

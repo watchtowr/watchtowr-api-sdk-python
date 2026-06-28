@@ -45,6 +45,11 @@ class TestClientBusinessUnitRuleDetail(unittest.TestCase):
                 cascade_ip = True,
                 integration_type = 'aws',
                 integration_id = 1,
+                integrations = [
+                    watchtowr_api_sdk.models.client_integration_item_dto.ClientIntegrationItemDto(
+                        integration_type = 'aws', 
+                        integration_id = 1, )
+                    ],
                 include_all_integrations = False,
                 created_at = '2022-02-13T02:10Z'
             )

@@ -12,8 +12,9 @@ Name | Type | Description | Notes
 **country** | **str** | Geographical location 2-letter country code (ISO 3166-1 alpha-2). Examples: SG, US, GB, AU | [optional] 
 **cascade_subdomain** | **bool** | Whether to cascade to subdomains | 
 **cascade_ip** | **bool** | Whether to cascade to IPs | 
-**integration_type** | **str** | Integration type. Valid values: aws, azure, googlecloud, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, armiscentrix, qualysvmdr, tenable | [optional] 
-**integration_id** | **float** | Integration ID | [optional] 
+**integration_type** | **str** | Integration type (deprecated — use integrations[0].integration_type instead) | [optional] 
+**integration_id** | **float** | Integration ID (deprecated — use integrations[0].integration_id instead) | [optional] 
+**integrations** | [**List[ClientIntegrationItemDto]**](ClientIntegrationItemDto.md) | List of integrations matched by this rule | [optional] 
 **include_all_integrations** | **bool** | Whether to include all integrations | 
 **created_at** | **datetime** | Created At | 
 

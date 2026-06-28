@@ -326,7 +326,7 @@ class PointsOfInterestApi:
         discovered_date_order: Annotated[Optional[StrictStr], Field(description="Order points of interest by their discovery date.")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search Points of Interest by name or URL.")] = None,
         types: Annotated[Optional[List[StrictStr]], Field(description="Filter by a comma separated list of types. Values are case-sensitive — pass the canonical lowercase form (e.g. `admin-panel,open-directory`).")] = None,
-        has_finding: Annotated[Optional[StrictBool], Field(description="Filter points of interest that have findings.")] = None,
+        has_finding: Annotated[Optional[StrictBool], Field(description="Filter points of interest by finding association. `true` returns only POIs that have findings, `false` returns only POIs without findings, and omitting the parameter returns all POIs.")] = None,
         start_date: Annotated[Optional[datetime], Field(description="Filter points of interest by start date.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Filter points of interest by end date.")] = None,
         asset_statuses: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of asset statuses.")] = None,
@@ -367,7 +367,7 @@ class PointsOfInterestApi:
         :type search: str
         :param types: Filter by a comma separated list of types. Values are case-sensitive — pass the canonical lowercase form (e.g. `admin-panel,open-directory`).
         :type types: List[str]
-        :param has_finding: Filter points of interest that have findings.
+        :param has_finding: Filter points of interest by finding association. `true` returns only POIs that have findings, `false` returns only POIs without findings, and omitting the parameter returns all POIs.
         :type has_finding: bool
         :param start_date: Filter points of interest by start date.
         :type start_date: datetime
@@ -450,7 +450,7 @@ class PointsOfInterestApi:
         discovered_date_order: Annotated[Optional[StrictStr], Field(description="Order points of interest by their discovery date.")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search Points of Interest by name or URL.")] = None,
         types: Annotated[Optional[List[StrictStr]], Field(description="Filter by a comma separated list of types. Values are case-sensitive — pass the canonical lowercase form (e.g. `admin-panel,open-directory`).")] = None,
-        has_finding: Annotated[Optional[StrictBool], Field(description="Filter points of interest that have findings.")] = None,
+        has_finding: Annotated[Optional[StrictBool], Field(description="Filter points of interest by finding association. `true` returns only POIs that have findings, `false` returns only POIs without findings, and omitting the parameter returns all POIs.")] = None,
         start_date: Annotated[Optional[datetime], Field(description="Filter points of interest by start date.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Filter points of interest by end date.")] = None,
         asset_statuses: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of asset statuses.")] = None,
@@ -491,7 +491,7 @@ class PointsOfInterestApi:
         :type search: str
         :param types: Filter by a comma separated list of types. Values are case-sensitive — pass the canonical lowercase form (e.g. `admin-panel,open-directory`).
         :type types: List[str]
-        :param has_finding: Filter points of interest that have findings.
+        :param has_finding: Filter points of interest by finding association. `true` returns only POIs that have findings, `false` returns only POIs without findings, and omitting the parameter returns all POIs.
         :type has_finding: bool
         :param start_date: Filter points of interest by start date.
         :type start_date: datetime
@@ -574,7 +574,7 @@ class PointsOfInterestApi:
         discovered_date_order: Annotated[Optional[StrictStr], Field(description="Order points of interest by their discovery date.")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search Points of Interest by name or URL.")] = None,
         types: Annotated[Optional[List[StrictStr]], Field(description="Filter by a comma separated list of types. Values are case-sensitive — pass the canonical lowercase form (e.g. `admin-panel,open-directory`).")] = None,
-        has_finding: Annotated[Optional[StrictBool], Field(description="Filter points of interest that have findings.")] = None,
+        has_finding: Annotated[Optional[StrictBool], Field(description="Filter points of interest by finding association. `true` returns only POIs that have findings, `false` returns only POIs without findings, and omitting the parameter returns all POIs.")] = None,
         start_date: Annotated[Optional[datetime], Field(description="Filter points of interest by start date.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Filter points of interest by end date.")] = None,
         asset_statuses: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of asset statuses.")] = None,
@@ -615,7 +615,7 @@ class PointsOfInterestApi:
         :type search: str
         :param types: Filter by a comma separated list of types. Values are case-sensitive — pass the canonical lowercase form (e.g. `admin-panel,open-directory`).
         :type types: List[str]
-        :param has_finding: Filter points of interest that have findings.
+        :param has_finding: Filter points of interest by finding association. `true` returns only POIs that have findings, `false` returns only POIs without findings, and omitting the parameter returns all POIs.
         :type has_finding: bool
         :param start_date: Filter points of interest by start date.
         :type start_date: datetime

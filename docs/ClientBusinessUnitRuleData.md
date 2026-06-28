@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | [**ClientBusinessUnitRuleDetail**](ClientBusinessUnitRuleDetail.md) |  | 
+**rules** | [**List[ClientBusinessUnitRuleDetail]**](ClientBusinessUnitRuleDetail.md) | All rules created by this request (use this for multi-rule responses) | 
 
 ## Example
 

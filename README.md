@@ -433,6 +433,7 @@ Class | Method | HTTP request | Description
  - [ClientFindingRetestHistoryFinding](docs/ClientFindingRetestHistoryFinding.md)
  - [ClientFindingRetestHistoryTriggeredBy](docs/ClientFindingRetestHistoryTriggeredBy.md)
  - [ClientFindingRetestResponse](docs/ClientFindingRetestResponse.md)
+ - [ClientIntegrationItemDto](docs/ClientIntegrationItemDto.md)
  - [ClientIp](docs/ClientIp.md)
  - [ClientIpData](docs/ClientIpData.md)
  - [ClientIpDetailDnsRecords](docs/ClientIpDetailDnsRecords.md)

@@ -126,6 +126,7 @@ __all__ = [
     "ClientFindingRetestHistoryFinding",
     "ClientFindingRetestHistoryTriggeredBy",
     "ClientFindingRetestResponse",
+    "ClientIntegrationItemDto",
     "ClientIp",
     "ClientIpData",
     "ClientIpDetailDnsRecords",
@@ -434,6 +435,7 @@ from watchtowr_api_sdk.models.client_finding_retest_history_asset import ClientF
 from watchtowr_api_sdk.models.client_finding_retest_history_finding import ClientFindingRetestHistoryFinding as ClientFindingRetestHistoryFinding
 from watchtowr_api_sdk.models.client_finding_retest_history_triggered_by import ClientFindingRetestHistoryTriggeredBy as ClientFindingRetestHistoryTriggeredBy
 from watchtowr_api_sdk.models.client_finding_retest_response import ClientFindingRetestResponse as ClientFindingRetestResponse
+from watchtowr_api_sdk.models.client_integration_item_dto import ClientIntegrationItemDto as ClientIntegrationItemDto
 from watchtowr_api_sdk.models.client_ip import ClientIp as ClientIp
 from watchtowr_api_sdk.models.client_ip_data import ClientIpData as ClientIpData
 from watchtowr_api_sdk.models.client_ip_detail_dns_records import ClientIpDetailDnsRecords as ClientIpDetailDnsRecords

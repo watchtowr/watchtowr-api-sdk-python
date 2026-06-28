@@ -21,6 +21,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from watchtowr_api_sdk.models.client_integration_item_dto import ClientIntegrationItemDto
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -36,11 +37,12 @@ class ClientBusinessUnitRuleDetail(BaseModel):
     country: Optional[StrictStr] = Field(default=None, description="Geographical location 2-letter country code (ISO 3166-1 alpha-2). Examples: SG, US, GB, AU")
     cascade_subdomain: StrictBool = Field(description="Whether to cascade to subdomains")
     cascade_ip: StrictBool = Field(description="Whether to cascade to IPs")
-    integration_type: Optional[StrictStr] = Field(default=None, description="Integration type. Valid values: aws, azure, googlecloud, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, armiscentrix, qualysvmdr, tenable")
-    integration_id: Optional[StrictFloat] = Field(default=None, description="Integration ID")
+    integration_type: Optional[StrictStr] = Field(default=None, description="Integration type (deprecated — use integrations[0].integration_type instead)")
+    integration_id: Optional[StrictFloat] = Field(default=None, description="Integration ID (deprecated — use integrations[0].integration_id instead)")
+    integrations: Optional[List[ClientIntegrationItemDto]] = Field(default=None, description="List of integrations matched by this rule")
     include_all_integrations: StrictBool = Field(description="Whether to include all integrations")
     created_at: datetime = Field(description="Created At")
-    __properties: ClassVar[List[str]] = ["id", "name", "keyword_matcher", "keyword_rule_type", "country", "cascade_subdomain", "cascade_ip", "integration_type", "integration_id", "include_all_integrations", "created_at"]
+    __properties: ClassVar[List[str]] = ["id", "name", "keyword_matcher", "keyword_rule_type", "country", "cascade_subdomain", "cascade_ip", "integration_type", "integration_id", "integrations", "include_all_integrations", "created_at"]
 
     @field_validator('keyword_rule_type')
     def keyword_rule_type_validate_enum(cls, value):
@@ -91,6 +93,13 @@ class ClientBusinessUnitRuleDetail(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in integrations (list)
+        _items = []
+        if self.integrations:
+            for _item_integrations in self.integrations:
+                if _item_integrations:
+                    _items.append(_item_integrations.to_dict())
+            _dict['integrations'] = _items
         return _dict
 
     @classmethod
@@ -117,6 +126,7 @@ class ClientBusinessUnitRuleDetail(BaseModel):
             "cascade_ip": obj.get("cascade_ip"),
             "integration_type": obj.get("integration_type"),
             "integration_id": obj.get("integration_id"),
+            "integrations": [ClientIntegrationItemDto.from_dict(_item) for _item in obj["integrations"]] if obj.get("integrations") is not None else None,
             "include_all_integrations": obj.get("include_all_integrations"),
             "created_at": obj.get("created_at")
         })

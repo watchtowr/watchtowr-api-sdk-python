@@ -76,6 +76,7 @@ docs/ClientFindingRetestHistoryAsset.md
 docs/ClientFindingRetestHistoryFinding.md
 docs/ClientFindingRetestHistoryTriggeredBy.md
 docs/ClientFindingRetestResponse.md
+docs/ClientIntegrationItemDto.md
 docs/ClientIp.md
 docs/ClientIpData.md
 docs/ClientIpDetailDnsRecords.md
@@ -375,6 +376,7 @@ test/test_client_finding_retest_history_asset.py
 test/test_client_finding_retest_history_finding.py
 test/test_client_finding_retest_history_triggered_by.py
 test/test_client_finding_retest_response.py
+test/test_client_integration_item_dto.py
 test/test_client_ip.py
 test/test_client_ip_data.py
 test/test_client_ip_detail_dns_records.py
@@ -701,6 +703,7 @@ watchtowr_api_sdk/models/client_finding_retest_history_asset.py
 watchtowr_api_sdk/models/client_finding_retest_history_finding.py
 watchtowr_api_sdk/models/client_finding_retest_history_triggered_by.py
 watchtowr_api_sdk/models/client_finding_retest_response.py
+watchtowr_api_sdk/models/client_integration_item_dto.py
 watchtowr_api_sdk/models/client_ip.py
 watchtowr_api_sdk/models/client_ip_data.py
 watchtowr_api_sdk/models/client_ip_detail_dns_records.py

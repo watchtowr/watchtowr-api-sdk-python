@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **public_key_info_alg** | **str** | PublicKeyInfoAlg | 
 **public_key_info_size** | **float** | PublicKeyInfoSize | 
 **status** | **str** |  | 
+**issued_by_status** | **str** | Trust provenance of the certificate issuer as classified upstream | 
 **created_at** | **datetime** | Discovery date | [optional] 
 **updated_at** | **datetime** | Last update timestamp | [optional] 
 **not_before** | **datetime** | Certificate validity start | 

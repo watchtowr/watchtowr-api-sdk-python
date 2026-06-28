@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List
 from watchtowr_api_sdk.models.client_business_unit_rule_detail import ClientBusinessUnitRuleDetail
 from typing import Optional, Set
@@ -30,7 +30,8 @@ class ClientBusinessUnitRuleData(BaseModel):
     ClientBusinessUnitRuleData
     """ # noqa: E501
     data: ClientBusinessUnitRuleDetail
-    __properties: ClassVar[List[str]] = ["data"]
+    rules: List[ClientBusinessUnitRuleDetail] = Field(description="All rules created by this request (use this for multi-rule responses)")
+    __properties: ClassVar[List[str]] = ["data", "rules"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -74,6 +75,13 @@ class ClientBusinessUnitRuleData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of data
         if self.data:
             _dict['data'] = self.data.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in rules (list)
+        _items = []
+        if self.rules:
+            for _item_rules in self.rules:
+                if _item_rules:
+                    _items.append(_item_rules.to_dict())
+            _dict['rules'] = _items
         return _dict
 
     @classmethod
@@ -91,7 +99,8 @@ class ClientBusinessUnitRuleData(BaseModel):
                 raise ValueError("Error due to additional fields (not defined in ClientBusinessUnitRuleData) in the input: " + _key)
 
         _obj = cls.model_validate({
-            "data": ClientBusinessUnitRuleDetail.from_dict(obj["data"]) if obj.get("data") is not None else None
+            "data": ClientBusinessUnitRuleDetail.from_dict(obj["data"]) if obj.get("data") is not None else None,
+            "rules": [ClientBusinessUnitRuleDetail.from_dict(_item) for _item in obj["rules"]] if obj.get("rules") is not None else None
         })
         return _obj
 

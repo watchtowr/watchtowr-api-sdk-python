@@ -46,8 +46,32 @@ class TestClientBusinessUnitRuleData(unittest.TestCase):
                     cascade_ip = True, 
                     integration_type = 'aws', 
                     integration_id = 1, 
+                    integrations = [
+                        watchtowr_api_sdk.models.client_integration_item_dto.ClientIntegrationItemDto(
+                            integration_type = 'aws', 
+                            integration_id = 1, )
+                        ], 
                     include_all_integrations = False, 
-                    created_at = '2022-02-13T02:10Z', )
+                    created_at = '2022-02-13T02:10Z', ),
+                rules = [
+                    watchtowr_api_sdk.models.client_business_unit_rule_detail.ClientBusinessUnitRuleDetail(
+                        id = 1, 
+                        name = 'Singapore Assets Rule', 
+                        keyword_matcher = 'example.com', 
+                        keyword_rule_type = 'HOSTNAME', 
+                        country = 'SG', 
+                        cascade_subdomain = True, 
+                        cascade_ip = True, 
+                        integration_type = 'aws', 
+                        integration_id = 1, 
+                        integrations = [
+                            watchtowr_api_sdk.models.client_integration_item_dto.ClientIntegrationItemDto(
+                                integration_type = 'aws', 
+                                integration_id = 1, )
+                            ], 
+                        include_all_integrations = False, 
+                        created_at = '2022-02-13T02:10Z', )
+                    ]
             )
         else:
             return ClientBusinessUnitRuleData(
@@ -61,8 +85,32 @@ class TestClientBusinessUnitRuleData(unittest.TestCase):
                     cascade_ip = True, 
                     integration_type = 'aws', 
                     integration_id = 1, 
+                    integrations = [
+                        watchtowr_api_sdk.models.client_integration_item_dto.ClientIntegrationItemDto(
+                            integration_type = 'aws', 
+                            integration_id = 1, )
+                        ], 
                     include_all_integrations = False, 
                     created_at = '2022-02-13T02:10Z', ),
+                rules = [
+                    watchtowr_api_sdk.models.client_business_unit_rule_detail.ClientBusinessUnitRuleDetail(
+                        id = 1, 
+                        name = 'Singapore Assets Rule', 
+                        keyword_matcher = 'example.com', 
+                        keyword_rule_type = 'HOSTNAME', 
+                        country = 'SG', 
+                        cascade_subdomain = True, 
+                        cascade_ip = True, 
+                        integration_type = 'aws', 
+                        integration_id = 1, 
+                        integrations = [
+                            watchtowr_api_sdk.models.client_integration_item_dto.ClientIntegrationItemDto(
+                                integration_type = 'aws', 
+                                integration_id = 1, )
+                            ], 
+                        include_all_integrations = False, 
+                        created_at = '2022-02-13T02:10Z', )
+                    ],
         )
         """
 

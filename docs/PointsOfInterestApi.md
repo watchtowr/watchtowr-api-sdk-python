@@ -136,7 +136,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     discovered_date_order = 'DESC' # str | Order points of interest by their discovery date. (optional)
     search = 'Apache%20Airflow%20Admin%20Login' # str | Search Points of Interest by name or URL. (optional)
     types = ['admin-panel,open-directory,installer-page,api,status-page,login-page'] # List[str] | Filter by a comma separated list of types. Values are case-sensitive — pass the canonical lowercase form (e.g. `admin-panel,open-directory`). (optional)
-    has_finding = false # bool | Filter points of interest that have findings. (optional)
+    has_finding = true # bool | Filter points of interest by finding association. `true` returns only POIs that have findings, `false` returns only POIs without findings, and omitting the parameter returns all POIs. (optional)
     start_date = '2022-02-23T22:00Z' # datetime | Filter points of interest by start date. (optional)
     end_date = '2022-02-23T22:00Z' # datetime | Filter points of interest by end date. (optional)
     asset_statuses = 'verified,Unregistered,Parked,Incorrect Identification,pending,VerifiedOutOfScope,VerifiedReducedAttack,Tracked,CDN,Hanging Cloud IP,VerifiedHoneypot,Third Party' # str | Filter points of interest by a comma separated list of asset statuses. (optional)
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
  **discovered_date_order** | **str**| Order points of interest by their discovery date. | [optional] 
  **search** | **str**| Search Points of Interest by name or URL. | [optional] 
  **types** | [**List[str]**](str.md)| Filter by a comma separated list of types. Values are case-sensitive — pass the canonical lowercase form (e.g. &#x60;admin-panel,open-directory&#x60;). | [optional] 
- **has_finding** | **bool**| Filter points of interest that have findings. | [optional] 
+ **has_finding** | **bool**| Filter points of interest by finding association. &#x60;true&#x60; returns only POIs that have findings, &#x60;false&#x60; returns only POIs without findings, and omitting the parameter returns all POIs. | [optional] 
  **start_date** | **datetime**| Filter points of interest by start date. | [optional] 
  **end_date** | **datetime**| Filter points of interest by end date. | [optional] 
  **asset_statuses** | **str**| Filter points of interest by a comma separated list of asset statuses. | [optional] 

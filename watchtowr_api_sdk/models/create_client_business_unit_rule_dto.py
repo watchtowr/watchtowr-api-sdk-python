@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from watchtowr_api_sdk.models.client_integration_item_dto import ClientIntegrationItemDto
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -33,12 +34,11 @@ class CreateClientBusinessUnitRuleDto(BaseModel):
     keyword_matcher: Optional[StrictStr] = Field(default=None, description="Keyword for matching assets (required when type is keyword). Supports wildcard patterns: %.sg, %abc%, %abc.com, abc.com. Wildcards can be defined using %.")
     keyword_rule_type: Optional[StrictStr] = Field(default=None, description="Keyword rule type (optional, defaults to HOSTNAME when keyword_matcher is provided). HOSTNAME: matches domain/subdomain names. CNAME: matches CNAME DNS record values. TLS_SSL: matches TLS/SSL certificate subject names.")
     country_code: Optional[StrictStr] = Field(default=None, description="Geographical location 2-letter country code (ISO 3166-1 alpha-2) for matching IPs (required when type is country). Examples: SG, US, GB, AU")
-    integration_type: Optional[StrictStr] = Field(default=None, description="Integration type for matching cloud assets (required when type is integration). Valid values: aws, azure, googlecloud, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, armiscentrix, qualysvmdr, tenable")
-    integration_id: Optional[StrictFloat] = Field(default=None, description="Integration ID for matching cloud assets (required when type is integration)")
+    integrations: Optional[List[ClientIntegrationItemDto]] = Field(default=None, description="List of integrations for matching cloud assets (required when type is integration)")
     cascade_subdomain: Optional[StrictBool] = Field(default=True, description="Whether to cascade rule to subdomains")
     cascade_ip: Optional[StrictBool] = Field(default=True, description="Whether to cascade rule to IPs")
     include_all_integrations: Optional[StrictBool] = Field(default=False, description="Whether to include all integrations")
-    __properties: ClassVar[List[str]] = ["name", "type", "keyword_matcher", "keyword_rule_type", "country_code", "integration_type", "integration_id", "cascade_subdomain", "cascade_ip", "include_all_integrations"]
+    __properties: ClassVar[List[str]] = ["name", "type", "keyword_matcher", "keyword_rule_type", "country_code", "integrations", "cascade_subdomain", "cascade_ip", "include_all_integrations"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
@@ -55,16 +55,6 @@ class CreateClientBusinessUnitRuleDto(BaseModel):
 
         if value not in set(['HOSTNAME', 'CNAME', 'TLS_SSL']):
             raise ValueError("must be one of enum values ('HOSTNAME', 'CNAME', 'TLS_SSL')")
-        return value
-
-    @field_validator('integration_type')
-    def integration_type_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['aws', 'azure', 'googlecloud', 'cloudflare', 'alibabacloud', 'prismacloud', 'prismacloudapigee', 'huaweicloud', 'tencentcloud', 'wiz', 'servicenowcmdb', 'akamaiedge', 'armiscentrix', 'qualysvmdr', 'tenable']):
-            raise ValueError("must be one of enum values ('aws', 'azure', 'googlecloud', 'cloudflare', 'alibabacloud', 'prismacloud', 'prismacloudapigee', 'huaweicloud', 'tencentcloud', 'wiz', 'servicenowcmdb', 'akamaiedge', 'armiscentrix', 'qualysvmdr', 'tenable')")
         return value
 
     model_config = ConfigDict(
@@ -106,6 +96,13 @@ class CreateClientBusinessUnitRuleDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in integrations (list)
+        _items = []
+        if self.integrations:
+            for _item_integrations in self.integrations:
+                if _item_integrations:
+                    _items.append(_item_integrations.to_dict())
+            _dict['integrations'] = _items
         return _dict
 
     @classmethod
@@ -128,8 +125,7 @@ class CreateClientBusinessUnitRuleDto(BaseModel):
             "keyword_matcher": obj.get("keyword_matcher"),
             "keyword_rule_type": obj.get("keyword_rule_type"),
             "country_code": obj.get("country_code"),
-            "integration_type": obj.get("integration_type"),
-            "integration_id": obj.get("integration_id"),
+            "integrations": [ClientIntegrationItemDto.from_dict(_item) for _item in obj["integrations"]] if obj.get("integrations") is not None else None,
             "cascade_subdomain": obj.get("cascade_subdomain") if obj.get("cascade_subdomain") is not None else True,
             "cascade_ip": obj.get("cascade_ip") if obj.get("cascade_ip") is not None else True,
             "include_all_integrations": obj.get("include_all_integrations") if obj.get("include_all_integrations") is not None else False
