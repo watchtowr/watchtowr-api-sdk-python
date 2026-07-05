@@ -56,8 +56,8 @@ class ActiveDefenseRule(BaseModel):
     def providers_validate_enum(cls, value):
         """Validates the enum"""
         for i in value:
-            if i not in set(['cloudflare', 'aws_cfn', 'fastly', 'akamai_waf', 'google_cloud_armor', 'mod_security', 'azure_appgw', 'imperva']):
-                raise ValueError("each list item must be one of ('cloudflare', 'aws_cfn', 'fastly', 'akamai_waf', 'google_cloud_armor', 'mod_security', 'azure_appgw', 'imperva')")
+            if i not in set(['cloudflare', 'aws_cfn', 'fastly', 'akamai', 'google_cloud_armor', 'mod_security', 'azure_appgw', 'imperva']):
+                raise ValueError("each list item must be one of ('cloudflare', 'aws_cfn', 'fastly', 'akamai', 'google_cloud_armor', 'mod_security', 'azure_appgw', 'imperva')")
         return value
 
     model_config = ConfigDict(
