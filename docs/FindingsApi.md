@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**201** | Success |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
@@ -844,7 +844,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_list_findings**
-> PaginatedClientFindings get_list_findings(page=page, page_size=page_size, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, statuses=statuses, business_unit_ids=business_unit_ids, finding_impact_threshold=finding_impact_threshold, finding_title=finding_title, severities=severities, asset_title=asset_title, asset_types=asset_types, assignee=assignee, tags=tags, only_validated_exploitable=only_validated_exploitable, only_unacknowledged=only_unacknowledged, exploitation_risk_level=exploitation_risk_level)
+> PaginatedClientFindings get_list_findings(page=page, page_size=page_size, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, statuses=statuses, business_unit_ids=business_unit_ids, finding_impact_threshold=finding_impact_threshold, finding_title=finding_title, severities=severities, asset_title=asset_title, asset_types=asset_types, assignee=assignee, tags=tags, only_validated_exploitable=only_validated_exploitable, only_ai_discovered=only_ai_discovered, only_unacknowledged=only_unacknowledged, exploitation_risk_level=exploitation_risk_level)
 
 List Findings
 
@@ -896,12 +896,13 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     assignee = 'John Smith' # str | Filter findings by assignee. To filter findings that don't have an assignee, please use assignee=No Assignee. (optional)
     tags = 'CISA-KEV,Defacement,Credentials' # str | Filter findings by a comma separated list of tags. (optional)
     only_validated_exploitable = true # bool | Filter to only show findings validated as exploitable. (optional)
-    only_unacknowledged = true # bool | Filter to only show unacknowledged findings. (optional)
+    only_ai_discovered = true # bool | Filter to only show findings discovered by AI. (optional)
+    only_unacknowledged = true # bool | Deprecated. This parameter has no effect and is ignored. (optional)
     exploitation_risk_level = 'Unknown,Moderate,High' # str | Filter findings by a comma separated list of exploitation risk levels. (optional)
 
     try:
         # List Findings
-        api_response = api_instance.get_list_findings(page=page, page_size=page_size, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, statuses=statuses, business_unit_ids=business_unit_ids, finding_impact_threshold=finding_impact_threshold, finding_title=finding_title, severities=severities, asset_title=asset_title, asset_types=asset_types, assignee=assignee, tags=tags, only_validated_exploitable=only_validated_exploitable, only_unacknowledged=only_unacknowledged, exploitation_risk_level=exploitation_risk_level)
+        api_response = api_instance.get_list_findings(page=page, page_size=page_size, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, statuses=statuses, business_unit_ids=business_unit_ids, finding_impact_threshold=finding_impact_threshold, finding_title=finding_title, severities=severities, asset_title=asset_title, asset_types=asset_types, assignee=assignee, tags=tags, only_validated_exploitable=only_validated_exploitable, only_ai_discovered=only_ai_discovered, only_unacknowledged=only_unacknowledged, exploitation_risk_level=exploitation_risk_level)
         print("The response of FindingsApi->get_list_findings:\n")
         pprint(api_response)
     except Exception as e:
@@ -931,7 +932,8 @@ Name | Type | Description  | Notes
  **assignee** | **str**| Filter findings by assignee. To filter findings that don&#39;t have an assignee, please use assignee&#x3D;No Assignee. | [optional] 
  **tags** | **str**| Filter findings by a comma separated list of tags. | [optional] 
  **only_validated_exploitable** | **bool**| Filter to only show findings validated as exploitable. | [optional] 
- **only_unacknowledged** | **bool**| Filter to only show unacknowledged findings. | [optional] 
+ **only_ai_discovered** | **bool**| Filter to only show findings discovered by AI. | [optional] 
+ **only_unacknowledged** | **bool**| Deprecated. This parameter has no effect and is ignored. | [optional] 
  **exploitation_risk_level** | **str**| Filter findings by a comma separated list of exploitation risk levels. | [optional] 
 
 ### Return type

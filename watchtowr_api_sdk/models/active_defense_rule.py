@@ -56,8 +56,8 @@ class ActiveDefenseRule(BaseModel):
     def providers_validate_enum(cls, value):
         """Validates the enum"""
         for i in value:
-            if i not in set(['cloudflare', 'aws_cfn', 'fastly', 'akamai', 'google_cloud_armor', 'mod_security', 'azure_appgw', 'imperva']):
-                raise ValueError("each list item must be one of ('cloudflare', 'aws_cfn', 'fastly', 'akamai', 'google_cloud_armor', 'mod_security', 'azure_appgw', 'imperva')")
+            if i not in set(['cloudflare', 'aws_cfn', 'fastly', 'akamai', 'google_cloud_armor', 'mod_security', 'azure_appgw', 'imperva', 'fastly_ngwaf', 'alibaba_cloud_waf', 'huawei_cloud_waf', 'tencent_cloud_waf', 'oci_waf', 'f5_bigip_advanced_waf', 'f5_nginx_waf_v5', 'f5_nginx_waf_v4', 'fortiweb_v6', 'fortiweb_v7_0', 'fortiweb_v7_6', 'checkpoint_cloudguard', 'checkpoint_appsec_v1beta1', 'checkpoint_appsec_v1beta2', 'netscaler_snort', 'netscaler_native_xml', 'sigma', 'yara', 'snort_v3', 'progress_kemp_loadmaster', 'mod_security_v2', 'imperva_waf_gateway']):
+                raise ValueError("each list item must be one of ('cloudflare', 'aws_cfn', 'fastly', 'akamai', 'google_cloud_armor', 'mod_security', 'azure_appgw', 'imperva', 'fastly_ngwaf', 'alibaba_cloud_waf', 'huawei_cloud_waf', 'tencent_cloud_waf', 'oci_waf', 'f5_bigip_advanced_waf', 'f5_nginx_waf_v5', 'f5_nginx_waf_v4', 'fortiweb_v6', 'fortiweb_v7_0', 'fortiweb_v7_6', 'checkpoint_cloudguard', 'checkpoint_appsec_v1beta1', 'checkpoint_appsec_v1beta2', 'netscaler_snort', 'netscaler_native_xml', 'sigma', 'yara', 'snort_v3', 'progress_kemp_loadmaster', 'mod_security_v2', 'imperva_waf_gateway')")
         return value
 
     model_config = ConfigDict(

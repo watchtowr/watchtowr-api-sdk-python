@@ -6,7 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** |  | 
-**content** | **Dict[str, object]** | Provider-specific rule content (shape varies by provider). | 
+**content** | **Dict[str, object]** | Provider-specific rule content (shape varies by provider). Deprecated: use rules for structured per-variant content. | 
+**rules** | [**List[ActiveDefenseWafRule]**](ActiveDefenseWafRule.md) | Structured rule variants for this provider. Null when the upstream content is not in the expected vendorised format. | [optional] 
 
 ## Example
 

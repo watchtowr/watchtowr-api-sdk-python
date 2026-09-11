@@ -20,7 +20,7 @@ import json
 
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -33,10 +33,10 @@ class ClientUser(BaseModel):
     name: StrictStr = Field(description="User name")
     email: StrictStr = Field(description="User email")
     title: StrictStr = Field(description="User title")
-    mobile_phone_number: StrictStr = Field(description="Mobile phone number (masked)")
-    office_phone_number: StrictStr = Field(description="Office phone number (masked)")
+    mobile_phone_number: Optional[StrictStr] = Field(description="Mobile phone number (masked)")
+    office_phone_number: Optional[StrictStr] = Field(description="Office phone number (masked)")
     created_at: datetime = Field(description="Created at timestamp")
-    locked: StrictBool = Field(description="Whether user is locked")
+    locked: Optional[StrictBool] = Field(description="Whether user is locked")
     __properties: ClassVar[List[str]] = ["id", "name", "email", "title", "mobile_phone_number", "office_phone_number", "created_at", "locked"]
 
     model_config = ConfigDict(
@@ -78,6 +78,21 @@ class ClientUser(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if mobile_phone_number (nullable) is None
+        # and model_fields_set contains the field
+        if self.mobile_phone_number is None and "mobile_phone_number" in self.model_fields_set:
+            _dict['mobile_phone_number'] = None
+
+        # set to None if office_phone_number (nullable) is None
+        # and model_fields_set contains the field
+        if self.office_phone_number is None and "office_phone_number" in self.model_fields_set:
+            _dict['office_phone_number'] = None
+
+        # set to None if locked (nullable) is None
+        # and model_fields_set contains the field
+        if self.locked is None and "locked" in self.model_fields_set:
+            _dict['locked'] = None
+
         return _dict
 
     @classmethod

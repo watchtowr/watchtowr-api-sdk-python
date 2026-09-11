@@ -162,6 +162,11 @@ class ClientFinding(BaseModel):
         if self.state is None and "state" in self.model_fields_set:
             _dict['state'] = None
 
+        # set to None if epss_score (nullable) is None
+        # and model_fields_set contains the field
+        if self.epss_score is None and "epss_score" in self.model_fields_set:
+            _dict['epss_score'] = None
+
         # set to None if retest_history (nullable) is None
         # and model_fields_set contains the field
         if self.retest_history is None and "retest_history" in self.model_fields_set:

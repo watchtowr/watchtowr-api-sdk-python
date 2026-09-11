@@ -36,12 +36,12 @@ class TestHuntAcknowledgementDto(unittest.TestCase):
         model = HuntAcknowledgementDto()
         if include_optional:
             return HuntAcknowledgementDto(
-                is_acknowledged = True,
+                is_acknowledged = False,
                 number_of_seen = 3
             )
         else:
             return HuntAcknowledgementDto(
-                is_acknowledged = True,
+                is_acknowledged = False,
                 number_of_seen = 3,
         )
         """

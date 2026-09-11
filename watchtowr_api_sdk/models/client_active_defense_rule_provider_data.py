@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List
 from watchtowr_api_sdk.models.active_defense_rule_template import ActiveDefenseRuleTemplate
 from typing import Optional, Set
@@ -29,8 +29,9 @@ class ClientActiveDefenseRuleProviderData(BaseModel):
     """
     ClientActiveDefenseRuleProviderData
     """ # noqa: E501
-    data: ActiveDefenseRuleTemplate
-    __properties: ClassVar[List[str]] = ["data"]
+    data: ActiveDefenseRuleTemplate = Field(description="First matching rule template. Kept for backward compatibility — multi-variant rules have more than one template; use `templates` for the complete set.")
+    templates: List[ActiveDefenseRuleTemplate] = Field(description="All rule templates for the requested provider. A rule may carry several variants (e.g. alternate trigger endpoints) — apply every template for a complete mitigation.")
+    __properties: ClassVar[List[str]] = ["data", "templates"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -74,6 +75,13 @@ class ClientActiveDefenseRuleProviderData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of data
         if self.data:
             _dict['data'] = self.data.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in templates (list)
+        _items = []
+        if self.templates:
+            for _item_templates in self.templates:
+                if _item_templates:
+                    _items.append(_item_templates.to_dict())
+            _dict['templates'] = _items
         return _dict
 
     @classmethod
@@ -91,7 +99,8 @@ class ClientActiveDefenseRuleProviderData(BaseModel):
                 raise ValueError("Error due to additional fields (not defined in ClientActiveDefenseRuleProviderData) in the input: " + _key)
 
         _obj = cls.model_validate({
-            "data": ActiveDefenseRuleTemplate.from_dict(obj["data"]) if obj.get("data") is not None else None
+            "data": ActiveDefenseRuleTemplate.from_dict(obj["data"]) if obj.get("data") is not None else None,
+            "templates": [ActiveDefenseRuleTemplate.from_dict(_item) for _item in obj["templates"]] if obj.get("templates") is not None else None
         })
         return _obj
 

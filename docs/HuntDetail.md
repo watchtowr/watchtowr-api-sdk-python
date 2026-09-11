@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **hypothesis** | **str** | Hypothesis | 
 **references** | **List[Optional[str]]** | references | 
 **completed_at** | **datetime** | Completed at | 
-**completed_by** | **str** | Completed by | 
+**completed_by** | **str** | Completed by | [optional] 
 **requested_by** | **str** | Request by | 
 **status** | **str** | Status | 
 

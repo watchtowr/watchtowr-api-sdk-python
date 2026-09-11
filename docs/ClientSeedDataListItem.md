@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **values** | **object** | JSON values for the asset | [optional] 
 **status_name** | **str** | Status name of the seed data | 
 **status_reason** | **str** | Status reason for the seed data | [optional] 
+**asset** | [**ClientSeedDataAssetLink**](ClientSeedDataAssetLink.md) | Asset this seed data resolves to, when applicable — either the asset it was converted into, or the pre-existing asset that caused it to be auto-rejected as \&quot;already exists\&quot;. Null when no matching asset can be found. | [optional] 
 **created_at** | **datetime** | Creation date | 
 **user** | [**ClientSeedDataUser**](ClientSeedDataUser.md) | User who submitted the seed data | 
 **business_units** | [**List[ClientSeedDataBusinessUnit]**](ClientSeedDataBusinessUnit.md) | Business units associated with the seed data | 

@@ -40,7 +40,7 @@ class ClientMobileApp(BaseModel):
     name: StrictStr
     publisher: StrictStr
     platform: StrictStr
-    app_id: StrictStr
+    app_id: Optional[StrictStr]
     url: Optional[StrictStr] = None
     s3path: Optional[StrictStr] = None
     business_units: List[ClientBusinessUnit] = Field(alias="businessUnits")
@@ -111,6 +111,11 @@ class ClientMobileApp(BaseModel):
         # and model_fields_set contains the field
         if self.status is None and "status" in self.model_fields_set:
             _dict['status'] = None
+
+        # set to None if app_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.app_id is None and "app_id" in self.model_fields_set:
+            _dict['app_id'] = None
 
         # set to None if url (nullable) is None
         # and model_fields_set contains the field

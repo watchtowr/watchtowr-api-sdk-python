@@ -45,7 +45,7 @@ class TestLatestExecutedHuntDto(unittest.TestCase):
                 request_type = 'SoftwareVulnerability',
                 resolved_status = False,
                 acknowledgement = watchtowr_api_sdk.models.hunt_acknowledgement_dto.HuntAcknowledgementDto(
-                    is_acknowledged = True, 
+                    is_acknowledged = False, 
                     number_of_seen = 3, ),
                 threat_actors = [
                     watchtowr_api_sdk.models.threat_actor_dto.ThreatActorDto(
@@ -64,7 +64,7 @@ class TestLatestExecutedHuntDto(unittest.TestCase):
                 request_type = 'SoftwareVulnerability',
                 resolved_status = False,
                 acknowledgement = watchtowr_api_sdk.models.hunt_acknowledgement_dto.HuntAcknowledgementDto(
-                    is_acknowledged = True, 
+                    is_acknowledged = False, 
                     number_of_seen = 3, ),
                 threat_actors = [
                     watchtowr_api_sdk.models.threat_actor_dto.ThreatActorDto(

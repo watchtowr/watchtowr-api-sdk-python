@@ -45,6 +45,7 @@ class ActiveDefenseLibraryApi:
     def get_active_defense_library_rule_details(
         self,
         rule_id: Annotated[StrictFloat, Field(description="The numeric rule ID of the Active Defense Library rule to retrieve.")],
+        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -64,6 +65,8 @@ class ActiveDefenseLibraryApi:
 
         :param rule_id: The numeric rule ID of the Active Defense Library rule to retrieve. (required)
         :type rule_id: float
+        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.
+        :type mode: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -88,6 +91,7 @@ class ActiveDefenseLibraryApi:
 
         _param = self._get_active_defense_library_rule_details_serialize(
             rule_id=rule_id,
+            mode=mode,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -115,6 +119,7 @@ class ActiveDefenseLibraryApi:
     def get_active_defense_library_rule_details_with_http_info(
         self,
         rule_id: Annotated[StrictFloat, Field(description="The numeric rule ID of the Active Defense Library rule to retrieve.")],
+        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -134,6 +139,8 @@ class ActiveDefenseLibraryApi:
 
         :param rule_id: The numeric rule ID of the Active Defense Library rule to retrieve. (required)
         :type rule_id: float
+        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.
+        :type mode: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -158,6 +165,7 @@ class ActiveDefenseLibraryApi:
 
         _param = self._get_active_defense_library_rule_details_serialize(
             rule_id=rule_id,
+            mode=mode,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -185,6 +193,7 @@ class ActiveDefenseLibraryApi:
     def get_active_defense_library_rule_details_without_preload_content(
         self,
         rule_id: Annotated[StrictFloat, Field(description="The numeric rule ID of the Active Defense Library rule to retrieve.")],
+        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -204,6 +213,8 @@ class ActiveDefenseLibraryApi:
 
         :param rule_id: The numeric rule ID of the Active Defense Library rule to retrieve. (required)
         :type rule_id: float
+        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.
+        :type mode: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -228,6 +239,7 @@ class ActiveDefenseLibraryApi:
 
         _param = self._get_active_defense_library_rule_details_serialize(
             rule_id=rule_id,
+            mode=mode,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -250,6 +262,7 @@ class ActiveDefenseLibraryApi:
     def _get_active_defense_library_rule_details_serialize(
         self,
         rule_id,
+        mode,
         _request_auth,
         _content_type,
         _headers,
@@ -274,6 +287,10 @@ class ActiveDefenseLibraryApi:
         if rule_id is not None:
             _path_params['ruleId'] = rule_id
         # process the query parameters
+        if mode is not None:
+            
+            _query_params.append(('mode', mode))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -316,6 +333,7 @@ class ActiveDefenseLibraryApi:
         self,
         rule_id: Annotated[StrictFloat, Field(description="The numeric rule ID of the Active Defense Library rule.")],
         provider: Annotated[StrictStr, Field(description="The WAF provider whose rule template should be returned.")],
+        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -337,6 +355,8 @@ class ActiveDefenseLibraryApi:
         :type rule_id: float
         :param provider: The WAF provider whose rule template should be returned. (required)
         :type provider: str
+        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.
+        :type mode: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -362,6 +382,7 @@ class ActiveDefenseLibraryApi:
         _param = self._get_active_defense_library_rule_provider_template_serialize(
             rule_id=rule_id,
             provider=provider,
+            mode=mode,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -390,6 +411,7 @@ class ActiveDefenseLibraryApi:
         self,
         rule_id: Annotated[StrictFloat, Field(description="The numeric rule ID of the Active Defense Library rule.")],
         provider: Annotated[StrictStr, Field(description="The WAF provider whose rule template should be returned.")],
+        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -411,6 +433,8 @@ class ActiveDefenseLibraryApi:
         :type rule_id: float
         :param provider: The WAF provider whose rule template should be returned. (required)
         :type provider: str
+        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.
+        :type mode: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -436,6 +460,7 @@ class ActiveDefenseLibraryApi:
         _param = self._get_active_defense_library_rule_provider_template_serialize(
             rule_id=rule_id,
             provider=provider,
+            mode=mode,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -464,6 +489,7 @@ class ActiveDefenseLibraryApi:
         self,
         rule_id: Annotated[StrictFloat, Field(description="The numeric rule ID of the Active Defense Library rule.")],
         provider: Annotated[StrictStr, Field(description="The WAF provider whose rule template should be returned.")],
+        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -485,6 +511,8 @@ class ActiveDefenseLibraryApi:
         :type rule_id: float
         :param provider: The WAF provider whose rule template should be returned. (required)
         :type provider: str
+        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.
+        :type mode: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -510,6 +538,7 @@ class ActiveDefenseLibraryApi:
         _param = self._get_active_defense_library_rule_provider_template_serialize(
             rule_id=rule_id,
             provider=provider,
+            mode=mode,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -533,6 +562,7 @@ class ActiveDefenseLibraryApi:
         self,
         rule_id,
         provider,
+        mode,
         _request_auth,
         _content_type,
         _headers,
@@ -559,6 +589,10 @@ class ActiveDefenseLibraryApi:
         if provider is not None:
             _path_params['provider'] = provider
         # process the query parameters
+        if mode is not None:
+            
+            _query_params.append(('mode', mode))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

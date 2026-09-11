@@ -57,8 +57,7 @@ class HuntsApi:
         updated_to: Annotated[Optional[datetime], Field(description="Filter hunts updated before a given date and time.")] = None,
         resource_filter: Annotated[Optional[StrictStr], Field(description="General")] = None,
         resolved: Annotated[Optional[StrictBool], Field(description="Filter hunts by resolution status. `true` returns resolved hunts, `false` returns unresolved hunts.")] = None,
-        only_resolved: Annotated[Optional[StrictBool], Field(description="Deprecated — use `resolved` instead. This is kept for backward compatibility and will be removed in a future release.")] = None,
-        is_unacknowledged: Annotated[Optional[StrictBool], Field(description="Filter to only show hunts that are not acknowledged.")] = None,
+        is_unacknowledged: Annotated[Optional[StrictBool], Field(description="Deprecated. This parameter has no effect and is ignored.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -98,9 +97,7 @@ class HuntsApi:
         :type resource_filter: str
         :param resolved: Filter hunts by resolution status. `true` returns resolved hunts, `false` returns unresolved hunts.
         :type resolved: bool
-        :param only_resolved: Deprecated — use `resolved` instead. This is kept for backward compatibility and will be removed in a future release.
-        :type only_resolved: bool
-        :param is_unacknowledged: Filter to only show hunts that are not acknowledged.
+        :param is_unacknowledged: Deprecated. This parameter has no effect and is ignored.
         :type is_unacknowledged: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -136,7 +133,6 @@ class HuntsApi:
             updated_to=updated_to,
             resource_filter=resource_filter,
             resolved=resolved,
-            only_resolved=only_resolved,
             is_unacknowledged=is_unacknowledged,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -173,8 +169,7 @@ class HuntsApi:
         updated_to: Annotated[Optional[datetime], Field(description="Filter hunts updated before a given date and time.")] = None,
         resource_filter: Annotated[Optional[StrictStr], Field(description="General")] = None,
         resolved: Annotated[Optional[StrictBool], Field(description="Filter hunts by resolution status. `true` returns resolved hunts, `false` returns unresolved hunts.")] = None,
-        only_resolved: Annotated[Optional[StrictBool], Field(description="Deprecated — use `resolved` instead. This is kept for backward compatibility and will be removed in a future release.")] = None,
-        is_unacknowledged: Annotated[Optional[StrictBool], Field(description="Filter to only show hunts that are not acknowledged.")] = None,
+        is_unacknowledged: Annotated[Optional[StrictBool], Field(description="Deprecated. This parameter has no effect and is ignored.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -214,9 +209,7 @@ class HuntsApi:
         :type resource_filter: str
         :param resolved: Filter hunts by resolution status. `true` returns resolved hunts, `false` returns unresolved hunts.
         :type resolved: bool
-        :param only_resolved: Deprecated — use `resolved` instead. This is kept for backward compatibility and will be removed in a future release.
-        :type only_resolved: bool
-        :param is_unacknowledged: Filter to only show hunts that are not acknowledged.
+        :param is_unacknowledged: Deprecated. This parameter has no effect and is ignored.
         :type is_unacknowledged: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -252,7 +245,6 @@ class HuntsApi:
             updated_to=updated_to,
             resource_filter=resource_filter,
             resolved=resolved,
-            only_resolved=only_resolved,
             is_unacknowledged=is_unacknowledged,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -289,8 +281,7 @@ class HuntsApi:
         updated_to: Annotated[Optional[datetime], Field(description="Filter hunts updated before a given date and time.")] = None,
         resource_filter: Annotated[Optional[StrictStr], Field(description="General")] = None,
         resolved: Annotated[Optional[StrictBool], Field(description="Filter hunts by resolution status. `true` returns resolved hunts, `false` returns unresolved hunts.")] = None,
-        only_resolved: Annotated[Optional[StrictBool], Field(description="Deprecated — use `resolved` instead. This is kept for backward compatibility and will be removed in a future release.")] = None,
-        is_unacknowledged: Annotated[Optional[StrictBool], Field(description="Filter to only show hunts that are not acknowledged.")] = None,
+        is_unacknowledged: Annotated[Optional[StrictBool], Field(description="Deprecated. This parameter has no effect and is ignored.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -330,9 +321,7 @@ class HuntsApi:
         :type resource_filter: str
         :param resolved: Filter hunts by resolution status. `true` returns resolved hunts, `false` returns unresolved hunts.
         :type resolved: bool
-        :param only_resolved: Deprecated — use `resolved` instead. This is kept for backward compatibility and will be removed in a future release.
-        :type only_resolved: bool
-        :param is_unacknowledged: Filter to only show hunts that are not acknowledged.
+        :param is_unacknowledged: Deprecated. This parameter has no effect and is ignored.
         :type is_unacknowledged: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -368,7 +357,6 @@ class HuntsApi:
             updated_to=updated_to,
             resource_filter=resource_filter,
             resolved=resolved,
-            only_resolved=only_resolved,
             is_unacknowledged=is_unacknowledged,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -400,7 +388,6 @@ class HuntsApi:
         updated_to,
         resource_filter,
         resolved,
-        only_resolved,
         is_unacknowledged,
         _request_auth,
         _content_type,
@@ -505,10 +492,6 @@ class HuntsApi:
         if resolved is not None:
             
             _query_params.append(('resolved', resolved))
-            
-        if only_resolved is not None:
-            
-            _query_params.append(('onlyResolved', only_resolved))
             
         if is_unacknowledged is not None:
             

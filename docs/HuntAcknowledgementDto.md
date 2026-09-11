@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_acknowledged** | **bool** | Whether the hunt has been acknowledged | 
+**is_acknowledged** | **bool** | Deprecated. Always returns false. Retained for backward compatibility. | 
 **number_of_seen** | **float** | Number of users who have seen the hunt | 
 
 ## Example

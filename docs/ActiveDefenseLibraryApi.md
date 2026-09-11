@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **get_active_defense_library_rule_details**
-> ClientActiveDefenseRuleData get_active_defense_library_rule_details(rule_id)
+> ClientActiveDefenseRuleData get_active_defense_library_rule_details(rule_id, mode=mode)
 
 Get Active Defense Rule Details
 
@@ -47,10 +47,11 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.ActiveDefenseLibraryApi(api_client)
     rule_id = 3.4 # float | The numeric rule ID of the Active Defense Library rule to retrieve.
+    mode = 'mode_example' # str | Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action. (optional)
 
     try:
         # Get Active Defense Rule Details
-        api_response = api_instance.get_active_defense_library_rule_details(rule_id)
+        api_response = api_instance.get_active_defense_library_rule_details(rule_id, mode=mode)
         print("The response of ActiveDefenseLibraryApi->get_active_defense_library_rule_details:\n")
         pprint(api_response)
     except Exception as e:
@@ -65,6 +66,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rule_id** | **float**| The numeric rule ID of the Active Defense Library rule to retrieve. | 
+ **mode** | **str**| Enforcement mode for the returned rule payloads. &#x60;block&#x60; (default) returns block-enforcing rules; &#x60;alert&#x60; returns the same rules transformed to a monitor-only action. | [optional] 
 
 ### Return type
 
@@ -91,7 +93,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_active_defense_library_rule_provider_template**
-> ClientActiveDefenseRuleProviderData get_active_defense_library_rule_provider_template(rule_id, provider)
+> ClientActiveDefenseRuleProviderData get_active_defense_library_rule_provider_template(rule_id, provider, mode=mode)
 
 Get Active Defense Rule Provider Template
 
@@ -129,10 +131,11 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     api_instance = watchtowr_api_sdk.ActiveDefenseLibraryApi(api_client)
     rule_id = 3.4 # float | The numeric rule ID of the Active Defense Library rule.
     provider = 'provider_example' # str | The WAF provider whose rule template should be returned.
+    mode = 'mode_example' # str | Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action. (optional)
 
     try:
         # Get Active Defense Rule Provider Template
-        api_response = api_instance.get_active_defense_library_rule_provider_template(rule_id, provider)
+        api_response = api_instance.get_active_defense_library_rule_provider_template(rule_id, provider, mode=mode)
         print("The response of ActiveDefenseLibraryApi->get_active_defense_library_rule_provider_template:\n")
         pprint(api_response)
     except Exception as e:
@@ -148,6 +151,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rule_id** | **float**| The numeric rule ID of the Active Defense Library rule. | 
  **provider** | **str**| The WAF provider whose rule template should be returned. | 
+ **mode** | **str**| Enforcement mode for the returned rule payloads. &#x60;block&#x60; (default) returns block-enforcing rules; &#x60;alert&#x60; returns the same rules transformed to a monitor-only action. | [optional] 
 
 ### Return type
 

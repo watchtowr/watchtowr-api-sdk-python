@@ -28,7 +28,7 @@ class HuntAcknowledgementDto(BaseModel):
     """
     HuntAcknowledgementDto
     """ # noqa: E501
-    is_acknowledged: StrictBool = Field(description="Whether the hunt has been acknowledged", alias="isAcknowledged")
+    is_acknowledged: StrictBool = Field(description="Deprecated. Always returns false. Retained for backward compatibility.", alias="isAcknowledged")
     number_of_seen: StrictFloat = Field(description="Number of users who have seen the hunt", alias="numberOfSeen")
     __properties: ClassVar[List[str]] = ["isAcknowledged", "numberOfSeen"]
 

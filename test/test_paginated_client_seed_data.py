@@ -44,7 +44,8 @@ class TestPaginatedClientSeedData(unittest.TestCase):
                         value = 'www.watchTowr.com', 
                         values = {"value":"www.watchTowr.com"}, 
                         status_name = 'pending', 
-                        status_reason = 'needs verification', 
+                        status_reason = 'This asset requires verification before it will be included and tracked within your attack surface.', 
+                        asset = null, 
                         created_at = '2023-01-01T12:00Z', 
                         user = null, 
                         business_units = [
@@ -70,7 +71,8 @@ class TestPaginatedClientSeedData(unittest.TestCase):
                         value = 'www.watchTowr.com', 
                         values = {"value":"www.watchTowr.com"}, 
                         status_name = 'pending', 
-                        status_reason = 'needs verification', 
+                        status_reason = 'This asset requires verification before it will be included and tracked within your attack surface.', 
+                        asset = null, 
                         created_at = '2023-01-01T12:00Z', 
                         user = null, 
                         business_units = [

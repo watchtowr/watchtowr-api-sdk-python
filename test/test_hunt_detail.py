@@ -107,7 +107,6 @@ Palo Alto state that the GlobalProtect gateway and device telemetry must be enab
 ',
                 references = ["https://security.paloaltonetworks.com/CVE-2024-3400"],
                 completed_at = '2023-06-28T02:22:36Z',
-                completed_by = 'Steve',
                 requested_by = 'John Smith',
                 status = 'completed',
         )

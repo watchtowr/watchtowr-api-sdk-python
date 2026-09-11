@@ -713,7 +713,7 @@ class FindingsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ClientNoteData",
+            '201': "ClientNoteData",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -787,7 +787,7 @@ class FindingsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ClientNoteData",
+            '201': "ClientNoteData",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -861,7 +861,7 @@ class FindingsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ClientNoteData",
+            '201': "ClientNoteData",
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -2933,7 +2933,8 @@ class FindingsApi:
         assignee: Annotated[Optional[StrictStr], Field(description="Filter findings by assignee. To filter findings that don't have an assignee, please use assignee=No Assignee.")] = None,
         tags: Annotated[Optional[StrictStr], Field(description="Filter findings by a comma separated list of tags.")] = None,
         only_validated_exploitable: Annotated[Optional[StrictBool], Field(description="Filter to only show findings validated as exploitable.")] = None,
-        only_unacknowledged: Annotated[Optional[StrictBool], Field(description="Filter to only show unacknowledged findings.")] = None,
+        only_ai_discovered: Annotated[Optional[StrictBool], Field(description="Filter to only show findings discovered by AI.")] = None,
+        only_unacknowledged: Annotated[Optional[StrictBool], Field(description="Deprecated. This parameter has no effect and is ignored.")] = None,
         exploitation_risk_level: Annotated[Optional[StrictStr], Field(description="Filter findings by a comma separated list of exploitation risk levels.")] = None,
         _request_timeout: Union[
             None,
@@ -2984,7 +2985,9 @@ class FindingsApi:
         :type tags: str
         :param only_validated_exploitable: Filter to only show findings validated as exploitable.
         :type only_validated_exploitable: bool
-        :param only_unacknowledged: Filter to only show unacknowledged findings.
+        :param only_ai_discovered: Filter to only show findings discovered by AI.
+        :type only_ai_discovered: bool
+        :param only_unacknowledged: Deprecated. This parameter has no effect and is ignored.
         :type only_unacknowledged: bool
         :param exploitation_risk_level: Filter findings by a comma separated list of exploitation risk levels.
         :type exploitation_risk_level: str
@@ -3027,6 +3030,7 @@ class FindingsApi:
             assignee=assignee,
             tags=tags,
             only_validated_exploitable=only_validated_exploitable,
+            only_ai_discovered=only_ai_discovered,
             only_unacknowledged=only_unacknowledged,
             exploitation_risk_level=exploitation_risk_level,
             _request_auth=_request_auth,
@@ -3070,7 +3074,8 @@ class FindingsApi:
         assignee: Annotated[Optional[StrictStr], Field(description="Filter findings by assignee. To filter findings that don't have an assignee, please use assignee=No Assignee.")] = None,
         tags: Annotated[Optional[StrictStr], Field(description="Filter findings by a comma separated list of tags.")] = None,
         only_validated_exploitable: Annotated[Optional[StrictBool], Field(description="Filter to only show findings validated as exploitable.")] = None,
-        only_unacknowledged: Annotated[Optional[StrictBool], Field(description="Filter to only show unacknowledged findings.")] = None,
+        only_ai_discovered: Annotated[Optional[StrictBool], Field(description="Filter to only show findings discovered by AI.")] = None,
+        only_unacknowledged: Annotated[Optional[StrictBool], Field(description="Deprecated. This parameter has no effect and is ignored.")] = None,
         exploitation_risk_level: Annotated[Optional[StrictStr], Field(description="Filter findings by a comma separated list of exploitation risk levels.")] = None,
         _request_timeout: Union[
             None,
@@ -3121,7 +3126,9 @@ class FindingsApi:
         :type tags: str
         :param only_validated_exploitable: Filter to only show findings validated as exploitable.
         :type only_validated_exploitable: bool
-        :param only_unacknowledged: Filter to only show unacknowledged findings.
+        :param only_ai_discovered: Filter to only show findings discovered by AI.
+        :type only_ai_discovered: bool
+        :param only_unacknowledged: Deprecated. This parameter has no effect and is ignored.
         :type only_unacknowledged: bool
         :param exploitation_risk_level: Filter findings by a comma separated list of exploitation risk levels.
         :type exploitation_risk_level: str
@@ -3164,6 +3171,7 @@ class FindingsApi:
             assignee=assignee,
             tags=tags,
             only_validated_exploitable=only_validated_exploitable,
+            only_ai_discovered=only_ai_discovered,
             only_unacknowledged=only_unacknowledged,
             exploitation_risk_level=exploitation_risk_level,
             _request_auth=_request_auth,
@@ -3207,7 +3215,8 @@ class FindingsApi:
         assignee: Annotated[Optional[StrictStr], Field(description="Filter findings by assignee. To filter findings that don't have an assignee, please use assignee=No Assignee.")] = None,
         tags: Annotated[Optional[StrictStr], Field(description="Filter findings by a comma separated list of tags.")] = None,
         only_validated_exploitable: Annotated[Optional[StrictBool], Field(description="Filter to only show findings validated as exploitable.")] = None,
-        only_unacknowledged: Annotated[Optional[StrictBool], Field(description="Filter to only show unacknowledged findings.")] = None,
+        only_ai_discovered: Annotated[Optional[StrictBool], Field(description="Filter to only show findings discovered by AI.")] = None,
+        only_unacknowledged: Annotated[Optional[StrictBool], Field(description="Deprecated. This parameter has no effect and is ignored.")] = None,
         exploitation_risk_level: Annotated[Optional[StrictStr], Field(description="Filter findings by a comma separated list of exploitation risk levels.")] = None,
         _request_timeout: Union[
             None,
@@ -3258,7 +3267,9 @@ class FindingsApi:
         :type tags: str
         :param only_validated_exploitable: Filter to only show findings validated as exploitable.
         :type only_validated_exploitable: bool
-        :param only_unacknowledged: Filter to only show unacknowledged findings.
+        :param only_ai_discovered: Filter to only show findings discovered by AI.
+        :type only_ai_discovered: bool
+        :param only_unacknowledged: Deprecated. This parameter has no effect and is ignored.
         :type only_unacknowledged: bool
         :param exploitation_risk_level: Filter findings by a comma separated list of exploitation risk levels.
         :type exploitation_risk_level: str
@@ -3301,6 +3312,7 @@ class FindingsApi:
             assignee=assignee,
             tags=tags,
             only_validated_exploitable=only_validated_exploitable,
+            only_ai_discovered=only_ai_discovered,
             only_unacknowledged=only_unacknowledged,
             exploitation_risk_level=exploitation_risk_level,
             _request_auth=_request_auth,
@@ -3339,6 +3351,7 @@ class FindingsApi:
         assignee,
         tags,
         only_validated_exploitable,
+        only_ai_discovered,
         only_unacknowledged,
         exploitation_risk_level,
         _request_auth,
@@ -3462,6 +3475,10 @@ class FindingsApi:
         if only_validated_exploitable is not None:
             
             _query_params.append(('onlyValidatedExploitable', only_validated_exploitable))
+            
+        if only_ai_discovered is not None:
+            
+            _query_params.append(('onlyAiDiscovered', only_ai_discovered))
             
         if only_unacknowledged is not None:
             

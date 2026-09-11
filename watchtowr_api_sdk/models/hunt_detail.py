@@ -42,7 +42,7 @@ class HuntDetail(BaseModel):
     hypothesis: Optional[StrictStr] = Field(description="Hypothesis")
     references: Optional[List[Optional[StrictStr]]] = Field(description="references")
     completed_at: Optional[datetime] = Field(description="Completed at")
-    completed_by: Optional[StrictStr] = Field(description="Completed by")
+    completed_by: Optional[StrictStr] = Field(default=None, description="Completed by")
     requested_by: Optional[StrictStr] = Field(description="Request by")
     status: StrictStr = Field(description="Status")
     __properties: ClassVar[List[str]] = ["id", "type", "created_at", "updated_at", "total_findings", "total_assets", "hunt_request_type", "rapid_exposure_mechanism", "title", "description", "hypothesis", "references", "completed_at", "completed_by", "requested_by", "status"]
@@ -117,6 +117,11 @@ class HuntDetail(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if rapid_exposure_mechanism (nullable) is None
+        # and model_fields_set contains the field
+        if self.rapid_exposure_mechanism is None and "rapid_exposure_mechanism" in self.model_fields_set:
+            _dict['rapid_exposure_mechanism'] = None
+
         # set to None if description (nullable) is None
         # and model_fields_set contains the field
         if self.description is None and "description" in self.model_fields_set:

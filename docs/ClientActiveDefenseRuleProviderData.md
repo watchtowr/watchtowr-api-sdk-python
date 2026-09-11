@@ -5,7 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**ActiveDefenseRuleTemplate**](ActiveDefenseRuleTemplate.md) |  | 
+**data** | [**ActiveDefenseRuleTemplate**](ActiveDefenseRuleTemplate.md) | First matching rule template. Kept for backward compatibility — multi-variant rules have more than one template; use &#x60;templates&#x60; for the complete set. | 
+**templates** | [**List[ActiveDefenseRuleTemplate]**](ActiveDefenseRuleTemplate.md) | All rule templates for the requested provider. A rule may carry several variants (e.g. alternate trigger endpoints) — apply every template for a complete mitigation. | 
 
 ## Example
 

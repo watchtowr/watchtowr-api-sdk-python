@@ -52,7 +52,8 @@ class TestClientPortData(unittest.TestCase):
                         watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
-                        ], )
+                        ], 
+                    metadata = {}, )
             )
         else:
             return ClientPortData(
@@ -72,7 +73,8 @@ class TestClientPortData(unittest.TestCase):
                         watchtowr_api_sdk.models.client_business_unit.ClientBusinessUnit(
                             id = 1, 
                             name = 'Singapore Business Unit', )
-                        ], ),
+                        ], 
+                    metadata = {}, ),
         )
         """
 

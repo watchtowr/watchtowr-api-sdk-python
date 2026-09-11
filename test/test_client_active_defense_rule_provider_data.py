@@ -38,13 +38,115 @@ class TestClientActiveDefenseRuleProviderData(unittest.TestCase):
             return ClientActiveDefenseRuleProviderData(
                 data = watchtowr_api_sdk.models.active_defense_rule_template.ActiveDefenseRuleTemplate(
                     type = 'cloudflare', 
-                    content = { }, )
+                    content = { }, 
+                    rules = [
+                        watchtowr_api_sdk.models.active_defense_waf_rule.ActiveDefenseWafRule(
+                            type = 'cloudflare', 
+                            name = 'apache_pinot_config', 
+                            template = 'Description: WAFv2 rules for apache-pinot-config
+Resources: ...', 
+                            description = 'WAF rule for apache-pinot-config: GET /appconfigs', 
+                            expression = 'http.request.method == "GET" && http.request.uri.path == "/appconfigs"', 
+                            filter = 'Method == GET & URL == "/appconfigs"', 
+                            vcl = 'if (req.method == "GET") { error 403 "Forbidden"; }', 
+                            action = 'block', 
+                            tag = ["watchTowr","apache-pinot-config"], 
+                            operation = 'AND', 
+                            structured = True, 
+                            conditions = [
+                                watchtowr_api_sdk.models.active_defense_waf_rule_condition.ActiveDefenseWafRuleCondition(
+                                    type = 'pathMatch', 
+                                    positive_match = True, 
+                                    name = 'PATH', 
+                                    value = ["/appconfigs"], 
+                                    value_wildcard = False, )
+                                ], )
+                        ], ),
+                templates = [
+                    watchtowr_api_sdk.models.active_defense_rule_template.ActiveDefenseRuleTemplate(
+                        type = 'cloudflare', 
+                        content = { }, 
+                        rules = [
+                            watchtowr_api_sdk.models.active_defense_waf_rule.ActiveDefenseWafRule(
+                                type = 'cloudflare', 
+                                name = 'apache_pinot_config', 
+                                template = 'Description: WAFv2 rules for apache-pinot-config
+Resources: ...', 
+                                description = 'WAF rule for apache-pinot-config: GET /appconfigs', 
+                                expression = 'http.request.method == "GET" && http.request.uri.path == "/appconfigs"', 
+                                filter = 'Method == GET & URL == "/appconfigs"', 
+                                vcl = 'if (req.method == "GET") { error 403 "Forbidden"; }', 
+                                action = 'block', 
+                                tag = ["watchTowr","apache-pinot-config"], 
+                                operation = 'AND', 
+                                structured = True, 
+                                conditions = [
+                                    watchtowr_api_sdk.models.active_defense_waf_rule_condition.ActiveDefenseWafRuleCondition(
+                                        type = 'pathMatch', 
+                                        positive_match = True, 
+                                        name = 'PATH', 
+                                        value = ["/appconfigs"], 
+                                        value_wildcard = False, )
+                                    ], )
+                            ], )
+                    ]
             )
         else:
             return ClientActiveDefenseRuleProviderData(
                 data = watchtowr_api_sdk.models.active_defense_rule_template.ActiveDefenseRuleTemplate(
                     type = 'cloudflare', 
-                    content = { }, ),
+                    content = { }, 
+                    rules = [
+                        watchtowr_api_sdk.models.active_defense_waf_rule.ActiveDefenseWafRule(
+                            type = 'cloudflare', 
+                            name = 'apache_pinot_config', 
+                            template = 'Description: WAFv2 rules for apache-pinot-config
+Resources: ...', 
+                            description = 'WAF rule for apache-pinot-config: GET /appconfigs', 
+                            expression = 'http.request.method == "GET" && http.request.uri.path == "/appconfigs"', 
+                            filter = 'Method == GET & URL == "/appconfigs"', 
+                            vcl = 'if (req.method == "GET") { error 403 "Forbidden"; }', 
+                            action = 'block', 
+                            tag = ["watchTowr","apache-pinot-config"], 
+                            operation = 'AND', 
+                            structured = True, 
+                            conditions = [
+                                watchtowr_api_sdk.models.active_defense_waf_rule_condition.ActiveDefenseWafRuleCondition(
+                                    type = 'pathMatch', 
+                                    positive_match = True, 
+                                    name = 'PATH', 
+                                    value = ["/appconfigs"], 
+                                    value_wildcard = False, )
+                                ], )
+                        ], ),
+                templates = [
+                    watchtowr_api_sdk.models.active_defense_rule_template.ActiveDefenseRuleTemplate(
+                        type = 'cloudflare', 
+                        content = { }, 
+                        rules = [
+                            watchtowr_api_sdk.models.active_defense_waf_rule.ActiveDefenseWafRule(
+                                type = 'cloudflare', 
+                                name = 'apache_pinot_config', 
+                                template = 'Description: WAFv2 rules for apache-pinot-config
+Resources: ...', 
+                                description = 'WAF rule for apache-pinot-config: GET /appconfigs', 
+                                expression = 'http.request.method == "GET" && http.request.uri.path == "/appconfigs"', 
+                                filter = 'Method == GET & URL == "/appconfigs"', 
+                                vcl = 'if (req.method == "GET") { error 403 "Forbidden"; }', 
+                                action = 'block', 
+                                tag = ["watchTowr","apache-pinot-config"], 
+                                operation = 'AND', 
+                                structured = True, 
+                                conditions = [
+                                    watchtowr_api_sdk.models.active_defense_waf_rule_condition.ActiveDefenseWafRuleCondition(
+                                        type = 'pathMatch', 
+                                        positive_match = True, 
+                                        name = 'PATH', 
+                                        value = ["/appconfigs"], 
+                                        value_wildcard = False, )
+                                    ], )
+                            ], )
+                    ],
         )
         """
 

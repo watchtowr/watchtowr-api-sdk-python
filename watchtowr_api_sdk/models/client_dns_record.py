@@ -86,6 +86,11 @@ class ClientDnsRecord(BaseModel):
         if self.asset is None and "asset" in self.model_fields_set:
             _dict['asset'] = None
 
+        # set to None if ttl (nullable) is None
+        # and model_fields_set contains the field
+        if self.ttl is None and "ttl" in self.model_fields_set:
+            _dict['ttl'] = None
+
         return _dict
 
     @classmethod

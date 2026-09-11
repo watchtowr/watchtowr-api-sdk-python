@@ -30,7 +30,7 @@ class FindingsSummaryDto(BaseModel):
     """ # noqa: E501
     total_resolved_findings: StrictFloat = Field(description="Total count of resolved findings", alias="totalResolvedFindings")
     old_critical_high_findings: StrictFloat = Field(description="Count of critical/high findings older than 30 days", alias="oldCriticalHighFindings")
-    unacknowledged_critical_high_findings: StrictFloat = Field(description="Count of unacknowledged critical/high findings", alias="unacknowledgedCriticalHighFindings")
+    unacknowledged_critical_high_findings: StrictFloat = Field(description="Deprecated. Always returns 0. Retained for backward compatibility.", alias="unacknowledgedCriticalHighFindings")
     __properties: ClassVar[List[str]] = ["totalResolvedFindings", "oldCriticalHighFindings", "unacknowledgedCriticalHighFindings"]
 
     model_config = ConfigDict(

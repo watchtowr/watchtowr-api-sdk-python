@@ -19,7 +19,8 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
+from watchtowr_api_sdk.models.active_defense_waf_rule import ActiveDefenseWafRule
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,14 +30,15 @@ class ActiveDefenseRuleTemplate(BaseModel):
     ActiveDefenseRuleTemplate
     """ # noqa: E501
     type: StrictStr
-    content: Dict[str, Any] = Field(description="Provider-specific rule content (shape varies by provider).")
-    __properties: ClassVar[List[str]] = ["type", "content"]
+    content: Dict[str, Any] = Field(description="Provider-specific rule content (shape varies by provider). Deprecated: use rules for structured per-variant content.")
+    rules: Optional[List[ActiveDefenseWafRule]] = Field(default=None, description="Structured rule variants for this provider. Null when the upstream content is not in the expected vendorised format.")
+    __properties: ClassVar[List[str]] = ["type", "content", "rules"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['cloudflare', 'aws_cfn', 'fastly', 'akamai', 'google_cloud_armor', 'mod_security', 'azure_appgw', 'imperva']):
-            raise ValueError("must be one of enum values ('cloudflare', 'aws_cfn', 'fastly', 'akamai', 'google_cloud_armor', 'mod_security', 'azure_appgw', 'imperva')")
+        if value not in set(['cloudflare', 'aws_cfn', 'fastly', 'akamai', 'google_cloud_armor', 'mod_security', 'azure_appgw', 'imperva', 'fastly_ngwaf', 'alibaba_cloud_waf', 'huawei_cloud_waf', 'tencent_cloud_waf', 'oci_waf', 'f5_bigip_advanced_waf', 'f5_nginx_waf_v5', 'f5_nginx_waf_v4', 'fortiweb_v6', 'fortiweb_v7_0', 'fortiweb_v7_6', 'checkpoint_cloudguard', 'checkpoint_appsec_v1beta1', 'checkpoint_appsec_v1beta2', 'netscaler_snort', 'netscaler_native_xml', 'sigma', 'yara', 'snort_v3', 'progress_kemp_loadmaster', 'mod_security_v2', 'imperva_waf_gateway']):
+            raise ValueError("must be one of enum values ('cloudflare', 'aws_cfn', 'fastly', 'akamai', 'google_cloud_armor', 'mod_security', 'azure_appgw', 'imperva', 'fastly_ngwaf', 'alibaba_cloud_waf', 'huawei_cloud_waf', 'tencent_cloud_waf', 'oci_waf', 'f5_bigip_advanced_waf', 'f5_nginx_waf_v5', 'f5_nginx_waf_v4', 'fortiweb_v6', 'fortiweb_v7_0', 'fortiweb_v7_6', 'checkpoint_cloudguard', 'checkpoint_appsec_v1beta1', 'checkpoint_appsec_v1beta2', 'netscaler_snort', 'netscaler_native_xml', 'sigma', 'yara', 'snort_v3', 'progress_kemp_loadmaster', 'mod_security_v2', 'imperva_waf_gateway')")
         return value
 
     model_config = ConfigDict(
@@ -78,6 +80,18 @@ class ActiveDefenseRuleTemplate(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in rules (list)
+        _items = []
+        if self.rules:
+            for _item_rules in self.rules:
+                if _item_rules:
+                    _items.append(_item_rules.to_dict())
+            _dict['rules'] = _items
+        # set to None if rules (nullable) is None
+        # and model_fields_set contains the field
+        if self.rules is None and "rules" in self.model_fields_set:
+            _dict['rules'] = None
+
         return _dict
 
     @classmethod
@@ -96,7 +110,8 @@ class ActiveDefenseRuleTemplate(BaseModel):
 
         _obj = cls.model_validate({
             "type": obj.get("type"),
-            "content": obj.get("content")
+            "content": obj.get("content"),
+            "rules": [ActiveDefenseWafRule.from_dict(_item) for _item in obj["rules"]] if obj.get("rules") is not None else None
         })
         return _obj
 

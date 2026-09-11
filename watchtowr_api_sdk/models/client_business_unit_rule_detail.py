@@ -100,6 +100,11 @@ class ClientBusinessUnitRuleDetail(BaseModel):
                 if _item_integrations:
                     _items.append(_item_integrations.to_dict())
             _dict['integrations'] = _items
+        # set to None if country (nullable) is None
+        # and model_fields_set contains the field
+        if self.country is None and "country" in self.model_fields_set:
+            _dict['country'] = None
+
         return _dict
 
     @classmethod

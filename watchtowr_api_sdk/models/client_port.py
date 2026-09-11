@@ -42,7 +42,8 @@ class ClientPort(BaseModel):
     service: StrictStr
     state: Optional[StrictStr] = Field(default=None, description="Port state (e.g. `open`, `closed`, `filtered`).")
     business_units: List[ClientBusinessUnit] = Field(alias="businessUnits")
-    __properties: ClassVar[List[str]] = ["type", "status", "created_at", "last_seen_at", "id", "ip", "ip_id", "port", "banner", "service", "state", "businessUnits"]
+    metadata: Dict[str, Any] = Field(description="Asset-type-specific metadata. Always empty for ports.")
+    __properties: ClassVar[List[str]] = ["type", "status", "created_at", "last_seen_at", "id", "ip", "ip_id", "port", "banner", "service", "state", "businessUnits", "metadata"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -143,7 +144,8 @@ class ClientPort(BaseModel):
             "banner": obj.get("banner"),
             "service": obj.get("service"),
             "state": obj.get("state"),
-            "businessUnits": [ClientBusinessUnit.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None
+            "businessUnits": [ClientBusinessUnit.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None,
+            "metadata": obj.get("metadata")
         })
         return _obj
 

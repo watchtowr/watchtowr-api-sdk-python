@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **get_client_hunts**
-> PaginatedHunts get_client_hunts(page=page, page_size=page_size, statuses=statuses, hunt_search=hunt_search, types=types, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, resource_filter=resource_filter, resolved=resolved, only_resolved=only_resolved, is_unacknowledged=is_unacknowledged)
+> PaginatedHunts get_client_hunts(page=page, page_size=page_size, statuses=statuses, hunt_search=hunt_search, types=types, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, resource_filter=resource_filter, resolved=resolved, is_unacknowledged=is_unacknowledged)
 
 List Hunts
 
@@ -58,12 +58,11 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     updated_to = '2022-02-23T22:00Z' # datetime | Filter hunts updated before a given date and time. (optional)
     resource_filter = 'resource_filter_example' # str | General (optional)
     resolved = true # bool | Filter hunts by resolution status. `true` returns resolved hunts, `false` returns unresolved hunts. (optional)
-    only_resolved = true # bool | Deprecated — use `resolved` instead. This is kept for backward compatibility and will be removed in a future release. (optional)
-    is_unacknowledged = true # bool | Filter to only show hunts that are not acknowledged. (optional)
+    is_unacknowledged = true # bool | Deprecated. This parameter has no effect and is ignored. (optional)
 
     try:
         # List Hunts
-        api_response = api_instance.get_client_hunts(page=page, page_size=page_size, statuses=statuses, hunt_search=hunt_search, types=types, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, resource_filter=resource_filter, resolved=resolved, only_resolved=only_resolved, is_unacknowledged=is_unacknowledged)
+        api_response = api_instance.get_client_hunts(page=page, page_size=page_size, statuses=statuses, hunt_search=hunt_search, types=types, created_from=created_from, created_to=created_to, updated_from=updated_from, updated_to=updated_to, resource_filter=resource_filter, resolved=resolved, is_unacknowledged=is_unacknowledged)
         print("The response of HuntsApi->get_client_hunts:\n")
         pprint(api_response)
     except Exception as e:
@@ -88,8 +87,7 @@ Name | Type | Description  | Notes
  **updated_to** | **datetime**| Filter hunts updated before a given date and time. | [optional] 
  **resource_filter** | **str**| General | [optional] 
  **resolved** | **bool**| Filter hunts by resolution status. &#x60;true&#x60; returns resolved hunts, &#x60;false&#x60; returns unresolved hunts. | [optional] 
- **only_resolved** | **bool**| Deprecated — use &#x60;resolved&#x60; instead. This is kept for backward compatibility and will be removed in a future release. | [optional] 
- **is_unacknowledged** | **bool**| Filter to only show hunts that are not acknowledged. | [optional] 
+ **is_unacknowledged** | **bool**| Deprecated. This parameter has no effect and is ignored. | [optional] 
 
 ### Return type
 

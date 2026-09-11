@@ -21,6 +21,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from watchtowr_api_sdk.models.client_seed_data_asset_link import ClientSeedDataAssetLink
 from watchtowr_api_sdk.models.client_seed_data_business_unit import ClientSeedDataBusinessUnit
 from watchtowr_api_sdk.models.client_seed_data_user import ClientSeedDataUser
 from typing import Optional, Set
@@ -38,10 +39,11 @@ class ClientSeedDataListItem(BaseModel):
     values: Optional[Dict[str, Any]] = Field(default=None, description="JSON values for the asset")
     status_name: StrictStr = Field(description="Status name of the seed data")
     status_reason: Optional[StrictStr] = Field(default=None, description="Status reason for the seed data")
+    asset: Optional[ClientSeedDataAssetLink] = Field(default=None, description="Asset this seed data resolves to, when applicable — either the asset it was converted into, or the pre-existing asset that caused it to be auto-rejected as \"already exists\". Null when no matching asset can be found.")
     created_at: datetime = Field(description="Creation date")
     user: ClientSeedDataUser = Field(description="User who submitted the seed data")
     business_units: List[ClientSeedDataBusinessUnit] = Field(description="Business units associated with the seed data", alias="businessUnits")
-    __properties: ClassVar[List[str]] = ["id", "title", "type", "value", "values", "status_name", "status_reason", "created_at", "user", "businessUnits"]
+    __properties: ClassVar[List[str]] = ["id", "title", "type", "value", "values", "status_name", "status_reason", "asset", "created_at", "user", "businessUnits"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -82,6 +84,9 @@ class ClientSeedDataListItem(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of asset
+        if self.asset:
+            _dict['asset'] = self.asset.to_dict()
         # override the default output from pydantic by calling `to_dict()` of user
         if self.user:
             _dict['user'] = self.user.to_dict()
@@ -92,6 +97,11 @@ class ClientSeedDataListItem(BaseModel):
                 if _item_business_units:
                     _items.append(_item_business_units.to_dict())
             _dict['businessUnits'] = _items
+        # set to None if asset (nullable) is None
+        # and model_fields_set contains the field
+        if self.asset is None and "asset" in self.model_fields_set:
+            _dict['asset'] = None
+
         return _dict
 
     @classmethod
@@ -116,6 +126,7 @@ class ClientSeedDataListItem(BaseModel):
             "values": obj.get("values"),
             "status_name": obj.get("status_name"),
             "status_reason": obj.get("status_reason"),
+            "asset": ClientSeedDataAssetLink.from_dict(obj["asset"]) if obj.get("asset") is not None else None,
             "created_at": obj.get("created_at"),
             "user": ClientSeedDataUser.from_dict(obj["user"]) if obj.get("user") is not None else None,
             "businessUnits": [ClientSeedDataBusinessUnit.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None

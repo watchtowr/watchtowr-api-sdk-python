@@ -42,7 +42,10 @@ class TestClientSeedDataListItem(unittest.TestCase):
                 value = 'www.watchTowr.com',
                 values = {"value":"www.watchTowr.com"},
                 status_name = 'pending',
-                status_reason = 'needs verification',
+                status_reason = 'This asset requires verification before it will be included and tracked within your attack surface.',
+                asset = watchtowr_api_sdk.models.client_seed_data_asset_link.ClientSeedDataAssetLink(
+                    id = 42, 
+                    type = 'domain', ),
                 created_at = '2023-01-01T12:00Z',
                 user = watchtowr_api_sdk.models.client_seed_data_user.ClientSeedDataUser(
                     id = 1, 

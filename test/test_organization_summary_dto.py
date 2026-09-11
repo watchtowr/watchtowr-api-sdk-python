@@ -54,7 +54,7 @@ class TestOrganizationSummaryDto(unittest.TestCase):
                 findings_summary = watchtowr_api_sdk.models.findings_summary_dto.FindingsSummaryDto(
                     total_resolved_findings = 156, 
                     old_critical_high_findings = 3, 
-                    unacknowledged_critical_high_findings = 7, )
+                    unacknowledged_critical_high_findings = 0, )
             )
         else:
             return OrganizationSummaryDto(
@@ -76,7 +76,7 @@ class TestOrganizationSummaryDto(unittest.TestCase):
                 findings_summary = watchtowr_api_sdk.models.findings_summary_dto.FindingsSummaryDto(
                     total_resolved_findings = 156, 
                     old_critical_high_findings = 3, 
-                    unacknowledged_critical_high_findings = 7, ),
+                    unacknowledged_critical_high_findings = 0, ),
         )
         """
 

@@ -36,12 +36,12 @@ class TestGetAssetIpChangelog200Response(unittest.TestCase):
         model = GetAssetIpChangelog200Response()
         if include_optional:
             return GetAssetIpChangelog200Response(
-                data = [{"id":1,"description":"IP created.","type":"Add Asset","properties":{"attributes":{"ip":"10.0.255.170"}},"created_at":"2025-11-25T05:24:59.000Z","caused_by":{"id":1,"name":"watchTowr Platform"}},{"id":2,"description":"IP updated (status).","type":"Asset Status Change","properties":{"old":{"status_name":"pending","status_reason":"Requires verification"},"attributes":{"status_name":"verified","status_reason":"Manually verified via Client API"}},"created_at":"2025-11-25T05:25:00.000Z","caused_by":{"id":54,"name":"John Doe"}}],
+                data = [{"id":1,"description":"IP created.","type":"Add Asset","properties":{"attributes":{"ip":"10.0.255.170"}},"created_at":"2025-11-25T05:24:59.000Z","caused_by":{"id":1,"name":"watchTowr Platform"}},{"id":2,"description":"IP updated (status).","type":"Asset Status Change","properties":{"old":{"status_name":"pending","status_reason":"This asset requires verification before it will be included and tracked within your attack surface."},"attributes":{"status_name":"verified","status_reason":"Manually verified via Client API"}},"created_at":"2025-11-25T05:25:00.000Z","caused_by":{"id":54,"name":"John Doe"}}],
                 meta = {"pagination":{"count":10,"total":47,"per_page":10,"current_page":1,"total_pages":5,"links":{"next":"url"}}}
             )
         else:
             return GetAssetIpChangelog200Response(
-                data = [{"id":1,"description":"IP created.","type":"Add Asset","properties":{"attributes":{"ip":"10.0.255.170"}},"created_at":"2025-11-25T05:24:59.000Z","caused_by":{"id":1,"name":"watchTowr Platform"}},{"id":2,"description":"IP updated (status).","type":"Asset Status Change","properties":{"old":{"status_name":"pending","status_reason":"Requires verification"},"attributes":{"status_name":"verified","status_reason":"Manually verified via Client API"}},"created_at":"2025-11-25T05:25:00.000Z","caused_by":{"id":54,"name":"John Doe"}}],
+                data = [{"id":1,"description":"IP created.","type":"Add Asset","properties":{"attributes":{"ip":"10.0.255.170"}},"created_at":"2025-11-25T05:24:59.000Z","caused_by":{"id":1,"name":"watchTowr Platform"}},{"id":2,"description":"IP updated (status).","type":"Asset Status Change","properties":{"old":{"status_name":"pending","status_reason":"This asset requires verification before it will be included and tracked within your attack surface."},"attributes":{"status_name":"verified","status_reason":"Manually verified via Client API"}},"created_at":"2025-11-25T05:25:00.000Z","caused_by":{"id":54,"name":"John Doe"}}],
                 meta = {"pagination":{"count":10,"total":47,"per_page":10,"current_page":1,"total_pages":5,"links":{"next":"url"}}},
         )
         """

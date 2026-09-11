@@ -11,6 +11,8 @@ docs/ActiveDefenseRuleDetails.md
 docs/ActiveDefenseRuleKevStatus.md
 docs/ActiveDefenseRuleTemplate.md
 docs/ActiveDefenseRuleVulnerability.md
+docs/ActiveDefenseWafRule.md
+docs/ActiveDefenseWafRuleCondition.md
 docs/ActivityLogApi.md
 docs/AddAssetApi.md
 docs/AdversaryIntel.md
@@ -106,6 +108,7 @@ docs/ClientRepositoryData.md
 docs/ClientSaasPlatform.md
 docs/ClientSaasPlatformData.md
 docs/ClientSeedData.md
+docs/ClientSeedDataAssetLink.md
 docs/ClientSeedDataBusinessUnit.md
 docs/ClientSeedDataDto.md
 docs/ClientSeedDataListItem.md
@@ -310,6 +313,8 @@ test/test_active_defense_rule_details.py
 test/test_active_defense_rule_kev_status.py
 test/test_active_defense_rule_template.py
 test/test_active_defense_rule_vulnerability.py
+test/test_active_defense_waf_rule.py
+test/test_active_defense_waf_rule_condition.py
 test/test_activity_log_api.py
 test/test_add_asset_api.py
 test/test_adversary_intel.py
@@ -406,6 +411,7 @@ test/test_client_repository_data.py
 test/test_client_saas_platform.py
 test/test_client_saas_platform_data.py
 test/test_client_seed_data.py
+test/test_client_seed_data_asset_link.py
 test/test_client_seed_data_business_unit.py
 test/test_client_seed_data_dto.py
 test/test_client_seed_data_list_item.py
@@ -644,6 +650,8 @@ watchtowr_api_sdk/models/active_defense_rule_details.py
 watchtowr_api_sdk/models/active_defense_rule_kev_status.py
 watchtowr_api_sdk/models/active_defense_rule_template.py
 watchtowr_api_sdk/models/active_defense_rule_vulnerability.py
+watchtowr_api_sdk/models/active_defense_waf_rule.py
+watchtowr_api_sdk/models/active_defense_waf_rule_condition.py
 watchtowr_api_sdk/models/adversary_intel.py
 watchtowr_api_sdk/models/adversary_intel_details.py
 watchtowr_api_sdk/models/asset.py
@@ -733,6 +741,7 @@ watchtowr_api_sdk/models/client_repository_data.py
 watchtowr_api_sdk/models/client_saas_platform.py
 watchtowr_api_sdk/models/client_saas_platform_data.py
 watchtowr_api_sdk/models/client_seed_data.py
+watchtowr_api_sdk/models/client_seed_data_asset_link.py
 watchtowr_api_sdk/models/client_seed_data_business_unit.py
 watchtowr_api_sdk/models/client_seed_data_dto.py
 watchtowr_api_sdk/models/client_seed_data_list_item.py

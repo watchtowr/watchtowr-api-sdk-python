@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **service** | **str** |  | 
 **state** | **str** | Port state (e.g. &#x60;open&#x60;, &#x60;closed&#x60;, &#x60;filtered&#x60;). | [optional] 
 **business_units** | [**List[ClientBusinessUnit]**](ClientBusinessUnit.md) |  | 
+**metadata** | **Dict[str, object]** | Asset-type-specific metadata. Always empty for ports. | 
 
 ## Example
 

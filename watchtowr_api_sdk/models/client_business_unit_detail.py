@@ -31,7 +31,7 @@ class ClientBusinessUnitDetail(BaseModel):
     """ # noqa: E501
     id: StrictFloat = Field(description="ID")
     name: StrictStr = Field(description="Name")
-    description: StrictStr = Field(description="Description")
+    description: Optional[StrictStr] = Field(description="Description")
     type: StrictStr = Field(description="Business unit type")
     parent_id: Optional[StrictFloat] = Field(default=None, description="Parent business unit ID")
     user_ids: Optional[List[StrictFloat]] = Field(default=None, description="Array of user IDs assigned to this business unit")
@@ -78,6 +78,11 @@ class ClientBusinessUnitDetail(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if description (nullable) is None
+        # and model_fields_set contains the field
+        if self.description is None and "description" in self.model_fields_set:
+            _dict['description'] = None
+
         return _dict
 
     @classmethod

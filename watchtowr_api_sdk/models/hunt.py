@@ -111,6 +111,11 @@ class Hunt(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if rapid_exposure_mechanism (nullable) is None
+        # and model_fields_set contains the field
+        if self.rapid_exposure_mechanism is None and "rapid_exposure_mechanism" in self.model_fields_set:
+            _dict['rapid_exposure_mechanism'] = None
+
         return _dict
 
     @classmethod

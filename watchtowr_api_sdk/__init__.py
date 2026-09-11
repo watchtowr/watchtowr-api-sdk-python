@@ -67,6 +67,8 @@ __all__ = [
     "ActiveDefenseRuleKevStatus",
     "ActiveDefenseRuleTemplate",
     "ActiveDefenseRuleVulnerability",
+    "ActiveDefenseWafRule",
+    "ActiveDefenseWafRuleCondition",
     "AdversaryIntel",
     "AdversaryIntelDetails",
     "Asset",
@@ -156,6 +158,7 @@ __all__ = [
     "ClientSaasPlatform",
     "ClientSaasPlatformData",
     "ClientSeedData",
+    "ClientSeedDataAssetLink",
     "ClientSeedDataBusinessUnit",
     "ClientSeedDataDto",
     "ClientSeedDataListItem",
@@ -376,6 +379,8 @@ from watchtowr_api_sdk.models.active_defense_rule_details import ActiveDefenseRu
 from watchtowr_api_sdk.models.active_defense_rule_kev_status import ActiveDefenseRuleKevStatus as ActiveDefenseRuleKevStatus
 from watchtowr_api_sdk.models.active_defense_rule_template import ActiveDefenseRuleTemplate as ActiveDefenseRuleTemplate
 from watchtowr_api_sdk.models.active_defense_rule_vulnerability import ActiveDefenseRuleVulnerability as ActiveDefenseRuleVulnerability
+from watchtowr_api_sdk.models.active_defense_waf_rule import ActiveDefenseWafRule as ActiveDefenseWafRule
+from watchtowr_api_sdk.models.active_defense_waf_rule_condition import ActiveDefenseWafRuleCondition as ActiveDefenseWafRuleCondition
 from watchtowr_api_sdk.models.adversary_intel import AdversaryIntel as AdversaryIntel
 from watchtowr_api_sdk.models.adversary_intel_details import AdversaryIntelDetails as AdversaryIntelDetails
 from watchtowr_api_sdk.models.asset import Asset as Asset
@@ -465,6 +470,7 @@ from watchtowr_api_sdk.models.client_repository_data import ClientRepositoryData
 from watchtowr_api_sdk.models.client_saas_platform import ClientSaasPlatform as ClientSaasPlatform
 from watchtowr_api_sdk.models.client_saas_platform_data import ClientSaasPlatformData as ClientSaasPlatformData
 from watchtowr_api_sdk.models.client_seed_data import ClientSeedData as ClientSeedData
+from watchtowr_api_sdk.models.client_seed_data_asset_link import ClientSeedDataAssetLink as ClientSeedDataAssetLink
 from watchtowr_api_sdk.models.client_seed_data_business_unit import ClientSeedDataBusinessUnit as ClientSeedDataBusinessUnit
 from watchtowr_api_sdk.models.client_seed_data_dto import ClientSeedDataDto as ClientSeedDataDto
 from watchtowr_api_sdk.models.client_seed_data_list_item import ClientSeedDataListItem as ClientSeedDataListItem
