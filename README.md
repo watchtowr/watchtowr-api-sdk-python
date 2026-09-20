@@ -165,6 +165,8 @@ Class | Method | HTTP request | Description
 *CloudStorageApi* | [**update_asset_cloud_storage_note**](docs/CloudStorageApi.md#update_asset_cloud_storage_note) | **PUT** /api/client/assets/cloudStorage/show/{id}/note/{noteId} | Update Note
 *CloudStorageApi* | [**update_asset_cloud_storage_status**](docs/CloudStorageApi.md#update_asset_cloud_storage_status) | **PUT** /api/client/assets/cloudStorage/update-status/{id} | Update Status
 *CloudStorageApi* | [**update_custom_property_cloud_storage**](docs/CloudStorageApi.md#update_custom_property_cloud_storage) | **PUT** /api/client/assets/cloudStorage/show/{id}/custom-property/{customPropertyId} | Update Custom Property
+*CompromisedEndpointsApi* | [**get_list_compromised_endpoint_harvested_credentials**](docs/CompromisedEndpointsApi.md#get_list_compromised_endpoint_harvested_credentials) | **GET** /api/client/compromised-endpoints/show/{id}/harvested-credentials | List Harvested Credentials
+*CompromisedEndpointsApi* | [**get_list_compromised_endpoints**](docs/CompromisedEndpointsApi.md#get_list_compromised_endpoints) | **GET** /api/client/compromised-endpoints/list | List Compromised Endpoints
 *ContainersApi* | [**assign_container_to_business_units**](docs/ContainersApi.md#assign_container_to_business_units) | **POST** /api/client/assets/container/show/{id}/business-units | Assign Container to Business Units
 *ContainersApi* | [**create_custom_property_container**](docs/ContainersApi.md#create_custom_property_container) | **POST** /api/client/assets/container/show/{id}/custom-property | Create Custom Property
 *ContainersApi* | [**create_note_container**](docs/ContainersApi.md#create_note_container) | **POST** /api/client/assets/container/show/{id}/note | Create Note
@@ -180,6 +182,7 @@ Class | Method | HTTP request | Description
 *ContainersApi* | [**update_asset_container_status**](docs/ContainersApi.md#update_asset_container_status) | **PUT** /api/client/assets/container/update-status/{id} | Update Status
 *ContainersApi* | [**update_custom_property_container**](docs/ContainersApi.md#update_custom_property_container) | **PUT** /api/client/assets/container/show/{id}/custom-property/{customPropertyId} | Update Custom Property
 *ContainersApi* | [**update_note_container**](docs/ContainersApi.md#update_note_container) | **PUT** /api/client/assets/container/show/{id}/note/{noteId} | Update Note
+*CredentialAttemptLogsApi* | [**get_list_credential_attempt_logs**](docs/CredentialAttemptLogsApi.md#get_list_credential_attempt_logs) | **GET** /api/client/credential-attempt-logs/list | List Credential Attempt Logs
 *DNSRecordAnalysisApi* | [**get_list_dns_records**](docs/DNSRecordAnalysisApi.md#get_list_dns_records) | **GET** /api/client/dns-records/list | List DNS Records
 *DomainsApi* | [**assign_domain_to_business_units**](docs/DomainsApi.md#assign_domain_to_business_units) | **POST** /api/client/assets/domain/show/{id}/business-units | Assign Domain to Business Units
 *DomainsApi* | [**create_asset_domain_note**](docs/DomainsApi.md#create_asset_domain_note) | **POST** /api/client/assets/domain/show/{id}/note | Create Note
@@ -412,8 +415,13 @@ Class | Method | HTTP request | Description
  - [ClientCloudAssetData](docs/ClientCloudAssetData.md)
  - [ClientCloudStorage](docs/ClientCloudStorage.md)
  - [ClientCloudStorageData](docs/ClientCloudStorageData.md)
+ - [ClientCompromisedEndpoint](docs/ClientCompromisedEndpoint.md)
+ - [ClientCompromisedEndpointHarvestedCredential](docs/ClientCompromisedEndpointHarvestedCredential.md)
  - [ClientContainer](docs/ClientContainer.md)
  - [ClientContainerData](docs/ClientContainerData.md)
+ - [ClientCredentialsLog](docs/ClientCredentialsLog.md)
+ - [ClientCredentialsLogAffectedAsset](docs/ClientCredentialsLogAffectedAsset.md)
+ - [ClientCredentialsLogCredentials](docs/ClientCredentialsLogCredentials.md)
  - [ClientCustomProperty](docs/ClientCustomProperty.md)
  - [ClientDnsRecord](docs/ClientDnsRecord.md)
  - [ClientDnsRecordAsset](docs/ClientDnsRecordAsset.md)
@@ -547,7 +555,10 @@ Class | Method | HTTP request | Description
  - [PaginatedClientAssetChangelog](docs/PaginatedClientAssetChangelog.md)
  - [PaginatedClientCloudAsset](docs/PaginatedClientCloudAsset.md)
  - [PaginatedClientCloudStorage](docs/PaginatedClientCloudStorage.md)
+ - [PaginatedClientCompromisedEndpoint](docs/PaginatedClientCompromisedEndpoint.md)
+ - [PaginatedClientCompromisedEndpointHarvestedCredentials](docs/PaginatedClientCompromisedEndpointHarvestedCredentials.md)
  - [PaginatedClientContainer](docs/PaginatedClientContainer.md)
+ - [PaginatedClientCredentialsLog](docs/PaginatedClientCredentialsLog.md)
  - [PaginatedClientCustomProperty](docs/PaginatedClientCustomProperty.md)
  - [PaginatedClientDnsRecord](docs/PaginatedClientDnsRecord.md)
  - [PaginatedClientDomain](docs/PaginatedClientDomain.md)

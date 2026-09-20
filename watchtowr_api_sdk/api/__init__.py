@@ -11,7 +11,9 @@ from watchtowr_api_sdk.api.capability_search_api import CapabilitySearchApi
 from watchtowr_api_sdk.api.certificates_api import CertificatesApi
 from watchtowr_api_sdk.api.cloud_integration_assets_api import CloudIntegrationAssetsApi
 from watchtowr_api_sdk.api.cloud_storage_api import CloudStorageApi
+from watchtowr_api_sdk.api.compromised_endpoints_api import CompromisedEndpointsApi
 from watchtowr_api_sdk.api.containers_api import ContainersApi
+from watchtowr_api_sdk.api.credential_attempt_logs_api import CredentialAttemptLogsApi
 from watchtowr_api_sdk.api.dns_record_analysis_api import DNSRecordAnalysisApi
 from watchtowr_api_sdk.api.domains_api import DomainsApi
 from watchtowr_api_sdk.api.finding_retest_history_api import FindingRetestHistoryApi

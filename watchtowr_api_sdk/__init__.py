@@ -29,7 +29,9 @@ __all__ = [
     "CertificatesApi",
     "CloudIntegrationAssetsApi",
     "CloudStorageApi",
+    "CompromisedEndpointsApi",
     "ContainersApi",
+    "CredentialAttemptLogsApi",
     "DNSRecordAnalysisApi",
     "DomainsApi",
     "FindingRetestHistoryApi",
@@ -105,8 +107,13 @@ __all__ = [
     "ClientCloudAssetData",
     "ClientCloudStorage",
     "ClientCloudStorageData",
+    "ClientCompromisedEndpoint",
+    "ClientCompromisedEndpointHarvestedCredential",
     "ClientContainer",
     "ClientContainerData",
+    "ClientCredentialsLog",
+    "ClientCredentialsLogAffectedAsset",
+    "ClientCredentialsLogCredentials",
     "ClientCustomProperty",
     "ClientDnsRecord",
     "ClientDnsRecordAsset",
@@ -240,7 +247,10 @@ __all__ = [
     "PaginatedClientAssetChangelog",
     "PaginatedClientCloudAsset",
     "PaginatedClientCloudStorage",
+    "PaginatedClientCompromisedEndpoint",
+    "PaginatedClientCompromisedEndpointHarvestedCredentials",
     "PaginatedClientContainer",
+    "PaginatedClientCredentialsLog",
     "PaginatedClientCustomProperty",
     "PaginatedClientDnsRecord",
     "PaginatedClientDomain",
@@ -337,7 +347,9 @@ from watchtowr_api_sdk.api.capability_search_api import CapabilitySearchApi as C
 from watchtowr_api_sdk.api.certificates_api import CertificatesApi as CertificatesApi
 from watchtowr_api_sdk.api.cloud_integration_assets_api import CloudIntegrationAssetsApi as CloudIntegrationAssetsApi
 from watchtowr_api_sdk.api.cloud_storage_api import CloudStorageApi as CloudStorageApi
+from watchtowr_api_sdk.api.compromised_endpoints_api import CompromisedEndpointsApi as CompromisedEndpointsApi
 from watchtowr_api_sdk.api.containers_api import ContainersApi as ContainersApi
+from watchtowr_api_sdk.api.credential_attempt_logs_api import CredentialAttemptLogsApi as CredentialAttemptLogsApi
 from watchtowr_api_sdk.api.dns_record_analysis_api import DNSRecordAnalysisApi as DNSRecordAnalysisApi
 from watchtowr_api_sdk.api.domains_api import DomainsApi as DomainsApi
 from watchtowr_api_sdk.api.finding_retest_history_api import FindingRetestHistoryApi as FindingRetestHistoryApi
@@ -417,8 +429,13 @@ from watchtowr_api_sdk.models.client_cloud_asset import ClientCloudAsset as Clie
 from watchtowr_api_sdk.models.client_cloud_asset_data import ClientCloudAssetData as ClientCloudAssetData
 from watchtowr_api_sdk.models.client_cloud_storage import ClientCloudStorage as ClientCloudStorage
 from watchtowr_api_sdk.models.client_cloud_storage_data import ClientCloudStorageData as ClientCloudStorageData
+from watchtowr_api_sdk.models.client_compromised_endpoint import ClientCompromisedEndpoint as ClientCompromisedEndpoint
+from watchtowr_api_sdk.models.client_compromised_endpoint_harvested_credential import ClientCompromisedEndpointHarvestedCredential as ClientCompromisedEndpointHarvestedCredential
 from watchtowr_api_sdk.models.client_container import ClientContainer as ClientContainer
 from watchtowr_api_sdk.models.client_container_data import ClientContainerData as ClientContainerData
+from watchtowr_api_sdk.models.client_credentials_log import ClientCredentialsLog as ClientCredentialsLog
+from watchtowr_api_sdk.models.client_credentials_log_affected_asset import ClientCredentialsLogAffectedAsset as ClientCredentialsLogAffectedAsset
+from watchtowr_api_sdk.models.client_credentials_log_credentials import ClientCredentialsLogCredentials as ClientCredentialsLogCredentials
 from watchtowr_api_sdk.models.client_custom_property import ClientCustomProperty as ClientCustomProperty
 from watchtowr_api_sdk.models.client_dns_record import ClientDnsRecord as ClientDnsRecord
 from watchtowr_api_sdk.models.client_dns_record_asset import ClientDnsRecordAsset as ClientDnsRecordAsset
@@ -552,7 +569,10 @@ from watchtowr_api_sdk.models.paginated_client_activity_log import PaginatedClie
 from watchtowr_api_sdk.models.paginated_client_asset_changelog import PaginatedClientAssetChangelog as PaginatedClientAssetChangelog
 from watchtowr_api_sdk.models.paginated_client_cloud_asset import PaginatedClientCloudAsset as PaginatedClientCloudAsset
 from watchtowr_api_sdk.models.paginated_client_cloud_storage import PaginatedClientCloudStorage as PaginatedClientCloudStorage
+from watchtowr_api_sdk.models.paginated_client_compromised_endpoint import PaginatedClientCompromisedEndpoint as PaginatedClientCompromisedEndpoint
+from watchtowr_api_sdk.models.paginated_client_compromised_endpoint_harvested_credentials import PaginatedClientCompromisedEndpointHarvestedCredentials as PaginatedClientCompromisedEndpointHarvestedCredentials
 from watchtowr_api_sdk.models.paginated_client_container import PaginatedClientContainer as PaginatedClientContainer
+from watchtowr_api_sdk.models.paginated_client_credentials_log import PaginatedClientCredentialsLog as PaginatedClientCredentialsLog
 from watchtowr_api_sdk.models.paginated_client_custom_property import PaginatedClientCustomProperty as PaginatedClientCustomProperty
 from watchtowr_api_sdk.models.paginated_client_dns_record import PaginatedClientDnsRecord as PaginatedClientDnsRecord
 from watchtowr_api_sdk.models.paginated_client_domain import PaginatedClientDomain as PaginatedClientDomain

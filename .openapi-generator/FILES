@@ -55,8 +55,13 @@ docs/ClientCloudAsset.md
 docs/ClientCloudAssetData.md
 docs/ClientCloudStorage.md
 docs/ClientCloudStorageData.md
+docs/ClientCompromisedEndpoint.md
+docs/ClientCompromisedEndpointHarvestedCredential.md
 docs/ClientContainer.md
 docs/ClientContainerData.md
+docs/ClientCredentialsLog.md
+docs/ClientCredentialsLogAffectedAsset.md
+docs/ClientCredentialsLogCredentials.md
 docs/ClientCustomProperty.md
 docs/ClientDnsRecord.md
 docs/ClientDnsRecordAsset.md
@@ -125,6 +130,7 @@ docs/ClientUserDetailBusinessUnitsInner.md
 docs/ClientVulnerabilityIntelData.md
 docs/CloudIntegrationAssetsApi.md
 docs/CloudStorageApi.md
+docs/CompromisedEndpointsApi.md
 docs/ContainersApi.md
 docs/CreateClientBusinessUnitDto.md
 docs/CreateClientBusinessUnitRuleDto.md
@@ -133,6 +139,7 @@ docs/CreateClientFindingManualTicketRequestBody.md
 docs/CreateClientNoteDto.md
 docs/CreateClientSeedDataRequestBody.md
 docs/CreateOrganisationWhitelistIpDto.md
+docs/CredentialAttemptLogsApi.md
 docs/DNSRecordAnalysisApi.md
 docs/DeleteClientBusinessUnitResponseDto.md
 docs/DeleteClientBusinessUnitRuleResponseDto.md
@@ -203,7 +210,10 @@ docs/PaginatedClientActivityLog.md
 docs/PaginatedClientAssetChangelog.md
 docs/PaginatedClientCloudAsset.md
 docs/PaginatedClientCloudStorage.md
+docs/PaginatedClientCompromisedEndpoint.md
+docs/PaginatedClientCompromisedEndpointHarvestedCredentials.md
 docs/PaginatedClientContainer.md
+docs/PaginatedClientCredentialsLog.md
 docs/PaginatedClientCustomProperty.md
 docs/PaginatedClientDnsRecord.md
 docs/PaginatedClientDomain.md
@@ -358,8 +368,13 @@ test/test_client_cloud_asset.py
 test/test_client_cloud_asset_data.py
 test/test_client_cloud_storage.py
 test/test_client_cloud_storage_data.py
+test/test_client_compromised_endpoint.py
+test/test_client_compromised_endpoint_harvested_credential.py
 test/test_client_container.py
 test/test_client_container_data.py
+test/test_client_credentials_log.py
+test/test_client_credentials_log_affected_asset.py
+test/test_client_credentials_log_credentials.py
 test/test_client_custom_property.py
 test/test_client_dns_record.py
 test/test_client_dns_record_asset.py
@@ -428,6 +443,7 @@ test/test_client_user_detail_business_units_inner.py
 test/test_client_vulnerability_intel_data.py
 test/test_cloud_integration_assets_api.py
 test/test_cloud_storage_api.py
+test/test_compromised_endpoints_api.py
 test/test_containers_api.py
 test/test_create_client_business_unit_dto.py
 test/test_create_client_business_unit_rule_dto.py
@@ -436,6 +452,7 @@ test/test_create_client_finding_manual_ticket_request_body.py
 test/test_create_client_note_dto.py
 test/test_create_client_seed_data_request_body.py
 test/test_create_organisation_whitelist_ip_dto.py
+test/test_credential_attempt_logs_api.py
 test/test_delete_client_business_unit_response_dto.py
 test/test_delete_client_business_unit_rule_response_dto.py
 test/test_delete_note_succes.py
@@ -506,7 +523,10 @@ test/test_paginated_client_activity_log.py
 test/test_paginated_client_asset_changelog.py
 test/test_paginated_client_cloud_asset.py
 test/test_paginated_client_cloud_storage.py
+test/test_paginated_client_compromised_endpoint.py
+test/test_paginated_client_compromised_endpoint_harvested_credentials.py
 test/test_paginated_client_container.py
+test/test_paginated_client_credentials_log.py
 test/test_paginated_client_custom_property.py
 test/test_paginated_client_dns_record.py
 test/test_paginated_client_domain.py
@@ -616,7 +636,9 @@ watchtowr_api_sdk/api/capability_search_api.py
 watchtowr_api_sdk/api/certificates_api.py
 watchtowr_api_sdk/api/cloud_integration_assets_api.py
 watchtowr_api_sdk/api/cloud_storage_api.py
+watchtowr_api_sdk/api/compromised_endpoints_api.py
 watchtowr_api_sdk/api/containers_api.py
+watchtowr_api_sdk/api/credential_attempt_logs_api.py
 watchtowr_api_sdk/api/dns_record_analysis_api.py
 watchtowr_api_sdk/api/domains_api.py
 watchtowr_api_sdk/api/finding_retest_history_api.py
@@ -688,8 +710,13 @@ watchtowr_api_sdk/models/client_cloud_asset.py
 watchtowr_api_sdk/models/client_cloud_asset_data.py
 watchtowr_api_sdk/models/client_cloud_storage.py
 watchtowr_api_sdk/models/client_cloud_storage_data.py
+watchtowr_api_sdk/models/client_compromised_endpoint.py
+watchtowr_api_sdk/models/client_compromised_endpoint_harvested_credential.py
 watchtowr_api_sdk/models/client_container.py
 watchtowr_api_sdk/models/client_container_data.py
+watchtowr_api_sdk/models/client_credentials_log.py
+watchtowr_api_sdk/models/client_credentials_log_affected_asset.py
+watchtowr_api_sdk/models/client_credentials_log_credentials.py
 watchtowr_api_sdk/models/client_custom_property.py
 watchtowr_api_sdk/models/client_dns_record.py
 watchtowr_api_sdk/models/client_dns_record_asset.py
@@ -823,7 +850,10 @@ watchtowr_api_sdk/models/paginated_client_activity_log.py
 watchtowr_api_sdk/models/paginated_client_asset_changelog.py
 watchtowr_api_sdk/models/paginated_client_cloud_asset.py
 watchtowr_api_sdk/models/paginated_client_cloud_storage.py
+watchtowr_api_sdk/models/paginated_client_compromised_endpoint.py
+watchtowr_api_sdk/models/paginated_client_compromised_endpoint_harvested_credentials.py
 watchtowr_api_sdk/models/paginated_client_container.py
+watchtowr_api_sdk/models/paginated_client_credentials_log.py
 watchtowr_api_sdk/models/paginated_client_custom_property.py
 watchtowr_api_sdk/models/paginated_client_dns_record.py
 watchtowr_api_sdk/models/paginated_client_domain.py
