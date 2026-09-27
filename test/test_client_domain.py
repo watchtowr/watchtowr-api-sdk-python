@@ -57,7 +57,7 @@ class TestClientDomain(unittest.TestCase):
                             city = 'Singapore', 
                             name = 'John Doe', 
                             state = 'Singapore', 
-                            dnssec = 'unsigned', 
+                            dnssec = null, 
                             emails = null, 
                             status = null, 
                             address = 'Singapore 123456', 
@@ -69,7 +69,8 @@ class TestClientDomain(unittest.TestCase):
                             referral_url = '', 
                             whois_server = 'whois.godaddy.com', 
                             creation_date = null, 
-                            expiration_date = null, ), 
+                            expiration_date = null, 
+                            message = 'This is a private ip address', ), 
                         raw = 'Domain Name: example.com
 Registry Domain ID: 5066842_DOMAIN_COM-VRSN
 Registrar WHOIS Server: whois.godaddy.com

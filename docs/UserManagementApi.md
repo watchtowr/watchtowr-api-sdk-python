@@ -298,8 +298,8 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
     name = 'John Doe' # str | Search by user name (optional)
     title = 'Security Manager' # str | Search by user title (optional)
-    status = ['[\"Active\"]'] # List[str] | Filter by user status (optional)
-    role_ids = [[1,2]] # List[float] | Filter by role IDs (optional)
+    status = ['[\"Active\"]'] # List[str] | Filter by user status. Accepts a comma-separated list (`status=Active,Locked`) or repeated keys (optional)
+    role_ids = [[1,2]] # List[float] | Filter by role IDs. Accepts a comma-separated list (`roleIds=1,2`) or repeated keys (`roleIds=1&roleIds=2`). (optional)
     created_from = '2023-01-01T00:00:00Z' # str | Filter by creation date start (optional)
     created_to = '2023-12-31T23:59:59Z' # str | Filter by creation date end (optional)
 
@@ -323,8 +323,8 @@ Name | Type | Description  | Notes
  **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
  **name** | **str**| Search by user name | [optional] 
  **title** | **str**| Search by user title | [optional] 
- **status** | [**List[str]**](str.md)| Filter by user status | [optional] 
- **role_ids** | [**List[float]**](float.md)| Filter by role IDs | [optional] 
+ **status** | [**List[str]**](str.md)| Filter by user status. Accepts a comma-separated list (&#x60;status&#x3D;Active,Locked&#x60;) or repeated keys | [optional] 
+ **role_ids** | [**List[float]**](float.md)| Filter by role IDs. Accepts a comma-separated list (&#x60;roleIds&#x3D;1,2&#x60;) or repeated keys (&#x60;roleIds&#x3D;1&amp;roleIds&#x3D;2&#x60;). | [optional] 
  **created_from** | **str**| Filter by creation date start | [optional] 
  **created_to** | **str**| Filter by creation date end | [optional] 
 

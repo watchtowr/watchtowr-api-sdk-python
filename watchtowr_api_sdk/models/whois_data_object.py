@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.whois_data_object_creation_date import WhoisDataObjectCreationDate
+from watchtowr_api_sdk.models.whois_data_object_dnssec import WhoisDataObjectDnssec
 from watchtowr_api_sdk.models.whois_data_object_emails import WhoisDataObjectEmails
 from watchtowr_api_sdk.models.whois_data_object_expiration_date import WhoisDataObjectExpirationDate
 from watchtowr_api_sdk.models.whois_data_object_name_servers import WhoisDataObjectNameServers
@@ -37,7 +38,7 @@ class WhoisDataObject(BaseModel):
     city: Optional[StrictStr] = Field(default=None, description="city")
     name: Optional[StrictStr] = Field(default=None, description="name")
     state: Optional[StrictStr] = Field(default=None, description="state")
-    dnssec: Optional[StrictStr] = Field(default=None, description="dnssec")
+    dnssec: Optional[WhoisDataObjectDnssec] = None
     emails: Optional[WhoisDataObjectEmails] = None
     status: Optional[WhoisDataObjectStatus] = None
     address: Optional[StrictStr] = Field(default=None, description="address")
@@ -50,7 +51,8 @@ class WhoisDataObject(BaseModel):
     whois_server: Optional[StrictStr] = Field(default=None, description="whois_server")
     creation_date: Optional[WhoisDataObjectCreationDate] = None
     expiration_date: Optional[WhoisDataObjectExpirationDate] = None
-    __properties: ClassVar[List[str]] = ["org", "city", "name", "state", "dnssec", "emails", "status", "address", "country", "zipcode", "registrar", "domain_name", "name_servers", "referral_url", "whois_server", "creation_date", "expiration_date"]
+    message: Optional[StrictStr] = Field(default=None, description="Explains why no whois record is present. When set, it is the only field returned.")
+    __properties: ClassVar[List[str]] = ["org", "city", "name", "state", "dnssec", "emails", "status", "address", "country", "zipcode", "registrar", "domain_name", "name_servers", "referral_url", "whois_server", "creation_date", "expiration_date", "message"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -91,6 +93,9 @@ class WhoisDataObject(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of dnssec
+        if self.dnssec:
+            _dict['dnssec'] = self.dnssec.to_dict()
         # override the default output from pydantic by calling `to_dict()` of emails
         if self.emails:
             _dict['emails'] = self.emails.to_dict()
@@ -106,6 +111,96 @@ class WhoisDataObject(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of expiration_date
         if self.expiration_date:
             _dict['expiration_date'] = self.expiration_date.to_dict()
+        # set to None if org (nullable) is None
+        # and model_fields_set contains the field
+        if self.org is None and "org" in self.model_fields_set:
+            _dict['org'] = None
+
+        # set to None if city (nullable) is None
+        # and model_fields_set contains the field
+        if self.city is None and "city" in self.model_fields_set:
+            _dict['city'] = None
+
+        # set to None if name (nullable) is None
+        # and model_fields_set contains the field
+        if self.name is None and "name" in self.model_fields_set:
+            _dict['name'] = None
+
+        # set to None if state (nullable) is None
+        # and model_fields_set contains the field
+        if self.state is None and "state" in self.model_fields_set:
+            _dict['state'] = None
+
+        # set to None if dnssec (nullable) is None
+        # and model_fields_set contains the field
+        if self.dnssec is None and "dnssec" in self.model_fields_set:
+            _dict['dnssec'] = None
+
+        # set to None if emails (nullable) is None
+        # and model_fields_set contains the field
+        if self.emails is None and "emails" in self.model_fields_set:
+            _dict['emails'] = None
+
+        # set to None if status (nullable) is None
+        # and model_fields_set contains the field
+        if self.status is None and "status" in self.model_fields_set:
+            _dict['status'] = None
+
+        # set to None if address (nullable) is None
+        # and model_fields_set contains the field
+        if self.address is None and "address" in self.model_fields_set:
+            _dict['address'] = None
+
+        # set to None if country (nullable) is None
+        # and model_fields_set contains the field
+        if self.country is None and "country" in self.model_fields_set:
+            _dict['country'] = None
+
+        # set to None if zipcode (nullable) is None
+        # and model_fields_set contains the field
+        if self.zipcode is None and "zipcode" in self.model_fields_set:
+            _dict['zipcode'] = None
+
+        # set to None if registrar (nullable) is None
+        # and model_fields_set contains the field
+        if self.registrar is None and "registrar" in self.model_fields_set:
+            _dict['registrar'] = None
+
+        # set to None if domain_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.domain_name is None and "domain_name" in self.model_fields_set:
+            _dict['domain_name'] = None
+
+        # set to None if name_servers (nullable) is None
+        # and model_fields_set contains the field
+        if self.name_servers is None and "name_servers" in self.model_fields_set:
+            _dict['name_servers'] = None
+
+        # set to None if referral_url (nullable) is None
+        # and model_fields_set contains the field
+        if self.referral_url is None and "referral_url" in self.model_fields_set:
+            _dict['referral_url'] = None
+
+        # set to None if whois_server (nullable) is None
+        # and model_fields_set contains the field
+        if self.whois_server is None and "whois_server" in self.model_fields_set:
+            _dict['whois_server'] = None
+
+        # set to None if creation_date (nullable) is None
+        # and model_fields_set contains the field
+        if self.creation_date is None and "creation_date" in self.model_fields_set:
+            _dict['creation_date'] = None
+
+        # set to None if expiration_date (nullable) is None
+        # and model_fields_set contains the field
+        if self.expiration_date is None and "expiration_date" in self.model_fields_set:
+            _dict['expiration_date'] = None
+
+        # set to None if message (nullable) is None
+        # and model_fields_set contains the field
+        if self.message is None and "message" in self.model_fields_set:
+            _dict['message'] = None
+
         return _dict
 
     @classmethod
@@ -127,7 +222,7 @@ class WhoisDataObject(BaseModel):
             "city": obj.get("city"),
             "name": obj.get("name"),
             "state": obj.get("state"),
-            "dnssec": obj.get("dnssec"),
+            "dnssec": WhoisDataObjectDnssec.from_dict(obj["dnssec"]) if obj.get("dnssec") is not None else None,
             "emails": WhoisDataObjectEmails.from_dict(obj["emails"]) if obj.get("emails") is not None else None,
             "status": WhoisDataObjectStatus.from_dict(obj["status"]) if obj.get("status") is not None else None,
             "address": obj.get("address"),
@@ -139,7 +234,8 @@ class WhoisDataObject(BaseModel):
             "referral_url": obj.get("referral_url"),
             "whois_server": obj.get("whois_server"),
             "creation_date": WhoisDataObjectCreationDate.from_dict(obj["creation_date"]) if obj.get("creation_date") is not None else None,
-            "expiration_date": WhoisDataObjectExpirationDate.from_dict(obj["expiration_date"]) if obj.get("expiration_date") is not None else None
+            "expiration_date": WhoisDataObjectExpirationDate.from_dict(obj["expiration_date"]) if obj.get("expiration_date") is not None else None,
+            "message": obj.get("message")
         })
         return _obj
 

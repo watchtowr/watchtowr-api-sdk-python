@@ -41,6 +41,30 @@ class TestActiveDefenseRuleTemplate(unittest.TestCase):
                 rules = [
                     watchtowr_api_sdk.models.active_defense_waf_rule.ActiveDefenseWafRule(
                         type = 'cloudflare', 
+                        action_category = 'block', 
+                        action_type = 'RETURN_HTTP_RESPONSE', 
+                        attack_type = 'Other Application Attacks', 
+                        condition = 'SecRule REQUEST_METHOD "@streq GET"', 
+                        enabled = True, 
+                        group_operator = 'all', 
+                        message = 'WAF rule for CVE-2025-5777', 
+                        msg = 'WT-304155: WAF rule', 
+                        response_code = 403, 
+                        risk = 2, 
+                        rule = 'alert tcp $HOME_NET any -> $EXTERNAL_NET any', 
+                        secrule = 'SecRule REQUEST_METHOD "@streq GET"', 
+                        severity = 'high', 
+                        signature = 'msg:"WT-304155 WAF rule"', 
+                        software_version = '15.1.0', 
+                        strategies = [
+                            { }
+                            ], 
+                        match_criteria = [
+                            { }
+                            ], 
+                        display_response_page = False, 
+                        one_alert_per_session = False, 
+                        preview = True, 
                         name = 'apache_pinot_config', 
                         template = 'Description: WAFv2 rules for apache-pinot-config
 Resources: ...', 
@@ -55,10 +79,19 @@ Resources: ...',
                         conditions = [
                             watchtowr_api_sdk.models.active_defense_waf_rule_condition.ActiveDefenseWafRuleCondition(
                                 type = 'pathMatch', 
+                                category = 'sqli', 
+                                contents = ["/appconfigs"], 
+                                logic_operation = 'AND', 
+                                key = 'REQUEST_URI', 
+                                op_value = 'CONTAINS', 
+                                values = null, 
+                                group_operator = 'AND', 
                                 positive_match = True, 
                                 name = 'PATH', 
                                 value = ["/appconfigs"], 
-                                value_wildcard = False, )
+                                value_wildcard = False, 
+                                sub_key = 'header', 
+                                index = '0', )
                             ], )
                     ]
             )

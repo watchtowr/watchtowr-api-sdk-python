@@ -50,7 +50,12 @@ class TestClientActiveDefenseRuleData(unittest.TestCase):
                         ], 
                     vulnerability = null, 
                     findings_count = 7, 
-                    affected_kb_entry_ids = [42,87], )
+                    affected_kb_entry_ids = [42,87], 
+                    findings = [
+                        watchtowr_api_sdk.models.active_defense_rule_finding.ActiveDefenseRuleFinding(
+                            id = 4211, 
+                            active_defense_provider = 'cloudflare', )
+                        ], )
             )
         else:
             return ClientActiveDefenseRuleData(
@@ -68,7 +73,12 @@ class TestClientActiveDefenseRuleData(unittest.TestCase):
                         ], 
                     vulnerability = null, 
                     findings_count = 7, 
-                    affected_kb_entry_ids = [42,87], ),
+                    affected_kb_entry_ids = [42,87], 
+                    findings = [
+                        watchtowr_api_sdk.models.active_defense_rule_finding.ActiveDefenseRuleFinding(
+                            id = 4211, 
+                            active_defense_provider = 'cloudflare', )
+                        ], ),
         )
         """
 

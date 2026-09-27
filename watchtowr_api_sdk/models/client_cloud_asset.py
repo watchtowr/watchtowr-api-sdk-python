@@ -35,7 +35,7 @@ class ClientCloudAsset(BaseModel):
     type: StrictStr
     id: StrictStr
     name: StrictStr
-    source: StrictStr
+    source: Optional[StrictStr]
     provider: StrictStr
     status: Optional[StrictStr] = None
     super_type: Optional[StrictStr] = None
@@ -106,6 +106,11 @@ class ClientCloudAsset(BaseModel):
         # and model_fields_set contains the field
         if self.discovery_reason is None and "discovery_reason" in self.model_fields_set:
             _dict['discovery_reason'] = None
+
+        # set to None if source (nullable) is None
+        # and model_fields_set contains the field
+        if self.source is None and "source" in self.model_fields_set:
+            _dict['source'] = None
 
         # set to None if status (nullable) is None
         # and model_fields_set contains the field

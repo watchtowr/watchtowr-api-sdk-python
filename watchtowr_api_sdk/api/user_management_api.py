@@ -890,8 +890,8 @@ class UserManagementApi:
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         name: Annotated[Optional[StrictStr], Field(description="Search by user name")] = None,
         title: Annotated[Optional[StrictStr], Field(description="Search by user title")] = None,
-        status: Annotated[Optional[List[StrictStr]], Field(description="Filter by user status")] = None,
-        role_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter by role IDs")] = None,
+        status: Annotated[Optional[List[StrictStr]], Field(description="Filter by user status. Accepts a comma-separated list (`status=Active,Locked`) or repeated keys")] = None,
+        role_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter by role IDs. Accepts a comma-separated list (`roleIds=1,2`) or repeated keys (`roleIds=1&roleIds=2`).")] = None,
         created_from: Annotated[Optional[StrictStr], Field(description="Filter by creation date start")] = None,
         created_to: Annotated[Optional[StrictStr], Field(description="Filter by creation date end")] = None,
         _request_timeout: Union[
@@ -919,9 +919,9 @@ class UserManagementApi:
         :type name: str
         :param title: Search by user title
         :type title: str
-        :param status: Filter by user status
+        :param status: Filter by user status. Accepts a comma-separated list (`status=Active,Locked`) or repeated keys
         :type status: List[str]
-        :param role_ids: Filter by role IDs
+        :param role_ids: Filter by role IDs. Accepts a comma-separated list (`roleIds=1,2`) or repeated keys (`roleIds=1&roleIds=2`).
         :type role_ids: List[float]
         :param created_from: Filter by creation date start
         :type created_from: str
@@ -987,8 +987,8 @@ class UserManagementApi:
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         name: Annotated[Optional[StrictStr], Field(description="Search by user name")] = None,
         title: Annotated[Optional[StrictStr], Field(description="Search by user title")] = None,
-        status: Annotated[Optional[List[StrictStr]], Field(description="Filter by user status")] = None,
-        role_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter by role IDs")] = None,
+        status: Annotated[Optional[List[StrictStr]], Field(description="Filter by user status. Accepts a comma-separated list (`status=Active,Locked`) or repeated keys")] = None,
+        role_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter by role IDs. Accepts a comma-separated list (`roleIds=1,2`) or repeated keys (`roleIds=1&roleIds=2`).")] = None,
         created_from: Annotated[Optional[StrictStr], Field(description="Filter by creation date start")] = None,
         created_to: Annotated[Optional[StrictStr], Field(description="Filter by creation date end")] = None,
         _request_timeout: Union[
@@ -1016,9 +1016,9 @@ class UserManagementApi:
         :type name: str
         :param title: Search by user title
         :type title: str
-        :param status: Filter by user status
+        :param status: Filter by user status. Accepts a comma-separated list (`status=Active,Locked`) or repeated keys
         :type status: List[str]
-        :param role_ids: Filter by role IDs
+        :param role_ids: Filter by role IDs. Accepts a comma-separated list (`roleIds=1,2`) or repeated keys (`roleIds=1&roleIds=2`).
         :type role_ids: List[float]
         :param created_from: Filter by creation date start
         :type created_from: str
@@ -1084,8 +1084,8 @@ class UserManagementApi:
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
         name: Annotated[Optional[StrictStr], Field(description="Search by user name")] = None,
         title: Annotated[Optional[StrictStr], Field(description="Search by user title")] = None,
-        status: Annotated[Optional[List[StrictStr]], Field(description="Filter by user status")] = None,
-        role_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter by role IDs")] = None,
+        status: Annotated[Optional[List[StrictStr]], Field(description="Filter by user status. Accepts a comma-separated list (`status=Active,Locked`) or repeated keys")] = None,
+        role_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter by role IDs. Accepts a comma-separated list (`roleIds=1,2`) or repeated keys (`roleIds=1&roleIds=2`).")] = None,
         created_from: Annotated[Optional[StrictStr], Field(description="Filter by creation date start")] = None,
         created_to: Annotated[Optional[StrictStr], Field(description="Filter by creation date end")] = None,
         _request_timeout: Union[
@@ -1113,9 +1113,9 @@ class UserManagementApi:
         :type name: str
         :param title: Search by user title
         :type title: str
-        :param status: Filter by user status
+        :param status: Filter by user status. Accepts a comma-separated list (`status=Active,Locked`) or repeated keys
         :type status: List[str]
-        :param role_ids: Filter by role IDs
+        :param role_ids: Filter by role IDs. Accepts a comma-separated list (`roleIds=1,2`) or repeated keys (`roleIds=1&roleIds=2`).
         :type role_ids: List[float]
         :param created_from: Filter by creation date start
         :type created_from: str

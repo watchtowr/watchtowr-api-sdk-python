@@ -45,7 +45,7 @@ class ActiveDefenseLibraryApi:
     def get_active_defense_library_rule_details(
         self,
         rule_id: Annotated[StrictFloat, Field(description="The numeric rule ID of the Active Defense Library rule to retrieve.")],
-        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.")] = None,
+        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action. Not every rule/provider combination has an alert-mode equivalent; those return 422.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -65,7 +65,7 @@ class ActiveDefenseLibraryApi:
 
         :param rule_id: The numeric rule ID of the Active Defense Library rule to retrieve. (required)
         :type rule_id: float
-        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.
+        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action. Not every rule/provider combination has an alert-mode equivalent; those return 422.
         :type mode: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -103,6 +103,7 @@ class ActiveDefenseLibraryApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '422': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -119,7 +120,7 @@ class ActiveDefenseLibraryApi:
     def get_active_defense_library_rule_details_with_http_info(
         self,
         rule_id: Annotated[StrictFloat, Field(description="The numeric rule ID of the Active Defense Library rule to retrieve.")],
-        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.")] = None,
+        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action. Not every rule/provider combination has an alert-mode equivalent; those return 422.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -139,7 +140,7 @@ class ActiveDefenseLibraryApi:
 
         :param rule_id: The numeric rule ID of the Active Defense Library rule to retrieve. (required)
         :type rule_id: float
-        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.
+        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action. Not every rule/provider combination has an alert-mode equivalent; those return 422.
         :type mode: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -177,6 +178,7 @@ class ActiveDefenseLibraryApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '422': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -193,7 +195,7 @@ class ActiveDefenseLibraryApi:
     def get_active_defense_library_rule_details_without_preload_content(
         self,
         rule_id: Annotated[StrictFloat, Field(description="The numeric rule ID of the Active Defense Library rule to retrieve.")],
-        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.")] = None,
+        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action. Not every rule/provider combination has an alert-mode equivalent; those return 422.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -213,7 +215,7 @@ class ActiveDefenseLibraryApi:
 
         :param rule_id: The numeric rule ID of the Active Defense Library rule to retrieve. (required)
         :type rule_id: float
-        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.
+        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action. Not every rule/provider combination has an alert-mode equivalent; those return 422.
         :type mode: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -251,6 +253,7 @@ class ActiveDefenseLibraryApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '422': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -333,7 +336,7 @@ class ActiveDefenseLibraryApi:
         self,
         rule_id: Annotated[StrictFloat, Field(description="The numeric rule ID of the Active Defense Library rule.")],
         provider: Annotated[StrictStr, Field(description="The WAF provider whose rule template should be returned.")],
-        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.")] = None,
+        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action. Not every rule/provider combination has an alert-mode equivalent; those return 422.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -355,7 +358,7 @@ class ActiveDefenseLibraryApi:
         :type rule_id: float
         :param provider: The WAF provider whose rule template should be returned. (required)
         :type provider: str
-        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.
+        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action. Not every rule/provider combination has an alert-mode equivalent; those return 422.
         :type mode: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -394,6 +397,7 @@ class ActiveDefenseLibraryApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '422': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -411,7 +415,7 @@ class ActiveDefenseLibraryApi:
         self,
         rule_id: Annotated[StrictFloat, Field(description="The numeric rule ID of the Active Defense Library rule.")],
         provider: Annotated[StrictStr, Field(description="The WAF provider whose rule template should be returned.")],
-        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.")] = None,
+        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action. Not every rule/provider combination has an alert-mode equivalent; those return 422.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -433,7 +437,7 @@ class ActiveDefenseLibraryApi:
         :type rule_id: float
         :param provider: The WAF provider whose rule template should be returned. (required)
         :type provider: str
-        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.
+        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action. Not every rule/provider combination has an alert-mode equivalent; those return 422.
         :type mode: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -472,6 +476,7 @@ class ActiveDefenseLibraryApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '422': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -489,7 +494,7 @@ class ActiveDefenseLibraryApi:
         self,
         rule_id: Annotated[StrictFloat, Field(description="The numeric rule ID of the Active Defense Library rule.")],
         provider: Annotated[StrictStr, Field(description="The WAF provider whose rule template should be returned.")],
-        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.")] = None,
+        mode: Annotated[Optional[StrictStr], Field(description="Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action. Not every rule/provider combination has an alert-mode equivalent; those return 422.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -511,7 +516,7 @@ class ActiveDefenseLibraryApi:
         :type rule_id: float
         :param provider: The WAF provider whose rule template should be returned. (required)
         :type provider: str
-        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action.
+        :param mode: Enforcement mode for the returned rule payloads. `block` (default) returns block-enforcing rules; `alert` returns the same rules transformed to a monitor-only action. Not every rule/provider combination has an alert-mode equivalent; those return 422.
         :type mode: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -550,6 +555,7 @@ class ActiveDefenseLibraryApi:
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
+            '422': None,
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -35,7 +35,7 @@ class ClientUser(BaseModel):
     title: StrictStr = Field(description="User title")
     mobile_phone_number: Optional[StrictStr] = Field(description="Mobile phone number (masked)")
     office_phone_number: Optional[StrictStr] = Field(description="Office phone number (masked)")
-    created_at: datetime = Field(description="Created at timestamp")
+    created_at: Optional[datetime] = Field(description="Created at timestamp")
     locked: Optional[StrictBool] = Field(description="Whether user is locked")
     __properties: ClassVar[List[str]] = ["id", "name", "email", "title", "mobile_phone_number", "office_phone_number", "created_at", "locked"]
 
@@ -87,6 +87,11 @@ class ClientUser(BaseModel):
         # and model_fields_set contains the field
         if self.office_phone_number is None and "office_phone_number" in self.model_fields_set:
             _dict['office_phone_number'] = None
+
+        # set to None if created_at (nullable) is None
+        # and model_fields_set contains the field
+        if self.created_at is None and "created_at" in self.model_fields_set:
+            _dict['created_at'] = None
 
         # set to None if locked (nullable) is None
         # and model_fields_set contains the field

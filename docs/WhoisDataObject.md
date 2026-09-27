@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **city** | **str** | city | [optional] 
 **name** | **str** | name | [optional] 
 **state** | **str** | state | [optional] 
-**dnssec** | **str** | dnssec | [optional] 
+**dnssec** | [**WhoisDataObjectDnssec**](WhoisDataObjectDnssec.md) |  | [optional] 
 **emails** | [**WhoisDataObjectEmails**](WhoisDataObjectEmails.md) |  | [optional] 
 **status** | [**WhoisDataObjectStatus**](WhoisDataObjectStatus.md) |  | [optional] 
 **address** | **str** | address | [optional] 
@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **whois_server** | **str** | whois_server | [optional] 
 **creation_date** | [**WhoisDataObjectCreationDate**](WhoisDataObjectCreationDate.md) |  | [optional] 
 **expiration_date** | [**WhoisDataObjectExpirationDate**](WhoisDataObjectExpirationDate.md) |  | [optional] 
+**message** | **str** | Explains why no whois record is present. When set, it is the only field returned. | [optional] 
 
 ## Example
 

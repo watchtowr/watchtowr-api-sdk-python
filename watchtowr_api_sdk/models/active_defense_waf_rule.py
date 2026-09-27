@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.active_defense_waf_rule_condition import ActiveDefenseWafRuleCondition
 from typing import Optional, Set
@@ -30,6 +30,26 @@ class ActiveDefenseWafRule(BaseModel):
     ActiveDefenseWafRule
     """ # noqa: E501
     type: StrictStr
+    action_category: Optional[StrictStr] = Field(default=None, description="Action category (mod_security).")
+    action_type: Optional[StrictStr] = Field(default=None, description="Action type (oci_waf).")
+    attack_type: Optional[StrictStr] = Field(default=None, description="Attack classification (f5_bigip_advanced_waf).")
+    condition: Optional[StrictStr] = Field(default=None, description="Single-condition expression (oci_waf, mod_security).")
+    enabled: Optional[StrictBool] = Field(default=None, description="Whether the rule is enabled (imperva).")
+    group_operator: Optional[StrictStr] = Field(default=None, description="Operator joining conditions.")
+    message: Optional[StrictStr] = Field(default=None, description="Rule message.")
+    msg: Optional[StrictStr] = Field(default=None, description="Short rule message (mod_security `msg`).")
+    response_code: Optional[StrictFloat] = Field(default=None, description="HTTP status returned (oci_waf).")
+    risk: Optional[StrictFloat] = Field(default=None, description="Risk score (f5_bigip_advanced_waf).")
+    rule: Optional[StrictStr] = Field(default=None, description="Raw rule body (snort, yara, sigma).")
+    secrule: Optional[StrictStr] = Field(default=None, description="ModSecurity SecRule body.")
+    severity: Optional[StrictStr] = Field(default=None, description="Severity (fortiweb, imperva).")
+    signature: Optional[StrictStr] = Field(default=None, description="Signature body (f5_bigip_advanced_waf).")
+    software_version: Optional[StrictStr] = Field(default=None, description="Target software version.")
+    strategies: Optional[List[Dict[str, Any]]] = Field(default=None, description="Provider-specific match strategies (tencent_cloud_waf).")
+    match_criteria: Optional[List[Dict[str, Any]]] = Field(default=None, description="Provider-specific match criteria (imperva_waf_gateway).", alias="matchCriteria")
+    display_response_page: Optional[StrictBool] = Field(default=None, description="Imperva: show a response page.", alias="displayResponsePage")
+    one_alert_per_session: Optional[StrictBool] = Field(default=None, description="Imperva: alert once per session.", alias="oneAlertPerSession")
+    preview: Optional[StrictBool] = Field(default=None, description="Whether the rule is a preview/monitor-only variant (google_cloud_armor).")
     name: Optional[StrictStr] = None
     template: Optional[StrictStr] = Field(default=None, description="Deployable template body (AWS CloudFormation YAML or Azure ARM JSON).")
     description: Optional[StrictStr] = None
@@ -41,7 +61,7 @@ class ActiveDefenseWafRule(BaseModel):
     operation: Optional[StrictStr] = None
     structured: Optional[StrictBool] = None
     conditions: Optional[List[ActiveDefenseWafRuleCondition]] = None
-    __properties: ClassVar[List[str]] = ["type", "name", "template", "description", "expression", "filter", "vcl", "action", "tag", "operation", "structured", "conditions"]
+    __properties: ClassVar[List[str]] = ["type", "action_category", "action_type", "attack_type", "condition", "enabled", "group_operator", "message", "msg", "response_code", "risk", "rule", "secrule", "severity", "signature", "software_version", "strategies", "matchCriteria", "displayResponsePage", "oneAlertPerSession", "preview", "name", "template", "description", "expression", "filter", "vcl", "action", "tag", "operation", "structured", "conditions"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
@@ -114,6 +134,26 @@ class ActiveDefenseWafRule(BaseModel):
 
         _obj = cls.model_validate({
             "type": obj.get("type"),
+            "action_category": obj.get("action_category"),
+            "action_type": obj.get("action_type"),
+            "attack_type": obj.get("attack_type"),
+            "condition": obj.get("condition"),
+            "enabled": obj.get("enabled"),
+            "group_operator": obj.get("group_operator"),
+            "message": obj.get("message"),
+            "msg": obj.get("msg"),
+            "response_code": obj.get("response_code"),
+            "risk": obj.get("risk"),
+            "rule": obj.get("rule"),
+            "secrule": obj.get("secrule"),
+            "severity": obj.get("severity"),
+            "signature": obj.get("signature"),
+            "software_version": obj.get("software_version"),
+            "strategies": obj.get("strategies"),
+            "matchCriteria": obj.get("matchCriteria"),
+            "displayResponsePage": obj.get("displayResponsePage"),
+            "oneAlertPerSession": obj.get("oneAlertPerSession"),
+            "preview": obj.get("preview"),
             "name": obj.get("name"),
             "template": obj.get("template"),
             "description": obj.get("description"),

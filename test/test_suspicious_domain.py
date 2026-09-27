@@ -48,7 +48,7 @@ class TestSuspiciousDomain(unittest.TestCase):
                             city = 'Singapore', 
                             name = 'John Doe', 
                             state = 'Singapore', 
-                            dnssec = 'unsigned', 
+                            dnssec = null, 
                             emails = null, 
                             status = null, 
                             address = 'Singapore 123456', 
@@ -60,7 +60,8 @@ class TestSuspiciousDomain(unittest.TestCase):
                             referral_url = '', 
                             whois_server = 'whois.godaddy.com', 
                             creation_date = null, 
-                            expiration_date = null, ), 
+                            expiration_date = null, 
+                            message = 'This is a private ip address', ), 
                         raw = 'Domain Name: example.com
 Registry Domain ID: 5066842_DOMAIN_COM-VRSN
 Registrar WHOIS Server: whois.godaddy.com
@@ -86,7 +87,7 @@ Registrar Registration Expiration Date: 2027-06-17T04:00:00Z
                             city = 'Singapore', 
                             name = 'John Doe', 
                             state = 'Singapore', 
-                            dnssec = 'unsigned', 
+                            dnssec = null, 
                             emails = null, 
                             status = null, 
                             address = 'Singapore 123456', 
@@ -98,7 +99,8 @@ Registrar Registration Expiration Date: 2027-06-17T04:00:00Z
                             referral_url = '', 
                             whois_server = 'whois.godaddy.com', 
                             creation_date = null, 
-                            expiration_date = null, ), 
+                            expiration_date = null, 
+                            message = 'This is a private ip address', ), 
                         raw = 'Domain Name: example.com
 Registry Domain ID: 5066842_DOMAIN_COM-VRSN
 Registrar WHOIS Server: whois.godaddy.com

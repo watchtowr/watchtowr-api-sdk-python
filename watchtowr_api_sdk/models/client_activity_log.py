@@ -32,7 +32,7 @@ class ClientActivityLog(BaseModel):
     """ # noqa: E501
     id: StrictFloat = Field(description="ID")
     description: StrictStr = Field(description="Description")
-    type: StrictStr = Field(description="Subject")
+    type: Optional[StrictStr] = Field(description="Subject")
     properties: Optional[Dict[str, Any]] = Field(default=None, description="Log properties")
     created_at: Optional[datetime] = Field(default=None, description="Timestamp")
     caused_by: Causer
@@ -80,6 +80,11 @@ class ClientActivityLog(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of caused_by
         if self.caused_by:
             _dict['caused_by'] = self.caused_by.to_dict()
+        # set to None if type (nullable) is None
+        # and model_fields_set contains the field
+        if self.type is None and "type" in self.model_fields_set:
+            _dict['type'] = None
+
         return _dict
 
     @classmethod

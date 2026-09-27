@@ -126,6 +126,16 @@ class ServiceListing(BaseModel):
         if self.hostname is None and "hostname" in self.model_fields_set:
             _dict['hostname'] = None
 
+        # set to None if banner (nullable) is None
+        # and model_fields_set contains the field
+        if self.banner is None and "banner" in self.model_fields_set:
+            _dict['banner'] = None
+
+        # set to None if service (nullable) is None
+        # and model_fields_set contains the field
+        if self.service is None and "service" in self.model_fields_set:
+            _dict['service'] = None
+
         # set to None if last_seen (nullable) is None
         # and model_fields_set contains the field
         if self.last_seen is None and "last_seen" in self.model_fields_set:

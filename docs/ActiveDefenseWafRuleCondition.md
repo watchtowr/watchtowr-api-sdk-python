@@ -5,11 +5,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
+**type** | **str** | Condition type, where the provider uses one. | [optional] 
+**category** | **str** | Category (e.g. huawei, imperva). | [optional] 
+**contents** | **List[str]** | Match contents. | [optional] 
+**logic_operation** | **str** | Logic operation joining contents. | [optional] 
+**key** | **str** | Match key. | [optional] 
+**op_value** | **str** | Comparison operator. | [optional] 
+**values** | [**ActiveDefenseWafRuleConditionValues**](ActiveDefenseWafRuleConditionValues.md) |  | [optional] 
+**group_operator** | **str** | Operator joining a nested condition group. | [optional] 
 **positive_match** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **value** | **List[str]** |  | [optional] 
 **value_wildcard** | **bool** |  | [optional] 
+**sub_key** | **str** | Secondary match key (akamai). | [optional] 
+**index** | **str** | Condition position within its group. | [optional] 
+**conditions** | **List[Dict[str, object]]** | Nested condition group — same shape as this object, one level deeper. | [optional] 
 
 ## Example
 

@@ -162,6 +162,11 @@ class ClientFinding(BaseModel):
         if self.state is None and "state" in self.model_fields_set:
             _dict['state'] = None
 
+        # set to None if cve_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.cve_id is None and "cve_id" in self.model_fields_set:
+            _dict['cve_id'] = None
+
         # set to None if epss_score (nullable) is None
         # and model_fields_set contains the field
         if self.epss_score is None and "epss_score" in self.model_fields_set:

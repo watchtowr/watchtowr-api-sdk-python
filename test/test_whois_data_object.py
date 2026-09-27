@@ -40,7 +40,7 @@ class TestWhoisDataObject(unittest.TestCase):
                 city = 'Singapore',
                 name = 'John Doe',
                 state = 'Singapore',
-                dnssec = 'unsigned',
+                dnssec = None,
                 emails = None,
                 status = None,
                 address = 'Singapore 123456',
@@ -52,7 +52,8 @@ class TestWhoisDataObject(unittest.TestCase):
                 referral_url = '',
                 whois_server = 'whois.godaddy.com',
                 creation_date = None,
-                expiration_date = None
+                expiration_date = None,
+                message = 'This is a private ip address'
             )
         else:
             return WhoisDataObject(

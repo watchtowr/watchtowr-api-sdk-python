@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from watchtowr_api_sdk.models.active_defense_waf_rule_condition_values import ActiveDefenseWafRuleConditionValues
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,12 +29,22 @@ class ActiveDefenseWafRuleCondition(BaseModel):
     """
     ActiveDefenseWafRuleCondition
     """ # noqa: E501
-    type: StrictStr
+    type: Optional[StrictStr] = Field(default=None, description="Condition type, where the provider uses one.")
+    category: Optional[StrictStr] = Field(default=None, description="Category (e.g. huawei, imperva).")
+    contents: Optional[List[StrictStr]] = Field(default=None, description="Match contents.")
+    logic_operation: Optional[StrictStr] = Field(default=None, description="Logic operation joining contents.")
+    key: Optional[StrictStr] = Field(default=None, description="Match key.")
+    op_value: Optional[StrictStr] = Field(default=None, description="Comparison operator.", alias="opValue")
+    values: Optional[ActiveDefenseWafRuleConditionValues] = None
+    group_operator: Optional[StrictStr] = Field(default=None, description="Operator joining a nested condition group.")
     positive_match: Optional[StrictBool] = Field(default=None, alias="positiveMatch")
     name: Optional[StrictStr] = None
     value: Optional[List[StrictStr]] = None
     value_wildcard: Optional[StrictBool] = Field(default=None, alias="valueWildcard")
-    __properties: ClassVar[List[str]] = ["type", "positiveMatch", "name", "value", "valueWildcard"]
+    sub_key: Optional[StrictStr] = Field(default=None, description="Secondary match key (akamai).", alias="subKey")
+    index: Optional[StrictStr] = Field(default=None, description="Condition position within its group.")
+    conditions: Optional[List[Dict[str, Any]]] = Field(default=None, description="Nested condition group — same shape as this object, one level deeper.")
+    __properties: ClassVar[List[str]] = ["type", "category", "contents", "logic_operation", "key", "opValue", "values", "group_operator", "positiveMatch", "name", "value", "valueWildcard", "subKey", "index", "conditions"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -74,6 +85,9 @@ class ActiveDefenseWafRuleCondition(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of values
+        if self.values:
+            _dict['values'] = self.values.to_dict()
         return _dict
 
     @classmethod
@@ -92,10 +106,20 @@ class ActiveDefenseWafRuleCondition(BaseModel):
 
         _obj = cls.model_validate({
             "type": obj.get("type"),
+            "category": obj.get("category"),
+            "contents": obj.get("contents"),
+            "logic_operation": obj.get("logic_operation"),
+            "key": obj.get("key"),
+            "opValue": obj.get("opValue"),
+            "values": ActiveDefenseWafRuleConditionValues.from_dict(obj["values"]) if obj.get("values") is not None else None,
+            "group_operator": obj.get("group_operator"),
             "positiveMatch": obj.get("positiveMatch"),
             "name": obj.get("name"),
             "value": obj.get("value"),
-            "valueWildcard": obj.get("valueWildcard")
+            "valueWildcard": obj.get("valueWildcard"),
+            "subKey": obj.get("subKey"),
+            "index": obj.get("index"),
+            "conditions": obj.get("conditions")
         })
         return _obj
 

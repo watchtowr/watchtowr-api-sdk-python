@@ -37,14 +37,25 @@ class TestActiveDefenseWafRuleCondition(unittest.TestCase):
         if include_optional:
             return ActiveDefenseWafRuleCondition(
                 type = 'pathMatch',
+                category = 'sqli',
+                contents = ["/appconfigs"],
+                logic_operation = 'AND',
+                key = 'REQUEST_URI',
+                op_value = 'CONTAINS',
+                values = None,
+                group_operator = 'AND',
                 positive_match = True,
                 name = 'PATH',
                 value = ["/appconfigs"],
-                value_wildcard = False
+                value_wildcard = False,
+                sub_key = 'header',
+                index = '0',
+                conditions = [
+                    { }
+                    ]
             )
         else:
             return ActiveDefenseWafRuleCondition(
-                type = 'pathMatch',
         )
         """
 

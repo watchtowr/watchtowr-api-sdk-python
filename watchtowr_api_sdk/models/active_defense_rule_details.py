@@ -21,6 +21,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from watchtowr_api_sdk.models.active_defense_rule_finding import ActiveDefenseRuleFinding
 from watchtowr_api_sdk.models.active_defense_rule_template import ActiveDefenseRuleTemplate
 from watchtowr_api_sdk.models.active_defense_rule_vulnerability import ActiveDefenseRuleVulnerability
 from typing import Optional, Set
@@ -41,7 +42,8 @@ class ActiveDefenseRuleDetails(BaseModel):
     vulnerability: Optional[ActiveDefenseRuleVulnerability] = None
     findings_count: StrictFloat = Field(description="Count of confirmed open findings against the rule's vulnerability. Scoped to the requesting user's business units and the organization's finding impact threshold.", alias="findingsCount")
     affected_kb_entry_ids: List[StrictFloat] = Field(description="KB entry IDs covered by this rule that have confirmed open findings, scoped to the requesting user's business units.", alias="affectedKbEntryIds")
-    __properties: ClassVar[List[str]] = ["id", "name", "description", "zeroDay", "createdAt", "updatedAt", "rules", "vulnerability", "findingsCount", "affectedKbEntryIds"]
+    findings: List[ActiveDefenseRuleFinding] = Field(description="Confirmed open findings against the rule's vulnerability, scoped the same way as findingsCount. Empty when there are none.")
+    __properties: ClassVar[List[str]] = ["id", "name", "description", "zeroDay", "createdAt", "updatedAt", "rules", "vulnerability", "findingsCount", "affectedKbEntryIds", "findings"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -92,6 +94,13 @@ class ActiveDefenseRuleDetails(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of vulnerability
         if self.vulnerability:
             _dict['vulnerability'] = self.vulnerability.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in findings (list)
+        _items = []
+        if self.findings:
+            for _item_findings in self.findings:
+                if _item_findings:
+                    _items.append(_item_findings.to_dict())
+            _dict['findings'] = _items
         # set to None if vulnerability (nullable) is None
         # and model_fields_set contains the field
         if self.vulnerability is None and "vulnerability" in self.model_fields_set:
@@ -123,7 +132,8 @@ class ActiveDefenseRuleDetails(BaseModel):
             "rules": [ActiveDefenseRuleTemplate.from_dict(_item) for _item in obj["rules"]] if obj.get("rules") is not None else None,
             "vulnerability": ActiveDefenseRuleVulnerability.from_dict(obj["vulnerability"]) if obj.get("vulnerability") is not None else None,
             "findingsCount": obj.get("findingsCount"),
-            "affectedKbEntryIds": obj.get("affectedKbEntryIds")
+            "affectedKbEntryIds": obj.get("affectedKbEntryIds"),
+            "findings": [ActiveDefenseRuleFinding.from_dict(_item) for _item in obj["findings"]] if obj.get("findings") is not None else None
         })
         return _obj
 

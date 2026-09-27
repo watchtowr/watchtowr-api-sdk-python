@@ -35,7 +35,7 @@ class Hunt(BaseModel):
     updated_at: datetime = Field(description="Updated at")
     total_findings: StrictFloat = Field(description="Total findings related to this hunt")
     total_assets: StrictFloat = Field(description="Total assets related to this hunt")
-    hunt_request_type: StrictStr = Field(description="Hunt request type")
+    hunt_request_type: Optional[StrictStr] = Field(description="Hunt request type")
     rapid_exposure_mechanism: Optional[StrictStr] = Field(default=None, description="Rapid exposure mechanism")
     title: StrictStr = Field(description="Title")
     status: StrictStr = Field(description="Status")
@@ -51,6 +51,9 @@ class Hunt(BaseModel):
     @field_validator('hunt_request_type')
     def hunt_request_type_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['Misconfig', 'Others', 'SoftwareVulnerability', 'ThreatIntelligence']):
             raise ValueError("must be one of enum values ('Misconfig', 'Others', 'SoftwareVulnerability', 'ThreatIntelligence')")
         return value
@@ -111,6 +114,11 @@ class Hunt(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if hunt_request_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.hunt_request_type is None and "hunt_request_type" in self.model_fields_set:
+            _dict['hunt_request_type'] = None
+
         # set to None if rapid_exposure_mechanism (nullable) is None
         # and model_fields_set contains the field
         if self.rapid_exposure_mechanism is None and "rapid_exposure_mechanism" in self.model_fields_set:

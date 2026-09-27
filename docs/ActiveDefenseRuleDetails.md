@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **vulnerability** | [**ActiveDefenseRuleVulnerability**](ActiveDefenseRuleVulnerability.md) |  | [optional] 
 **findings_count** | **float** | Count of confirmed open findings against the rule&#39;s vulnerability. Scoped to the requesting user&#39;s business units and the organization&#39;s finding impact threshold. | 
 **affected_kb_entry_ids** | **List[float]** | KB entry IDs covered by this rule that have confirmed open findings, scoped to the requesting user&#39;s business units. | 
+**findings** | [**List[ActiveDefenseRuleFinding]**](ActiveDefenseRuleFinding.md) | Confirmed open findings against the rule&#39;s vulnerability, scoped the same way as findingsCount. Empty when there are none. | 
 
 ## Example
 

@@ -97,6 +97,11 @@ class ClientSeedDataListItem(BaseModel):
                 if _item_business_units:
                     _items.append(_item_business_units.to_dict())
             _dict['businessUnits'] = _items
+        # set to None if status_reason (nullable) is None
+        # and model_fields_set contains the field
+        if self.status_reason is None and "status_reason" in self.model_fields_set:
+            _dict['status_reason'] = None
+
         # set to None if asset (nullable) is None
         # and model_fields_set contains the field
         if self.asset is None and "asset" in self.model_fields_set:

@@ -66,11 +66,13 @@ __all__ = [
     "ApiException",
     "ActiveDefenseRule",
     "ActiveDefenseRuleDetails",
+    "ActiveDefenseRuleFinding",
     "ActiveDefenseRuleKevStatus",
     "ActiveDefenseRuleTemplate",
     "ActiveDefenseRuleVulnerability",
     "ActiveDefenseWafRule",
     "ActiveDefenseWafRuleCondition",
+    "ActiveDefenseWafRuleConditionValues",
     "AdversaryIntel",
     "AdversaryIntelDetails",
     "Asset",
@@ -78,6 +80,7 @@ __all__ = [
     "AssetAndBusinessUnitNotAssociatedConflictErrorResponse",
     "AssetBusinessUnitDto",
     "AssetBusinessUnitIdsDTO",
+    "AssetCriticalityAlreadySetConflictErrorResponse",
     "AssetId",
     "AssetsListResponse",
     "AttackSurfaceDto",
@@ -330,6 +333,7 @@ __all__ = [
     "WhoisData",
     "WhoisDataObject",
     "WhoisDataObjectCreationDate",
+    "WhoisDataObjectDnssec",
     "WhoisDataObjectEmails",
     "WhoisDataObjectExpirationDate",
     "WhoisDataObjectNameServers",
@@ -388,11 +392,13 @@ from watchtowr_api_sdk.exceptions import ApiException as ApiException
 # import models into sdk package
 from watchtowr_api_sdk.models.active_defense_rule import ActiveDefenseRule as ActiveDefenseRule
 from watchtowr_api_sdk.models.active_defense_rule_details import ActiveDefenseRuleDetails as ActiveDefenseRuleDetails
+from watchtowr_api_sdk.models.active_defense_rule_finding import ActiveDefenseRuleFinding as ActiveDefenseRuleFinding
 from watchtowr_api_sdk.models.active_defense_rule_kev_status import ActiveDefenseRuleKevStatus as ActiveDefenseRuleKevStatus
 from watchtowr_api_sdk.models.active_defense_rule_template import ActiveDefenseRuleTemplate as ActiveDefenseRuleTemplate
 from watchtowr_api_sdk.models.active_defense_rule_vulnerability import ActiveDefenseRuleVulnerability as ActiveDefenseRuleVulnerability
 from watchtowr_api_sdk.models.active_defense_waf_rule import ActiveDefenseWafRule as ActiveDefenseWafRule
 from watchtowr_api_sdk.models.active_defense_waf_rule_condition import ActiveDefenseWafRuleCondition as ActiveDefenseWafRuleCondition
+from watchtowr_api_sdk.models.active_defense_waf_rule_condition_values import ActiveDefenseWafRuleConditionValues as ActiveDefenseWafRuleConditionValues
 from watchtowr_api_sdk.models.adversary_intel import AdversaryIntel as AdversaryIntel
 from watchtowr_api_sdk.models.adversary_intel_details import AdversaryIntelDetails as AdversaryIntelDetails
 from watchtowr_api_sdk.models.asset import Asset as Asset
@@ -400,6 +406,7 @@ from watchtowr_api_sdk.models.asset_and_business_unit_already_associated_conflic
 from watchtowr_api_sdk.models.asset_and_business_unit_not_associated_conflict_error_response import AssetAndBusinessUnitNotAssociatedConflictErrorResponse as AssetAndBusinessUnitNotAssociatedConflictErrorResponse
 from watchtowr_api_sdk.models.asset_business_unit_dto import AssetBusinessUnitDto as AssetBusinessUnitDto
 from watchtowr_api_sdk.models.asset_business_unit_ids_dto import AssetBusinessUnitIdsDTO as AssetBusinessUnitIdsDTO
+from watchtowr_api_sdk.models.asset_criticality_already_set_conflict_error_response import AssetCriticalityAlreadySetConflictErrorResponse as AssetCriticalityAlreadySetConflictErrorResponse
 from watchtowr_api_sdk.models.asset_id import AssetId as AssetId
 from watchtowr_api_sdk.models.assets_list_response import AssetsListResponse as AssetsListResponse
 from watchtowr_api_sdk.models.attack_surface_dto import AttackSurfaceDto as AttackSurfaceDto
@@ -652,6 +659,7 @@ from watchtowr_api_sdk.models.whitelist_status_dto import WhitelistStatusDto as 
 from watchtowr_api_sdk.models.whois_data import WhoisData as WhoisData
 from watchtowr_api_sdk.models.whois_data_object import WhoisDataObject as WhoisDataObject
 from watchtowr_api_sdk.models.whois_data_object_creation_date import WhoisDataObjectCreationDate as WhoisDataObjectCreationDate
+from watchtowr_api_sdk.models.whois_data_object_dnssec import WhoisDataObjectDnssec as WhoisDataObjectDnssec
 from watchtowr_api_sdk.models.whois_data_object_emails import WhoisDataObjectEmails as WhoisDataObjectEmails
 from watchtowr_api_sdk.models.whois_data_object_expiration_date import WhoisDataObjectExpirationDate as WhoisDataObjectExpirationDate
 from watchtowr_api_sdk.models.whois_data_object_name_servers import WhoisDataObjectNameServers as WhoisDataObjectNameServers

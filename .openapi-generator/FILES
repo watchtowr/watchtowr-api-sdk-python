@@ -8,11 +8,13 @@ docs/APIDocumentationApi.md
 docs/ActiveDefenseLibraryApi.md
 docs/ActiveDefenseRule.md
 docs/ActiveDefenseRuleDetails.md
+docs/ActiveDefenseRuleFinding.md
 docs/ActiveDefenseRuleKevStatus.md
 docs/ActiveDefenseRuleTemplate.md
 docs/ActiveDefenseRuleVulnerability.md
 docs/ActiveDefenseWafRule.md
 docs/ActiveDefenseWafRuleCondition.md
+docs/ActiveDefenseWafRuleConditionValues.md
 docs/ActivityLogApi.md
 docs/AddAssetApi.md
 docs/AdversaryIntel.md
@@ -23,6 +25,7 @@ docs/AssetAndBusinessUnitAlreadyAssociatedConflictErrorResponse.md
 docs/AssetAndBusinessUnitNotAssociatedConflictErrorResponse.md
 docs/AssetBusinessUnitDto.md
 docs/AssetBusinessUnitIdsDTO.md
+docs/AssetCriticalityAlreadySetConflictErrorResponse.md
 docs/AssetId.md
 docs/AssetsListResponse.md
 docs/AttackSurfaceDto.md
@@ -306,6 +309,7 @@ docs/WhitelistStatusDto.md
 docs/WhoisData.md
 docs/WhoisDataObject.md
 docs/WhoisDataObjectCreationDate.md
+docs/WhoisDataObjectDnssec.md
 docs/WhoisDataObjectEmails.md
 docs/WhoisDataObjectExpirationDate.md
 docs/WhoisDataObjectNameServers.md
@@ -320,11 +324,13 @@ test/__init__.py
 test/test_active_defense_library_api.py
 test/test_active_defense_rule.py
 test/test_active_defense_rule_details.py
+test/test_active_defense_rule_finding.py
 test/test_active_defense_rule_kev_status.py
 test/test_active_defense_rule_template.py
 test/test_active_defense_rule_vulnerability.py
 test/test_active_defense_waf_rule.py
 test/test_active_defense_waf_rule_condition.py
+test/test_active_defense_waf_rule_condition_values.py
 test/test_activity_log_api.py
 test/test_add_asset_api.py
 test/test_adversary_intel.py
@@ -336,6 +342,7 @@ test/test_asset_and_business_unit_already_associated_conflict_error_response.py
 test/test_asset_and_business_unit_not_associated_conflict_error_response.py
 test/test_asset_business_unit_dto.py
 test/test_asset_business_unit_ids_dto.py
+test/test_asset_criticality_already_set_conflict_error_response.py
 test/test_asset_id.py
 test/test_assets_list_response.py
 test/test_attack_surface_dto.py
@@ -619,6 +626,7 @@ test/test_whitelist_status_dto.py
 test/test_whois_data.py
 test/test_whois_data_object.py
 test/test_whois_data_object_creation_date.py
+test/test_whois_data_object_dnssec.py
 test/test_whois_data_object_emails.py
 test/test_whois_data_object_expiration_date.py
 test/test_whois_data_object_name_servers.py
@@ -669,11 +677,13 @@ watchtowr_api_sdk/exceptions.py
 watchtowr_api_sdk/models/__init__.py
 watchtowr_api_sdk/models/active_defense_rule.py
 watchtowr_api_sdk/models/active_defense_rule_details.py
+watchtowr_api_sdk/models/active_defense_rule_finding.py
 watchtowr_api_sdk/models/active_defense_rule_kev_status.py
 watchtowr_api_sdk/models/active_defense_rule_template.py
 watchtowr_api_sdk/models/active_defense_rule_vulnerability.py
 watchtowr_api_sdk/models/active_defense_waf_rule.py
 watchtowr_api_sdk/models/active_defense_waf_rule_condition.py
+watchtowr_api_sdk/models/active_defense_waf_rule_condition_values.py
 watchtowr_api_sdk/models/adversary_intel.py
 watchtowr_api_sdk/models/adversary_intel_details.py
 watchtowr_api_sdk/models/asset.py
@@ -681,6 +691,7 @@ watchtowr_api_sdk/models/asset_and_business_unit_already_associated_conflict_err
 watchtowr_api_sdk/models/asset_and_business_unit_not_associated_conflict_error_response.py
 watchtowr_api_sdk/models/asset_business_unit_dto.py
 watchtowr_api_sdk/models/asset_business_unit_ids_dto.py
+watchtowr_api_sdk/models/asset_criticality_already_set_conflict_error_response.py
 watchtowr_api_sdk/models/asset_id.py
 watchtowr_api_sdk/models/assets_list_response.py
 watchtowr_api_sdk/models/attack_surface_dto.py
@@ -933,6 +944,7 @@ watchtowr_api_sdk/models/whitelist_status_dto.py
 watchtowr_api_sdk/models/whois_data.py
 watchtowr_api_sdk/models/whois_data_object.py
 watchtowr_api_sdk/models/whois_data_object_creation_date.py
+watchtowr_api_sdk/models/whois_data_object_dnssec.py
 watchtowr_api_sdk/models/whois_data_object_emails.py
 watchtowr_api_sdk/models/whois_data_object_expiration_date.py
 watchtowr_api_sdk/models/whois_data_object_name_servers.py
