@@ -51,6 +51,42 @@ class TestClientIpData(unittest.TestCase):
                         ], 
                     country = 'SG', 
                     live = True, 
+                    whois_data = [
+                        watchtowr_api_sdk.models.ip_whois_data.IpWhoisData(
+                            id = 1, 
+                            data = watchtowr_api_sdk.models.ip_whois_data_object.IpWhoisDataObject(
+                                asn = '63949', 
+                                asn_cidr = '45.33.0.0/19', 
+                                asn_country_code = 'US', 
+                                asn_date = '2015-03-20', 
+                                asn_description = 'AKAMAI-LINODE-AP Akamai Connected Cloud, SG', 
+                                asn_registry = 'arin', 
+                                query = '45.33.2.79', 
+                                nets = [
+                                    watchtowr_api_sdk.models.ip_whois_net.IpWhoisNet(
+                                        cidr = '45.33.0.0/17', 
+                                        name = 'LINODE-US', 
+                                        handle = 'NET-45-33-0-0-1', 
+                                        range = '45.33.0.0 - 45.33.127.255', 
+                                        description = 'Akamai Technologies, Inc.', 
+                                        country = 'US', 
+                                        state = 'MA', 
+                                        city = 'Cambridge', 
+                                        address = '145 Broadway', 
+                                        postal_code = '02142', 
+                                        emails = ["ip-admin@akamai.com","abuse@akamai.com"], 
+                                        created = '2015-03-20', 
+                                        updated = '2023-09-18', )
+                                    ], 
+                                nir = watchtowr_api_sdk.models.nir.nir(), 
+                                referral = watchtowr_api_sdk.models.referral.referral(), 
+                                raw_referral = '', 
+                                message = 'This is a private ip address', ), 
+                            raw = 'NetRange:       45.33.0.0 - 45.33.127.255
+CIDR:           45.33.0.0/17
+NetName:        LINODE-US
+            ...', )
+                        ], 
                     dns_records = null, 
                     metadata = {"tags":[{"key":"Name","value":"MyEC2Instance"},{"key":"Environment","value":"Production"}],"amiId":"ami-0abcdef1234567890","state":{"code":16,"name":"running"},"vpcId":"vpc-1a2b3c4d","keyName":"my-key-pair","subnetId":"subnet-6e7f829e","cpuOptions":{"coreCount":1,"threadsPerCore":1},"hypervisor":"xen","instanceId":"i-1234567890abcdef0","launchTime":"2024-07-10T10:20:30Z","instanceType":"t2.micro","rootDeviceName":"/dev/sda1","rootDeviceType":"ebs","securityGroups":[{"groupId":"sg-1a2b3c4d","groupName":"default"}],"publicIpAddress":"123.123.123.123","availabilityZone":"us-west-2a","privateIpAddress":"456.456.456.456","networkInterfaces":[{"vpcId":"vpc-1a2b3c4d","groups":[{"groupId":"sg-1a2b3c4d","groupName":"default"}],"ownerId":"123456789012","subnetId":"subnet-6e7f829e","attachment":{"status":"attached","attachTime":"2024-07-10T10:20:30Z","deviceIndex":0,"attachmentId":"eni-attach-1a2b3c4d","deleteOnTermination":true},"macAddress":"02:7f:42:3b:c4:57","description":"Primary network interface","privateIpAddress":"456.456.456.456","networkInterfaceId":"eni-1a2b3c4d"}],"iamInstanceProfile":{"id":"AIPAI1234567890abcdef","arn":"arn:aws:iam::123456789012:instance-profile/my-iam-role"},"virtualizationType":"hvm","blockDeviceMappings":[{"ebs":{"status":"attached","volumeId":"vol-049df61146c4d7901","attachTime":"2024-07-10T10:21:00Z","deleteOnTermination":true},"deviceName":"/dev/sda1"}]}, 
                     custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"ip","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"ip","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}], 
@@ -81,6 +117,42 @@ class TestClientIpData(unittest.TestCase):
                         ], 
                     country = 'SG', 
                     live = True, 
+                    whois_data = [
+                        watchtowr_api_sdk.models.ip_whois_data.IpWhoisData(
+                            id = 1, 
+                            data = watchtowr_api_sdk.models.ip_whois_data_object.IpWhoisDataObject(
+                                asn = '63949', 
+                                asn_cidr = '45.33.0.0/19', 
+                                asn_country_code = 'US', 
+                                asn_date = '2015-03-20', 
+                                asn_description = 'AKAMAI-LINODE-AP Akamai Connected Cloud, SG', 
+                                asn_registry = 'arin', 
+                                query = '45.33.2.79', 
+                                nets = [
+                                    watchtowr_api_sdk.models.ip_whois_net.IpWhoisNet(
+                                        cidr = '45.33.0.0/17', 
+                                        name = 'LINODE-US', 
+                                        handle = 'NET-45-33-0-0-1', 
+                                        range = '45.33.0.0 - 45.33.127.255', 
+                                        description = 'Akamai Technologies, Inc.', 
+                                        country = 'US', 
+                                        state = 'MA', 
+                                        city = 'Cambridge', 
+                                        address = '145 Broadway', 
+                                        postal_code = '02142', 
+                                        emails = ["ip-admin@akamai.com","abuse@akamai.com"], 
+                                        created = '2015-03-20', 
+                                        updated = '2023-09-18', )
+                                    ], 
+                                nir = watchtowr_api_sdk.models.nir.nir(), 
+                                referral = watchtowr_api_sdk.models.referral.referral(), 
+                                raw_referral = '', 
+                                message = 'This is a private ip address', ), 
+                            raw = 'NetRange:       45.33.0.0 - 45.33.127.255
+CIDR:           45.33.0.0/17
+NetName:        LINODE-US
+            ...', )
+                        ], 
                     dns_records = null, 
                     metadata = {"tags":[{"key":"Name","value":"MyEC2Instance"},{"key":"Environment","value":"Production"}],"amiId":"ami-0abcdef1234567890","state":{"code":16,"name":"running"},"vpcId":"vpc-1a2b3c4d","keyName":"my-key-pair","subnetId":"subnet-6e7f829e","cpuOptions":{"coreCount":1,"threadsPerCore":1},"hypervisor":"xen","instanceId":"i-1234567890abcdef0","launchTime":"2024-07-10T10:20:30Z","instanceType":"t2.micro","rootDeviceName":"/dev/sda1","rootDeviceType":"ebs","securityGroups":[{"groupId":"sg-1a2b3c4d","groupName":"default"}],"publicIpAddress":"123.123.123.123","availabilityZone":"us-west-2a","privateIpAddress":"456.456.456.456","networkInterfaces":[{"vpcId":"vpc-1a2b3c4d","groups":[{"groupId":"sg-1a2b3c4d","groupName":"default"}],"ownerId":"123456789012","subnetId":"subnet-6e7f829e","attachment":{"status":"attached","attachTime":"2024-07-10T10:20:30Z","deviceIndex":0,"attachmentId":"eni-attach-1a2b3c4d","deleteOnTermination":true},"macAddress":"02:7f:42:3b:c4:57","description":"Primary network interface","privateIpAddress":"456.456.456.456","networkInterfaceId":"eni-1a2b3c4d"}],"iamInstanceProfile":{"id":"AIPAI1234567890abcdef","arn":"arn:aws:iam::123456789012:instance-profile/my-iam-role"},"virtualizationType":"hvm","blockDeviceMappings":[{"ebs":{"status":"attached","volumeId":"vol-049df61146c4d7901","attachTime":"2024-07-10T10:21:00Z","deleteOnTermination":true},"deviceName":"/dev/sda1"}]}, 
                     custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"ip","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"ip","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}], 

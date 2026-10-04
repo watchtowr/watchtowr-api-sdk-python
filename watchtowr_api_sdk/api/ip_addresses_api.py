@@ -3967,6 +3967,7 @@ class IPAddressesApi:
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
         custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         include_dns_records: Annotated[Optional[StrictBool], Field(description="When `true`, include up to 5 owned (PTR) and 5 pointing-at (A) DNS records per IP inline in the `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/ip/show/{id}/dns-records` for the full paginated set.")] = None,
+        include_whois_data: Annotated[Optional[StrictBool], Field(description="When `true`, include each IP's WHOIS records inline in the `whoisData` field. Defaults to `false` to keep list responses fast; `GET /assets/ip/show/{id}` always includes them.")] = None,
         match_type: Annotated[Optional[StrictStr], Field(description="Match assetName searches based on exact names or partial names with contains. Valid match types are:       * contains       * exact ")] = None,
         _request_timeout: Union[
             None,
@@ -4009,6 +4010,8 @@ class IPAddressesApi:
         :type custom_property_value: str
         :param include_dns_records: When `true`, include up to 5 owned (PTR) and 5 pointing-at (A) DNS records per IP inline in the `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/ip/show/{id}/dns-records` for the full paginated set.
         :type include_dns_records: bool
+        :param include_whois_data: When `true`, include each IP's WHOIS records inline in the `whoisData` field. Defaults to `false` to keep list responses fast; `GET /assets/ip/show/{id}` always includes them.
+        :type include_whois_data: bool
         :param match_type: Match assetName searches based on exact names or partial names with contains. Valid match types are:       * contains       * exact 
         :type match_type: str
         :param _request_timeout: timeout setting for this request. If one
@@ -4046,6 +4049,7 @@ class IPAddressesApi:
             custom_property_key=custom_property_key,
             custom_property_value=custom_property_value,
             include_dns_records=include_dns_records,
+            include_whois_data=include_whois_data,
             match_type=match_type,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4083,6 +4087,7 @@ class IPAddressesApi:
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
         custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         include_dns_records: Annotated[Optional[StrictBool], Field(description="When `true`, include up to 5 owned (PTR) and 5 pointing-at (A) DNS records per IP inline in the `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/ip/show/{id}/dns-records` for the full paginated set.")] = None,
+        include_whois_data: Annotated[Optional[StrictBool], Field(description="When `true`, include each IP's WHOIS records inline in the `whoisData` field. Defaults to `false` to keep list responses fast; `GET /assets/ip/show/{id}` always includes them.")] = None,
         match_type: Annotated[Optional[StrictStr], Field(description="Match assetName searches based on exact names or partial names with contains. Valid match types are:       * contains       * exact ")] = None,
         _request_timeout: Union[
             None,
@@ -4125,6 +4130,8 @@ class IPAddressesApi:
         :type custom_property_value: str
         :param include_dns_records: When `true`, include up to 5 owned (PTR) and 5 pointing-at (A) DNS records per IP inline in the `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/ip/show/{id}/dns-records` for the full paginated set.
         :type include_dns_records: bool
+        :param include_whois_data: When `true`, include each IP's WHOIS records inline in the `whoisData` field. Defaults to `false` to keep list responses fast; `GET /assets/ip/show/{id}` always includes them.
+        :type include_whois_data: bool
         :param match_type: Match assetName searches based on exact names or partial names with contains. Valid match types are:       * contains       * exact 
         :type match_type: str
         :param _request_timeout: timeout setting for this request. If one
@@ -4162,6 +4169,7 @@ class IPAddressesApi:
             custom_property_key=custom_property_key,
             custom_property_value=custom_property_value,
             include_dns_records=include_dns_records,
+            include_whois_data=include_whois_data,
             match_type=match_type,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4199,6 +4207,7 @@ class IPAddressesApi:
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
         custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         include_dns_records: Annotated[Optional[StrictBool], Field(description="When `true`, include up to 5 owned (PTR) and 5 pointing-at (A) DNS records per IP inline in the `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/ip/show/{id}/dns-records` for the full paginated set.")] = None,
+        include_whois_data: Annotated[Optional[StrictBool], Field(description="When `true`, include each IP's WHOIS records inline in the `whoisData` field. Defaults to `false` to keep list responses fast; `GET /assets/ip/show/{id}` always includes them.")] = None,
         match_type: Annotated[Optional[StrictStr], Field(description="Match assetName searches based on exact names or partial names with contains. Valid match types are:       * contains       * exact ")] = None,
         _request_timeout: Union[
             None,
@@ -4241,6 +4250,8 @@ class IPAddressesApi:
         :type custom_property_value: str
         :param include_dns_records: When `true`, include up to 5 owned (PTR) and 5 pointing-at (A) DNS records per IP inline in the `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/ip/show/{id}/dns-records` for the full paginated set.
         :type include_dns_records: bool
+        :param include_whois_data: When `true`, include each IP's WHOIS records inline in the `whoisData` field. Defaults to `false` to keep list responses fast; `GET /assets/ip/show/{id}` always includes them.
+        :type include_whois_data: bool
         :param match_type: Match assetName searches based on exact names or partial names with contains. Valid match types are:       * contains       * exact 
         :type match_type: str
         :param _request_timeout: timeout setting for this request. If one
@@ -4278,6 +4289,7 @@ class IPAddressesApi:
             custom_property_key=custom_property_key,
             custom_property_value=custom_property_value,
             include_dns_records=include_dns_records,
+            include_whois_data=include_whois_data,
             match_type=match_type,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4310,6 +4322,7 @@ class IPAddressesApi:
         custom_property_key,
         custom_property_value,
         include_dns_records,
+        include_whois_data,
         match_type,
         _request_auth,
         _content_type,
@@ -4399,6 +4412,10 @@ class IPAddressesApi:
         if include_dns_records is not None:
             
             _query_params.append(('includeDnsRecords', include_dns_records))
+            
+        if include_whois_data is not None:
+            
+            _query_params.append(('includeWhoisData', include_whois_data))
             
         if match_type is not None:
             

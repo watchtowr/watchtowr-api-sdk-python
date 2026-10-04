@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **business_units** | [**List[ClientBusinessUnit]**](ClientBusinessUnit.md) |  | 
 **country** | **str** |  | 
 **live** | **bool** |  | 
+**whois_data** | [**List[IpWhoisData]**](IpWhoisData.md) | WHOIS records of the IP, newest first. For an IP inside an IP range, these are always the range&#39;s records, even when the IP has records of its own. The IP&#39;s WHOIS tab in the platform shows the IP&#39;s own records first, so for such an IP the two can differ. In list responses, included only when &#x60;includeWhoisData&#x3D;true&#x60;. Always included on &#x60;GET /assets/ip/show/{id}&#x60;. Not included in finding &#x60;affected&#x60; objects. | [optional] 
 **dns_records** | [**ClientIpDetailDnsRecords**](ClientIpDetailDnsRecords.md) | DNS records for the IP (owned PTR + pointing-at A records). In list responses, included only when &#x60;includeDnsRecords&#x3D;true&#x60; (capped at 5 each per IP). Always populated on the detail endpoints (&#x60;GET /assets/ip/show/{id}&#x60; and &#x60;GET /assets/ip/show/{id}/dns-records&#x60;). Not included in finding &#x60;affected&#x60; objects. | [optional] 
 **metadata** | **object** | Cloud/IaaS integration metadata where available; defaults to an empty object. | 
 **custom_properties** | [**List[ClientCustomProperty]**](ClientCustomProperty.md) |  | 

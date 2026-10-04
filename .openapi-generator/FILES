@@ -187,6 +187,9 @@ docs/InviteClientUsersBodyDto.md
 docs/InviteUserResponse.md
 docs/InviteUserResponseData.md
 docs/IpRangeValues.md
+docs/IpWhoisData.md
+docs/IpWhoisDataObject.md
+docs/IpWhoisNet.md
 docs/KbEntryCwe.md
 docs/KevTypes.md
 docs/KillSwitchApi.md
@@ -504,6 +507,9 @@ test/test_invite_user_response_data.py
 test/test_ip_addresses_api.py
 test/test_ip_range_values.py
 test/test_ip_ranges_api.py
+test/test_ip_whois_data.py
+test/test_ip_whois_data_object.py
+test/test_ip_whois_net.py
 test/test_kb_entry_cwe.py
 test/test_kev_types.py
 test/test_kill_switch_api.py
@@ -838,6 +844,9 @@ watchtowr_api_sdk/models/invite_client_users_body_dto.py
 watchtowr_api_sdk/models/invite_user_response.py
 watchtowr_api_sdk/models/invite_user_response_data.py
 watchtowr_api_sdk/models/ip_range_values.py
+watchtowr_api_sdk/models/ip_whois_data.py
+watchtowr_api_sdk/models/ip_whois_data_object.py
+watchtowr_api_sdk/models/ip_whois_net.py
 watchtowr_api_sdk/models/kb_entry_cwe.py
 watchtowr_api_sdk/models/kev_types.py
 watchtowr_api_sdk/models/kill_switch_disabled_error.py

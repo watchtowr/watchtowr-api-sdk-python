@@ -1122,7 +1122,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_list_asset_ips**
-> PaginatedClientIp get_list_asset_ips(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, custom_property_key=custom_property_key, custom_property_value=custom_property_value, include_dns_records=include_dns_records, match_type=match_type)
+> PaginatedClientIp get_list_asset_ips(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, custom_property_key=custom_property_key, custom_property_value=custom_property_value, include_dns_records=include_dns_records, include_whois_data=include_whois_data, match_type=match_type)
 
 List IP Addresses
 
@@ -1170,11 +1170,12 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     custom_property_key = 'environment' # str | Filter assets by custom property key. (optional)
     custom_property_value = 'production' # str | Filter assets by custom property value. Must be used together with customPropertyKey. (optional)
     include_dns_records = true # bool | When `true`, include up to 5 owned (PTR) and 5 pointing-at (A) DNS records per IP inline in the `dns_records` field. Defaults to `false` to keep list responses fast; use `GET /assets/ip/show/{id}/dns-records` for the full paginated set. (optional)
+    include_whois_data = true # bool | When `true`, include each IP's WHOIS records inline in the `whoisData` field. Defaults to `false` to keep list responses fast; `GET /assets/ip/show/{id}` always includes them. (optional)
     match_type = contains # str | Match assetName searches based on exact names or partial names with contains. Valid match types are:       * contains       * exact  (optional) (default to contains)
 
     try:
         # List IP Addresses
-        api_response = api_instance.get_list_asset_ips(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, custom_property_key=custom_property_key, custom_property_value=custom_property_value, include_dns_records=include_dns_records, match_type=match_type)
+        api_response = api_instance.get_list_asset_ips(page=page, page_size=page_size, asset_name=asset_name, statuses=statuses, source=source, integration_connections=integration_connections, business_unit_ids=business_unit_ids, created_from=created_from, created_to=created_to, custom_property_key=custom_property_key, custom_property_value=custom_property_value, include_dns_records=include_dns_records, include_whois_data=include_whois_data, match_type=match_type)
         print("The response of IPAddressesApi->get_list_asset_ips:\n")
         pprint(api_response)
     except Exception as e:
@@ -1200,6 +1201,7 @@ Name | Type | Description  | Notes
  **custom_property_key** | **str**| Filter assets by custom property key. | [optional] 
  **custom_property_value** | **str**| Filter assets by custom property value. Must be used together with customPropertyKey. | [optional] 
  **include_dns_records** | **bool**| When &#x60;true&#x60;, include up to 5 owned (PTR) and 5 pointing-at (A) DNS records per IP inline in the &#x60;dns_records&#x60; field. Defaults to &#x60;false&#x60; to keep list responses fast; use &#x60;GET /assets/ip/show/{id}/dns-records&#x60; for the full paginated set. | [optional] 
+ **include_whois_data** | **bool**| When &#x60;true&#x60;, include each IP&#39;s WHOIS records inline in the &#x60;whoisData&#x60; field. Defaults to &#x60;false&#x60; to keep list responses fast; &#x60;GET /assets/ip/show/{id}&#x60; always includes them. | [optional] 
  **match_type** | **str**| Match assetName searches based on exact names or partial names with contains. Valid match types are:       * contains       * exact  | [optional] [default to contains]
 
 ### Return type

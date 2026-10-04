@@ -714,6 +714,7 @@ class FindingsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "ClientNoteData",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -788,6 +789,7 @@ class FindingsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "ClientNoteData",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -862,6 +864,7 @@ class FindingsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "ClientNoteData",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -4194,6 +4197,7 @@ class FindingsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientNoteData",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -4272,6 +4276,7 @@ class FindingsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientNoteData",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",
@@ -4350,6 +4355,7 @@ class FindingsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ClientNoteData",
+            '400': None,
             '401': "Unauthorized",
             '403': "ForbiddenResponse",
             '404': "NotFound",

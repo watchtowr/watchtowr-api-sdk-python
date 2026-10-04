@@ -227,6 +227,9 @@ __all__ = [
     "InviteUserResponse",
     "InviteUserResponseData",
     "IpRangeValues",
+    "IpWhoisData",
+    "IpWhoisDataObject",
+    "IpWhoisNet",
     "KbEntryCwe",
     "KevTypes",
     "KillSwitchDisabledError",
@@ -553,6 +556,9 @@ from watchtowr_api_sdk.models.invite_client_users_body_dto import InviteClientUs
 from watchtowr_api_sdk.models.invite_user_response import InviteUserResponse as InviteUserResponse
 from watchtowr_api_sdk.models.invite_user_response_data import InviteUserResponseData as InviteUserResponseData
 from watchtowr_api_sdk.models.ip_range_values import IpRangeValues as IpRangeValues
+from watchtowr_api_sdk.models.ip_whois_data import IpWhoisData as IpWhoisData
+from watchtowr_api_sdk.models.ip_whois_data_object import IpWhoisDataObject as IpWhoisDataObject
+from watchtowr_api_sdk.models.ip_whois_net import IpWhoisNet as IpWhoisNet
 from watchtowr_api_sdk.models.kb_entry_cwe import KbEntryCwe as KbEntryCwe
 from watchtowr_api_sdk.models.kev_types import KevTypes as KevTypes
 from watchtowr_api_sdk.models.kill_switch_disabled_error import KillSwitchDisabledError as KillSwitchDisabledError

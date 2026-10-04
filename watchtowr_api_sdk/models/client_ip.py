@@ -26,6 +26,7 @@ from watchtowr_api_sdk.models.client_custom_property import ClientCustomProperty
 from watchtowr_api_sdk.models.client_engine_settings import ClientEngineSettings
 from watchtowr_api_sdk.models.client_ip_detail_dns_records import ClientIpDetailDnsRecords
 from watchtowr_api_sdk.models.infrastructure import Infrastructure
+from watchtowr_api_sdk.models.ip_whois_data import IpWhoisData
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -44,13 +45,14 @@ class ClientIp(BaseModel):
     business_units: List[ClientBusinessUnit] = Field(alias="businessUnits")
     country: StrictStr
     live: StrictBool
+    whois_data: Optional[List[IpWhoisData]] = Field(default=None, description="WHOIS records of the IP, newest first. For an IP inside an IP range, these are always the range's records, even when the IP has records of its own. The IP's WHOIS tab in the platform shows the IP's own records first, so for such an IP the two can differ. In list responses, included only when `includeWhoisData=true`. Always included on `GET /assets/ip/show/{id}`. Not included in finding `affected` objects.", alias="whoisData")
     dns_records: Optional[ClientIpDetailDnsRecords] = Field(default=None, description="DNS records for the IP (owned PTR + pointing-at A records). In list responses, included only when `includeDnsRecords=true` (capped at 5 each per IP). Always populated on the detail endpoints (`GET /assets/ip/show/{id}` and `GET /assets/ip/show/{id}/dns-records`). Not included in finding `affected` objects.")
     metadata: Dict[str, Any] = Field(description="Cloud/IaaS integration metadata where available; defaults to an empty object.")
     custom_properties: List[ClientCustomProperty] = Field(alias="customProperties")
     criticality: Optional[StrictStr] = None
     infrastructure: Optional[Infrastructure] = None
     engine_settings: ClientEngineSettings = Field(alias="engineSettings")
-    __properties: ClassVar[List[str]] = ["discovery_reason", "type", "source", "status", "created_at", "id", "name", "businessUnits", "country", "live", "dns_records", "metadata", "customProperties", "criticality", "infrastructure", "engineSettings"]
+    __properties: ClassVar[List[str]] = ["discovery_reason", "type", "source", "status", "created_at", "id", "name", "businessUnits", "country", "live", "whoisData", "dns_records", "metadata", "customProperties", "criticality", "infrastructure", "engineSettings"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -98,6 +100,13 @@ class ClientIp(BaseModel):
                 if _item_business_units:
                     _items.append(_item_business_units.to_dict())
             _dict['businessUnits'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in whois_data (list)
+        _items = []
+        if self.whois_data:
+            for _item_whois_data in self.whois_data:
+                if _item_whois_data:
+                    _items.append(_item_whois_data.to_dict())
+            _dict['whoisData'] = _items
         # override the default output from pydantic by calling `to_dict()` of dns_records
         if self.dns_records:
             _dict['dns_records'] = self.dns_records.to_dict()
@@ -123,6 +132,11 @@ class ClientIp(BaseModel):
         # and model_fields_set contains the field
         if self.status is None and "status" in self.model_fields_set:
             _dict['status'] = None
+
+        # set to None if whois_data (nullable) is None
+        # and model_fields_set contains the field
+        if self.whois_data is None and "whois_data" in self.model_fields_set:
+            _dict['whoisData'] = None
 
         # set to None if dns_records (nullable) is None
         # and model_fields_set contains the field
@@ -161,6 +175,7 @@ class ClientIp(BaseModel):
             "businessUnits": [ClientBusinessUnit.from_dict(_item) for _item in obj["businessUnits"]] if obj.get("businessUnits") is not None else None,
             "country": obj.get("country"),
             "live": obj.get("live"),
+            "whoisData": [IpWhoisData.from_dict(_item) for _item in obj["whoisData"]] if obj.get("whoisData") is not None else None,
             "dns_records": ClientIpDetailDnsRecords.from_dict(obj["dns_records"]) if obj.get("dns_records") is not None else None,
             "metadata": obj.get("metadata"),
             "customProperties": [ClientCustomProperty.from_dict(_item) for _item in obj["customProperties"]] if obj.get("customProperties") is not None else None,
