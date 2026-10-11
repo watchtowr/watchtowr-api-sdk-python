@@ -46,7 +46,7 @@ class AddAssetApi:
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 20. The maximum for pageSize is 100.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter by a list of comma separated business unit IDs that the seed data is related to.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter by a list of comma separated business unit IDs that the seed data is related to. Each ID must be a positive integer.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -68,7 +68,7 @@ class AddAssetApi:
         :type page: float
         :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 20. The maximum for pageSize is 100.
         :type page_size: float
-        :param business_unit_ids: Filter by a list of comma separated business unit IDs that the seed data is related to.
+        :param business_unit_ids: Filter by a list of comma separated business unit IDs that the seed data is related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -122,7 +122,7 @@ class AddAssetApi:
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 20. The maximum for pageSize is 100.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter by a list of comma separated business unit IDs that the seed data is related to.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter by a list of comma separated business unit IDs that the seed data is related to. Each ID must be a positive integer.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -144,7 +144,7 @@ class AddAssetApi:
         :type page: float
         :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 20. The maximum for pageSize is 100.
         :type page_size: float
-        :param business_unit_ids: Filter by a list of comma separated business unit IDs that the seed data is related to.
+        :param business_unit_ids: Filter by a list of comma separated business unit IDs that the seed data is related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -198,7 +198,7 @@ class AddAssetApi:
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 20. The maximum for pageSize is 100.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter by a list of comma separated business unit IDs that the seed data is related to.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter by a list of comma separated business unit IDs that the seed data is related to. Each ID must be a positive integer.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -220,7 +220,7 @@ class AddAssetApi:
         :type page: float
         :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 20. The maximum for pageSize is 100.
         :type page_size: float
-        :param business_unit_ids: Filter by a list of comma separated business unit IDs that the seed data is related to.
+        :param business_unit_ids: Filter by a list of comma separated business unit IDs that the seed data is related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

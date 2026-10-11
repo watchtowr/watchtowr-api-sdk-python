@@ -254,6 +254,7 @@ docs/RemoveClientCustomPropertyResponseDto.md
 docs/RepositoriesApi.md
 docs/RequiredActionsDto.md
 docs/Retest.md
+docs/RetestRequesterType.md
 docs/SaaSPlatformsApi.md
 docs/SecurityPostureDashboardApi.md
 docs/SecurityPostureDashboardDto.md
@@ -574,6 +575,7 @@ test/test_remove_client_custom_property_response_dto.py
 test/test_repositories_api.py
 test/test_required_actions_dto.py
 test/test_retest.py
+test/test_retest_requester_type.py
 test/test_saa_s_platforms_api.py
 test/test_security_posture_dashboard_api.py
 test/test_security_posture_dashboard_dto.py
@@ -903,6 +905,7 @@ watchtowr_api_sdk/models/points_of_interest_data.py
 watchtowr_api_sdk/models/remove_client_custom_property_response_dto.py
 watchtowr_api_sdk/models/required_actions_dto.py
 watchtowr_api_sdk/models/retest.py
+watchtowr_api_sdk/models/retest_requester_type.py
 watchtowr_api_sdk/models/security_posture_dashboard_dto.py
 watchtowr_api_sdk/models/security_posture_dashboard_response.py
 watchtowr_api_sdk/models/service_information_asset.py

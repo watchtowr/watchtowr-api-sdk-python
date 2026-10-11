@@ -38,6 +38,7 @@ class TestClientFinding(unittest.TestCase):
             return ClientFinding(
                 id = 1,
                 title = 'Valid Credentials Discovered In Business System',
+                platform_url = 'https://tenant.client.watchtowr.io/findings/1',
                 description = 'Through watchTowr's Credential Stuffing capabilities, a valid set of credentials have been identified to work to authenticate to a legitimately exposed business system. 
 
 These credentials have been confirmed as valid against the identified system, and are publicly available.',
@@ -73,7 +74,7 @@ As a long-term measure to ensure that the security impact of breach credentials 
                 state = 'Uninvestigated',
                 created_at = '2022-02-13T02:10Z',
                 affected = watchtowr_api_sdk.models.client_finding_affected.ClientFindingAffected(
-                    data = {"type":"subdomain","source":"module-adversarysight-tls-ssl-certificate-transparency-discovery","status":"verified","created_at":"2023-07-24T03:03:58.000Z","id":"557","discovery_reason":null,"name":"example.com","businessUnits":[],"metadata":{},"live":false,"customProperties":[],"criticality":null,"engineSettings":{"adversarySightEnabled":true,"dnsBruteforcingEnabled":true,"automatedRedTeamingEnabled":true,"intrusiveHttpChecksEnabled":true,"credentialStuffingEnabled":true,"rapidReactionEnabled":true}}, ),
+                    data = {"type":"subdomain","source":"module-adversarysight-tls-ssl-certificate-transparency-discovery","status":"verified","created_at":"2023-07-24T03:03:58.000Z","id":"557","discovery_reason":null,"platform_url":"https://tenant.client.watchtowr.io/assets/subdomain/557","name":"example.com","businessUnits":[],"metadata":{},"live":false,"customProperties":[],"criticality":null,"engineSettings":{"adversarySightEnabled":true,"dnsBruteforcingEnabled":true,"automatedRedTeamingEnabled":true,"intrusiveHttpChecksEnabled":true,"credentialStuffingEnabled":true,"rapidReactionEnabled":true}}, ),
                 cve_id = 'CVE-2023-38180',
                 epss_score = 0.97521,
                 retest = watchtowr_api_sdk.models.retest.Retest(
@@ -81,7 +82,7 @@ As a long-term measure to ensure that the security impact of breach credentials 
                     current_retest = null, ),
                 retest_history = [
                     watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
-                        requested_by = 'Requested by user', 
+                        requested_by = 'Jane Doe', 
                         requested_at = '2024-01-29T08:05:09Z', 
                         retest_status = 'success', 
                         status_occurred_at = '2024-01-29T08:05:09Z', 
@@ -101,6 +102,7 @@ As a long-term measure to ensure that the security impact of breach credentials 
             return ClientFinding(
                 id = 1,
                 title = 'Valid Credentials Discovered In Business System',
+                platform_url = 'https://tenant.client.watchtowr.io/findings/1',
                 description = 'Through watchTowr's Credential Stuffing capabilities, a valid set of credentials have been identified to work to authenticate to a legitimately exposed business system. 
 
 These credentials have been confirmed as valid against the identified system, and are publicly available.',
@@ -135,7 +137,7 @@ As a long-term measure to ensure that the security impact of breach credentials 
                 status = 'confirmed',
                 created_at = '2022-02-13T02:10Z',
                 affected = watchtowr_api_sdk.models.client_finding_affected.ClientFindingAffected(
-                    data = {"type":"subdomain","source":"module-adversarysight-tls-ssl-certificate-transparency-discovery","status":"verified","created_at":"2023-07-24T03:03:58.000Z","id":"557","discovery_reason":null,"name":"example.com","businessUnits":[],"metadata":{},"live":false,"customProperties":[],"criticality":null,"engineSettings":{"adversarySightEnabled":true,"dnsBruteforcingEnabled":true,"automatedRedTeamingEnabled":true,"intrusiveHttpChecksEnabled":true,"credentialStuffingEnabled":true,"rapidReactionEnabled":true}}, ),
+                    data = {"type":"subdomain","source":"module-adversarysight-tls-ssl-certificate-transparency-discovery","status":"verified","created_at":"2023-07-24T03:03:58.000Z","id":"557","discovery_reason":null,"platform_url":"https://tenant.client.watchtowr.io/assets/subdomain/557","name":"example.com","businessUnits":[],"metadata":{},"live":false,"customProperties":[],"criticality":null,"engineSettings":{"adversarySightEnabled":true,"dnsBruteforcingEnabled":true,"automatedRedTeamingEnabled":true,"intrusiveHttpChecksEnabled":true,"credentialStuffingEnabled":true,"rapidReactionEnabled":true}}, ),
                 last_status_updated_at = '2022-02-13T02:10Z',
                 custom_properties = [{"id":10,"key":"Severity","value":"normal","isPreset":false,"modelType":"finding","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"},{"id":11,"key":"Vulnerability","value":"low risk","isPreset":false,"modelType":"finding","modelId":209,"created_at":"2024-09-24T02:37:27.000Z","updated_at":"2024-09-24T02:38:35.000Z"}],
                 detection_rules = [{"type":"sigma","id":155,"tags":["attack.initial-access","attack.t1190","cve.2021-44228","detection.emerging-threats"],"title":"Potential CVE-2021-44228 Exploitation Attempt - VMware Horizon","url":"https://github.com/SigmaHQ/sigma/blob/master/rules-emerging-threats/2021/Exploits/CVE-2021-44228/proc_creation_win_exploit_cve_2021_44228_vmware_horizon_log4j.yml"}],

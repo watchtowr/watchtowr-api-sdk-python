@@ -47,7 +47,7 @@ class HuntsApi:
     def get_client_hunts(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter hunts by a comma separated list of hunt statuses. Values are case-sensitive — pass the canonical lowercase form (e.g. `received,in-progress`).")] = None,
         hunt_search: Annotated[Optional[StrictStr], Field(description="Search for hunts by text in hunt name.")] = None,
         types: Annotated[Optional[List[StrictStr]], Field(description="Filter hunts by a comma separated list of hunt types. Values are case-sensitive — pass the canonical lowercase form (e.g. `bespoke,proactive`).")] = None,
@@ -77,7 +77,7 @@ class HuntsApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param statuses: Filter hunts by a comma separated list of hunt statuses. Values are case-sensitive — pass the canonical lowercase form (e.g. `received,in-progress`).
         :type statuses: List[str]
@@ -159,7 +159,7 @@ class HuntsApi:
     def get_client_hunts_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter hunts by a comma separated list of hunt statuses. Values are case-sensitive — pass the canonical lowercase form (e.g. `received,in-progress`).")] = None,
         hunt_search: Annotated[Optional[StrictStr], Field(description="Search for hunts by text in hunt name.")] = None,
         types: Annotated[Optional[List[StrictStr]], Field(description="Filter hunts by a comma separated list of hunt types. Values are case-sensitive — pass the canonical lowercase form (e.g. `bespoke,proactive`).")] = None,
@@ -189,7 +189,7 @@ class HuntsApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param statuses: Filter hunts by a comma separated list of hunt statuses. Values are case-sensitive — pass the canonical lowercase form (e.g. `received,in-progress`).
         :type statuses: List[str]
@@ -271,7 +271,7 @@ class HuntsApi:
     def get_client_hunts_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter hunts by a comma separated list of hunt statuses. Values are case-sensitive — pass the canonical lowercase form (e.g. `received,in-progress`).")] = None,
         hunt_search: Annotated[Optional[StrictStr], Field(description="Search for hunts by text in hunt name.")] = None,
         types: Annotated[Optional[List[StrictStr]], Field(description="Filter hunts by a comma separated list of hunt types. Values are case-sensitive — pass the canonical lowercase form (e.g. `bespoke,proactive`).")] = None,
@@ -301,7 +301,7 @@ class HuntsApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param statuses: Filter hunts by a comma separated list of hunt statuses. Values are case-sensitive — pass the canonical lowercase form (e.g. `received,in-progress`).
         :type statuses: List[str]
@@ -539,7 +539,7 @@ class HuntsApi:
         self,
         id: Annotated[StrictFloat, Field(description="Hunt ID of the hunt to retrieve assets from.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -561,7 +561,7 @@ class HuntsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -615,7 +615,7 @@ class HuntsApi:
         self,
         id: Annotated[StrictFloat, Field(description="Hunt ID of the hunt to retrieve assets from.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -637,7 +637,7 @@ class HuntsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -691,7 +691,7 @@ class HuntsApi:
         self,
         id: Annotated[StrictFloat, Field(description="Hunt ID of the hunt to retrieve assets from.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -713,7 +713,7 @@ class HuntsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -837,7 +837,7 @@ class HuntsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The ID of the hunt to retrieve findings from.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -859,7 +859,7 @@ class HuntsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -913,7 +913,7 @@ class HuntsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The ID of the hunt to retrieve findings from.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -935,7 +935,7 @@ class HuntsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -989,7 +989,7 @@ class HuntsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The ID of the hunt to retrieve findings from.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1011,7 +1011,7 @@ class HuntsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

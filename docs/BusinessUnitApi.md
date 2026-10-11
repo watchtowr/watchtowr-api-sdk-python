@@ -467,7 +467,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.BusinessUnitApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
-    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
+    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. (optional)
     created_from = '2022-02-22T22:00Z' # datetime | Filter business units created after a given date and time. (optional)
     created_to = '2022-02-23T22:00Z' # datetime | Filter business units created before a given date and time. (optional)
     updated_from = '2022-02-22T22:00Z' # datetime | Filter business units updated after a given date and time. (optional)
@@ -491,7 +491,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
- **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
+ **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. | [optional] 
  **created_from** | **datetime**| Filter business units created after a given date and time. | [optional] 
  **created_to** | **datetime**| Filter business units created before a given date and time. | [optional] 
  **updated_from** | **datetime**| Filter business units updated after a given date and time. | [optional] 

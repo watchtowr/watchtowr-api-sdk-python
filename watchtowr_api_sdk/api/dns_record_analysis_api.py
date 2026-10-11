@@ -45,7 +45,7 @@ class DNSRecordAnalysisApi:
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 20. The maximum for pageSize is 100.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort by field")] = None,
         sort_order: Annotated[Optional[StrictStr], Field(description="Sort order")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Filter by asset name")] = None,
@@ -75,7 +75,7 @@ class DNSRecordAnalysisApi:
         :type page: float
         :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 20. The maximum for pageSize is 100.
         :type page_size: float
-        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
+        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param sort_by: Sort by field
         :type sort_by: str
@@ -153,7 +153,7 @@ class DNSRecordAnalysisApi:
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 20. The maximum for pageSize is 100.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort by field")] = None,
         sort_order: Annotated[Optional[StrictStr], Field(description="Sort order")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Filter by asset name")] = None,
@@ -183,7 +183,7 @@ class DNSRecordAnalysisApi:
         :type page: float
         :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 20. The maximum for pageSize is 100.
         :type page_size: float
-        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
+        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param sort_by: Sort by field
         :type sort_by: str
@@ -261,7 +261,7 @@ class DNSRecordAnalysisApi:
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
         page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 20. The maximum for pageSize is 100.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort by field")] = None,
         sort_order: Annotated[Optional[StrictStr], Field(description="Sort order")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Filter by asset name")] = None,
@@ -291,7 +291,7 @@ class DNSRecordAnalysisApi:
         :type page: float
         :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 20. The maximum for pageSize is 100.
         :type page_size: float
-        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
+        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param sort_by: Sort by field
         :type sort_by: str

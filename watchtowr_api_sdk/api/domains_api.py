@@ -1527,7 +1527,7 @@ class DomainsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of the Domain to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1549,7 +1549,7 @@ class DomainsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1606,7 +1606,7 @@ class DomainsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of the Domain to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1628,7 +1628,7 @@ class DomainsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1685,7 +1685,7 @@ class DomainsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of the Domain to retrieve changelog for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1707,7 +1707,7 @@ class DomainsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2107,7 +2107,7 @@ class DomainsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of the Domain to list DNS records of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2129,7 +2129,7 @@ class DomainsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2184,7 +2184,7 @@ class DomainsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of the Domain to list DNS records of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2206,7 +2206,7 @@ class DomainsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2261,7 +2261,7 @@ class DomainsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of the Domain to list DNS records of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2283,7 +2283,7 @@ class DomainsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2678,7 +2678,7 @@ class DomainsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of the Domain to list notes of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2700,7 +2700,7 @@ class DomainsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2755,7 +2755,7 @@ class DomainsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of the Domain to list notes of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2777,7 +2777,7 @@ class DomainsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2832,7 +2832,7 @@ class DomainsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of the Domain to list notes of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2854,7 +2854,7 @@ class DomainsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2979,7 +2979,7 @@ class DomainsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of the Domain to list custom properties of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3001,7 +3001,7 @@ class DomainsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3057,7 +3057,7 @@ class DomainsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of the Domain to list custom properties of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3079,7 +3079,7 @@ class DomainsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3135,7 +3135,7 @@ class DomainsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The asset ID of the Domain to list custom properties of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3157,7 +3157,7 @@ class DomainsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3282,12 +3282,12 @@ class DomainsApi:
     def get_list_asset_domains(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search domain assets by name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack       * parked ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
         integration_connections: Annotated[Optional[StrictStr], Field(description="Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, markmonitor, csc, armiscentrix, qualysvmdr, tenablevm, orcasecurity, crowdstrikefalconspotlight, taniumvm, rapid7insightvm, fastlywaf, cloudflarewaf, awswaf, impervawaf, azurewaf, gcpwaf, akamaiwaf, alibabacloudwaf, tencentcloudwaf, huaweicloudwaf, fastlyngwaf, ociwaf  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter assets created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
@@ -3312,7 +3312,7 @@ class DomainsApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 100.
         :type page_size: float
         :param asset_name: Search domain assets by name.
         :type asset_name: str
@@ -3322,7 +3322,7 @@ class DomainsApi:
         :type source: str
         :param integration_connections: Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, markmonitor, csc, armiscentrix, qualysvmdr, tenablevm, orcasecurity, crowdstrikefalconspotlight, taniumvm, rapid7insightvm, fastlywaf, cloudflarewaf, awswaf, impervawaf, azurewaf, gcpwaf, akamaiwaf, alibabacloudwaf, tencentcloudwaf, huaweicloudwaf, fastlyngwaf, ociwaf  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)
         :type integration_connections: str
-        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
+        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param created_from: Filter assets created after a given date and time.
         :type created_from: datetime
@@ -3394,12 +3394,12 @@ class DomainsApi:
     def get_list_asset_domains_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search domain assets by name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack       * parked ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
         integration_connections: Annotated[Optional[StrictStr], Field(description="Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, markmonitor, csc, armiscentrix, qualysvmdr, tenablevm, orcasecurity, crowdstrikefalconspotlight, taniumvm, rapid7insightvm, fastlywaf, cloudflarewaf, awswaf, impervawaf, azurewaf, gcpwaf, akamaiwaf, alibabacloudwaf, tencentcloudwaf, huaweicloudwaf, fastlyngwaf, ociwaf  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter assets created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
@@ -3424,7 +3424,7 @@ class DomainsApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 100.
         :type page_size: float
         :param asset_name: Search domain assets by name.
         :type asset_name: str
@@ -3434,7 +3434,7 @@ class DomainsApi:
         :type source: str
         :param integration_connections: Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, markmonitor, csc, armiscentrix, qualysvmdr, tenablevm, orcasecurity, crowdstrikefalconspotlight, taniumvm, rapid7insightvm, fastlywaf, cloudflarewaf, awswaf, impervawaf, azurewaf, gcpwaf, akamaiwaf, alibabacloudwaf, tencentcloudwaf, huaweicloudwaf, fastlyngwaf, ociwaf  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)
         :type integration_connections: str
-        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
+        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param created_from: Filter assets created after a given date and time.
         :type created_from: datetime
@@ -3506,12 +3506,12 @@ class DomainsApi:
     def get_list_asset_domains_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 100.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search domain assets by name.")] = None,
         statuses: Annotated[Optional[List[StrictStr]], Field(description="Filter assets by one or more comma separated asset statuses. Valid statuses are:       * verified       * incorrect identification       * pending       * verifiedOutOfScope       * verifiedReducedAttack       * parked ")] = None,
         source: Annotated[Optional[StrictStr], Field(description="Filter assets by the source that discovered the asset.")] = None,
         integration_connections: Annotated[Optional[StrictStr], Field(description="Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, markmonitor, csc, armiscentrix, qualysvmdr, tenablevm, orcasecurity, crowdstrikefalconspotlight, taniumvm, rapid7insightvm, fastlywaf, cloudflarewaf, awswaf, impervawaf, azurewaf, gcpwaf, akamaiwaf, alibabacloudwaf, tencentcloudwaf, huaweicloudwaf, fastlyngwaf, ociwaf  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter assets created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter assets created before a given date and time.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
@@ -3536,7 +3536,7 @@ class DomainsApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 100.
         :type page_size: float
         :param asset_name: Search domain assets by name.
         :type asset_name: str
@@ -3546,7 +3546,7 @@ class DomainsApi:
         :type source: str
         :param integration_connections: Filter assets by integration connections (comma-separated list of integrationId:integrationType pairs).  Valid integration types: aws, googlecloud, azure, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, fastly, markmonitor, csc, armiscentrix, qualysvmdr, tenablevm, orcasecurity, crowdstrikefalconspotlight, taniumvm, rapid7insightvm, fastlywaf, cloudflarewaf, awswaf, impervawaf, azurewaf, gcpwaf, akamaiwaf, alibabacloudwaf, tencentcloudwaf, huaweicloudwaf, fastlyngwaf, ociwaf  Format: integrationId:integrationType (e.g., 123:aws) Multiple connections: separate with commas (e.g., 123:aws,456:azure,789:googlecloud)
         :type integration_connections: str
-        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
+        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param created_from: Filter assets created after a given date and time.
         :type created_from: datetime

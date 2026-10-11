@@ -318,7 +318,7 @@ class PointsOfInterestApi:
     def get_list_points_of_interest(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter points of interest created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter points of interest created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter points of interest updated after a given date and time.")] = None,
@@ -330,7 +330,7 @@ class PointsOfInterestApi:
         start_date: Annotated[Optional[datetime], Field(description="Filter points of interest by start date.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Filter points of interest by end date.")] = None,
         asset_statuses: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of asset statuses.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of business unit IDs.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of business unit IDs. Each ID must be a positive integer.")] = None,
         suppression_filter: Annotated[Optional[StrictStr], Field(description="Filter points of interest by suppression status.")] = None,
         _request_timeout: Union[
             None,
@@ -351,7 +351,7 @@ class PointsOfInterestApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param created_from: Filter points of interest created after a given date and time.
         :type created_from: datetime
@@ -375,7 +375,7 @@ class PointsOfInterestApi:
         :type end_date: datetime
         :param asset_statuses: Filter points of interest by a comma separated list of asset statuses.
         :type asset_statuses: str
-        :param business_unit_ids: Filter points of interest by a comma separated list of business unit IDs.
+        :param business_unit_ids: Filter points of interest by a comma separated list of business unit IDs. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param suppression_filter: Filter points of interest by suppression status.
         :type suppression_filter: str
@@ -442,7 +442,7 @@ class PointsOfInterestApi:
     def get_list_points_of_interest_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter points of interest created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter points of interest created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter points of interest updated after a given date and time.")] = None,
@@ -454,7 +454,7 @@ class PointsOfInterestApi:
         start_date: Annotated[Optional[datetime], Field(description="Filter points of interest by start date.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Filter points of interest by end date.")] = None,
         asset_statuses: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of asset statuses.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of business unit IDs.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of business unit IDs. Each ID must be a positive integer.")] = None,
         suppression_filter: Annotated[Optional[StrictStr], Field(description="Filter points of interest by suppression status.")] = None,
         _request_timeout: Union[
             None,
@@ -475,7 +475,7 @@ class PointsOfInterestApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param created_from: Filter points of interest created after a given date and time.
         :type created_from: datetime
@@ -499,7 +499,7 @@ class PointsOfInterestApi:
         :type end_date: datetime
         :param asset_statuses: Filter points of interest by a comma separated list of asset statuses.
         :type asset_statuses: str
-        :param business_unit_ids: Filter points of interest by a comma separated list of business unit IDs.
+        :param business_unit_ids: Filter points of interest by a comma separated list of business unit IDs. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param suppression_filter: Filter points of interest by suppression status.
         :type suppression_filter: str
@@ -566,7 +566,7 @@ class PointsOfInterestApi:
     def get_list_points_of_interest_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter points of interest created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter points of interest created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter points of interest updated after a given date and time.")] = None,
@@ -578,7 +578,7 @@ class PointsOfInterestApi:
         start_date: Annotated[Optional[datetime], Field(description="Filter points of interest by start date.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Filter points of interest by end date.")] = None,
         asset_statuses: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of asset statuses.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of business unit IDs.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter points of interest by a comma separated list of business unit IDs. Each ID must be a positive integer.")] = None,
         suppression_filter: Annotated[Optional[StrictStr], Field(description="Filter points of interest by suppression status.")] = None,
         _request_timeout: Union[
             None,
@@ -599,7 +599,7 @@ class PointsOfInterestApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param created_from: Filter points of interest created after a given date and time.
         :type created_from: datetime
@@ -623,7 +623,7 @@ class PointsOfInterestApi:
         :type end_date: datetime
         :param asset_statuses: Filter points of interest by a comma separated list of asset statuses.
         :type asset_statuses: str
-        :param business_unit_ids: Filter points of interest by a comma separated list of business unit IDs.
+        :param business_unit_ids: Filter points of interest by a comma separated list of business unit IDs. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param suppression_filter: Filter points of interest by suppression status.
         :type suppression_filter: str

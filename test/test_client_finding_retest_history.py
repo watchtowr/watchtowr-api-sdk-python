@@ -48,7 +48,8 @@ class TestClientFindingRetestHistory(unittest.TestCase):
                     type = 'domain', ),
                 triggered_by = watchtowr_api_sdk.models.client_finding_retest_history_triggered_by.ClientFindingRetestHistoryTriggeredBy(
                     id = 1, 
-                    name = 'John Doe', ),
+                    name = 'John Doe', 
+                    type = 'user', ),
                 current_retest_status = 'in-progress',
                 result = 'resolved',
                 started_at = '2023-01-01T12:00Z',

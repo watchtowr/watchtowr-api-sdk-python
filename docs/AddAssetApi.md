@@ -47,7 +47,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     api_instance = watchtowr_api_sdk.AddAssetApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
     page_size = 20 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 20. The maximum for pageSize is 100. (optional)
-    business_unit_ids = '1,2,3' # str | Filter by a list of comma separated business unit IDs that the seed data is related to. (optional)
+    business_unit_ids = '1,2,3' # str | Filter by a list of comma separated business unit IDs that the seed data is related to. Each ID must be a positive integer. (optional)
 
     try:
         # List Submitted Assets
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
  **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 20. The maximum for pageSize is 100. | [optional] 
- **business_unit_ids** | **str**| Filter by a list of comma separated business unit IDs that the seed data is related to. | [optional] 
+ **business_unit_ids** | **str**| Filter by a list of comma separated business unit IDs that the seed data is related to. Each ID must be a positive integer. | [optional] 
 
 ### Return type
 

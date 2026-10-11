@@ -37,6 +37,7 @@ class ClientFinding(BaseModel):
     """ # noqa: E501
     id: StrictFloat
     title: StrictStr
+    platform_url: StrictStr = Field(description="Link to this finding in the watchTowr platform.")
     description: StrictStr
     impact: StrictStr
     finding_impact: StrictStr
@@ -62,7 +63,7 @@ class ClientFinding(BaseModel):
     criticality: Optional[StrictStr] = None
     custom_properties: List[ClientCustomProperty] = Field(alias="customProperties")
     detection_rules: List[Dict[str, Any]]
-    __properties: ClassVar[List[str]] = ["id", "title", "description", "impact", "finding_impact", "tags", "evidence", "recommendation", "severity", "cvssv3_score", "cvssv3_metrics", "references", "status", "state", "created_at", "affected", "cve_id", "epss_score", "retest", "retest_history", "assigned_user", "last_seen", "last_status_updated_at", "age", "criticality", "customProperties", "detection_rules"]
+    __properties: ClassVar[List[str]] = ["id", "title", "platform_url", "description", "impact", "finding_impact", "tags", "evidence", "recommendation", "severity", "cvssv3_score", "cvssv3_metrics", "references", "status", "state", "created_at", "affected", "cve_id", "epss_score", "retest", "retest_history", "assigned_user", "last_seen", "last_status_updated_at", "age", "criticality", "customProperties", "detection_rules"]
 
     @field_validator('severity')
     def severity_validate_enum(cls, value):
@@ -216,6 +217,7 @@ class ClientFinding(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "title": obj.get("title"),
+            "platform_url": obj.get("platform_url"),
             "description": obj.get("description"),
             "impact": obj.get("impact"),
             "finding_impact": obj.get("finding_impact"),

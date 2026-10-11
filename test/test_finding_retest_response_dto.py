@@ -36,7 +36,7 @@ class TestFindingRetestResponseDto(unittest.TestCase):
         model = FindingRetestResponseDto()
         if include_optional:
             return FindingRetestResponseDto(
-                requested_by = 'Requested by user',
+                requested_by = 'Jane Doe',
                 requested_at = '2024-01-29T08:05:09Z',
                 retest_status = 'success',
                 status_occurred_at = '2024-01-29T08:05:09Z',
@@ -45,7 +45,7 @@ class TestFindingRetestResponseDto(unittest.TestCase):
             )
         else:
             return FindingRetestResponseDto(
-                requested_by = 'Requested by user',
+                requested_by = 'Jane Doe',
                 requested_at = '2024-01-29T08:05:09Z',
                 retest_status = 'success',
         )

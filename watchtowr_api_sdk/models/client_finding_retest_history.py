@@ -35,7 +35,7 @@ class ClientFindingRetestHistory(BaseModel):
     id: StrictFloat = Field(description="Retest ID")
     finding: Optional[ClientFindingRetestHistoryFinding] = Field(default=None, description="Finding information")
     asset: Optional[ClientFindingRetestHistoryAsset] = Field(default=None, description="Affected asset information")
-    triggered_by: Optional[ClientFindingRetestHistoryTriggeredBy] = Field(default=None, description="User who triggered the retest", alias="triggeredBy")
+    triggered_by: Optional[ClientFindingRetestHistoryTriggeredBy] = Field(default=None, description="User or service account that triggered the retest", alias="triggeredBy")
     current_retest_status: StrictStr = Field(description="Current retest status", alias="currentRetestStatus")
     result: Optional[StrictStr] = Field(description="Retest result status at the time this retest completed.")
     started_at: datetime = Field(description="Date and time when the retest was started", alias="startedAt")

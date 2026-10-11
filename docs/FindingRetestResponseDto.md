@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**requested_by** | **str** |  | 
+**requested_by** | **str** | Name of the user or service account that requested the retest. Empty when it is not known. | 
 **requested_at** | **datetime** |  | 
 **retest_status** | **str** |  | 
 **status_occurred_at** | **datetime** |  | [optional] 

@@ -129,7 +129,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.CertificatesApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
-    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
+    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. (optional)
     created_from = '2022-02-22T22:00Z' # datetime | Filter certificates created after a given date and time. (optional)
     created_to = '2022-02-23T22:00Z' # datetime | Filter certificates created before a given date and time. (optional)
     updated_from = '2022-02-22T22:00Z' # datetime | Filter certificates updated after a given date and time. (optional)
@@ -142,7 +142,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     subject_countries = ['subject_countries_example'] # List[str] | Filter certificates by a list of comma separated subject countries that they're related to. (optional)
     asset_name_search = 'example.watchTowr.com' # str | Search Certificates by the name of the associated asset. (optional)
     statuses = 'Expired,Expiring Within 30 Days,Valid' # str | Filter certificates by a list of comma separated statuses that they're tagged with. (optional)
-    business_unit_ids = '1,2,3' # str | Filter certificates by a list of comma separated business unit IDs they're related to. (optional)
+    business_unit_ids = '1,2,3' # str | Filter certificates by a list of comma separated business unit IDs they're related to. Each ID must be a positive integer. (optional)
 
     try:
         # List Certificates
@@ -161,7 +161,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
- **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
+ **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. | [optional] 
  **created_from** | **datetime**| Filter certificates created after a given date and time. | [optional] 
  **created_to** | **datetime**| Filter certificates created before a given date and time. | [optional] 
  **updated_from** | **datetime**| Filter certificates updated after a given date and time. | [optional] 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
  **subject_countries** | [**List[str]**](str.md)| Filter certificates by a list of comma separated subject countries that they&#39;re related to. | [optional] 
  **asset_name_search** | **str**| Search Certificates by the name of the associated asset. | [optional] 
  **statuses** | **str**| Filter certificates by a list of comma separated statuses that they&#39;re tagged with. | [optional] 
- **business_unit_ids** | **str**| Filter certificates by a list of comma separated business unit IDs they&#39;re related to. | [optional] 
+ **business_unit_ids** | **str**| Filter certificates by a list of comma separated business unit IDs they&#39;re related to. Each ID must be a positive integer. | [optional] 
 
 ### Return type
 

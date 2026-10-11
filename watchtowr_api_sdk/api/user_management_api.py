@@ -887,7 +887,7 @@ class UserManagementApi:
     def list_users(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         name: Annotated[Optional[StrictStr], Field(description="Search by user name")] = None,
         title: Annotated[Optional[StrictStr], Field(description="Search by user title")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by user status. Accepts a comma-separated list (`status=Active,Locked`) or repeated keys")] = None,
@@ -913,7 +913,7 @@ class UserManagementApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param name: Search by user name
         :type name: str
@@ -984,7 +984,7 @@ class UserManagementApi:
     def list_users_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         name: Annotated[Optional[StrictStr], Field(description="Search by user name")] = None,
         title: Annotated[Optional[StrictStr], Field(description="Search by user title")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by user status. Accepts a comma-separated list (`status=Active,Locked`) or repeated keys")] = None,
@@ -1010,7 +1010,7 @@ class UserManagementApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param name: Search by user name
         :type name: str
@@ -1081,7 +1081,7 @@ class UserManagementApi:
     def list_users_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         name: Annotated[Optional[StrictStr], Field(description="Search by user name")] = None,
         title: Annotated[Optional[StrictStr], Field(description="Search by user title")] = None,
         status: Annotated[Optional[List[StrictStr]], Field(description="Filter by user status. Accepts a comma-separated list (`status=Active,Locked`) or repeated keys")] = None,
@@ -1107,7 +1107,7 @@ class UserManagementApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param name: Search by user name
         :type name: str

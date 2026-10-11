@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** |  | 
 **title** | **str** |  | 
+**platform_url** | **str** | Link to this finding in the watchTowr platform. | 
 **description** | **str** |  | 
 **impact** | **str** |  | 
 **finding_impact** | **str** |  | 

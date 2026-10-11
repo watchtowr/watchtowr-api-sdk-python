@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **id** | **float** | Retest ID | 
 **finding** | [**ClientFindingRetestHistoryFinding**](ClientFindingRetestHistoryFinding.md) | Finding information | [optional] 
 **asset** | [**ClientFindingRetestHistoryAsset**](ClientFindingRetestHistoryAsset.md) | Affected asset information | [optional] 
-**triggered_by** | [**ClientFindingRetestHistoryTriggeredBy**](ClientFindingRetestHistoryTriggeredBy.md) | User who triggered the retest | [optional] 
+**triggered_by** | [**ClientFindingRetestHistoryTriggeredBy**](ClientFindingRetestHistoryTriggeredBy.md) | User or service account that triggered the retest | [optional] 
 **current_retest_status** | **str** | Current retest status | 
 **result** | **str** | Retest result status at the time this retest completed. | 
 **started_at** | **datetime** | Date and time when the retest was started | 

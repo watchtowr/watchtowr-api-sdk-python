@@ -44,8 +44,8 @@ class FindingRetestHistoryApi:
     def get_list_finding_retest_history(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort by field")] = None,
         sort_order: Annotated[Optional[StrictStr], Field(description="Sort order")] = None,
         severities: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated severities they're tagged with.")] = None,
@@ -55,7 +55,7 @@ class FindingRetestHistoryApi:
         finding_title: Annotated[Optional[StrictStr], Field(description="Filter retests by finding title.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Filter retests by asset name.")] = None,
         finding_id: Annotated[Optional[StrictStr], Field(description="Filter retests by finding ID (e.g. CORE-1234 or 1234).")] = None,
-        triggered_by: Annotated[Optional[List[StrictStr]], Field(description="Filter retests by a list of comma separated users who triggered them.")] = None,
+        triggered_by: Annotated[Optional[List[StrictStr]], Field(description="Filter retests by a comma-separated list of names of the users or service accounts that triggered them.")] = None,
         retest_start_date_from: Annotated[Optional[datetime], Field(description="Filter retests started after a given date and time.")] = None,
         retest_start_date_to: Annotated[Optional[datetime], Field(description="Filter retests started before a given date and time.")] = None,
         _request_timeout: Union[
@@ -77,9 +77,9 @@ class FindingRetestHistoryApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
-        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
+        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param sort_by: Sort by field
         :type sort_by: str
@@ -99,7 +99,7 @@ class FindingRetestHistoryApi:
         :type asset_name: str
         :param finding_id: Filter retests by finding ID (e.g. CORE-1234 or 1234).
         :type finding_id: str
-        :param triggered_by: Filter retests by a list of comma separated users who triggered them.
+        :param triggered_by: Filter retests by a comma-separated list of names of the users or service accounts that triggered them.
         :type triggered_by: List[str]
         :param retest_start_date_from: Filter retests started after a given date and time.
         :type retest_start_date_from: datetime
@@ -168,8 +168,8 @@ class FindingRetestHistoryApi:
     def get_list_finding_retest_history_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort by field")] = None,
         sort_order: Annotated[Optional[StrictStr], Field(description="Sort order")] = None,
         severities: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated severities they're tagged with.")] = None,
@@ -179,7 +179,7 @@ class FindingRetestHistoryApi:
         finding_title: Annotated[Optional[StrictStr], Field(description="Filter retests by finding title.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Filter retests by asset name.")] = None,
         finding_id: Annotated[Optional[StrictStr], Field(description="Filter retests by finding ID (e.g. CORE-1234 or 1234).")] = None,
-        triggered_by: Annotated[Optional[List[StrictStr]], Field(description="Filter retests by a list of comma separated users who triggered them.")] = None,
+        triggered_by: Annotated[Optional[List[StrictStr]], Field(description="Filter retests by a comma-separated list of names of the users or service accounts that triggered them.")] = None,
         retest_start_date_from: Annotated[Optional[datetime], Field(description="Filter retests started after a given date and time.")] = None,
         retest_start_date_to: Annotated[Optional[datetime], Field(description="Filter retests started before a given date and time.")] = None,
         _request_timeout: Union[
@@ -201,9 +201,9 @@ class FindingRetestHistoryApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
-        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
+        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param sort_by: Sort by field
         :type sort_by: str
@@ -223,7 +223,7 @@ class FindingRetestHistoryApi:
         :type asset_name: str
         :param finding_id: Filter retests by finding ID (e.g. CORE-1234 or 1234).
         :type finding_id: str
-        :param triggered_by: Filter retests by a list of comma separated users who triggered them.
+        :param triggered_by: Filter retests by a comma-separated list of names of the users or service accounts that triggered them.
         :type triggered_by: List[str]
         :param retest_start_date_from: Filter retests started after a given date and time.
         :type retest_start_date_from: datetime
@@ -292,8 +292,8 @@ class FindingRetestHistoryApi:
     def get_list_finding_retest_history_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort by field")] = None,
         sort_order: Annotated[Optional[StrictStr], Field(description="Sort order")] = None,
         severities: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated severities they're tagged with.")] = None,
@@ -303,7 +303,7 @@ class FindingRetestHistoryApi:
         finding_title: Annotated[Optional[StrictStr], Field(description="Filter retests by finding title.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Filter retests by asset name.")] = None,
         finding_id: Annotated[Optional[StrictStr], Field(description="Filter retests by finding ID (e.g. CORE-1234 or 1234).")] = None,
-        triggered_by: Annotated[Optional[List[StrictStr]], Field(description="Filter retests by a list of comma separated users who triggered them.")] = None,
+        triggered_by: Annotated[Optional[List[StrictStr]], Field(description="Filter retests by a comma-separated list of names of the users or service accounts that triggered them.")] = None,
         retest_start_date_from: Annotated[Optional[datetime], Field(description="Filter retests started after a given date and time.")] = None,
         retest_start_date_to: Annotated[Optional[datetime], Field(description="Filter retests started before a given date and time.")] = None,
         _request_timeout: Union[
@@ -325,9 +325,9 @@ class FindingRetestHistoryApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
-        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
+        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param sort_by: Sort by field
         :type sort_by: str
@@ -347,7 +347,7 @@ class FindingRetestHistoryApi:
         :type asset_name: str
         :param finding_id: Filter retests by finding ID (e.g. CORE-1234 or 1234).
         :type finding_id: str
-        :param triggered_by: Filter retests by a list of comma separated users who triggered them.
+        :param triggered_by: Filter retests by a comma-separated list of names of the users or service accounts that triggered them.
         :type triggered_by: List[str]
         :param retest_start_date_from: Filter retests started after a given date and time.
         :type retest_start_date_from: datetime

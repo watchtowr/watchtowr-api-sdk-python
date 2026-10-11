@@ -315,13 +315,13 @@ class PortsApi:
     def get_list_asset_ports(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 100.")] = None,
         include_closed_port: Annotated[Optional[StrictBool], Field(description="Include listings with closed ports.")] = None,
         include_no_service: Annotated[Optional[StrictBool], Field(description="Include listings without a service")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter ports created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter ports created before a given date and time.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search ports by port number.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
         custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         _request_timeout: Union[
@@ -343,7 +343,7 @@ class PortsApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 100.
         :type page_size: float
         :param include_closed_port: Include listings with closed ports.
         :type include_closed_port: bool
@@ -355,7 +355,7 @@ class PortsApi:
         :type created_to: datetime
         :param asset_name: Search ports by port number.
         :type asset_name: str
-        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
+        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param custom_property_key: Filter assets by custom property key.
         :type custom_property_key: str
@@ -419,13 +419,13 @@ class PortsApi:
     def get_list_asset_ports_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 100.")] = None,
         include_closed_port: Annotated[Optional[StrictBool], Field(description="Include listings with closed ports.")] = None,
         include_no_service: Annotated[Optional[StrictBool], Field(description="Include listings without a service")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter ports created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter ports created before a given date and time.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search ports by port number.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
         custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         _request_timeout: Union[
@@ -447,7 +447,7 @@ class PortsApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 100.
         :type page_size: float
         :param include_closed_port: Include listings with closed ports.
         :type include_closed_port: bool
@@ -459,7 +459,7 @@ class PortsApi:
         :type created_to: datetime
         :param asset_name: Search ports by port number.
         :type asset_name: str
-        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
+        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param custom_property_key: Filter assets by custom property key.
         :type custom_property_key: str
@@ -523,13 +523,13 @@ class PortsApi:
     def get_list_asset_ports_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 100.")] = None,
         include_closed_port: Annotated[Optional[StrictBool], Field(description="Include listings with closed ports.")] = None,
         include_no_service: Annotated[Optional[StrictBool], Field(description="Include listings without a service")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter ports created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter ports created before a given date and time.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Search ports by port number.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.")] = None,
         custom_property_key: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property key.")] = None,
         custom_property_value: Annotated[Optional[StrictStr], Field(description="Filter assets by custom property value. Must be used together with customPropertyKey.")] = None,
         _request_timeout: Union[
@@ -551,7 +551,7 @@ class PortsApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 100.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 100.
         :type page_size: float
         :param include_closed_port: Include listings with closed ports.
         :type include_closed_port: bool
@@ -563,7 +563,7 @@ class PortsApi:
         :type created_to: datetime
         :param asset_name: Search ports by port number.
         :type asset_name: str
-        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to.
+        :param business_unit_ids: Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param custom_property_key: Filter assets by custom property key.
         :type custom_property_key: str

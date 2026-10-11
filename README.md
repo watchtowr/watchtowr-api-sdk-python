@@ -594,6 +594,7 @@ Class | Method | HTTP request | Description
  - [RemoveClientCustomPropertyResponseDto](docs/RemoveClientCustomPropertyResponseDto.md)
  - [RequiredActionsDto](docs/RequiredActionsDto.md)
  - [Retest](docs/Retest.md)
+ - [RetestRequesterType](docs/RetestRequesterType.md)
  - [SecurityPostureDashboardDto](docs/SecurityPostureDashboardDto.md)
  - [SecurityPostureDashboardResponse](docs/SecurityPostureDashboardResponse.md)
  - [ServiceInformationAsset](docs/ServiceInformationAsset.md)

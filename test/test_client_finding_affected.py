@@ -36,7 +36,7 @@ class TestClientFindingAffected(unittest.TestCase):
         model = ClientFindingAffected()
         if include_optional:
             return ClientFindingAffected(
-                data = {"type":"subdomain","source":"module-adversarysight-tls-ssl-certificate-transparency-discovery","status":"verified","created_at":"2023-07-24T03:03:58.000Z","id":"557","discovery_reason":null,"name":"example.com","businessUnits":[],"metadata":{},"live":false,"customProperties":[],"criticality":null,"engineSettings":{"adversarySightEnabled":true,"dnsBruteforcingEnabled":true,"automatedRedTeamingEnabled":true,"intrusiveHttpChecksEnabled":true,"credentialStuffingEnabled":true,"rapidReactionEnabled":true}}
+                data = {"type":"subdomain","source":"module-adversarysight-tls-ssl-certificate-transparency-discovery","status":"verified","created_at":"2023-07-24T03:03:58.000Z","id":"557","discovery_reason":null,"platform_url":"https://tenant.client.watchtowr.io/assets/subdomain/557","name":"example.com","businessUnits":[],"metadata":{},"live":false,"customProperties":[],"criticality":null,"engineSettings":{"adversarySightEnabled":true,"dnsBruteforcingEnabled":true,"automatedRedTeamingEnabled":true,"intrusiveHttpChecksEnabled":true,"credentialStuffingEnabled":true,"rapidReactionEnabled":true}}
             )
         else:
             return ClientFindingAffected(

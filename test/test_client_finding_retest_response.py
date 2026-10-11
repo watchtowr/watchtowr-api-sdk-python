@@ -39,6 +39,7 @@ class TestClientFindingRetestResponse(unittest.TestCase):
                 data = watchtowr_api_sdk.models.client_finding.ClientFinding(
                     id = 1, 
                     title = 'Valid Credentials Discovered In Business System', 
+                    platform_url = 'https://tenant.client.watchtowr.io/findings/1', 
                     description = 'Through watchTowr's Credential Stuffing capabilities, a valid set of credentials have been identified to work to authenticate to a legitimately exposed business system. 
 
 These credentials have been confirmed as valid against the identified system, and are publicly available.', 
@@ -81,7 +82,7 @@ As a long-term measure to ensure that the security impact of breach credentials 
                         current_retest = null, ), 
                     retest_history = [
                         watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
-                            requested_by = 'Requested by user', 
+                            requested_by = 'Jane Doe', 
                             requested_at = '2024-01-29T08:05:09Z', 
                             retest_status = 'success', 
                             status_occurred_at = '2024-01-29T08:05:09Z', 
@@ -102,6 +103,7 @@ As a long-term measure to ensure that the security impact of breach credentials 
                 data = watchtowr_api_sdk.models.client_finding.ClientFinding(
                     id = 1, 
                     title = 'Valid Credentials Discovered In Business System', 
+                    platform_url = 'https://tenant.client.watchtowr.io/findings/1', 
                     description = 'Through watchTowr's Credential Stuffing capabilities, a valid set of credentials have been identified to work to authenticate to a legitimately exposed business system. 
 
 These credentials have been confirmed as valid against the identified system, and are publicly available.', 
@@ -144,7 +146,7 @@ As a long-term measure to ensure that the security impact of breach credentials 
                         current_retest = null, ), 
                     retest_history = [
                         watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
-                            requested_by = 'Requested by user', 
+                            requested_by = 'Jane Doe', 
                             requested_at = '2024-01-29T08:05:09Z', 
                             retest_status = 'success', 
                             status_occurred_at = '2024-01-29T08:05:09Z', 

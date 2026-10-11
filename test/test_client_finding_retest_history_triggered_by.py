@@ -37,12 +37,14 @@ class TestClientFindingRetestHistoryTriggeredBy(unittest.TestCase):
         if include_optional:
             return ClientFindingRetestHistoryTriggeredBy(
                 id = 1,
-                name = 'John Doe'
+                name = 'John Doe',
+                type = 'user'
             )
         else:
             return ClientFindingRetestHistoryTriggeredBy(
                 id = 1,
                 name = 'John Doe',
+                type = 'user',
         )
         """
 

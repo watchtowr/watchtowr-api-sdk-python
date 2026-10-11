@@ -286,6 +286,7 @@ __all__ = [
     "RemoveClientCustomPropertyResponseDto",
     "RequiredActionsDto",
     "Retest",
+    "RetestRequesterType",
     "SecurityPostureDashboardDto",
     "SecurityPostureDashboardResponse",
     "ServiceInformationAsset",
@@ -615,6 +616,7 @@ from watchtowr_api_sdk.models.points_of_interest_data import PointsOfInterestDat
 from watchtowr_api_sdk.models.remove_client_custom_property_response_dto import RemoveClientCustomPropertyResponseDto as RemoveClientCustomPropertyResponseDto
 from watchtowr_api_sdk.models.required_actions_dto import RequiredActionsDto as RequiredActionsDto
 from watchtowr_api_sdk.models.retest import Retest as Retest
+from watchtowr_api_sdk.models.retest_requester_type import RetestRequesterType as RetestRequesterType
 from watchtowr_api_sdk.models.security_posture_dashboard_dto import SecurityPostureDashboardDto as SecurityPostureDashboardDto
 from watchtowr_api_sdk.models.security_posture_dashboard_response import SecurityPostureDashboardResponse as SecurityPostureDashboardResponse
 from watchtowr_api_sdk.models.service_information_asset import ServiceInformationAsset as ServiceInformationAsset

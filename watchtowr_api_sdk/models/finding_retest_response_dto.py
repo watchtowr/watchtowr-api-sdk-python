@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class FindingRetestResponseDto(BaseModel):
     """
     FindingRetestResponseDto
     """ # noqa: E501
-    requested_by: StrictStr
+    requested_by: StrictStr = Field(description="Name of the user or service account that requested the retest. Empty when it is not known.")
     requested_at: datetime
     retest_status: StrictStr
     status_occurred_at: Optional[datetime] = None

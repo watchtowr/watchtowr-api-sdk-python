@@ -45,8 +45,8 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.FindingRetestHistoryApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
-    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
-    business_unit_ids = '1,2,3' # str | Filter assets by a list of comma separated business unit IDs that the asset is related to. (optional)
+    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. (optional)
+    business_unit_ids = '1,2,3' # str | Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer. (optional)
     sort_by = created_at # str | Sort by field (optional) (default to created_at)
     sort_order = DESC # str | Sort order (optional) (default to DESC)
     severities = 'critical,high,medium' # str | Filter retests by a list of comma separated severities they're tagged with. (optional)
@@ -56,7 +56,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     finding_title = 'SQL Injection' # str | Filter retests by finding title. (optional)
     asset_name = 'example.com' # str | Filter retests by asset name. (optional)
     finding_id = 'CORE-1234' # str | Filter retests by finding ID (e.g. CORE-1234 or 1234). (optional)
-    triggered_by = ['triggered_by_example'] # List[str] | Filter retests by a list of comma separated users who triggered them. (optional)
+    triggered_by = ['triggered_by_example'] # List[str] | Filter retests by a comma-separated list of names of the users or service accounts that triggered them. (optional)
     retest_start_date_from = '2013-10-20T19:20:30+01:00' # datetime | Filter retests started after a given date and time. (optional)
     retest_start_date_to = '2013-10-20T19:20:30+01:00' # datetime | Filter retests started before a given date and time. (optional)
 
@@ -77,8 +77,8 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
- **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
- **business_unit_ids** | **str**| Filter assets by a list of comma separated business unit IDs that the asset is related to. | [optional] 
+ **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. | [optional] 
+ **business_unit_ids** | **str**| Filter assets by a list of comma separated business unit IDs that the asset is related to. Each ID must be a positive integer. | [optional] 
  **sort_by** | **str**| Sort by field | [optional] [default to created_at]
  **sort_order** | **str**| Sort order | [optional] [default to DESC]
  **severities** | **str**| Filter retests by a list of comma separated severities they&#39;re tagged with. | [optional] 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
  **finding_title** | **str**| Filter retests by finding title. | [optional] 
  **asset_name** | **str**| Filter retests by asset name. | [optional] 
  **finding_id** | **str**| Filter retests by finding ID (e.g. CORE-1234 or 1234). | [optional] 
- **triggered_by** | [**List[str]**](str.md)| Filter retests by a list of comma separated users who triggered them. | [optional] 
+ **triggered_by** | [**List[str]**](str.md)| Filter retests by a comma-separated list of names of the users or service accounts that triggered them. | [optional] 
  **retest_start_date_from** | **datetime**| Filter retests started after a given date and time. | [optional] 
  **retest_start_date_to** | **datetime**| Filter retests started before a given date and time. | [optional] 
 

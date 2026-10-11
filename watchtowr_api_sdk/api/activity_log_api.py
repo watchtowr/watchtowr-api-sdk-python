@@ -44,7 +44,7 @@ class ActivityLogApi:
     def get_list_activity_logs(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter logs created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter logs created before a given date and time.")] = None,
         types: Annotated[Optional[StrictStr], Field(description="Filter logs by a comma separated list of types.")] = None,
@@ -69,7 +69,7 @@ class ActivityLogApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param created_from: Filter logs created after a given date and time.
         :type created_from: datetime
@@ -136,7 +136,7 @@ class ActivityLogApi:
     def get_list_activity_logs_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter logs created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter logs created before a given date and time.")] = None,
         types: Annotated[Optional[StrictStr], Field(description="Filter logs by a comma separated list of types.")] = None,
@@ -161,7 +161,7 @@ class ActivityLogApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param created_from: Filter logs created after a given date and time.
         :type created_from: datetime
@@ -228,7 +228,7 @@ class ActivityLogApi:
     def get_list_activity_logs_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter logs created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter logs created before a given date and time.")] = None,
         types: Annotated[Optional[StrictStr], Field(description="Filter logs by a comma separated list of types.")] = None,
@@ -253,7 +253,7 @@ class ActivityLogApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param created_from: Filter logs created after a given date and time.
         :type created_from: datetime

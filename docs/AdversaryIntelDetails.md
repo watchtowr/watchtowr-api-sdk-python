@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **victim_countries** | [**VictimCountrySummary**](VictimCountrySummary.md) |  | [optional] 
 **target_industries** | [**TargetIndustrySummary**](TargetIndustrySummary.md) |  | [optional] 
 **latest_media** | [**List[Media]**](Media.md) | Recent media references for this adversary. Not currently populated — returns an empty array. | [optional] 
-**is_affected** | **bool** | Whether the user has confirmed open findings against vulnerabilities exploited by this adversary. Scoped to the requesting user&#39;s business units and the organization&#39;s finding impact threshold. | 
+**is_affected** | **bool** | Whether the user has confirmed open findings against vulnerabilities exploited by this adversary. Scoped to the requesting user&#39;s business units and the organization&#39;s finding impact threshold. &#x60;null&#x60; when the check could not be completed. | 
 **affected_kb_entry_ids** | **List[float]** | KB entry IDs that drive the &#x60;isAffected&#x60; flag, scoped to the requesting user&#39;s business units. | 
 
 ## Example

@@ -315,7 +315,7 @@ class CertificatesApi:
     def get_list_certificates(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter certificates created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter certificates created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter certificates updated after a given date and time.")] = None,
@@ -328,7 +328,7 @@ class CertificatesApi:
         subject_countries: Annotated[Optional[List[StrictStr]], Field(description="Filter certificates by a list of comma separated subject countries that they're related to.")] = None,
         asset_name_search: Annotated[Optional[StrictStr], Field(description="Search Certificates by the name of the associated asset.")] = None,
         statuses: Annotated[Optional[StrictStr], Field(description="Filter certificates by a list of comma separated statuses that they're tagged with.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter certificates by a list of comma separated business unit IDs they're related to.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter certificates by a list of comma separated business unit IDs they're related to. Each ID must be a positive integer.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -348,7 +348,7 @@ class CertificatesApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param created_from: Filter certificates created after a given date and time.
         :type created_from: datetime
@@ -374,7 +374,7 @@ class CertificatesApi:
         :type asset_name_search: str
         :param statuses: Filter certificates by a list of comma separated statuses that they're tagged with.
         :type statuses: str
-        :param business_unit_ids: Filter certificates by a list of comma separated business unit IDs they're related to.
+        :param business_unit_ids: Filter certificates by a list of comma separated business unit IDs they're related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -439,7 +439,7 @@ class CertificatesApi:
     def get_list_certificates_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter certificates created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter certificates created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter certificates updated after a given date and time.")] = None,
@@ -452,7 +452,7 @@ class CertificatesApi:
         subject_countries: Annotated[Optional[List[StrictStr]], Field(description="Filter certificates by a list of comma separated subject countries that they're related to.")] = None,
         asset_name_search: Annotated[Optional[StrictStr], Field(description="Search Certificates by the name of the associated asset.")] = None,
         statuses: Annotated[Optional[StrictStr], Field(description="Filter certificates by a list of comma separated statuses that they're tagged with.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter certificates by a list of comma separated business unit IDs they're related to.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter certificates by a list of comma separated business unit IDs they're related to. Each ID must be a positive integer.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -472,7 +472,7 @@ class CertificatesApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param created_from: Filter certificates created after a given date and time.
         :type created_from: datetime
@@ -498,7 +498,7 @@ class CertificatesApi:
         :type asset_name_search: str
         :param statuses: Filter certificates by a list of comma separated statuses that they're tagged with.
         :type statuses: str
-        :param business_unit_ids: Filter certificates by a list of comma separated business unit IDs they're related to.
+        :param business_unit_ids: Filter certificates by a list of comma separated business unit IDs they're related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -563,7 +563,7 @@ class CertificatesApi:
     def get_list_certificates_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter certificates created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter certificates created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter certificates updated after a given date and time.")] = None,
@@ -576,7 +576,7 @@ class CertificatesApi:
         subject_countries: Annotated[Optional[List[StrictStr]], Field(description="Filter certificates by a list of comma separated subject countries that they're related to.")] = None,
         asset_name_search: Annotated[Optional[StrictStr], Field(description="Search Certificates by the name of the associated asset.")] = None,
         statuses: Annotated[Optional[StrictStr], Field(description="Filter certificates by a list of comma separated statuses that they're tagged with.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter certificates by a list of comma separated business unit IDs they're related to.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter certificates by a list of comma separated business unit IDs they're related to. Each ID must be a positive integer.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -596,7 +596,7 @@ class CertificatesApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param created_from: Filter certificates created after a given date and time.
         :type created_from: datetime
@@ -622,7 +622,7 @@ class CertificatesApi:
         :type asset_name_search: str
         :param statuses: Filter certificates by a list of comma separated statuses that they're tagged with.
         :type statuses: str
-        :param business_unit_ids: Filter certificates by a list of comma separated business unit IDs they're related to.
+        :param business_unit_ids: Filter certificates by a list of comma separated business unit IDs they're related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

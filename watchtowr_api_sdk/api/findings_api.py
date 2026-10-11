@@ -2044,7 +2044,7 @@ class FindingsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The ID of the finding to list custom properties of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2066,7 +2066,7 @@ class FindingsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2122,7 +2122,7 @@ class FindingsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The ID of the finding to list custom properties of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2144,7 +2144,7 @@ class FindingsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2200,7 +2200,7 @@ class FindingsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The ID of the finding to list custom properties of.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2222,7 +2222,7 @@ class FindingsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2618,7 +2618,7 @@ class FindingsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The ID of the finding to list notes for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2640,7 +2640,7 @@ class FindingsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2696,7 +2696,7 @@ class FindingsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The ID of the finding to list notes for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2718,7 +2718,7 @@ class FindingsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2774,7 +2774,7 @@ class FindingsApi:
         self,
         id: Annotated[StrictFloat, Field(description="The ID of the finding to list notes for.")],
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2796,7 +2796,7 @@ class FindingsApi:
         :type id: float
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2921,13 +2921,13 @@ class FindingsApi:
     def get_list_findings(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter findings created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter findings created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter findings updated after a given date and time.")] = None,
         updated_to: Annotated[Optional[datetime], Field(description="Filter findings updated before a given date and time.")] = None,
-        statuses: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated statuses they're tagged with.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated business unit IDs that they're related to.")] = None,
+        statuses: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated statuses they're tagged with. Defaults to `confirmed`, or to every status except `unconfirmed` when `cve` is set.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated business unit IDs that they're related to. Each ID must be a positive integer.")] = None,
         finding_impact_threshold: Annotated[Optional[StrictStr], Field(description="Impact Setting: * High - Prioritized Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organization's security posture. * All - All Findings, a broader range of findings that may not directly impact your organization's security posture, but may represent deviations from best practices.")] = None,
         finding_title: Annotated[Optional[StrictStr], Field(description="Search findings by title contents.")] = None,
         severities: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated severities they're tagged with.")] = None,
@@ -2939,6 +2939,9 @@ class FindingsApi:
         only_ai_discovered: Annotated[Optional[StrictBool], Field(description="Filter to only show findings discovered by AI.")] = None,
         only_unacknowledged: Annotated[Optional[StrictBool], Field(description="Deprecated. This parameter has no effect and is ignored.")] = None,
         exploitation_risk_level: Annotated[Optional[StrictStr], Field(description="Filter findings by a comma separated list of exploitation risk levels.")] = None,
+        cve: Annotated[Optional[StrictStr], Field(description="Filter findings by a CVE ID in the form `CVE-YYYY-NNNN`. Returns the findings whose watchTowr knowledge-base entry maps to that CVE, the same mapping vulnerability intelligence's `isAffected` uses for CVE rows. A watchTowr vulnerability ID (`wT-…`) is rejected. Returns findings of every status except `unconfirmed` unless `statuses` is set.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort findings by ID, creation date, last update or last seen date. Defaults to `id`. Findings with no `last_seen` sort first in ascending order and last in descending order.")] = None,
+        sort_order: Annotated[Optional[StrictStr], Field(description="The direction to sort findings in. Defaults to `DESC`.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2954,11 +2957,11 @@ class FindingsApi:
     ) -> PaginatedClientFindings:
         """List Findings
 
-        List all discovered findings, ordered by date identified.
+        List all discovered findings, newest first by default. Use `sortBy` and `sortOrder` to order them by another date.
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param created_from: Filter findings created after a given date and time.
         :type created_from: datetime
@@ -2968,9 +2971,9 @@ class FindingsApi:
         :type updated_from: datetime
         :param updated_to: Filter findings updated before a given date and time.
         :type updated_to: datetime
-        :param statuses: Filter findings by a list of comma separated statuses they're tagged with.
+        :param statuses: Filter findings by a list of comma separated statuses they're tagged with. Defaults to `confirmed`, or to every status except `unconfirmed` when `cve` is set.
         :type statuses: str
-        :param business_unit_ids: Filter findings by a list of comma separated business unit IDs that they're related to.
+        :param business_unit_ids: Filter findings by a list of comma separated business unit IDs that they're related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param finding_impact_threshold: Impact Setting: * High - Prioritized Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organization's security posture. * All - All Findings, a broader range of findings that may not directly impact your organization's security posture, but may represent deviations from best practices.
         :type finding_impact_threshold: str
@@ -2994,6 +2997,12 @@ class FindingsApi:
         :type only_unacknowledged: bool
         :param exploitation_risk_level: Filter findings by a comma separated list of exploitation risk levels.
         :type exploitation_risk_level: str
+        :param cve: Filter findings by a CVE ID in the form `CVE-YYYY-NNNN`. Returns the findings whose watchTowr knowledge-base entry maps to that CVE, the same mapping vulnerability intelligence's `isAffected` uses for CVE rows. A watchTowr vulnerability ID (`wT-…`) is rejected. Returns findings of every status except `unconfirmed` unless `statuses` is set.
+        :type cve: str
+        :param sort_by: Sort findings by ID, creation date, last update or last seen date. Defaults to `id`. Findings with no `last_seen` sort first in ascending order and last in descending order.
+        :type sort_by: str
+        :param sort_order: The direction to sort findings in. Defaults to `DESC`.
+        :type sort_order: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3036,6 +3045,9 @@ class FindingsApi:
             only_ai_discovered=only_ai_discovered,
             only_unacknowledged=only_unacknowledged,
             exploitation_risk_level=exploitation_risk_level,
+            cve=cve,
+            sort_by=sort_by,
+            sort_order=sort_order,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3062,13 +3074,13 @@ class FindingsApi:
     def get_list_findings_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter findings created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter findings created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter findings updated after a given date and time.")] = None,
         updated_to: Annotated[Optional[datetime], Field(description="Filter findings updated before a given date and time.")] = None,
-        statuses: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated statuses they're tagged with.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated business unit IDs that they're related to.")] = None,
+        statuses: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated statuses they're tagged with. Defaults to `confirmed`, or to every status except `unconfirmed` when `cve` is set.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated business unit IDs that they're related to. Each ID must be a positive integer.")] = None,
         finding_impact_threshold: Annotated[Optional[StrictStr], Field(description="Impact Setting: * High - Prioritized Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organization's security posture. * All - All Findings, a broader range of findings that may not directly impact your organization's security posture, but may represent deviations from best practices.")] = None,
         finding_title: Annotated[Optional[StrictStr], Field(description="Search findings by title contents.")] = None,
         severities: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated severities they're tagged with.")] = None,
@@ -3080,6 +3092,9 @@ class FindingsApi:
         only_ai_discovered: Annotated[Optional[StrictBool], Field(description="Filter to only show findings discovered by AI.")] = None,
         only_unacknowledged: Annotated[Optional[StrictBool], Field(description="Deprecated. This parameter has no effect and is ignored.")] = None,
         exploitation_risk_level: Annotated[Optional[StrictStr], Field(description="Filter findings by a comma separated list of exploitation risk levels.")] = None,
+        cve: Annotated[Optional[StrictStr], Field(description="Filter findings by a CVE ID in the form `CVE-YYYY-NNNN`. Returns the findings whose watchTowr knowledge-base entry maps to that CVE, the same mapping vulnerability intelligence's `isAffected` uses for CVE rows. A watchTowr vulnerability ID (`wT-…`) is rejected. Returns findings of every status except `unconfirmed` unless `statuses` is set.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort findings by ID, creation date, last update or last seen date. Defaults to `id`. Findings with no `last_seen` sort first in ascending order and last in descending order.")] = None,
+        sort_order: Annotated[Optional[StrictStr], Field(description="The direction to sort findings in. Defaults to `DESC`.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3095,11 +3110,11 @@ class FindingsApi:
     ) -> ApiResponse[PaginatedClientFindings]:
         """List Findings
 
-        List all discovered findings, ordered by date identified.
+        List all discovered findings, newest first by default. Use `sortBy` and `sortOrder` to order them by another date.
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param created_from: Filter findings created after a given date and time.
         :type created_from: datetime
@@ -3109,9 +3124,9 @@ class FindingsApi:
         :type updated_from: datetime
         :param updated_to: Filter findings updated before a given date and time.
         :type updated_to: datetime
-        :param statuses: Filter findings by a list of comma separated statuses they're tagged with.
+        :param statuses: Filter findings by a list of comma separated statuses they're tagged with. Defaults to `confirmed`, or to every status except `unconfirmed` when `cve` is set.
         :type statuses: str
-        :param business_unit_ids: Filter findings by a list of comma separated business unit IDs that they're related to.
+        :param business_unit_ids: Filter findings by a list of comma separated business unit IDs that they're related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param finding_impact_threshold: Impact Setting: * High - Prioritized Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organization's security posture. * All - All Findings, a broader range of findings that may not directly impact your organization's security posture, but may represent deviations from best practices.
         :type finding_impact_threshold: str
@@ -3135,6 +3150,12 @@ class FindingsApi:
         :type only_unacknowledged: bool
         :param exploitation_risk_level: Filter findings by a comma separated list of exploitation risk levels.
         :type exploitation_risk_level: str
+        :param cve: Filter findings by a CVE ID in the form `CVE-YYYY-NNNN`. Returns the findings whose watchTowr knowledge-base entry maps to that CVE, the same mapping vulnerability intelligence's `isAffected` uses for CVE rows. A watchTowr vulnerability ID (`wT-…`) is rejected. Returns findings of every status except `unconfirmed` unless `statuses` is set.
+        :type cve: str
+        :param sort_by: Sort findings by ID, creation date, last update or last seen date. Defaults to `id`. Findings with no `last_seen` sort first in ascending order and last in descending order.
+        :type sort_by: str
+        :param sort_order: The direction to sort findings in. Defaults to `DESC`.
+        :type sort_order: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3177,6 +3198,9 @@ class FindingsApi:
             only_ai_discovered=only_ai_discovered,
             only_unacknowledged=only_unacknowledged,
             exploitation_risk_level=exploitation_risk_level,
+            cve=cve,
+            sort_by=sort_by,
+            sort_order=sort_order,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3203,13 +3227,13 @@ class FindingsApi:
     def get_list_findings_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter findings created after a given date and time.")] = None,
         created_to: Annotated[Optional[datetime], Field(description="Filter findings created before a given date and time.")] = None,
         updated_from: Annotated[Optional[datetime], Field(description="Filter findings updated after a given date and time.")] = None,
         updated_to: Annotated[Optional[datetime], Field(description="Filter findings updated before a given date and time.")] = None,
-        statuses: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated statuses they're tagged with.")] = None,
-        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated business unit IDs that they're related to.")] = None,
+        statuses: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated statuses they're tagged with. Defaults to `confirmed`, or to every status except `unconfirmed` when `cve` is set.")] = None,
+        business_unit_ids: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated business unit IDs that they're related to. Each ID must be a positive integer.")] = None,
         finding_impact_threshold: Annotated[Optional[StrictStr], Field(description="Impact Setting: * High - Prioritized Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organization's security posture. * All - All Findings, a broader range of findings that may not directly impact your organization's security posture, but may represent deviations from best practices.")] = None,
         finding_title: Annotated[Optional[StrictStr], Field(description="Search findings by title contents.")] = None,
         severities: Annotated[Optional[StrictStr], Field(description="Filter findings by a list of comma separated severities they're tagged with.")] = None,
@@ -3221,6 +3245,9 @@ class FindingsApi:
         only_ai_discovered: Annotated[Optional[StrictBool], Field(description="Filter to only show findings discovered by AI.")] = None,
         only_unacknowledged: Annotated[Optional[StrictBool], Field(description="Deprecated. This parameter has no effect and is ignored.")] = None,
         exploitation_risk_level: Annotated[Optional[StrictStr], Field(description="Filter findings by a comma separated list of exploitation risk levels.")] = None,
+        cve: Annotated[Optional[StrictStr], Field(description="Filter findings by a CVE ID in the form `CVE-YYYY-NNNN`. Returns the findings whose watchTowr knowledge-base entry maps to that CVE, the same mapping vulnerability intelligence's `isAffected` uses for CVE rows. A watchTowr vulnerability ID (`wT-…`) is rejected. Returns findings of every status except `unconfirmed` unless `statuses` is set.")] = None,
+        sort_by: Annotated[Optional[StrictStr], Field(description="Sort findings by ID, creation date, last update or last seen date. Defaults to `id`. Findings with no `last_seen` sort first in ascending order and last in descending order.")] = None,
+        sort_order: Annotated[Optional[StrictStr], Field(description="The direction to sort findings in. Defaults to `DESC`.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3236,11 +3263,11 @@ class FindingsApi:
     ) -> RESTResponseType:
         """List Findings
 
-        List all discovered findings, ordered by date identified.
+        List all discovered findings, newest first by default. Use `sortBy` and `sortOrder` to order them by another date.
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param created_from: Filter findings created after a given date and time.
         :type created_from: datetime
@@ -3250,9 +3277,9 @@ class FindingsApi:
         :type updated_from: datetime
         :param updated_to: Filter findings updated before a given date and time.
         :type updated_to: datetime
-        :param statuses: Filter findings by a list of comma separated statuses they're tagged with.
+        :param statuses: Filter findings by a list of comma separated statuses they're tagged with. Defaults to `confirmed`, or to every status except `unconfirmed` when `cve` is set.
         :type statuses: str
-        :param business_unit_ids: Filter findings by a list of comma separated business unit IDs that they're related to.
+        :param business_unit_ids: Filter findings by a list of comma separated business unit IDs that they're related to. Each ID must be a positive integer.
         :type business_unit_ids: str
         :param finding_impact_threshold: Impact Setting: * High - Prioritized Findings (vulnerabilities, misconfigurations and weaknesses) that could have an immediate, direct impact on your organization's security posture. * All - All Findings, a broader range of findings that may not directly impact your organization's security posture, but may represent deviations from best practices.
         :type finding_impact_threshold: str
@@ -3276,6 +3303,12 @@ class FindingsApi:
         :type only_unacknowledged: bool
         :param exploitation_risk_level: Filter findings by a comma separated list of exploitation risk levels.
         :type exploitation_risk_level: str
+        :param cve: Filter findings by a CVE ID in the form `CVE-YYYY-NNNN`. Returns the findings whose watchTowr knowledge-base entry maps to that CVE, the same mapping vulnerability intelligence's `isAffected` uses for CVE rows. A watchTowr vulnerability ID (`wT-…`) is rejected. Returns findings of every status except `unconfirmed` unless `statuses` is set.
+        :type cve: str
+        :param sort_by: Sort findings by ID, creation date, last update or last seen date. Defaults to `id`. Findings with no `last_seen` sort first in ascending order and last in descending order.
+        :type sort_by: str
+        :param sort_order: The direction to sort findings in. Defaults to `DESC`.
+        :type sort_order: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3318,6 +3351,9 @@ class FindingsApi:
             only_ai_discovered=only_ai_discovered,
             only_unacknowledged=only_unacknowledged,
             exploitation_risk_level=exploitation_risk_level,
+            cve=cve,
+            sort_by=sort_by,
+            sort_order=sort_order,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3357,6 +3393,9 @@ class FindingsApi:
         only_ai_discovered,
         only_unacknowledged,
         exploitation_risk_level,
+        cve,
+        sort_by,
+        sort_order,
         _request_auth,
         _content_type,
         _headers,
@@ -3490,6 +3529,18 @@ class FindingsApi:
         if exploitation_risk_level is not None:
             
             _query_params.append(('exploitationRiskLevel', exploitation_risk_level))
+            
+        if cve is not None:
+            
+            _query_params.append(('cve', cve))
+            
+        if sort_by is not None:
+            
+            _query_params.append(('sortBy', sort_by))
+            
+        if sort_order is not None:
+            
+            _query_params.append(('sortOrder', sort_order))
             
         # process the header parameters
         # process the form parameters

@@ -48,7 +48,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.HuntsApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
-    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
+    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. (optional)
     statuses = ['received,in-progress,completed,not-covered,outdated'] # List[str] | Filter hunts by a comma separated list of hunt statuses. Values are case-sensitive — pass the canonical lowercase form (e.g. `received,in-progress`). (optional)
     hunt_search = 'remote%20code%20execution' # str | Search for hunts by text in hunt name. (optional)
     types = ['bespoke,proactive'] # List[str] | Filter hunts by a comma separated list of hunt types. Values are case-sensitive — pass the canonical lowercase form (e.g. `bespoke,proactive`). (optional)
@@ -77,7 +77,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
- **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
+ **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. | [optional] 
  **statuses** | [**List[str]**](str.md)| Filter hunts by a comma separated list of hunt statuses. Values are case-sensitive — pass the canonical lowercase form (e.g. &#x60;received,in-progress&#x60;). | [optional] 
  **hunt_search** | **str**| Search for hunts by text in hunt name. | [optional] 
  **types** | [**List[str]**](str.md)| Filter hunts by a comma separated list of hunt types. Values are case-sensitive — pass the canonical lowercase form (e.g. &#x60;bespoke,proactive&#x60;). | [optional] 
@@ -150,7 +150,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     api_instance = watchtowr_api_sdk.HuntsApi(api_client)
     id = 3.4 # float | Hunt ID of the hunt to retrieve assets from.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
-    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
+    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. (optional)
 
     try:
         # List Hunt Assets
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **float**| Hunt ID of the hunt to retrieve assets from. | 
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
- **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
+ **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. | [optional] 
 
 ### Return type
 
@@ -233,7 +233,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     api_instance = watchtowr_api_sdk.HuntsApi(api_client)
     id = 3.4 # float | The ID of the hunt to retrieve findings from.
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
-    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
+    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. (optional)
 
     try:
         # List Hunt Findings
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **float**| The ID of the hunt to retrieve findings from. | 
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
- **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
+ **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. | [optional] 
 
 ### Return type
 

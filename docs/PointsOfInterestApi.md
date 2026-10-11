@@ -128,7 +128,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.PointsOfInterestApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
-    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
+    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. (optional)
     created_from = '2022-02-22T22:00Z' # datetime | Filter points of interest created after a given date and time. (optional)
     created_to = '2022-02-23T22:00Z' # datetime | Filter points of interest created before a given date and time. (optional)
     updated_from = '2022-02-22T22:00Z' # datetime | Filter points of interest updated after a given date and time. (optional)
@@ -140,7 +140,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     start_date = '2022-02-23T22:00Z' # datetime | Filter points of interest by start date. (optional)
     end_date = '2022-02-23T22:00Z' # datetime | Filter points of interest by end date. (optional)
     asset_statuses = 'verified,Unregistered,Parked,Incorrect Identification,pending,VerifiedOutOfScope,VerifiedReducedAttack,Tracked,CDN,Hanging Cloud IP,VerifiedHoneypot,Third Party' # str | Filter points of interest by a comma separated list of asset statuses. (optional)
-    business_unit_ids = '1,2,3' # str | Filter points of interest by a comma separated list of business unit IDs. (optional)
+    business_unit_ids = '1,2,3' # str | Filter points of interest by a comma separated list of business unit IDs. Each ID must be a positive integer. (optional)
     suppression_filter = 'non-suppressed' # str | Filter points of interest by suppression status. (optional)
 
     try:
@@ -160,7 +160,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
- **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
+ **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. | [optional] 
  **created_from** | **datetime**| Filter points of interest created after a given date and time. | [optional] 
  **created_to** | **datetime**| Filter points of interest created before a given date and time. | [optional] 
  **updated_from** | **datetime**| Filter points of interest updated after a given date and time. | [optional] 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
  **start_date** | **datetime**| Filter points of interest by start date. | [optional] 
  **end_date** | **datetime**| Filter points of interest by end date. | [optional] 
  **asset_statuses** | **str**| Filter points of interest by a comma separated list of asset statuses. | [optional] 
- **business_unit_ids** | **str**| Filter points of interest by a comma separated list of business unit IDs. | [optional] 
+ **business_unit_ids** | **str**| Filter points of interest by a comma separated list of business unit IDs. Each ID must be a positive integer. | [optional] 
  **suppression_filter** | **str**| Filter points of interest by suppression status. | [optional] 
 
 ### Return type

@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | User ID | 
-**name** | **str** | User name | 
+**id** | **float** | User ID or service account ID, depending on &#x60;type&#x60; | 
+**name** | **str** | User name or service account name | 
+**type** | [**RetestRequesterType**](RetestRequesterType.md) |  | 
 
 ## Example
 

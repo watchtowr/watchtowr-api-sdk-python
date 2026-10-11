@@ -38,7 +38,7 @@ class TestRetest(unittest.TestCase):
             return Retest(
                 retest_remaining = 1,
                 current_retest = watchtowr_api_sdk.models.finding_retest_response_dto.FindingRetestResponseDto(
-                    requested_by = 'Requested by user', 
+                    requested_by = 'Jane Doe', 
                     requested_at = '2024-01-29T08:05:09Z', 
                     retest_status = 'success', 
                     status_occurred_at = '2024-01-29T08:05:09Z', 

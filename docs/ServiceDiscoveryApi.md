@@ -46,7 +46,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.ServiceDiscoveryApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
-    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
+    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. (optional)
     include_closed_port = True # bool | Include listings with closed ports. (optional)
     include_no_service = True # bool | Include listings without a service (optional)
     created_from = '2022-02-22T22:00Z' # datetime | Filter services created after a given date and time. (optional)
@@ -61,7 +61,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     port_types = 'TCP,UDP' # str | Filter services by a list of comma separated transport layer protocols (e.g. UDP/TCP). (optional)
     port_services = 'SSH,HTTP' # str | Filter services by a list of comma separated services. (optional)
     service_type_ids = [1,2,3] # List[float] | Filter services by a list of comma separated service type IDs. (optional)
-    business_unit_ids = [1,2,3] # List[float] | Filter services by a list of comma separated business unit IDs they're related to. (optional)
+    business_unit_ids = [1,2,3] # List[float] | Filter services by a list of comma separated business unit IDs they're related to. Each ID must be a positive integer. (optional)
     sort_by = 'last_seen' # str | Sort services. (optional)
     order_by = 'DESC' # str | Order services. (optional)
     suppression_filter = 'non-suppressed' # str | Filter services by suppression status. (optional)
@@ -83,7 +83,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
- **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
+ **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. | [optional] 
  **include_closed_port** | **bool**| Include listings with closed ports. | [optional] 
  **include_no_service** | **bool**| Include listings without a service | [optional] 
  **created_from** | **datetime**| Filter services created after a given date and time. | [optional] 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
  **port_types** | **str**| Filter services by a list of comma separated transport layer protocols (e.g. UDP/TCP). | [optional] 
  **port_services** | **str**| Filter services by a list of comma separated services. | [optional] 
  **service_type_ids** | [**List[float]**](float.md)| Filter services by a list of comma separated service type IDs. | [optional] 
- **business_unit_ids** | [**List[float]**](float.md)| Filter services by a list of comma separated business unit IDs they&#39;re related to. | [optional] 
+ **business_unit_ids** | [**List[float]**](float.md)| Filter services by a list of comma separated business unit IDs they&#39;re related to. Each ID must be a positive integer. | [optional] 
  **sort_by** | **str**| Sort services. | [optional] 
  **order_by** | **str**| Order services. | [optional] 
  **suppression_filter** | **str**| Filter services by suppression status. | [optional] 
@@ -163,7 +163,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = watchtowr_api_sdk.ServiceDiscoveryApi(api_client)
     page = 1 # float | The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. (optional)
-    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. (optional)
+    page_size = 10 # float | The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. (optional)
     search = 'apache' # str | Search technologies by name. (optional)
 
     try:
@@ -183,7 +183,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **float**| The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results. | [optional] 
- **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30. | [optional] 
+ **page_size** | **float**| The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30. | [optional] 
  **search** | **str**| Search technologies by name. | [optional] 
 
 ### Return type

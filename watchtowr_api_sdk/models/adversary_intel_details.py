@@ -44,7 +44,7 @@ class AdversaryIntelDetails(BaseModel):
     victim_countries: Optional[VictimCountrySummary] = Field(default=None, alias="victimCountries")
     target_industries: Optional[TargetIndustrySummary] = Field(default=None, alias="targetIndustries")
     latest_media: Optional[List[Media]] = Field(default=None, description="Recent media references for this adversary. Not currently populated — returns an empty array.", alias="latestMedia")
-    is_affected: StrictBool = Field(description="Whether the user has confirmed open findings against vulnerabilities exploited by this adversary. Scoped to the requesting user's business units and the organization's finding impact threshold.", alias="isAffected")
+    is_affected: Optional[StrictBool] = Field(description="Whether the user has confirmed open findings against vulnerabilities exploited by this adversary. Scoped to the requesting user's business units and the organization's finding impact threshold. `null` when the check could not be completed.", alias="isAffected")
     affected_kb_entry_ids: List[StrictFloat] = Field(description="KB entry IDs that drive the `isAffected` flag, scoped to the requesting user's business units.", alias="affectedKbEntryIds")
     __properties: ClassVar[List[str]] = ["attackerId", "name", "type", "description", "aliases", "countryCode", "firstReportedDate", "vulnerabilityLastUpdated", "mitreLastUpdated", "victimCountries", "targetIndustries", "latestMedia", "isAffected", "affectedKbEntryIds"]
 
@@ -114,6 +114,11 @@ class AdversaryIntelDetails(BaseModel):
         # and model_fields_set contains the field
         if self.mitre_last_updated is None and "mitre_last_updated" in self.model_fields_set:
             _dict['mitreLastUpdated'] = None
+
+        # set to None if is_affected (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_affected is None and "is_affected" in self.model_fields_set:
+            _dict['isAffected'] = None
 
         return _dict
 

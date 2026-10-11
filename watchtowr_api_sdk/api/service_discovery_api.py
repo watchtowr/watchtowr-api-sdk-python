@@ -45,7 +45,7 @@ class ServiceDiscoveryApi:
     def get_list_service_listing(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         include_closed_port: Annotated[Optional[StrictBool], Field(description="Include listings with closed ports.")] = None,
         include_no_service: Annotated[Optional[StrictBool], Field(description="Include listings without a service")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter services created after a given date and time.")] = None,
@@ -60,7 +60,7 @@ class ServiceDiscoveryApi:
         port_types: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated transport layer protocols (e.g. UDP/TCP).")] = None,
         port_services: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated services.")] = None,
         service_type_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter services by a list of comma separated service type IDs.")] = None,
-        business_unit_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter services by a list of comma separated business unit IDs they're related to.")] = None,
+        business_unit_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter services by a list of comma separated business unit IDs they're related to. Each ID must be a positive integer.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort services.")] = None,
         order_by: Annotated[Optional[StrictStr], Field(description="Order services.")] = None,
         suppression_filter: Annotated[Optional[StrictStr], Field(description="Filter services by suppression status.")] = None,
@@ -83,7 +83,7 @@ class ServiceDiscoveryApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param include_closed_port: Include listings with closed ports.
         :type include_closed_port: bool
@@ -113,7 +113,7 @@ class ServiceDiscoveryApi:
         :type port_services: str
         :param service_type_ids: Filter services by a list of comma separated service type IDs.
         :type service_type_ids: List[float]
-        :param business_unit_ids: Filter services by a list of comma separated business unit IDs they're related to.
+        :param business_unit_ids: Filter services by a list of comma separated business unit IDs they're related to. Each ID must be a positive integer.
         :type business_unit_ids: List[float]
         :param sort_by: Sort services.
         :type sort_by: str
@@ -189,7 +189,7 @@ class ServiceDiscoveryApi:
     def get_list_service_listing_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         include_closed_port: Annotated[Optional[StrictBool], Field(description="Include listings with closed ports.")] = None,
         include_no_service: Annotated[Optional[StrictBool], Field(description="Include listings without a service")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter services created after a given date and time.")] = None,
@@ -204,7 +204,7 @@ class ServiceDiscoveryApi:
         port_types: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated transport layer protocols (e.g. UDP/TCP).")] = None,
         port_services: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated services.")] = None,
         service_type_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter services by a list of comma separated service type IDs.")] = None,
-        business_unit_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter services by a list of comma separated business unit IDs they're related to.")] = None,
+        business_unit_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter services by a list of comma separated business unit IDs they're related to. Each ID must be a positive integer.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort services.")] = None,
         order_by: Annotated[Optional[StrictStr], Field(description="Order services.")] = None,
         suppression_filter: Annotated[Optional[StrictStr], Field(description="Filter services by suppression status.")] = None,
@@ -227,7 +227,7 @@ class ServiceDiscoveryApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param include_closed_port: Include listings with closed ports.
         :type include_closed_port: bool
@@ -257,7 +257,7 @@ class ServiceDiscoveryApi:
         :type port_services: str
         :param service_type_ids: Filter services by a list of comma separated service type IDs.
         :type service_type_ids: List[float]
-        :param business_unit_ids: Filter services by a list of comma separated business unit IDs they're related to.
+        :param business_unit_ids: Filter services by a list of comma separated business unit IDs they're related to. Each ID must be a positive integer.
         :type business_unit_ids: List[float]
         :param sort_by: Sort services.
         :type sort_by: str
@@ -333,7 +333,7 @@ class ServiceDiscoveryApi:
     def get_list_service_listing_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         include_closed_port: Annotated[Optional[StrictBool], Field(description="Include listings with closed ports.")] = None,
         include_no_service: Annotated[Optional[StrictBool], Field(description="Include listings without a service")] = None,
         created_from: Annotated[Optional[datetime], Field(description="Filter services created after a given date and time.")] = None,
@@ -348,7 +348,7 @@ class ServiceDiscoveryApi:
         port_types: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated transport layer protocols (e.g. UDP/TCP).")] = None,
         port_services: Annotated[Optional[StrictStr], Field(description="Filter services by a list of comma separated services.")] = None,
         service_type_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter services by a list of comma separated service type IDs.")] = None,
-        business_unit_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter services by a list of comma separated business unit IDs they're related to.")] = None,
+        business_unit_ids: Annotated[Optional[List[StrictFloat]], Field(description="Filter services by a list of comma separated business unit IDs they're related to. Each ID must be a positive integer.")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Sort services.")] = None,
         order_by: Annotated[Optional[StrictStr], Field(description="Order services.")] = None,
         suppression_filter: Annotated[Optional[StrictStr], Field(description="Filter services by suppression status.")] = None,
@@ -371,7 +371,7 @@ class ServiceDiscoveryApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param include_closed_port: Include listings with closed ports.
         :type include_closed_port: bool
@@ -401,7 +401,7 @@ class ServiceDiscoveryApi:
         :type port_services: str
         :param service_type_ids: Filter services by a list of comma separated service type IDs.
         :type service_type_ids: List[float]
-        :param business_unit_ids: Filter services by a list of comma separated business unit IDs they're related to.
+        :param business_unit_ids: Filter services by a list of comma separated business unit IDs they're related to. Each ID must be a positive integer.
         :type business_unit_ids: List[float]
         :param sort_by: Sort services.
         :type sort_by: str
@@ -672,7 +672,7 @@ class ServiceDiscoveryApi:
     def get_technology_statistics(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search technologies by name.")] = None,
         _request_timeout: Union[
             None,
@@ -693,7 +693,7 @@ class ServiceDiscoveryApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param search: Search technologies by name.
         :type search: str
@@ -748,7 +748,7 @@ class ServiceDiscoveryApi:
     def get_technology_statistics_with_http_info(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search technologies by name.")] = None,
         _request_timeout: Union[
             None,
@@ -769,7 +769,7 @@ class ServiceDiscoveryApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param search: Search technologies by name.
         :type search: str
@@ -824,7 +824,7 @@ class ServiceDiscoveryApi:
     def get_technology_statistics_without_preload_content(
         self,
         page: Annotated[Optional[StrictFloat], Field(description="The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.")] = None,
-        page_size: Annotated[Optional[StrictFloat], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.")] = None,
+        page_size: Annotated[Optional[Annotated[float, Field(strict=True, ge=1)]], Field(description="The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search technologies by name.")] = None,
         _request_timeout: Union[
             None,
@@ -845,7 +845,7 @@ class ServiceDiscoveryApi:
 
         :param page: The page number for paginated results. If the page field is not provided in the request, it defaults to 1, which corresponds to the first page of results.
         :type page: float
-        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The maximum for pageSize is 30.
+        :param page_size: The number of items to be included on each page of paginated results. If the pageSize field is not specified, it defaults to 10. The minimum for pageSize is 1 and the maximum is 30.
         :type page_size: float
         :param search: Search technologies by name.
         :type search: str

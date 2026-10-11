@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
 from typing import Any, ClassVar, Dict, List
+from watchtowr_api_sdk.models.retest_requester_type import RetestRequesterType
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,9 +29,10 @@ class ClientFindingRetestHistoryTriggeredBy(BaseModel):
     """
     ClientFindingRetestHistoryTriggeredBy
     """ # noqa: E501
-    id: StrictFloat = Field(description="User ID")
-    name: StrictStr = Field(description="User name")
-    __properties: ClassVar[List[str]] = ["id", "name"]
+    id: StrictFloat = Field(description="User ID or service account ID, depending on `type`")
+    name: StrictStr = Field(description="User name or service account name")
+    type: RetestRequesterType
+    __properties: ClassVar[List[str]] = ["id", "name", "type"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -89,7 +91,8 @@ class ClientFindingRetestHistoryTriggeredBy(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
-            "name": obj.get("name")
+            "name": obj.get("name"),
+            "type": obj.get("type")
         })
         return _obj
 
