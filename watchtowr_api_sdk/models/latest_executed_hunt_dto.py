@@ -18,8 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.hunt_acknowledgement_dto import HuntAcknowledgementDto
 from watchtowr_api_sdk.models.threat_actor_dto import ThreatActorDto
 from typing import Optional, Set
@@ -33,10 +33,10 @@ class LatestExecutedHuntDto(BaseModel):
     id: StrictStr = Field(description="Hunt identifier")
     title: StrictStr = Field(description="Hunt title")
     status: StrictStr = Field(description="Hunt status")
-    total_findings: StrictFloat = Field(description="Number of findings discovered", alias="totalFindings")
-    total_assets: StrictFloat = Field(description="Number of assets affected", alias="totalAssets")
+    total_findings: StrictInt = Field(description="Number of findings discovered", alias="totalFindings")
+    total_assets: StrictInt = Field(description="Number of assets affected", alias="totalAssets")
     need_investigation: StrictBool = Field(description="Whether manual investigation is required", alias="needInvestigation")
-    request_type: StrictStr = Field(description="Type of hunt request", alias="requestType")
+    request_type: Optional[StrictStr] = Field(description="Type of hunt request", alias="requestType")
     resolved_status: StrictBool = Field(description="Whether the hunt has been resolved", alias="resolvedStatus")
     acknowledgement: HuntAcknowledgementDto = Field(description="Hunt acknowledgement data")
     threat_actors: List[ThreatActorDto] = Field(description="Associated threat actors", alias="threatActors")
@@ -52,6 +52,9 @@ class LatestExecutedHuntDto(BaseModel):
     @field_validator('request_type')
     def request_type_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['Misconfig', 'Others', 'SoftwareVulnerability', 'ThreatIntelligence']):
             raise ValueError("must be one of enum values ('Misconfig', 'Others', 'SoftwareVulnerability', 'ThreatIntelligence')")
         return value
@@ -105,6 +108,11 @@ class LatestExecutedHuntDto(BaseModel):
                 if _item_threat_actors:
                     _items.append(_item_threat_actors.to_dict())
             _dict['threatActors'] = _items
+        # set to None if request_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.request_type is None and "request_type" in self.model_fields_set:
+            _dict['requestType'] = None
+
         return _dict
 
     @classmethod

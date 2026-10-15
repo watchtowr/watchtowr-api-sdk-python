@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **success** | **bool** | Success status | 
-**invited_count** | **float** | Number of users invited | 
+**invited_count** | **int** | Number of users invited | 
 **invited_emails** | **List[str]** | List of emails that were invited | 
 
 ## Example

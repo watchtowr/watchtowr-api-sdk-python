@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status_code** | **float** |  | [optional] 
+**status_code** | **int** |  | [optional] 
 **message** | **str** |  | [optional] 
 **error** | **str** |  | 
 

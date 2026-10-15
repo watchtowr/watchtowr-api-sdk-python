@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_custom_property import ClientCustomProperty
 from watchtowr_api_sdk.models.client_finding_affected import ClientFindingAffected
@@ -35,7 +35,7 @@ class ClientFinding(BaseModel):
     """
     ClientFinding
     """ # noqa: E501
-    id: StrictFloat
+    id: StrictInt
     title: StrictStr
     platform_url: StrictStr = Field(description="Link to this finding in the watchTowr platform.")
     description: StrictStr
@@ -59,7 +59,7 @@ class ClientFinding(BaseModel):
     assigned_user: Optional[ClientFindingAssignee] = None
     last_seen: Optional[datetime] = None
     last_status_updated_at: datetime
-    age: Optional[StrictFloat] = None
+    age: Optional[StrictInt] = None
     criticality: Optional[StrictStr] = None
     custom_properties: List[ClientCustomProperty] = Field(alias="customProperties")
     detection_rules: List[Dict[str, Any]]

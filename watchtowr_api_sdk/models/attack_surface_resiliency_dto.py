@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,10 +28,10 @@ class AttackSurfaceResiliencyDto(BaseModel):
     """
     AttackSurfaceResiliencyDto
     """ # noqa: E501
-    concerning_services: StrictFloat = Field(description="Count of concerning network services", alias="concerningServices")
-    concerning_points_of_interest: StrictFloat = Field(description="Count of concerning points of interest", alias="concerningPointsOfInterest")
-    valid_credentials: StrictFloat = Field(description="Count of findings with valid credentials", alias="validCredentials")
-    open_findings: StrictFloat = Field(description="Total count of open findings", alias="openFindings")
+    concerning_services: StrictInt = Field(description="Count of concerning network services", alias="concerningServices")
+    concerning_points_of_interest: StrictInt = Field(description="Count of concerning points of interest", alias="concerningPointsOfInterest")
+    valid_credentials: StrictInt = Field(description="Count of findings with valid credentials", alias="validCredentials")
+    open_findings: StrictInt = Field(description="Total count of open findings", alias="openFindings")
     __properties: ClassVar[List[str]] = ["concerningServices", "concerningPointsOfInterest", "validCredentials", "openFindings"]
 
     model_config = ConfigDict(

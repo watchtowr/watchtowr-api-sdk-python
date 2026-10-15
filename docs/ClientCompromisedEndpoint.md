@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | Compromised endpoint ID | 
+**id** | **int** | Compromised endpoint ID | 
 **hostname** | **str** | Hostname of the compromised endpoint | 
 **ip** | **str** | IP address of the compromised endpoint | 
 **stealer_id** | **str** | Unique stealer identifier | 

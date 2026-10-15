@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,8 +29,8 @@ class DeleteNoteSucces(BaseModel):
     DeleteNoteSucces
     """ # noqa: E501
     message: StrictStr
-    status: StrictFloat
-    status_code: StrictFloat = Field(alias="statusCode")
+    status: StrictInt
+    status_code: StrictInt = Field(alias="statusCode")
     __properties: ClassVar[List[str]] = ["message", "status", "statusCode"]
 
     model_config = ConfigDict(

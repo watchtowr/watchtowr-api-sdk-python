@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | ID | 
+**id** | **int** | ID | 
 **data** | [**WhoisDataObject**](WhoisDataObject.md) |  | 
 **raw** | **str** | Raw | 
 

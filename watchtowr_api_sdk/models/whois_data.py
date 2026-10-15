@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from watchtowr_api_sdk.models.whois_data_object import WhoisDataObject
 from typing import Optional, Set
@@ -29,7 +29,7 @@ class WhoisData(BaseModel):
     """
     WhoisData
     """ # noqa: E501
-    id: StrictFloat = Field(description="ID")
+    id: StrictInt = Field(description="ID")
     data: WhoisDataObject
     raw: StrictStr = Field(description="Raw")
     __properties: ClassVar[List[str]] = ["id", "data", "raw"]

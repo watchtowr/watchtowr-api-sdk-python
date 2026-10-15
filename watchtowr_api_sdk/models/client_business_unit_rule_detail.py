@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_integration_item_dto import ClientIntegrationItemDto
 from typing import Optional, Set
@@ -30,15 +30,15 @@ class ClientBusinessUnitRuleDetail(BaseModel):
     """
     ClientBusinessUnitRuleDetail
     """ # noqa: E501
-    id: StrictFloat = Field(description="ID")
+    id: StrictInt = Field(description="ID")
     name: StrictStr = Field(description="Rule name")
     keyword_matcher: Optional[StrictStr] = Field(default=None, description="Keyword for matching assets. Supports wildcard patterns: %.sg, %abc%, %abc.com, abc.com. Wildcards can be defined using %.")
     keyword_rule_type: Optional[StrictStr] = Field(default=None, description="Keyword rule type. HOSTNAME: matches domain/subdomain names (default). CNAME: matches CNAME DNS record values. TLS_SSL: matches TLS/SSL certificate subject names.")
     country: Optional[StrictStr] = Field(default=None, description="Geographical location 2-letter country code (ISO 3166-1 alpha-2). Examples: SG, US, GB, AU")
-    cascade_subdomain: StrictBool = Field(description="Whether to cascade to subdomains")
+    cascade_subdomain: StrictBool = Field(description="Whether to cascade to subdomains. New CNAME and TLS_SSL keyword rules always have false. Older rules of these types can show true.")
     cascade_ip: StrictBool = Field(description="Whether to cascade to IPs")
     integration_type: Optional[StrictStr] = Field(default=None, description="Integration type (deprecated — use integrations[0].integration_type instead)")
-    integration_id: Optional[StrictFloat] = Field(default=None, description="Integration ID (deprecated — use integrations[0].integration_id instead)")
+    integration_id: Optional[StrictInt] = Field(default=None, description="Integration ID (deprecated — use integrations[0].integration_id instead)")
     integrations: Optional[List[ClientIntegrationItemDto]] = Field(default=None, description="List of integrations matched by this rule")
     include_all_integrations: StrictBool = Field(description="Whether to include all integrations")
     created_at: datetime = Field(description="Created At")

@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,12 +29,12 @@ class ClientBusinessUnitDetail(BaseModel):
     """
     ClientBusinessUnitDetail
     """ # noqa: E501
-    id: StrictFloat = Field(description="ID")
+    id: StrictInt = Field(description="ID")
     name: StrictStr = Field(description="Name")
     description: Optional[StrictStr] = Field(description="Description")
     type: StrictStr = Field(description="Business unit type")
-    parent_id: Optional[StrictFloat] = Field(default=None, description="Parent business unit ID")
-    user_ids: Optional[List[StrictFloat]] = Field(default=None, description="Array of user IDs assigned to this business unit")
+    parent_id: Optional[StrictInt] = Field(default=None, description="Parent business unit ID")
+    user_ids: Optional[List[StrictInt]] = Field(default=None, description="Array of user IDs assigned to this business unit")
     created_at: datetime = Field(description="Created At")
     updated_at: datetime = Field(description="Updated At")
     __properties: ClassVar[List[str]] = ["id", "name", "description", "type", "parent_id", "user_ids", "created_at", "updated_at"]

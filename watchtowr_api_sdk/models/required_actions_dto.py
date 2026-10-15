@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +28,8 @@ class RequiredActionsDto(BaseModel):
     """
     RequiredActionsDto
     """ # noqa: E501
-    actively_exploited_findings: StrictFloat = Field(description="Count of open findings currently being actively exploited", alias="activelyExploitedFindings")
-    unresolved_rapid_reaction_hunts: StrictFloat = Field(description="Count of unresolved rapid reaction hunts", alias="unresolvedRapidReactionHunts")
+    actively_exploited_findings: StrictInt = Field(description="Count of open findings currently being actively exploited", alias="activelyExploitedFindings")
+    unresolved_rapid_reaction_hunts: StrictInt = Field(description="Count of unresolved rapid reaction hunts", alias="unresolvedRapidReactionHunts")
     __properties: ClassVar[List[str]] = ["activelyExploitedFindings", "unresolvedRapidReactionHunts"]
 
     model_config = ConfigDict(

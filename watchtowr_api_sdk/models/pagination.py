@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List
 from watchtowr_api_sdk.models.link import Link
 from typing import Optional, Set
@@ -29,11 +29,11 @@ class Pagination(BaseModel):
     """
     Pagination
     """ # noqa: E501
-    total: StrictFloat
-    count: StrictFloat
-    per_page: StrictFloat
-    current_page: StrictFloat
-    total_pages: StrictFloat
+    total: StrictInt
+    count: StrictInt
+    per_page: StrictInt
+    current_page: StrictInt
+    total_pages: StrictInt
     links: Link
     __properties: ClassVar[List[str]] = ["total", "count", "per_page", "current_page", "total_pages", "links"]
 

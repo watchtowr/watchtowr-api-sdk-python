@@ -52,6 +52,7 @@ class WhoisDataObject(BaseModel):
     creation_date: Optional[WhoisDataObjectCreationDate] = None
     expiration_date: Optional[WhoisDataObjectExpirationDate] = None
     message: Optional[StrictStr] = Field(default=None, description="Explains why no whois record is present. When set, it is the only field returned.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["org", "city", "name", "state", "dnssec", "emails", "status", "address", "country", "zipcode", "registrar", "domain_name", "name_servers", "referral_url", "whois_server", "creation_date", "expiration_date", "message"]
 
     model_config = ConfigDict(
@@ -84,8 +85,10 @@ class WhoisDataObject(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -111,6 +114,11 @@ class WhoisDataObject(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of expiration_date
         if self.expiration_date:
             _dict['expiration_date'] = self.expiration_date.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         # set to None if org (nullable) is None
         # and model_fields_set contains the field
         if self.org is None and "org" in self.model_fields_set:
@@ -212,11 +220,6 @@ class WhoisDataObject(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in WhoisDataObject) in the input: " + _key)
-
         _obj = cls.model_validate({
             "org": obj.get("org"),
             "city": obj.get("city"),
@@ -237,6 +240,11 @@ class WhoisDataObject(BaseModel):
             "expiration_date": WhoisDataObjectExpirationDate.from_dict(obj["expiration_date"]) if obj.get("expiration_date") is not None else None,
             "message": obj.get("message")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

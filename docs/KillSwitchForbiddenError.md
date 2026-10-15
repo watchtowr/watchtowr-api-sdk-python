@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message** | **str** | Error message | 
 **error** | **str** | Error code | 
-**status_code** | **float** | HTTP status code | 
+**status_code** | **int** | HTTP status code | 
 
 ## Example
 

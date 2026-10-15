@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** |  | 
+**id** | **int** |  | 
 **title** | **str** |  | 
 **platform_url** | **str** | Link to this finding in the watchTowr platform. | 
 **description** | **str** |  | 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **assigned_user** | [**ClientFindingAssignee**](ClientFindingAssignee.md) |  | [optional] 
 **last_seen** | **datetime** |  | [optional] 
 **last_status_updated_at** | **datetime** |  | 
-**age** | **float** |  | [optional] 
+**age** | **int** |  | [optional] 
 **criticality** | **str** |  | [optional] 
 **custom_properties** | [**List[ClientCustomProperty]**](ClientCustomProperty.md) |  | 
 **detection_rules** | **List[object]** |  | 

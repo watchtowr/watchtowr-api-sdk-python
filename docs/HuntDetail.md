@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | ID | 
+**id** | **int** | ID | 
 **type** | **str** | Type | 
 **created_at** | **datetime** | Created at | 
 **updated_at** | **datetime** | Updated at | 
-**total_findings** | **float** | Total findings | 
-**total_assets** | **float** | Total assets | 
+**total_findings** | **int** | Total findings | 
+**total_assets** | **int** | Total assets | 
 **hunt_request_type** | **str** | Hunt request type | 
 **rapid_exposure_mechanism** | **str** | Rapid exposure mechanism | [optional] 
 **title** | **str** | Title | 

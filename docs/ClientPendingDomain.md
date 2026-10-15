@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | Domain ID | 
+**id** | **int** | Domain ID | 
 **status** | **str** | Domain status | 
 **name** | **str** | Domain name | 
 **source** | **str** | Source that discovered the domain | 

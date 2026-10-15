@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,12 +28,12 @@ class OpenFindingsDto(BaseModel):
     """
     OpenFindingsDto
     """ # noqa: E501
-    critical: StrictFloat = Field(description="Count of critical findings")
-    high: StrictFloat = Field(description="Count of high severity findings")
-    medium: StrictFloat = Field(description="Count of medium severity findings")
-    low: StrictFloat = Field(description="Count of low severity findings")
-    info: StrictFloat = Field(description="Count of informational findings")
-    total: StrictFloat = Field(description="Total count of all open findings")
+    critical: StrictInt = Field(description="Count of critical findings")
+    high: StrictInt = Field(description="Count of high severity findings")
+    medium: StrictInt = Field(description="Count of medium severity findings")
+    low: StrictInt = Field(description="Count of low severity findings")
+    info: StrictInt = Field(description="Count of informational findings")
+    total: StrictInt = Field(description="Total count of all open findings")
     __properties: ClassVar[List[str]] = ["critical", "high", "medium", "low", "info", "total"]
 
     model_config = ConfigDict(

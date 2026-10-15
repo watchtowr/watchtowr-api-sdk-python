@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | ID | 
-**port_id** | **float** | Port ID | 
+**id** | **int** | ID | 
+**port_id** | **int** | Port ID | 
 **ip** | **str** | IP Address | [optional] 
 **hostname** | **str** | Hostname | [optional] 
-**port** | **float** | Port number | [optional] 
+**port** | **int** | Port number | [optional] 
 **type** | **str** | Port Protocol | [optional] 
 **country** | **str** | Country code | [optional] 
 **banner** | **str** | Banner | [optional] 
@@ -23,10 +23,10 @@ Name | Type | Description | Notes
 **suppressed** | **bool** | Whether the service is suppressed | 
 **suppressed_at** | **datetime** | Suppressed at timestamp | [optional] 
 **is_permanent_suppression** | **bool** | Whether the service is permanently suppressed | [optional] 
-**ip_id** | **float** | IP ID | [optional] 
+**ip_id** | **int** | IP ID | [optional] 
 **state** | **str** | Port State | [optional] 
-**finding_id** | **float** | Finding ID associated with the service | [optional] 
-**suppressed_by_id** | **float** | ID of the user who suppressed the service | [optional] 
+**finding_id** | **int** | Finding ID associated with the service | [optional] 
+**suppressed_by_id** | **int** | ID of the user who suppressed the service | [optional] 
 
 ## Example
 

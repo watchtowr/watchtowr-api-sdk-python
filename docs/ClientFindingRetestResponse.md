@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | [**ClientFinding**](ClientFinding.md) |  | 
-**dns_connected_retests_triggered** | **float** | Number of additional DNS-connected findings retested alongside the requested finding (present when &#x60;includeDnsConnected&#x3D;true&#x60;). | [optional] 
+**dns_connected_retests_triggered** | **int** | Number of additional DNS-connected findings retested alongside the requested finding (present when &#x60;includeDnsConnected&#x3D;true&#x60;). | [optional] 
 
 ## Example
 

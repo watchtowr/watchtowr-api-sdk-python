@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.whois_data import WhoisData
 from typing import Optional, Set
@@ -30,7 +30,7 @@ class SuspiciousDomain(BaseModel):
     """
     SuspiciousDomain
     """ # noqa: E501
-    id: StrictFloat = Field(description="ID")
+    id: StrictInt = Field(description="ID")
     name: StrictStr = Field(description="Name")
     discovery_reason: StrictStr = Field(description="Discovery Reason")
     status: StrictStr

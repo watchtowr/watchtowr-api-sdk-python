@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_finding_retest_history_asset import ClientFindingRetestHistoryAsset
 from watchtowr_api_sdk.models.client_finding_retest_history_finding import ClientFindingRetestHistoryFinding
@@ -32,18 +32,18 @@ class ClientFindingRetestHistory(BaseModel):
     """
     ClientFindingRetestHistory
     """ # noqa: E501
-    id: StrictFloat = Field(description="Retest ID")
+    id: StrictInt = Field(description="Retest ID")
     finding: Optional[ClientFindingRetestHistoryFinding] = Field(default=None, description="Finding information")
     asset: Optional[ClientFindingRetestHistoryAsset] = Field(default=None, description="Affected asset information")
     triggered_by: Optional[ClientFindingRetestHistoryTriggeredBy] = Field(default=None, description="User or service account that triggered the retest", alias="triggeredBy")
     current_retest_status: StrictStr = Field(description="Current retest status", alias="currentRetestStatus")
-    result: Optional[StrictStr] = Field(description="Retest result status at the time this retest completed.")
+    result: Optional[StrictStr] = Field(description="Retest result status at the time this retest completed. An aborted retest (`currentRetestStatus` is `error`) is `unresolved`.")
     started_at: datetime = Field(description="Date and time when the retest was started", alias="startedAt")
     completed_at: Optional[datetime] = Field(default=None, description="Date and time when the retest was completed", alias="completedAt")
     updated_at: datetime = Field(description="Date and time when the retest was last updated", alias="updatedAt")
     created_at: datetime = Field(description="Creation date", alias="createdAt")
-    attempt_number: Optional[StrictFloat] = Field(default=None, description="Retest attempt number for this finding", alias="attemptNumber")
-    days_open_before_retest: Optional[StrictFloat] = Field(default=None, description="Number of days the finding was open before this retest was triggered", alias="daysOpenBeforeRetest")
+    attempt_number: Optional[StrictInt] = Field(default=None, description="Retest attempt number for this finding", alias="attemptNumber")
+    days_open_before_retest: Optional[StrictInt] = Field(default=None, description="Number of days the finding was open before this retest was triggered", alias="daysOpenBeforeRetest")
     __properties: ClassVar[List[str]] = ["id", "finding", "asset", "triggeredBy", "currentRetestStatus", "result", "startedAt", "completedAt", "updatedAt", "createdAt", "attemptNumber", "daysOpenBeforeRetest"]
 
     @field_validator('result')

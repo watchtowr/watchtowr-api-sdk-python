@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total_resolved_findings** | **float** | Total count of resolved findings | 
-**old_critical_high_findings** | **float** | Count of critical/high findings older than 30 days | 
-**unacknowledged_critical_high_findings** | **float** | Deprecated. Always returns 0. Retained for backward compatibility. | 
+**total_resolved_findings** | **int** | Total count of resolved findings | 
+**old_critical_high_findings** | **int** | Count of critical/high findings older than 30 days | 
+**unacknowledged_critical_high_findings** | **int** | Deprecated. Always returns 0. Retained for backward compatibility. | 
 
 ## Example
 

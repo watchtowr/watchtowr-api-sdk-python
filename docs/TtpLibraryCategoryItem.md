@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | Category ID | 
+**id** | **int** | Category ID | 
 **name** | **str** | Category name | 
 
 ## Example

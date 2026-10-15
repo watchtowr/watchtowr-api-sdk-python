@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | Asset ID | 
+**id** | **int** | Asset ID | 
 **name** | **str** | Asset name | 
 **type** | **str** | Asset type | 
 

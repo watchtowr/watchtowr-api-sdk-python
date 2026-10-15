@@ -36,22 +36,22 @@ class TestPagination(unittest.TestCase):
         model = Pagination()
         if include_optional:
             return Pagination(
-                total = 1.337,
-                count = 1.337,
-                per_page = 1.337,
-                current_page = 1.337,
-                total_pages = 1.337,
+                total = 56,
+                count = 56,
+                per_page = 56,
+                current_page = 56,
+                total_pages = 56,
                 links = watchtowr_api_sdk.models.link.Link(
                     previous = '', 
                     next = '', )
             )
         else:
             return Pagination(
-                total = 1.337,
-                count = 1.337,
-                per_page = 1.337,
-                current_page = 1.337,
-                total_pages = 1.337,
+                total = 56,
+                count = 56,
+                per_page = 56,
+                current_page = 56,
+                total_pages = 56,
                 links = watchtowr_api_sdk.models.link.Link(
                     previous = '', 
                     next = '', ),

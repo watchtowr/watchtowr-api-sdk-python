@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class UnprocessableContent(BaseModel):
     UnprocessableContent
     """ # noqa: E501
     message: StrictStr
-    status_code: StrictFloat
+    status_code: StrictInt
     errors: Dict[str, Any]
     __properties: ClassVar[List[str]] = ["message", "status_code", "errors"]
 

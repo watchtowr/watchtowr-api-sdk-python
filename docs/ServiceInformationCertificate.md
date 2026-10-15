@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | ID | 
+**id** | **int** | ID | 
 **subject_common_name** | **str** | Subject Common Name | 
 **subject_organisation** | **str** | Subject Organization | 
 **subject_alt_names** | **List[str]** | Subject Alt Names | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **fingerprint** | **str** | Fingerprint | 
 **serial_number** | **str** | Certificate serial number | 
 **public_key_info_alg** | **str** | PublicKeyInfoAlg | 
-**public_key_info_size** | **float** | PublicKeyInfoSize | 
+**public_key_info_size** | **int** | PublicKeyInfoSize | 
 **status** | **str** |  | 
 **issued_by_status** | **str** | Trust provenance of the certificate issuer as classified upstream | 
 **created_at** | **datetime** | Discovery date | [optional] 

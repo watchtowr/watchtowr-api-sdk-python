@@ -44,20 +44,7 @@ class TestIpWhoisDataObject(unittest.TestCase):
                 asn_registry = 'arin',
                 query = '45.33.2.79',
                 nets = [
-                    watchtowr_api_sdk.models.ip_whois_net.IpWhoisNet(
-                        cidr = '45.33.0.0/17', 
-                        name = 'LINODE-US', 
-                        handle = 'NET-45-33-0-0-1', 
-                        range = '45.33.0.0 - 45.33.127.255', 
-                        description = 'Akamai Technologies, Inc.', 
-                        country = 'US', 
-                        state = 'MA', 
-                        city = 'Cambridge', 
-                        address = '145 Broadway', 
-                        postal_code = '02142', 
-                        emails = ["ip-admin@akamai.com","abuse@akamai.com"], 
-                        created = '2015-03-20', 
-                        updated = '2023-09-18', )
+                    { }
                     ],
                 nir = None,
                 referral = None,

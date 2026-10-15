@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | ID | 
+**id** | **int** | ID | 
 **name** | **str** | Name | 
 **version** | **str** | Version | [optional] 
 **display_name** | **str** | Display name | 

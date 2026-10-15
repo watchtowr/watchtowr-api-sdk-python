@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** |  | 
+**id** | **int** |  | 
 **note** | **str** |  | 
 **note_type** | **str** |  | 
-**note_id** | **float** |  | 
+**note_id** | **int** |  | 
 **title** | **str** |  | 
 **author** | [**ClientNoteAuthor**](ClientNoteAuthor.md) |  | 
 **last_modified** | [**ClientNoteLastModified**](ClientNoteLastModified.md) |  | 

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class RemoveClientCustomPropertyResponseDto(BaseModel):
     RemoveClientCustomPropertyResponseDto
     """ # noqa: E501
     message: StrictStr
-    status: StrictFloat
+    status: StrictInt
     __properties: ClassVar[List[str]] = ["message", "status"]
 
     model_config = ConfigDict(

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dns_records_total_count** | **float** |  | 
+**dns_records_total_count** | **int** |  | 
 **dns_records_owned** | [**ClientIpDnsRecordOwnedData**](ClientIpDnsRecordOwnedData.md) |  | 
 **dns_records_pointing_at** | [**ClientIpDnsRecordPointingAtData**](ClientIpDnsRecordPointingAtData.md) |  | 
 

@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**critical** | **float** | Count of critical findings | 
-**high** | **float** | Count of high severity findings | 
-**medium** | **float** | Count of medium severity findings | 
-**low** | **float** | Count of low severity findings | 
-**info** | **float** | Count of informational findings | 
-**total** | **float** | Total count of all open findings | 
+**critical** | **int** | Count of critical findings | 
+**high** | **int** | Count of high severity findings | 
+**medium** | **int** | Count of medium severity findings | 
+**low** | **int** | Count of low severity findings | 
+**info** | **int** | Count of informational findings | 
+**total** | **int** | Total count of all open findings | 
 
 ## Example
 

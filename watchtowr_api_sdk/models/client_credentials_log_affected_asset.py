@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class ClientCredentialsLogAffectedAsset(BaseModel):
     """
     ClientCredentialsLogAffectedAsset
     """ # noqa: E501
-    id: StrictFloat = Field(description="Asset ID")
+    id: StrictInt = Field(description="Asset ID")
     name: StrictStr = Field(description="Asset name")
     type: StrictStr = Field(description="Asset type")
     __properties: ClassVar[List[str]] = ["id", "name", "type"]

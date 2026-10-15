@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | Finding ID | 
+**id** | **int** | Finding ID | 
 **title** | **str** | Finding title | 
 **severity** | **str** | Finding severity | 
 **status** | **str** | Finding status | 

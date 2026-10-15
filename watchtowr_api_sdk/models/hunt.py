@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,12 +29,12 @@ class Hunt(BaseModel):
     """
     Hunt
     """ # noqa: E501
-    id: StrictFloat = Field(description="ID")
+    id: StrictInt = Field(description="ID")
     type: StrictStr = Field(description="Type")
     created_at: datetime = Field(description="Created at")
     updated_at: datetime = Field(description="Updated at")
-    total_findings: StrictFloat = Field(description="Total findings related to this hunt")
-    total_assets: StrictFloat = Field(description="Total assets related to this hunt")
+    total_findings: StrictInt = Field(description="Total findings related to this hunt")
+    total_assets: StrictInt = Field(description="Total assets related to this hunt")
     hunt_request_type: Optional[StrictStr] = Field(description="Hunt request type")
     rapid_exposure_mechanism: Optional[StrictStr] = Field(default=None, description="Rapid exposure mechanism")
     title: StrictStr = Field(description="Title")

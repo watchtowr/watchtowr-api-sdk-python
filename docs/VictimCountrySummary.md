@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | **List[str]** |  | [optional] 
-**total_count** | **float** |  | [optional] 
+**total_count** | **int** |  | [optional] 
 
 ## Example
 

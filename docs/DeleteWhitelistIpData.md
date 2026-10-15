@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | Deleted IP address ID | 
+**id** | **int** | Deleted IP address ID | 
 
 ## Example
 

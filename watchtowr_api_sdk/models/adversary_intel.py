@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.target_industry_summary import TargetIndustrySummary
 from watchtowr_api_sdk.models.victim_country_summary import VictimCountrySummary
@@ -31,7 +31,7 @@ class AdversaryIntel(BaseModel):
     """
     AdversaryIntel
     """ # noqa: E501
-    attacker_id: StrictFloat = Field(alias="attackerId")
+    attacker_id: StrictInt = Field(alias="attackerId")
     name: StrictStr
     aliases: Optional[List[StrictStr]] = None
     type: StrictStr
@@ -39,10 +39,10 @@ class AdversaryIntel(BaseModel):
     last_reported_date: Optional[datetime] = Field(default=None, alias="lastReportedDate")
     victim_countries: Optional[VictimCountrySummary] = Field(default=None, alias="victimCountries")
     target_industries: Optional[TargetIndustrySummary] = Field(default=None, alias="targetIndustries")
-    affected_tracked_hunts_count: Optional[StrictFloat] = Field(default=None, alias="affectedTrackedHuntsCount")
-    affected_open_findings_count: Optional[StrictFloat] = Field(default=None, alias="affectedOpenFindingsCount")
+    affected_tracked_hunts_count: Optional[StrictInt] = Field(default=None, alias="affectedTrackedHuntsCount")
+    affected_open_findings_count: Optional[StrictInt] = Field(default=None, alias="affectedOpenFindingsCount")
     is_affected: StrictBool = Field(description="Whether the user has confirmed open findings against vulnerabilities exploited by this adversary. Scoped to the requesting user's business units and the organization's finding impact threshold.", alias="isAffected")
-    affected_kb_entry_ids: Optional[List[StrictFloat]] = Field(default=None, description="KB entry IDs that drive the `isAffected` flag, scoped to the requesting user's business units.", alias="affectedKbEntryIds")
+    affected_kb_entry_ids: Optional[List[StrictInt]] = Field(default=None, description="KB entry IDs that drive the `isAffected` flag, scoped to the requesting user's business units.", alias="affectedKbEntryIds")
     __properties: ClassVar[List[str]] = ["attackerId", "name", "aliases", "type", "originCountryCode", "lastReportedDate", "victimCountries", "targetIndustries", "affectedTrackedHuntsCount", "affectedOpenFindingsCount", "isAffected", "affectedKbEntryIds"]
 
     model_config = ConfigDict(

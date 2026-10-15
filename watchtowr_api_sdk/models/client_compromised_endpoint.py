@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class ClientCompromisedEndpoint(BaseModel):
     """
     ClientCompromisedEndpoint
     """ # noqa: E501
-    id: StrictFloat = Field(description="Compromised endpoint ID")
+    id: StrictInt = Field(description="Compromised endpoint ID")
     hostname: Optional[StrictStr] = Field(description="Hostname of the compromised endpoint")
     ip: Optional[StrictStr] = Field(description="IP address of the compromised endpoint")
     stealer_id: StrictStr = Field(description="Unique stealer identifier", alias="stealerId")

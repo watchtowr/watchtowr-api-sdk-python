@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from watchtowr_api_sdk.models.service_information_asset import ServiceInformationAsset
 from watchtowr_api_sdk.models.service_information_certificate import ServiceInformationCertificate
@@ -30,7 +30,7 @@ class ServiceInformationResponse(BaseModel):
     """
     ServiceInformationResponse
     """ # noqa: E501
-    id: StrictFloat = Field(description="ID")
+    id: StrictInt = Field(description="ID")
     response: StrictStr = Field(description="Response")
     certificate: ServiceInformationCertificate
     asset: ServiceInformationAsset

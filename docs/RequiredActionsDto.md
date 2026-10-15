@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**actively_exploited_findings** | **float** | Count of open findings currently being actively exploited | 
-**unresolved_rapid_reaction_hunts** | **float** | Count of unresolved rapid reaction hunts | 
+**actively_exploited_findings** | **int** | Count of open findings currently being actively exploited | 
+**unresolved_rapid_reaction_hunts** | **int** | Count of unresolved rapid reaction hunts | 
 
 ## Example
 

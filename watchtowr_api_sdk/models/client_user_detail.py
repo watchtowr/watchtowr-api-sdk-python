@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_user_detail_business_units_inner import ClientUserDetailBusinessUnitsInner
 from typing import Optional, Set
@@ -30,7 +30,7 @@ class ClientUserDetail(BaseModel):
     """
     ClientUserDetail
     """ # noqa: E501
-    id: StrictFloat = Field(description="User ID")
+    id: StrictInt = Field(description="User ID")
     name: StrictStr = Field(description="User name")
     email: StrictStr = Field(description="User email")
     title: StrictStr = Field(description="User title")

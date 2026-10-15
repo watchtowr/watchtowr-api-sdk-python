@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **dns_bruteforcing_enabled** | **bool** | Indicates whether the DNS Bruteforcing engine coverage is enabled for the asset. | 
 **rapid_reaction_enabled** | **bool** | Indicates whether the Rapid Reaction engine coverage is enabled for the asset | 
 **intrusive_http_checks_enabled** | **bool** | Indicates whether the Intrusive HTTP Check engine coverage is enabled for the asset. | 
-**id** | **float** | The asset ID | 
+**id** | **int** | The asset ID | 
 **type** | **str** | The asset type | 
 
 ## Example

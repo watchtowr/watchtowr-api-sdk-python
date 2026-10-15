@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class Unauthorized(BaseModel):
     """
     Unauthorized
     """ # noqa: E501
-    status_code: Optional[StrictFloat] = Field(default=None, alias="statusCode")
+    status_code: Optional[StrictInt] = Field(default=None, alias="statusCode")
     message: Optional[StrictStr] = None
     error: StrictStr
     __properties: ClassVar[List[str]] = ["statusCode", "message", "error"]

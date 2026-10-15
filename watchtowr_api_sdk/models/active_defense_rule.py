@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.active_defense_rule_kev_status import ActiveDefenseRuleKevStatus
 from typing import Optional, Set
@@ -30,10 +30,10 @@ class ActiveDefenseRule(BaseModel):
     """
     ActiveDefenseRule
     """ # noqa: E501
-    id: StrictFloat
+    id: StrictInt
     rule_name: StrictStr = Field(alias="ruleName")
     cve_id: Optional[StrictStr] = Field(default=None, alias="cveId")
-    wt_id: Optional[StrictFloat] = Field(default=None, alias="wtId")
+    wt_id: Optional[StrictInt] = Field(default=None, alias="wtId")
     type: Optional[StrictStr] = None
     kev_status: ActiveDefenseRuleKevStatus = Field(alias="kevStatus")
     zero_day: StrictBool = Field(alias="zeroDay")

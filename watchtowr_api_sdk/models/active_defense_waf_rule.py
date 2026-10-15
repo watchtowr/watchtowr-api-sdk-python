@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.active_defense_waf_rule_condition import ActiveDefenseWafRuleCondition
 from typing import Optional, Set
@@ -38,7 +38,7 @@ class ActiveDefenseWafRule(BaseModel):
     group_operator: Optional[StrictStr] = Field(default=None, description="Operator joining conditions.")
     message: Optional[StrictStr] = Field(default=None, description="Rule message.")
     msg: Optional[StrictStr] = Field(default=None, description="Short rule message (mod_security `msg`).")
-    response_code: Optional[StrictFloat] = Field(default=None, description="HTTP status returned (oci_waf).")
+    response_code: Optional[StrictInt] = Field(default=None, description="HTTP status returned (oci_waf).")
     risk: Optional[StrictFloat] = Field(default=None, description="Risk score (f5_bigip_advanced_waf).")
     rule: Optional[StrictStr] = Field(default=None, description="Raw rule body (snort, yara, sigma).")
     secrule: Optional[StrictStr] = Field(default=None, description="ModSecurity SecRule body.")

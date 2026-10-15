@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class HuntAcknowledgementDto(BaseModel):
     HuntAcknowledgementDto
     """ # noqa: E501
     is_acknowledged: StrictBool = Field(description="Deprecated. Always returns false. Retained for backward compatibility.", alias="isAcknowledged")
-    number_of_seen: StrictFloat = Field(description="Number of users who have seen the hunt", alias="numberOfSeen")
+    number_of_seen: StrictInt = Field(description="Number of users who have seen the hunt", alias="numberOfSeen")
     __properties: ClassVar[List[str]] = ["isAcknowledged", "numberOfSeen"]
 
     model_config = ConfigDict(

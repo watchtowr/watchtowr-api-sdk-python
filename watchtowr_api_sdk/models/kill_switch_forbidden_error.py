@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,7 @@ class KillSwitchForbiddenError(BaseModel):
     """ # noqa: E501
     message: StrictStr = Field(description="Error message")
     error: StrictStr = Field(description="Error code")
-    status_code: StrictFloat = Field(description="HTTP status code", alias="statusCode")
+    status_code: StrictInt = Field(description="HTTP status code", alias="statusCode")
     __properties: ClassVar[List[str]] = ["message", "error", "statusCode"]
 
     model_config = ConfigDict(

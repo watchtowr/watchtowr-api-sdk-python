@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class ServiceInformationCertificate(BaseModel):
     """
     ServiceInformationCertificate
     """ # noqa: E501
-    id: StrictFloat = Field(description="ID")
+    id: StrictInt = Field(description="ID")
     subject_common_name: Optional[StrictStr] = Field(description="Subject Common Name", alias="subjectCommonName")
     subject_organisation: Optional[StrictStr] = Field(description="Subject Organization", alias="subjectOrganisation")
     subject_alt_names: Optional[List[StrictStr]] = Field(description="Subject Alt Names", alias="subjectAltNames")
@@ -40,7 +40,7 @@ class ServiceInformationCertificate(BaseModel):
     fingerprint: StrictStr = Field(description="Fingerprint")
     serial_number: StrictStr = Field(description="Certificate serial number", alias="serialNumber")
     public_key_info_alg: StrictStr = Field(description="PublicKeyInfoAlg", alias="publicKeyInfoAlg")
-    public_key_info_size: StrictFloat = Field(description="PublicKeyInfoSize", alias="publicKeyInfoSize")
+    public_key_info_size: StrictInt = Field(description="PublicKeyInfoSize", alias="publicKeyInfoSize")
     status: StrictStr
     issued_by_status: Optional[StrictStr] = Field(description="Trust provenance of the certificate issuer as classified upstream", alias="issuedByStatus")
     created_at: Optional[datetime] = Field(default=None, description="Discovery date", alias="createdAt")

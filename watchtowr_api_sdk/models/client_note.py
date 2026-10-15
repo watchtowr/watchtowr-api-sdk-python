@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from watchtowr_api_sdk.models.client_note_author import ClientNoteAuthor
 from watchtowr_api_sdk.models.client_note_last_modified import ClientNoteLastModified
@@ -30,10 +30,10 @@ class ClientNote(BaseModel):
     """
     ClientNote
     """ # noqa: E501
-    id: StrictFloat
+    id: StrictInt
     note: StrictStr
     note_type: StrictStr
-    note_id: StrictFloat
+    note_id: StrictInt
     title: StrictStr
     author: ClientNoteAuthor
     last_modified: ClientNoteLastModified

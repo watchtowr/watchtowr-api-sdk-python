@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.active_defense_rule_finding import ActiveDefenseRuleFinding
 from watchtowr_api_sdk.models.active_defense_rule_template import ActiveDefenseRuleTemplate
@@ -32,7 +32,7 @@ class ActiveDefenseRuleDetails(BaseModel):
     """
     ActiveDefenseRuleDetails
     """ # noqa: E501
-    id: StrictFloat
+    id: StrictInt
     name: StrictStr
     description: StrictStr
     zero_day: StrictBool = Field(alias="zeroDay")
@@ -40,8 +40,8 @@ class ActiveDefenseRuleDetails(BaseModel):
     updated_at: datetime = Field(alias="updatedAt")
     rules: List[ActiveDefenseRuleTemplate]
     vulnerability: Optional[ActiveDefenseRuleVulnerability] = None
-    findings_count: StrictFloat = Field(description="Count of confirmed open findings against the rule's vulnerability. Scoped to the requesting user's business units and the organization's finding impact threshold.", alias="findingsCount")
-    affected_kb_entry_ids: List[StrictFloat] = Field(description="KB entry IDs covered by this rule that have confirmed open findings, scoped to the requesting user's business units.", alias="affectedKbEntryIds")
+    findings_count: StrictInt = Field(description="Count of confirmed open findings against the rule's vulnerability. Scoped to the requesting user's business units and the organization's finding impact threshold.", alias="findingsCount")
+    affected_kb_entry_ids: List[StrictInt] = Field(description="KB entry IDs covered by this rule that have confirmed open findings, scoped to the requesting user's business units.", alias="affectedKbEntryIds")
     findings: List[ActiveDefenseRuleFinding] = Field(description="Confirmed open findings against the rule's vulnerability, scoped the same way as findingsCount. Empty when there are none.")
     __properties: ClassVar[List[str]] = ["id", "name", "description", "zeroDay", "createdAt", "updatedAt", "rules", "vulnerability", "findingsCount", "affectedKbEntryIds", "findings"]
 

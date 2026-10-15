@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class WhitelistIpData(BaseModel):
     """
     WhitelistIpData
     """ # noqa: E501
-    id: StrictFloat = Field(description="IP address ID")
+    id: StrictInt = Field(description="IP address ID")
     ip: StrictStr = Field(description="IP address or CIDR range")
     description: Optional[StrictStr] = Field(default=None, description="Description of the IP address")
     enabled_for: StrictStr = Field(description="Whitelisting scope this IP applies to")

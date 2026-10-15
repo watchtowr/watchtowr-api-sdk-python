@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total_hunts_executed** | **float** | Total number of rapid reaction hunts executed | 
-**total_unresolved_hunts** | **float** | Total number of unresolved hunts | 
+**total_hunts_executed** | **int** | Total number of rapid reaction hunts executed | 
+**total_unresolved_hunts** | **int** | Total number of unresolved hunts | 
 **latest_executed_hunts** | [**List[LatestExecutedHuntDto]**](LatestExecutedHuntDto.md) | Array of latest executed hunts | 
 
 ## Example

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class TtpLibraryCategoryItem(BaseModel):
     """
     TtpLibraryCategoryItem
     """ # noqa: E501
-    id: StrictFloat = Field(description="Category ID")
+    id: StrictInt = Field(description="Category ID")
     name: StrictStr = Field(description="Category name")
     __properties: ClassVar[List[str]] = ["id", "name"]
 

@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | ID | 
+**id** | **int** | ID | 
 **name** | **str** | Name | 
 **description** | **str** | Description | 
 **type** | **str** | Business unit type | 
-**parent_id** | **float** | Parent business unit ID | [optional] 
-**user_ids** | **List[float]** | Array of user IDs assigned to this business unit | [optional] 
+**parent_id** | **int** | Parent business unit ID | [optional] 
+**user_ids** | **List[int]** | Array of user IDs assigned to this business unit | [optional] 
 **created_at** | **datetime** | Created At | 
 **updated_at** | **datetime** | Updated At | 
 

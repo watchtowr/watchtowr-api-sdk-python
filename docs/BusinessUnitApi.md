@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 Create Business Unit Rule
 
-Create a new rule for a specific business unit.
+Create a new rule for a specific business unit. CNAME and TLS_SSL keyword rules do not cascade to subdomains: `cascade_subdomain` is ignored for these rule types and the rule is created with `cascade_subdomain` set to false. To cover subdomains, create a HOSTNAME rule on the same pattern.
 
 ### Example
 

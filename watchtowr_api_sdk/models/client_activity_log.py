@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.causer import Causer
 from typing import Optional, Set
@@ -30,7 +30,7 @@ class ClientActivityLog(BaseModel):
     """
     ClientActivityLog
     """ # noqa: E501
-    id: StrictFloat = Field(description="ID")
+    id: StrictInt = Field(description="ID")
     description: StrictStr = Field(description="Description")
     type: Optional[StrictStr] = Field(description="Subject")
     properties: Optional[Dict[str, Any]] = Field(default=None, description="Log properties")

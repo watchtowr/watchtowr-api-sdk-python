@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,10 +29,10 @@ class ClientAssetDnsRecord(BaseModel):
     """
     ClientAssetDnsRecord
     """ # noqa: E501
-    id: StrictFloat
+    id: StrictInt
     name: StrictStr
     type: StrictStr
-    ttl: Optional[StrictFloat] = Field(default=None, description="Time To Live")
+    ttl: Optional[StrictInt] = Field(default=None, description="Time To Live")
     value: StrictStr
     discovered_on: datetime
     __properties: ClassVar[List[str]] = ["id", "name", "type", "ttl", "value", "discovered_on"]

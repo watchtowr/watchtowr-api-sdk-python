@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class SetCriticalityResponseDto(BaseModel):
     """
     SetCriticalityResponseDto
     """ # noqa: E501
-    id: StrictFloat = Field(description="The ID of the custom property record.")
+    id: StrictInt = Field(description="The ID of the custom property record.")
     key: StrictStr = Field(description="The property key.")
     value: StrictStr = Field(description="The criticality value.")
     is_preset: StrictBool = Field(description="Whether this is a preset property.", alias="isPreset")

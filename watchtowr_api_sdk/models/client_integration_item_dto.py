@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class ClientIntegrationItemDto(BaseModel):
     ClientIntegrationItemDto
     """ # noqa: E501
     integration_type: StrictStr = Field(description="Integration type. Valid values: aws, azure, googlecloud, cloudflare, alibabacloud, prismacloud, prismacloudapigee, huaweicloud, tencentcloud, wiz, servicenowcmdb, akamaiedge, armiscentrix, qualysvmdr, tenable")
-    integration_id: StrictFloat = Field(description="Integration ID")
+    integration_id: StrictInt = Field(description="Integration ID")
     __properties: ClassVar[List[str]] = ["integration_type", "integration_id"]
 
     @field_validator('integration_type')

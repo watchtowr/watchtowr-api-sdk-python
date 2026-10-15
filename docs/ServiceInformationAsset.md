@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | ID | 
+**id** | **int** | ID | 
 **name** | **str** | Asset name | 
 **type** | **str** | Asset type | 
 **business_units** | [**List[ClientBusinessUnit]**](ClientBusinessUnit.md) | Business Unit | 

@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,10 +29,10 @@ class ClientFindingManualTicket(BaseModel):
     """
     ClientFindingManualTicket
     """ # noqa: E501
-    id: StrictFloat
-    user_id: StrictFloat
-    finding_id: StrictFloat
-    organisation_id: StrictFloat
+    id: StrictInt
+    user_id: StrictInt
+    finding_id: StrictInt
+    organisation_id: StrictInt
     board_name: StrictStr
     issue_link: StrictStr
     created_at: datetime

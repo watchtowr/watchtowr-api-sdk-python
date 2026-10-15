@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** |  | 
+**id** | **int** |  | 
 **rule_name** | **str** |  | 
 **cve_id** | **str** |  | [optional] 
-**wt_id** | **float** |  | [optional] 
+**wt_id** | **int** |  | [optional] 
 **type** | **str** |  | [optional] 
 **kev_status** | [**ActiveDefenseRuleKevStatus**](ActiveDefenseRuleKevStatus.md) |  | 
 **zero_day** | **bool** |  | 

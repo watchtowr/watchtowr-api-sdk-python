@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | The unique identifier for the WHOIS record. | 
+**id** | **int** | The unique identifier for the WHOIS record. | 
 **data** | [**IpWhoisDataObject**](IpWhoisDataObject.md) |  | 
 **raw** | **str** | The full WHOIS text of the record. | 
 

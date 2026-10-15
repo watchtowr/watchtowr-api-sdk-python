@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class TechnologyStatistic(BaseModel):
     TechnologyStatistic
     """ # noqa: E501
     name: StrictStr = Field(description="Technology name")
-    count: StrictFloat = Field(description="Number of services using this technology")
+    count: StrictInt = Field(description="Number of services using this technology")
     __properties: ClassVar[List[str]] = ["name", "count"]
 
     model_config = ConfigDict(

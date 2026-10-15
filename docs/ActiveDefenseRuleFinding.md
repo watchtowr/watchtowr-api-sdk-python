@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | Finding ID. | 
+**id** | **int** | Finding ID. | 
 **active_defense_provider** | **str** | Active Defense provider associated with the finding. | [optional] 
 
 ## Example

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from watchtowr_api_sdk.models.ip_whois_data_object import IpWhoisDataObject
 from typing import Optional, Set
@@ -29,7 +29,7 @@ class IpWhoisData(BaseModel):
     """
     IpWhoisData
     """ # noqa: E501
-    id: StrictFloat = Field(description="The unique identifier for the WHOIS record.")
+    id: StrictInt = Field(description="The unique identifier for the WHOIS record.")
     data: IpWhoisDataObject
     raw: StrictStr = Field(description="The full WHOIS text of the record.")
     __properties: ClassVar[List[str]] = ["id", "data", "raw"]

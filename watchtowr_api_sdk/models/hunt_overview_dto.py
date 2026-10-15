@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List
 from watchtowr_api_sdk.models.latest_executed_hunt_dto import LatestExecutedHuntDto
 from typing import Optional, Set
@@ -29,8 +29,8 @@ class HuntOverviewDto(BaseModel):
     """
     HuntOverviewDto
     """ # noqa: E501
-    total_hunts_executed: StrictFloat = Field(description="Total number of rapid reaction hunts executed", alias="totalHuntsExecuted")
-    total_unresolved_hunts: StrictFloat = Field(description="Total number of unresolved hunts", alias="totalUnresolvedHunts")
+    total_hunts_executed: StrictInt = Field(description="Total number of rapid reaction hunts executed", alias="totalHuntsExecuted")
+    total_unresolved_hunts: StrictInt = Field(description="Total number of unresolved hunts", alias="totalUnresolvedHunts")
     latest_executed_hunts: List[LatestExecutedHuntDto] = Field(description="Array of latest executed hunts", alias="latestExecutedHunts")
     __properties: ClassVar[List[str]] = ["totalHuntsExecuted", "totalUnresolvedHunts", "latestExecutedHunts"]
 

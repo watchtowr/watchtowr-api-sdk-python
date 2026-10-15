@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **float** |  | 
-**count** | **float** |  | 
-**per_page** | **float** |  | 
-**current_page** | **float** |  | 
-**total_pages** | **float** |  | 
+**total** | **int** |  | 
+**count** | **int** |  | 
+**per_page** | **int** |  | 
+**current_page** | **int** |  | 
+**total_pages** | **int** |  | 
 **links** | [**Link**](Link.md) |  | 
 
 ## Example

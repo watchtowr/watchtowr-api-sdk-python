@@ -36,7 +36,7 @@ class TestClientIpDnsRecordData(unittest.TestCase):
         model = ClientIpDnsRecordData()
         if include_optional:
             return ClientIpDnsRecordData(
-                dns_records_total_count = 1.337,
+                dns_records_total_count = 56,
                 dns_records_owned = watchtowr_api_sdk.models.client_ip_dns_record_owned_data.ClientIpDnsRecordOwnedData(
                     data = [
                         watchtowr_api_sdk.models.client_asset_dns_record.ClientAssetDnsRecord(
@@ -65,7 +65,7 @@ class TestClientIpDnsRecordData(unittest.TestCase):
             )
         else:
             return ClientIpDnsRecordData(
-                dns_records_total_count = 1.337,
+                dns_records_total_count = 56,
                 dns_records_owned = watchtowr_api_sdk.models.client_ip_dns_record_owned_data.ClientIpDnsRecordOwnedData(
                     data = [
                         watchtowr_api_sdk.models.client_asset_dns_record.ClientAssetDnsRecord(

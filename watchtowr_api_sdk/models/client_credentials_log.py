@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_credentials_log_affected_asset import ClientCredentialsLogAffectedAsset
 from watchtowr_api_sdk.models.client_credentials_log_credentials import ClientCredentialsLogCredentials
@@ -30,7 +30,7 @@ class ClientCredentialsLog(BaseModel):
     """
     ClientCredentialsLog
     """ # noqa: E501
-    id: StrictFloat = Field(description="Credential attempt log ID")
+    id: StrictInt = Field(description="Credential attempt log ID")
     technology: StrictStr = Field(description="Technology used")
     raw_asset: Optional[StrictStr] = Field(description="Raw asset string", alias="rawAsset")
     status: StrictStr = Field(description="Attempt status")
@@ -38,7 +38,7 @@ class ClientCredentialsLog(BaseModel):
     source: Optional[StrictStr] = Field(description="Source of the credential attempt")
     credentials: ClientCredentialsLogCredentials = Field(description="Credentials used in the attempt")
     affected_asset: Optional[ClientCredentialsLogAffectedAsset] = Field(description="Affected asset information", alias="affectedAsset")
-    finding_id: Optional[StrictFloat] = Field(description="Finding ID if associated", alias="findingId")
+    finding_id: Optional[StrictInt] = Field(description="Finding ID if associated", alias="findingId")
     created_at: StrictStr = Field(description="Creation date", alias="createdAt")
     source_metadata: Optional[Dict[str, Any]] = Field(description="Source metadata containing additional contextual information about the credential attempt", alias="sourceMetadata")
     __properties: ClassVar[List[str]] = ["id", "technology", "rawAsset", "status", "attemptedAt", "source", "credentials", "affectedAsset", "findingId", "createdAt", "sourceMetadata"]

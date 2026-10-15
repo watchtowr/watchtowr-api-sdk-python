@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | ID | 
+**id** | **int** | ID | 
 **name** | **str** | Name | 
 **type** | **str** | Type | 
 **url** | **str** | Url | 
 **discovery_date** | **datetime** | Discovery date | [optional] 
-**asset_id** | **float** | Asset ID | 
+**asset_id** | **int** | Asset ID | 
 **asset_name** | **str** | Asset name | 
 **asset_type** | **str** | Asset type | 
 **business_units** | [**List[ClientBusinessUnit]**](ClientBusinessUnit.md) | Business unit | 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **suppressed** | **bool** | Whether the Point of Interest is suppressed | 
 **suppressed_at** | **datetime** | Suppressed at timestamp | [optional] 
 **is_permanent_suppression** | **bool** | Whether the Point of Interest is permanently suppressed | [optional] 
-**finding_id** | **float** | Finding ID if the POI has been converted to a finding | [optional] 
+**finding_id** | **int** | Finding ID if the POI has been converted to a finding | [optional] 
 
 ## Example
 

@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_seed_data_asset_link import ClientSeedDataAssetLink
 from watchtowr_api_sdk.models.client_seed_data_business_unit import ClientSeedDataBusinessUnit
@@ -32,7 +32,7 @@ class ClientSeedDataListItem(BaseModel):
     """
     ClientSeedDataListItem
     """ # noqa: E501
-    id: StrictFloat = Field(description="Seed Data ID")
+    id: StrictInt = Field(description="Seed Data ID")
     title: StrictStr = Field(description="Descriptive title for the asset")
     type: StrictStr = Field(description="Asset Type. Valid asset types are: [domain, subdomain, ip, ipRange, repository, cloudStorage, container, mobileApp, saasPlatform, cloudAsset, apiDocumentation, packageManager]")
     value: Optional[StrictStr] = Field(default=None, description="Value for the asset")

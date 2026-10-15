@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **id** | **str** | Hunt identifier | 
 **title** | **str** | Hunt title | 
 **status** | **str** | Hunt status | 
-**total_findings** | **float** | Number of findings discovered | 
-**total_assets** | **float** | Number of assets affected | 
+**total_findings** | **int** | Number of findings discovered | 
+**total_assets** | **int** | Number of assets affected | 
 **need_investigation** | **bool** | Whether manual investigation is required | 
 **request_type** | **str** | Type of hunt request | 
 **resolved_status** | **bool** | Whether the hunt has been resolved | 

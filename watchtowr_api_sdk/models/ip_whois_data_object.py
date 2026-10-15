@@ -41,6 +41,7 @@ class IpWhoisDataObject(BaseModel):
     referral: Optional[Dict[str, Any]] = Field(default=None, description="Referral WHOIS details, when the registry refers to another server.")
     raw_referral: Optional[StrictStr] = Field(default=None, description="Raw referral WHOIS text.")
     message: Optional[StrictStr] = Field(default=None, description="Explains why no WHOIS record is present. When set, it is the only field returned.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["asn", "asn_cidr", "asn_country_code", "asn_date", "asn_description", "asn_registry", "query", "nets", "nir", "referral", "raw_referral", "message"]
 
     model_config = ConfigDict(
@@ -73,8 +74,10 @@ class IpWhoisDataObject(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -89,6 +92,11 @@ class IpWhoisDataObject(BaseModel):
                 if _item_nets:
                     _items.append(_item_nets.to_dict())
             _dict['nets'] = _items
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         # set to None if asn (nullable) is None
         # and model_fields_set contains the field
         if self.asn is None and "asn" in self.model_fields_set:
@@ -160,11 +168,6 @@ class IpWhoisDataObject(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in IpWhoisDataObject) in the input: " + _key)
-
         _obj = cls.model_validate({
             "asn": obj.get("asn"),
             "asn_cidr": obj.get("asn_cidr"),
@@ -179,6 +182,11 @@ class IpWhoisDataObject(BaseModel):
             "raw_referral": obj.get("raw_referral"),
             "message": obj.get("message")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

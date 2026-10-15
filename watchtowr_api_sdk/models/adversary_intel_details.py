@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.media import Media
 from watchtowr_api_sdk.models.target_industry_summary import TargetIndustrySummary
@@ -32,7 +32,7 @@ class AdversaryIntelDetails(BaseModel):
     """
     AdversaryIntelDetails
     """ # noqa: E501
-    attacker_id: StrictFloat = Field(alias="attackerId")
+    attacker_id: StrictInt = Field(alias="attackerId")
     name: StrictStr
     type: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
@@ -45,7 +45,7 @@ class AdversaryIntelDetails(BaseModel):
     target_industries: Optional[TargetIndustrySummary] = Field(default=None, alias="targetIndustries")
     latest_media: Optional[List[Media]] = Field(default=None, description="Recent media references for this adversary. Not currently populated — returns an empty array.", alias="latestMedia")
     is_affected: Optional[StrictBool] = Field(description="Whether the user has confirmed open findings against vulnerabilities exploited by this adversary. Scoped to the requesting user's business units and the organization's finding impact threshold. `null` when the check could not be completed.", alias="isAffected")
-    affected_kb_entry_ids: List[StrictFloat] = Field(description="KB entry IDs that drive the `isAffected` flag, scoped to the requesting user's business units.", alias="affectedKbEntryIds")
+    affected_kb_entry_ids: List[StrictInt] = Field(description="KB entry IDs that drive the `isAffected` flag, scoped to the requesting user's business units.", alias="affectedKbEntryIds")
     __properties: ClassVar[List[str]] = ["attackerId", "name", "type", "description", "aliases", "countryCode", "firstReportedDate", "vulnerabilityLastUpdated", "mitreLastUpdated", "victimCountries", "targetIndustries", "latestMedia", "isAffected", "affectedKbEntryIds"]
 
     model_config = ConfigDict(

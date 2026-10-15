@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | Credential attempt log ID | 
+**id** | **int** | Credential attempt log ID | 
 **technology** | **str** | Technology used | 
 **raw_asset** | **str** | Raw asset string | 
 **status** | **str** | Attempt status | 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **source** | **str** | Source of the credential attempt | 
 **credentials** | [**ClientCredentialsLogCredentials**](ClientCredentialsLogCredentials.md) | Credentials used in the attempt | 
 **affected_asset** | [**ClientCredentialsLogAffectedAsset**](ClientCredentialsLogAffectedAsset.md) | Affected asset information | 
-**finding_id** | **float** | Finding ID if associated | 
+**finding_id** | **int** | Finding ID if associated | 
 **created_at** | **str** | Creation date | 
 **source_metadata** | **object** | Source metadata containing additional contextual information about the credential attempt | 
 

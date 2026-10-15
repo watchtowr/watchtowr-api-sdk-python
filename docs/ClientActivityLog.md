@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | ID | 
+**id** | **int** | ID | 
 **description** | **str** | Description | 
 **type** | **str** | Subject | 
 **properties** | **object** | Log properties | [optional] 

@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_business_unit import ClientBusinessUnit
 from watchtowr_api_sdk.models.service_type import ServiceType
@@ -32,11 +32,11 @@ class ServiceListing(BaseModel):
     """
     ServiceListing
     """ # noqa: E501
-    id: StrictFloat = Field(description="ID")
-    port_id: StrictFloat = Field(description="Port ID", alias="portId")
+    id: StrictInt = Field(description="ID")
+    port_id: StrictInt = Field(description="Port ID", alias="portId")
     ip: Optional[StrictStr] = Field(default=None, description="IP Address")
     hostname: Optional[StrictStr] = Field(default=None, description="Hostname")
-    port: Optional[StrictFloat] = Field(default=None, description="Port number")
+    port: Optional[StrictInt] = Field(default=None, description="Port number")
     type: Optional[StrictStr] = Field(default=None, description="Port Protocol")
     country: Optional[StrictStr] = Field(default=None, description="Country code")
     banner: Optional[StrictStr] = Field(default=None, description="Banner")
@@ -50,10 +50,10 @@ class ServiceListing(BaseModel):
     suppressed: StrictBool = Field(description="Whether the service is suppressed")
     suppressed_at: Optional[datetime] = Field(default=None, description="Suppressed at timestamp", alias="suppressedAt")
     is_permanent_suppression: Optional[StrictBool] = Field(default=None, description="Whether the service is permanently suppressed", alias="isPermanentSuppression")
-    ip_id: Optional[StrictFloat] = Field(default=None, description="IP ID", alias="ipId")
+    ip_id: Optional[StrictInt] = Field(default=None, description="IP ID", alias="ipId")
     state: Optional[StrictStr] = Field(default=None, description="Port State")
-    finding_id: Optional[StrictFloat] = Field(default=None, description="Finding ID associated with the service", alias="findingId")
-    suppressed_by_id: Optional[StrictFloat] = Field(default=None, description="ID of the user who suppressed the service", alias="suppressedById")
+    finding_id: Optional[StrictInt] = Field(default=None, description="Finding ID associated with the service", alias="findingId")
+    suppressed_by_id: Optional[StrictInt] = Field(default=None, description="ID of the user who suppressed the service", alias="suppressedById")
     __properties: ClassVar[List[str]] = ["id", "portId", "ip", "hostname", "port", "type", "country", "banner", "service", "source", "lastSeen", "technologies", "serviceTypes", "businessUnits", "isConcerning", "suppressed", "suppressedAt", "isPermanentSuppression", "ipId", "state", "findingId", "suppressedById"]
 
     model_config = ConfigDict(

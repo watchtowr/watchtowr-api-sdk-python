@@ -51,7 +51,7 @@ class FindingRetestHistoryApi:
         severities: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated severities they're tagged with.")] = None,
         attempts: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated attempt types.")] = None,
         retest_run_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated retest run statuses.")] = None,
-        retest_result_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated result statuses.")] = None,
+        retest_result_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated result statuses. `unresolved` also includes aborted retests.")] = None,
         finding_title: Annotated[Optional[StrictStr], Field(description="Filter retests by finding title.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Filter retests by asset name.")] = None,
         finding_id: Annotated[Optional[StrictStr], Field(description="Filter retests by finding ID (e.g. CORE-1234 or 1234).")] = None,
@@ -91,7 +91,7 @@ class FindingRetestHistoryApi:
         :type attempts: str
         :param retest_run_statuses: Filter retests by a list of comma separated retest run statuses.
         :type retest_run_statuses: str
-        :param retest_result_statuses: Filter retests by a list of comma separated result statuses.
+        :param retest_result_statuses: Filter retests by a list of comma separated result statuses. `unresolved` also includes aborted retests.
         :type retest_result_statuses: str
         :param finding_title: Filter retests by finding title.
         :type finding_title: str
@@ -175,7 +175,7 @@ class FindingRetestHistoryApi:
         severities: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated severities they're tagged with.")] = None,
         attempts: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated attempt types.")] = None,
         retest_run_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated retest run statuses.")] = None,
-        retest_result_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated result statuses.")] = None,
+        retest_result_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated result statuses. `unresolved` also includes aborted retests.")] = None,
         finding_title: Annotated[Optional[StrictStr], Field(description="Filter retests by finding title.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Filter retests by asset name.")] = None,
         finding_id: Annotated[Optional[StrictStr], Field(description="Filter retests by finding ID (e.g. CORE-1234 or 1234).")] = None,
@@ -215,7 +215,7 @@ class FindingRetestHistoryApi:
         :type attempts: str
         :param retest_run_statuses: Filter retests by a list of comma separated retest run statuses.
         :type retest_run_statuses: str
-        :param retest_result_statuses: Filter retests by a list of comma separated result statuses.
+        :param retest_result_statuses: Filter retests by a list of comma separated result statuses. `unresolved` also includes aborted retests.
         :type retest_result_statuses: str
         :param finding_title: Filter retests by finding title.
         :type finding_title: str
@@ -299,7 +299,7 @@ class FindingRetestHistoryApi:
         severities: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated severities they're tagged with.")] = None,
         attempts: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated attempt types.")] = None,
         retest_run_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated retest run statuses.")] = None,
-        retest_result_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated result statuses.")] = None,
+        retest_result_statuses: Annotated[Optional[StrictStr], Field(description="Filter retests by a list of comma separated result statuses. `unresolved` also includes aborted retests.")] = None,
         finding_title: Annotated[Optional[StrictStr], Field(description="Filter retests by finding title.")] = None,
         asset_name: Annotated[Optional[StrictStr], Field(description="Filter retests by asset name.")] = None,
         finding_id: Annotated[Optional[StrictStr], Field(description="Filter retests by finding ID (e.g. CORE-1234 or 1234).")] = None,
@@ -339,7 +339,7 @@ class FindingRetestHistoryApi:
         :type attempts: str
         :param retest_run_statuses: Filter retests by a list of comma separated retest run statuses.
         :type retest_run_statuses: str
-        :param retest_result_statuses: Filter retests by a list of comma separated result statuses.
+        :param retest_result_statuses: Filter retests by a list of comma separated result statuses. `unresolved` also includes aborted retests.
         :type retest_result_statuses: str
         :param finding_title: Filter retests by finding title.
         :type finding_title: str

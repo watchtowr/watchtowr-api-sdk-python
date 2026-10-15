@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List
 from watchtowr_api_sdk.models.client_ip_dns_record_owned_data import ClientIpDnsRecordOwnedData
 from watchtowr_api_sdk.models.client_ip_dns_record_pointing_at_data import ClientIpDnsRecordPointingAtData
@@ -30,7 +30,7 @@ class ClientIpDnsRecordData(BaseModel):
     """
     ClientIpDnsRecordData
     """ # noqa: E501
-    dns_records_total_count: StrictFloat
+    dns_records_total_count: StrictInt
     dns_records_owned: ClientIpDnsRecordOwnedData
     dns_records_pointing_at: ClientIpDnsRecordPointingAtData
     __properties: ClassVar[List[str]] = ["dns_records_total_count", "dns_records_owned", "dns_records_pointing_at"]

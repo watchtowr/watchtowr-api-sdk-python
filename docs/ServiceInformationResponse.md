@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | ID | 
+**id** | **int** | ID | 
 **response** | **str** | Response | 
 **certificate** | [**ServiceInformationCertificate**](ServiceInformationCertificate.md) |  | 
 **asset** | [**ServiceInformationAsset**](ServiceInformationAsset.md) |  | 

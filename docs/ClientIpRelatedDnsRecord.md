@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** |  | 
+**id** | **int** |  | 
 **name** | **str** |  | 
 **type** | **str** |  | 
-**ttl** | **float** | Time To Live | [optional] 
+**ttl** | **int** | Time To Live | [optional] 
 **value** | **str** |  | 
 **discovered_on** | **datetime** |  | 
 **asset** | [**ClientIpRelatedDnsRecordAsset**](ClientIpRelatedDnsRecordAsset.md) |  | 

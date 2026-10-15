@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from watchtowr_api_sdk.models.retest_requester_type import RetestRequesterType
 from typing import Optional, Set
@@ -29,7 +29,7 @@ class ClientFindingRetestHistoryTriggeredBy(BaseModel):
     """
     ClientFindingRetestHistoryTriggeredBy
     """ # noqa: E501
-    id: StrictFloat = Field(description="User ID or service account ID, depending on `type`")
+    id: StrictInt = Field(description="User ID or service account ID, depending on `type`")
     name: StrictStr = Field(description="User name or service account name")
     type: RetestRequesterType
     __properties: ClassVar[List[str]] = ["id", "name", "type"]

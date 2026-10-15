@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | Seed Data ID | 
+**id** | **int** | Seed Data ID | 
 **title** | **str** | Descriptive title for the asset | 
 **type** | **str** | Asset Type. Valid asset types are: [domain, subdomain, ip, ipRange, repository, cloudStorage, container, mobileApp, saasPlatform, cloudAsset, apiDocumentation, packageManager] | 
 **value** | **str** | Value for the asset | [optional] 

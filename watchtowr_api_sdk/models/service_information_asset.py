@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from watchtowr_api_sdk.models.client_business_unit import ClientBusinessUnit
 from typing import Optional, Set
@@ -29,7 +29,7 @@ class ServiceInformationAsset(BaseModel):
     """
     ServiceInformationAsset
     """ # noqa: E501
-    id: StrictFloat = Field(description="ID")
+    id: StrictInt = Field(description="ID")
     name: StrictStr = Field(description="Asset name")
     type: StrictStr = Field(description="Asset type")
     business_units: List[ClientBusinessUnit] = Field(description="Business Unit", alias="businessUnits")

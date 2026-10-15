@@ -43,25 +43,7 @@ class TestSuspiciousDomain(unittest.TestCase):
                 whois_data = [
                     watchtowr_api_sdk.models.whois_data.WhoisData(
                         id = 1, 
-                        data = watchtowr_api_sdk.models.whois_data_object.WhoisDataObject(
-                            org = 'ACME Corp', 
-                            city = 'Singapore', 
-                            name = 'John Doe', 
-                            state = 'Singapore', 
-                            dnssec = null, 
-                            emails = null, 
-                            status = null, 
-                            address = 'Singapore 123456', 
-                            country = 'Singapore', 
-                            zipcode = '123456', 
-                            registrar = 'GoDaddy.com, LLC', 
-                            domain_name = 'example.com', 
-                            name_servers = null, 
-                            referral_url = '', 
-                            whois_server = 'whois.godaddy.com', 
-                            creation_date = null, 
-                            expiration_date = null, 
-                            message = 'This is a private ip address', ), 
+                        data = { }, 
                         raw = 'Domain Name: example.com
 Registry Domain ID: 5066842_DOMAIN_COM-VRSN
 Registrar WHOIS Server: whois.godaddy.com
@@ -82,25 +64,7 @@ Registrar Registration Expiration Date: 2027-06-17T04:00:00Z
                 whois_data = [
                     watchtowr_api_sdk.models.whois_data.WhoisData(
                         id = 1, 
-                        data = watchtowr_api_sdk.models.whois_data_object.WhoisDataObject(
-                            org = 'ACME Corp', 
-                            city = 'Singapore', 
-                            name = 'John Doe', 
-                            state = 'Singapore', 
-                            dnssec = null, 
-                            emails = null, 
-                            status = null, 
-                            address = 'Singapore 123456', 
-                            country = 'Singapore', 
-                            zipcode = '123456', 
-                            registrar = 'GoDaddy.com, LLC', 
-                            domain_name = 'example.com', 
-                            name_servers = null, 
-                            referral_url = '', 
-                            whois_server = 'whois.godaddy.com', 
-                            creation_date = null, 
-                            expiration_date = null, 
-                            message = 'This is a private ip address', ), 
+                        data = { }, 
                         raw = 'Domain Name: example.com
 Registry Domain ID: 5066842_DOMAIN_COM-VRSN
 Registrar WHOIS Server: whois.godaddy.com

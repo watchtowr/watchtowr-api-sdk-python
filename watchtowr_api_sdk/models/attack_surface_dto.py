@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,10 +28,10 @@ class AttackSurfaceDto(BaseModel):
     """
     AttackSurfaceDto
     """ # noqa: E501
-    total_verified_assets: StrictFloat = Field(description="Total count of verified assets", alias="totalVerifiedAssets")
-    total_points_of_interest: StrictFloat = Field(description="Total count of points of interest", alias="totalPointsOfInterest")
-    total_network_services: StrictFloat = Field(description="Total count of network services", alias="totalNetworkServices")
-    total_certificates: StrictFloat = Field(description="Total count of TLS/SSL certificates", alias="totalCertificates")
+    total_verified_assets: StrictInt = Field(description="Total count of verified assets", alias="totalVerifiedAssets")
+    total_points_of_interest: StrictInt = Field(description="Total count of points of interest", alias="totalPointsOfInterest")
+    total_network_services: StrictInt = Field(description="Total count of network services", alias="totalNetworkServices")
+    total_certificates: StrictInt = Field(description="Total count of TLS/SSL certificates", alias="totalCertificates")
     __properties: ClassVar[List[str]] = ["totalVerifiedAssets", "totalPointsOfInterest", "totalNetworkServices", "totalCertificates"]
 
     model_config = ConfigDict(

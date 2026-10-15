@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** |  | 
-**user_id** | **float** |  | 
-**finding_id** | **float** |  | 
-**organisation_id** | **float** |  | 
+**id** | **int** |  | 
+**user_id** | **int** |  | 
+**finding_id** | **int** |  | 
+**organisation_id** | **int** |  | 
 **board_name** | **str** |  | 
 **issue_link** | **str** |  | 
 **created_at** | **datetime** |  | 

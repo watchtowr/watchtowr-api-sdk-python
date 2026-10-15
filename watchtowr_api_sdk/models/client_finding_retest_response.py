@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_finding import ClientFinding
 from typing import Optional, Set
@@ -30,7 +30,7 @@ class ClientFindingRetestResponse(BaseModel):
     ClientFindingRetestResponse
     """ # noqa: E501
     data: ClientFinding
-    dns_connected_retests_triggered: Optional[StrictFloat] = Field(default=None, description="Number of additional DNS-connected findings retested alongside the requested finding (present when `includeDnsConnected=true`).", alias="dnsConnectedRetestsTriggered")
+    dns_connected_retests_triggered: Optional[StrictInt] = Field(default=None, description="Number of additional DNS-connected findings retested alongside the requested finding (present when `includeDnsConnected=true`).", alias="dnsConnectedRetestsTriggered")
     __properties: ClassVar[List[str]] = ["data", "dnsConnectedRetestsTriggered"]
 
     model_config = ConfigDict(

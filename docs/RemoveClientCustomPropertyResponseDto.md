@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message** | **str** |  | 
-**status** | **float** |  | 
+**status** | **int** |  | 
 
 ## Example
 

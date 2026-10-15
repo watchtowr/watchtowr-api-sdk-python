@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,11 +29,11 @@ class ClientCustomProperty(BaseModel):
     """
     ClientCustomProperty
     """ # noqa: E501
-    id: StrictFloat
+    id: StrictInt
     key: StrictStr = Field(description="The key of the custom property. Key provided must not be empty and must be unique for the model type. If is_preset is true, key must belong to one of watchTowr's preset custom properties. Accepted preset keys include: 'Criticality'.")
     value: StrictStr = Field(description="The value of the custom property. Any string value is accepted if preset is false. If existing custom property's preset is true, the value supplied must belong to one of the valid watchTowr preset values. Accepted values are 'Low', 'Medium', 'High', 'Unknown' for key: 'Criticality'.")
     model_type: StrictStr = Field(description="The model type that the custom property is attached to.", alias="modelType")
-    model_id: StrictFloat = Field(description="The ID of the model type that the custom property is attached to.", alias="modelId")
+    model_id: StrictInt = Field(description="The ID of the model type that the custom property is attached to.", alias="modelId")
     is_preset: StrictBool = Field(description="Indicates whether this is a watchTowr preset custom property.", alias="isPreset")
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None

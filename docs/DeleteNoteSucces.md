@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message** | **str** |  | 
-**status** | **float** |  | 
-**status_code** | **float** |  | 
+**status** | **int** |  | 
+**status_code** | **int** |  | 
 
 ## Example
 

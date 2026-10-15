@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,11 +28,11 @@ class ClientCompromisedEndpointHarvestedCredential(BaseModel):
     """
     ClientCompromisedEndpointHarvestedCredential
     """ # noqa: E501
-    id: StrictFloat = Field(description="Harvested credential ID")
+    id: StrictInt = Field(description="Harvested credential ID")
     type: StrictStr = Field(description="Credential type")
     url: Optional[StrictStr] = Field(description="URL associated with the credential")
     username: Optional[StrictStr] = Field(description="Username")
-    compromised_endpoint_id: StrictFloat = Field(description="Compromised endpoint ID", alias="compromisedEndpointId")
+    compromised_endpoint_id: StrictInt = Field(description="Compromised endpoint ID", alias="compromisedEndpointId")
     created_at: StrictStr = Field(description="Creation timestamp", alias="createdAt")
     updated_at: StrictStr = Field(description="Last update timestamp", alias="updatedAt")
     __properties: ClassVar[List[str]] = ["id", "type", "url", "username", "compromisedEndpointId", "createdAt", "updatedAt"]

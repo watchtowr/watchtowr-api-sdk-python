@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_business_unit import ClientBusinessUnit
 from typing import Optional, Set
@@ -30,12 +30,12 @@ class PointsOfInterest(BaseModel):
     """
     PointsOfInterest
     """ # noqa: E501
-    id: StrictFloat = Field(description="ID")
+    id: StrictInt = Field(description="ID")
     name: StrictStr = Field(description="Name")
     type: StrictStr = Field(description="Type")
     url: StrictStr = Field(description="Url")
     discovery_date: Optional[datetime] = Field(default=None, description="Discovery date", alias="discoveryDate")
-    asset_id: Optional[StrictFloat] = Field(description="Asset ID", alias="assetId")
+    asset_id: Optional[StrictInt] = Field(description="Asset ID", alias="assetId")
     asset_name: Optional[StrictStr] = Field(description="Asset name", alias="assetName")
     asset_type: Optional[StrictStr] = Field(description="Asset type", alias="assetType")
     business_units: List[ClientBusinessUnit] = Field(description="Business unit", alias="businessUnits")
@@ -44,7 +44,7 @@ class PointsOfInterest(BaseModel):
     suppressed: StrictBool = Field(description="Whether the Point of Interest is suppressed")
     suppressed_at: Optional[datetime] = Field(default=None, description="Suppressed at timestamp", alias="suppressedAt")
     is_permanent_suppression: Optional[StrictBool] = Field(default=None, description="Whether the Point of Interest is permanently suppressed", alias="isPermanentSuppression")
-    finding_id: Optional[StrictFloat] = Field(default=None, description="Finding ID if the POI has been converted to a finding", alias="findingId")
+    finding_id: Optional[StrictInt] = Field(default=None, description="Finding ID if the POI has been converted to a finding", alias="findingId")
     __properties: ClassVar[List[str]] = ["id", "name", "type", "url", "discoveryDate", "assetId", "assetName", "assetType", "businessUnits", "lastSeen", "isConcerning", "suppressed", "suppressedAt", "isPermanentSuppression", "findingId"]
 
     model_config = ConfigDict(

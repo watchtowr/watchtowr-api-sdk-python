@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class TargetIndustrySummary(BaseModel):
     TargetIndustrySummary
     """ # noqa: E501
     data: Optional[List[StrictStr]] = None
-    total_count: Optional[StrictFloat] = Field(default=None, alias="totalCount")
+    total_count: Optional[StrictInt] = Field(default=None, alias="totalCount")
     __properties: ClassVar[List[str]] = ["data", "totalCount"]
 
     model_config = ConfigDict(

@@ -32,10 +32,10 @@ class CreateClientBusinessUnitRuleDto(BaseModel):
     name: StrictStr = Field(description="Rule name")
     type: StrictStr = Field(description="Rule type")
     keyword_matcher: Optional[StrictStr] = Field(default=None, description="Keyword for matching assets (required when type is keyword). Supports wildcard patterns: %.sg, %abc%, %abc.com, abc.com. Wildcards can be defined using %.")
-    keyword_rule_type: Optional[StrictStr] = Field(default=None, description="Keyword rule type (optional, defaults to HOSTNAME when keyword_matcher is provided). HOSTNAME: matches domain/subdomain names. CNAME: matches CNAME DNS record values. TLS_SSL: matches TLS/SSL certificate subject names.")
+    keyword_rule_type: Optional[StrictStr] = Field(default=None, description="Keyword rule type (optional, defaults to HOSTNAME when keyword_matcher is provided). HOSTNAME: matches domain/subdomain names. CNAME: matches CNAME DNS record values. TLS_SSL: matches TLS/SSL certificate subject names. CNAME and TLS_SSL rules do not cascade to subdomains (cascade_subdomain is ignored).")
     country_code: Optional[StrictStr] = Field(default=None, description="Geographical location 2-letter country code (ISO 3166-1 alpha-2) for matching IPs (required when type is country). Examples: SG, US, GB, AU")
     integrations: Optional[List[ClientIntegrationItemDto]] = Field(default=None, description="List of integrations for matching cloud assets (required when type is integration)")
-    cascade_subdomain: Optional[StrictBool] = Field(default=True, description="Whether to cascade rule to subdomains")
+    cascade_subdomain: Optional[StrictBool] = Field(default=True, description="Whether to cascade rule to subdomains. Not supported for CNAME and TLS_SSL keyword rules: for these rule types the value is ignored and the rule is always created with cascade_subdomain set to false. To cover subdomains, create a HOSTNAME rule on the same pattern.")
     cascade_ip: Optional[StrictBool] = Field(default=True, description="Whether to cascade rule to IPs")
     include_all_integrations: Optional[StrictBool] = Field(default=False, description="Whether to include all integrations")
     __properties: ClassVar[List[str]] = ["name", "type", "keyword_matcher", "keyword_rule_type", "country_code", "integrations", "cascade_subdomain", "cascade_ip", "include_all_integrations"]

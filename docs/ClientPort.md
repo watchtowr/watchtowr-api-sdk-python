@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **last_seen_at** | **datetime** |  | 
 **id** | **str** |  | 
 **ip** | **str** |  | [optional] 
-**ip_id** | **float** |  | [optional] 
-**port** | **float** |  | 
+**ip_id** | **int** |  | [optional] 
+**port** | **int** |  | 
 **banner** | **str** |  | [optional] 
 **service** | **str** |  | 
 **state** | **str** | Port state (e.g. &#x60;open&#x60;, &#x60;closed&#x60;, &#x60;filtered&#x60;). | [optional] 

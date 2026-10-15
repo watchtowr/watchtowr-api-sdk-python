@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | ID of the resolved asset | 
+**id** | **int** | ID of the resolved asset | 
 **type** | **str** | Type of the resolved asset. Matches the asset type values used elsewhere in the API (e.g. domain, subdomain, ip, ipRange, saasPlatform, ...). | 
 
 ## Example

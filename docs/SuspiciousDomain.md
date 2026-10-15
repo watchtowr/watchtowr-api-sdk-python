@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | ID | 
+**id** | **int** | ID | 
 **name** | **str** | Name | 
 **discovery_reason** | **str** | Discovery Reason | 
 **status** | **str** |  | 

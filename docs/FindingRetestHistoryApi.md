@@ -52,7 +52,7 @@ with watchtowr_api_sdk.ApiClient(configuration) as api_client:
     severities = 'critical,high,medium' # str | Filter retests by a list of comma separated severities they're tagged with. (optional)
     attempts = 'oneAttempt,multipleAttempts' # str | Filter retests by a list of comma separated attempt types. (optional)
     retest_run_statuses = 'success,inProgress' # str | Filter retests by a list of comma separated retest run statuses. (optional)
-    retest_result_statuses = 'resolved,unresolved' # str | Filter retests by a list of comma separated result statuses. (optional)
+    retest_result_statuses = 'resolved,unresolved' # str | Filter retests by a list of comma separated result statuses. `unresolved` also includes aborted retests. (optional)
     finding_title = 'SQL Injection' # str | Filter retests by finding title. (optional)
     asset_name = 'example.com' # str | Filter retests by asset name. (optional)
     finding_id = 'CORE-1234' # str | Filter retests by finding ID (e.g. CORE-1234 or 1234). (optional)
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
  **severities** | **str**| Filter retests by a list of comma separated severities they&#39;re tagged with. | [optional] 
  **attempts** | **str**| Filter retests by a list of comma separated attempt types. | [optional] 
  **retest_run_statuses** | **str**| Filter retests by a list of comma separated retest run statuses. | [optional] 
- **retest_result_statuses** | **str**| Filter retests by a list of comma separated result statuses. | [optional] 
+ **retest_result_statuses** | **str**| Filter retests by a list of comma separated result statuses. &#x60;unresolved&#x60; also includes aborted retests. | [optional] 
  **finding_title** | **str**| Filter retests by finding title. | [optional] 
  **asset_name** | **str**| Filter retests by asset name. | [optional] 
  **finding_id** | **str**| Filter retests by finding ID (e.g. CORE-1234 or 1234). | [optional] 

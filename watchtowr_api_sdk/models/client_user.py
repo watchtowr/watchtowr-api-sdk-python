@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class ClientUser(BaseModel):
     """
     ClientUser
     """ # noqa: E501
-    id: StrictFloat = Field(description="User ID")
+    id: StrictInt = Field(description="User ID")
     name: StrictStr = Field(description="User name")
     email: StrictStr = Field(description="User email")
     title: StrictStr = Field(description="User title")

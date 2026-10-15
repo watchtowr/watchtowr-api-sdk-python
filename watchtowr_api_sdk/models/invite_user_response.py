@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class InviteUserResponse(BaseModel):
     InviteUserResponse
     """ # noqa: E501
     success: StrictBool = Field(description="Success status")
-    invited_count: StrictFloat = Field(description="Number of users invited", alias="invitedCount")
+    invited_count: StrictInt = Field(description="Number of users invited", alias="invitedCount")
     invited_emails: List[StrictStr] = Field(description="List of emails that were invited", alias="invitedEmails")
     __properties: ClassVar[List[str]] = ["success", "invitedCount", "invitedEmails"]
 

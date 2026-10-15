@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.finding_retest_response_dto import FindingRetestResponseDto
 from typing import Optional, Set
@@ -29,7 +29,7 @@ class Retest(BaseModel):
     """
     Retest
     """ # noqa: E501
-    retest_remaining: Optional[StrictFloat] = Field(default=None, description="The number of remaining test cases ")
+    retest_remaining: Optional[StrictInt] = Field(default=None, description="The number of remaining test cases ")
     current_retest: Optional[FindingRetestResponseDto] = None
     __properties: ClassVar[List[str]] = ["retest_remaining", "current_retest"]
 

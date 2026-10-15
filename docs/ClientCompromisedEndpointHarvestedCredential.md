@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | Harvested credential ID | 
+**id** | **int** | Harvested credential ID | 
 **type** | **str** | Credential type | 
 **url** | **str** | URL associated with the credential | 
 **username** | **str** | Username | 
-**compromised_endpoint_id** | **float** | Compromised endpoint ID | 
+**compromised_endpoint_id** | **int** | Compromised endpoint ID | 
 **created_at** | **str** | Creation timestamp | 
 **updated_at** | **str** | Last update timestamp | 
 

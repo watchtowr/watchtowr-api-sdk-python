@@ -5,18 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | Retest ID | 
+**id** | **int** | Retest ID | 
 **finding** | [**ClientFindingRetestHistoryFinding**](ClientFindingRetestHistoryFinding.md) | Finding information | [optional] 
 **asset** | [**ClientFindingRetestHistoryAsset**](ClientFindingRetestHistoryAsset.md) | Affected asset information | [optional] 
 **triggered_by** | [**ClientFindingRetestHistoryTriggeredBy**](ClientFindingRetestHistoryTriggeredBy.md) | User or service account that triggered the retest | [optional] 
 **current_retest_status** | **str** | Current retest status | 
-**result** | **str** | Retest result status at the time this retest completed. | 
+**result** | **str** | Retest result status at the time this retest completed. An aborted retest (&#x60;currentRetestStatus&#x60; is &#x60;error&#x60;) is &#x60;unresolved&#x60;. | 
 **started_at** | **datetime** | Date and time when the retest was started | 
 **completed_at** | **datetime** | Date and time when the retest was completed | [optional] 
 **updated_at** | **datetime** | Date and time when the retest was last updated | 
 **created_at** | **datetime** | Creation date | 
-**attempt_number** | **float** | Retest attempt number for this finding | [optional] 
-**days_open_before_retest** | **float** | Number of days the finding was open before this retest was triggered | [optional] 
+**attempt_number** | **int** | Retest attempt number for this finding | [optional] 
+**days_open_before_retest** | **int** | Number of days the finding was open before this retest was triggered | [optional] 
 
 ## Example
 

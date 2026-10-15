@@ -54,34 +54,7 @@ class TestClientIpData(unittest.TestCase):
                     whois_data = [
                         watchtowr_api_sdk.models.ip_whois_data.IpWhoisData(
                             id = 1, 
-                            data = watchtowr_api_sdk.models.ip_whois_data_object.IpWhoisDataObject(
-                                asn = '63949', 
-                                asn_cidr = '45.33.0.0/19', 
-                                asn_country_code = 'US', 
-                                asn_date = '2015-03-20', 
-                                asn_description = 'AKAMAI-LINODE-AP Akamai Connected Cloud, SG', 
-                                asn_registry = 'arin', 
-                                query = '45.33.2.79', 
-                                nets = [
-                                    watchtowr_api_sdk.models.ip_whois_net.IpWhoisNet(
-                                        cidr = '45.33.0.0/17', 
-                                        name = 'LINODE-US', 
-                                        handle = 'NET-45-33-0-0-1', 
-                                        range = '45.33.0.0 - 45.33.127.255', 
-                                        description = 'Akamai Technologies, Inc.', 
-                                        country = 'US', 
-                                        state = 'MA', 
-                                        city = 'Cambridge', 
-                                        address = '145 Broadway', 
-                                        postal_code = '02142', 
-                                        emails = ["ip-admin@akamai.com","abuse@akamai.com"], 
-                                        created = '2015-03-20', 
-                                        updated = '2023-09-18', )
-                                    ], 
-                                nir = watchtowr_api_sdk.models.nir.nir(), 
-                                referral = watchtowr_api_sdk.models.referral.referral(), 
-                                raw_referral = '', 
-                                message = 'This is a private ip address', ), 
+                            data = { }, 
                             raw = 'NetRange:       45.33.0.0 - 45.33.127.255
 CIDR:           45.33.0.0/17
 NetName:        LINODE-US
@@ -120,34 +93,7 @@ NetName:        LINODE-US
                     whois_data = [
                         watchtowr_api_sdk.models.ip_whois_data.IpWhoisData(
                             id = 1, 
-                            data = watchtowr_api_sdk.models.ip_whois_data_object.IpWhoisDataObject(
-                                asn = '63949', 
-                                asn_cidr = '45.33.0.0/19', 
-                                asn_country_code = 'US', 
-                                asn_date = '2015-03-20', 
-                                asn_description = 'AKAMAI-LINODE-AP Akamai Connected Cloud, SG', 
-                                asn_registry = 'arin', 
-                                query = '45.33.2.79', 
-                                nets = [
-                                    watchtowr_api_sdk.models.ip_whois_net.IpWhoisNet(
-                                        cidr = '45.33.0.0/17', 
-                                        name = 'LINODE-US', 
-                                        handle = 'NET-45-33-0-0-1', 
-                                        range = '45.33.0.0 - 45.33.127.255', 
-                                        description = 'Akamai Technologies, Inc.', 
-                                        country = 'US', 
-                                        state = 'MA', 
-                                        city = 'Cambridge', 
-                                        address = '145 Broadway', 
-                                        postal_code = '02142', 
-                                        emails = ["ip-admin@akamai.com","abuse@akamai.com"], 
-                                        created = '2015-03-20', 
-                                        updated = '2023-09-18', )
-                                    ], 
-                                nir = watchtowr_api_sdk.models.nir.nir(), 
-                                referral = watchtowr_api_sdk.models.referral.referral(), 
-                                raw_referral = '', 
-                                message = 'This is a private ip address', ), 
+                            data = { }, 
                             raw = 'NetRange:       45.33.0.0 - 45.33.127.255
 CIDR:           45.33.0.0/17
 NetName:        LINODE-US

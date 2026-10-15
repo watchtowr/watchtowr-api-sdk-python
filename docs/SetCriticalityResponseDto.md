@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | The ID of the custom property record. | 
+**id** | **int** | The ID of the custom property record. | 
 **key** | **str** | The property key. | 
 **value** | **str** | The criticality value. | 
 **is_preset** | **bool** | Whether this is a preset property. | 

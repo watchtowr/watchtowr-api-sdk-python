@@ -41,6 +41,7 @@ class IpWhoisNet(BaseModel):
     emails: Optional[List[StrictStr]] = Field(default=None, description="Contact emails listed for the block.")
     created: Optional[StrictStr] = Field(default=None, description="Registration date, as the registry reports it.")
     updated: Optional[StrictStr] = Field(default=None, description="Last update date, as the registry reports it.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["cidr", "name", "handle", "range", "description", "country", "state", "city", "address", "postal_code", "emails", "created", "updated"]
 
     model_config = ConfigDict(
@@ -73,8 +74,10 @@ class IpWhoisNet(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -82,6 +85,11 @@ class IpWhoisNet(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         # set to None if cidr (nullable) is None
         # and model_fields_set contains the field
         if self.cidr is None and "cidr" in self.model_fields_set:
@@ -158,11 +166,6 @@ class IpWhoisNet(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in IpWhoisNet) in the input: " + _key)
-
         _obj = cls.model_validate({
             "cidr": obj.get("cidr"),
             "name": obj.get("name"),
@@ -178,6 +181,11 @@ class IpWhoisNet(BaseModel):
             "created": obj.get("created"),
             "updated": obj.get("updated")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class ClientUserDetailBusinessUnitsInner(BaseModel):
     """
     ClientUserDetailBusinessUnitsInner
     """ # noqa: E501
-    id: Optional[StrictFloat] = None
+    id: Optional[StrictInt] = None
     name: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["id", "name"]
 

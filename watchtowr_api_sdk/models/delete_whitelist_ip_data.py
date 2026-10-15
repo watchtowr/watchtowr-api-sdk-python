@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class DeleteWhitelistIpData(BaseModel):
     """
     DeleteWhitelistIpData
     """ # noqa: E501
-    id: StrictFloat = Field(description="Deleted IP address ID")
+    id: StrictInt = Field(description="Deleted IP address ID")
     __properties: ClassVar[List[str]] = ["id"]
 
     model_config = ConfigDict(

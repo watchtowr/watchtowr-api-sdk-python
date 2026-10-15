@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**concerning_services** | **float** | Count of concerning network services | 
-**concerning_points_of_interest** | **float** | Count of concerning points of interest | 
-**valid_credentials** | **float** | Count of findings with valid credentials | 
-**open_findings** | **float** | Total count of open findings | 
+**concerning_services** | **int** | Count of concerning network services | 
+**concerning_points_of_interest** | **int** | Count of concerning points of interest | 
+**valid_credentials** | **int** | Count of findings with valid credentials | 
+**open_findings** | **int** | Total count of open findings | 
 
 ## Example
 

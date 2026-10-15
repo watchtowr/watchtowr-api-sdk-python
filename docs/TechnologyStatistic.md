@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | Technology name | 
-**count** | **float** | Number of services using this technology | 
+**count** | **int** | Number of services using this technology | 
 
 ## Example
 

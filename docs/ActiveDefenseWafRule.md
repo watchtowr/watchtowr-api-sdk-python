@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **group_operator** | **str** | Operator joining conditions. | [optional] 
 **message** | **str** | Rule message. | [optional] 
 **msg** | **str** | Short rule message (mod_security &#x60;msg&#x60;). | [optional] 
-**response_code** | **float** | HTTP status returned (oci_waf). | [optional] 
+**response_code** | **int** | HTTP status returned (oci_waf). | [optional] 
 **risk** | **float** | Risk score (f5_bigip_advanced_waf). | [optional] 
 **rule** | **str** | Raw rule body (snort, yara, sigma). | [optional] 
 **secrule** | **str** | ModSecurity SecRule body. | [optional] 

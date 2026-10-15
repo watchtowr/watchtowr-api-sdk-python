@@ -36,7 +36,7 @@ class TestClientUserDetailBusinessUnitsInner(unittest.TestCase):
         model = ClientUserDetailBusinessUnitsInner()
         if include_optional:
             return ClientUserDetailBusinessUnitsInner(
-                id = 1.337,
+                id = 56,
                 name = ''
             )
         else:

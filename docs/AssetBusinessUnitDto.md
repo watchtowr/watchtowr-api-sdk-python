@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | Business Unit ID | 
+**id** | **int** | Business Unit ID | 
 **name** | **str** | Business Unit Name | 
 
 ## Example

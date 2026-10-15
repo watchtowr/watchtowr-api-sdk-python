@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | Tactic ID | 
+**id** | **int** | Tactic ID | 
 **name** | **str** | Tactic name | 
 **identifier** | **str** | Tactic identifier | 
 **type** | **str** | Tactic type | 

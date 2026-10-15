@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.ttp_library_category_item import TtpLibraryCategoryItem
 from typing import Optional, Set
@@ -30,7 +30,7 @@ class TtpLibraryItem(BaseModel):
     """
     TtpLibraryItem
     """ # noqa: E501
-    id: StrictFloat = Field(description="Tactic ID")
+    id: StrictInt = Field(description="Tactic ID")
     name: StrictStr = Field(description="Tactic name")
     identifier: StrictStr = Field(description="Tactic identifier")
     type: StrictStr = Field(description="Tactic type")

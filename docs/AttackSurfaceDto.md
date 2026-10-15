@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total_verified_assets** | **float** | Total count of verified assets | 
-**total_points_of_interest** | **float** | Total count of points of interest | 
-**total_network_services** | **float** | Total count of network services | 
-**total_certificates** | **float** | Total count of TLS/SSL certificates | 
+**total_verified_assets** | **int** | Total count of verified assets | 
+**total_points_of_interest** | **int** | Total count of points of interest | 
+**total_network_services** | **int** | Total count of network services | 
+**total_certificates** | **int** | Total count of TLS/SSL certificates | 
 
 ## Example
 

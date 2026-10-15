@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_dns_record_asset import ClientDnsRecordAsset
 from typing import Optional, Set
@@ -30,11 +30,11 @@ class ClientDnsRecord(BaseModel):
     """
     ClientDnsRecord
     """ # noqa: E501
-    id: StrictFloat = Field(description="DNS Record ID")
+    id: StrictInt = Field(description="DNS Record ID")
     asset: Optional[ClientDnsRecordAsset] = Field(default=None, description="Asset information")
     record_name: StrictStr = Field(description="Identifies the resource this record resolves to.", alias="recordName")
     type: StrictStr = Field(description="The DNS record type defines the purpose or function of the record, such as domain name resolution, email routing, and more.")
-    ttl: Optional[StrictFloat] = Field(default=None, description="Time to live (TTL) controls how long each record is cached by resolvers.")
+    ttl: Optional[StrictInt] = Field(default=None, description="Time to live (TTL) controls how long each record is cached by resolvers.")
     value: StrictStr = Field(description="The value of a DNS record, depending on the record type. For example, the IP address of the origin server that hosts the web content served by an A or AAAA record.")
     created_at: datetime = Field(description="Creation date", alias="createdAt")
     __properties: ClassVar[List[str]] = ["id", "asset", "recordName", "type", "ttl", "value", "createdAt"]

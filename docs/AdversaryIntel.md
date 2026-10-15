@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attacker_id** | **float** |  | 
+**attacker_id** | **int** |  | 
 **name** | **str** |  | 
 **aliases** | **List[str]** |  | [optional] 
 **type** | **str** |  | 
@@ -13,10 +13,10 @@ Name | Type | Description | Notes
 **last_reported_date** | **datetime** |  | [optional] 
 **victim_countries** | [**VictimCountrySummary**](VictimCountrySummary.md) |  | [optional] 
 **target_industries** | [**TargetIndustrySummary**](TargetIndustrySummary.md) |  | [optional] 
-**affected_tracked_hunts_count** | **float** |  | [optional] 
-**affected_open_findings_count** | **float** |  | [optional] 
+**affected_tracked_hunts_count** | **int** |  | [optional] 
+**affected_open_findings_count** | **int** |  | [optional] 
 **is_affected** | **bool** | Whether the user has confirmed open findings against vulnerabilities exploited by this adversary. Scoped to the requesting user&#39;s business units and the organization&#39;s finding impact threshold. | 
-**affected_kb_entry_ids** | **List[float]** | KB entry IDs that drive the &#x60;isAffected&#x60; flag, scoped to the requesting user&#39;s business units. | [optional] 
+**affected_kb_entry_ids** | **List[int]** | KB entry IDs that drive the &#x60;isAffected&#x60; flag, scoped to the requesting user&#39;s business units. | [optional] 
 
 ## Example
 

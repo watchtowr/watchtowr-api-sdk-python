@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class ActiveDefenseRuleFinding(BaseModel):
     """
     ActiveDefenseRuleFinding
     """ # noqa: E501
-    id: StrictFloat = Field(description="Finding ID.")
+    id: StrictInt = Field(description="Finding ID.")
     active_defense_provider: Optional[StrictStr] = Field(default=None, description="Active Defense provider associated with the finding.", alias="activeDefenseProvider")
     __properties: ClassVar[List[str]] = ["id", "activeDefenseProvider"]
 

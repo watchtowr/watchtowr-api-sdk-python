@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_pending_domain_whois_data import ClientPendingDomainWhoisData
 from typing import Optional, Set
@@ -30,7 +30,7 @@ class ClientPendingDomain(BaseModel):
     """
     ClientPendingDomain
     """ # noqa: E501
-    id: StrictFloat = Field(description="Domain ID")
+    id: StrictInt = Field(description="Domain ID")
     status: StrictStr = Field(description="Domain status")
     name: StrictStr = Field(description="Domain name")
     source: StrictStr = Field(description="Source that discovered the domain")

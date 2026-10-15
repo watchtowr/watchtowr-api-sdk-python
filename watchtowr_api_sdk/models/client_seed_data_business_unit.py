@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class ClientSeedDataBusinessUnit(BaseModel):
     """
     ClientSeedDataBusinessUnit
     """ # noqa: E501
-    id: StrictFloat = Field(description="Business Unit ID")
+    id: StrictInt = Field(description="Business Unit ID")
     name: StrictStr = Field(description="Business Unit name")
     description: Optional[StrictStr] = Field(default=None, description="Business Unit description")
     type: StrictStr = Field(description="Business Unit type")

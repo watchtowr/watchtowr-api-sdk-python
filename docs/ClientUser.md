@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | User ID | 
+**id** | **int** | User ID | 
 **name** | **str** | User name | 
 **email** | **str** | User email | 
 **title** | **str** | User title | 

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class ClientSeedDataAssetLink(BaseModel):
     """
     ClientSeedDataAssetLink
     """ # noqa: E501
-    id: StrictFloat = Field(description="ID of the resolved asset")
+    id: StrictInt = Field(description="ID of the resolved asset")
     type: StrictStr = Field(description="Type of the resolved asset. Matches the asset type values used elsewhere in the API (e.g. domain, subdomain, ip, ipRange, saasPlatform, ...).")
     __properties: ClassVar[List[str]] = ["id", "type"]
 

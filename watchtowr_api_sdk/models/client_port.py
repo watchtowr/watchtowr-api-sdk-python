@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from watchtowr_api_sdk.models.client_business_unit import ClientBusinessUnit
 from typing import Optional, Set
@@ -36,8 +36,8 @@ class ClientPort(BaseModel):
     last_seen_at: datetime
     id: StrictStr
     ip: Optional[StrictStr] = None
-    ip_id: Optional[StrictFloat] = None
-    port: StrictFloat
+    ip_id: Optional[StrictInt] = None
+    port: StrictInt
     banner: Optional[StrictStr] = None
     service: StrictStr
     state: Optional[StrictStr] = Field(default=None, description="Port state (e.g. `open`, `closed`, `filtered`).")
