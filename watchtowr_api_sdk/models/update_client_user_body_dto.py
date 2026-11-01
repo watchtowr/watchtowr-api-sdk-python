@@ -3,7 +3,7 @@
 """
     Complete watchTowr Platform API Documentation
 
-    The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Automated Red Teaming API       * Adversary Sight API       * Intelligence API       * Active Defense API       * Platform API 
+    The watchTowr Client API combining all watchTowr Platform APIs into a single comprehensive reference, including:       * Automated Red Teaming API       * Adversary Sight API       * Intelligence API       * Active Defense API       * Platform API  Existing /api/client/... routes are also available under /api/client/v1/... with the same request and response contract. 
 
     The version of the OpenAPI document: 1.0
     Contact: support@watchTowr.io
@@ -30,7 +30,7 @@ class UpdateClientUserBodyDto(BaseModel):
     """ # noqa: E501
     role_type: StrictStr = Field(description="Role type to assign to the user", alias="roleType")
     business_unit_ids: List[StrictFloat] = Field(description="Business Unit IDs to assign (required for BU_USER roles)", alias="businessUnitIds")
-    locked: StrictBool = Field(description="Whether the user is locked (prevented from logging in)")
+    locked: StrictBool = Field(description="Whether the user is locked (prevented from logging in). `true` on a user locked by failed logins turns it into an admin lock: their sessions end, and a password reset no longer unlocks them.")
     __properties: ClassVar[List[str]] = ["roleType", "businessUnitIds", "locked"]
 
     @field_validator('role_type')

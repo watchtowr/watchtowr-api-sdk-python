@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **role_type** | **str** | Role type to assign to the user | 
 **business_unit_ids** | **List[float]** | Business Unit IDs to assign (required for BU_USER roles) | 
-**locked** | **bool** | Whether the user is locked (prevented from logging in) | 
+**locked** | **bool** | Whether the user is locked (prevented from logging in). &#x60;true&#x60; on a user locked by failed logins turns it into an admin lock: their sessions end, and a password reset no longer unlocks them. | 
 
 ## Example
 
